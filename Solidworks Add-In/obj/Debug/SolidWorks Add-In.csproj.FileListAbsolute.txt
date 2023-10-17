@@ -1,0 +1,16 @@
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\SolidWorks Add-In.dll
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\SolidWorks Add-In.pdb
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks_Add_In.TaskpaneHostUI.resources
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.GenerateResource.cache
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.CopyComplete
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks Add-In.dll
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks Add-In.pdb
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\Universal Drwing Tool.exe
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\Universal Drwing Tool.pdb
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\Walkway.pdb
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\logo-small.bmp
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\Walkway.exe
+C:\Solidworks Automation\Solidworks Add-In\bin\Debug\Walkway.exe.config
+C:\Solidworks Automation\Solidworks Add-In\obj\Debug\SolidWorks_Add_In.Properties.Resources.resources

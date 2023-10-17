@@ -1,0 +1,16 @@
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\logo-small.bmp
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Universal Drwing Tool.exe
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Walkway.exe
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Universal Drwing Tool.pdb
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Walkway.pdb
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Walkway.exe.config
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\SolidWorks Add-In.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\SolidWorks_Add_In.Properties.Resources.resources
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\SolidWorks_Add_In.TaskpaneHostUI.resources
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\SolidWorks Add-In.csproj.GenerateResource.cache
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\SolidWorks Add-In.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\SolidWorks Add-In.csproj.CopyComplete
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Automation Guy v1.0.0.dll
+C:\Solidworks Automation\Solidworks Add-In\bin\Release\Automation Guy v1.0.0.pdb
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\Automation Guy v1.0.0.dll
+C:\Solidworks Automation\Solidworks Add-In\obj\Release\Automation Guy v1.0.0.pdb

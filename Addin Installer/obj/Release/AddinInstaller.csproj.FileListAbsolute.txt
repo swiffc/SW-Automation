@@ -1,0 +1,16 @@
+C:\Solidworks Automation\Addin Installer\bin\Release\SolidWorksAddinInstaller.exe.config
+C:\Solidworks Automation\Addin Installer\bin\Release\SolidWorksAddinInstaller.exe
+C:\Solidworks Automation\Addin Installer\bin\Release\SolidWorksAddinInstaller.pdb
+C:\Solidworks Automation\Addin Installer\obj\Release\AddinInstaller.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Addin Installer\obj\Release\MainWindow.g.cs
+C:\Solidworks Automation\Addin Installer\obj\Release\App.g.cs
+C:\Solidworks Automation\Addin Installer\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Solidworks Automation\Addin Installer\obj\Release\SolidWorksAddinInstaller_MarkupCompile.cache
+C:\Solidworks Automation\Addin Installer\obj\Release\SolidWorksAddinInstaller_MarkupCompile.lref
+C:\Solidworks Automation\Addin Installer\obj\Release\MainWindow.baml
+C:\Solidworks Automation\Addin Installer\obj\Release\SolidWorksAddinInstaller.g.resources
+C:\Solidworks Automation\Addin Installer\obj\Release\SolidWorksAddinInstaller.Properties.Resources.resources
+C:\Solidworks Automation\Addin Installer\obj\Release\AddinInstaller.csproj.GenerateResource.cache
+C:\Solidworks Automation\Addin Installer\obj\Release\AddinInstaller.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Addin Installer\obj\Release\SolidWorksAddinInstaller.exe
+C:\Solidworks Automation\Addin Installer\obj\Release\SolidWorksAddinInstaller.pdb

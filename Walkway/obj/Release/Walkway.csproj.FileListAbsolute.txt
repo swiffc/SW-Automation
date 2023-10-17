@@ -1,0 +1,12 @@
+C:\Solidworks Automation\Walkway\bin\Release\Walkway.exe.config
+C:\Solidworks Automation\Walkway\bin\Release\Walkway.exe
+C:\Solidworks Automation\Walkway\bin\Release\Walkway.pdb
+C:\Solidworks Automation\Walkway\bin\Release\Universal Drwing Tool.exe
+C:\Solidworks Automation\Walkway\bin\Release\Universal Drwing Tool.pdb
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.WalkwayUI.resources
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.csproj.GenerateResource.cache
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.csproj.CopyComplete
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.exe
+C:\Solidworks Automation\Walkway\obj\Release\Walkway.pdb

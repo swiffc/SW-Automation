@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SolidWorks_Add_In</RootNamespace>
-    <AssemblyName>SolidWorks Add-In</AssemblyName>
+    <AssemblyName>Automation Guy v1.0.0</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TaskpaneHostUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -61,6 +66,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskpaneHostUI.resx">
       <DependentUpon>TaskpaneHostUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,9 +80,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Libraries\Solidworks Automation Library\Solidworks Automation Library.csproj">
-      <Project>{734b09e1-554c-4b97-8d0c-0f34de17a3b1}</Project>
-      <Name>Solidworks Automation Library</Name>
+    <ProjectReference Include="..\Universal Drawing Tool\Universal Drawing Tool.csproj">
+      <Project>{586fad54-bf99-4a06-8dfa-c3ed13c1b410}</Project>
+      <Name>Universal Drawing Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Walkway\Walkway.csproj">
+      <Project>{e7f20cf6-1a9d-42cd-ab57-e4a9d3ce85c3}</Project>
+      <Name>Walkway</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,16 @@
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\bin\x64\Debug\SolidWorksAddinInstaller.exe.config
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\bin\x64\Debug\SolidWorksAddinInstaller.exe
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\bin\x64\Debug\SolidWorksAddinInstaller.pdb
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\AngelSix.SolidWorksApi.AddinInstaller.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\MainWindow.g.cs
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\App.g.cs
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\SolidWorksAddinInstaller_MarkupCompile.cache
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\SolidWorksAddinInstaller_MarkupCompile.lref
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\MainWindow.baml
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\SolidWorksAddinInstaller.g.resources
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\AngelSix.SolidWorksApi.AddinInstaller.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\AngelSix.SolidWorksApi.AddinInstaller.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\SolidWorksAddinInstaller.exe
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\SolidWorksAddinInstaller.pdb
+C:\Users\acmurr\Desktop\solidworks-api-develop\Tools\Addin Installer\obj\x64\Debug\SolidWorksAddinInstaller.Properties.Resources.resources

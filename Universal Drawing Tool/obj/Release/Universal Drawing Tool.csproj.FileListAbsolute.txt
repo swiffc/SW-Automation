@@ -1,0 +1,6 @@
+C:\Solidworks Automation\Universal Drawing Tool\bin\Release\Universal Drwing Tool.exe
+C:\Solidworks Automation\Universal Drawing Tool\bin\Release\Universal Drwing Tool.pdb
+C:\Solidworks Automation\Universal Drawing Tool\obj\Release\Universal Drawing Tool.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Universal Drawing Tool\obj\Release\Universal Drawing Tool.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Universal Drawing Tool\obj\Release\Universal Drwing Tool.exe
+C:\Solidworks Automation\Universal Drawing Tool\obj\Release\Universal Drwing Tool.pdb

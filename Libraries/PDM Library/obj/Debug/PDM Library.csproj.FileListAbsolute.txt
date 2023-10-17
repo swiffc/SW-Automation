@@ -1,0 +1,43 @@
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\PDM Library.exe.config
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\PDM Library.exe
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\PDM Library.pdb
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\LdrEditAssembly.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Buffers.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Collections.Immutable.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Memory.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Numerics.Vectors.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.Diagnostics.Eventing.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.Fonts.Fluent.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.Foundation.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.Foundation.Logging.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.Composition.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.Dispatching.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.FluentTheme.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.FluentTheme.v1.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.FluentTheme.v2.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.Toolkit.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.Xaml.dll
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\LdrEditAssembly.pdb
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\LdrEditAssembly.dll.config
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Buffers.xml
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Collections.Immutable.xml
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Memory.xml
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Numerics.Vectors.xml
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.Diagnostics.Eventing.pdb
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.FluentTheme.pdb
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.FluentTheme.v1.pdb
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.FluentTheme.v2.pdb
+C:\Solidworks Automation\Libraries\PDM Library\bin\Debug\Uno.UI.Toolkit.pdb
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.csproj.SuggestedBindingRedirects.cache
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\Interop.SHDocVw.dll
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\Interop.Shell32.dll
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.csproj.ResolveComReference.cache
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.csproj.CopyComplete
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.exe
+C:\Solidworks Automation\Libraries\PDM Library\obj\Debug\PDM Library.pdb

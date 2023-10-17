@@ -122,7 +122,7 @@ namespace Installation_Tools
         {
             IEdmVault5 vault = new EdmVault5();
             vault.LoginAuto("AXC_VAULT", 1);
-
+            
             IEdmFolder5 folder = vault.RootFolder;
             folder = folder.GetSubFolder("Active");
             folder = folder.GetSubFolder("_Automation Tools");

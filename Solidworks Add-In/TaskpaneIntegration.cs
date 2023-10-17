@@ -40,7 +40,7 @@ namespace SolidWorks_Add_In
         /// <summary>
         /// Unique taskpane ID used for COM registration
         /// </summary>
-        public const string SWTASKPANE_PROGID = "Solidworks Add-In Taskpane";
+        public const string SWTASKPANE_PROGID = "Automation Guy Taskpane";
 
         #endregion
 
@@ -96,7 +96,7 @@ namespace SolidWorks_Add_In
             var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", string.Empty), "logo-small.bmp");
 
             // Create our Taskpane
-            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, "Automation Tool");
+            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, "Automation Guy");
 
             // Load our UI into the taskpane
             mTaskpaneHost = (TaskpaneHostUI)mTaskpaneView.AddControl(TaskpaneIntegration.SWTASKPANE_PROGID, string.Empty);
@@ -138,8 +138,8 @@ namespace SolidWorks_Add_In
                 rk.SetValue(null, 1);
 
                 // Set SolidWorks add-in title and description
-                rk.SetValue("Title", "Automation Tool");
-                rk.SetValue("Description", "Useful automation tools");
+                rk.SetValue("Title", "Automation Guy");
+                rk.SetValue("Description", "Your new best friend");
             }
         }
 
