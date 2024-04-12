@@ -64,12 +64,12 @@ namespace Walkway.Tools
             positionMatrix[11] = positionMatrix[11] * 0.0254;
         }
         public static double[] PositionMaxtrix { get; set; } = new double[16]
-{
+        {
             1,0,0,0,
             1,0,0,0,
             1,0,0,0,
             1,0,0,0
-};
+        };
         public static void Lock()
         {
             string bankAssembly = $@"{DesktopFolderPath}\{Project}-28{Bank}.SLDASM";

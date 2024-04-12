@@ -149,7 +149,7 @@ namespace Walkway
             // Update locations option
             if (updateLocations) { AddParentToSelection(platformComponents); }
 
-            // Assign exisitng dynamic part numbers to class
+            // Assign existing dynamic part numbers to class
             Platform.PartNo.Dynamic = GetDynamicPartNo(platformComponents, Platform_PartNo_Static) ?? null;
             Stringer.PartNo.Dynamic = GetDynamicPartNo(platformComponents, StringerL_PartNo_Static, StringerC_PartNo_Static) ?? null;
             EndMember.PartNo.Dynamic = GetDynamicPartNo(platformComponents, EndAngle_PartNo_Static, EndChannel_PartNo_Static) ?? null;
@@ -157,7 +157,7 @@ namespace Walkway
             Grating.Filler.PartNo.Dynamic = GetDynamicPartNo(platformComponents, GratingFiller_PartNo_Static) ?? null;
             Strut.PartNo.Dynamic = GetDynamicPartNo(platformComponents, Strut_PartNo_Static) ?? null;
 
-            // Read parmeters
+            // Read parameters
             GetParameters_SelectedComponents(platformComponents, out double read_Length, out double read_Width, out double read_FloorHeight, out int read_MinimumStringerSize);
 
             // Assign properties

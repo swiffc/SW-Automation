@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hood;
+using Plenum;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -18,42 +20,42 @@ namespace SolidWorks_Add_In
 
         private void PreviousSheet_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.ActivatePreviousSheet();
+            DrawingToolz.DrawingToolz.ActivatePreviousSheet();
         }
 
         private void NextSheet_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.ActivateNextSheet();
+            DrawingToolz.DrawingToolz.ActivateNextSheet();
         }
 
         private void PositionScale_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.PositionAndScale();
+            DrawingToolz.DrawingToolz.PositionAndScale();
         }
 
         private void AutoBalloon_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.AutoBalloon();
+            DrawingToolz.DrawingToolz.AutoBalloon();
         }
 
         private void AlignDimensions_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.AlignDimensions();
+            DrawingToolz.DrawingToolz.AlignDimensions();
         }
 
         private void DeleteDangling_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.DeleteDanglingAnnotations();
+            DrawingToolz.DrawingToolz.DeleteDanglingAnnotations();
         }
 
         private void SheetCleaner_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.SheetCleaner();
+            DrawingToolz.DrawingToolz.SheetCleaner();
         }
 
         private void SortSheets_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.SortSheetsInDrawing();
+            DrawingToolz.DrawingToolz.SortSheetsInDrawing();
         }
 
         private void Unlock_Click(object sender, EventArgs e)
@@ -81,12 +83,27 @@ namespace SolidWorks_Add_In
             walkwayUI.BringToFront();
         }
 
+        private HoodUI hoodUI = null;
+        private void btn_HoodUI_Click(object sender, EventArgs e)
+        {
+            if (hoodUI == null || hoodUI.IsDisposed)
+            {
+                hoodUI = new HoodUI();
+            }
+
+            hoodUI.Show();
+            hoodUI.BringToFront();
+        }
+
+
+
+
         private void Version_MouseHover(object sender, EventArgs e)
         {
             Control control = sender as Control;
             if (control != null)
             {
-                string tooltipText = "v1.0.0" + "\n" + @"""Everyone's gotta start somewhere!""";
+                string tooltipText = "v3.0.1" + "\n" + @"""Plenum Automation Is Live""";
 
                 // Estimate the size of the tooltip text.
                 SizeF textSize;
@@ -111,7 +128,29 @@ namespace SolidWorks_Add_In
 
         private void DrawingCleaner_Click(object sender, EventArgs e)
         {
-            Drawing.Drawing.DrawingFileCleaner();
+            DrawingToolz.DrawingToolz.DrawingFileCleaner();
+        }
+
+        private void SplitDrawing_Click(object sender, EventArgs e)
+        {
+            DrawingToolz.DrawingFileManager.SplitActiveDrawing();
+        }
+
+        private void MigrateDrawing_Click(object sender, EventArgs e)
+        {
+            DrawingToolz.DrawingFileManager.AddToActiveDrawing();
+        }
+
+        private PlenumUI plenumUI = null;
+        private void plenum_button_Click(object sender, EventArgs e)
+        {
+            if (plenumUI == null || plenumUI.IsDisposed)
+            {
+                plenumUI = new PlenumUI();
+            }
+
+            plenumUI.Show();
+            plenumUI.BringToFront();
         }
     }
 }

@@ -47,14 +47,13 @@ namespace Walkway
             SetProperty("Title", ToePlate.Title, toePlate);
 
             EditDimension("Width", "profile", 40.000000000000000, toePlate);
-            switch ('L')
+            if (Length < 132)
             {
-                case 'L':
-                    EditDimension("hole1", "holes", ToePlate.Height / 2, toePlate);
-                    break;
-                case 'C':
-                    EditDimension("hole1", "holes", ToePlate.Height / 2 - 1.5, toePlate);
-                    break;
+                EditDimension("hole1", "holes", ToePlate.Height / 2, toePlate);
+            }
+            else
+            {
+                EditDimension("hole1", "holes", ToePlate.Height / 2 - 1.5, toePlate);
             }
 
             // Release COM object, but leave file open in SOLIDWORKS for assembly placement

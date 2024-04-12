@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5899A85-9656-431E-9836-2849AEEEFEF7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Plenum</RootNamespace>
+    <AssemblyName>Plenum</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPDM.Interop.epdm">
+      <HintPath>..\Libraries\EPDM Interop\EPDM.Interop.epdm.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SolidWorks.Interop.sldworks">
+      <HintPath>..\Libraries\Solidworks Interop\SolidWorks.Interop.sldworks.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swconst">
+      <HintPath>..\Libraries\Solidworks Interop\SolidWorks.Interop.swconst.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Column\Derived\Children\BeamPart\Derived\EndBeam.cs" />
+    <Compile Include="Column\Derived\Children\BeamPart\Derived\MidBeam.cs" />
+    <Compile Include="Column\Derived\Children\FlatSeal.cs" />
+    <Compile Include="Column\Derived\Children\JohnsonTopPlate.cs" />
+    <Compile Include="Column\Derived\EndColumn.cs" />
+    <Compile Include="Column\Derived\MidColumn.cs" />
+    <Compile Include="Floor\Derived\InnerFloorExtension.cs" />
+    <Compile Include="Floor\Derived\OuterFloorExtension.cs" />
+    <Compile Include="Floor\Derived\Derived\OuterFloorPanelLeft.cs" />
+    <Compile Include="Floor\Derived\Derived\OuterFloorPanelRight.cs" />
+    <Compile Include="Floor\Derived\Derived\InnerFloorPanelLeft.cs" />
+    <Compile Include="Floor\Derived\Derived\InnerFloorPanelRight.cs" />
+    <Compile Include="Floor\Derived\OuterFloorPanel.cs" />
+    <Compile Include="Floor\Derived\InnerFloorPanel.cs" />
+    <Compile Include="Floor\FanRing.cs" />
+    <Compile Include="Floor\FloorExtension.cs" />
+    <Compile Include="Floor\FloorPanel.cs" />
+    <Compile Include="Floor\FloorSplice.cs" />
+    <Compile Include="Helpers\Static\FanCenter.cs" />
+    <Compile Include="JohnsonBeam\Children\JohnsonBeamPart.cs" />
+    <Compile Include="JohnsonBeam\Children\JohnsonBeamPlate.cs" />
+    <Compile Include="JohnsonBeam\JohnsonBeamWld.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StandardParts\FanGuard.cs" />
+    <Compile Include="Stiffeners\CornerAngle.cs" />
+    <Compile Include="Helpers\BaseClasses\Assembly.cs" />
+    <Compile Include="Column\Derived\Children\CapPlate.cs" />
+    <Compile Include="Column\Derived\Children\BeamPart\Beam.cs" />
+    <Compile Include="Column\PlenumColumn.cs" />
+    <Compile Include="MotorBeam\Children\MotorBeamPart.cs" />
+    <Compile Include="MotorBeam\Children\MotorBeamPlate.cs" />
+    <Compile Include="MotorBeam\MotorBeamWld.cs" />
+    <Compile Include="Stiffeners\DividerAngle.cs" />
+    <Compile Include="Stiffeners\FloorStiffener.cs" />
+    <Compile Include="Stiffeners\PlanBrace\Derived\PlanBraceEnd.cs" />
+    <Compile Include="Stiffeners\PlanBrace\Derived\PlanBraceMiddle.cs" />
+    <Compile Include="Stiffeners\PlanBrace\PlanBrace.cs" />
+    <Compile Include="Stiffeners\PlanBrace\PlanBraceHorizontal.cs" />
+    <Compile Include="Walls\DividerFlange.cs" />
+    <Compile Include="Walls\DividerPanel.cs" />
+    <Compile Include="Walls\EndPanel.cs" />
+    <Compile Include="Helpers\PlenumStyles\Johnson.cs" />
+    <Compile Include="Helpers\PlenumStyles\Legacy.cs" />
+    <Compile Include="Plenum.cs" />
+    <Compile Include="Helpers\BaseClasses\Part.cs" />
+    <Compile Include="PlenumUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlenumUI.Designer.cs">
+      <DependentUpon>PlenumUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\PlenumStyles\Standard.cs" />
+    <Compile Include="Walls\Johnson\JohnsonSidePanel.cs" />
+    <Compile Include="Walls\SidePanel.cs" />
+    <Compile Include="Walls\Johnson\Derived\SidePanelLeft.cs" />
+    <Compile Include="Walls\Johnson\Derived\SidePanelRight.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileTools\FileTools.csproj">
+      <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
+      <Name>FileTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelTools\ModelTools.csproj">
+      <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
+      <Name>ModelTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Universal Drawing Tool\Universal Drawing Tool.csproj">
+      <Project>{586fad54-bf99-4a06-8dfa-c3ed13c1b410}</Project>
+      <Name>Universal Drawing Tool</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PlenumUI.resx">
+      <DependentUpon>PlenumUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

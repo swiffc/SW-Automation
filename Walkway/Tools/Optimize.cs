@@ -40,8 +40,6 @@ namespace Walkway.Tools
         {
             if (modelDoc2 != null)
             {
-                string docName = modelDoc2.GetTitle();
-                string[] partNumber = docName.Split('-');
                 Marshal.ReleaseComObject(modelDoc2);
                 modelDoc2 = null;
             }
