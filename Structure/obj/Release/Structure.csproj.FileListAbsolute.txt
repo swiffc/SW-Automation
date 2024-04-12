@@ -1,0 +1,12 @@
+C:\Solidworks Automation\Structure\bin\Release\Structure.exe.config
+C:\Solidworks Automation\Structure\bin\Release\Structure.exe
+C:\Solidworks Automation\Structure\bin\Release\Structure.pdb
+C:\Solidworks Automation\Structure\bin\Release\FileTools.dll
+C:\Solidworks Automation\Structure\bin\Release\Tools.dll
+C:\Solidworks Automation\Structure\bin\Release\FileTools.pdb
+C:\Solidworks Automation\Structure\bin\Release\Tools.pdb
+C:\Solidworks Automation\Structure\obj\Release\Structure.csproj.AssemblyReference.cache
+C:\Solidworks Automation\Structure\obj\Release\Structure.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\Structure\obj\Release\Structure.csproj.Up2Date
+C:\Solidworks Automation\Structure\obj\Release\Structure.exe
+C:\Solidworks Automation\Structure\obj\Release\Structure.pdb

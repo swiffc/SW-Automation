@@ -1,0 +1,9 @@
+C:\Solidworks Automation\ModelTools\bin\Release\Tools.dll
+C:\Solidworks Automation\ModelTools\bin\Release\Tools.pdb
+C:\Solidworks Automation\ModelTools\bin\Release\System.Numerics.Vectors.dll
+C:\Solidworks Automation\ModelTools\bin\Release\System.Numerics.Vectors.xml
+C:\Solidworks Automation\ModelTools\obj\Release\ModelTools.csproj.AssemblyReference.cache
+C:\Solidworks Automation\ModelTools\obj\Release\ModelTools.csproj.CoreCompileInputs.cache
+C:\Solidworks Automation\ModelTools\obj\Release\ModelTools.csproj.Up2Date
+C:\Solidworks Automation\ModelTools\obj\Release\Tools.dll
+C:\Solidworks Automation\ModelTools\obj\Release\Tools.pdb

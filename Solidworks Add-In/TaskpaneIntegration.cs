@@ -1,8 +1,12 @@
-﻿using SolidWorks.Interop.sldworks;
+﻿using EPDM.Interop.epdm;
+using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swpublished;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SolidWorks_Add_In
 {
@@ -63,12 +67,89 @@ namespace SolidWorks_Add_In
             // Setup callback info
             var ok = mSolidWorksApplication.SetAddinCallbackInfo2(0, this, mSwCookie);
 
+            // Version control
+            CheckVersions();
+
             // Create our UI
             LoadUI();
 
             // Return ok
             return true;
         }
+        public static void CheckVersions()
+        {
+            string dLL = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In\Automation Guy.dll";
+            string updater = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInUpdater.exe";
+            string versionControl = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInDllVersionControl.exe";
+
+            // Login
+            EdmVault5 vault = new EdmVault5();
+            try
+            {
+                vault.LoginAuto("AXC_VAULT", 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to connect to the vault: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Update updater
+            IEdmFile5 updaterFile = vault.GetFileFromPath(updater, out _);
+            updaterFile.GetFileCopy(0);
+
+            // Update version control
+            IEdmFile5 versionControlFile = vault.GetFileFromPath(versionControl, out _);
+            versionControlFile.GetFileCopy(0);
+
+            // Check DLL version
+            IEdmFile5 addinFile = vault.GetFileFromPath(dLL, out IEdmFolder5 dllFolder);
+            IEdmFile12 addinFile12 = addinFile as IEdmFile12;
+
+            bool localVersionObsolete;
+            object filePath = addinFile.GetLocalPath(dllFolder.ID); 
+            int localVersionNo = addinFile12.GetLocalVersionNo2(ref filePath, out localVersionObsolete);
+            int currentVersion = addinFile.CurrentVersion;
+
+            // Check if the local version is older than the current version
+            if (localVersionNo < currentVersion || localVersionObsolete)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = versionControl;
+                Process.Start(startInfo);
+
+                // Close Solidworks
+                foreach (Process process in Process.GetProcesses())
+                {
+                    if (process.ProcessName == "SLDWORKS")
+                    {
+                        try
+                        {
+                            object swInstance = Marshal.GetActiveObject("SldWorks.Application");
+                            SldWorks swApp = (SldWorks)swInstance;
+
+                            // Close all documents without saving
+                            swApp.CloseAllDocuments(false);
+
+                            // Close SolidWorks
+                            swApp.ExitApp();
+                        }
+                        catch (COMException)
+                        {
+                            // Handle the case where SolidWorks cannot be closed or is not responding
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = updater;
+                Process.Start(startInfo);
+            }
+        }
+
 
         /// <summary>
         /// Called when SolidWorks is about to unload add-in and wants to do disconnection logic
@@ -96,7 +177,7 @@ namespace SolidWorks_Add_In
             var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", string.Empty), "logo-small.bmp");
 
             // Create our Taskpane
-            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, "Automation Guy");
+            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, "Automation Guy v3.0.1");
 
             // Load our UI into the taskpane
             mTaskpaneHost = (TaskpaneHostUI)mTaskpaneView.AddControl(TaskpaneIntegration.SWTASKPANE_PROGID, string.Empty);
@@ -138,7 +219,7 @@ namespace SolidWorks_Add_In
                 rk.SetValue(null, 1);
 
                 // Set SolidWorks add-in title and description
-                rk.SetValue("Title", "Automation Guy");
+                rk.SetValue("Title", "Automation Guy v3.0.1");
                 rk.SetValue("Description", "Your new best friend");
             }
         }

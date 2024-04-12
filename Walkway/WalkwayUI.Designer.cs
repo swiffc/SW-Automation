@@ -113,12 +113,12 @@ namespace Walkway
             this.txt_SupportWalkwayWidth = new System.Windows.Forms.TextBox();
             this.txt_SupportBank = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.UpdateLocations = new System.Windows.Forms.CheckBox();
-            this.button11 = new System.Windows.Forms.Button();
             this.txt_HandrailBank.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -992,6 +992,16 @@ namespace Walkway
             this.tabPage6.Text = "Advanced Options";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(14, 41);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(121, 23);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "Enable Part UI";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.PartUI_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(296, 100);
@@ -1044,16 +1054,6 @@ namespace Walkway
             this.UpdateLocations.Text = "Update Locations";
             this.UpdateLocations.UseVisualStyleBackColor = true;
             this.UpdateLocations.CheckedChanged += new System.EventHandler(this.UpdateLocation_CheckedChanged);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(14, 41);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(121, 23);
-            this.button11.TabIndex = 5;
-            this.button11.Text = "Enable Part UI";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.PartUI_Click);
             // 
             // WalkwayUI
             // 
