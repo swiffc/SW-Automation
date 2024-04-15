@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddInDllVersionControl", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Structure", "Structure\Structure.csproj", "{B98B809C-BE32-417B-AEC4-4917A12B722E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bounty", "Bounty\Bounty.csproj", "{1CDD1082-52A6-48A3-A5C0-0132999502D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,14 @@ Global
 		{B98B809C-BE32-417B-AEC4-4917A12B722E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B98B809C-BE32-417B-AEC4-4917A12B722E}.Release|x64.ActiveCfg = Release|Any CPU
 		{B98B809C-BE32-417B-AEC4-4917A12B722E}.Release|x64.Build.0 = Release|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Debug|x64.Build.0 = Debug|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Release|x64.ActiveCfg = Release|Any CPU
+		{1CDD1082-52A6-48A3-A5C0-0132999502D9}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
