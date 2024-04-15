@@ -57,6 +57,7 @@
     <Compile Include="Columns\Column.cs" />
     <Compile Include="Columns\Derived\Children\Beam.cs" />
     <Compile Include="Columns\Derived\Children\EndPlate.cs" />
+    <Compile Include="Columns\Derived\Children\FlangeClip.cs" />
     <Compile Include="Columns\Derived\Children\WebClip.cs" />
     <Compile Include="Columns\Derived\ColumnLeft.cs" />
     <Compile Include="Columns\Derived\ColumnMid.cs" />

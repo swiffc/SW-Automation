@@ -1,0 +1,14 @@
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\Structure.exe.config
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\Structure.exe
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\Structure.pdb
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\Tools.dll
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\Structure\bin\Debug\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.StructureUI.resources
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.exe
+C:\Users\acmurr\Desktop\Repo\Structure\obj\Debug\Structure.pdb

@@ -1,0 +1,7 @@
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\bin\Debug\AddInDllVersionControl.exe.config
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\bin\Debug\AddInDllVersionControl.exe
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\bin\Debug\AddInDllVersionControl.pdb
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\obj\Debug\AddInDllVersionControl.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\obj\Debug\AddInDllVersionControl.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\obj\Debug\AddInDllVersionControl.exe
+C:\Users\acmurr\Desktop\Repo\AddInDllVersionControl\obj\Debug\AddInDllVersionControl.pdb

@@ -2,7 +2,7 @@
 {
     public static class SharedProperties
     {
-        // Footprint
+        // Structure
         static public double Width { get; set; } = 108;
         static public double Length { get; set; } = 240;
         static public double ColumnHeight { get; set; } = 120;
@@ -21,6 +21,28 @@
         }
 
         #endregion
+        static public double ClipHeight { get; set; } = 6;
+        private static string _braceType = "L"; 
+        #region BraceType Rules
+
+        public static string BraceType
+        {
+            get
+            {
+                return _braceType;
+            }
+            set
+            {
+                if (value == "L" || value == "LL" || value == "T" || value == "X")
+                    _braceType = value;
+                else
+                    _braceType = "L";
+            }
+        }
+
+        #endregion
+
+
 
 
         // Plenum
@@ -46,11 +68,11 @@
         static public double PlenumDepth { get; set; } = 36;
 
 
-        // Machinery Mount
+        // MachineryMount
         static public double MachineryMountHeight { get; set; } = 24;
 
 
-        // Shipping steel
-        static public double ShippingBeamHeight { get; set; } = 6;
+        // ShippingBeam
+        static public double ShippingBeamHeight { get; set; } = 10;
     }
 }

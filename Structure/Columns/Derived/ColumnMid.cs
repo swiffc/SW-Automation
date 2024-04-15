@@ -23,7 +23,7 @@ namespace Structure.Columns.Derived
                 for (int i = 0; i < FanCount - 1; i++)
                 {
                     pos.Add(PositionData.Create(tX: -Width / 2, tZ: zTranslation));
-                    pos.Add(PositionData.Create(tX: Width / 2, tZ: zTranslation));
+                    pos.Add(PositionData.Create(tX: Width / 2, tZ: zTranslation, rY: 180));
                     zTranslation -= Length / FanCount;
                 }
 

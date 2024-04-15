@@ -20,7 +20,7 @@ namespace Structure.Columns.Derived
                 return new List<PositionData>
                 {
                     PositionData.Create(tX: -Width/2, tZ: Length/2),
-                    PositionData.Create(tX: Width/2, tZ: -Length/2),
+                    PositionData.Create(tX: Width/2, tZ: -Length/2, rY: 180),
                 };
             }
         }
