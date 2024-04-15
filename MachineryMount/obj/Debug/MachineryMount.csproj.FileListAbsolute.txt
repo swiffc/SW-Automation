@@ -1,0 +1,11 @@
+C:\Users\khowell\source\repos1\MachineryMount\bin\Debug\MachineryMount.dll
+C:\Users\khowell\source\repos1\MachineryMount\bin\Debug\MachineryMount.pdb
+C:\Users\khowell\source\repos1\MachineryMount\bin\Debug\FileTools.dll
+C:\Users\khowell\source\repos1\MachineryMount\bin\Debug\Tools.dll
+C:\Users\khowell\source\repos1\MachineryMount\bin\Debug\FileTools.pdb
+C:\Users\khowell\source\repos1\MachineryMount\bin\Debug\Tools.pdb
+C:\Users\khowell\source\repos1\MachineryMount\obj\Debug\MachineryMount.csproj.AssemblyReference.cache
+C:\Users\khowell\source\repos1\MachineryMount\obj\Debug\MachineryMount.csproj.CoreCompileInputs.cache
+C:\Users\khowell\source\repos1\MachineryMount\obj\Debug\MachineryMount.csproj.CopyComplete
+C:\Users\khowell\source\repos1\MachineryMount\obj\Debug\MachineryMount.dll
+C:\Users\khowell\source\repos1\MachineryMount\obj\Debug\MachineryMount.pdb

@@ -1,0 +1,9 @@
+C:\Users\khowell\Source\repos1\FileTools\bin\Debug\FileTools.dll
+C:\Users\khowell\Source\repos1\FileTools\bin\Debug\FileTools.pdb
+C:\Users\khowell\Source\repos1\FileTools\bin\Debug\Tools.dll
+C:\Users\khowell\Source\repos1\FileTools\bin\Debug\Tools.pdb
+C:\Users\khowell\Source\repos1\FileTools\obj\Debug\FileTools.csproj.AssemblyReference.cache
+C:\Users\khowell\Source\repos1\FileTools\obj\Debug\FileTools.csproj.CoreCompileInputs.cache
+C:\Users\khowell\Source\repos1\FileTools\obj\Debug\FileTools.csproj.CopyComplete
+C:\Users\khowell\Source\repos1\FileTools\obj\Debug\FileTools.dll
+C:\Users\khowell\Source\repos1\FileTools\obj\Debug\FileTools.pdb
