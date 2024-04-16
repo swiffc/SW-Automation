@@ -56,8 +56,10 @@
     <Compile Include="Columns\Derived\Children\BasePlate.cs" />
     <Compile Include="Columns\Column.cs" />
     <Compile Include="Columns\Derived\Children\Beam.cs" />
+    <Compile Include="Columns\Derived\Children\Clip.cs" />
     <Compile Include="Columns\Derived\Children\EndPlate.cs" />
-    <Compile Include="Columns\Derived\Children\WebClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\FlangeClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\WebClip.cs" />
     <Compile Include="Columns\Derived\ColumnLeft.cs" />
     <Compile Include="Columns\Derived\ColumnMid.cs" />
     <Compile Include="Columns\Derived\ColumnRight.cs" />
@@ -82,11 +84,18 @@
       <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
       <Name>ModelTools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Plenum\Plenum.csproj">
+      <Project>{d5899a85-9656-431e-9836-2849aeeefef7}</Project>
+      <Name>Plenum</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="StructureUI.resx">
       <DependentUpon>StructureUI.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Braces\Derived\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

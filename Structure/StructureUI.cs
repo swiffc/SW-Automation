@@ -60,13 +60,13 @@ namespace Structure
             length_TextBox.Text = SharedProperties.Length.ToString();
             height_TextBox.Text = SharedProperties.ColumnHeight.ToString();
             midColumns_Box.Checked = SharedProperties.MidColumns;
-            rotate_Box.Checked = Beam.Rotate;
+            rotate_Box.Checked = Beam.IsRotated;
 
             #endregion
             #region BasePlate_Load
 
-            bpWidth_Box.Text = BasePlate.Width.ToString();
-            bpLength_Box.Text = BasePlate.Length.ToString();
+            bpWidth_Box.Text = BasePlate.LocalWidth.ToString();
+            bpLength_Box.Text = BasePlate.LocalLength.ToString();
             wSPA_Box.Text = BasePlate.WidthHoleSpacing.ToString();
             lSPA_Box.Text = BasePlate.LengthHoleSpacing.ToString();
             dia_Box.Text = BasePlate.HoleDiameter.ToString();
@@ -145,7 +145,7 @@ namespace Structure
         }
         private void rotate_Box_CheckedChanged(object sender, EventArgs e)
         {
-            Beam.Rotate = rotate_Box.Checked;
+            Beam.IsRotated = rotate_Box.Checked;
         }
 
 
@@ -155,13 +155,13 @@ namespace Structure
         private void bpWidth_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(bpWidth_Box.Text, out double value))
-                BasePlate.Width = value;
+                BasePlate.LocalWidth = value;
         }
 
         private void bpLength_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(bpLength_Box.Text, out double value))
-                BasePlate.Length = value;
+                BasePlate.LocalLength = value;
         }
 
         private void wSPA_Box_TextChanged(object sender, EventArgs e)
