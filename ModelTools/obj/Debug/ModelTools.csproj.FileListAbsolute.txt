@@ -1,9 +1,0 @@
-C:\Users\khowell\Source\repos1\ModelTools\bin\Debug\Tools.dll
-C:\Users\khowell\Source\repos1\ModelTools\bin\Debug\Tools.pdb
-C:\Users\khowell\Source\repos1\ModelTools\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\khowell\Source\repos1\ModelTools\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\khowell\Source\repos1\ModelTools\obj\Debug\ModelTools.csproj.AssemblyReference.cache
-C:\Users\khowell\Source\repos1\ModelTools\obj\Debug\ModelTools.csproj.CoreCompileInputs.cache
-C:\Users\khowell\Source\repos1\ModelTools\obj\Debug\ModelTools.csproj.CopyComplete
-C:\Users\khowell\Source\repos1\ModelTools\obj\Debug\Tools.dll
-C:\Users\khowell\Source\repos1\ModelTools\obj\Debug\Tools.pdb
