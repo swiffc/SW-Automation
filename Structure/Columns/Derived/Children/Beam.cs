@@ -11,7 +11,7 @@ namespace Structure.Columns.Derived.Children
     internal class Beam : Part
     {
         // Static properties
-        static internal string Size { get; set; } = "W8x28";
+        static internal string Size { get; set; } = "W6x15";
         internal static double Depth
         {
             get
@@ -147,8 +147,8 @@ namespace Structure.Columns.Derived.Children
             }
             set { _webGage = value; }
         }
-        static internal bool Rotate { get; set; } = false;
-        static internal double Length => Column.Height - BasePlate.THK - EndPlate.THK;
+        static internal bool IsRotated { get; set; } = false;
+        static internal double LocalLength => Column.Height - BasePlate.THK - EndPlate.THK;
 
 
         // Constructor
@@ -158,7 +158,7 @@ namespace Structure.Columns.Derived.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Path", Length);
+            EditDimension("Length", "Beam", LocalLength);
 
             EditDimension("Depth", "sk:Beam", Depth);
             EditDimension("WebTHK", "sk:Beam", WebTHK);
@@ -180,16 +180,16 @@ namespace Structure.Columns.Derived.Children
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tY: BasePlate.THK, rY:Rotate ? 90 : 0)
+                    PositionData.Create(tY: BasePlate.THK, rY:IsRotated ? 90 : 0)
                 };
             }
         }
 
 
         // Private properties
-        private static double? _depth;
+        private static double? _depth=10;
         private static double? _webTHK;
-        private static double? _flangeWidth;
+        private static double? _flangeWidth=5;
         private static double? _flangeTHK;
         private static double? _k;
         private static double? _k1;

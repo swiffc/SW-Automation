@@ -10,7 +10,6 @@ namespace Structure.Columns
     {
         // Static properties
         static internal double Height => ColumnHeight - PlenumDepth - MachineryMountHeight + ShippingBeamHeight;
-        static public PositionData WebClipPos => PositionData.Create(tX: Beam.FlangeWidth / 2, tY: ClipHeight);
 
 
         // Constructor

@@ -193,7 +193,7 @@ namespace FileTools.Base
             }
         }
         public Spec MaterialSpec { get; set; } = StaticMaterialSpec;
-        public ModelDoc2 ModelDoc2 {  get; set; }
+        public ModelDoc2 ModelDoc2 { get; set; }
 
 
         // Public Enums
@@ -217,5 +217,24 @@ namespace FileTools.Base
         private readonly SW_Assembly _parentAssembly;
         private string _partNo = null;
         private bool _partNoCalculated = false;
+
+
+        #region Wrapper Properties
+
+        // Structure
+        public static double Width => SharedProperties.Width;
+        public static double Length => SharedProperties.Length;
+        public static bool MidColumns => SharedProperties.MidColumns;
+        public static double ClipHeight => SharedProperties.ClipHeight;
+        public static double BraceAngle => SharedProperties.BraceAngle;
+        public static double ColumnHeight => SharedProperties.ColumnHeight;
+        public static string BraceType => SharedProperties.BraceType;
+
+
+        // Plenum
+        public static int FanCount => SharedProperties.FanCount;
+        public static double PlenumDepth => SharedProperties.PlenumDepth;
+
+        #endregion
     }
 }

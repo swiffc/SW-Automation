@@ -1,9 +1,0 @@
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Debug\DrawingToolz.exe
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Debug\DrawingToolz.pdb
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Debug\Universal Drawing Tool.csproj.AssemblyReference.cache
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Debug\Universal Drawing Tool.csproj.CoreCompileInputs.cache
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Debug\Universa.72E81272.Up2Date
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Debug\DrawingToolz.exe
-C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Debug\DrawingToolz.pdb

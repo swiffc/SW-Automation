@@ -4,7 +4,7 @@
     {
         // Structure
         static public double Width { get; set; } = 108;
-        static public double Length { get; set; } = 240;
+        static public double Length { get; set; } = 360;
         static public double ColumnHeight { get; set; } = 120;
         static private bool _midColumns = true;
         #region MidColumn rules
@@ -21,8 +21,8 @@
         }
 
         #endregion
-        static public double ClipHeight { get; set; } = 6;
-        private static string _braceType = "L"; 
+        static public double ClipHeight { get; set; } = 20;
+        private static string _braceType = "L";
         #region BraceType Rules
 
         public static string BraceType
@@ -41,12 +41,11 @@
         }
 
         #endregion
-
-
+        static public double BraceAngle { get; set; } = 30;
 
 
         // Plenum
-        private static int _fanCount = 2;
+        private static int _fanCount = 3;
         #region FanCount rules
 
         static public int FanCount
@@ -57,7 +56,7 @@
                 if (value != _fanCount)
                 {
                     _fanCount = value >= 1 ? value : 1;
-                    OnFanCountChanged?.Invoke(); 
+                    OnFanCountChanged?.Invoke();
                 }
             }
         }
