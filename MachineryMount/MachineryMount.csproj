@@ -49,11 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Belt Guard\Plate\Edging.cs" />
     <Compile Include="Drive Mount\Angle\AdjustmentAngle.cs" />
     <Compile Include="Drive Mount\Channels\BearingMount.cs" />
     <Compile Include="Drive Mount\Channels\VibeMountChannel.cs" />
     <Compile Include="Drive Mount\Channels\Stiffener.cs" />
     <Compile Include="Drive Mount\Channels\SideChannel.cs" />
+    <Compile Include="Drive Mount\DriveMount.cs" />
     <Compile Include="Drive Mount\Pipe\ShaftSleeve.cs" />
     <Compile Include="Drive Mount\Plate\EndPanel.cs" />
     <Compile Include="Drive Mount\Plate\EndStiffener.cs" />
@@ -61,6 +63,9 @@
     <Compile Include="Drive Mount\Plate\VibeMountPlate.cs" />
     <Compile Include="Motor Mount\MotorMount.cs" />
     <Compile Include="MachineryMount.cs" />
+    <Compile Include="Motor Mount\Plate\Gusset.cs" />
+    <Compile Include="Motor Mount\Plate\MountPanel.cs" />
+    <Compile Include="Motor Mount\Plate\Stiffener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,8 +79,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Belt Guard\" />
-    <Folder Include="Motor Mount\Plate\" />
+    <Folder Include="Belt Guard\Expanded Metal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
