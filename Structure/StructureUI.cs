@@ -1,16 +1,7 @@
 ﻿using FileTools;
-using ModelTools;
 using Structure.Columns.Derived.Children;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Structure
 {
@@ -61,6 +52,13 @@ namespace Structure
             height_TextBox.Text = SharedProperties.ColumnHeight.ToString();
             midColumns_Box.Checked = SharedProperties.MidColumns;
             rotate_Box.Checked = Beam.IsRotated;
+            beamSize_Box.Text = Beam.Size;
+            textBox_Depth.Text = Beam.Depth.ToString();
+            textBox_WebTHK.Text = Beam.WebTHK.ToString();
+            textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
+            textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
+            textBox_K.Text = Beam.K.ToString();
+            textBox_K1.Text = Beam.K1.ToString();
 
             #endregion
             #region BasePlate_Load
@@ -83,7 +81,14 @@ namespace Structure
             mmHeight_Box.Text = SharedProperties.MachineryMountHeight.ToString();
 
             #endregion
+            #region Brace_Load
 
+            braceType_Box.Text = SharedProperties.BraceType;
+            clipTHK_Box.Text = Clip.THK.ToString();
+            braceHoleDiameter_Box.Text = Clip.HoleDiameter.ToString();
+            braceAngle_Box.Text = SharedProperties.BraceAngle.ToString();
+
+            #endregion
         }
         #region Job_Changed
 
@@ -147,7 +152,78 @@ namespace Structure
         {
             Beam.IsRotated = rotate_Box.Checked;
         }
+        private bool isUserChange = true;
+        private void beamSize_Box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isUserChange = false;
 
+            Beam.Size = beamSize_Box.Text;
+            if (Beam.Size != "Custom")
+            {
+                Beam.ResetSize();
+                textBox_Depth.Text = Beam.Depth.ToString();
+                textBox_WebTHK.Text = Beam.WebTHK.ToString();
+                textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
+                textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
+                textBox_K.Text = Beam.K.ToString();
+                textBox_K1.Text = Beam.K1.ToString();
+            }
+
+            isUserChange = true;
+        }
+        private void textBox_Depth_TextChanged(object sender, EventArgs e)
+        {
+            if (isUserChange && double.TryParse(textBox_Depth.Text, out double depth))
+            {
+                Beam.Depth = depth;
+                Beam.Size = beamSize_Box.Text = "Custom";
+            }
+        }
+
+        private void textBox_WebTHK_TextChanged(object sender, EventArgs e)
+        {
+            if (isUserChange && double.TryParse(textBox_WebTHK.Text, out double webTHK))
+            {
+                Beam.WebTHK = webTHK;
+                Beam.Size = beamSize_Box.Text = "Custom";
+            }
+        }
+
+        private void textBox_FlangeWidth_TextChanged(object sender, EventArgs e)
+        {
+            if (isUserChange && double.TryParse(textBox_FlangeWidth.Text, out double flangeWidth))
+            {
+                Beam.FlangeWidth = flangeWidth;
+                Beam.Size = beamSize_Box.Text = "Custom";
+            }
+        }
+
+        private void textBox_FlangeTHK_TextChanged(object sender, EventArgs e)
+        {
+            if (isUserChange && double.TryParse(textBox_FlangeTHK.Text, out double flangeTHK))
+            {
+                Beam.FlangeTHK = flangeTHK;
+                Beam.Size = beamSize_Box.Text = "Custom";
+            }
+        }
+
+        private void textBox_K_TextChanged(object sender, EventArgs e)
+        {
+            if (isUserChange && double.TryParse(textBox_K.Text, out double k))
+            {
+                Beam.K = k;
+                Beam.Size = beamSize_Box.Text = "Custom";
+            }
+        }
+
+        private void textBox_K1_TextChanged(object sender, EventArgs e)
+        {
+            if (isUserChange && double.TryParse(textBox_K1.Text, out double k1))
+            {
+                Beam.K1 = k1;
+                Beam.Size = beamSize_Box.Text = "Custom";
+            }
+        }
 
         #endregion
         #region BasePlate_Changed
@@ -198,7 +274,6 @@ namespace Structure
 
 
         #endregion
-
         #region MachineryMount_Changed
 
         private void mmHeight_Box_TextChanged(object sender, EventArgs e)
@@ -207,6 +282,32 @@ namespace Structure
                 SharedProperties.MachineryMountHeight = value;
         }
 
+
         #endregion
+        #region Braced_Changed
+
+        private void braceType_Box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SharedProperties.BraceType = braceType_Box.Text;
+        }
+        private void thk_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(clipTHK_Box.Text, out double value))
+                Clip.THK = value;
+        }
+        private void braceHoleDiameter_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(braceHoleDiameter_Box.Text, out double value))
+                Clip.HoleDiameter = value;
+        }
+        private void braceAngle_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(braceAngle_Box.Text, out double value))
+                SharedProperties.BraceAngle = value;
+        }
+
+        #endregion
+
+
     }
 }

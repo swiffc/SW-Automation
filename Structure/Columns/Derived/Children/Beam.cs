@@ -169,6 +169,20 @@ namespace Structure.Columns.Derived.Children
         }
 
 
+        // Public methods
+        public static void ResetSize()
+        {
+            _depth = null;
+            _webTHK = null;
+            _flangeWidth = null;
+            _flangeTHK = null;
+            _k = null;
+            _k1 = null;
+            _flangeGage = null;
+            _webGage = null;
+        }
+
+
         // Property overrides
         public override bool Enabled => true;
         public override string StaticPartNo => "101P";
@@ -187,9 +201,9 @@ namespace Structure.Columns.Derived.Children
 
 
         // Private properties
-        private static double? _depth=10;
+        private static double? _depth;
         private static double? _webTHK;
-        private static double? _flangeWidth=5;
+        private static double? _flangeWidth;
         private static double? _flangeTHK;
         private static double? _k;
         private static double? _k1;

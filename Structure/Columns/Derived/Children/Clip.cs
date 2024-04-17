@@ -37,7 +37,7 @@ namespace Structure.Columns.Derived.Children
         }
 
         #endregion
-        public static double ColumnExtentToHole => 2.0;
+        public static double ColumnBoundsToHole => 2.0;
         static public double THK { get; set; } = 0.25;
 
 

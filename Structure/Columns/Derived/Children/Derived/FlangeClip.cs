@@ -10,14 +10,11 @@ namespace Structure.Columns.Derived.Children.Derived
     internal class FlangeClip : Clip
     {
         // Static properties
-        static public double zTranslation => Beam.Depth / 2 + ColumnExtentToHole;
+        static public double zTranslation => Beam.Depth / 2 + ColumnBoundsToHole;
 
 
         // Constructor
-        public FlangeClip(SubAssembly parentSubAssembly) : base(parentSubAssembly)
-        {
-            parent = parentSubAssembly;
-        }
+        public FlangeClip(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 
 
         // Method overrides
@@ -25,7 +22,7 @@ namespace Structure.Columns.Derived.Children.Derived
         {
             base.Dimensions();
 
-            EditDimension("ColumnCenterToHole", "sk:Plate", ColumnExtentToHole);
+            EditDimension("ColumnCenterToHole", "sk:Plate", ColumnBoundsToHole);
         }
 
 
@@ -42,7 +39,7 @@ namespace Structure.Columns.Derived.Children.Derived
                 bool isRotated = Beam.IsRotated;
                 double translationY = ClipHeight;
 
-                switch (parent.StaticPartNo)
+                switch (ParentSubAssembly.StaticPartNo)
                 {
                     case "101":
                         if (isRotated)
@@ -83,9 +80,5 @@ namespace Structure.Columns.Derived.Children.Derived
             }
 
         }
-
-
-        // Private properties
-        SubAssembly parent;
     }
 }

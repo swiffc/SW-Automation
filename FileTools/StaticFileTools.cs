@@ -786,12 +786,15 @@ namespace FileTools
             {
                 foreach (var component in componentsArray)
                 {
-                    string componentName = component.Name2;
-
-                    // Check if the component name contains the file name and does not contain "/"
-                    if (componentName.Contains(fileName) && !componentName.Contains("/"))
+                    if (component != null)
                     {
-                        matchingComponents.Add(component);
+                        string componentName = component.Name2;
+
+                        // Check if the component name contains the file name and does not contain "/"
+                        if (componentName.Contains(fileName) && !componentName.Contains("/"))
+                        {
+                            matchingComponents.Add(component);
+                        }
                     }
                 }
             }

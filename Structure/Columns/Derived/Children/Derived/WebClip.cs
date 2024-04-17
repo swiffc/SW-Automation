@@ -13,10 +13,7 @@ namespace Structure.Columns.Derived.Children.Derived
     internal class WebClip : Clip
     {
         // Constructor
-        public WebClip(SubAssembly parentSubAssembly) : base(parentSubAssembly)
-        {
-            parent = parentSubAssembly;
-        }
+        public WebClip(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 
 
         // Method overrides
@@ -24,7 +21,7 @@ namespace Structure.Columns.Derived.Children.Derived
         {
             base.Dimensions();
 
-            EditDimension("ColumnCenterToHole", "sk:Plate", Beam.FlangeWidth / 2 + ColumnExtentToHole - Beam.WebTHK / 2);
+            EditDimension("ColumnCenterToHole", "sk:Plate", Beam.FlangeWidth / 2 + ColumnBoundsToHole - Beam.WebTHK / 2);
         }
 
 
@@ -38,7 +35,7 @@ namespace Structure.Columns.Derived.Children.Derived
             get
             {
                 var pos = new List<PositionData>();
-                double xzTranslation = Beam.FlangeWidth / 2 + ColumnExtentToHole;
+                double xzTranslation = Beam.FlangeWidth / 2 + ColumnBoundsToHole;
                 double translationY = ClipHeight;
 
                 void addPosition(bool rotated, double translation, double rotationY = 0)
@@ -53,7 +50,7 @@ namespace Structure.Columns.Derived.Children.Derived
                     }
                 }
 
-                switch (parent.StaticPartNo)
+                switch (ParentSubAssembly.StaticPartNo)
                 {
                     case "101":
                         addPosition(Beam.IsRotated, Beam.IsRotated ? -xzTranslation : xzTranslation, Beam.IsRotated ? -90 : 0);
@@ -78,9 +75,5 @@ namespace Structure.Columns.Derived.Children.Derived
             }
 
         }
-
-
-        // Private properties
-        SubAssembly parent;
     }
 }

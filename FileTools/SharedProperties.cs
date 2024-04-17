@@ -22,7 +22,7 @@
 
         #endregion
         static public double ClipHeight { get; set; } = 20;
-        private static string _braceType = "L";
+        private static string _braceType = "T";
         #region BraceType Rules
 
         public static string BraceType
@@ -33,7 +33,7 @@
             }
             set
             {
-                if (value == "L" || value == "LL" || value == "T" || value == "X")
+                if (value == "L" || value == "LL" || value == "T" || value == "X" || value == "TX")
                     _braceType = value;
                 else
                     _braceType = "L";
@@ -65,6 +65,7 @@
 
         #endregion
         static public double PlenumDepth { get; set; } = 36;
+        static public double PlenumClipHole { get; set; } = 2.5;
 
 
         // MachineryMount

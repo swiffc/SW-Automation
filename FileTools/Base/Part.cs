@@ -18,6 +18,7 @@ namespace FileTools.Base
             if (Enabled)
             {
                 _parentAssembly = parentSubAssembly;
+                ParentSubAssembly = parentSubAssembly;
                 InitializePart();
             }
         }
@@ -194,6 +195,7 @@ namespace FileTools.Base
         }
         public Spec MaterialSpec { get; set; } = StaticMaterialSpec;
         public ModelDoc2 ModelDoc2 { get; set; }
+        public SubAssembly ParentSubAssembly { get; set; }
 
 
         // Public Enums
@@ -202,7 +204,8 @@ namespace FileTools.Base
             Plate,
             Beam,
             Angle,
-            Channel
+            Channel,
+            Tee
         }
         public enum Spec
         {
@@ -214,7 +217,7 @@ namespace FileTools.Base
 
 
         // Private properties
-        private readonly SW_Assembly _parentAssembly;
+        public readonly SW_Assembly _parentAssembly;
         private string _partNo = null;
         private bool _partNoCalculated = false;
 

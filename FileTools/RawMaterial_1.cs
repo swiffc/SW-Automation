@@ -16,10 +16,10 @@ namespace FileTools
 
         public static void AddRawMaterialInfo(Shape shape, Spec material, string size, ModelDoc2 modelDoc2)
         {
-            if (shape == Shape.Beam)
+            if (shape == Shape.Beam || shape == Shape.Tee)
                 material = Spec.A992;
 
-            if (shape == Shape.Plate && size == "0.1344")
+            if ((shape == Shape.Plate) && size == "0.1344")
                 material = Spec.A1011_33;
 
 

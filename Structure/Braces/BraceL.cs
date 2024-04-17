@@ -59,7 +59,7 @@ namespace Structure.Braces.Derived
             double zTranslation;
             if (Beam.IsRotated)
             {
-                zTranslation = Length / 2 - Beam.FlangeWidth / 2 - Clip.ColumnExtentToHole;
+                zTranslation = Length / 2 - Beam.FlangeWidth / 2 - Clip.ColumnBoundsToHole;
             }
             else
             {
@@ -91,7 +91,7 @@ namespace Structure.Braces.Derived
         private List<PositionData> EndPositions(double horz, double yTranslation, double xRotation)
         {
             // Viewing XY plane
-            double xTranslation = -Width / 2 + Beam.FlangeWidth / 2 + Clip.ColumnExtentToHole + horz;
+            double xTranslation = -Width / 2 + Beam.FlangeWidth / 2 + Clip.ColumnBoundsToHole + horz;
             double zTranslation = Length / 2 - Clip.THK / 2;
 
             var end_101 = PositionData.Create(tX: xTranslation, rX: -xRotation, tY: yTranslation, rY: -90, tZ: zTranslation);
