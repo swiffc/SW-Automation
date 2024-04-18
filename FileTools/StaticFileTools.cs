@@ -578,33 +578,7 @@ namespace FileTools
 
             return components;
         }
-        public static List<PositionData> RotatePositionsAroundY(List<PositionData> positions, double angleDegrees)
-        {
-            double angleRadians = angleDegrees * Math.PI / 180;
-            List<PositionData> rotatedPositions = new List<PositionData>();
 
-            foreach (var position in positions)
-            {
-                double cosTheta = Math.Cos(angleRadians);
-                double sinTheta = Math.Sin(angleRadians);
-
-                double newX = position.TranslationX * cosTheta - position.TranslationZ * sinTheta;
-                double newZ = position.TranslationX * sinTheta + position.TranslationZ * cosTheta;
-
-                PositionData newPosition = PositionData.Create(
-                    tX: newX,
-                    tY: position.TranslationY,
-                    tZ: newZ,
-                    rX: position.RotationX,
-                    rY: position.RotationY + angleDegrees, // Adjust rotation angle around Y
-                    rZ: position.RotationZ
-                );
-
-                rotatedPositions.Add(newPosition);
-            }
-
-            return rotatedPositions;
-        }
 
 
 

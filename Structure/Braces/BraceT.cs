@@ -150,6 +150,7 @@ namespace Structure.Braces
             EditDimension("Length", "T", (double)_length);
         }
 
+
         // Private properties
         private void CalculateLengthAndPositionData()
         {
@@ -179,6 +180,7 @@ namespace Structure.Braces
             // Set backing field
             _length = holeToHole + HoleToEnd * 2;
 
+            //-----
 
             // Triangle --> [T-clip hole that's closest to the column bounds] to [flange gage and work line intersection point]
             AAS(BraceAngle, out double yHoleClosestToColumn_To_FlangeGageCenterPoint, out double zHoleClosestToColumn_To_FlangeGageCenterPoint, FlangeGage / 2);
@@ -190,6 +192,29 @@ namespace Structure.Braces
 
             _position = PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: BraceAngle); 
             
+        }
+        private void AddOtherSideBrace(ref List<PositionData> list)
+        {
+            var otherSideBrace = (PositionData)_position;
+            otherSideBrace.TranslationX *= -1;
+            otherSideBrace.RotationX *= -1;
+            otherSideBrace.RotationY = 180;
+            list.Add(otherSideBrace);
+        }
+        private void AddOppositeSideBrace(ref List<PositionData> list)
+        {
+            var oppositeSideBrace = (PositionData)_position;
+            oppositeSideBrace.TranslationZ *= -1;
+            oppositeSideBrace.RotationX *= -1;
+            list.Add(oppositeSideBrace);
+        }
+        private void AddOtherOppositeSideBrace(ref List<PositionData> list)
+        {
+            var otherOppositeSideBrace = (PositionData)_position;
+            otherOppositeSideBrace.TranslationX *= -1;
+            otherOppositeSideBrace.TranslationZ *= -1;
+            otherOppositeSideBrace.RotationY = 180;
+            list.Add(otherOppositeSideBrace);
         }
 
 
@@ -207,22 +232,9 @@ namespace Structure.Braces
                     (PositionData)_position
                 };
 
-                var otherSideBrace = (PositionData)_position;
-                otherSideBrace.TranslationX *= -1;
-                otherSideBrace.RotationX *= -1;
-                otherSideBrace.RotationY = 180;
-                pos.Add(otherSideBrace);
-
-                var oppositeSideBrace = (PositionData)_position;
-                oppositeSideBrace.TranslationZ *= -1;
-                oppositeSideBrace.RotationX *= -1;
-                pos.Add(oppositeSideBrace);
-
-                var otherOppositeSideBrace = (PositionData)_position;
-                otherOppositeSideBrace.TranslationX *= -1;
-                otherOppositeSideBrace.TranslationZ *= -1;
-                otherOppositeSideBrace.RotationY = 180;
-                pos.Add(otherOppositeSideBrace);
+                AddOtherSideBrace(ref pos);
+                AddOppositeSideBrace(ref pos);
+                AddOtherOppositeSideBrace(ref pos);
 
                 return pos;
             }

@@ -225,18 +225,18 @@ namespace FileTools.Base
         #region Wrapper Properties
 
         // Structure
-        public static double Width => SharedProperties.Width;
-        public static double Length => SharedProperties.Length;
-        public static bool MidColumns => SharedProperties.MidColumns;
-        public static double ClipHeight => SharedProperties.ClipHeight;
-        public static double BraceAngle => SharedProperties.BraceAngle;
-        public static double ColumnHeight => SharedProperties.ColumnHeight;
-        public static string BraceType => SharedProperties.BraceType;
+        protected static double Width => SharedProperties.Width;
+        protected static double Length => SharedProperties.Length;
+        protected static bool MidColumns => SharedProperties.MidColumns;
+        protected static double ClipHeight => SharedProperties.ClipHeight;
+        protected static double BraceAngle => SharedProperties.BraceAngle;
+        protected static double ColumnHeight => SharedProperties.TotalColumnHeight;
+        protected static string BraceType => SharedProperties.BraceType;
 
 
         // Plenum
-        public static int FanCount => SharedProperties.FanCount;
-        public static double PlenumDepth => SharedProperties.PlenumDepth;
+        protected static int FanCount => SharedProperties.FanCount;
+        protected static double PlenumDepth => SharedProperties.PlenumDepth;
 
         #endregion
     }

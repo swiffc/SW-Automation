@@ -8,13 +8,13 @@ using static FileTools.StaticFileTools;
 using static System.Net.Mime.MediaTypeNames;
 using System.Linq;
 using System.Security.AccessControl;
+using System;
 
 namespace Structure.Braces.Derived
 {
     internal class BraceL : Part
     {
         // Static properties
-        static public string Size { get; set; } = "3x3x0.25";
         static public double LocalLength
         {
             get
@@ -37,6 +37,7 @@ namespace Structure.Braces.Derived
             }
         }
         static public double HoleToEnd => 1.125;
+        static public double HoleToHole => 2.5;
 
 
         // Constructor
@@ -47,7 +48,64 @@ namespace Structure.Braces.Derived
         protected override void Dimensions()
         {
             EditDimension("Length", "L", LocalLength);
+
+            IntermediateHoles(out double count, out double spacing);
+            EditDimension("Count", "sk:Hole", count);
+            EditDimension("Spacing", "sk:Hole", spacing);
         }
+
+
+        // Static methods
+        internal static void IntermediateHoles(out double count, out double spacing)
+        {
+            double span = LocalLength - HoleToEnd * 2 - HoleToHole * 2;
+            HolePattern(span, out count, out spacing);
+            count = BraceType == "LL" ? count : 2;
+            spacing = BraceType == "LL" ? spacing : span;
+        }
+        internal static List<PositionData> RotatePositionsAroundY(List<PositionData> positions, double angleDegrees)
+        {
+            double angleRadians = angleDegrees * Math.PI / 180;
+            List<PositionData> rotatedPositions = new List<PositionData>();
+
+            foreach (var position in positions)
+            {
+                double cosTheta = Math.Cos(angleRadians);
+                double sinTheta = Math.Sin(angleRadians);
+
+                double newX = position.TranslationX * cosTheta - position.TranslationZ * sinTheta;
+                double newZ = position.TranslationX * sinTheta + position.TranslationZ * cosTheta;
+
+                PositionData newPosition = PositionData.Create(
+                    tX: newX,
+                    tY: position.TranslationY,
+                    tZ: newZ,
+                    rX: position.RotationX,
+                    rY: position.RotationY + angleDegrees,
+                    rZ: position.RotationZ
+                );
+
+                rotatedPositions.Add(newPosition);
+            }
+
+            return rotatedPositions;
+        }
+        internal static List<PositionData> MidColumnElements(List<PositionData> sidePositions, List<PositionData> oppositeSide, List<PositionData> endPositions)
+        {
+            double columnToColumn = Length / FanCount;
+
+            var sidePattern = PositionPatternZ(sidePositions, columnToColumn);
+            var oppositeSidePattern = PositionPatternZ(oppositeSide, -columnToColumn);
+            var endPattern = PositionPatternZ(endPositions, columnToColumn);
+
+            var pos = new List<PositionData>();
+            pos.AddRange(sidePattern);
+            pos.AddRange(oppositeSidePattern);
+            pos.AddRange(endPattern);
+
+            return pos;
+        }
+
 
 
         // Private methods
@@ -82,11 +140,28 @@ namespace Structure.Braces.Derived
             side_106.RotationY = 180;
             side_106.RotationX = 180 + (90 - BraceAngle);
 
-            return new List<PositionData>
+            var pos = new List<PositionData>
             {
                 side_101,
                 side_106
             };
+
+            if (BraceType == "LL")
+            {
+                var side_101LL = side_101;
+                side_101LL.TranslationX -= Clip.THK;
+                side_101LL.RotationY += 180;
+                side_101LL.RotationX += 90 + BraceAngle;
+                pos.Add(side_101LL);
+
+                var side_106LL = side_106;
+                side_106LL.TranslationX += Clip.THK;
+                side_106LL.RotationY += 180;
+                side_106LL.RotationX -= 90 + BraceAngle;
+                pos.Add(side_106LL);
+            }
+
+            return pos;
         }
         private List<PositionData> EndPositions(double horz, double yTranslation, double xRotation)
         {
@@ -100,13 +175,30 @@ namespace Structure.Braces.Derived
             end_106.TranslationX = -xTranslation;
             end_106.RotationX = 90 + BraceAngle;
 
-            return new List<PositionData>
+            var pos = new List<PositionData>
             {
                 end_101,
                 end_106 ,
             };
+
+            if (BraceType == "LL")
+            {
+                var end_101LL = end_101;
+                end_101LL.TranslationZ += Clip.THK;
+                end_101LL.RotationY += 180;
+                end_101LL.RotationX -= 90 + BraceAngle;
+                pos.Add(end_101LL);
+
+                var end_106LL = end_106;
+                end_106LL.TranslationZ += Clip.THK;
+                end_106LL.RotationY += 180;
+                end_106LL.RotationX += 90 + BraceAngle;
+                pos.Add(end_106LL);
+            }
+
+            return pos;
         }
-        private List<PositionData> PositionPatternZ(List<PositionData> referencePosition, double increment)
+        private static List<PositionData> PositionPatternZ(List<PositionData> referencePosition, double increment)
         {
             var pos = new List<PositionData>();
 
@@ -133,9 +225,9 @@ namespace Structure.Braces.Derived
 
         // Property overrides
         public override bool Enabled => new[] { "L", "LL" }.Contains(BraceType);
-        public override string StaticPartNo => "131";
+        public override string StaticPartNo => "131L";
         public override Shape RawMaterialShape => Shape.Angle;
-        public override string SizeOrThickness => Size;
+        public override string SizeOrThickness => "3x3x0.25";
         public override List<PositionData> Position
         {
             get
@@ -154,15 +246,8 @@ namespace Structure.Braces.Derived
 
                 if (MidColumns)
                 {
-                    double columnToColumn = Length / FanCount;
-
-                    var sidePattern = PositionPatternZ(sidePositions, columnToColumn);
-                    var oppositeSidePattern = PositionPatternZ(oppositeSide, -columnToColumn);
-                    var endPattern = PositionPatternZ(endPositions, columnToColumn);
-
-                    pos.AddRange(sidePattern);
-                    pos.AddRange(oppositeSidePattern);
-                    pos.AddRange(endPattern);
+                    var mids = MidColumnElements(sidePositions, oppositeSide, endPositions);
+                    pos.AddRange(mids);
                 }
 
                 return pos;

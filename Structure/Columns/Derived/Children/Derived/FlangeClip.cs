@@ -23,6 +23,7 @@ namespace Structure.Columns.Derived.Children.Derived
             base.Dimensions();
 
             EditDimension("ColumnCenterToHole", "sk:Plate", ColumnBoundsToHole);
+            EditDimension("Angle", "sk:Plate", BraceAngle);
         }
 
 

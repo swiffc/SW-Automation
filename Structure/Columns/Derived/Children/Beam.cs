@@ -148,7 +148,7 @@ namespace Structure.Columns.Derived.Children
             set { _webGage = value; }
         }
         static internal bool IsRotated { get; set; } = false;
-        static internal double LocalLength => Column.Height - BasePlate.THK - EndPlate.THK;
+        static internal double LocalLength => FieldColumn.Height - BasePlate.THK - EndPlate.THK;
 
 
         // Constructor

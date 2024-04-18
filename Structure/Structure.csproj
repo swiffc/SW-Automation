@@ -54,11 +54,14 @@
   <ItemGroup>
     <Compile Include="Braces\BraceL.cs" />
     <Compile Include="Braces\BraceT.cs" />
+    <Compile Include="Braces\BraceX.cs" />
+    <Compile Include="Braces\Spacer.cs" />
     <Compile Include="Columns\Derived\Children\BasePlate.cs" />
-    <Compile Include="Columns\Column.cs" />
+    <Compile Include="Columns\FieldColumn.cs" />
     <Compile Include="Columns\Derived\Children\Beam.cs" />
     <Compile Include="Columns\Derived\Children\Clip.cs" />
     <Compile Include="Columns\Derived\Children\Derived\TeeClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\XClip.cs" />
     <Compile Include="Columns\Derived\Children\EndPlate.cs" />
     <Compile Include="Columns\Derived\Children\Derived\FlangeClip.cs" />
     <Compile Include="Columns\Derived\Children\Derived\WebClip.cs" />

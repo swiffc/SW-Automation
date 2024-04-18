@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Structure.Columns.Derived
 {
-    internal class ColumnMid : Column
+    internal class ColumnMid : FieldColumn
     {
         // Constructor
         public ColumnMid(SW_Assembly parentAssembly) : base(parentAssembly) { }

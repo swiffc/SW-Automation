@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Structure.Columns.Derived
 {
-    internal class ColumnRight : Column
+    internal class ColumnRight : FieldColumn
     {
         // Constructor
         public ColumnRight(SW_Assembly parentAssembly) : base(parentAssembly) { }

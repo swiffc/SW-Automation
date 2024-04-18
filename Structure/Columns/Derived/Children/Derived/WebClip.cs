@@ -22,6 +22,7 @@ namespace Structure.Columns.Derived.Children.Derived
             base.Dimensions();
 
             EditDimension("ColumnCenterToHole", "sk:Plate", Beam.FlangeWidth / 2 + ColumnBoundsToHole - Beam.WebTHK / 2);
+            EditDimension("Angle", "sk:Plate", BraceAngle);
         }
 
 
@@ -37,18 +38,6 @@ namespace Structure.Columns.Derived.Children.Derived
                 var pos = new List<PositionData>();
                 double xzTranslation = Beam.FlangeWidth / 2 + ColumnBoundsToHole;
                 double translationY = ClipHeight;
-
-                void addPosition(bool rotated, double translation, double rotationY = 0)
-                {
-                    if (rotated)
-                    {
-                        pos.Add(PositionData.Create(tZ: translation, tY: translationY, rY: rotationY));
-                    }
-                    else
-                    {
-                        pos.Add(PositionData.Create(tX: translation, tY: translationY));
-                    }
-                }
 
                 switch (ParentSubAssembly.StaticPartNo)
                 {
@@ -69,6 +58,18 @@ namespace Structure.Columns.Derived.Children.Derived
                             addPosition(false, xzTranslation);
                         }
                         break;
+                }
+
+                void addPosition(bool rotated, double translation, double rotationY = 0)
+                {
+                    if (rotated)
+                    {
+                        pos.Add(PositionData.Create(tZ: translation, tY: translationY, rY: rotationY));
+                    }
+                    else
+                    {
+                        pos.Add(PositionData.Create(tX: translation, tY: translationY));
+                    }
                 }
 
                 return pos;

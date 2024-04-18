@@ -49,7 +49,7 @@ namespace Structure
 
             width_TextBox.Text = SharedProperties.Width.ToString();
             length_TextBox.Text = SharedProperties.Length.ToString();
-            height_TextBox.Text = SharedProperties.ColumnHeight.ToString();
+            height_TextBox.Text = SharedProperties.TotalColumnHeight.ToString();
             midColumns_Box.Checked = SharedProperties.MidColumns;
             rotate_Box.Checked = Beam.IsRotated;
             beamSize_Box.Text = Beam.Size;
@@ -141,7 +141,7 @@ namespace Structure
         private void height_TextBox_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(height_TextBox.Text, out double value))
-                SharedProperties.ColumnHeight = value;
+                SharedProperties.TotalColumnHeight = value;
         }
 
         private void midColumn_Box_CheckedChanged(object sender, EventArgs e)

@@ -44,6 +44,7 @@ namespace Structure.Columns.Derived.Children.Derived
             EditDimension("Landing", "sk:Plate", Landing);
             EditDimension("FlangeGage", "sk:Plate", BraceT.FlangeGage);
             EditDimension("THK", "Plate", THK);
+            EditDimension("Angle", "sk:Plate", BraceAngle);
         }
 
 

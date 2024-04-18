@@ -5,7 +5,7 @@
         // Structure
         static public double Width { get; set; } = 108;
         static public double Length { get; set; } = 360;
-        static public double ColumnHeight { get; set; } = 120;
+        static public double TotalColumnHeight { get; set; } = 120;
         static private bool _midColumns = true;
         #region MidColumn rules
 
@@ -22,7 +22,7 @@
 
         #endregion
         static public double ClipHeight { get; set; } = 20;
-        private static string _braceType = "T";
+        private static string _braceType = "LL";
         #region BraceType Rules
 
         public static string BraceType

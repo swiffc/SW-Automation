@@ -42,7 +42,7 @@ namespace Structure.Columns.Derived.Children
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tY: Column.Height)
+                    PositionData.Create(tY: FieldColumn.Height)
                 };
             }
         }

@@ -50,7 +50,6 @@ namespace Structure.Columns.Derived.Children
         {
             EditDimension("Diameter", "sk:Plate", HoleDiameter);
             EditDimension("HoleToEdge", "sk:Plate", HoleToEdge);
-            EditDimension("Angle", "sk:Plate", BraceAngle);
         }
 
     }
