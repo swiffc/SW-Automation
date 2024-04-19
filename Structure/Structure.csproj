@@ -52,9 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Braces\BraceL.cs" />
+    <Compile Include="Braces\AngleBrace.cs" />
+    <Compile Include="Braces\Derived\BraceL.cs" />
     <Compile Include="Braces\BraceT.cs" />
-    <Compile Include="Braces\BraceX.cs" />
+    <Compile Include="Braces\Derived\BraceX.cs" />
     <Compile Include="Braces\Spacer.cs" />
     <Compile Include="Columns\Derived\Children\BasePlate.cs" />
     <Compile Include="Columns\FieldColumn.cs" />

@@ -463,9 +463,11 @@ namespace FileTools
             AddGrandChildren(ref components, swAssembly.GrandChildren);
 
             // Remove duplicate instances based on PartNo
-            components = components.GroupBy(comp => comp.PartNo)
+            components = components.Where(comp => !string.IsNullOrEmpty(comp.PartNo))
+                                   .GroupBy(comp => comp.PartNo)
                                    .Select(group => group.First())
                                    .ToList();
+
 
             // Replace references
             foreach (var component in components)

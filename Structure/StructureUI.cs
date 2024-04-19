@@ -1,4 +1,5 @@
 ﻿using FileTools;
+using Structure.Braces;
 using Structure.Columns.Derived.Children;
 using System;
 using System.Windows.Forms;
@@ -27,6 +28,10 @@ namespace Structure
         #region Buttons
 
         private void btn_Standard_Click(object sender, EventArgs e)
+        {
+            new Structure(25, "Structure");
+        }
+        private void button1_Click(object sender, EventArgs e)
         {
             new Structure(25, "Structure");
         }
@@ -83,10 +88,29 @@ namespace Structure
             #endregion
             #region Brace_Load
 
+            // General
             braceType_Box.Text = SharedProperties.BraceType;
             clipTHK_Box.Text = Clip.THK.ToString();
             braceHoleDiameter_Box.Text = Clip.HoleDiameter.ToString();
             braceAngle_Box.Text = SharedProperties.BraceAngle.ToString();
+
+
+            // L
+            leg1_Box.Text = AngleBrace.Leg1.ToString();
+            leg2_Box.Text = AngleBrace.Leg2.ToString();
+            gage_Box.Text = AngleBrace.Gage.ToString();
+            thkL_Box.Text = AngleBrace.THK.ToString();
+            kL_Box.Text = AngleBrace.K.ToString();
+
+
+            // WT
+            depthWT_Box.Text = BraceT.Depth.ToString();
+            stemTHKWT_Box.Text = BraceT.StemTHK.ToString();
+            flangeWidthWT_Box.Text = BraceT.FlangeWidth.ToString();
+            flangeTHKWT_Box.Text = BraceT.FlangeTHK.ToString();
+            kWT_Box.Text = BraceT.K.ToString();
+            k1WT_Box.Text = BraceT.K1.ToString();
+            flangeGageWT_Box.Text = BraceT.FlangeGage.ToString();
 
             #endregion
         }
@@ -286,25 +310,94 @@ namespace Structure
         #endregion
         #region Braced_Changed
 
-        private void braceType_Box_SelectedIndexChanged(object sender, EventArgs e)
+        // General
+        private void braceType_Box_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             SharedProperties.BraceType = braceType_Box.Text;
         }
-        private void thk_Box_TextChanged(object sender, EventArgs e)
+        private void clipTHK_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(clipTHK_Box.Text, out double value))
                 Clip.THK = value;
         }
-        private void braceHoleDiameter_Box_TextChanged(object sender, EventArgs e)
+        private void braceHoleDiameter_Box_TextChanged_1(object sender, EventArgs e)
         {
             if (double.TryParse(braceHoleDiameter_Box.Text, out double value))
                 Clip.HoleDiameter = value;
         }
-        private void braceAngle_Box_TextChanged(object sender, EventArgs e)
+        private void braceAngle_Box_TextChanged_1(object sender, EventArgs e)
         {
             if (double.TryParse(braceAngle_Box.Text, out double value))
                 SharedProperties.BraceAngle = value;
         }
+
+
+        // L
+        private void leg1_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(leg1_Box.Text, out double value))
+                AngleBrace.Leg1 = value;
+        }
+        private void leg2_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(leg2_Box.Text, out double value))
+                AngleBrace.Leg2 = value;
+        }
+        private void gage_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(gage_Box.Text, out double value))
+                AngleBrace.Gage = value;
+        }
+        private void thk_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(thkL_Box.Text, out double value))
+                AngleBrace.THK = value;
+
+        }
+        private void kL_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(kL_Box.Text, out double value))
+                AngleBrace.K = value;
+        }
+
+
+        // WT
+        private void depthWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(depthWT_Box.Text, out double value))
+                BraceT.Depth = value;
+        }
+        private void stemTHKWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(stemTHKWT_Box.Text, out double value))
+                BraceT.StemTHK = value;
+        }
+        private void flangeWidthWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(flangeWidthWT_Box.Text, out double value))
+                BraceT.FlangeWidth = value;
+        }
+        private void flangeTHKWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(flangeTHKWT_Box.Text, out double value))
+                BraceT.FlangeTHK = value;
+        }
+        private void kWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(kWT_Box.Text, out double value))
+                BraceT.K = value;
+        }
+        private void k1WT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(k1WT_Box.Text, out double value))
+                BraceT.K1 = value;
+        }
+        private void flangeGageWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(flangeGageWT_Box.Text, out double value))
+                BraceT.FlangeGage = value;
+        }
+
 
         #endregion
 

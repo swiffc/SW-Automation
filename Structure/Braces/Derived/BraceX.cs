@@ -12,7 +12,7 @@ using static Tools.ModelTools;
 
 namespace Structure.Braces
 {
-    internal class BraceX : Part
+    internal class BraceX : AngleBrace
     {
         // Static properties
         static public double LocalLength
@@ -39,18 +39,9 @@ namespace Structure.Braces
         public BraceX(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
 
-        // Method overrides
-        protected override void Dimensions()
-        {
-            EditDimension("Length", "L", LocalLength);
-        }
-
-
         // Property overrides
         public override bool Enabled => new[] { "X", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "131X";
-        public override Shape RawMaterialShape => Shape.Angle;
-        public override string SizeOrThickness => "3x3x0.25";
         public override List<PositionData> Position
         {
             get

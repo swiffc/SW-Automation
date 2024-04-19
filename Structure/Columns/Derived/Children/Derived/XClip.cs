@@ -38,7 +38,6 @@ namespace Structure.Columns.Derived.Children.Derived
 
             EditDimension("Offset", "sk:Plate", OffsetFromColumnCenter);
             EditDimension("HoleToColumnBounds", "sk:Plate", ColumnBoundToNearestHole);
-            EditDimension("THK", "Plate", THK);
             EditDimension("Angle", "sk:Plate", LocalAngle);
         }
 

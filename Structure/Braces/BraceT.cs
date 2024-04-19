@@ -17,126 +17,14 @@ namespace Structure.Braces
     {
         // Static properties
         static public string Size { get; set; } = "WT2x6.5";
+        static public double Depth { get; set; } = 2.125;
+        static public double StemTHK { get; set; } = 0.25;
+        static public double FlangeWidth { get; set; } = 4;
+        static public double FlangeTHK { get; set; } = 0.375;
+        static public double K { get; set; } = 0.6875;
+        static public double K1 { get; set; } = 0.4375;
+        static public double FlangeGage { get; set; } = 2.25;
         static public double HoleToEnd => 1.125;
-        static public double Depth
-        {
-            get
-            {
-                if (_depth.HasValue)
-                {
-                    return _depth.Value;
-                }
-
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.Depth;
-                }
-                else
-                {
-                    return 2.125;
-                }
-            }
-            set
-            {
-                _depth = value;
-            }
-        }
-        static public double StemTHK
-        {
-            get
-            {
-                if (_stemTHK.HasValue)
-                {
-                    return _stemTHK.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.WebTHK;
-                }
-                return 0.25;
-            }
-            set { _stemTHK = value; }
-        }
-        static public double FlangeWidth
-        {
-            get
-            {
-                if (_flangeWidth.HasValue)
-                {
-                    return _flangeWidth.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.FlangeWidth;
-                }
-                return 4;
-            }
-            set { _flangeWidth = value; }
-        }
-        static public double FlangeTHK
-        {
-            get
-            {
-                if (_flangeTHK.HasValue)
-                {
-                    return _flangeTHK.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.FlgTHK;
-                }
-                return .375;
-            }
-            set { _flangeTHK = value; }
-        }
-        static public double K
-        {
-            get
-            {
-                if (_k.HasValue)
-                {
-                    return _k.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.K;
-                }
-                return 0.6875;
-            }
-            set { _k = value; }
-        }
-        static public double K1
-        {
-            get
-            {
-                if (_k1.HasValue)
-                {
-                    return _k1.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.K1;
-                }
-                return 0.4375;
-            }
-            set { _k1 = value; }
-        }
-        static public double FlangeGage
-        {
-            get
-            {
-                if (_flangeGage.HasValue)
-                {
-                    return _flangeGage.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(Size, out var wShape))
-                {
-                    return wShape.FlangeGage;
-                }
-                return 2.25;
-            }
-            set { _flangeGage = value; }
-        }
 
 
         // Constructor
@@ -148,6 +36,15 @@ namespace Structure.Braces
         {
             CalculateLengthAndPositionData();
             EditDimension("Length", "T", (double)_length);
+            EditDimension("Diameter", "sk:Hole", Clip.HoleDiameter);
+
+            EditDimension("Depth", "sk:T", Depth);
+            EditDimension("StemTHK", "sk:T", StemTHK);
+            EditDimension("FlangeWidth", "sk:T", FlangeWidth);
+            EditDimension("FlangeTHK", "sk:T", FlangeTHK);
+            EditDimension("K", "sk:T", K);
+            EditDimension("K1", "sk:T", K1);
+            EditDimension("FlangeGage", "sk:Hole", FlangeGage);
         }
 
 
@@ -242,13 +139,6 @@ namespace Structure.Braces
 
 
         // Private properties
-        private static double? _depth;
-        private static double? _stemTHK;
-        private static double? _flangeWidth;
-        private static double? _flangeTHK;
-        private static double? _k;
-        private static double? _k1;
-        private static double? _flangeGage;
         private double? _length;
         private PositionData? _position;
     }

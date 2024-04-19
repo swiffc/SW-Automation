@@ -22,7 +22,7 @@
 
         #endregion
         static public double ClipHeight { get; set; } = 20;
-        private static string _braceType = "LL";
+        private static string _braceType = "L";
         #region BraceType Rules
 
         public static string BraceType

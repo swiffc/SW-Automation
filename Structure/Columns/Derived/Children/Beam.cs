@@ -11,7 +11,7 @@ namespace Structure.Columns.Derived.Children
     internal class Beam : Part
     {
         // Static properties
-        static internal string Size { get; set; } = "W6x15";
+        static internal string Size { get; set; } = "6x15";
         internal static double Depth
         {
             get

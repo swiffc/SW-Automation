@@ -25,6 +25,7 @@ namespace Structure.Braces
         protected override void Dimensions()
         {
             EditDimension("THK", "Plate", Clip.THK);
+            EditDimension("Diameter", "sk:Hole", Clip.HoleDiameter);
         }
 
 

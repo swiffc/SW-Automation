@@ -12,7 +12,7 @@ using System;
 
 namespace Structure.Braces.Derived
 {
-    internal class BraceL : Part
+    internal class BraceL : AngleBrace
     {
         // Static properties
         static public double LocalLength
@@ -33,6 +33,8 @@ namespace Structure.Braces.Derived
                 double plenumClipTranslation = horz;
                 double braceLength = diag + HoleToEnd * 2;
 
+
+
                 return braceLength;
             }
         }
@@ -47,7 +49,7 @@ namespace Structure.Braces.Derived
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "L", LocalLength);
+            base.Dimensions();
 
             IntermediateHoles(out double count, out double spacing);
             EditDimension("Count", "sk:Hole", count);
@@ -226,8 +228,6 @@ namespace Structure.Braces.Derived
         // Property overrides
         public override bool Enabled => new[] { "L", "LL" }.Contains(BraceType);
         public override string StaticPartNo => "131L";
-        public override Shape RawMaterialShape => Shape.Angle;
-        public override string SizeOrThickness => "3x3x0.25";
         public override List<PositionData> Position
         {
             get

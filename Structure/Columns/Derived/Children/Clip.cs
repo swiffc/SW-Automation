@@ -50,6 +50,7 @@ namespace Structure.Columns.Derived.Children
         {
             EditDimension("Diameter", "sk:Plate", HoleDiameter);
             EditDimension("HoleToEdge", "sk:Plate", HoleToEdge);
+            EditDimension("THK", "Plate", THK);
         }
 
     }

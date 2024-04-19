@@ -30,21 +30,8 @@
         {
             this.txt_HandrailBank = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
-            this.clipTHK_Box = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.braceAngle_Box = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.braceHoleDiameter_Box = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.beamSize_Box = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.braceType_Box = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.rotate_Box = new System.Windows.Forms.CheckBox();
             this.initials_Box = new System.Windows.Forms.TextBox();
@@ -83,6 +70,43 @@
             this.label7 = new System.Windows.Forms.Label();
             this.width_TextBox = new System.Windows.Forms.TextBox();
             this.btn_Standard = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.flangeGageWT_Box = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.k1WT_Box = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.kWT_Box = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.flangeTHKWT_Box = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.flangeWidthWT_Box = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.stemTHKWT_Box = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.depthWT_Box = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.kL_Box = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.thkL_Box = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.gage_Box = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.leg2_Box = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.leg1_Box = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.clipTHK_Box = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.braceAngle_Box = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.braceHoleDiameter_Box = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.braceType_Box = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox_K1 = new System.Windows.Forms.TextBox();
@@ -99,36 +123,25 @@
             this.label32 = new System.Windows.Forms.Label();
             this.txt_HandrailBank.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_HandrailBank
             // 
             this.txt_HandrailBank.Controls.Add(this.tabPage2);
+            this.txt_HandrailBank.Controls.Add(this.tabPage3);
             this.txt_HandrailBank.Controls.Add(this.tabPage1);
             this.txt_HandrailBank.Location = new System.Drawing.Point(12, 12);
             this.txt_HandrailBank.Name = "txt_HandrailBank";
             this.txt_HandrailBank.SelectedIndex = 0;
-            this.txt_HandrailBank.Size = new System.Drawing.Size(425, 633);
+            this.txt_HandrailBank.Size = new System.Drawing.Size(425, 464);
             this.txt_HandrailBank.TabIndex = 1;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label25);
-            this.tabPage2.Controls.Add(this.clipTHK_Box);
-            this.tabPage2.Controls.Add(this.label24);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.braceAngle_Box);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.braceHoleDiameter_Box);
-            this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.beamSize_Box);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.braceType_Box);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.rotate_Box);
             this.tabPage2.Controls.Add(this.initials_Box);
@@ -169,102 +182,10 @@
             this.tabPage2.Controls.Add(this.btn_Standard);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(417, 607);
+            this.tabPage2.Size = new System.Drawing.Size(417, 438);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Structure";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(326, 122);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(76, 13);
-            this.label25.TabIndex = 71;
-            this.label25.Text = "Clip Thickness";
-            // 
-            // clipTHK_Box
-            // 
-            this.clipTHK_Box.Location = new System.Drawing.Point(220, 119);
-            this.clipTHK_Box.Name = "clipTHK_Box";
-            this.clipTHK_Box.Size = new System.Drawing.Size(100, 20);
-            this.clipTHK_Box.TabIndex = 70;
-            this.clipTHK_Box.TextChanged += new System.EventHandler(this.thk_Box_TextChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(326, 96);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(12, 13);
-            this.label24.TabIndex = 69;
-            this.label24.Text = "y";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(220, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 68;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(326, 70);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(12, 13);
-            this.label23.TabIndex = 67;
-            this.label23.Text = "x";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(220, 67);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 66;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(326, 174);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(34, 13);
-            this.label22.TabIndex = 65;
-            this.label22.Text = "Angle";
-            // 
-            // braceAngle_Box
-            // 
-            this.braceAngle_Box.Location = new System.Drawing.Point(220, 171);
-            this.braceAngle_Box.Name = "braceAngle_Box";
-            this.braceAngle_Box.Size = new System.Drawing.Size(100, 20);
-            this.braceAngle_Box.TabIndex = 64;
-            this.braceAngle_Box.TextChanged += new System.EventHandler(this.braceAngle_Box_TextChanged);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(326, 148);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(74, 13);
-            this.label21.TabIndex = 63;
-            this.label21.Text = "Hole Diameter";
-            // 
-            // braceHoleDiameter_Box
-            // 
-            this.braceHoleDiameter_Box.Location = new System.Drawing.Point(220, 145);
-            this.braceHoleDiameter_Box.Name = "braceHoleDiameter_Box";
-            this.braceHoleDiameter_Box.Size = new System.Drawing.Size(100, 20);
-            this.braceHoleDiameter_Box.TabIndex = 62;
-            this.braceHoleDiameter_Box.TextChanged += new System.EventHandler(this.braceHoleDiameter_Box_TextChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(326, 44);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 13);
-            this.label20.TabIndex = 61;
-            this.label20.Text = "Type";
             // 
             // beamSize_Box
             // 
@@ -274,7 +195,7 @@
             "W6x20",
             "W6x25",
             "W8x31"});
-            this.beamSize_Box.Location = new System.Drawing.Point(3, 117);
+            this.beamSize_Box.Location = new System.Drawing.Point(18, 117);
             this.beamSize_Box.Name = "beamSize_Box";
             this.beamSize_Box.Size = new System.Drawing.Size(100, 21);
             this.beamSize_Box.TabIndex = 60;
@@ -283,19 +204,676 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(109, 121);
+            this.label19.Location = new System.Drawing.Point(124, 121);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(57, 13);
             this.label19.TabIndex = 59;
             this.label19.Text = "Beam Size";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(126, 166);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 13);
+            this.label17.TabIndex = 55;
+            this.label17.Text = "Rotate 90°";
+            // 
+            // rotate_Box
+            // 
+            this.rotate_Box.AutoSize = true;
+            this.rotate_Box.Location = new System.Drawing.Point(103, 165);
+            this.rotate_Box.Name = "rotate_Box";
+            this.rotate_Box.Size = new System.Drawing.Size(15, 14);
+            this.rotate_Box.TabIndex = 54;
+            this.rotate_Box.UseVisualStyleBackColor = true;
+            this.rotate_Box.CheckedChanged += new System.EventHandler(this.rotate_Box_CheckedChanged);
+            // 
+            // initials_Box
+            // 
+            this.initials_Box.Location = new System.Drawing.Point(272, 360);
+            this.initials_Box.Name = "initials_Box";
+            this.initials_Box.Size = new System.Drawing.Size(100, 20);
+            this.initials_Box.TabIndex = 53;
+            // 
+            // itemNumber_Box
+            // 
+            this.itemNumber_Box.Location = new System.Drawing.Point(272, 331);
+            this.itemNumber_Box.Name = "itemNumber_Box";
+            this.itemNumber_Box.Size = new System.Drawing.Size(100, 20);
+            this.itemNumber_Box.TabIndex = 52;
+            // 
+            // purchaseOrder_Box
+            // 
+            this.purchaseOrder_Box.Location = new System.Drawing.Point(272, 305);
+            this.purchaseOrder_Box.Name = "purchaseOrder_Box";
+            this.purchaseOrder_Box.Size = new System.Drawing.Size(100, 20);
+            this.purchaseOrder_Box.TabIndex = 51;
+            // 
+            // location_Box
+            // 
+            this.location_Box.Location = new System.Drawing.Point(272, 279);
+            this.location_Box.Name = "location_Box";
+            this.location_Box.Size = new System.Drawing.Size(100, 20);
+            this.location_Box.TabIndex = 50;
+            // 
+            // client_Box
+            // 
+            this.client_Box.Location = new System.Drawing.Point(272, 253);
+            this.client_Box.Name = "client_Box";
+            this.client_Box.Size = new System.Drawing.Size(100, 20);
+            this.client_Box.TabIndex = 49;
+            // 
+            // customer_Box
+            // 
+            this.customer_Box.Location = new System.Drawing.Point(272, 227);
+            this.customer_Box.Name = "customer_Box";
+            this.customer_Box.Size = new System.Drawing.Size(100, 20);
+            this.customer_Box.TabIndex = 48;
+            // 
+            // job_Box
+            // 
+            this.job_Box.Location = new System.Drawing.Point(272, 201);
+            this.job_Box.Name = "job_Box";
+            this.job_Box.Size = new System.Drawing.Size(100, 20);
+            this.job_Box.TabIndex = 47;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(234, 124);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 13);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Machinery Mount";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(334, 144);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Height";
+            // 
+            // mmHeight_Box
+            // 
+            this.mmHeight_Box.Location = new System.Drawing.Point(228, 141);
+            this.mmHeight_Box.Name = "mmHeight_Box";
+            this.mmHeight_Box.Size = new System.Drawing.Size(100, 20);
+            this.mmHeight_Box.TabIndex = 44;
+            this.mmHeight_Box.TextChanged += new System.EventHandler(this.mmHeight_Box_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(334, 65);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(36, 13);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Depth";
+            // 
+            // depth_Box
+            // 
+            this.depth_Box.Location = new System.Drawing.Point(228, 62);
+            this.depth_Box.Name = "depth_Box";
+            this.depth_Box.Size = new System.Drawing.Size(100, 20);
+            this.depth_Box.TabIndex = 42;
+            this.depth_Box.TextChanged += new System.EventHandler(this.depth_Box_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(253, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 13);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Plenum";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(122, 331);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 13);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Hole Diameter";
+            // 
+            // dia_Box
+            // 
+            this.dia_Box.Location = new System.Drawing.Point(16, 328);
+            this.dia_Box.Name = "dia_Box";
+            this.dia_Box.Size = new System.Drawing.Size(100, 20);
+            this.dia_Box.TabIndex = 39;
+            this.dia_Box.TextChanged += new System.EventHandler(this.dia_Box_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(122, 305);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 13);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Hole-to-Hole (length)";
+            // 
+            // lSPA_Box
+            // 
+            this.lSPA_Box.Location = new System.Drawing.Point(16, 302);
+            this.lSPA_Box.Name = "lSPA_Box";
+            this.lSPA_Box.Size = new System.Drawing.Size(100, 20);
+            this.lSPA_Box.TabIndex = 37;
+            this.lSPA_Box.TextChanged += new System.EventHandler(this.lSPA_Box_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(122, 279);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 13);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Hole-to-Hole (width)";
+            // 
+            // wSPA_Box
+            // 
+            this.wSPA_Box.Location = new System.Drawing.Point(16, 276);
+            this.wSPA_Box.Name = "wSPA_Box";
+            this.wSPA_Box.Size = new System.Drawing.Size(100, 20);
+            this.wSPA_Box.TabIndex = 35;
+            this.wSPA_Box.TextChanged += new System.EventHandler(this.wSPA_Box_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(122, 253);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Length";
+            // 
+            // bpLength_Box
+            // 
+            this.bpLength_Box.Location = new System.Drawing.Point(16, 250);
+            this.bpLength_Box.Name = "bpLength_Box";
+            this.bpLength_Box.Size = new System.Drawing.Size(100, 20);
+            this.bpLength_Box.TabIndex = 33;
+            this.bpLength_Box.TextChanged += new System.EventHandler(this.bpLength_Box_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(122, 227);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Width";
+            // 
+            // bpWidth_Box
+            // 
+            this.bpWidth_Box.Location = new System.Drawing.Point(16, 224);
+            this.bpWidth_Box.Name = "bpWidth_Box";
+            this.bpWidth_Box.Size = new System.Drawing.Size(100, 20);
+            this.bpWidth_Box.TabIndex = 31;
+            this.bpWidth_Box.TextChanged += new System.EventHandler(this.bpWidth_Box_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Base Plate";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Columns";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(334, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Fan Count";
+            // 
+            // fanCount_Box
+            // 
+            this.fanCount_Box.Location = new System.Drawing.Point(228, 36);
+            this.fanCount_Box.Name = "fanCount_Box";
+            this.fanCount_Box.Size = new System.Drawing.Size(100, 20);
+            this.fanCount_Box.TabIndex = 27;
+            this.fanCount_Box.TextChanged += new System.EventHandler(this.fanCount_Box_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(126, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Mid Columns";
+            // 
+            // midColumns_Box
+            // 
+            this.midColumns_Box.AutoSize = true;
+            this.midColumns_Box.Location = new System.Drawing.Point(103, 144);
+            this.midColumns_Box.Name = "midColumns_Box";
+            this.midColumns_Box.Size = new System.Drawing.Size(15, 14);
+            this.midColumns_Box.TabIndex = 25;
+            this.midColumns_Box.UseVisualStyleBackColor = true;
+            this.midColumns_Box.CheckedChanged += new System.EventHandler(this.midColumn_Box_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(124, 95);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Height";
+            // 
+            // height_TextBox
+            // 
+            this.height_TextBox.Location = new System.Drawing.Point(18, 92);
+            this.height_TextBox.Name = "height_TextBox";
+            this.height_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.height_TextBox.TabIndex = 23;
+            this.height_TextBox.TextChanged += new System.EventHandler(this.height_TextBox_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(124, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Length";
+            // 
+            // length_TextBox
+            // 
+            this.length_TextBox.Location = new System.Drawing.Point(18, 66);
+            this.length_TextBox.Name = "length_TextBox";
+            this.length_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.length_TextBox.TabIndex = 21;
+            this.length_TextBox.TextChanged += new System.EventHandler(this.length_TextBox_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(124, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Width ";
+            // 
+            // width_TextBox
+            // 
+            this.width_TextBox.Location = new System.Drawing.Point(18, 40);
+            this.width_TextBox.Name = "width_TextBox";
+            this.width_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.width_TextBox.TabIndex = 19;
+            this.width_TextBox.TextChanged += new System.EventHandler(this.width_TextBox_TextChanged);
+            // 
+            // btn_Standard
+            // 
+            this.btn_Standard.Location = new System.Drawing.Point(152, 396);
+            this.btn_Standard.Name = "btn_Standard";
+            this.btn_Standard.Size = new System.Drawing.Size(85, 24);
+            this.btn_Standard.TabIndex = 18;
+            this.btn_Standard.Text = "Structure";
+            this.btn_Standard.UseVisualStyleBackColor = true;
+            this.btn_Standard.Click += new System.EventHandler(this.btn_Standard_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.label44);
+            this.tabPage3.Controls.Add(this.label42);
+            this.tabPage3.Controls.Add(this.flangeGageWT_Box);
+            this.tabPage3.Controls.Add(this.label43);
+            this.tabPage3.Controls.Add(this.k1WT_Box);
+            this.tabPage3.Controls.Add(this.label37);
+            this.tabPage3.Controls.Add(this.kWT_Box);
+            this.tabPage3.Controls.Add(this.label38);
+            this.tabPage3.Controls.Add(this.flangeTHKWT_Box);
+            this.tabPage3.Controls.Add(this.label39);
+            this.tabPage3.Controls.Add(this.flangeWidthWT_Box);
+            this.tabPage3.Controls.Add(this.label40);
+            this.tabPage3.Controls.Add(this.stemTHKWT_Box);
+            this.tabPage3.Controls.Add(this.label41);
+            this.tabPage3.Controls.Add(this.depthWT_Box);
+            this.tabPage3.Controls.Add(this.label36);
+            this.tabPage3.Controls.Add(this.label35);
+            this.tabPage3.Controls.Add(this.kL_Box);
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.thkL_Box);
+            this.tabPage3.Controls.Add(this.label33);
+            this.tabPage3.Controls.Add(this.gage_Box);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.leg2_Box);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.leg1_Box);
+            this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.clipTHK_Box);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.braceAngle_Box);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.braceHoleDiameter_Box);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.braceType_Box);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(417, 438);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "Braces";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(152, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 24);
+            this.button1.TabIndex = 107;
+            this.button1.Text = "Structure";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(256, 170);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(25, 13);
+            this.label44.TabIndex = 106;
+            this.label44.Text = "WT";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(328, 352);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(68, 13);
+            this.label42.TabIndex = 105;
+            this.label42.Text = "Flange Gage";
+            // 
+            // flangeGageWT_Box
+            // 
+            this.flangeGageWT_Box.Location = new System.Drawing.Point(222, 349);
+            this.flangeGageWT_Box.Name = "flangeGageWT_Box";
+            this.flangeGageWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.flangeGageWT_Box.TabIndex = 104;
+            this.flangeGageWT_Box.TextChanged += new System.EventHandler(this.flangeGageWT_Box_TextChanged);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(328, 326);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(20, 13);
+            this.label43.TabIndex = 103;
+            this.label43.Text = "K1";
+            // 
+            // k1WT_Box
+            // 
+            this.k1WT_Box.Location = new System.Drawing.Point(222, 323);
+            this.k1WT_Box.Name = "k1WT_Box";
+            this.k1WT_Box.Size = new System.Drawing.Size(100, 20);
+            this.k1WT_Box.TabIndex = 102;
+            this.k1WT_Box.TextChanged += new System.EventHandler(this.k1WT_Box_TextChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(328, 300);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(14, 13);
+            this.label37.TabIndex = 101;
+            this.label37.Text = "K";
+            // 
+            // kWT_Box
+            // 
+            this.kWT_Box.Location = new System.Drawing.Point(222, 297);
+            this.kWT_Box.Name = "kWT_Box";
+            this.kWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.kWT_Box.TabIndex = 100;
+            this.kWT_Box.TextChanged += new System.EventHandler(this.kWT_Box_TextChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(328, 274);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(64, 13);
+            this.label38.TabIndex = 99;
+            this.label38.Text = "Flange THK";
+            // 
+            // flangeTHKWT_Box
+            // 
+            this.flangeTHKWT_Box.Location = new System.Drawing.Point(222, 271);
+            this.flangeTHKWT_Box.Name = "flangeTHKWT_Box";
+            this.flangeTHKWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.flangeTHKWT_Box.TabIndex = 98;
+            this.flangeTHKWT_Box.TextChanged += new System.EventHandler(this.flangeTHKWT_Box_TextChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(328, 248);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(70, 13);
+            this.label39.TabIndex = 97;
+            this.label39.Text = "Flange Width";
+            // 
+            // flangeWidthWT_Box
+            // 
+            this.flangeWidthWT_Box.Location = new System.Drawing.Point(222, 245);
+            this.flangeWidthWT_Box.Name = "flangeWidthWT_Box";
+            this.flangeWidthWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.flangeWidthWT_Box.TabIndex = 96;
+            this.flangeWidthWT_Box.TextChanged += new System.EventHandler(this.flangeWidthWT_Box_TextChanged);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(328, 222);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(53, 13);
+            this.label40.TabIndex = 95;
+            this.label40.Text = "StemTHK";
+            // 
+            // stemTHKWT_Box
+            // 
+            this.stemTHKWT_Box.Location = new System.Drawing.Point(222, 219);
+            this.stemTHKWT_Box.Name = "stemTHKWT_Box";
+            this.stemTHKWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.stemTHKWT_Box.TabIndex = 94;
+            this.stemTHKWT_Box.TextChanged += new System.EventHandler(this.stemTHKWT_Box_TextChanged);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(328, 196);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(36, 13);
+            this.label41.TabIndex = 93;
+            this.label41.Text = "Depth";
+            // 
+            // depthWT_Box
+            // 
+            this.depthWT_Box.Location = new System.Drawing.Point(222, 193);
+            this.depthWT_Box.Name = "depthWT_Box";
+            this.depthWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.depthWT_Box.TabIndex = 92;
+            this.depthWT_Box.TextChanged += new System.EventHandler(this.depthWT_Box_TextChanged);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(66, 170);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(13, 13);
+            this.label36.TabIndex = 91;
+            this.label36.Text = "L";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(133, 300);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(14, 13);
+            this.label35.TabIndex = 90;
+            this.label35.Text = "K";
+            // 
+            // kL_Box
+            // 
+            this.kL_Box.Location = new System.Drawing.Point(27, 297);
+            this.kL_Box.Name = "kL_Box";
+            this.kL_Box.Size = new System.Drawing.Size(100, 20);
+            this.kL_Box.TabIndex = 89;
+            this.kL_Box.TextChanged += new System.EventHandler(this.kL_Box_TextChanged);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(133, 274);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(29, 13);
+            this.label34.TabIndex = 88;
+            this.label34.Text = "THK";
+            // 
+            // thkL_Box
+            // 
+            this.thkL_Box.Location = new System.Drawing.Point(27, 271);
+            this.thkL_Box.Name = "thkL_Box";
+            this.thkL_Box.Size = new System.Drawing.Size(100, 20);
+            this.thkL_Box.TabIndex = 87;
+            this.thkL_Box.TextChanged += new System.EventHandler(this.thk_Box_TextChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(133, 248);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(33, 13);
+            this.label33.TabIndex = 86;
+            this.label33.Text = "Gage";
+            // 
+            // gage_Box
+            // 
+            this.gage_Box.Location = new System.Drawing.Point(27, 245);
+            this.gage_Box.Name = "gage_Box";
+            this.gage_Box.Size = new System.Drawing.Size(100, 20);
+            this.gage_Box.TabIndex = 85;
+            this.gage_Box.TextChanged += new System.EventHandler(this.gage_Box_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(133, 222);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(31, 13);
+            this.label24.TabIndex = 84;
+            this.label24.Text = "Leg2";
+            // 
+            // leg2_Box
+            // 
+            this.leg2_Box.Location = new System.Drawing.Point(27, 219);
+            this.leg2_Box.Name = "leg2_Box";
+            this.leg2_Box.Size = new System.Drawing.Size(100, 20);
+            this.leg2_Box.TabIndex = 83;
+            this.leg2_Box.TextChanged += new System.EventHandler(this.leg2_Box_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(133, 196);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 13);
+            this.label23.TabIndex = 82;
+            this.label23.Text = "Leg1";
+            // 
+            // leg1_Box
+            // 
+            this.leg1_Box.Location = new System.Drawing.Point(27, 193);
+            this.leg1_Box.Name = "leg1_Box";
+            this.leg1_Box.Size = new System.Drawing.Size(100, 20);
+            this.leg1_Box.TabIndex = 81;
+            this.leg1_Box.TextChanged += new System.EventHandler(this.leg1_Box_TextChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(240, 66);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(76, 13);
+            this.label25.TabIndex = 80;
+            this.label25.Text = "Clip Thickness";
+            // 
+            // clipTHK_Box
+            // 
+            this.clipTHK_Box.Location = new System.Drawing.Point(134, 63);
+            this.clipTHK_Box.Name = "clipTHK_Box";
+            this.clipTHK_Box.Size = new System.Drawing.Size(100, 20);
+            this.clipTHK_Box.TabIndex = 79;
+            this.clipTHK_Box.TextChanged += new System.EventHandler(this.clipTHK_Box_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(240, 118);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(34, 13);
+            this.label22.TabIndex = 78;
+            this.label22.Text = "Angle";
+            // 
+            // braceAngle_Box
+            // 
+            this.braceAngle_Box.Location = new System.Drawing.Point(134, 115);
+            this.braceAngle_Box.Name = "braceAngle_Box";
+            this.braceAngle_Box.Size = new System.Drawing.Size(100, 20);
+            this.braceAngle_Box.TabIndex = 77;
+            this.braceAngle_Box.TextChanged += new System.EventHandler(this.braceAngle_Box_TextChanged_1);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(240, 92);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(74, 13);
+            this.label21.TabIndex = 76;
+            this.label21.Text = "Hole Diameter";
+            // 
+            // braceHoleDiameter_Box
+            // 
+            this.braceHoleDiameter_Box.Location = new System.Drawing.Point(134, 89);
+            this.braceHoleDiameter_Box.Name = "braceHoleDiameter_Box";
+            this.braceHoleDiameter_Box.Size = new System.Drawing.Size(100, 20);
+            this.braceHoleDiameter_Box.TabIndex = 75;
+            this.braceHoleDiameter_Box.TextChanged += new System.EventHandler(this.braceHoleDiameter_Box_TextChanged_1);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(240, 40);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(31, 13);
+            this.label20.TabIndex = 74;
+            this.label20.Text = "Type";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(246, 22);
+            this.label18.Location = new System.Drawing.Point(160, 18);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(40, 13);
-            this.label18.TabIndex = 57;
+            this.label18.TabIndex = 73;
             this.label18.Text = "Braces";
             // 
             // braceType_Box
@@ -307,331 +885,11 @@
             "T",
             "X",
             "TX"});
-            this.braceType_Box.Location = new System.Drawing.Point(220, 40);
+            this.braceType_Box.Location = new System.Drawing.Point(134, 36);
             this.braceType_Box.Name = "braceType_Box";
             this.braceType_Box.Size = new System.Drawing.Size(100, 21);
-            this.braceType_Box.TabIndex = 56;
-            this.braceType_Box.SelectedIndexChanged += new System.EventHandler(this.braceType_Box_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(111, 166);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 13);
-            this.label17.TabIndex = 55;
-            this.label17.Text = "Rotate 90°";
-            // 
-            // rotate_Box
-            // 
-            this.rotate_Box.AutoSize = true;
-            this.rotate_Box.Location = new System.Drawing.Point(88, 165);
-            this.rotate_Box.Name = "rotate_Box";
-            this.rotate_Box.Size = new System.Drawing.Size(15, 14);
-            this.rotate_Box.TabIndex = 54;
-            this.rotate_Box.UseVisualStyleBackColor = true;
-            this.rotate_Box.CheckedChanged += new System.EventHandler(this.rotate_Box_CheckedChanged);
-            // 
-            // initials_Box
-            // 
-            this.initials_Box.Location = new System.Drawing.Point(270, 461);
-            this.initials_Box.Name = "initials_Box";
-            this.initials_Box.Size = new System.Drawing.Size(100, 20);
-            this.initials_Box.TabIndex = 53;
-            // 
-            // itemNumber_Box
-            // 
-            this.itemNumber_Box.Location = new System.Drawing.Point(270, 432);
-            this.itemNumber_Box.Name = "itemNumber_Box";
-            this.itemNumber_Box.Size = new System.Drawing.Size(100, 20);
-            this.itemNumber_Box.TabIndex = 52;
-            // 
-            // purchaseOrder_Box
-            // 
-            this.purchaseOrder_Box.Location = new System.Drawing.Point(270, 406);
-            this.purchaseOrder_Box.Name = "purchaseOrder_Box";
-            this.purchaseOrder_Box.Size = new System.Drawing.Size(100, 20);
-            this.purchaseOrder_Box.TabIndex = 51;
-            // 
-            // location_Box
-            // 
-            this.location_Box.Location = new System.Drawing.Point(270, 380);
-            this.location_Box.Name = "location_Box";
-            this.location_Box.Size = new System.Drawing.Size(100, 20);
-            this.location_Box.TabIndex = 50;
-            // 
-            // client_Box
-            // 
-            this.client_Box.Location = new System.Drawing.Point(270, 354);
-            this.client_Box.Name = "client_Box";
-            this.client_Box.Size = new System.Drawing.Size(100, 20);
-            this.client_Box.TabIndex = 49;
-            // 
-            // customer_Box
-            // 
-            this.customer_Box.Location = new System.Drawing.Point(270, 328);
-            this.customer_Box.Name = "customer_Box";
-            this.customer_Box.Size = new System.Drawing.Size(100, 20);
-            this.customer_Box.TabIndex = 48;
-            // 
-            // job_Box
-            // 
-            this.job_Box.Location = new System.Drawing.Point(270, 302);
-            this.job_Box.Name = "job_Box";
-            this.job_Box.Size = new System.Drawing.Size(100, 20);
-            this.job_Box.TabIndex = 47;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 491);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 13);
-            this.label15.TabIndex = 46;
-            this.label15.Text = "Machinery Mount";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(107, 511);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 13);
-            this.label16.TabIndex = 45;
-            this.label16.Text = "Height";
-            // 
-            // mmHeight_Box
-            // 
-            this.mmHeight_Box.Location = new System.Drawing.Point(1, 508);
-            this.mmHeight_Box.Name = "mmHeight_Box";
-            this.mmHeight_Box.Size = new System.Drawing.Size(100, 20);
-            this.mmHeight_Box.TabIndex = 44;
-            this.mmHeight_Box.TextChanged += new System.EventHandler(this.mmHeight_Box_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(107, 432);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 13);
-            this.label14.TabIndex = 43;
-            this.label14.Text = "Depth";
-            // 
-            // depth_Box
-            // 
-            this.depth_Box.Location = new System.Drawing.Point(1, 429);
-            this.depth_Box.Name = "depth_Box";
-            this.depth_Box.Size = new System.Drawing.Size(100, 20);
-            this.depth_Box.TabIndex = 42;
-            this.depth_Box.TextChanged += new System.EventHandler(this.depth_Box_TextChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 387);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 13);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Plenum";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(107, 331);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 13);
-            this.label12.TabIndex = 40;
-            this.label12.Text = "Hole Diameter";
-            // 
-            // dia_Box
-            // 
-            this.dia_Box.Location = new System.Drawing.Point(1, 328);
-            this.dia_Box.Name = "dia_Box";
-            this.dia_Box.Size = new System.Drawing.Size(100, 20);
-            this.dia_Box.TabIndex = 39;
-            this.dia_Box.TextChanged += new System.EventHandler(this.dia_Box_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(107, 305);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 13);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Hole-to-Hole (length)";
-            // 
-            // lSPA_Box
-            // 
-            this.lSPA_Box.Location = new System.Drawing.Point(1, 302);
-            this.lSPA_Box.Name = "lSPA_Box";
-            this.lSPA_Box.Size = new System.Drawing.Size(100, 20);
-            this.lSPA_Box.TabIndex = 37;
-            this.lSPA_Box.TextChanged += new System.EventHandler(this.lSPA_Box_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(107, 279);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 13);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Hole-to-Hole (width)";
-            // 
-            // wSPA_Box
-            // 
-            this.wSPA_Box.Location = new System.Drawing.Point(1, 276);
-            this.wSPA_Box.Name = "wSPA_Box";
-            this.wSPA_Box.Size = new System.Drawing.Size(100, 20);
-            this.wSPA_Box.TabIndex = 35;
-            this.wSPA_Box.TextChanged += new System.EventHandler(this.wSPA_Box_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(107, 253);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Length";
-            // 
-            // bpLength_Box
-            // 
-            this.bpLength_Box.Location = new System.Drawing.Point(1, 250);
-            this.bpLength_Box.Name = "bpLength_Box";
-            this.bpLength_Box.Size = new System.Drawing.Size(100, 20);
-            this.bpLength_Box.TabIndex = 33;
-            this.bpLength_Box.TextChanged += new System.EventHandler(this.bpLength_Box_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(107, 227);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Width";
-            // 
-            // bpWidth_Box
-            // 
-            this.bpWidth_Box.Location = new System.Drawing.Point(1, 224);
-            this.bpWidth_Box.Name = "bpWidth_Box";
-            this.bpWidth_Box.Size = new System.Drawing.Size(100, 20);
-            this.bpWidth_Box.TabIndex = 31;
-            this.bpWidth_Box.TextChanged += new System.EventHandler(this.bpWidth_Box_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Base Plate";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Columns";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 406);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Fan Count";
-            // 
-            // fanCount_Box
-            // 
-            this.fanCount_Box.Location = new System.Drawing.Point(1, 403);
-            this.fanCount_Box.Name = "fanCount_Box";
-            this.fanCount_Box.Size = new System.Drawing.Size(100, 20);
-            this.fanCount_Box.TabIndex = 27;
-            this.fanCount_Box.TextChanged += new System.EventHandler(this.fanCount_Box_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Mid Columns";
-            // 
-            // midColumns_Box
-            // 
-            this.midColumns_Box.AutoSize = true;
-            this.midColumns_Box.Location = new System.Drawing.Point(88, 144);
-            this.midColumns_Box.Name = "midColumns_Box";
-            this.midColumns_Box.Size = new System.Drawing.Size(15, 14);
-            this.midColumns_Box.TabIndex = 25;
-            this.midColumns_Box.UseVisualStyleBackColor = true;
-            this.midColumns_Box.CheckedChanged += new System.EventHandler(this.midColumn_Box_CheckedChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(109, 95);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Height";
-            // 
-            // height_TextBox
-            // 
-            this.height_TextBox.Location = new System.Drawing.Point(3, 92);
-            this.height_TextBox.Name = "height_TextBox";
-            this.height_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.height_TextBox.TabIndex = 23;
-            this.height_TextBox.TextChanged += new System.EventHandler(this.height_TextBox_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Length";
-            // 
-            // length_TextBox
-            // 
-            this.length_TextBox.Location = new System.Drawing.Point(3, 66);
-            this.length_TextBox.Name = "length_TextBox";
-            this.length_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.length_TextBox.TabIndex = 21;
-            this.length_TextBox.TextChanged += new System.EventHandler(this.length_TextBox_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(109, 43);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Width ";
-            // 
-            // width_TextBox
-            // 
-            this.width_TextBox.Location = new System.Drawing.Point(3, 40);
-            this.width_TextBox.Name = "width_TextBox";
-            this.width_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.width_TextBox.TabIndex = 19;
-            this.width_TextBox.TextChanged += new System.EventHandler(this.width_TextBox_TextChanged);
-            // 
-            // btn_Standard
-            // 
-            this.btn_Standard.Location = new System.Drawing.Point(184, 570);
-            this.btn_Standard.Name = "btn_Standard";
-            this.btn_Standard.Size = new System.Drawing.Size(85, 24);
-            this.btn_Standard.TabIndex = 18;
-            this.btn_Standard.Text = "Structure";
-            this.btn_Standard.UseVisualStyleBackColor = true;
-            this.btn_Standard.Click += new System.EventHandler(this.btn_Standard_Click);
+            this.braceType_Box.TabIndex = 72;
+            this.braceType_Box.SelectedIndexChanged += new System.EventHandler(this.braceType_Box_SelectedIndexChanged_1);
             // 
             // tabPage1
             // 
@@ -650,7 +908,7 @@
             this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(417, 607);
+            this.tabPage1.Size = new System.Drawing.Size(417, 438);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Advanced";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -658,7 +916,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(95, 14);
+            this.label26.Location = new System.Drawing.Point(154, 28);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(113, 13);
             this.label26.TabIndex = 25;
@@ -666,7 +924,7 @@
             // 
             // textBox_K1
             // 
-            this.textBox_K1.Location = new System.Drawing.Point(102, 168);
+            this.textBox_K1.Location = new System.Drawing.Point(161, 182);
             this.textBox_K1.Name = "textBox_K1";
             this.textBox_K1.Size = new System.Drawing.Size(100, 20);
             this.textBox_K1.TabIndex = 24;
@@ -674,7 +932,7 @@
             // 
             // textBox_K
             // 
-            this.textBox_K.Location = new System.Drawing.Point(102, 142);
+            this.textBox_K.Location = new System.Drawing.Point(161, 156);
             this.textBox_K.Name = "textBox_K";
             this.textBox_K.Size = new System.Drawing.Size(100, 20);
             this.textBox_K.TabIndex = 22;
@@ -682,7 +940,7 @@
             // 
             // textBox_FlangeTHK
             // 
-            this.textBox_FlangeTHK.Location = new System.Drawing.Point(102, 116);
+            this.textBox_FlangeTHK.Location = new System.Drawing.Point(161, 130);
             this.textBox_FlangeTHK.Name = "textBox_FlangeTHK";
             this.textBox_FlangeTHK.Size = new System.Drawing.Size(100, 20);
             this.textBox_FlangeTHK.TabIndex = 20;
@@ -690,7 +948,7 @@
             // 
             // textBox_FlangeWidth
             // 
-            this.textBox_FlangeWidth.Location = new System.Drawing.Point(102, 90);
+            this.textBox_FlangeWidth.Location = new System.Drawing.Point(161, 104);
             this.textBox_FlangeWidth.Name = "textBox_FlangeWidth";
             this.textBox_FlangeWidth.Size = new System.Drawing.Size(100, 20);
             this.textBox_FlangeWidth.TabIndex = 18;
@@ -698,7 +956,7 @@
             // 
             // textBox_WebTHK
             // 
-            this.textBox_WebTHK.Location = new System.Drawing.Point(102, 64);
+            this.textBox_WebTHK.Location = new System.Drawing.Point(161, 78);
             this.textBox_WebTHK.Name = "textBox_WebTHK";
             this.textBox_WebTHK.Size = new System.Drawing.Size(100, 20);
             this.textBox_WebTHK.TabIndex = 16;
@@ -706,7 +964,7 @@
             // 
             // textBox_Depth
             // 
-            this.textBox_Depth.Location = new System.Drawing.Point(102, 38);
+            this.textBox_Depth.Location = new System.Drawing.Point(161, 52);
             this.textBox_Depth.Name = "textBox_Depth";
             this.textBox_Depth.Size = new System.Drawing.Size(100, 20);
             this.textBox_Depth.TabIndex = 14;
@@ -715,7 +973,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(68, 171);
+            this.label27.Location = new System.Drawing.Point(127, 185);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(20, 13);
             this.label27.TabIndex = 23;
@@ -724,7 +982,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(74, 145);
+            this.label28.Location = new System.Drawing.Point(133, 159);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(14, 13);
             this.label28.TabIndex = 21;
@@ -733,7 +991,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(27, 119);
+            this.label29.Location = new System.Drawing.Point(86, 133);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(61, 13);
             this.label29.TabIndex = 19;
@@ -742,7 +1000,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(18, 93);
+            this.label30.Location = new System.Drawing.Point(77, 107);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(70, 13);
             this.label30.TabIndex = 17;
@@ -751,7 +1009,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(36, 67);
+            this.label31.Location = new System.Drawing.Point(95, 81);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(52, 13);
             this.label31.TabIndex = 15;
@@ -760,7 +1018,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(52, 41);
+            this.label32.Location = new System.Drawing.Point(111, 55);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(36, 13);
             this.label32.TabIndex = 13;
@@ -770,7 +1028,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 657);
+            this.ClientSize = new System.Drawing.Size(452, 491);
             this.Controls.Add(this.txt_HandrailBank);
             this.Name = "StructureUI";
             this.Text = "StructureUI";
@@ -778,6 +1036,8 @@
             this.txt_HandrailBank.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
@@ -825,21 +1085,8 @@
         private System.Windows.Forms.TextBox job_Box;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckBox rotate_Box;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox braceHoleDiameter_Box;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox beamSize_Box;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox braceType_Box;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox braceAngle_Box;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox clipTHK_Box;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox_K1;
@@ -854,5 +1101,42 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox clipTHK_Box;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox braceAngle_Box;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox braceHoleDiameter_Box;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox braceType_Box;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox kL_Box;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox thkL_Box;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox gage_Box;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox leg2_Box;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox leg1_Box;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox flangeGageWT_Box;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox k1WT_Box;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox kWT_Box;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox flangeTHKWT_Box;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox flangeWidthWT_Box;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox stemTHKWT_Box;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox depthWT_Box;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -43,8 +43,8 @@ namespace Structure.Columns.Derived.Children.Derived
             EditDimension("ColumnBoundsToHole", "sk:Plate", ColumnBoundToNearestHole);
             EditDimension("Landing", "sk:Plate", Landing);
             EditDimension("FlangeGage", "sk:Plate", BraceT.FlangeGage);
-            EditDimension("THK", "Plate", THK);
             EditDimension("Angle", "sk:Plate", BraceAngle);
+
         }
 
 
