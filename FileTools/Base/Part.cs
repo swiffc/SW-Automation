@@ -61,11 +61,11 @@ namespace FileTools.Base
                     else
                     {
                         swSetValueReturnStatus_e status = (swSetValueReturnStatus_e)message;
-                        Debug.WriteLine($"   Error: Dimension {equationName} could not be set. Return status: {status}");
+                        Debug.WriteLine($"ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR: Dimension {equationName} could not be set. Return status: {status}");
                     }
                 }
                 else
-                    Debug.WriteLine($"   Error: Dimension {equationName} not found.");
+                    Debug.WriteLine($"ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR: Dimension {equationName} not found.");
             }
             catch (Exception ex)
             {

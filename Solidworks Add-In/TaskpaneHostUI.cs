@@ -1,5 +1,6 @@
 ﻿using Hood;
 using Plenum;
+using Structure;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -103,7 +104,7 @@ namespace SolidWorks_Add_In
             Control control = sender as Control;
             if (control != null)
             {
-                string tooltipText = "v3.0.1" + "\n" + @"""Plenum Automation Is Live""";
+                string tooltipText = "v4.0.0" + "\n" + @"""Sub-Structure Automation Is Live""";
 
                 // Estimate the size of the tooltip text.
                 SizeF textSize;
@@ -151,6 +152,18 @@ namespace SolidWorks_Add_In
 
             plenumUI.Show();
             plenumUI.BringToFront();
+        }
+
+        private StructureUI structureUI = null;
+        private void launch25_Click(object sender, EventArgs e)
+        {
+            if (structureUI == null || structureUI.IsDisposed)
+            {
+                structureUI = new StructureUI();
+            }
+
+            structureUI.Show();
+            structureUI.BringToFront();
         }
     }
 }

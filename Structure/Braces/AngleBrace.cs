@@ -21,7 +21,7 @@ namespace Structure.Braces
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "L", BraceType == "L" ? BraceL.LocalLength : BraceX.LocalLength);
+            EditDimension("Length", "L", (BraceType == "L" || BraceType == "LL") ? BraceL.LocalLength : BraceX.LocalLength);
             EditDimension("Diameter", "sk:Hole", Clip.HoleDiameter);
             EditDimension("Leg1", "sk:L", Leg1);
             EditDimension("Leg2", "sk:L", Leg2);

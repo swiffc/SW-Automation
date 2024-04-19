@@ -74,5 +74,11 @@
 
         // ShippingBeam
         static public double ShippingBeamHeight { get; set; } = 10;
+
+
+        // Framework
+        public static bool ToggleCreateDrawing { get; set; } = true;
+        public static bool ToggleSave { get; set; } = true;
+        public static bool ToggleDeleteFiles { get; set; } = true;
     }
 }
