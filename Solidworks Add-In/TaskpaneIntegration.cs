@@ -177,7 +177,7 @@ namespace SolidWorks_Add_In
             var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", string.Empty), "logo-small.bmp");
 
             // Create our Taskpane
-            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, "Automation Guy v3.0.1");
+            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, "Automation Guy v4.0.0");
 
             // Load our UI into the taskpane
             mTaskpaneHost = (TaskpaneHostUI)mTaskpaneView.AddControl(TaskpaneIntegration.SWTASKPANE_PROGID, string.Empty);
@@ -219,7 +219,7 @@ namespace SolidWorks_Add_In
                 rk.SetValue(null, 1);
 
                 // Set SolidWorks add-in title and description
-                rk.SetValue("Title", "Automation Guy v3.0.1");
+                rk.SetValue("Title", "Automation Guy v4.0.0");
                 rk.SetValue("Description", "Your new best friend");
             }
         }

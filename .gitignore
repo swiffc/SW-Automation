@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Solidworks Automation/v17
+/.vs/Solidworks Automation/FileContentIndex
+/Solidworks Add-In/obj/Debug
+/Structure/obj/Debug

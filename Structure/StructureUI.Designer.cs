@@ -30,6 +30,7 @@
         {
             this.txt_HandrailBank = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1_save = new System.Windows.Forms.Button();
             this.beamSize_Box = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -108,6 +109,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.braceType_Box = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.delete_Toggle = new System.Windows.Forms.CheckBox();
+            this.save_Toggle = new System.Windows.Forms.CheckBox();
+            this.createDrawing_Toggle = new System.Windows.Forms.CheckBox();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox_K1 = new System.Windows.Forms.TextBox();
             this.textBox_K = new System.Windows.Forms.TextBox();
@@ -140,6 +144,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1_save);
             this.tabPage2.Controls.Add(this.beamSize_Box);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label17);
@@ -186,6 +191,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Structure";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1_save
+            // 
+            this.button1_save.Location = new System.Drawing.Point(374, 3);
+            this.button1_save.Name = "button1_save";
+            this.button1_save.Size = new System.Drawing.Size(40, 24);
+            this.button1_save.TabIndex = 61;
+            this.button1_save.Text = "Save";
+            this.button1_save.UseVisualStyleBackColor = true;
+            this.button1_save.Click += new System.EventHandler(this.button1_save_Click);
             // 
             // beamSize_Box
             // 
@@ -893,6 +908,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.delete_Toggle);
+            this.tabPage1.Controls.Add(this.save_Toggle);
+            this.tabPage1.Controls.Add(this.createDrawing_Toggle);
             this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Controls.Add(this.textBox_K1);
             this.tabPage1.Controls.Add(this.textBox_K);
@@ -913,10 +931,43 @@
             this.tabPage1.Text = "Advanced";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // delete_Toggle
+            // 
+            this.delete_Toggle.AutoSize = true;
+            this.delete_Toggle.Location = new System.Drawing.Point(137, 322);
+            this.delete_Toggle.Name = "delete_Toggle";
+            this.delete_Toggle.Size = new System.Drawing.Size(128, 17);
+            this.delete_Toggle.TabIndex = 35;
+            this.delete_Toggle.Text = "Delete Uneeded Files";
+            this.delete_Toggle.UseVisualStyleBackColor = true;
+            this.delete_Toggle.CheckedChanged += new System.EventHandler(this.checkBox4_delete_CheckedChanged);
+            // 
+            // save_Toggle
+            // 
+            this.save_Toggle.AutoSize = true;
+            this.save_Toggle.Location = new System.Drawing.Point(137, 299);
+            this.save_Toggle.Name = "save_Toggle";
+            this.save_Toggle.Size = new System.Drawing.Size(76, 17);
+            this.save_Toggle.TabIndex = 34;
+            this.save_Toggle.Text = "Auto Save";
+            this.save_Toggle.UseVisualStyleBackColor = true;
+            this.save_Toggle.CheckedChanged += new System.EventHandler(this.checkBox3_save_CheckedChanged);
+            // 
+            // createDrawing_Toggle
+            // 
+            this.createDrawing_Toggle.AutoSize = true;
+            this.createDrawing_Toggle.Location = new System.Drawing.Point(137, 276);
+            this.createDrawing_Toggle.Name = "createDrawing_Toggle";
+            this.createDrawing_Toggle.Size = new System.Drawing.Size(118, 17);
+            this.createDrawing_Toggle.TabIndex = 33;
+            this.createDrawing_Toggle.Text = "Create Drawing File";
+            this.createDrawing_Toggle.UseVisualStyleBackColor = true;
+            this.createDrawing_Toggle.CheckedChanged += new System.EventHandler(this.checkBox2_dwg_CheckedChanged);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(154, 28);
+            this.label26.Location = new System.Drawing.Point(162, 28);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(113, 13);
             this.label26.TabIndex = 25;
@@ -924,7 +975,7 @@
             // 
             // textBox_K1
             // 
-            this.textBox_K1.Location = new System.Drawing.Point(161, 182);
+            this.textBox_K1.Location = new System.Drawing.Point(169, 182);
             this.textBox_K1.Name = "textBox_K1";
             this.textBox_K1.Size = new System.Drawing.Size(100, 20);
             this.textBox_K1.TabIndex = 24;
@@ -932,7 +983,7 @@
             // 
             // textBox_K
             // 
-            this.textBox_K.Location = new System.Drawing.Point(161, 156);
+            this.textBox_K.Location = new System.Drawing.Point(169, 156);
             this.textBox_K.Name = "textBox_K";
             this.textBox_K.Size = new System.Drawing.Size(100, 20);
             this.textBox_K.TabIndex = 22;
@@ -940,7 +991,7 @@
             // 
             // textBox_FlangeTHK
             // 
-            this.textBox_FlangeTHK.Location = new System.Drawing.Point(161, 130);
+            this.textBox_FlangeTHK.Location = new System.Drawing.Point(169, 130);
             this.textBox_FlangeTHK.Name = "textBox_FlangeTHK";
             this.textBox_FlangeTHK.Size = new System.Drawing.Size(100, 20);
             this.textBox_FlangeTHK.TabIndex = 20;
@@ -948,7 +999,7 @@
             // 
             // textBox_FlangeWidth
             // 
-            this.textBox_FlangeWidth.Location = new System.Drawing.Point(161, 104);
+            this.textBox_FlangeWidth.Location = new System.Drawing.Point(169, 104);
             this.textBox_FlangeWidth.Name = "textBox_FlangeWidth";
             this.textBox_FlangeWidth.Size = new System.Drawing.Size(100, 20);
             this.textBox_FlangeWidth.TabIndex = 18;
@@ -956,7 +1007,7 @@
             // 
             // textBox_WebTHK
             // 
-            this.textBox_WebTHK.Location = new System.Drawing.Point(161, 78);
+            this.textBox_WebTHK.Location = new System.Drawing.Point(169, 78);
             this.textBox_WebTHK.Name = "textBox_WebTHK";
             this.textBox_WebTHK.Size = new System.Drawing.Size(100, 20);
             this.textBox_WebTHK.TabIndex = 16;
@@ -964,7 +1015,7 @@
             // 
             // textBox_Depth
             // 
-            this.textBox_Depth.Location = new System.Drawing.Point(161, 52);
+            this.textBox_Depth.Location = new System.Drawing.Point(169, 52);
             this.textBox_Depth.Name = "textBox_Depth";
             this.textBox_Depth.Size = new System.Drawing.Size(100, 20);
             this.textBox_Depth.TabIndex = 14;
@@ -973,7 +1024,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(127, 185);
+            this.label27.Location = new System.Drawing.Point(135, 185);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(20, 13);
             this.label27.TabIndex = 23;
@@ -982,7 +1033,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(133, 159);
+            this.label28.Location = new System.Drawing.Point(141, 159);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(14, 13);
             this.label28.TabIndex = 21;
@@ -991,7 +1042,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(86, 133);
+            this.label29.Location = new System.Drawing.Point(94, 133);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(61, 13);
             this.label29.TabIndex = 19;
@@ -1000,7 +1051,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(77, 107);
+            this.label30.Location = new System.Drawing.Point(85, 107);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(70, 13);
             this.label30.TabIndex = 17;
@@ -1009,7 +1060,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(95, 81);
+            this.label31.Location = new System.Drawing.Point(103, 81);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(52, 13);
             this.label31.TabIndex = 15;
@@ -1018,7 +1069,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(111, 55);
+            this.label32.Location = new System.Drawing.Point(119, 55);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(36, 13);
             this.label32.TabIndex = 13;
@@ -1138,5 +1189,9 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox depthWT_Box;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1_save;
+        private System.Windows.Forms.CheckBox delete_Toggle;
+        private System.Windows.Forms.CheckBox save_Toggle;
+        private System.Windows.Forms.CheckBox createDrawing_Toggle;
     }
 }

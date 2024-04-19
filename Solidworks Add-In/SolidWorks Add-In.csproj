@@ -96,6 +96,10 @@
       <Project>{D5899A85-9656-431E-9836-2849AEEEFEF7}</Project>
       <Name>Plenum</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Structure\Structure.csproj">
+      <Project>{b98b809c-be32-417b-aec4-4917a12b722e}</Project>
+      <Name>Structure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Universal Drawing Tool\Universal Drawing Tool.csproj">
       <Project>{586fad54-bf99-4a06-8dfa-c3ed13c1b410}</Project>
       <Name>Universal Drawing Tool</Name>

@@ -24,16 +24,12 @@ namespace Structure.Braces.Derived
                 double yStructureClipHole = ClipHeight;
 
                 // Triangle
-                double horz;
                 double vert = yPlenumClipHole - yStructureClipHole;
                 double diag;
                 double angle = BraceAngle;
 
-                AAS(angle, out horz, vert, out diag);
-                double plenumClipTranslation = horz;
+                AAS(angle, out _, vert, out diag);
                 double braceLength = diag + HoleToEnd * 2;
-
-
 
                 return braceLength;
             }

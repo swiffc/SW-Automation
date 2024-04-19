@@ -3,6 +3,8 @@ using Structure.Braces;
 using Structure.Columns.Derived.Children;
 using System;
 using System.Windows.Forms;
+using static Tools.ModelTools;
+using static FileTools.SharedProperties;
 
 namespace Structure
 {
@@ -16,6 +18,7 @@ namespace Structure
         }
         #region CustomEvents
 
+        private DataGridView dataGridView;
         private void SharedProperties_OnFanCountChanged()
         {
             this.Invoke((MethodInvoker)delegate
@@ -34,6 +37,10 @@ namespace Structure
         private void button1_Click(object sender, EventArgs e)
         {
             new Structure(25, "Structure");
+        }
+        private void button1_save_Click(object sender, EventArgs e)
+        {
+            SaveEverything();
         }
 
         #endregion
@@ -94,23 +101,12 @@ namespace Structure
             braceHoleDiameter_Box.Text = Clip.HoleDiameter.ToString();
             braceAngle_Box.Text = SharedProperties.BraceAngle.ToString();
 
+            #endregion
+            #region Toggles_Load
 
-            // L
-            leg1_Box.Text = AngleBrace.Leg1.ToString();
-            leg2_Box.Text = AngleBrace.Leg2.ToString();
-            gage_Box.Text = AngleBrace.Gage.ToString();
-            thkL_Box.Text = AngleBrace.THK.ToString();
-            kL_Box.Text = AngleBrace.K.ToString();
-
-
-            // WT
-            depthWT_Box.Text = BraceT.Depth.ToString();
-            stemTHKWT_Box.Text = BraceT.StemTHK.ToString();
-            flangeWidthWT_Box.Text = BraceT.FlangeWidth.ToString();
-            flangeTHKWT_Box.Text = BraceT.FlangeTHK.ToString();
-            kWT_Box.Text = BraceT.K.ToString();
-            k1WT_Box.Text = BraceT.K1.ToString();
-            flangeGageWT_Box.Text = BraceT.FlangeGage.ToString();
+            createDrawing_Toggle.Checked = ToggleCreateDrawing;
+            save_Toggle.Checked = ToggleSave;
+            delete_Toggle.Checked = ToggleDeleteFiles;
 
             #endregion
         }
@@ -314,6 +310,58 @@ namespace Structure
         private void braceType_Box_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             SharedProperties.BraceType = braceType_Box.Text;
+            TextBox[] wtBoxes = { depthWT_Box, stemTHKWT_Box, flangeWidthWT_Box, flangeTHKWT_Box, kWT_Box, k1WT_Box, flangeGageWT_Box };
+            TextBox[] lBoxes = { leg1_Box, leg2_Box, gage_Box, thkL_Box, kL_Box };
+
+            // A method to clear and set read-only state for a collection of text boxes
+            void SetTextBoxesState(TextBox[] textBoxes, bool readOnly, string text = "")
+            {
+                foreach (var textBox in textBoxes)
+                {
+                    textBox.ReadOnly = readOnly;
+                    textBox.Text = text;
+                }
+            }
+            void PopulateL()
+            {
+                leg1_Box.ReadOnly = false; leg1_Box.Text = AngleBrace.Leg1.ToString();
+                leg2_Box.ReadOnly = false; leg2_Box.Text = AngleBrace.Leg2.ToString();
+                gage_Box.ReadOnly = false; gage_Box.Text = AngleBrace.Gage.ToString();
+                thkL_Box.ReadOnly = false; thkL_Box.Text = AngleBrace.THK.ToString();
+                kL_Box.ReadOnly = false; kL_Box.Text = AngleBrace.K.ToString();
+            }
+            void PopulateWT()
+            {
+                depthWT_Box.ReadOnly = false; depthWT_Box.Text = BraceT.Depth.ToString();
+                stemTHKWT_Box.ReadOnly = false; stemTHKWT_Box.Text = BraceT.StemTHK.ToString();
+                flangeWidthWT_Box.ReadOnly = false; flangeWidthWT_Box.Text = BraceT.FlangeWidth.ToString();
+                flangeTHKWT_Box.ReadOnly = false; flangeTHKWT_Box.Text = BraceT.FlangeTHK.ToString();
+                kWT_Box.ReadOnly = false; kWT_Box.Text = BraceT.K.ToString();
+                k1WT_Box.ReadOnly = false; k1WT_Box.Text = BraceT.K1.ToString();
+                flangeGageWT_Box.ReadOnly = false; flangeGageWT_Box.Text = BraceT.FlangeGage.ToString();
+            }
+
+            switch (braceType_Box.Text)
+            {
+                case "L":
+                case "LL":
+                case "X":
+                    SetTextBoxesState(wtBoxes, true);
+                    PopulateL();
+                    break;
+
+                case "T":
+                    SetTextBoxesState(lBoxes, true);
+                    PopulateWT();
+                    break;
+
+                default:
+                    SetTextBoxesState(wtBoxes, false); 
+                    SetTextBoxesState(lBoxes, false);
+                    PopulateL();
+                    PopulateWT();
+                    break;
+            }
         }
         private void clipTHK_Box_TextChanged(object sender, EventArgs e)
         {
@@ -398,9 +446,24 @@ namespace Structure
                 BraceT.FlangeGage = value;
         }
 
+        #endregion
+        #region Toggles_Changed
+
+        private void checkBox2_dwg_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleCreateDrawing = createDrawing_Toggle.Checked;
+        }
+
+        private void checkBox3_save_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleSave = save_Toggle.Checked;
+        }
+
+        private void checkBox4_delete_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleDeleteFiles = delete_Toggle.Checked;
+        }
 
         #endregion
-
-
     }
 }
