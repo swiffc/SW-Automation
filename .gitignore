@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/Solidworks Automation
+/Plenum/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+*.cache
