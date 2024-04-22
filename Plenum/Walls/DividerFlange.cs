@@ -11,6 +11,8 @@ using cTools = ModelTools.ReleaseCOM;
 using bTable = ModelTools.BendTable;
 using static FileTools.FileTools;
 using Plenum.Floor;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Walls
 {
@@ -29,7 +31,7 @@ namespace Plenum.Walls
 
 
         // Constructor
-        public DividerFlange(CallerType callerType) : base(callerType) { }
+        public DividerFlange(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -48,15 +50,15 @@ namespace Plenum.Walls
             mTools.EditDimension("Spacing2", "sk:BottomHole", spacing, modelDoc2);
 
             double maxValue = DividerPanel.THK / 2 + Flange;
-            double valueLimit = Beam.Depth / 2 - Beam.FlangeTHK - mTools.InterferenceClearance;
-            if ((CallerType != CallerType.Standard && MidColumns))
+            double valueLimit = Beam_Depth / 2 - Beam_FlangeTHK - mTools.InterferenceClearance;
+            if ((CallerType != Design.Standard && MidColumns))
                 mTools.EditDimension("Width", "sk:ColumnSeal", maxValue, modelDoc2);
             else if (maxValue > valueLimit)
                 mTools.EditDimension("Width", "sk:ColumnSeal", valueLimit, modelDoc2);
             else
                 mTools.EditDimension("Width", "sk:ColumnSeal", maxValue, modelDoc2);
 
-            mTools.EditDimension("Extension", "ColumnSeal", (CallerType == CallerType.Standard ? Beam.FlangeWidth / 2 : Beam.Depth / 2) - mTools.AssemblyClearance, modelDoc2);
+            mTools.EditDimension("Extension", "ColumnSeal", (CallerType == Design.Standard ? Beam_FlangeWidth / 2 : Beam_Depth / 2) - mTools.AssemblyClearance, modelDoc2);
 
             DividerPanel.EditDimensions_WebHoles(modelDoc2);
 
@@ -65,11 +67,11 @@ namespace Plenum.Walls
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
             bool suppress = true;
-            if (CallerType == CallerType.Standard && MidColumns)
+            if (CallerType == Design.Standard && MidColumns)
                 suppress = false;
-            else if (CallerType == CallerType.Legacy && MidColumns)
+            else if (CallerType == Design.Legacy && MidColumns)
                 suppress = false;
-            else if (CallerType == CallerType.Johnson && MidColumns)
+            else if (CallerType == Design.Johnson && MidColumns)
                 suppress = false;
 
             mTools.SuppressFeatures(suppress, modelDoc2, "ColumnSeal", "1", "2", "3");
@@ -82,24 +84,24 @@ namespace Plenum.Walls
             get
             {
                 double length;
-                if (CallerType == CallerType.Standard)
+                if (CallerType == Design.Standard)
                     if (MidColumns)
-                        length = Width - Beam.FlangeWidth - mTools.InterferenceClearance * 2;
+                        length = Width - Beam_FlangeWidth - mTools.InterferenceClearance * 2;
                     else
                         length = Width - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
 
-                else if (CallerType == CallerType.Johnson && !MidColumns)
-                    length = Width + Beam.Depth - CornerAngle.Leg * 2 - mTools.InterferenceClearance * 2;
-                else if (CallerType == CallerType.Johnson && MidColumns)
-                    length = Width - Beam.Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
+                else if (CallerType == Design.Johnson && !MidColumns)
+                    length = Width + Beam_Depth - CornerAngle.Leg * 2 - mTools.InterferenceClearance * 2;
+                else if (CallerType == Design.Johnson && MidColumns)
+                    length = Width - Beam_Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
 
-                else if (CallerType == CallerType.Legacy && !MidColumns)
-                    length = Width + Beam.Depth - Beam.FlangeTHK * 2 - SidePanel.THK * 2 - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
-                else if (CallerType == CallerType.Legacy && MidColumns)
-                    length = Width - Beam.Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
+                else if (CallerType == Design.Legacy && !MidColumns)
+                    length = Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
+                else if (CallerType == Design.Legacy && MidColumns)
+                    length = Width - Beam_Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
 
                 else
-                    length = Width - Beam.Depth - mTools.AssemblyClearance * 4;
+                    length = Width - Beam_Depth - mTools.AssemblyClearance * 4;
                 return length;
             }
         }
@@ -113,7 +115,7 @@ namespace Plenum.Walls
             get
             {
 
-                double zTranslation = Length / 2 - SidePanel.THK / 2;
+                double zTranslation = Length / 2 - SidePanel_THK / 2;
 
 
                 List<PositionData> _position = new List<PositionData>();
@@ -123,7 +125,7 @@ namespace Plenum.Walls
                     for (int i = 1; i < FanCount; i++)
                     {
                         zTranslation -= Length / FanCount;
-                        _position.Add(PositionData.Create(tZ: zTranslation, tY: -Depth));
+                        _position.Add(PositionData.Create(tZ: zTranslation, tY: -PlenumDepth));
                     }
                 }
 

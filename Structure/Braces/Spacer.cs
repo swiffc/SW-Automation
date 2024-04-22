@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using static Tools.ModelTools;
 using static ModelTools.PositionData;
 using static FileTools.StaticFileTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Structure.Braces
 {
@@ -24,8 +26,8 @@ namespace Structure.Braces
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("THK", "Plate", Clip.THK);
-            EditDimension("Diameter", "sk:Plate", Clip.HoleDiameter);
+            EditDimension("THK", "Plate", Clip_THK);
+            EditDimension("Diameter", "sk:Plate", HoleDiameter_Structural);
         }
 
 
@@ -56,7 +58,7 @@ namespace Structure.Braces
         {
             // Viewing XY plane 
             // Places spacer on hole nearest column bounds
-            double xTranslation = -Width / 2 + (Beam.IsRotated ? Beam.Depth / 2 : Beam.FlangeWidth / 2) + Clip.ColumnBoundsToHole;
+            double xTranslation = -Width / 2 + (Beams_AreRotated ? Beam_Depth / 2 : Beam_FlangeWidth / 2) + ColumnBoundsToHole;
             double yTranslation = ClipHeight;
             double zTranslation = Length / 2;
             double zRotation = BraceAngle;
@@ -92,7 +94,7 @@ namespace Structure.Braces
             // Places spacer on hole nearest column bounds
             double xTranslation = -Width / 2;
             double yTranslation = ClipHeight;
-            double zTranslation = Length / 2 - (Beam.IsRotated ? Beam.FlangeWidth / 2 : Beam.Depth / 2) - Clip.ColumnBoundsToHole;
+            double zTranslation = Length / 2 - (Beams_AreRotated ? Beam_FlangeWidth / 2 : Beam_Depth / 2) - ColumnBoundsToHole;
             double yRotation = 270;
             double zRotation = 0; 
 
@@ -139,7 +141,7 @@ namespace Structure.Braces
         public override bool Enabled => new[] { "X", "TX", "LL" }.Contains(BraceType);
         public override string StaticPartNo => "132S";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => Clip.THK.ToString();
+        public override string SizeOrThickness => Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get

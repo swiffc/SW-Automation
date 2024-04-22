@@ -1,4 +1,5 @@
-﻿using SolidWorks.Interop.sldworks;
+﻿using FileTools.Base;
+using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using System;
 using System.Collections.Generic;
@@ -7,14 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using static Tools.ModelTools;
-using static ModelTools.ReleaseCOM;
-using ModelTools;
-using FileTools.Base;
-using static FileTools.RawMaterial_1;
 using static FileTools.Base.Part;
+using static FileTools.RawMaterial;
+using static ModelTools.ReleaseCOM;
+using static System.Net.WebRequestMethods;
+using static Tools.ModelTools;
 
 namespace FileTools
 {
@@ -36,7 +34,7 @@ namespace FileTools
             string assemblyDesktopPath = $@"{DesktopFolderPath}\{assemblyFileName}";
             string drawingDesktopPath = $@"{DesktopFolderPath}\{drawingFileName}";
 
-            bool fileExists = File.Exists(assemblyDesktopPath);
+            bool fileExists = System.IO.File.Exists(assemblyDesktopPath);
 
             // Determine next available bank
             while (fileExists)
@@ -126,9 +124,9 @@ namespace FileTools
             string templateASM = $@"{TemplateFolderPath}\JOBNO-{staticPartNo}.SLDASM";
             string templatePRT = $@"{TemplateFolderPath}\JOBNO-{staticPartNo}.SLDPRT";
             string template;
-            if (File.Exists(templateASM))
+            if (System.IO.File.Exists(templateASM))
                 template = templateASM;
-            else if (File.Exists(templatePRT))
+            else if (System.IO.File.Exists(templatePRT))
                 template = templatePRT;
             else throw new Exception
                     ("Could not find:" + "\n" +
@@ -167,7 +165,7 @@ namespace FileTools
                 string fileName = $"{partNo1}{(partNo2 != ' ' ? partNo2.ToString() : "")}.SLDPRT";
                 string desktopFile = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{fileName}";
 
-                if (!File.Exists(desktopFile))
+                if (!System.IO.File.Exists(desktopFile))
                 {
                     CopyAsReadWrite(templateFile, desktopFile);
                     //Debug.WriteLine($"Created {desktopFile} from template file {templateFile}");
@@ -580,6 +578,10 @@ namespace FileTools
 
             return components;
         }
+        public static void TurnOffBendLines()
+        {
+            SW.IActiveDoc2.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swDisplayBendLines, false);
+        }
 
 
 
@@ -587,10 +589,10 @@ namespace FileTools
         // Private methods
         private static void CopyAsReadWrite(string sourceFile, string destinationFile)
         {
-            File.Copy(sourceFile, destinationFile);
-            FileAttributes attributes = File.GetAttributes(destinationFile);
+            System.IO.File.Copy(sourceFile, destinationFile);
+            FileAttributes attributes = System.IO.File.GetAttributes(destinationFile);
             attributes &= ~FileAttributes.ReadOnly;
-            File.SetAttributes(destinationFile, attributes);
+            System.IO.File.SetAttributes(destinationFile, attributes);
         }
         private static ModelDoc2 OpenDocument(string filePath, string configurationName)
         {
@@ -740,7 +742,7 @@ namespace FileTools
                 string desktopFile_Part = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.SLDPRT";
                 string desktopFile_Assembly = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.SLDASM";
 
-                if (!File.Exists(desktopFile_Part) && !File.Exists(desktopFile_Assembly))
+                if (!System.IO.File.Exists(desktopFile_Part) && !System.IO.File.Exists(desktopFile_Assembly))
                 {
                     return partNo;
                 }
@@ -976,7 +978,7 @@ namespace FileTools
 
             try
             {
-                File.Copy(templateDrawing, desktopDrawing);
+                System.IO.File.Copy(templateDrawing, desktopDrawing);
                 Debug.WriteLine($"Created {fileName}");
                 FileAttributes attributes = System.IO.File.GetAttributes(desktopDrawing);
                 attributes &= ~FileAttributes.ReadOnly;

@@ -2,7 +2,7 @@
 using ModelTools;
 using Structure.Columns.Derived.Children;
 using System;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
 
 namespace Structure.Columns
 {

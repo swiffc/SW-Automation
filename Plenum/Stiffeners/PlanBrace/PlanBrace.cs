@@ -10,6 +10,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -28,14 +30,14 @@ namespace Plenum
         public override string Size => "L2.5x2.5x0.1875";
 
         // Constructor
-        public PlanBrace(CallerType callerType) : base(callerType) { }
+        public PlanBrace(Design callerType) : base(callerType) { }
 
 
         // Protected methods
         protected double GetNominalLength()
         {
             double slotGauge = 1.5;
-            double sectionLength = Length / FanCount + (CallerType == CallerType.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Length / FanCount + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
             double sectionThird = sectionLength / 3 - slotGauge * 2;
             double angle = 45;
 
@@ -47,14 +49,14 @@ namespace Plenum
         {
             switch (CallerType)
             {
-                case CallerType.Standard:
+                case Design.Standard:
                     xTranslation = Width / 2;
                     break;
-                case CallerType.Johnson:
-                    xTranslation = Width / 2 + Beam.Depth / 2;
+                case Design.Johnson:
+                    xTranslation = Width / 2 + Beam_Depth / 2;
                     break;
-                case CallerType.Legacy:
-                    xTranslation = Width / 2 + Beam.Depth / 2 - Beam.FlangeTHK - SidePanel.THK;
+                case Design.Legacy:
+                    xTranslation = Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
                     break;
                 default: throw new ArgumentException();
             }
@@ -62,7 +64,7 @@ namespace Plenum
             yTranslation = -4;
             angle = 45;
 
-            double sectionLength = Length / FanCount + (CallerType == CallerType.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Length / FanCount + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
             double sectionThird = sectionLength / 3;
 
             mTools.AAS(angle, out double oppositeSide, sectionThird / 2, out _);

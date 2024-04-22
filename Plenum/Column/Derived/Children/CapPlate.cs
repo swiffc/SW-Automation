@@ -7,7 +7,8 @@ using mTools = Tools.ModelTools;
 using aTools = ModelTools.AssemblyTools;
 using System;
 using static Plenum.Plenum;
-using System.Data.Common;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 using static FileTools.FileTools;
 
 namespace Plenum
@@ -21,7 +22,7 @@ namespace Plenum
 
 
         // Constructor
-        public CapPlate(CallerType callerType) : base(callerType) 
+        public CapPlate(Design callerType) : base(callerType) 
         {
             ChildInstances.Add(this);
         }
@@ -30,8 +31,8 @@ namespace Plenum
         // Private Methods
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            mTools.EditDimension("Length", "sk:Plate", CallerType == CallerType.Legacy ? Width : Length, modelDoc2);
-            mTools.EditDimension("Width", "sk:Plate", CallerType == CallerType.Legacy ? Length : Width, modelDoc2);
+            mTools.EditDimension("Length", "sk:Plate", CallerType == Design.Legacy ? Width : Length, modelDoc2);
+            mTools.EditDimension("Width", "sk:Plate", CallerType == Design.Legacy ? Length : Width, modelDoc2);
             mTools.EditDimension("THK", "Plate", THK, modelDoc2);
             mTools.EditDimension("HoleDiameter", "sk:AnchorHole", HoleDiameter, modelDoc2);
             mTools.EditDimension("X", "sk:AnchorHole", HoleSpacingOnWidth / 2, modelDoc2);
@@ -46,7 +47,7 @@ namespace Plenum
             {
                 if (_position == null)
                 {
-                    double yRotation = CallerType == CallerType.Legacy ? 90 : 0;
+                    double yRotation = CallerType == Design.Legacy ? 90 : 0;
                     return new List<PositionData> { PositionData.Create(tY: -PlenumColumn.Height, rY: yRotation) };
                 }
                 return _position;
@@ -63,14 +64,14 @@ namespace Plenum
         {
             get
             {
-                return Beam.Depth;
+                return Beam_Depth;
             }
         }
         internal double Width
         {
             get
             {
-                return Beam.FlangeWidth;
+                return Beam_FlangeWidth;
             }
         }
         internal double HoleDiameter => 0.8125;

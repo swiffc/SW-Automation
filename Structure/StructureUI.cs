@@ -4,7 +4,8 @@ using Structure.Columns.Derived.Children;
 using System;
 using System.Windows.Forms;
 using static Tools.ModelTools;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Structure
 {
@@ -14,7 +15,7 @@ namespace Structure
         {
             InitializeComponent();
 
-            SharedProperties.OnFanCountChanged += SharedProperties_OnFanCountChanged;
+            CommonData.OnFanCountChanged += SharedProperties_OnFanCountChanged;
         }
         #region CustomEvents
 
@@ -23,7 +24,7 @@ namespace Structure
         {
             this.Invoke((MethodInvoker)delegate
             {
-                midColumns_Box.Checked = SharedProperties.MidColumns;
+                midColumns_Box.Checked = CommonData.MidColumns;
             });
         }
 
@@ -59,18 +60,18 @@ namespace Structure
             #endregion
             #region Columns_Load
 
-            width_TextBox.Text = SharedProperties.Width.ToString();
-            length_TextBox.Text = SharedProperties.Length.ToString();
-            height_TextBox.Text = SharedProperties.TotalColumnHeight.ToString();
-            midColumns_Box.Checked = SharedProperties.MidColumns;
-            rotate_Box.Checked = Beam.IsRotated;
-            beamSize_Box.Text = Beam.Size;
-            textBox_Depth.Text = Beam.Depth.ToString();
-            textBox_WebTHK.Text = Beam.WebTHK.ToString();
-            textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
-            textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
-            textBox_K.Text = Beam.K.ToString();
-            textBox_K1.Text = Beam.K1.ToString();
+            width_TextBox.Text = CommonData.Width.ToString();
+            length_TextBox.Text = CommonData.Length.ToString();
+            height_TextBox.Text = CommonData.TotalColumnHeight.ToString();
+            midColumns_Box.Checked = CommonData.MidColumns;
+            rotate_Box.Checked = CommonData.Beams_AreRotated;
+            beamSize_Box.Text = Beam_Size;
+            textBox_Depth.Text = Beam_Depth.ToString();
+            textBox_WebTHK.Text = Beam_WebTHK.ToString();
+            textBox_FlangeWidth.Text = Beam_FlangeWidth.ToString();
+            textBox_FlangeTHK.Text = Beam_FlangeTHK.ToString();
+            textBox_K.Text = Beam_K.ToString();
+            textBox_K1.Text = Beam_K1.ToString();
 
             #endregion
             #region BasePlate_Load
@@ -84,22 +85,22 @@ namespace Structure
             #endregion
             #region Plenum_Load
 
-            fanCount_Box.Text = SharedProperties.FanCount.ToString();
-            depth_Box.Text = SharedProperties.PlenumDepth.ToString();
+            fanCount_Box.Text = CommonData.FanCount.ToString();
+            depth_Box.Text = CommonData.PlenumDepth.ToString();
 
             #endregion
             #region MachineryMount_Load
 
-            mmHeight_Box.Text = SharedProperties.MachineryMountHeight.ToString();
+            mmHeight_Box.Text = CommonData.MachineryMountHeight.ToString();
 
             #endregion
             #region Brace_Load
 
             // General
-            braceType_Box.Text = SharedProperties.BraceType;
-            clipTHK_Box.Text = Clip.THK.ToString();
-            braceHoleDiameter_Box.Text = Clip.HoleDiameter.ToString();
-            braceAngle_Box.Text = SharedProperties.BraceAngle.ToString();
+            braceType_Box.Text = CommonData.BraceType;
+            clipTHK_Box.Text = Clip_THK.ToString();
+            braceHoleDiameter_Box.Text = HoleDiameter_Structural.ToString();
+            braceAngle_Box.Text = CommonData.BraceAngle.ToString();
 
             #endregion
             #region Toggles_Load
@@ -149,44 +150,44 @@ namespace Structure
         private void width_TextBox_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(width_TextBox.Text, out double value))
-                SharedProperties.Width = value;
+                CommonData.Width = value;
         }
 
         private void length_TextBox_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(length_TextBox.Text, out double value))
-                SharedProperties.Length = value;
+                CommonData.Length = value;
         }
 
         private void height_TextBox_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(height_TextBox.Text, out double value))
-                SharedProperties.TotalColumnHeight = value;
+                CommonData.TotalColumnHeight = value;
         }
 
         private void midColumn_Box_CheckedChanged(object sender, EventArgs e)
         {
-            SharedProperties.MidColumns = midColumns_Box.Checked;
+            CommonData.MidColumns = midColumns_Box.Checked;
         }
         private void rotate_Box_CheckedChanged(object sender, EventArgs e)
         {
-            Beam.IsRotated = rotate_Box.Checked;
+            CommonData.Beams_AreRotated = rotate_Box.Checked;
         }
         private bool isUserChange = true;
         private void beamSize_Box_SelectedIndexChanged(object sender, EventArgs e)
         {
             isUserChange = false;
 
-            Beam.Size = beamSize_Box.Text;
-            if (Beam.Size != "Custom")
+            Beam_Size = beamSize_Box.Text;
+            if (Beam_Size != "Custom")
             {
-                Beam.ResetSize();
-                textBox_Depth.Text = Beam.Depth.ToString();
-                textBox_WebTHK.Text = Beam.WebTHK.ToString();
-                textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
-                textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
-                textBox_K.Text = Beam.K.ToString();
-                textBox_K1.Text = Beam.K1.ToString();
+                ResetSize();
+                textBox_Depth.Text = Beam_Depth.ToString(); 
+                textBox_WebTHK.Text = Beam_WebTHK.ToString();
+                textBox_FlangeWidth.Text = Beam_FlangeWidth.ToString();
+                textBox_FlangeTHK.Text = Beam_FlangeTHK.ToString();
+                textBox_K.Text = Beam_K.ToString();
+                textBox_K1.Text = Beam_K1.ToString();
             }
 
             isUserChange = true;
@@ -195,8 +196,8 @@ namespace Structure
         {
             if (isUserChange && double.TryParse(textBox_Depth.Text, out double depth))
             {
-                Beam.Depth = depth;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                Beam_Depth = depth;
+                Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -204,8 +205,8 @@ namespace Structure
         {
             if (isUserChange && double.TryParse(textBox_WebTHK.Text, out double webTHK))
             {
-                Beam.WebTHK = webTHK;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                Beam_WebTHK = webTHK;
+                Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -213,8 +214,8 @@ namespace Structure
         {
             if (isUserChange && double.TryParse(textBox_FlangeWidth.Text, out double flangeWidth))
             {
-                Beam.FlangeWidth = flangeWidth;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                Beam_FlangeWidth = flangeWidth;
+                Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -222,8 +223,8 @@ namespace Structure
         {
             if (isUserChange && double.TryParse(textBox_FlangeTHK.Text, out double flangeTHK))
             {
-                Beam.FlangeTHK = flangeTHK;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                Beam_FlangeTHK = flangeTHK;
+                Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -231,8 +232,8 @@ namespace Structure
         {
             if (isUserChange && double.TryParse(textBox_K.Text, out double k))
             {
-                Beam.K = k;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                Beam_K = k;
+                Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -240,8 +241,8 @@ namespace Structure
         {
             if (isUserChange && double.TryParse(textBox_K1.Text, out double k1))
             {
-                Beam.K1 = k1;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                Beam_K1 = k1;
+                Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -284,12 +285,12 @@ namespace Structure
         private void fanCount_Box_TextChanged(object sender, EventArgs e)
         {
             if (int.TryParse(fanCount_Box.Text, out int value))
-                SharedProperties.FanCount = value;
+                CommonData.FanCount = value;
         }
         private void depth_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(depth_Box.Text, out double value))
-                SharedProperties.PlenumDepth = value;
+                CommonData.PlenumDepth = value;
         }
 
 
@@ -299,7 +300,7 @@ namespace Structure
         private void mmHeight_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(mmHeight_Box.Text, out double value))
-                SharedProperties.MachineryMountHeight = value;
+                CommonData.MachineryMountHeight = value;
         }
 
 
@@ -309,7 +310,7 @@ namespace Structure
         // General
         private void braceType_Box_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            SharedProperties.BraceType = braceType_Box.Text;
+            CommonData.BraceType = braceType_Box.Text;
             TextBox[] wtBoxes = { depthWT_Box, stemTHKWT_Box, flangeWidthWT_Box, flangeTHKWT_Box, kWT_Box, k1WT_Box, flangeGageWT_Box };
             TextBox[] lBoxes = { leg1_Box, leg2_Box, gage_Box, thkL_Box, kL_Box };
 
@@ -332,13 +333,13 @@ namespace Structure
             }
             void PopulateWT()
             {
-                depthWT_Box.ReadOnly = false; depthWT_Box.Text = BraceT.Depth.ToString();
-                stemTHKWT_Box.ReadOnly = false; stemTHKWT_Box.Text = BraceT.StemTHK.ToString();
-                flangeWidthWT_Box.ReadOnly = false; flangeWidthWT_Box.Text = BraceT.FlangeWidth.ToString();
-                flangeTHKWT_Box.ReadOnly = false; flangeTHKWT_Box.Text = BraceT.FlangeTHK.ToString();
-                kWT_Box.ReadOnly = false; kWT_Box.Text = BraceT.K.ToString();
-                k1WT_Box.ReadOnly = false; k1WT_Box.Text = BraceT.K1.ToString();
-                flangeGageWT_Box.ReadOnly = false; flangeGageWT_Box.Text = BraceT.FlangeGage.ToString();
+                depthWT_Box.ReadOnly = false; depthWT_Box.Text = WT_Depth.ToString();
+                stemTHKWT_Box.ReadOnly = false; stemTHKWT_Box.Text = WT_StemTHK.ToString();
+                flangeWidthWT_Box.ReadOnly = false; flangeWidthWT_Box.Text = WT_FlangeWidth.ToString();
+                flangeTHKWT_Box.ReadOnly = false; flangeTHKWT_Box.Text = WT_FlangeTHK.ToString();
+                kWT_Box.ReadOnly = false; kWT_Box.Text = WT_K.ToString();
+                k1WT_Box.ReadOnly = false; k1WT_Box.Text = WT_K1.ToString();
+                flangeGageWT_Box.ReadOnly = false; flangeGageWT_Box.Text = WT_FlangeGage.ToString();
             }
 
             switch (braceType_Box.Text)
@@ -366,17 +367,17 @@ namespace Structure
         private void clipTHK_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(clipTHK_Box.Text, out double value))
-                Clip.THK = value;
+                Clip_THK = value;
         }
         private void braceHoleDiameter_Box_TextChanged_1(object sender, EventArgs e)
         {
             if (double.TryParse(braceHoleDiameter_Box.Text, out double value))
-                Clip.HoleDiameter = value;
+                HoleDiameter_Structural = value;
         }
         private void braceAngle_Box_TextChanged_1(object sender, EventArgs e)
         {
             if (double.TryParse(braceAngle_Box.Text, out double value))
-                SharedProperties.BraceAngle = value;
+                CommonData.BraceAngle = value;
         }
 
 
@@ -413,37 +414,37 @@ namespace Structure
         private void depthWT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(depthWT_Box.Text, out double value))
-                BraceT.Depth = value;
+                WT_Depth = value;
         }
         private void stemTHKWT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(stemTHKWT_Box.Text, out double value))
-                BraceT.StemTHK = value;
+                WT_StemTHK = value;
         }
         private void flangeWidthWT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(flangeWidthWT_Box.Text, out double value))
-                BraceT.FlangeWidth = value;
+                WT_FlangeWidth = value;
         }
         private void flangeTHKWT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(flangeTHKWT_Box.Text, out double value))
-                BraceT.FlangeTHK = value;
+                WT_FlangeTHK = value;
         }
         private void kWT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(kWT_Box.Text, out double value))
-                BraceT.K = value;
+                WT_K = value;
         }
         private void k1WT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(k1WT_Box.Text, out double value))
-                BraceT.K1 = value;
+                WT_K1 = value;
         }
         private void flangeGageWT_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(flangeGageWT_Box.Text, out double value))
-                BraceT.FlangeGage = value;
+                WT_FlangeGage = value;
         }
 
         #endregion

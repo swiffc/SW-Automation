@@ -6,6 +6,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -17,7 +19,7 @@ namespace Plenum
 
 
         // Constructor
-        public FlatSeal(CallerType callerType) : base(callerType)
+        public FlatSeal(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }
@@ -27,12 +29,12 @@ namespace Plenum
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
 
-            mTools.EditDimension("Depth", "sk:Beam", Beam.Depth, modelDoc2);
-            mTools.EditDimension("WebTHK", "sk:Beam", Beam.WebTHK, modelDoc2);
-            mTools.EditDimension("FlangeWidth", "sk:Beam", Beam.FlangeWidth, modelDoc2);
-            mTools.EditDimension("FlangeTHK", "sk:Beam", Beam.FlangeTHK, modelDoc2);
-            mTools.EditDimension("K", "sk:Beam", Beam.K, modelDoc2);
-            mTools.EditDimension("K1", "sk:Beam", Beam.K1, modelDoc2);
+            mTools.EditDimension("Depth", "sk:Beam", Beam_Depth, modelDoc2);
+            mTools.EditDimension("WebTHK", "sk:Beam", Beam_WebTHK, modelDoc2);
+            mTools.EditDimension("FlangeWidth", "sk:Beam", Beam_FlangeWidth, modelDoc2);
+            mTools.EditDimension("FlangeTHK", "sk:Beam", Beam_FlangeTHK, modelDoc2);
+            mTools.EditDimension("K", "sk:Beam", Beam_K, modelDoc2);
+            mTools.EditDimension("K1", "sk:Beam", Beam_K1, modelDoc2);
         }
 
 
@@ -45,7 +47,7 @@ namespace Plenum
                 {
 
                     _position =  new List<PositionData>();
-                    if (CallerType == CallerType.Legacy)
+                    if (CallerType == Design.Legacy)
                     {
                         _position.Add(PositionData.Create());
                     }

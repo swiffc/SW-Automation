@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -17,7 +19,7 @@ namespace Plenum
 
 
         // Constructor
-        protected PlenumColumn(CallerType callerType) : base(callerType) { }
+        protected PlenumColumn(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -55,7 +57,7 @@ namespace Plenum
         {
             get
             {
-                double minimumHeight = Depth + 6;
+                double minimumHeight = PlenumDepth + 6;
                 if (!_height.HasValue || _height <= minimumHeight)
                     _height = minimumHeight;
                 return (double)_height;

@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using  FileTools.CommonData;
 
 namespace Structure.Braces
 {
@@ -52,7 +54,7 @@ namespace Structure.Braces
                 for (int i = 0; i < braces1.Count; i++)
                 {
                     PositionData brace = braces1[i];
-                    brace.TranslationZ -= Clip.THK/2;
+                    brace.TranslationZ -= Clip_THK/2;
                     braces1[i] = brace;
                 }
                 pos.AddRange(braces1);
@@ -62,7 +64,7 @@ namespace Structure.Braces
                 for (int i = 0; i < braces2.Count; i++)
                 {
                     PositionData brace = braces2[i];
-                    brace.TranslationZ += Clip.THK/2;
+                    brace.TranslationZ += Clip_THK/2;
                     brace.RotationY = 180;
                     brace.RotationZ *= -1;
                     braces2[i] = brace;

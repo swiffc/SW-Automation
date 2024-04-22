@@ -1,6 +1,8 @@
 ﻿using FileTools.Base;
 using ModelTools;
 using System.Collections.Generic;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Structure.Columns.Derived.Children
 {
@@ -8,8 +10,8 @@ namespace Structure.Columns.Derived.Children
     {
         // Static properties
         static public double THK => 0.5;
-        static public double LocalWidth => Beam.IsRotated ? Beam.Depth : Beam.FlangeWidth;
-        static public double LocalLength => Beam.IsRotated ? Beam.FlangeWidth : Beam.Depth;
+        static public double LocalWidth => Beams_AreRotated ? Beam_Depth : Beam_FlangeWidth;
+        static public double LocalLength => Beams_AreRotated ? Beam_FlangeWidth : Beam_Depth;
         static public double HoleDiameter { get; set; } = 0.8125;
         static public double HoleToEdge => 1.25;
 

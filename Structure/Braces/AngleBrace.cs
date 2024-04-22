@@ -1,6 +1,8 @@
 ﻿using FileTools.Base;
 using Structure.Braces.Derived;
 using Structure.Columns.Derived.Children;
+using static FileTools.FileTools;
+using static FileTools.CommonData.CommonData;
 
 namespace Structure.Braces
 {
@@ -22,7 +24,7 @@ namespace Structure.Braces
         protected override void Dimensions()
         {
             EditDimension("Length", "L", (BraceType == "L" || BraceType == "LL") ? BraceL.LocalLength : BraceX.LocalLength);
-            EditDimension("Diameter", "sk:Hole", Clip.HoleDiameter);
+            EditDimension("Diameter", "sk:Hole", HoleDiameter_Structural);
             EditDimension("Leg1", "sk:L", Leg1);
             EditDimension("Leg2", "sk:L", Leg2);
             EditDimension("Gage", "sk:L", Gage);

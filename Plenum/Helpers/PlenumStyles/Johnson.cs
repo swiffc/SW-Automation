@@ -1,6 +1,8 @@
 ﻿using Plenum.Floor;
 using Plenum.JohnsonBeam;
 using System;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -36,15 +38,15 @@ namespace Plenum
         {
             JohnsonBeamWld.Enabled = true;
             JohnsonSidePanel.Enabled = true;
-            StaticCaller = CallerType.Johnson;
+            PlenumDesign = Design.Johnson;
 
-            InitializePlenum(CallerType.Johnson);
+            InitializePlenum(Design.Johnson);
 
             FloorPanel.ClearBackingFields();
         }
-        public Johnson(CallerType callerType)
+        public Johnson(Design callerType)
         {
-            StaticCaller = callerType;
+            PlenumDesign = callerType;
             UpdateFloor(callerType);
         }
 

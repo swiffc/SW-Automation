@@ -11,6 +11,8 @@ using static FileTools.FileTools;
 using static Plenum.Plenum;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Floor
 {
@@ -19,7 +21,7 @@ namespace Plenum.Floor
         public static bool Enabled { get; set; } = FloorPanel.SpliceRequired;
 
         // Constructor
-        public FloorSplice(CallerType callerType) : base(callerType) { }
+        public FloorSplice(Design callerType) : base(callerType) { }
 
 
         // Static Properties
@@ -46,7 +48,7 @@ namespace Plenum.Floor
                     if (FloorPanel.SpliceRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = Depth - Math.Max(EndPanel.THK, SidePanel.THK);
+                        double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
 
                         for (int i = 0; i < FanCount; i++)
                         {
@@ -70,7 +72,7 @@ namespace Plenum.Floor
             mTools.EditDimension("Length", "sk:Plate", NominalLength - mTools.AssemblyClearance, modelDoc2);
             mTools.EditDimension("Diameter", "sk:Plate", FloorPanel.Diameter, modelDoc2);
 
-            mTools.EditDimension("SideGauge", "sk:FloorHole", SidePanel.Gauge - SidePanel.THK - SidePanel.R, modelDoc2);
+            mTools.EditDimension("SideGauge", "sk:FloorHole", SidePanel.Gauge - SidePanel_THK - SidePanel.R, modelDoc2);
 
             mTools.HolePattern(NominalLength - mTools.AssemblyClearance - 3 * 2, out double count, out double spacing);
             mTools.EditDimension("Spacing", "sk:FloorHole", spacing, modelDoc2);

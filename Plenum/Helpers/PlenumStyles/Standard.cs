@@ -1,5 +1,7 @@
 ﻿using Plenum.Floor;
 using static Plenum.Plenum;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -8,15 +10,15 @@ namespace Plenum
         // Constructor
         public Standard()
         {
-            StaticCaller = CallerType.Standard;
+            PlenumDesign = Design.Standard;
 
-            InitializePlenum(CallerType.Standard);
+            InitializePlenum(Design.Standard);
 
             FloorPanel.ClearBackingFields();
         }
-        public Standard(CallerType callerType)
+        public Standard(Design callerType)
         {
-            StaticCaller = callerType;
+            PlenumDesign = callerType;
             UpdateFloor(callerType);
         }
     }

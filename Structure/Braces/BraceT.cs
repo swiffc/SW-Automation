@@ -9,22 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using static Tools.ModelTools;
 using static Plenum.Plenum;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Structure.Braces
 {
     internal class BraceT : Part
     {
         // Static properties
-        static public string Size { get; set; } = "WT2x6.5";
-        static public double Depth { get; set; } = 2.125;
-        static public double StemTHK { get; set; } = 0.25;
-        static public double FlangeWidth { get; set; } = 4;
-        static public double FlangeTHK { get; set; } = 0.375;
-        static public double K { get; set; } = 0.6875;
-        static public double K1 { get; set; } = 0.4375;
-        static public double FlangeGage { get; set; } = 2.25;
-        static public double HoleToEnd => 1.125;
+
 
 
         // Constructor
@@ -36,15 +29,15 @@ namespace Structure.Braces
         {
             CalculateLengthAndPositionData();
             EditDimension("Length", "T", (double)_length);
-            EditDimension("Diameter", "sk:Hole", Clip.HoleDiameter);
+            EditDimension("Diameter", "sk:Hole", HoleDiameter_Structural);
 
-            EditDimension("Depth", "sk:T", Depth);
-            EditDimension("StemTHK", "sk:T", StemTHK);
-            EditDimension("FlangeWidth", "sk:T", FlangeWidth);
-            EditDimension("FlangeTHK", "sk:T", FlangeTHK);
-            EditDimension("K", "sk:T", K);
-            EditDimension("K1", "sk:T", K1);
-            EditDimension("FlangeGage", "sk:Hole", FlangeGage);
+            EditDimension("Depth", "sk:T", WT_Depth);
+            EditDimension("StemTHK", "sk:T", WT_StemTHK);
+            EditDimension("FlangeWidth", "sk:T", WT_FlangeWidth);
+            EditDimension("FlangeTHK", "sk:T", WT_FlangeTHK);
+            EditDimension("K", "sk:T", WT_K);
+            EditDimension("K1", "sk:T", WT_K1);
+            EditDimension("FlangeGage", "sk:Hole", WT_FlangeGage);
         }
 
 
@@ -62,13 +55,13 @@ namespace Structure.Braces
             AAS(BraceAngle, zColumnCenterToHoleColsestToColumn, out double yTopOfBasePlateToWorkLine, out _);
 
             // Triangle --> [work line below T-clip hole that's closest to the column bounds] to [T-clip hole that's closest to the column bounds]
-            AAS(BraceAngle, FlangeGage / 2, out _, out double yWorkLineToHoleClosestToColumnHole);
+            AAS(BraceAngle, WT_FlangeGage / 2, out _, out double yWorkLineToHoleClosestToColumnHole);
 
             // Y location of T-clip hole that's closest to the column bounds
             double yLowerBounds = BasePlate.THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole;
 
             // Y location of plenum clip hole that's closest to the bottom of the plenum
-            double yUpperBounds = ColumnHeight - PlenumDepth - PlenumClipHole;
+            double yUpperBounds = TotalColumnHeight - PlenumDepth - BottomOfPlenumToClipHole;
 
             // Triangle --> [T-clip hole that's closest to the column bounds] to [plenum clip hole that's closest to the bottom of the plenum]
             double yTriangle = yUpperBounds - yLowerBounds;
@@ -80,10 +73,10 @@ namespace Structure.Braces
             //-----
 
             // Triangle --> [T-clip hole that's closest to the column bounds] to [flange gage and work line intersection point]
-            AAS(BraceAngle, out double yHoleClosestToColumn_To_FlangeGageCenterPoint, out double zHoleClosestToColumn_To_FlangeGageCenterPoint, FlangeGage / 2);
+            AAS(BraceAngle, out double yHoleClosestToColumn_To_FlangeGageCenterPoint, out double zHoleClosestToColumn_To_FlangeGageCenterPoint, WT_FlangeGage / 2);
 
             // Position
-            double xTranslation = -Width / 2 - Clip.THK/2;
+            double xTranslation = -Width / 2 - Clip_THK/2;
             double yTranslation = BasePlate.THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole + yTriangle/2 - yHoleClosestToColumn_To_FlangeGageCenterPoint;
             double zTranslation = Length / 2 - zColumnCenterToHoleColsestToColumn - zTriangle/2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
 
@@ -119,7 +112,7 @@ namespace Structure.Braces
         public override bool Enabled => new[] { "T", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "131T";
         public override Shape RawMaterialShape => Shape.Tee;
-        public override string SizeOrThickness => Size;
+        public override string SizeOrThickness => WT_Size;
         public override List<PositionData> Position
         {
             get

@@ -11,6 +11,8 @@ using System.Windows.Markup;
 using Walkway.Tools;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Walkway
 {
@@ -788,7 +790,7 @@ namespace Walkway
                 X_Translation(Reference.WalkwayWidth / 2 - BraceClip.HoleToEdge);
                 Y_Translation(
                     -Beam.Height - BraceClip.HoleToEdge);
-                Z_Translation(BraceClip.THK / 2);
+                Z_Translation(Clip_THK / 2);
                 Z_Axis_Rotate(45, 3, 'x');
                 ApplyPositionInformation(leftBrace);
 
@@ -812,7 +814,7 @@ namespace Walkway
                 Y_Translation(
                     -Beam.Height - BraceClip.HoleToEdge
                     - (Beam.Part.Length + EndPlate.THK * 2 - BraceClip.HoleToEdge * 2));
-                Z_Translation(-BraceClip.THK / 2);
+                Z_Translation(-Clip_THK / 2);
                 DevTools.PositionMaxtrix[0] = -Math.Cos(Math.PI / 4);
                 DevTools.PositionMaxtrix[1] = -Math.Sin(Math.PI / 4);
                 DevTools.PositionMaxtrix[3] = -Math.Sin(Math.PI / 4);

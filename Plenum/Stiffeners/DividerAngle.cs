@@ -6,6 +6,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -27,7 +29,7 @@ namespace Plenum
 
 
         // Constructor
-        public DividerAngle(CallerType callerType) : base(callerType) { }
+        public DividerAngle(Design callerType) : base(callerType) { }
 
         public override RawMaterial Shape => RawMaterial.Plate;
         public override string Size => THK.ToString();
@@ -56,13 +58,13 @@ namespace Plenum
             {
                 if (_position == null)
                 {
-                    double xTranslation = Width / 2 - Beam.WebTHK / 2;
+                    double xTranslation = Width / 2 - Beam_WebTHK / 2;
                     double yTranslation = CornerAngle.YTranslation;
-                    double zTranslation = Length / 2 - EndPanel.THK / 2;
-                    double zTranslation2 = Length / 2 + EndPanel.THK / 2;
-                    if (CallerType == CallerType.Johnson || CallerType == CallerType.Legacy)
+                    double zTranslation = Length / 2 - EndPanel_THK / 2;
+                    double zTranslation2 = Length / 2 + EndPanel_THK / 2;
+                    if (CallerType == Design.Johnson || CallerType == Design.Legacy)
                     {
-                        xTranslation = Width / 2 - Beam.Depth / 2;
+                        xTranslation = Width / 2 - Beam_Depth / 2;
                     }
 
                     _position = new List<PositionData>();

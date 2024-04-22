@@ -12,6 +12,8 @@ using bTools = ModelTools.BendTable;
 using static Plenum.Plenum;
 using Plenum.Helpers.Static;
 using static FileTools.FileTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Floor
 {
@@ -76,7 +78,7 @@ namespace Plenum.Floor
         public override string Size => "0.1344";
 
         // Constructor
-        public FanRing(CallerType callerType) : base(callerType) { }
+        public FanRing(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -143,7 +145,7 @@ namespace Plenum.Floor
                     _position = new List<PositionData>();
 
                     var zTranslation = FanCenter.ZTranslation(CallerType);
-                    double yTranslation = Plenum.Depth - Math.Max(EndPanel.THK, SidePanel.THK);
+                    double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
 
                     for (int i = 0; i < zTranslation.Count; i++)
                     {

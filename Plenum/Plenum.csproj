@@ -91,6 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="StandardParts\FanGuard.cs" />
     <Compile Include="Stiffeners\CornerAngle.cs" />
     <Compile Include="Helpers\BaseClasses\Assembly.cs" />
@@ -106,6 +111,7 @@
     <Compile Include="Stiffeners\PlanBrace\Derived\PlanBraceMiddle.cs" />
     <Compile Include="Stiffeners\PlanBrace\PlanBrace.cs" />
     <Compile Include="Stiffeners\PlanBrace\PlanBraceHorizontal.cs" />
+    <Compile Include="Structure\KneeClipFlat.cs" />
     <Compile Include="Walls\DividerFlange.cs" />
     <Compile Include="Walls\DividerPanel.cs" />
     <Compile Include="Walls\EndPanel.cs" />
@@ -128,6 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileTools\FileTools.csproj">

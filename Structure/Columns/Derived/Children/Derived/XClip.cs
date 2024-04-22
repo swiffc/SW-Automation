@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Structure.Columns.Derived.Children.Derived
 {
     internal class XClip : Clip
     {
         // Static properties
-        static public double OffsetFromColumnCenter => Beam.IsRotated ? Beam.FlangeWidth / 2 : Beam.WebTHK / 2;
-        static public double ColumnBoundToNearestHole => Beam.IsRotated ? ColumnBoundsToHole : Beam.FlangeWidth / 2 - Beam.WebTHK / 2 + ColumnBoundsToHole;
+        static public double OffsetFromColumnCenter => Beams_AreRotated ? Beam_FlangeWidth / 2 : Beam_WebTHK / 2;
+        static public double ColumnBoundToNearestHole => Beams_AreRotated ? ColumnBoundsToHole : Beam_FlangeWidth / 2 - Beam_WebTHK / 2 + ColumnBoundsToHole;
         static public double LocalAngle
         {
             get
@@ -46,7 +48,7 @@ namespace Structure.Columns.Derived.Children.Derived
         public override bool Enabled => new[] { "X", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "104X";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => THK.ToString();
+        public override string SizeOrThickness => Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get

@@ -7,6 +7,7 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
 
 namespace Plenum
 {
@@ -152,7 +153,7 @@ namespace Plenum
 
 
         // Constructor
-        protected Beam(CallerType callerType) : base(callerType) { }
+        protected Beam(Design callerType) : base(callerType) { }
 
 
         // Private methods
@@ -166,8 +167,8 @@ namespace Plenum
             mTools.EditDimension("K1", "sk:Beam", K1, modelDoc2);
             mTools.EditDimension("Length", "Beam", LocalLength, modelDoc2);
 
-            double johnsonPlate = CallerType == CallerType.Johnson ? 0.5 : 0;
-            if (CallerType == CallerType.Legacy || CallerType == CallerType.Johnson)
+            double johnsonPlate = CallerType == Design.Johnson ? 0.5 : 0;
+            if (CallerType == Design.Legacy || CallerType == Design.Johnson)
             {
                 mTools.EditDimension("Hole0", "sk:FlangeHole", CornerAngle.HolePositions[6] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole1", "sk:FlangeHole", CornerAngle.HolePositions[7] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
@@ -176,7 +177,7 @@ namespace Plenum
                 mTools.EditDimension("Hole4", "sk:FlangeHole", CornerAngle.HolePositions[10] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole5", "sk:FlangeHole", PlenumColumn.Height + 1, modelDoc2);
 
-                mTools.EditDimension("Gage", "sk:FlangeHole2", DividerAngle.ShortGauge + EndPanel.THK / 2, modelDoc2);
+                mTools.EditDimension("Gage", "sk:FlangeHole2", DividerAngle.ShortGauge + EndPanel_THK / 2, modelDoc2);
 
             }
             else
@@ -214,7 +215,7 @@ namespace Plenum
                 if (_position == null)
                 {
                     double yTranslation = 0;
-                    if (CallerType == CallerType.Johnson)
+                    if (CallerType == Design.Johnson)
                     {
                         yTranslation = -0.5;
                     }
@@ -235,7 +236,7 @@ namespace Plenum
         {
             get
             {
-                if (CallerType == CallerType.Johnson)
+                if (CallerType == Design.Johnson)
                 {
                     return PlenumColumn.Height - CapPlate.THK - 0.5;
                 }

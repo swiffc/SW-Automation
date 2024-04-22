@@ -11,6 +11,8 @@ using Plenum.Stiffeners;
 using System;
 using static FileTools.FileTools;
 using Plenum.Floor;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -24,31 +26,31 @@ namespace Plenum
                 return FanCount > 1 ? true : false;
             }
         }
-        internal static double THK => EndPanel.THK;
+        internal static double THK => EndPanel_THK;
         internal static double Flange => 3.5;
         internal static double LocalWidth
         {
             get
             {
-                switch (StaticCaller)
+                switch (PlenumDesign)
                 {
-                    case CallerType.Standard:
+                    case Design.Standard:
                         if (MidColumns)
-                            return Width - Beam.WebTHK - mTools.InterferenceClearance * 2;
+                            return Width - Beam_WebTHK - mTools.InterferenceClearance * 2;
                         else
                             return Width - CornerAngle.Gauge * 2 + HoleToEdge * 2;
 
-                    case CallerType.Johnson:
+                    case Design.Johnson:
                         if (MidColumns)
-                            return Width - Beam.Depth - mTools.InterferenceClearance * 2;
+                            return Width - Beam_Depth - mTools.InterferenceClearance * 2;
                         else
-                            return Width + Beam.Depth - mTools.InterferenceClearance * 2;
+                            return Width + Beam_Depth - mTools.InterferenceClearance * 2;
 
-                    case CallerType.Legacy:
+                    case Design.Legacy:
                         if (MidColumns)
-                            return Width - Beam.Depth - mTools.InterferenceClearance * 2;
+                            return Width - Beam_Depth - mTools.InterferenceClearance * 2;
                         else
-                            return Width + Beam.Depth - Beam.FlangeTHK * 2 - SidePanel.THK * 2 - mTools.InterferenceClearance * 2;
+                            return Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.InterferenceClearance * 2;
                     default:
                         throw new Exception();
                 }
@@ -63,13 +65,13 @@ namespace Plenum
         {
             double span;
 
-            if (CallerType == CallerType.Johnson)
+            if (CallerType == Design.Johnson)
             {
                 span = DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 4;
             }
             else
             {
-                span = EndPanel.LocalWidth / 2 - Beam.FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+                span = EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
             }
             mTools.HolePattern(span, out double count, out double spacing);
             mTools.EditDimension("Spacing", "sk:WebHole", spacing, modelDoc2);
@@ -78,26 +80,26 @@ namespace Plenum
         internal static double BottomHoleSpan()
         {
             double span;
-            if (CallerType == CallerType.Johnson)
+            if (CallerType == Design.Johnson)
             {
                 span = DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 4;
             }
             else
             {
-                span = EndPanel.LocalWidth / 2 - Beam.FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+                span = EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
             }
             return span;
         }
 
         // Constructor
-        public DividerPanel(CallerType callerType) : base(callerType) { }
+        public DividerPanel(Design callerType) : base(callerType) { }
 
 
         // Method overrides
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             mTools.EditDimension("Width", "sk:Web", LocalWidth, modelDoc2);
-            mTools.EditDimension("Height", "sk:Web", Depth, modelDoc2);
+            mTools.EditDimension("Height", "sk:Web", PlenumDepth, modelDoc2);
             mTools.EditDimension("THK", "Sheet-Metal", THK, modelDoc2);
             mTools.EditDimension("innerR", "TopFlangeR", bTable.GetBendRadius(THK), modelDoc2);
             mTools.EditDimension("innerR", "BottomFlangeR", bTable.GetBendRadius(THK), modelDoc2);
@@ -110,7 +112,7 @@ namespace Plenum
             mTools.EditDimension("Hole5", "sk:Hole", CornerAngle.HolePositions[5] + CornerAngle.YTranslation, modelDoc2);
 
             mTools.EditDimension("PlanBraceX", "sk:Hole", GetPlanBraceHole(), modelDoc2);
-            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled ? Depth : 0), modelDoc2);
+            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled ? PlenumDepth : 0), modelDoc2);
 
             mTools.HolePattern(BottomHoleSpan(), out double count, out double spacing);
             mTools.EditDimension("Count1", "sk:BottomHole", count, modelDoc2);
@@ -118,20 +120,20 @@ namespace Plenum
             mTools.EditDimension("Spacing1", "sk:BottomHole", spacing, modelDoc2);
             mTools.EditDimension("Spacing2", "sk:BottomHole", spacing, modelDoc2);
 
-            mTools.EditDimension("Width", "sk:ColumnCut", Beam.Depth / 2 - Beam.FlangeTHK - mTools.InterferenceClearance, modelDoc2);
+            mTools.EditDimension("Width", "sk:ColumnCut", Beam_Depth / 2 - Beam_FlangeTHK - mTools.InterferenceClearance, modelDoc2);
 
             EditDimensions_WebHoles(modelDoc2);
 
             mTools.EditDimension("Gauge", "sk:BottomHole", THK * 2 + bTable.GetBendRadius(THK) + FloorPanel.HoleToEdge1, modelDoc2);
 
-            mTools.EditDimension("Width", "sk:SideCut", SidePanel.Leg - SidePanel.THK, modelDoc2);        }
+            mTools.EditDimension("Width", "sk:SideCut", SidePanel.Leg - SidePanel_THK, modelDoc2);        }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
             bool suppress = false;
-            if (CallerType != CallerType.Standard)
+            if (CallerType != Design.Standard)
                 suppress = true;
             else
-                if (Beam.FlangeWidth / 2 - 0.25 > Flange - THK / 2)
+                if (Beam_FlangeWidth / 2 - 0.25 > Flange - THK / 2)
                 suppress = true;
 
             mTools.SuppressFeatures(suppress, modelDoc2, "ColumnCut", "ColumnCutMirror");
@@ -147,8 +149,8 @@ namespace Plenum
         private double GetPlanBraceHole()
         {
             //double sectionThird = Length / FanCount / 3;
-            mTools.AAS(45, PlanBraceHorizontal.SectionThird - EndPanel.THK / 2, out double adjacentSide, out _);
-            double value = Width - adjacentSide * 2 + (CallerType == CallerType.Johnson ? Beam.Depth : 0);
+            mTools.AAS(45, PlanBraceHorizontal.SectionThird - EndPanel_THK / 2, out double adjacentSide, out _);
+            double value = Width - adjacentSide * 2 + (CallerType == Design.Johnson ? Beam_Depth : 0);
 
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)
@@ -168,7 +170,7 @@ namespace Plenum
         {
             get
             {
-                double zTranslation = Length / 2 - EndPanel.THK / 2;
+                double zTranslation = Length / 2 - EndPanel_THK / 2;
 
 
                 List<PositionData> _position = new List<PositionData>();

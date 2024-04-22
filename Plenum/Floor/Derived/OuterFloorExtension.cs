@@ -10,6 +10,8 @@ using static Plenum.Plenum;
 using mTools = Tools.ModelTools;
 using bTools = ModelTools.BendTable;
 using static FileTools.FileTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Floor.Derived.Derived
 {
@@ -26,7 +28,7 @@ namespace Plenum.Floor.Derived.Derived
 
 
         // Constructor
-        public OuterFloorExtension(CallerType callerType) : base(callerType) { }
+        public OuterFloorExtension(Design callerType) : base(callerType) { }
 
 
         // Property overrides
@@ -42,10 +44,10 @@ namespace Plenum.Floor.Derived.Derived
                 {
                     _position = new List<PositionData>();
 
-                    if (CallerType != CallerType.Legacy && FloorPanel.ExtensionRequired)
+                    if (CallerType != Design.Legacy && FloorPanel.ExtensionRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = Depth - Math.Max(EndPanel.THK, SidePanel.THK);
+                        double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
                         int i = FanCount == 1 ? 0 : FanCount - 1;
                         double zOffset = OuterFloorPanel.GetLength() + FloorSplice.NominalLength / 2 + mTools.AssemblyClearance;
 
@@ -75,7 +77,7 @@ namespace Plenum.Floor.Derived.Derived
 
             double length = adjustedLength + (FloorPanel.SpliceRequired ? FloorSplice.NominalLength / 2 : 0);
 
-            if (CallerType == CallerType.Johnson && zColumnCut + Beam.FlangeWidth / 2 < length)
+            if (CallerType == Design.Johnson && zColumnCut + Beam_FlangeWidth / 2 < length)
                 mTools.SuppressFeatures(true, modelDoc2, "ColumnCut", "JohnsonCut");
             else
                 mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "JohnsonCut");

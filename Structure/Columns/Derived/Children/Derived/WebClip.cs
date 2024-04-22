@@ -6,7 +6,9 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Structure.Columns.Derived.Children.Derived
 {
@@ -21,7 +23,7 @@ namespace Structure.Columns.Derived.Children.Derived
         {
             base.Dimensions();
 
-            EditDimension("ColumnCenterToHole", "sk:Plate", Beam.FlangeWidth / 2 + ColumnBoundsToHole - Beam.WebTHK / 2);
+            EditDimension("ColumnCenterToHole", "sk:Plate", Beam_FlangeWidth / 2 + ColumnBoundsToHole - Beam_WebTHK / 2);
             EditDimension("Angle", "sk:Plate", BraceAngle);
 
         }
@@ -31,49 +33,62 @@ namespace Structure.Columns.Derived.Children.Derived
         public override bool Enabled => new[] { "L", "LL" }.Contains(BraceType);
         public override string StaticPartNo => "104W";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => THK.ToString();
+        public override string SizeOrThickness => Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get
             {
                 var pos = new List<PositionData>();
-                double xzTranslation = Beam.FlangeWidth / 2 + ColumnBoundsToHole;
-                double translationY = ClipHeight;
 
-                switch (ParentSubAssembly.StaticPartNo)
-                {
-                    case "101":
-                        addPosition(Beam.IsRotated, Beam.IsRotated ? -xzTranslation : xzTranslation, Beam.IsRotated ? -90 : 0);
-                        break;
-                    case "106":
-                        addPosition(Beam.IsRotated, xzTranslation, Beam.IsRotated ? 90 : 0);
-                        break;
-                    case "111":
-                        if (Beam.IsRotated)
-                        {
-                            addPosition(true, -xzTranslation, -90);
-                            addPosition(true, xzTranslation, 90);
-                        }
-                        else
-                        {
-                            addPosition(false, xzTranslation);
-                        }
-                        break;
-                }
+                double columnCenterToClipHole = Beam_FlangeWidth / 2 + ColumnBoundsToHole;
+                double xTranslation = Beams_AreRotated ? SidePanelShift : 0;
+                double zTranslation = Beams_AreRotated ? EndPanelShift : 0;
 
-                void addPosition(bool rotated, double translation, double rotationY = 0)
+                if (ParentSubAssembly.StaticPartNo == "101")
                 {
-                    if (rotated)
+                    if (Beams_AreRotated)
                     {
-                        pos.Add(PositionData.Create(tZ: translation, tY: translationY, rY: rotationY));
+                        pos.Add(PositionData.Create(tZ: -columnCenterToClipHole, tY: ClipHeight, rY: -90, tX: xTranslation));
                     }
                     else
                     {
-                        pos.Add(PositionData.Create(tX: translation, tY: translationY));
+                        pos.Add(PositionData.Create(tX: columnCenterToClipHole, tY: ClipHeight, tZ: zTranslation));
                     }
                 }
 
+                if (ParentSubAssembly.StaticPartNo == "106")
+                {
+                    if (Beams_AreRotated)
+                    {
+                        pos.Add(PositionData.Create(tZ: columnCenterToClipHole, tY: ClipHeight, rY: 90, tX: -xTranslation));
+                    }
+                    else
+                    {
+                        pos.Add(PositionData.Create(tX: columnCenterToClipHole, tY: ClipHeight, tZ: -zTranslation));
+                    }
+                }
+
+                if (ParentSubAssembly.StaticPartNo == "111")
+                {
+                    if (Beams_AreRotated)
+                    {
+                        pos.Add(PositionData.Create(tZ: -columnCenterToClipHole, tY: ClipHeight, rY: -90, tX: xTranslation));
+                        pos.Add(PositionData.Create(tZ: columnCenterToClipHole, tY: ClipHeight, rY: 90, tX: xTranslation));
+                    }
+                    else
+                    {
+                        pos.Add(PositionData.Create(tX: columnCenterToClipHole, tY: ClipHeight));
+                    }
+                }
+
+
+
+
+
+
+
                 return pos;
+
             }
 
         }

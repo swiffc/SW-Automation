@@ -9,6 +9,9 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Linq;
 using System.Security.AccessControl;
 using System;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using FileTools;
 
 namespace Structure.Braces.Derived
 {
@@ -19,22 +22,10 @@ namespace Structure.Braces.Derived
         {
             get
             {
-                double BottomOfPlenumToHole = 2.5;
-                double yPlenumClipHole = ColumnHeight - PlenumDepth - BottomOfPlenumToHole;
-                double yStructureClipHole = ClipHeight;
-
-                // Triangle
-                double vert = yPlenumClipHole - yStructureClipHole;
-                double diag;
-                double angle = BraceAngle;
-
-                AAS(angle, out _, vert, out diag);
-                double braceLength = diag + HoleToEnd * 2;
-
-                return braceLength;
+                return KneeBraceLength();
             }
         }
-        static public double HoleToEnd => 1.125;
+        static public double HoleToEnd => CommonData.HoleToEnd;
         static public double HoleToHole => 2.5;
 
 
@@ -110,12 +101,12 @@ namespace Structure.Braces.Derived
         private List<PositionData> SidePositions(out double horz, out double yTranslation, out double xRotation)
         {
             // Viewing YZ plane
-            double xTranslation = -Width / 2 + Clip.THK / 2;
+            double xTranslation = -Width / 2 + Clip_THK / 2 - Clip.SidePanelShift;
             yTranslation = ClipHeight;
             double zTranslation;
-            if (Beam.IsRotated)
+            if (Beams_AreRotated)
             {
-                zTranslation = Length / 2 - Beam.FlangeWidth / 2 - Clip.ColumnBoundsToHole;
+                zTranslation = Length / 2 - Beam_FlangeWidth / 2 - ColumnBoundsToHole;
             }
             else
             {
@@ -147,13 +138,13 @@ namespace Structure.Braces.Derived
             if (BraceType == "LL")
             {
                 var side_101LL = side_101;
-                side_101LL.TranslationX -= Clip.THK;
+                side_101LL.TranslationX -= Clip_THK;
                 side_101LL.RotationY += 180;
                 side_101LL.RotationX += 90 + BraceAngle;
                 pos.Add(side_101LL);
 
                 var side_106LL = side_106;
-                side_106LL.TranslationX += Clip.THK;
+                side_106LL.TranslationX += Clip_THK;
                 side_106LL.RotationY += 180;
                 side_106LL.RotationX -= 90 + BraceAngle;
                 pos.Add(side_106LL);
@@ -164,8 +155,8 @@ namespace Structure.Braces.Derived
         private List<PositionData> EndPositions(double horz, double yTranslation, double xRotation)
         {
             // Viewing XY plane
-            double xTranslation = -Width / 2 + Beam.FlangeWidth / 2 + Clip.ColumnBoundsToHole + horz;
-            double zTranslation = Length / 2 - Clip.THK / 2;
+            double xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
+            double zTranslation = Length / 2 - Clip_THK / 2 + (Beams_AreRotated ? Clip.EndPanelShift : 0);
 
             var end_101 = PositionData.Create(tX: xTranslation, rX: -xRotation, tY: yTranslation, rY: -90, tZ: zTranslation);
 
@@ -182,13 +173,13 @@ namespace Structure.Braces.Derived
             if (BraceType == "LL")
             {
                 var end_101LL = end_101;
-                end_101LL.TranslationZ += Clip.THK;
+                end_101LL.TranslationZ += Clip_THK;
                 end_101LL.RotationY += 180;
                 end_101LL.RotationX -= 90 + BraceAngle;
                 pos.Add(end_101LL);
 
                 var end_106LL = end_106;
-                end_106LL.TranslationZ += Clip.THK;
+                end_106LL.TranslationZ += Clip_THK;
                 end_106LL.RotationY += 180;
                 end_106LL.RotationX += 90 + BraceAngle;
                 pos.Add(end_106LL);

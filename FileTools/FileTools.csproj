@@ -59,11 +59,15 @@
     <Compile Include="Base\SubAssembly.cs" />
     <Compile Include="Base\Part.cs" />
     <Compile Include="Base\MainAssembly.cs" />
+    <Compile Include="CommonData\CommonData.MachineryMount.cs" />
+    <Compile Include="CommonData\CommonData.Plenum.cs" />
+    <Compile Include="CommonData\CommonData.ShippingSteel.cs" />
+    <Compile Include="CommonData\CommonData.Structure.cs" />
+    <Compile Include="CommonData\CommonData.UI.cs" />
     <Compile Include="FileTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawMaterial_1.cs" />
     <Compile Include="RawMaterial_2.cs" />
-    <Compile Include="SharedProperties.cs" />
     <Compile Include="StaticFileTools.cs" />
   </ItemGroup>
   <ItemGroup>

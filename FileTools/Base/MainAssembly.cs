@@ -2,7 +2,8 @@
 using System.IO;
 using static FileTools.StaticFileTools;
 using static Tools.ModelTools;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace FileTools.Base
 {

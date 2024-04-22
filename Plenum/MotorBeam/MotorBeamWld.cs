@@ -8,6 +8,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -18,7 +20,7 @@ namespace Plenum
 
 
         // Constructor
-        public MotorBeamWld(CallerType callerType)
+        public MotorBeamWld(Design callerType)
         {
             CallerType = callerType;
             InitializeComponents();
@@ -106,12 +108,12 @@ namespace Plenum
             {
                 switch (CallerType)
                 {
-                    case CallerType.Standard:
+                    case Design.Standard:
                         return Width - mTools.AssemblyClearance * 2;
-                    case CallerType.Johnson:
-                        return Width + Beam.Depth - mTools.AssemblyClearance * 2;
-                    case CallerType.Legacy:
-                        return Width + Beam.Depth - Beam.FlangeTHK * 2 - SidePanel.THK * 2 - mTools.AssemblyClearance * 2;
+                    case Design.Johnson:
+                        return Width + Beam_Depth - mTools.AssemblyClearance * 2;
+                    case Design.Legacy:
+                        return Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.AssemblyClearance * 2;
                 }
                 return _length;
             }
@@ -120,7 +122,7 @@ namespace Plenum
 
 
         // Private properties
-        private static CallerType CallerType { get; set; }
+        private static Design CallerType { get; set; }
         private string _filePath;
         private string _partNo;
         private List<PositionData> _position;

@@ -6,6 +6,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -18,7 +20,7 @@ namespace Plenum
 
 
         // Constructor
-        public MotorBeamPlate(CallerType callerType) : base(callerType)
+        public MotorBeamPlate(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }

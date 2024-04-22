@@ -18,6 +18,8 @@ using aTools = ModelTools.AssemblyTools;
 using static FileTools.FileTools;
 using Plenum.Stiffeners;
 using static Plenum.Plenum;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -29,31 +31,31 @@ namespace Plenum
         }
 
         // Job
-        private void txt_JobNumber_TextChanged_1(object sender, EventArgs e)
+        private void txt_JobNumber_TextChanged(object sender, EventArgs e)
         {
             JobInfo.Project = txt_JobNumber.Text;
         }
-        private void txt_JobCustomer_TextChanged_1(object sender, EventArgs e)
+        private void txt_JobCustomer_TextChanged(object sender, EventArgs e)
         {
             JobInfo.Customer = txt_JobCustomer.Text;
         }
-        private void txt_JobClient_TextChanged(object sender, EventArgs e)
+        private void txt_JobClient_TextChanged_1(object sender, EventArgs e)
         {
             JobInfo.Client = txt_JobClient.Text;
         }
-        private void txt_JobLocation_TextChanged(object sender, EventArgs e)
+        private void txt_JobLocation_TextChanged_1(object sender, EventArgs e)
         {
             JobInfo.PlantLocation = txt_JobLocation.Text;
         }
-        private void txt_JobPO_TextChanged(object sender, EventArgs e)
+        private void txt_JobPO_TextChanged_1(object sender, EventArgs e)
         {
             JobInfo.PurchaseOrder = txt_JobPO.Text;
         }
-        private void txt_JobItemNo_TextChanged(object sender, EventArgs e)
+        private void txt_JobItemNo_TextChanged_1(object sender, EventArgs e)
         {
             JobInfo.ItemNumber = txt_JobItemNo.Text;
         }
-        private void txt_Initials_TextChanged(object sender, EventArgs e)
+        private void txt_Initials_TextChanged_1(object sender, EventArgs e)
         {
             JobInfo.Initials = txt_Initials.Text;
         }
@@ -64,7 +66,9 @@ namespace Plenum
         {
             if (double.TryParse(txt_Length1.Text, out double length))
             {
-                Plenum.Length = length;
+                Length = length;
+                Properties.Settings.Default.Length = length; 
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -72,7 +76,7 @@ namespace Plenum
         {
             if (double.TryParse(txt_Width1.Text, out double width))
             {
-                Plenum.Width = width;
+                CommonData.Width = width;
             }
         }
 
@@ -80,7 +84,7 @@ namespace Plenum
         {
             if (double.TryParse(txt_Depth1.Text, out double depth))
             {
-                Plenum.Depth = depth;
+                CommonData.PlenumDepth = depth;
             }
         }
 
@@ -88,13 +92,13 @@ namespace Plenum
         {
             if (int.TryParse(txt_FanCount1.Text, out int fanCount))
             {
-                Plenum.FanCount = fanCount;
+                CommonData.FanCount = fanCount;
             }
         }
 
         private void checkBox_MidCol_CheckedChanged(object sender, EventArgs e)
         {
-            Plenum.MidColumns = checkBox_MidCol.Checked;
+            CommonData.MidColumns = checkBox_MidCol.Checked;
         }
 
 
@@ -105,7 +109,7 @@ namespace Plenum
         {
             if (isUserChange && double.TryParse(textBox_Depth.Text, out double depth))
             {
-                Beam.Depth = depth;
+                Beam_Depth = depth;
                 PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
             }
         }
@@ -114,7 +118,7 @@ namespace Plenum
         {
             if (isUserChange && double.TryParse(textBox_WebTHK.Text, out double webTHK))
             {
-                Beam.WebTHK = webTHK;
+                Beam_WebTHK = webTHK;
                 PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
             }
         }
@@ -123,7 +127,7 @@ namespace Plenum
         {
             if (isUserChange && double.TryParse(textBox_FlangeWidth.Text, out double flangeWidth))
             {
-                Beam.FlangeWidth = flangeWidth;
+                Beam_FlangeWidth = flangeWidth;
                 PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
             }
         }
@@ -132,7 +136,7 @@ namespace Plenum
         {
             if (isUserChange && double.TryParse(textBox_FlangeTHK.Text, out double flangeTHK))
             {
-                Beam.FlangeTHK = flangeTHK;
+                Beam_FlangeTHK = flangeTHK;
                 PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
             }
         }
@@ -141,7 +145,7 @@ namespace Plenum
         {
             if (isUserChange && double.TryParse(textBox_K.Text, out double k))
             {
-                Beam.K = k;
+                Beam_K = k;
                 PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
             }
         }
@@ -150,7 +154,7 @@ namespace Plenum
         {
             if (isUserChange && double.TryParse(textBox_K1.Text, out double k1))
             {
-                Beam.K1 = k1;
+                Beam_K1 = k1;
                 PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
             }
         }
@@ -170,24 +174,24 @@ namespace Plenum
             txt_Initials.Text = JobInfo.Initials;
 
             // Plenum
-            txt_Length1.Text = Plenum.Length.ToString();
-            txt_Width1.Text = Plenum.Width.ToString();
-            txt_Depth1.Text = Plenum.Depth.ToString();
-            checkBox_MidCol.Checked = Plenum.MidColumns;
-            EndcomboBox1.Text = EndPanel.THK.ToString();
-            SidecomboBox2.Text = SidePanel.THK.ToString();
+            txt_Length1.Text = Properties.Settings.Default.Length.ToString();
+            txt_Width1.Text = CommonData.Width.ToString();
+            txt_Depth1.Text = CommonData.PlenumDepth.ToString();
+            checkBox_MidCol.Checked = CommonData.MidColumns;
+            EndcomboBox1.Text = EndPanel_THK.ToString();
+            SidecomboBox2.Text = SidePanel_THK.ToString();
 
             // Beam
             comboBox_ColumnSize.Text = PlenumColumn.Size;
-            textBox_Depth.Text = Beam.Depth.ToString();
-            textBox_WebTHK.Text = Beam.WebTHK.ToString();
-            textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
-            textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
-            textBox_K.Text = Beam.K.ToString();
-            textBox_K1.Text = Beam.K1.ToString();
+            textBox_Depth.Text = Beam_Depth.ToString();
+            textBox_WebTHK.Text = Beam_WebTHK.ToString();
+            textBox_FlangeWidth.Text = Beam_FlangeWidth.ToString();
+            textBox_FlangeTHK.Text = Beam_FlangeTHK.ToString();
+            textBox_K.Text = Beam_K.ToString();
+            textBox_K1.Text = Beam_K1.ToString();
 
             // Fan
-            txt_FanCount1.Text = Plenum.FanCount.ToString();
+            txt_FanCount1.Text = CommonData.FanCount.ToString();
             txt_FanDiameter.Text = Plenum._fanDiameterFeet.ToString();
             txt_RingDepth.Text = FanRing.Depth.ToString();
 
@@ -216,9 +220,9 @@ namespace Plenum
             zShift_txt.Text = FloorStiffener.ZShiftAdjustment.ToString();
 
             checkBox1_locations.Checked = ToggleRelocate;
-            checkBox2_dwg.Checked = ToggleCreateDrawing;
-            checkBox3_save.Checked = ToggleSave;
-            checkBox4_delete.Checked = ToggleDeleteFiles;
+            checkBox2_dwg.Checked = CommonData.ToggleCreateDrawing;
+            checkBox3_save.Checked = CommonData.ToggleSave;
+            checkBox4_delete.Checked = CommonData.ToggleDeleteFiles;
         }
 
         private void btn_Standard_Click(object sender, EventArgs e)
@@ -234,12 +238,12 @@ namespace Plenum
             if (PlenumColumn.Size != "Custom")
             {
                 Beam.ResetSize();
-                textBox_Depth.Text = Beam.Depth.ToString();
-                textBox_WebTHK.Text = Beam.WebTHK.ToString();
-                textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
-                textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
-                textBox_K.Text = Beam.K.ToString();
-                textBox_K1.Text = Beam.K1.ToString();
+                textBox_Depth.Text = Beam_Depth.ToString();
+                textBox_WebTHK.Text = Beam_WebTHK.ToString();
+                textBox_FlangeWidth.Text = Beam_FlangeWidth.ToString();
+                textBox_FlangeTHK.Text = Beam_FlangeTHK.ToString();
+                textBox_K.Text = Beam_K.ToString();
+                textBox_K1.Text = Beam_K1.ToString();
             }
 
             isUserChange = true;
@@ -303,19 +307,19 @@ namespace Plenum
             switch (EndcomboBox1.Text)
             {
                 case "0.1344":
-                    EndPanel.THK = 0.1344;
+                    EndPanel_THK = 0.1344;
                     break;
                 case "0.1875":
-                    EndPanel.THK = 0.1875;
+                    EndPanel_THK = 0.1875;
                     break;
                 case "0.2500":
-                    EndPanel.THK = 0.2500;
+                    EndPanel_THK = 0.2500;
                     break;
                 case "0.3125":
-                    EndPanel.THK = 0.3125;
+                    EndPanel_THK = 0.3125;
                     break;
                 case "0.3750":
-                    EndPanel.THK = 0.3750;
+                    EndPanel_THK = 0.3750;
                     break;
             }
         }
@@ -325,19 +329,19 @@ namespace Plenum
             switch (SidecomboBox2.Text)
             {
                 case "0.1344":
-                    SidePanel.THK = 0.1344;
+                    SidePanel_THK = 0.1344;
                     break;
                 case "0.1875":
-                    SidePanel.THK = 0.1875;
+                    SidePanel_THK = 0.1875;
                     break;
                 case "0.2500":
-                    SidePanel.THK = 0.2500;
+                    SidePanel_THK = 0.2500;
                     break;
                 case "0.3125":
-                    SidePanel.THK = 0.3125;
+                    SidePanel_THK = 0.3125;
                     break;
                 case "0.3750":
-                    SidePanel.THK = 0.3750;
+                    SidePanel_THK = 0.3750;
                     break;
             }
         }
@@ -375,17 +379,17 @@ namespace Plenum
 
         private void std_floor_Click(object sender, EventArgs e)
         {
-            new Standard(CallerType.Standard);
+            new Standard(Design.Standard);
         }
 
         private void jhn_floor_Click(object sender, EventArgs e)
         {
-            new Johnson(CallerType.Johnson);
+            new Johnson(Design.Johnson);
         }
 
         private void leg_floor_Click(object sender, EventArgs e)
         {
-            new Legacy(CallerType.Legacy);
+            new Legacy(Design.Legacy);
         }
 
         private void checkBox1_locations_CheckedChanged(object sender, EventArgs e)
@@ -395,22 +399,24 @@ namespace Plenum
 
         private void checkBox2_dwg_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleCreateDrawing = checkBox2_dwg.Checked;
+            CommonData.ToggleCreateDrawing = checkBox2_dwg.Checked;
         }
 
         private void checkBox3_save_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleSave = checkBox3_save.Checked;
+            CommonData.ToggleSave = checkBox3_save.Checked;
         }
 
         private void checkBox4_delete_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleDeleteFiles = checkBox4_delete.Checked;
+            CommonData.ToggleDeleteFiles = checkBox4_delete.Checked;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             mTools.Unlock();
         }
+
+
     }
 }

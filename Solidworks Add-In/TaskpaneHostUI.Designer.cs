@@ -291,7 +291,7 @@
             this.Controls.Add(this.PreviousSheet);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaskpaneHostUI";
-            this.Size = new System.Drawing.Size(234, 764);
+            this.Size = new System.Drawing.Size(234, 741);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

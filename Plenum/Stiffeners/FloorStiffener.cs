@@ -14,6 +14,8 @@ using static Plenum.Plenum;
 using Plenum.Floor;
 using Plenum.Floor.Derived;
 using static FileTools.FileTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Stiffeners
 {
@@ -35,7 +37,7 @@ namespace Plenum.Stiffeners
         private static double HoleToEdge => 1.5;
         private static double MaxHoleSpacing => 18;
         internal static double RadialBoundary => FloorPanel.Diameter / 2 + Leg + Clearance;
-        internal static double GetLength(CallerType callerType, out double xShift)
+        internal static double GetLength(Design callerType, out double xShift)
         {
             // Work point formed by 45 degree line from fan origin to 201 Front Plane
             mTools.AAS(Angle,
@@ -44,21 +46,21 @@ namespace Plenum.Stiffeners
                 RadialBoundary);
 
             // Boundary limit in Z direction
-            double z_FanOriginToBounds = Plenum.Length / (FanCount * 2) - DividerPanel.Flange + DividerPanel.THK / 2
+            double z_FanOriginToBounds = Length / (FanCount * 2) - DividerPanel.Flange + DividerPanel.THK / 2
                 - (FloorPanel.ExtensionRequired == true ? InnerFloorExtension.NominalLength : 0);
 
             // Boundary limit in the X direction
             double x_FanOriginToBounds = Width / 2;
             switch (callerType)
             {
-                case CallerType.Standard:
-                    x_FanOriginToBounds += SidePanel.THK - SidePanel.Leg;
+                case Design.Standard:
+                    x_FanOriginToBounds += SidePanel_THK - SidePanel.Leg;
                     break;
-                case CallerType.Johnson:
-                    x_FanOriginToBounds += Beam.Depth / 2 + SidePanel.THK - SidePanel.Leg;
+                case Design.Johnson:
+                    x_FanOriginToBounds += Beam_Depth / 2 + SidePanel_THK - SidePanel.Leg;
                     break;
-                case CallerType.Legacy:
-                    x_FanOriginToBounds += Beam.Depth / 2 - Beam.FlangeTHK * 2 - SidePanel.Leg;
+                case Design.Legacy:
+                    x_FanOriginToBounds += Beam_Depth / 2 - Beam_FlangeTHK * 2 - SidePanel.Leg;
                     break;
             }
 
@@ -102,7 +104,7 @@ namespace Plenum.Stiffeners
 
 
         // Constructor
-        public FloorStiffener(CallerType callerType) : base(callerType) { }
+        public FloorStiffener(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -137,7 +139,7 @@ namespace Plenum.Stiffeners
 
                 if (Enabled)
                 {
-                    double yTranslation = Depth - Math.Max(EndPanel.THK, SidePanel.THK) - FloorPanel.THK;
+                    double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK) - FloorPanel.THK;
                     double length = GetLength(CallerType, out double xShift);
 
                     // Locate fan center

@@ -15,6 +15,8 @@ using Plenum.Stiffeners;
 using System.Windows.Markup;
 using Plenum.Floor.Derived;
 using static FileTools.FileTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Floor
 {
@@ -40,16 +42,16 @@ namespace Plenum.Floor
 
 
         // Static methods
-        internal static double GetWidth(CallerType callerType)
+        internal static double GetWidth(Design callerType)
         {
-            return Width / 2 - bTools.GetBendRadius(SidePanel.THK) - mTools.AssemblyClearance / 2 +
-                        (callerType == CallerType.Johnson ? Beam.Depth / 2 :
-                         callerType == CallerType.Legacy ? Beam.Depth / 2 - Beam.FlangeTHK - SidePanel.THK : 0);
+            return Width / 2 - bTools.GetBendRadius(SidePanel_THK) - mTools.AssemblyClearance / 2 +
+                        (callerType == Design.Johnson ? Beam_Depth / 2 :
+                         callerType == Design.Legacy ? Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK : 0);
         }
 
 
         // Constructor
-        public FloorPanel(CallerType callerType) : base(callerType) { }
+        public FloorPanel(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -78,7 +80,7 @@ namespace Plenum.Floor
                 mTools.SuppressFeatures(true, modelDoc2, "MidFlange");
                 mTools.SuppressFeatures(true, modelDoc2, "MidFlangeHole");
                 mTools.SuppressFeatures(true, modelDoc2, "MidFlangeHoles");
-                if (CallerType != CallerType.Johnson)
+                if (CallerType != Design.Johnson)
                     mTools.SuppressFeatures(true, modelDoc2, "ColumnCut");
                 mTools.SuppressFeatures(false, modelDoc2, "ExtensionFlange");
                 mTools.SuppressFeatures(false, modelDoc2, "ExtensionFlangeHole");
@@ -89,7 +91,7 @@ namespace Plenum.Floor
                 mTools.SuppressFeatures(false, modelDoc2, "MidFlange");
                 mTools.SuppressFeatures(false, modelDoc2, "MidFlangeHole");
                 mTools.SuppressFeatures(false, modelDoc2, "MidFlangeHoles");
-                if (CallerType != CallerType.Johnson)
+                if (CallerType != Design.Johnson)
                     mTools.SuppressFeatures(false, modelDoc2, "ColumnCut");
                 bool[] check1 = mTools.SuppressFeatures(true, modelDoc2, "ExtensionFlange");
                 bool[] check2 = mTools.SuppressFeatures(true, modelDoc2, "ExtensionFlangeHole");
@@ -226,7 +228,7 @@ namespace Plenum.Floor
         protected abstract void EditDimensions_ColumnCut(ModelDoc2 modelDoc2);
         protected virtual void EditDimensions_FloorHoles(ModelDoc2 modelDoc2)
         {
-            double max = Math.Max(Beam.Depth, Beam.FlangeWidth);
+            double max = Math.Max(Beam_Depth, Beam_FlangeWidth);
             mTools.HolePattern(InnerFloorPanel.GetLength() - HoleToEdge3 * 2 - max / 2, out double count1, out double spacing1);
             mTools.EditDimension("LengthSpacing", "sk:FloorHole", spacing1, modelDoc2);
             mTools.EditDimension("LengthCount", "sk:FloorHole", count1, modelDoc2);
@@ -242,7 +244,7 @@ namespace Plenum.Floor
 
             double check = _fanDiameterFeet;
 
-            if (_fanDiameterFeet > 6 && Plenum.Width/2 - FanRing.Radius < 12)
+            if (_fanDiameterFeet > 6 && Width/2 - FanRing.Radius < 12)
             {
                 SpliceRequired = true;
                 panelLength -= FloorSplice.NominalLength / 2;

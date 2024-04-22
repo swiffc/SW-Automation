@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using static FileTools.FileTools;
 using static Plenum.Plenum;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -12,7 +14,7 @@ namespace Plenum
     {
         public static bool Enabled { get; set; } = true;
         internal static AssemblyDoc CallerDoc { get; set; }
-        public EndBeam(CallerType callerType) : base(callerType)
+        public EndBeam(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }
@@ -24,19 +26,19 @@ namespace Plenum
 
             switch (CallerType)
             {
-                case CallerType.Standard:
+                case Design.Standard:
                     mTools.SuppressFeatures(false, modelDoc2, "XYmirror");
                     mTools.SuppressFeatures(true, modelDoc2, "YZmirror");
                     mTools.SuppressFeatures(true, modelDoc2, "JohnsonHole");
                     mTools.SuppressFeatures(true, modelDoc2, "JohnsonHoles");
                     break;
-                case CallerType.Johnson:
+                case Design.Johnson:
                     mTools.SuppressFeatures(false, modelDoc2, "YZmirror");
                     mTools.SuppressFeatures(true, modelDoc2, "XYmirror");
                     mTools.SuppressFeatures(false, modelDoc2, "JohnsonHole");
                     mTools.SuppressFeatures(false, modelDoc2, "JohnsonHoles");
                     break;
-                case CallerType.Legacy:
+                case Design.Legacy:
                     mTools.SuppressFeatures(true, modelDoc2, "YZmirror");
                     mTools.SuppressFeatures(false, modelDoc2, "XYmirror");
                     mTools.SuppressFeatures(true, modelDoc2, "JohnsonHole");

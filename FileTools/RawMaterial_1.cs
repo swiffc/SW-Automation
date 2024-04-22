@@ -6,12 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static FileTools.Base.Part;
-using static FileTools.RawMaterial_2;
 using static FileTools.StaticFileTools;
 
 namespace FileTools
 {
-    public static partial class RawMaterial_1
+    public static partial class RawMaterial
     {
 
         public static void AddRawMaterialInfo(Shape shape, Spec material, string size, ModelDoc2 modelDoc2)

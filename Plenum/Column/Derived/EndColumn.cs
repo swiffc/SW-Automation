@@ -9,6 +9,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -19,7 +21,7 @@ namespace Plenum
 
 
         // Constructor
-        public EndColumn(CallerType callerType) : base(callerType) { }
+        public EndColumn(Design callerType) : base(callerType) { }
 
 
         // Children
@@ -36,9 +38,9 @@ namespace Plenum
                 if (_position == null)
                 {
                     double zTranslation = Length / 2;
-                    double yRotation = CallerType == CallerType.Standard ? 0 : 90;
-                    double yRotation2 = CallerType == CallerType.Legacy ? 180 : 0;
-                    double yRotation3 = CallerType == CallerType.Standard ? 180 : 0;
+                    double yRotation = CallerType == Design.Standard ? 0 : 90;
+                    double yRotation2 = CallerType == Design.Legacy ? 180 : 0;
+                    double yRotation3 = CallerType == Design.Standard ? 180 : 0;
 
                     // Corner column position
                     PositionData southEast = PositionData.Create(tX: Width / 2, tZ: zTranslation, rY: -yRotation + yRotation3);

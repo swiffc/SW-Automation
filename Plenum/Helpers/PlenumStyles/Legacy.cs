@@ -1,4 +1,6 @@
 ﻿using Plenum.Floor;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -8,15 +10,15 @@ namespace Plenum
         public Legacy()
         {
             FlatSeal.Enabled = true;
-            StaticCaller = CallerType.Legacy;
+            PlenumDesign = Design.Legacy;
 
-            InitializePlenum(CallerType.Legacy);
+            InitializePlenum(Design.Legacy);
 
             FloorPanel.ClearBackingFields();
         }
-        public Legacy(CallerType callerType)
+        public Legacy(Design callerType)
         {
-            StaticCaller = callerType;
+            PlenumDesign = callerType;
             UpdateFloor(callerType);
         }
     }

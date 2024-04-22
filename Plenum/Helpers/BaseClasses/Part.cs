@@ -9,13 +9,15 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
     internal abstract class Part : IComponentInfo
     {
         // Constructor
-        protected Part(CallerType callerType)
+        protected Part(Design callerType)
         {
             CallerType = callerType;
 
@@ -69,7 +71,7 @@ namespace Plenum
                 return _partNo;
             }
         }
-        protected static CallerType CallerType { get; set; }
+        protected static Design CallerType { get; set; }
         public static MaterialSpec Material { get; set; } = MaterialSpec.A36;
 
 

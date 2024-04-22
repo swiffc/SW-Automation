@@ -11,6 +11,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.JohnsonBeam.Children
 {
@@ -23,7 +25,7 @@ namespace Plenum.JohnsonBeam.Children
 
 
         // Constructor
-        public JohnsonBeamPart(CallerType callerType) : base(callerType)
+        public JohnsonBeamPart(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }
@@ -36,14 +38,14 @@ namespace Plenum.JohnsonBeam.Children
         {
             mTools.EditDimension("Length", "Beam", JohnsonBeamPart.Length, modelDoc2);
 
-            double totalLength = Plenum.Length + Johnson.ExtraLength * 2;
+            double totalLength = Length + Johnson.ExtraLength * 2;
             double endFanToEndPanel = totalLength / 4;
-            double sectionThird = (Plenum.Length + Johnson.ExtraLength * 2) / FanCount  / 3;
+            double sectionThird = (Length + Johnson.ExtraLength * 2) / FanCount  / 3;
 
             double zTotal = endFanToEndPanel - Johnson.ExtraLength;
             double z = zTotal - sectionThird / 2;
 
-            double x = Width / 2 + Beam.Depth/2 - z + mTools.AssemblyClearance;
+            double x = Width / 2 + Beam_Depth/2 - z + mTools.AssemblyClearance;
 
             mTools.EditDimension("X", "sk:Hole", x, modelDoc2);
 
@@ -65,7 +67,7 @@ namespace Plenum.JohnsonBeam.Children
             {
                 _position = new List<PositionData>();
 
-                if (CallerType == CallerType.Johnson)
+                if (CallerType == Design.Johnson)
                     _position.Add(PositionData.Create());
 
                 return _position;

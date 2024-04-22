@@ -3,14 +3,16 @@ using ModelTools;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+
 
 namespace Structure.Columns.Derived.Children.Derived
 {
     internal class FlangeClip : Clip
     {
         // Static properties
-        static public double zTranslation => Beam.Depth / 2 + ColumnBoundsToHole;
+        static public double zTranslation => Beam_Depth / 2 + ColumnBoundsToHole;
 
 
         // Constructor
@@ -31,13 +33,13 @@ namespace Structure.Columns.Derived.Children.Derived
         public override bool Enabled => new[] { "L", "LL" }.Contains(BraceType);
         public override string StaticPartNo => "104F";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => THK.ToString();
+        public override string SizeOrThickness => Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get
             {
                 var pos = new List<PositionData>();
-                bool isRotated = Beam.IsRotated;
+                bool isRotated = Beams_AreRotated;
                 double translationY = ClipHeight;
 
                 switch (ParentSubAssembly.StaticPartNo)

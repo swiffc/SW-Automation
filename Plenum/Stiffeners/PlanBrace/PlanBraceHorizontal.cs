@@ -11,6 +11,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Stiffeners
 {
@@ -28,7 +30,7 @@ namespace Plenum.Stiffeners
         public override string Size => "L2.5x2.5x0.1875";
 
         // Constructor
-        public PlanBraceHorizontal(CallerType callerType) : base(callerType) { }
+        public PlanBraceHorizontal(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -48,7 +50,7 @@ namespace Plenum.Stiffeners
 
                 if (Enabled)
                 {
-                    double xTranslation = Width / 2 + (CallerType == CallerType.Johnson ? Beam.Depth / 2 : 0);
+                    double xTranslation = Width / 2 + (CallerType == Design.Johnson ? Beam_Depth / 2 : 0);
                     double yTranslation = -4;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
 
@@ -70,7 +72,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                double length = Length + (StaticCaller == CallerType.Johnson ? Johnson.ExtraLength : 0) * 2;
+                double length = Length + (PlenumDesign == Design.Johnson ? Johnson.ExtraLength : 0) * 2;
                 return length / FanCount / 3;
             }
         }

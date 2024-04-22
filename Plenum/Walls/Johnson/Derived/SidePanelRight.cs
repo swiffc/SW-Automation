@@ -2,6 +2,9 @@
 using SolidWorks.Interop.sldworks;
 using System.Collections.Generic;
 using static Plenum.Plenum;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+
 namespace Plenum
 {
     internal class SidePanelRight : JohnsonSidePanel
@@ -13,7 +16,7 @@ namespace Plenum
                 return JohnsonSidePanel.Enabled;
             }
         }
-        public SidePanelRight(CallerType callerType) : base(callerType) { }
+        public SidePanelRight(Design callerType) : base(callerType) { }
         public override string StaticPartNo { get; } = "181R";
         public override List<PositionData> Position
         {
@@ -22,9 +25,9 @@ namespace Plenum
                 if (_position == null)
                 {
                     _position = new List<PositionData>();
-                    if (FanCount > 1 && MidColumns && CallerType == CallerType.Johnson)
+                    if (FanCount > 1 && MidColumns && CallerType == Design.Johnson)
                     {
-                        double xTranslation = Width / 2 + Beam.Depth / 2;
+                        double xTranslation = Width / 2 + Beam_Depth / 2;
                         double zTranslation = (Length / 2) - (FanCount > 0 ? Length / (2 * FanCount) : 0);
                         _position.Add(PositionData.Create(tZ: -zTranslation, tX: xTranslation));
                         _position.Add(PositionData.Create(tZ: zTranslation, tX: -xTranslation, rY: 180));

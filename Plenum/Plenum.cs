@@ -1,40 +1,33 @@
-﻿using SolidWorks.Interop.sldworks;
-using System;
-using System.Reflection;
-using System.Security.Policy;
-using mTools = Tools.ModelTools;
-using cTools = ModelTools.ReleaseCOM;
-using Ftools = FileTools.FileTools;
-using aTools = ModelTools.AssemblyTools;
-using dTools = DrawingToolz.DrawingFileManager;
-using System.Collections.Generic;
-using System.Diagnostics;
-using ModelTools;
-using System.Windows.Forms;
-using System.IO;
+﻿using ModelTools;
 using Plenum.Floor;
 using Plenum.Floor.Derived;
-using Plenum.Walls;
-using Plenum.Helpers.Static;
 using Plenum.Floor.Derived.Derived;
-using Plenum.Stiffeners;
 using Plenum.JohnsonBeam;
-using Plenum.StandardParts;
-using System.ComponentModel;
-using System.Linq;
 using Plenum.JohnsonBeam.Children;
-using static Plenum.Plenum;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using Plenum.StandardParts;
+using Plenum.Stiffeners;
+using Plenum.Walls;
+using SolidWorks.Interop.sldworks;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
+using aTools = ModelTools.AssemblyTools;
+using cTools = ModelTools.ReleaseCOM;
+using Ftools = FileTools.FileTools;
+using mTools = Tools.ModelTools;
+using static FileTools.StaticFileTools;
+using Plenum.Structure;
+using static FileTools.CommonData.CommonData;
 
 namespace Plenum
 {
     public class Plenum
     {
         // Public static properties
-        public static double Length { get; set; } = 240;
-        public static double Width { get; set; } = 108;
-        public static double Depth { get; set; } = 36;
-        public static int FanCount { get; set; } = 2;
         public static double _fanDiameterFeet = 8;
         public static double FanDiameter
         {
@@ -47,15 +40,11 @@ namespace Plenum
                 _fanDiameterFeet = value;
             }
         }
-        public static bool MidColumns { get; set; } = true;
         public static string MotorShaft { get; set; } = "Down";
 
 
         // Toggles
         public static bool ToggleRelocate { get; set; } = true;
-        public static bool ToggleCreateDrawing { get; set; } = true;
-        public static bool ToggleSave { get; set; } = true;
-        public static bool ToggleDeleteFiles { get; set; } = true;
 
 
         // Main method
@@ -69,13 +58,8 @@ namespace Plenum
 
 
         // Protected methods
-        protected void InitializePlenum(CallerType callerType)
+        protected void InitializePlenum(Design callerType)
         {
-            try
-            {
-                mTools.Lock();
-            }
-            catch (Exception) { }
             bool bankExists;
             do
             {
@@ -107,6 +91,7 @@ namespace Plenum
 
                     AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     mTools.Rebuild(true);
+                    TurnOffBendLines();
                 }
                 else
                 {
@@ -114,9 +99,9 @@ namespace Plenum
                 }
 
             } while (!bankExists);
-            mTools.Unlock();
+            
         }
-        protected void UpdateFloor(CallerType callerType)
+        protected void UpdateFloor(Design callerType)
         {
             try
             {
@@ -211,7 +196,7 @@ namespace Plenum
             bool checkDeletion = modelDoc2.Extension.DeleteSelection2(0);
             Debug.WriteLine($"   Sheet {sheetName} deleted: {checkDeletion}");
         }
-        private List<IComponentInfo> InstantiateComponents(CallerType callerType, params Type[] componentTypes)
+        private List<IComponentInfo> InstantiateComponents(Design callerType, params Type[] componentTypes)
         {
             var components = new List<IComponentInfo>();
 
@@ -255,21 +240,11 @@ namespace Plenum
 
         // Public properties
         public static AssemblyDoc AssemblyDoc { get; set; }
-        public static CallerType StaticCaller { get; set; }
 
 
         // Constants
         internal const string AssemblyName = "Plenum";
         protected const string StaticPartNo = "5";
-
-
-        // Enumerators
-        public enum CallerType
-        {
-            Standard,
-            Johnson,
-            Legacy
-        }
 
 
         // Dictionaries
@@ -278,6 +253,7 @@ namespace Plenum
             { "113", typeof(JohnsonBeamWld) },
             { "116", typeof(MidColumn) },
             { "117", typeof(EndColumn) },
+            { "142", typeof(KneeClipFlat) },
             { "156", typeof(EndPanel) },
             { "166", typeof(DividerPanel) },
             { "176P", typeof(DividerFlange) },

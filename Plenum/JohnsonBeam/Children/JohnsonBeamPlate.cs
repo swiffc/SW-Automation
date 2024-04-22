@@ -11,6 +11,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.JohnsonBeam.Children
 {
@@ -22,7 +24,7 @@ namespace Plenum.JohnsonBeam.Children
 
 
         // Constructor
-        public JohnsonBeamPlate(CallerType callerType) : base(callerType)
+        public JohnsonBeamPlate(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }
@@ -37,7 +39,7 @@ namespace Plenum.JohnsonBeam.Children
             {
                 _position = new List<PositionData>();
 
-                if (CallerType == CallerType.Johnson)
+                if (CallerType == Design.Johnson)
                 {
                     double xTranslation = JohnsonBeamPart.Length / 2;
 

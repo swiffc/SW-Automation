@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Plenum.Plenum;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -22,7 +24,7 @@ namespace Plenum
 
 
         // Constructor
-        public MidColumn(CallerType callerType) : base(callerType) { }
+        public MidColumn(Design callerType) : base(callerType) { }
 
 
         // Children
@@ -38,8 +40,8 @@ namespace Plenum
                 if (_position == null)
                 {
                     double zTranslation = Length / 2;
-                    double yRotation = CallerType == CallerType.Standard ? 0 : 90;
-                    double flip = CallerType == CallerType.Standard ? 180 : 0;
+                    double yRotation = CallerType == Design.Standard ? 0 : 90;
+                    double flip = CallerType == Design.Standard ? 180 : 0;
 
                     List<PositionData> positions = new List<PositionData>();
 

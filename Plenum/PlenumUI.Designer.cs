@@ -1,4 +1,7 @@
-﻿namespace Plenum
+﻿using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+
+namespace Plenum
 {
     partial class PlenumUI
     {
@@ -28,21 +31,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tab_Job = new System.Windows.Forms.TabPage();
-            this.txt_Initials = new System.Windows.Forms.TextBox();
-            this.txt_JobItemNo = new System.Windows.Forms.TextBox();
-            this.txt_JobPO = new System.Windows.Forms.TextBox();
-            this.txt_JobLocation = new System.Windows.Forms.TextBox();
-            this.txt_JobClient = new System.Windows.Forms.TextBox();
-            this.txt_JobCustomer = new System.Windows.Forms.TextBox();
-            this.txt_JobNumber = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tab_AdvOptions = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox4_delete = new System.Windows.Forms.CheckBox();
@@ -112,154 +100,17 @@
             this.txt_Width = new System.Windows.Forms.Label();
             this.txt_Length = new System.Windows.Forms.Label();
             this.txt_plen = new System.Windows.Forms.TabControl();
-            this.tab_Job.SuspendLayout();
+            this.txt_Initials = new System.Windows.Forms.TextBox();
+            this.txt_JobItemNo = new System.Windows.Forms.TextBox();
+            this.txt_JobPO = new System.Windows.Forms.TextBox();
+            this.txt_JobLocation = new System.Windows.Forms.TextBox();
+            this.txt_JobClient = new System.Windows.Forms.TextBox();
+            this.txt_JobCustomer = new System.Windows.Forms.TextBox();
+            this.txt_JobNumber = new System.Windows.Forms.TextBox();
             this.tab_AdvOptions.SuspendLayout();
             this.tab_Plenum.SuspendLayout();
             this.txt_plen.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tab_Job
-            // 
-            this.tab_Job.Controls.Add(this.txt_Initials);
-            this.tab_Job.Controls.Add(this.txt_JobItemNo);
-            this.tab_Job.Controls.Add(this.txt_JobPO);
-            this.tab_Job.Controls.Add(this.txt_JobLocation);
-            this.tab_Job.Controls.Add(this.txt_JobClient);
-            this.tab_Job.Controls.Add(this.txt_JobCustomer);
-            this.tab_Job.Controls.Add(this.txt_JobNumber);
-            this.tab_Job.Controls.Add(this.label34);
-            this.tab_Job.Controls.Add(this.label5);
-            this.tab_Job.Controls.Add(this.label6);
-            this.tab_Job.Controls.Add(this.label3);
-            this.tab_Job.Controls.Add(this.label4);
-            this.tab_Job.Controls.Add(this.label2);
-            this.tab_Job.Controls.Add(this.label1);
-            this.tab_Job.Location = new System.Drawing.Point(4, 22);
-            this.tab_Job.Name = "tab_Job";
-            this.tab_Job.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Job.Size = new System.Drawing.Size(458, 511);
-            this.tab_Job.TabIndex = 0;
-            this.tab_Job.Text = "Job";
-            this.tab_Job.UseVisualStyleBackColor = true;
-            // 
-            // txt_Initials
-            // 
-            this.txt_Initials.Location = new System.Drawing.Point(196, 196);
-            this.txt_Initials.Name = "txt_Initials";
-            this.txt_Initials.Size = new System.Drawing.Size(100, 20);
-            this.txt_Initials.TabIndex = 14;
-            this.txt_Initials.TextChanged += new System.EventHandler(this.txt_Initials_TextChanged);
-            // 
-            // txt_JobItemNo
-            // 
-            this.txt_JobItemNo.Location = new System.Drawing.Point(196, 167);
-            this.txt_JobItemNo.Name = "txt_JobItemNo";
-            this.txt_JobItemNo.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobItemNo.TabIndex = 5;
-            this.txt_JobItemNo.TextChanged += new System.EventHandler(this.txt_JobItemNo_TextChanged);
-            // 
-            // txt_JobPO
-            // 
-            this.txt_JobPO.Location = new System.Drawing.Point(196, 141);
-            this.txt_JobPO.Name = "txt_JobPO";
-            this.txt_JobPO.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobPO.TabIndex = 4;
-            this.txt_JobPO.TextChanged += new System.EventHandler(this.txt_JobPO_TextChanged);
-            // 
-            // txt_JobLocation
-            // 
-            this.txt_JobLocation.Location = new System.Drawing.Point(196, 115);
-            this.txt_JobLocation.Name = "txt_JobLocation";
-            this.txt_JobLocation.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobLocation.TabIndex = 3;
-            this.txt_JobLocation.TextChanged += new System.EventHandler(this.txt_JobLocation_TextChanged);
-            // 
-            // txt_JobClient
-            // 
-            this.txt_JobClient.Location = new System.Drawing.Point(196, 89);
-            this.txt_JobClient.Name = "txt_JobClient";
-            this.txt_JobClient.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobClient.TabIndex = 2;
-            this.txt_JobClient.TextChanged += new System.EventHandler(this.txt_JobClient_TextChanged);
-            // 
-            // txt_JobCustomer
-            // 
-            this.txt_JobCustomer.Location = new System.Drawing.Point(196, 63);
-            this.txt_JobCustomer.Name = "txt_JobCustomer";
-            this.txt_JobCustomer.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobCustomer.TabIndex = 1;
-            this.txt_JobCustomer.TextChanged += new System.EventHandler(this.txt_JobCustomer_TextChanged_1);
-            // 
-            // txt_JobNumber
-            // 
-            this.txt_JobNumber.Location = new System.Drawing.Point(196, 37);
-            this.txt_JobNumber.Name = "txt_JobNumber";
-            this.txt_JobNumber.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobNumber.TabIndex = 0;
-            this.txt_JobNumber.TextChanged += new System.EventHandler(this.txt_JobNumber_TextChanged_1);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(110, 199);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(36, 13);
-            this.label34.TabIndex = 12;
-            this.label34.Text = "Initials";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Purchase Order";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 174);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Item Number";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Client";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(110, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Location";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Customer";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Job #";
             // 
             // tab_AdvOptions
             // 
@@ -603,6 +454,13 @@
             // 
             // tab_Plenum
             // 
+            this.tab_Plenum.Controls.Add(this.txt_Initials);
+            this.tab_Plenum.Controls.Add(this.txt_JobItemNo);
+            this.tab_Plenum.Controls.Add(this.txt_JobPO);
+            this.tab_Plenum.Controls.Add(this.txt_JobLocation);
+            this.tab_Plenum.Controls.Add(this.txt_JobClient);
+            this.tab_Plenum.Controls.Add(this.txt_JobCustomer);
+            this.tab_Plenum.Controls.Add(this.txt_JobNumber);
             this.tab_Plenum.Controls.Add(this.materialCombo);
             this.tab_Plenum.Controls.Add(this.label23);
             this.tab_Plenum.Controls.Add(this.SidecomboBox2);
@@ -651,7 +509,7 @@
             this.materialCombo.Items.AddRange(new object[] {
             "A36",
             "A572_50"});
-            this.materialCombo.Location = new System.Drawing.Point(341, 270);
+            this.materialCombo.Location = new System.Drawing.Point(99, 295);
             this.materialCombo.Name = "materialCombo";
             this.materialCombo.Size = new System.Drawing.Size(100, 21);
             this.materialCombo.TabIndex = 43;
@@ -661,7 +519,7 @@
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(290, 273);
+            this.label23.Location = new System.Drawing.Point(48, 298);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(44, 13);
             this.label23.TabIndex = 42;
@@ -701,7 +559,7 @@
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(23, 273);
+            this.label22.Location = new System.Drawing.Point(23, 237);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(68, 13);
             this.label22.TabIndex = 39;
@@ -713,7 +571,7 @@
             this.comboBox1_driveDesign.Items.AddRange(new object[] {
             "Motor Shaft Down",
             "Motor Shaft Up"});
-            this.comboBox1_driveDesign.Location = new System.Drawing.Point(99, 270);
+            this.comboBox1_driveDesign.Location = new System.Drawing.Point(99, 234);
             this.comboBox1_driveDesign.Name = "comboBox1_driveDesign";
             this.comboBox1_driveDesign.Size = new System.Drawing.Size(110, 21);
             this.comboBox1_driveDesign.TabIndex = 38;
@@ -858,7 +716,7 @@
             this.checkBox1_MTRBeam.AutoSize = true;
             this.checkBox1_MTRBeam.Location = new System.Drawing.Point(341, 107);
             this.checkBox1_MTRBeam.Name = "checkBox1_MTRBeam";
-            this.checkBox1_MTRBeam.Size = new System.Drawing.Size(15, 14);
+            //this.checkBox1_MTRBeam_Size = new System.Drawing.Size(15, 14);
             this.checkBox1_MTRBeam.TabIndex = 25;
             this.checkBox1_MTRBeam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1_MTRBeam.UseVisualStyleBackColor = true;
@@ -990,7 +848,6 @@
             // 
             // txt_plen
             // 
-            this.txt_plen.Controls.Add(this.tab_Job);
             this.txt_plen.Controls.Add(this.tab_Plenum);
             this.txt_plen.Controls.Add(this.tab_AdvOptions);
             this.txt_plen.Location = new System.Drawing.Point(12, 12);
@@ -998,6 +855,62 @@
             this.txt_plen.SelectedIndex = 0;
             this.txt_plen.Size = new System.Drawing.Size(466, 537);
             this.txt_plen.TabIndex = 2;
+            // 
+            // txt_Initials
+            // 
+            this.txt_Initials.Location = new System.Drawing.Point(285, 381);
+            this.txt_Initials.Name = "txt_Initials";
+            this.txt_Initials.Size = new System.Drawing.Size(100, 20);
+            this.txt_Initials.TabIndex = 50;
+            this.txt_Initials.TextChanged += new System.EventHandler(this.txt_Initials_TextChanged_1);
+            // 
+            // txt_JobItemNo
+            // 
+            this.txt_JobItemNo.Location = new System.Drawing.Point(285, 352);
+            this.txt_JobItemNo.Name = "txt_JobItemNo";
+            this.txt_JobItemNo.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobItemNo.TabIndex = 49;
+            this.txt_JobItemNo.TextChanged += new System.EventHandler(this.txt_JobItemNo_TextChanged_1);
+            // 
+            // txt_JobPO
+            // 
+            this.txt_JobPO.Location = new System.Drawing.Point(285, 326);
+            this.txt_JobPO.Name = "txt_JobPO";
+            this.txt_JobPO.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobPO.TabIndex = 48;
+            this.txt_JobPO.TextChanged += new System.EventHandler(this.txt_JobPO_TextChanged_1);
+            // 
+            // txt_JobLocation
+            // 
+            this.txt_JobLocation.Location = new System.Drawing.Point(285, 300);
+            this.txt_JobLocation.Name = "txt_JobLocation";
+            this.txt_JobLocation.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobLocation.TabIndex = 47;
+            this.txt_JobLocation.TextChanged += new System.EventHandler(this.txt_JobLocation_TextChanged_1);
+            // 
+            // txt_JobClient
+            // 
+            this.txt_JobClient.Location = new System.Drawing.Point(285, 274);
+            this.txt_JobClient.Name = "txt_JobClient";
+            this.txt_JobClient.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobClient.TabIndex = 46;
+            this.txt_JobClient.TextChanged += new System.EventHandler(this.txt_JobClient_TextChanged_1);
+            // 
+            // txt_JobCustomer
+            // 
+            this.txt_JobCustomer.Location = new System.Drawing.Point(285, 248);
+            this.txt_JobCustomer.Name = "txt_JobCustomer";
+            this.txt_JobCustomer.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobCustomer.TabIndex = 45;
+            this.txt_JobCustomer.TextChanged += new System.EventHandler(this.txt_JobCustomer_TextChanged);
+            // 
+            // txt_JobNumber
+            // 
+            this.txt_JobNumber.Location = new System.Drawing.Point(285, 222);
+            this.txt_JobNumber.Name = "txt_JobNumber";
+            this.txt_JobNumber.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobNumber.TabIndex = 44;
+            this.txt_JobNumber.TextChanged += new System.EventHandler(this.txt_JobNumber_TextChanged);
             // 
             // PlenumUI
             // 
@@ -1008,8 +921,6 @@
             this.Name = "PlenumUI";
             this.Text = "PlenumUI";
             this.Load += new System.EventHandler(this.PlenumUI_Load);
-            this.tab_Job.ResumeLayout(false);
-            this.tab_Job.PerformLayout();
             this.tab_AdvOptions.ResumeLayout(false);
             this.tab_AdvOptions.PerformLayout();
             this.tab_Plenum.ResumeLayout(false);
@@ -1020,22 +931,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TabPage tab_Job;
-        private System.Windows.Forms.TextBox txt_Initials;
-        private System.Windows.Forms.TextBox txt_JobItemNo;
-        private System.Windows.Forms.TextBox txt_JobPO;
-        private System.Windows.Forms.TextBox txt_JobLocation;
-        private System.Windows.Forms.TextBox txt_JobClient;
-        private System.Windows.Forms.TextBox txt_JobCustomer;
-        private System.Windows.Forms.TextBox txt_JobNumber;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tab_AdvOptions;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox_K1;
@@ -1105,5 +1000,12 @@
         private System.Windows.Forms.CheckBox checkBox3_save;
         private System.Windows.Forms.CheckBox checkBox2_dwg;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_Initials;
+        private System.Windows.Forms.TextBox txt_JobItemNo;
+        private System.Windows.Forms.TextBox txt_JobPO;
+        private System.Windows.Forms.TextBox txt_JobLocation;
+        private System.Windows.Forms.TextBox txt_JobClient;
+        private System.Windows.Forms.TextBox txt_JobCustomer;
+        private System.Windows.Forms.TextBox txt_JobNumber;
     }
 }
