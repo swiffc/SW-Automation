@@ -2,14 +2,16 @@
 using static Plenum.Plenum;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
-    internal class Standard : Plenum
+    public class Standard : Plenum
     {
         // Constructor
         public Standard()
         {
+            Default.Beams_AreRotated = false;
             PlenumDesign = Design.Standard;
 
             InitializePlenum(Design.Standard);

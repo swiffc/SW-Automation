@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using static Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Columns.Derived.Children.Derived
 {
@@ -48,7 +49,7 @@ namespace Structure.Columns.Derived.Children.Derived
         public override bool Enabled => new[] { "X", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "104X";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => Clip_THK.ToString();
+        public override string SizeOrThickness => Default.Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get

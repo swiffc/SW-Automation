@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Columns.Derived.Children.Derived
 {
@@ -54,7 +55,7 @@ namespace Structure.Columns.Derived.Children.Derived
         public override bool Enabled => new[] { "T", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "104T";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => Clip_THK.ToString();
+        public override string SizeOrThickness => Default.Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get

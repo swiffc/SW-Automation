@@ -66,6 +66,11 @@
     <Compile Include="CommonData\CommonData.UI.cs" />
     <Compile Include="FileTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RawMaterial_1.cs" />
     <Compile Include="RawMaterial_2.cs" />
     <Compile Include="StaticFileTools.cs" />
@@ -75,6 +80,13 @@
       <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
       <Name>ModelTools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

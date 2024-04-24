@@ -1,10 +1,6 @@
 ﻿using ModelTools;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Tools.ModelTools;
+using static FileTools.Properties.Settings;
 
 namespace FileTools.CommonData
 {
@@ -30,10 +26,10 @@ namespace FileTools.CommonData
 
         #endregion
 
-        
+
         // Beams
-        public static string Beam_Size { get; set; } = "W6x15";
-        static public bool Beams_AreRotated { get; set; } = false;
+        public static string Beam_Size => Default.Beam_Size;
+        static public bool Beams_AreRotated => Default.Beams_AreRotated;
         public static double Beam_Depth
         {
             get
@@ -225,7 +221,7 @@ namespace FileTools.CommonData
         static public double BraceAngle { get; set; } = 30;
         static public double HoleToEnd { get; set; } = 1.125;
         public static double ColumnBoundsToHole => 2.0;
-        static public double Clip_THK { get; set; } = 0.375;
+        static public double Clip_THK => Default.Clip_THK;
         private static double _holeToEdge = 2.0;
         #region HoleToEdge Rules
 

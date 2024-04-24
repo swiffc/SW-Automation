@@ -128,6 +128,9 @@ namespace Plenum
                 case Design.Johnson:
                     lengthModifier = Johnson.ExtraLength;
                     break;
+                    case Design.Legacy:
+                    lengthModifier = -EndPanel_THK;
+                    break;
             }
             double length = Length / 2 + lengthModifier;
 

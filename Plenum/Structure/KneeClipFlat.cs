@@ -28,7 +28,6 @@ namespace Plenum.Structure
                     ? true : false;
             }
         }
-        static public double THK { get; set; } = 0.25;
 
 
         // Constructor
@@ -52,7 +51,7 @@ namespace Plenum.Structure
         // Property overrides
         public override string StaticPartNo => "146";
         public override RawMaterial Shape => RawMaterial.Plate;
-        public override string Size => THK.ToString();
+        public override string Size => Clip_THK.ToString();
         protected override AssemblyDoc ParentAssembly => Plenum.AssemblyDoc;
         public override List<PositionData> Position
         {

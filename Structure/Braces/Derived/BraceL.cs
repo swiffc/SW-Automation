@@ -101,7 +101,7 @@ namespace Structure.Braces.Derived
         private List<PositionData> SidePositions(out double horz, out double yTranslation, out double xRotation)
         {
             // Viewing YZ plane
-            double xTranslation = -Width / 2 + Clip_THK / 2 - Clip.SidePanelShift;
+            double xTranslation = -Width / 2 + (Beams_AreRotated ? Clip_THK / 2 : 0);
             yTranslation = ClipHeight;
             double zTranslation;
             if (Beams_AreRotated)
@@ -110,7 +110,7 @@ namespace Structure.Braces.Derived
             }
             else
             {
-                zTranslation = Length / 2 - FlangeClip.zTranslation;
+                zTranslation = Length / 2 - FlangeClip.xzTranslation;
             }
             xRotation = 180 - (90 - BraceAngle);
 
@@ -155,10 +155,23 @@ namespace Structure.Braces.Derived
         private List<PositionData> EndPositions(double horz, double yTranslation, double xRotation)
         {
             // Viewing XY plane
-            double xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
-            double zTranslation = Length / 2 - Clip_THK / 2 + (Beams_AreRotated ? Clip.EndPanelShift : 0);
 
-            var end_101 = PositionData.Create(tX: xTranslation, rX: -xRotation, tY: yTranslation, rY: -90, tZ: zTranslation);
+            double xTranslation;
+            double zTranslation;
+            string test = PlenumDesign.ToString();
+            if (PlenumDesign == Design.Standard)
+            {
+                xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
+                zTranslation = Length / 2 - Clip_THK / 2;
+            }
+            else
+            {
+                xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
+                zTranslation = Length / 2;
+            }
+
+
+            var end_101 = PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: -xRotation, rY: -90);
 
             var end_106 = end_101;
             end_106.TranslationX = -xTranslation;

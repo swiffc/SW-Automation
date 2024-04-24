@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using static Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure
 {
@@ -33,7 +34,12 @@ namespace Structure
 
         private void btn_Standard_Click(object sender, EventArgs e)
         {
+            Default.PlenumDesignSetting = Design.Standard.ToString();
+            Default.Beams_AreRotated = false;
+            Default.Save();
+
             new Structure(25, "Structure");
+            new Plenum.Standard();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -64,7 +70,7 @@ namespace Structure
             length_TextBox.Text = CommonData.Length.ToString();
             height_TextBox.Text = CommonData.TotalColumnHeight.ToString();
             midColumns_Box.Checked = CommonData.MidColumns;
-            rotate_Box.Checked = CommonData.Beams_AreRotated;
+            rotate_Box.Checked = Default.Beams_AreRotated;
             beamSize_Box.Text = Beam_Size;
             textBox_Depth.Text = Beam_Depth.ToString();
             textBox_WebTHK.Text = Beam_WebTHK.ToString();
@@ -98,7 +104,7 @@ namespace Structure
 
             // General
             braceType_Box.Text = CommonData.BraceType;
-            clipTHK_Box.Text = Clip_THK.ToString();
+            clipTHK_Box.Text = Default.Clip_THK.ToString();
             braceHoleDiameter_Box.Text = HoleDiameter_Structural.ToString();
             braceAngle_Box.Text = CommonData.BraceAngle.ToString();
 
@@ -171,14 +177,15 @@ namespace Structure
         }
         private void rotate_Box_CheckedChanged(object sender, EventArgs e)
         {
-            CommonData.Beams_AreRotated = rotate_Box.Checked;
+            Default.Beams_AreRotated = rotate_Box.Checked;
+            Default.Save();
         }
         private bool isUserChange = true;
         private void beamSize_Box_SelectedIndexChanged(object sender, EventArgs e)
         {
             isUserChange = false;
 
-            Beam_Size = beamSize_Box.Text;
+            Default.Beam_Size = beamSize_Box.Text;
             if (Beam_Size != "Custom")
             {
                 ResetSize();
@@ -197,7 +204,7 @@ namespace Structure
             if (isUserChange && double.TryParse(textBox_Depth.Text, out double depth))
             {
                 Beam_Depth = depth;
-                Beam_Size = beamSize_Box.Text = "Custom";
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -206,7 +213,7 @@ namespace Structure
             if (isUserChange && double.TryParse(textBox_WebTHK.Text, out double webTHK))
             {
                 Beam_WebTHK = webTHK;
-                Beam_Size = beamSize_Box.Text = "Custom";
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -215,7 +222,7 @@ namespace Structure
             if (isUserChange && double.TryParse(textBox_FlangeWidth.Text, out double flangeWidth))
             {
                 Beam_FlangeWidth = flangeWidth;
-                Beam_Size = beamSize_Box.Text = "Custom";
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -224,7 +231,7 @@ namespace Structure
             if (isUserChange && double.TryParse(textBox_FlangeTHK.Text, out double flangeTHK))
             {
                 Beam_FlangeTHK = flangeTHK;
-                Beam_Size = beamSize_Box.Text = "Custom";
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -233,7 +240,7 @@ namespace Structure
             if (isUserChange && double.TryParse(textBox_K.Text, out double k))
             {
                 Beam_K = k;
-                Beam_Size = beamSize_Box.Text = "Custom";
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -242,7 +249,7 @@ namespace Structure
             if (isUserChange && double.TryParse(textBox_K1.Text, out double k1))
             {
                 Beam_K1 = k1;
-                Beam_Size = beamSize_Box.Text = "Custom";
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
@@ -367,7 +374,11 @@ namespace Structure
         private void clipTHK_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(clipTHK_Box.Text, out double value))
-                Clip_THK = value;
+            {
+                Default.Clip_THK = value;
+                Default.Save();
+            }
+                
         }
         private void braceHoleDiameter_Box_TextChanged_1(object sender, EventArgs e)
         {

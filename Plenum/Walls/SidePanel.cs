@@ -83,6 +83,9 @@ namespace Plenum
                 case Design.Legacy:
                     xTranslation += Beam_Depth / 2 - SidePanel_THK - Beam_FlangeTHK;
                     break;
+                case Design.Standard:
+                    xTranslation -= SidePanel_THK;
+                    break;
             }
             return xTranslation;
         }

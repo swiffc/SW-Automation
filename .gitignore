@@ -5,3 +5,32 @@
 /.vs/Solidworks Automation
 /Plenum/obj/Debug/DesignTimeResolveAssemblyReferences.cache
 *.cache
+/FileTools/bin/Debug
+/FileTools/obj/Debug
+/ModelTools/bin/Debug
+/ModelTools/obj/Debug/ModelTools.csproj.FileListAbsolute.txt
+/ModelTools/obj/Debug/ModelTools.csproj.Up2Date
+/ModelTools/obj/Debug/Tools.dll
+/ModelTools/obj/Debug/Tools.pdb
+/Plenum/bin/Debug
+/Plenum/obj/Debug/Plenum.csproj.FileListAbsolute.txt
+/Plenum/obj/Debug/Plenum.csproj.Up2Date
+/Plenum/obj/Debug/Plenum.exe
+/Plenum/obj/Debug/Plenum.pdb
+/Plenum/obj/Debug/Plenum.PlenumUI.resources
+/Plenum/obj/Debug/Plenum.Properties.Resources.resources
+/Structure/bin/Debug
+/Structure/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/Structure/obj/Debug/Structure.csproj.FileListAbsolute.txt
+/Structure/obj/Debug/Structure.csproj.Up2Date
+/Structure/obj/Debug/Structure.exe
+/Structure/obj/Debug/Structure.pdb
+/Structure/obj/Debug/Structure.StructureUI.resources
+/Universal Drawing Tool/bin/Debug/DrawingToolz.exe
+/Universal Drawing Tool/bin/Debug/DrawingToolz.pdb
+/Universal Drawing Tool/bin/Debug/System.Numerics.Vectors.dll
+/Universal Drawing Tool/bin/Debug/System.Numerics.Vectors.xml
+/Universal Drawing Tool/obj/Debug/DrawingToolz.exe
+/Universal Drawing Tool/obj/Debug/DrawingToolz.pdb
+/Universal Drawing Tool/obj/Debug/Universa.72E81272.Up2Date
+/Universal Drawing Tool/obj/Debug/Universal Drawing Tool.csproj.FileListAbsolute.txt

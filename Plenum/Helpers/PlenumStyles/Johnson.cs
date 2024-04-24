@@ -3,10 +3,11 @@ using Plenum.JohnsonBeam;
 using System;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
-    internal class Johnson : Plenum
+    public class Johnson : Plenum
     {
         // Static properties
         public static double ExtraLength
@@ -36,6 +37,7 @@ namespace Plenum
         // Constructor
         public Johnson()
         {
+            Default.Beams_AreRotated = true;
             JohnsonBeamWld.Enabled = true;
             JohnsonSidePanel.Enabled = true;
             PlenumDesign = Design.Johnson;

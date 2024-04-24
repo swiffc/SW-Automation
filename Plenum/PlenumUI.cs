@@ -20,6 +20,7 @@ using Plenum.Stiffeners;
 using static Plenum.Plenum;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -307,19 +308,19 @@ namespace Plenum
             switch (EndcomboBox1.Text)
             {
                 case "0.1344":
-                    EndPanel_THK = 0.1344;
+                    Default.EndPanel_THK = 0.1344;
                     break;
                 case "0.1875":
-                    EndPanel_THK = 0.1875;
+                    Default.EndPanel_THK = 0.1875;
                     break;
                 case "0.2500":
-                    EndPanel_THK = 0.2500;
+                    Default.EndPanel_THK = 0.2500;
                     break;
                 case "0.3125":
-                    EndPanel_THK = 0.3125;
+                    Default.EndPanel_THK = 0.3125;
                     break;
                 case "0.3750":
-                    EndPanel_THK = 0.3750;
+                    Default.EndPanel_THK = 0.3750;
                     break;
             }
         }
@@ -329,19 +330,19 @@ namespace Plenum
             switch (SidecomboBox2.Text)
             {
                 case "0.1344":
-                    SidePanel_THK = 0.1344;
+                    Default.SidePanel_THK = 0.1344;
                     break;
                 case "0.1875":
-                    SidePanel_THK = 0.1875;
+                    Default.SidePanel_THK = 0.1875;
                     break;
                 case "0.2500":
-                    SidePanel_THK = 0.2500;
+                    Default.SidePanel_THK = 0.2500;
                     break;
                 case "0.3125":
-                    SidePanel_THK = 0.3125;
+                    Default.SidePanel_THK = 0.3125;
                     break;
                 case "0.3750":
-                    SidePanel_THK = 0.3750;
+                    Default.SidePanel_THK = 0.3750;
                     break;
             }
         }

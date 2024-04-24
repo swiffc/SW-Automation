@@ -41,7 +41,7 @@ namespace Structure.Columns.Derived.Children.Derived
                 var pos = new List<PositionData>();
 
                 double columnCenterToClipHole = Beam_FlangeWidth / 2 + ColumnBoundsToHole;
-                double xTranslation = Beams_AreRotated ? SidePanelShift : 0;
+                double xTranslation = 0;
                 double zTranslation = Beams_AreRotated ? EndPanelShift : 0;
 
                 if (ParentSubAssembly.StaticPartNo == "101")
@@ -60,7 +60,7 @@ namespace Structure.Columns.Derived.Children.Derived
                 {
                     if (Beams_AreRotated)
                     {
-                        pos.Add(PositionData.Create(tZ: columnCenterToClipHole, tY: ClipHeight, rY: 90, tX: -xTranslation));
+                        pos.Add(PositionData.Create(tZ: columnCenterToClipHole, tY: ClipHeight, rY: 90, tX: xTranslation));
                     }
                     else
                     {

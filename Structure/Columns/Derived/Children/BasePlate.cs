@@ -9,9 +9,9 @@ namespace Structure.Columns.Derived.Children
     {
         // Static properties
         internal static double THK { get; set; } = 0.5;
-        internal static double LocalWidth { get; set; } = 12;
+        internal static double LocalWidth { get; set; } = 8;
         internal static double LocalLength { get; set; } = 8;
-        internal static double WidthHoleSpacing { get; set; } = 5.5;
+        internal static double WidthHoleSpacing { get; set; } = 3.5;
         internal static double LengthHoleSpacing { get; set; } = 3.5;
         internal static double HoleDiameter { get; set; } = 0.8125;
 
