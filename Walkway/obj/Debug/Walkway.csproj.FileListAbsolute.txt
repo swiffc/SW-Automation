@@ -1,9 +1,0 @@
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\bin\Debug\Walkway.exe.config
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\bin\Debug\Walkway.exe
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\bin\Debug\Walkway.pdb
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.csproj.AssemblyReference.cache
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.csproj.CoreCompileInputs.cache
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.exe
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.pdb
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.WalkwayUI.resources
-C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.csproj.GenerateResource.cache
