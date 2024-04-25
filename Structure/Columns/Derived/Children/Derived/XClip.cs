@@ -41,10 +41,10 @@ namespace Structure.Columns.Derived.Children.Derived
 
             EditDimension("Offset", "sk:Plate", OffsetFromColumnCenter);
             EditDimension("HoleToColumnBounds", "sk:Plate", ColumnBoundToNearestHole);
-            EditDimension("Angle", "sk:Plate", LocalAngle);
+            EditDimension("Angle", "sk:Plate", LocalAngle); 
         }
 
-
+        
         // Property overrides
         public override bool Enabled => new[] { "X", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "104X";
@@ -56,7 +56,7 @@ namespace Structure.Columns.Derived.Children.Derived
             {
                 var pos = new List<PositionData>
                 {
-                    PositionData.Create(tY: BasePlate.THK),
+                    PositionData.Create(tY: BasePlate_THK),
                     PositionData.Create(tY: FieldColumn.Height - EndPlate.THK, rX: 180)
                 };
 

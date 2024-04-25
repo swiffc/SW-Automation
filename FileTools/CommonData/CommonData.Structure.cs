@@ -1,6 +1,7 @@
 ﻿using ModelTools;
 using static Tools.ModelTools;
 using static FileTools.Properties.Settings;
+using System;
 
 namespace FileTools.CommonData
 {
@@ -23,6 +24,7 @@ namespace FileTools.CommonData
             get => _midColumns;
             set => _midColumns = value;
         }
+        static public double BasePlate_THK { get; set; } = 0.5;
 
         #endregion
 
@@ -199,7 +201,7 @@ namespace FileTools.CommonData
 
         // Bracing
         static public double ClipHeight { get; set; } = 20;
-        private static string _braceType = "L";
+        private static string _braceType = "TX";
         #region BraceType Rules
 
         public static string BraceType
@@ -221,6 +223,7 @@ namespace FileTools.CommonData
         static public double BraceAngle { get; set; } = 30;
         static public double HoleToEnd { get; set; } = 1.125;
         public static double ColumnBoundsToHole => 2.0;
+        public static double PlenumBoundsToHole => 2.5;
         static public double Clip_THK => Default.Clip_THK;
         private static double _holeToEdge = 2.0;
         #region HoleToEdge Rules
@@ -249,7 +252,6 @@ namespace FileTools.CommonData
         #endregion
 
 
-
         // Public methods
         public static double KneeBraceLength()
         {
@@ -271,8 +273,10 @@ namespace FileTools.CommonData
         // Private methods
         private static void KneeBraceTrig(out double kneeBraceLength, out double xTranslation, out double zTranslation)
         {
+            CalculateLengthAndPositionData(out _, out double yTranslation_TeeClip, out _);
+
             double yPlenumClipHole = TotalColumnHeight - PlenumDepth - BottomOfPlenumToClipHole;
-            double yStructureClipHole = ClipHeight;
+            double yStructureClipHole = BraceType.Contains("L") ? ClipHeight : yTranslation_TeeClip;
 
             // Triangle --> [structure knee brace clip hole] to [plenum knee brace clip hole]
             double horz;
@@ -286,6 +290,45 @@ namespace FileTools.CommonData
             zTranslation = (Beams_AreRotated ? Beam_FlangeWidth : Beam_Depth) / 2 + ColumnBoundsToHole + horz;
             xTranslation = (Beams_AreRotated ? Beam_Depth : Beam_FlangeWidth) / 2 + ColumnBoundsToHole + horz;
         }
+        public static void CalculateLengthAndPositionData(out double _length, out double yLowerBounds_TeeClip, out PositionData _position)
+        {
+            // Viewing the YZ plane
+            double zColumnCenterToHoleColsestToColumn = TeeClip_OffsetFromColumnCenter + TeeClip_ColumnBoundToNearestHole;
+
+            // Triangle --> [top of base plate] to [work line below T-clip hole that's closest to the column bounds]
+            AAS(BraceAngle, zColumnCenterToHoleColsestToColumn, out double yTopOfBasePlateToWorkLine, out _);
+
+            // Triangle --> [work line below T-clip hole that's closest to the column bounds] to [T-clip hole that's closest to the column bounds]
+            AAS(BraceAngle, WT_FlangeGage / 2, out _, out double yWorkLineToHoleClosestToColumnHole);
+
+            // Y location of T-clip hole that's closest to the column bounds
+            yLowerBounds_TeeClip = BasePlate_THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole;
+
+            // Y location of plenum clip hole that's closest to the bottom of the plenum
+            double yUpperBounds = TotalColumnHeight - PlenumDepth - BottomOfPlenumToClipHole;
+
+            // Triangle --> [T-clip hole that's closest to the column bounds] to [plenum clip hole that's closest to the bottom of the plenum]
+            double yTriangle = yUpperBounds - yLowerBounds_TeeClip;
+            AAS(BraceAngle, out double zTriangle, yTriangle, out double holeToHole);
+
+            // Set backing field
+            _length = holeToHole + HoleToEnd * 2;
+
+            //-----
+
+            // Triangle --> [T-clip hole that's closest to the column bounds] to [flange gage and work line intersection point]
+            AAS(BraceAngle, out double yHoleClosestToColumn_To_FlangeGageCenterPoint, out double zHoleClosestToColumn_To_FlangeGageCenterPoint, WT_FlangeGage / 2);
+
+            // Position
+            double xTranslation = -Width / 2 - Clip_THK / 2;
+            double yTranslation = BasePlate_THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole + yTriangle / 2 - yHoleClosestToColumn_To_FlangeGageCenterPoint;
+            double zTranslation = Length / 2 - zColumnCenterToHoleColsestToColumn - zTriangle / 2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
+
+            _position = PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: BraceAngle);
+
+        }
+        static double TeeClip_OffsetFromColumnCenter => Beams_AreRotated ? Beam_WebTHK / 2 : Beam_FlangeWidth / 2;
+        static double TeeClip_ColumnBoundToNearestHole => Beams_AreRotated ? Beam_FlangeWidth / 2 - Beam_WebTHK / 2 + ColumnBoundsToHole : ColumnBoundsToHole;
 
     }
 }

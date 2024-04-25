@@ -33,7 +33,7 @@ namespace Plenum.Floor
             mTools.EditDimension("Count", "sk:FlangeHole", count1, modelDoc2);
             mTools.EditDimension("Spacing", "sk:FlangeHole", spacing1, modelDoc2);
 
-            double span = CallerType == Design.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 3 : EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+            double span = CallerType == Design.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge_General * 3 : EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge_General * 3 - mTools.AssemblyClearance;
             mTools.HolePattern(span, out double count2, out double spacing2);
             mTools.EditDimension("Count", "sk:FloorHole", count2, modelDoc2);
             mTools.EditDimension("Spacing", "sk:FloorHole", spacing2, modelDoc2);

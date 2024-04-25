@@ -11,13 +11,7 @@ namespace Plenum.Structure.Derived
     internal class KneeClipBent_L : KneeClipBent
     {
         // Static properties
-        public static bool Enabled
-        {
-            get
-            {
-                return BraceType.Contains("L") || BraceType.Contains("T") ? true : false;
-            }
-        }
+        public static new bool Enabled => KneeClipBent.Enabled;
 
 
         // Constructor
@@ -45,7 +39,7 @@ namespace Plenum.Structure.Derived
                     pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180));
                 }
 
-                if (PlenumDesign == Design.Legacy && BraceType.Contains("L"))
+                else
                 {
                     double xTranslation = Width / 2;
                     double yTranslation = -PlenumDepth - BottomOfPlenumToClipHole;
@@ -54,7 +48,7 @@ namespace Plenum.Structure.Derived
                     pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rY: -90));
                     pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 90));
 
-                    if (MidColumns)
+                    if (MidColumns && BraceType.Contains("L"))
                     {
                         for (int i = 0; i < FanCount - 1; i++)
                         {

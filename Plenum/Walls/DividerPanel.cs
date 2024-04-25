@@ -67,11 +67,11 @@ namespace Plenum
 
             if (CallerType == Design.Johnson)
             {
-                span = DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 4;
+                span = DividerPanel.LocalWidth / 2 - mTools.HoleToEdge_General * 4;
             }
             else
             {
-                span = EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+                span = EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge_General * 3 - mTools.AssemblyClearance;
             }
             mTools.HolePattern(span, out double count, out double spacing);
             mTools.EditDimension("Spacing", "sk:WebHole", spacing, modelDoc2);
@@ -82,11 +82,11 @@ namespace Plenum
             double span;
             if (CallerType == Design.Johnson)
             {
-                span = DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 4;
+                span = DividerPanel.LocalWidth / 2 - mTools.HoleToEdge_General * 4;
             }
             else
             {
-                span = EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+                span = EndPanel.LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge_General * 3 - mTools.AssemblyClearance;
             }
             return span;
         }

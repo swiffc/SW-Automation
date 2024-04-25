@@ -39,9 +39,9 @@ namespace Plenum
         // Abstract properties
         public abstract string StaticPartNo { get; }
         protected abstract AssemblyDoc ParentAssembly { get; }
-        public abstract List<PositionData> Position { get; }
         public abstract RawMaterial Shape {get;}
         public abstract string Size { get; }
+        public abstract List<PositionData> Position { get; }
 
 
         // Non-virtual properties

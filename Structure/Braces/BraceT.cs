@@ -16,10 +16,6 @@ namespace Structure.Braces
 {
     internal class BraceT : Part
     {
-        // Static properties
-
-
-
         // Constructor
         public BraceT(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
@@ -27,8 +23,8 @@ namespace Structure.Braces
         // Method overrides
         protected override void Dimensions()
         {
-            CalculateLengthAndPositionData();
-            EditDimension("Length", "T", (double)_length);
+            CalculateLengthAndPositionData(out double length, out _, out _);
+            EditDimension("Length", "T", length);
             EditDimension("Diameter", "sk:Hole", HoleDiameter_Structural);
 
             EditDimension("Depth", "sk:T", WT_Depth);
@@ -41,66 +37,24 @@ namespace Structure.Braces
         }
 
 
-        // Private properties
-        private void CalculateLengthAndPositionData()
+        private void AddOtherSideBrace(ref List<PositionData> list, PositionData position)
         {
-            // Only calculate once
-            if (_length.HasValue && _position.HasValue)
-                return;
-
-            // Viewing the YZ plane
-            double zColumnCenterToHoleColsestToColumn = TeeClip.OffsetFromColumnCenter + TeeClip.ColumnBoundToNearestHole;
-
-            // Triangle --> [top of base plate] to [work line below T-clip hole that's closest to the column bounds]
-            AAS(BraceAngle, zColumnCenterToHoleColsestToColumn, out double yTopOfBasePlateToWorkLine, out _);
-
-            // Triangle --> [work line below T-clip hole that's closest to the column bounds] to [T-clip hole that's closest to the column bounds]
-            AAS(BraceAngle, WT_FlangeGage / 2, out _, out double yWorkLineToHoleClosestToColumnHole);
-
-            // Y location of T-clip hole that's closest to the column bounds
-            double yLowerBounds = BasePlate.THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole;
-
-            // Y location of plenum clip hole that's closest to the bottom of the plenum
-            double yUpperBounds = TotalColumnHeight - PlenumDepth - BottomOfPlenumToClipHole;
-
-            // Triangle --> [T-clip hole that's closest to the column bounds] to [plenum clip hole that's closest to the bottom of the plenum]
-            double yTriangle = yUpperBounds - yLowerBounds;
-            AAS(BraceAngle, out double zTriangle, yTriangle, out double holeToHole);
-
-            // Set backing field
-            _length = holeToHole + HoleToEnd * 2;
-
-            //-----
-
-            // Triangle --> [T-clip hole that's closest to the column bounds] to [flange gage and work line intersection point]
-            AAS(BraceAngle, out double yHoleClosestToColumn_To_FlangeGageCenterPoint, out double zHoleClosestToColumn_To_FlangeGageCenterPoint, WT_FlangeGage / 2);
-
-            // Position
-            double xTranslation = -Width / 2 - Clip_THK/2;
-            double yTranslation = BasePlate.THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole + yTriangle/2 - yHoleClosestToColumn_To_FlangeGageCenterPoint;
-            double zTranslation = Length / 2 - zColumnCenterToHoleColsestToColumn - zTriangle/2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
-
-            _position = PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: BraceAngle); 
-            
-        }
-        private void AddOtherSideBrace(ref List<PositionData> list)
-        {
-            var otherSideBrace = (PositionData)_position;
+            var otherSideBrace = position;
             otherSideBrace.TranslationX *= -1;
             otherSideBrace.RotationX *= -1;
             otherSideBrace.RotationY = 180;
             list.Add(otherSideBrace);
         }
-        private void AddOppositeSideBrace(ref List<PositionData> list)
+        private void AddOppositeSideBrace(ref List<PositionData> list, PositionData position)
         {
-            var oppositeSideBrace = (PositionData)_position;
+            var oppositeSideBrace = position;
             oppositeSideBrace.TranslationZ *= -1;
             oppositeSideBrace.RotationX *= -1;
             list.Add(oppositeSideBrace);
         }
-        private void AddOtherOppositeSideBrace(ref List<PositionData> list)
+        private void AddOtherOppositeSideBrace(ref List<PositionData> list, PositionData position)
         {
-            var otherOppositeSideBrace = (PositionData)_position;
+            var otherOppositeSideBrace = position;
             otherOppositeSideBrace.TranslationX *= -1;
             otherOppositeSideBrace.TranslationZ *= -1;
             otherOppositeSideBrace.RotationY = 180;
@@ -117,22 +71,19 @@ namespace Structure.Braces
         {
             get
             {
+                CalculateLengthAndPositionData(out double length, out _, out PositionData position);
+
                 var pos = new List<PositionData>
                 {
-                    (PositionData)_position
+                    position
                 };
 
-                AddOtherSideBrace(ref pos);
-                AddOppositeSideBrace(ref pos);
-                AddOtherOppositeSideBrace(ref pos);
+                AddOtherSideBrace(ref pos, position);
+                AddOppositeSideBrace(ref pos, position);
+                AddOtherOppositeSideBrace(ref pos, position);
 
                 return pos;
             }
         }
-
-
-        // Private properties
-        private double? _length;
-        private PositionData? _position;
     }
 }

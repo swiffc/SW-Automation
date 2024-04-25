@@ -2,13 +2,13 @@
 using ModelTools;
 using SolidWorks.Interop.sldworks;
 using System.Collections.Generic;
+using static FileTools.CommonData.CommonData;
 
 namespace Structure.Columns.Derived.Children
 {
     internal class BasePlate : Part
     {
         // Static properties
-        internal static double THK { get; set; } = 0.5;
         internal static double LocalWidth { get; set; } = 8;
         internal static double LocalLength { get; set; } = 8;
         internal static double WidthHoleSpacing { get; set; } = 3.5;
@@ -25,7 +25,7 @@ namespace Structure.Columns.Derived.Children
         {
             EditDimension("Width", "sk:Plate", LocalWidth);
             EditDimension("Length", "sk:Plate", LocalLength);
-            EditDimension("THK", "Plate", THK);
+            EditDimension("THK", "Plate", BasePlate_THK);
 
             EditDimension("Diameter", "sk:Hole", HoleDiameter);
             EditDimension("WidthSpacing", "sk:Hole", WidthHoleSpacing);
@@ -37,7 +37,7 @@ namespace Structure.Columns.Derived.Children
         public override bool Enabled => true;
         public override string StaticPartNo => "102";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => THK.ToString();
+        public override string SizeOrThickness => BasePlate_THK.ToString();
         public override List<PositionData> Position
         {
             get

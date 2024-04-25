@@ -67,7 +67,7 @@ namespace Structure.Columns.Derived.Children.Derived
                     double rotation = 90;
                     if (ParentSubAssembly.StaticPartNo == "101")
                         rotation *= -1;
-                    pos.Add(PositionData.Create(tY: BasePlate.THK, rY: rotation));
+                    pos.Add(PositionData.Create(tY: BasePlate_THK, rY: rotation));
                 }
 
                 return pos;

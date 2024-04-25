@@ -12,7 +12,7 @@ namespace Structure.Columns.Derived.Children
         // Static properties
 
 
-        static internal double LocalLength => FieldColumn.Height - BasePlate.THK - EndPlate.THK;
+        static internal double LocalLength => FieldColumn.Height - BasePlate_THK - EndPlate.THK;
 
 
         // Constructor
@@ -44,7 +44,7 @@ namespace Structure.Columns.Derived.Children
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tY: BasePlate.THK, rY:Beams_AreRotated ? 90 : 0)
+                    PositionData.Create(tY: BasePlate_THK, rY:Beams_AreRotated ? 90 : 0)
                 };
             }
         }

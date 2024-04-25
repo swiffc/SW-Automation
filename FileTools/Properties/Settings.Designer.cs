@@ -37,7 +37,7 @@ namespace FileTools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.375")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.25")]
         public double Clip_THK {
             get {
                 return ((double)(this["Clip_THK"]));
@@ -49,7 +49,7 @@ namespace FileTools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.375")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.1344")]
         public double EndPanel_THK {
             get {
                 return ((double)(this["EndPanel_THK"]));
@@ -61,7 +61,7 @@ namespace FileTools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.375")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.1344")]
         public double SidePanel_THK {
             get {
                 return ((double)(this["SidePanel_THK"]));

@@ -14,24 +14,8 @@ namespace Plenum.Structure
     internal abstract class KneeClipBent : Part
     {
         // Static properties
-        static public double Gage
-        {
-            get
-            {
-                if (PlenumDesign == Design.Standard)
-                {
-                    return Leg - EndPanel.Gauge;
-                }
-                else if (PlenumDesign == Design.Legacy)
-                {
-                    return Leg - SidePanel.Gauge;
-                }
-                else
-                {
-                    return 1.5;
-                }
-            }
-        }
+        static public double FlangeGage => Leg - SidePanel.Gauge;
+        static public double FaceGage => 2.5;
         static public double Leg
         {
             get
@@ -44,10 +28,19 @@ namespace Plenum.Structure
                 {
                     return Beam_Depth / 2 - Beam_FlangeTHK + Clip_THK / 2;
                 }
-                else
+                else // Johnson
                 {
-                    return 3;
+                    return Beam_Depth / 2 + SidePanel_THK + Clip_THK / 2;
                 }
+            }
+        }
+        static public double SlotWidth => 1.5;
+        public static bool Enabled
+        {
+            get
+            {
+                return BraceType.Contains("L") ||
+                    (BraceType.Contains("T") && PlenumDesign != Design.Standard) ? true : false;
             }
         }
 
@@ -56,13 +49,35 @@ namespace Plenum.Structure
         protected KneeClipBent(Design callerType) : base(callerType) { }
 
 
+        // Public methods
+        public static double GetWidth(out double positiveX, out double holeToPlateCenter)
+        {
+            AAS(BraceAngle, out double xHoleToSlot, out _, FaceGage);
+
+            double diagSlotTrueCenterToSlotSideCenter = (SlotWidth - HoleDiameter_Structural) / 2;
+            AAS(BraceAngle, out _, out double xSlotTrueCenterToSlotSideCenter, diagSlotTrueCenterToSlotSideCenter);
+
+
+            double negativeX = xHoleToSlot + xSlotTrueCenterToSlotSideCenter + HoleToEdge;
+
+            AAS(BraceAngle, out holeToPlateCenter, PlenumBoundsToHole, out _);
+            positiveX = holeToPlateCenter * 2 + negativeX;
+
+            return positiveX + negativeX;
+        }
+
+
         // Method overrides
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            EditDimension("Gage", "sk:FlangeHoles", Gage, modelDoc2);
+            EditDimension("Diameter", "sk:Plate", HoleDiameter_Structural, modelDoc2);
+            EditDimension("Angle", "sk:Plate", BraceAngle, modelDoc2);
+
+            EditDimension("Gage", "sk:FlangeHoles", FlangeGage, modelDoc2);
             EditDimension("Leg", "sk:Flange", Leg, modelDoc2);
             EditDimension("THK", "Sheet-Metal", Clip_THK, modelDoc2);
             EditDimension("R", "FlangeR", GetBendRadius(Clip_THK), modelDoc2);
+
         }
 
 

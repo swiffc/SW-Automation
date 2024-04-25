@@ -111,10 +111,12 @@
     <Compile Include="Stiffeners\PlanBrace\Derived\PlanBraceMiddle.cs" />
     <Compile Include="Stiffeners\PlanBrace\PlanBrace.cs" />
     <Compile Include="Stiffeners\PlanBrace\PlanBraceHorizontal.cs" />
+    <Compile Include="Structure\BackingPlate.cs" />
     <Compile Include="Structure\Derived\KneeClipBent_L.cs" />
     <Compile Include="Structure\Derived\KneeClipBent_R.cs" />
     <Compile Include="Structure\KneeClipBent.cs" />
     <Compile Include="Structure\KneeClipFlat.cs" />
+    <Compile Include="Structure\WallStiffener.cs" />
     <Compile Include="Walls\DividerFlange.cs" />
     <Compile Include="Walls\DividerPanel.cs" />
     <Compile Include="Walls\EndPanel.cs" />

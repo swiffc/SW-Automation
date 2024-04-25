@@ -3,7 +3,7 @@ using SolidWorks.Interop.sldworks;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 using static FileTools.FileTools;
-using mTools = Tools.ModelTools;
+using static Tools.ModelTools;
 
 namespace Plenum.Structure
 {
@@ -14,18 +14,28 @@ namespace Plenum.Structure
         {
             get
             {
-                return
-                    (
-                        PlenumDesign == Design.Standard
-                        &&
-                        (BraceType.Contains("L") || BraceType.Contains("T"))
-                    )
-
-                    ||
-
-                    PlenumDesign == Design.Legacy && BraceType.Contains("L")
-
-                    ? true : false;
+                if (PlenumDesign != Design.Johnson)
+                {
+                    if (BraceType.Contains("L") || BraceType.Contains("T"))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        static public double Gage
+        {
+            get
+            {
+                return BraceType.Contains("L") ? 2.5 : WT_FlangeGage;
+            }
+        }
+        static public double FlangeGage
+        {
+            get
+            {
+                return BraceType.Contains("T") ? WT_FlangeGage : 0.001;
             }
         }
 
@@ -37,14 +47,28 @@ namespace Plenum.Structure
         // Method overrides
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            mTools.EditDimension("Angle", "sk:Plate", BraceAngle, modelDoc2);
-            mTools.EditDimension("FlangeGage", "sk:Plate", BraceType.Contains("T") ? WT_FlangeGage : 0.001, modelDoc2);
-            mTools.EditDimension("THK", "Plate", Clip_THK, modelDoc2);
-            mTools.EditDimension("Diameter", "sk:Hole", HoleDiameter_Structural, modelDoc2);
+            EditDimension("Angle", "sk:Plate", BraceAngle, modelDoc2);
+            EditDimension("FlangeGage", "sk:Plate", FlangeGage, modelDoc2);
+            EditDimension("THK", "Plate", Clip_THK, modelDoc2);
+            EditDimension("Gage", "sk:Plate", Gage, modelDoc2);
+            EditDimension("Diameter", "sk:Hole", HoleDiameter_Structural, modelDoc2);
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            mTools.SuppressFeatures(BraceType.Contains("L") ? false : true, modelDoc2, "Slot");
+            SuppressFeatures(BraceType.Contains("L") ? false : true, modelDoc2, "Slot");
+        }
+
+
+        // Static methods
+        public static double GetReferenceHoleToPlateEnd()
+        {
+            // Viewing YZ plane at the part level
+            AAS(BraceAngle, out _, FlangeGage / 2, out double zFromOriginToWorkLine);
+            AAS(BraceAngle, out double zFromOriginToWorkLine_zWorkHole, PlenumBoundsToHole * 2, out _);
+            double workHoletoRightHole = 3;
+            double zOriginaToRightSideOfPlate = zFromOriginToWorkLine + zFromOriginToWorkLine_zWorkHole + workHoletoRightHole + HoleToEdge;
+
+            return zOriginaToRightSideOfPlate;
         }
 
 
@@ -71,7 +95,7 @@ namespace Plenum.Structure
                     pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180));
 
 
-                    if (MidColumns)
+                    if (MidColumns && BraceType.Contains("L"))
                     {
                         for (int i = 0; i < FanCount - 1; i++)
                         {
@@ -90,7 +114,7 @@ namespace Plenum.Structure
                         }
                     }
                 }
-                if (PlenumDesign == Design.Legacy && BraceType.Contains("L"))
+                else
                 {
                     double xTranslation = Width / 2 - ColumnCenterToPlenumEndClipHole();
                     double yTranslation = -PlenumDepth - BottomOfPlenumToClipHole;

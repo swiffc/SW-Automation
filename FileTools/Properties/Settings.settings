@@ -6,13 +6,13 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Clip_THK" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.375</Value>
+      <Value Profile="(Default)">0.25</Value>
     </Setting>
     <Setting Name="EndPanel_THK" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.375</Value>
+      <Value Profile="(Default)">0.1344</Value>
     </Setting>
     <Setting Name="SidePanel_THK" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.375</Value>
+      <Value Profile="(Default)">0.1344</Value>
     </Setting>
     <Setting Name="Beam_Size" Type="System.String" Scope="User">
       <Value Profile="(Default)">W6x15</Value>

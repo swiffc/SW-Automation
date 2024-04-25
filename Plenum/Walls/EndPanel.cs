@@ -86,7 +86,7 @@ namespace Plenum
             mTools.EditDimension("PlanBraceX", "sk:Hole", GetPlanBraceHole(), modelDoc2);
             mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled || CallerType == Design.Johnson ? PlenumDepth : 0), modelDoc2);
 
-            double span = CallerType == Design.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 3 : LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+            double span = CallerType == Design.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge_General * 3 : LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge_General * 3 - mTools.AssemblyClearance;
 
             mTools.HolePattern(span, out double count, out double spacing);
             mTools.EditDimension("Count1", "sk:BottomHole", count, modelDoc2);
