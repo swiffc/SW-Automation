@@ -86,8 +86,8 @@ namespace Plenum.Structure
                 if (PlenumDesign == Design.Standard)
                 {
                     double xTranslation = SidePanel.CalculateXTranslation() + SidePanel_THK;
-                    double yTranslation = -PlenumDepth - BottomOfPlenumToClipHole;
-                    double zTranslation = Length / 2 - ColumnCenterToPlenumSideClipHole();
+                    double yTranslation = -Plenum_Depth - BottomOfPlenumToClipHole;
+                    double zTranslation = Plenum_Length / 2 - ColumnCenterToPlenumSideClipHole();
 
                     pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation));
                     pos.Add(PositionData.Create(tX: -xTranslation - Clip_THK, tY: yTranslation, tZ: zTranslation));
@@ -95,20 +95,20 @@ namespace Plenum.Structure
                     pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180));
 
 
-                    if (MidColumns && BraceType.Contains("L"))
+                    if (Mid_Columns && BraceType.Contains("L"))
                     {
-                        for (int i = 0; i < FanCount - 1; i++)
+                        for (int i = 0; i < Fan_Count - 1; i++)
                         {
                             double z = zTranslation;
-                            z -= Length / FanCount;
+                            z -= Plenum_Length / Fan_Count;
                             pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z));
                             pos.Add(PositionData.Create(tX: -xTranslation - Clip_THK, tY: yTranslation, tZ: z));
                         }
 
-                        for (int i = 0; i < FanCount - 1; i++)
+                        for (int i = 0; i < Fan_Count - 1; i++)
                         {
                             double z = zTranslation;
-                            z -= Length / FanCount;
+                            z -= Plenum_Length / Fan_Count;
                             pos.Add(PositionData.Create(tX: xTranslation + Clip_THK, tY: yTranslation, tZ: -z, rY: 180));
                             pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -z, rY: 180));
                         }
@@ -116,8 +116,8 @@ namespace Plenum.Structure
                 }
                 else
                 {
-                    double xTranslation = Width / 2 - ColumnCenterToPlenumEndClipHole();
-                    double yTranslation = -PlenumDepth - BottomOfPlenumToClipHole;
+                    double xTranslation = Plenum_Width / 2 - ColumnCenterToPlenumEndClipHole();
+                    double yTranslation = -Plenum_Depth - BottomOfPlenumToClipHole;
                     double zTranslation = EndPanel.CalculateZTranslation() + EndPanel_THK;
 
                     pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation + Clip_THK, rY: -90));

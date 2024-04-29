@@ -40,12 +40,12 @@ namespace Plenum.JohnsonBeam.Children
 
             double totalLength = Length + Johnson.ExtraLength * 2;
             double endFanToEndPanel = totalLength / 4;
-            double sectionThird = (Length + Johnson.ExtraLength * 2) / FanCount  / 3;
+            double sectionThird = (Length + Johnson.ExtraLength * 2) / Fan_Count  / 3;
 
             double zTotal = endFanToEndPanel - Johnson.ExtraLength;
             double z = zTotal - sectionThird / 2;
 
-            double x = Width / 2 + Beam_Depth/2 - z + mTools.AssemblyClearance;
+            double x = Plenum_Width / 2 + Beam_Depth/2 - z + mTools.AssemblyClearance;
 
             mTools.EditDimension("X", "sk:Hole", x, modelDoc2);
 
@@ -53,7 +53,7 @@ namespace Plenum.JohnsonBeam.Children
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
             bool suppress = false;
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
                 suppress = true;
             mTools.SuppressFeatures(suppress, modelDoc2, "Hole");
         }

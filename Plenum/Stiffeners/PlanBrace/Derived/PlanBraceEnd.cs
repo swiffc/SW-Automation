@@ -60,7 +60,7 @@ namespace Plenum
 
                     var zTranslations = FanCenter.ZTranslation(CallerType);
 
-                    double sectionThird = (Length / FanCount + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0)) / 3;
+                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0)) / 3;
                     double positionAdjust = -adjust;
 
                     _position.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslations[0] + sectionThird - positionAdjust, rY: -angle - 180));

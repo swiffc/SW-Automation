@@ -94,5 +94,209 @@ namespace FileTools.Properties {
                 this["PlenumDesignSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("240")]
+        public double Plenum_Length {
+            get {
+                return ((double)(this["Plenum_Length"]));
+            }
+            set {
+                this["Plenum_Length"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("108")]
+        public double Plenum_Width {
+            get {
+                return ((double)(this["Plenum_Width"]));
+            }
+            set {
+                this["Plenum_Width"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int Fan_Count {
+            get {
+                return ((int)(this["Fan_Count"]));
+            }
+            set {
+                this["Fan_Count"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36")]
+        public double Plenum_Depth {
+            get {
+                return ((double)(this["Plenum_Depth"]));
+            }
+            set {
+                this["Plenum_Depth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Mid_Columns {
+            get {
+                return ((bool)(this["Mid_Columns"]));
+            }
+            set {
+                this["Mid_Columns"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public double Fan_Diameter_Feet {
+            get {
+                return ((double)(this["Fan_Diameter_Feet"]));
+            }
+            set {
+                this["Fan_Diameter_Feet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public double FanRing_Depth {
+            get {
+                return ((double)(this["FanRing_Depth"]));
+            }
+            set {
+                this["FanRing_Depth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Motor Shaft Down")]
+        public string MotorShaft_Orientation {
+            get {
+                return ((string)(this["MotorShaft_Orientation"]));
+            }
+            set {
+                this["MotorShaft_Orientation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("A36")]
+        public string MaterialSpecSetting {
+            get {
+                return ((string)(this["MaterialSpecSetting"]));
+            }
+            set {
+                this["MaterialSpecSetting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public double Beam_Depth {
+            get {
+                return ((double)(this["Beam_Depth"]));
+            }
+            set {
+                this["Beam_Depth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.25")]
+        public double Beam_WebTHK {
+            get {
+                return ((double)(this["Beam_WebTHK"]));
+            }
+            set {
+                this["Beam_WebTHK"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public double Beam_FlangeWidth {
+            get {
+                return ((double)(this["Beam_FlangeWidth"]));
+            }
+            set {
+                this["Beam_FlangeWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.25")]
+        public double Beam_FlangeTHK {
+            get {
+                return ((double)(this["Beam_FlangeTHK"]));
+            }
+            set {
+                this["Beam_FlangeTHK"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.625")]
+        public double Beam_K {
+            get {
+                return ((double)(this["Beam_K"]));
+            }
+            set {
+                this["Beam_K"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.375")]
+        public double Beam_K1 {
+            get {
+                return ((double)(this["Beam_K1"]));
+            }
+            set {
+                this["Beam_K1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3.5")]
+        public double Beam_FlangeGage {
+            get {
+                return ((double)(this["Beam_FlangeGage"]));
+            }
+            set {
+                this["Beam_FlangeGage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.25")]
+        public double Beam_WebGage {
+            get {
+                return ((double)(this["Beam_WebGage"]));
+            }
+            set {
+                this["Beam_WebGage"] = value;
+            }
+        }
     }
 }

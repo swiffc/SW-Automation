@@ -48,9 +48,9 @@ namespace Plenum.Floor
                     if (FloorPanel.SpliceRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
+                        double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
 
-                        for (int i = 0; i < FanCount; i++)
+                        for (int i = 0; i < Fan_Count; i++)
                         {
                             _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation));
                             _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation, rY: 180));
@@ -78,7 +78,7 @@ namespace Plenum.Floor
             mTools.EditDimension("Spacing", "sk:FloorHole", spacing, modelDoc2);
             mTools.EditDimension("Count", "sk:FloorHole", count, modelDoc2);
 
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
             {
                 mTools.EditDimension("BoltCircleR", "sk:ShaftDownRadialHole", FanRing.Radius + 1.125, modelDoc2);
                 mTools.EditDimension("Count", "sk:ShaftDownRadialHole", FanRing.RadialCount.ShaftDown, modelDoc2);
@@ -98,7 +98,7 @@ namespace Plenum.Floor
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
             {
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");

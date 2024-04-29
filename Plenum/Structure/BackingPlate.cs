@@ -42,6 +42,7 @@ namespace Plenum.Structure
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             EditDimension("Gage", "sk:FloorHoles", FloorGage, modelDoc2);
+            EditDimension("Width", "Plate", KneeClipBent.GetWidth(out _, out _), modelDoc2);
         }
 
 
@@ -55,12 +56,12 @@ namespace Plenum.Structure
             get
             {
                 KneeClipBent.GetWidth(out _, out double holeToPlateCenter);
-                double yTranslation = -PlenumDepth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
+                double yTranslation = -Plenum_Depth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
 
                 if (PlenumDesign == Design.Standard)
                 {
-                    double xTranslation = -Width / 2 + ColumnCenterToPlenumEndClipHole() + holeToPlateCenter;
-                    double zTranslation = Length / 2 + Beam_Depth / 2;
+                    double xTranslation = -Plenum_Width / 2 + ColumnCenterToPlenumEndClipHole() + holeToPlateCenter;
+                    double zTranslation = Plenum_Length / 2 + Beam_Depth / 2;
 
                     return new List<PositionData>
                     {
@@ -73,8 +74,8 @@ namespace Plenum.Structure
                 }
                 else // Legacy
                 {
-                    double xTranslation = Width/2 + Beam_Depth/2 - Beam_FlangeTHK - SidePanel_THK;
-                    double zTranslation = Length/2 - ColumnCenterToPlenumSideClipHole() - holeToPlateCenter;
+                    double xTranslation = Plenum_Width/2 + Beam_Depth/2 - Beam_FlangeTHK - SidePanel_THK;
+                    double zTranslation = Plenum_Length/2 - ColumnCenterToPlenumSideClipHole() - holeToPlateCenter;
 
                     var pos =  new List<PositionData>
                     {
@@ -85,20 +86,20 @@ namespace Plenum.Structure
                         PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 90),
                     };
 
-                    if (MidColumns && BraceType.Contains("L"))
+                    if (Mid_Columns && BraceType.Contains("L"))
                     {
-                        for (int i = 0; i < FanCount - 1; i++)
+                        for (int i = 0; i < Fan_Count - 1; i++)
                         {
                             double z = zTranslation;
-                            z -= Length / FanCount;
+                            z -= Plenum_Length / Fan_Count;
                             pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z, rY: -90));
                             pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -z, rY: -90));
                         }
 
-                        for (int i = 0; i < FanCount - 1; i++)
+                        for (int i = 0; i < Fan_Count - 1; i++)
                         {
                             double z = zTranslation;
-                            z -= Length / FanCount;
+                            z -= Plenum_Length / Fan_Count;
                             pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: 90));
                             pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -z, rY: 90));
                         }

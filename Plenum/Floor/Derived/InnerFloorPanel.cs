@@ -26,7 +26,7 @@ namespace Plenum.Floor.Derived
         {
             get
             {
-                return FanCount > 1 || CallerType == Design.Legacy ? true : false;
+                return Fan_Count > 1 || CallerType == Design.Legacy ? true : false;
             }
         }
 
@@ -38,8 +38,8 @@ namespace Plenum.Floor.Derived
         // Method overrides
         protected override void EditDimensions_ColumnCut(ModelDoc2 modelDoc2)
         {
-            mTools.EditDimension("Width", "sk:ColumnCut", Width / 2, modelDoc2);
-            mTools.EditDimension("Length", "sk:ColumnCut", Length / FanCount / 2 + (CallerType == Design.Johnson ? Johnson.ExtraLength/2 : 0), modelDoc2);
+            mTools.EditDimension("Width", "sk:ColumnCut", Plenum_Width / 2, modelDoc2);
+            mTools.EditDimension("Length", "sk:ColumnCut", Plenum_Length / Fan_Count / 2 + (CallerType == Design.Johnson ? Johnson.ExtraLength/2 : 0), modelDoc2);
 
             mTools.EditDimension("Depth", "sk:ColumnCut", Beam_Depth / 2 + mTools.AssemblyClearance, modelDoc2);
             mTools.EditDimension("FlangeWidth", "sk:ColumnCut", Beam_FlangeWidth / 2 + mTools.AssemblyClearance, modelDoc2);
@@ -59,9 +59,9 @@ namespace Plenum.Floor.Derived
         {
             base.FeatureSuppression(modelDoc2);
 
-            if (!MidColumns && CallerType != Design.Legacy)
+            if (!Mid_Columns && CallerType != Design.Legacy)
                 mTools.SuppressFeatures(true, modelDoc2, "ColumnCut");
-            else if (CallerType == Design.Johnson && MidColumns && !ExtensionRequired)
+            else if (CallerType == Design.Johnson && Mid_Columns && !ExtensionRequired)
                 mTools.SuppressFeatures(false, modelDoc2, "ColumnCut");
         }
 
@@ -78,11 +78,11 @@ namespace Plenum.Floor.Derived
                     _position = new List<PositionData>();
 
                     var zTranslation = FanCenter.ZTranslation(CallerType);
-                    double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
+                    double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
 
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
-                        bool isNotLastForNonLegacy = CallerType != Design.Legacy && i != FanCount - 1;
+                        bool isNotLastForNonLegacy = CallerType != Design.Legacy && i != Fan_Count - 1;
                         bool isNotFirstForNonLegacy = CallerType != Design.Legacy && i != 0;
 
                         if (CallerType == Design.Legacy || isNotLastForNonLegacy)
@@ -114,13 +114,13 @@ namespace Plenum.Floor.Derived
             switch (callerType)
             {
                 case Design.Standard:
-                    calculatedLength = Length / (FanCount * 2) - EndPanel_THK / 2 - DividerPanel.THK - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
+                    calculatedLength = Plenum_Length / (Fan_Count * 2) - EndPanel_THK / 2 - DividerPanel.THK - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
                     break;
                 case Design.Johnson:
-                    calculatedLength = (Length + Johnson.ExtraLength * 2) / (FanCount * 2) - DividerPanel.THK / 2 - DividerAngle.THK - bTools.GetBendRadius(DividerPanel.THK) - mTools.AssemblyClearance / 2;
+                    calculatedLength = (Plenum_Length + Johnson.ExtraLength * 2) / (Fan_Count * 2) - DividerPanel.THK / 2 - DividerAngle.THK - bTools.GetBendRadius(DividerPanel.THK) - mTools.AssemblyClearance / 2;
                     break;
                 case Design.Legacy:
-                    calculatedLength = Length / (FanCount * 2) - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2 + (FanCount > 1 ? -DividerPanel.THK / 2 - DividerFlange.THK : 0);
+                    calculatedLength = Plenum_Length / (Fan_Count * 2) - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2 + (Fan_Count > 1 ? -DividerPanel.THK / 2 - DividerFlange.THK : 0);
                     break;
             }
             return calculatedLength;

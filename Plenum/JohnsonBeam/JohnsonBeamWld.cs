@@ -17,7 +17,7 @@ namespace Plenum.JohnsonBeam
         // Static properties
         public static bool Enabled { get; set; } = false;
         internal new static AssemblyDoc AssemblyDoc { get; set; }
-        internal static double Length => Width - Beam_Depth;
+        internal static double Length => Plenum_Width - Beam_Depth;
 
 
         // Constructor

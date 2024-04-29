@@ -24,9 +24,9 @@ namespace Plenum
         {
             get
             {
-                if (CallerType == Design.Johnson && MidColumns && FanCount > 2) return true;
+                if (CallerType == Design.Johnson && Mid_Columns && Fan_Count > 2) return true;
 
-                return CallerType != Design.Johnson || !MidColumns;
+                return CallerType != Design.Johnson || !Mid_Columns;
             }
 
 
@@ -45,7 +45,7 @@ namespace Plenum
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             mTools.EditDimension("Length", "sk:Web", LocalLength, modelDoc2);
-            mTools.EditDimension("Height", "sk:Web", PlenumDepth, modelDoc2);
+            mTools.EditDimension("Height", "sk:Web", Plenum_Depth, modelDoc2);
             mTools.EditDimension("THK", "Sheet-Metal", SidePanel_THK, modelDoc2);
             mTools.EditDimension("Leg", "sk:BottomFlange", Leg, modelDoc2);
             mTools.EditDimension("innerR", "TopFlangeR", bTable.GetBendRadius(SidePanel_THK), modelDoc2);
@@ -56,10 +56,10 @@ namespace Plenum
             else
                 mTools.EditDimension("DistanceToEdge", "sk:Hole", 1.5, modelDoc2);
 
-            mTools.EditDimension("PlanBraceZ", "sk:Hole", Length / FanCount / 3, modelDoc2);
-            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled ? PlenumDepth : 0), modelDoc2);
+            mTools.EditDimension("PlanBraceZ", "sk:Hole", Plenum_Length / Fan_Count / 3, modelDoc2);
+            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled ? Plenum_Depth : 0), modelDoc2);
 
-            mTools.EditDimension("MotorBeam", "sk:Hole", MotorBeamWld.Enabled ? 7.25 : PlenumDepth + 3, modelDoc2);
+            mTools.EditDimension("MotorBeam", "sk:Hole", MotorBeamWld.Enabled ? 7.25 : Plenum_Depth + 3, modelDoc2);
 
             EditDimensions_186(modelDoc2);
             EditDimensions_191(modelDoc2);
@@ -74,7 +74,7 @@ namespace Plenum
         }
         internal static double CalculateXTranslation()
         {
-            double xTranslation = Width / 2;
+            double xTranslation = Plenum_Width / 2;
             switch (CallerType)
             {
                 case Design.Johnson:
@@ -97,7 +97,7 @@ namespace Plenum
         {
             double length = baseLength - mTools.AssemblyClearance * 2;
 
-            if (FanCount > 1 && MidColumns)
+            if (Fan_Count > 1 && Mid_Columns)
             {
                 length -= mTools.AssemblyClearance * 2;
             }
@@ -114,9 +114,9 @@ namespace Plenum
         }
         private double CalculateZTranslation()
         {
-            if (MidColumns)
+            if (Mid_Columns)
             {
-                return (Length / 2) - (FanCount > 0 ? Length / (2 * FanCount) : 0);
+                return (Plenum_Length / 2) - (Fan_Count > 0 ? Plenum_Length / (2 * Fan_Count) : 0);
             }
 
             return 0;
@@ -124,7 +124,7 @@ namespace Plenum
         private List<PositionData> InitializePositionData(double xTranslation, double zTranslation)
         {
             var positionData = new List<PositionData>();
-            if (!(CallerType == Design.Johnson && FanCount > 1 && MidColumns))
+            if (!(CallerType == Design.Johnson && Fan_Count > 1 && Mid_Columns))
             {
                 positionData.Add(PositionData.Create(tZ: zTranslation, tX: xTranslation));
                 positionData.Add(PositionData.Create(tZ: zTranslation, tX: -xTranslation, rY: 180));
@@ -133,17 +133,17 @@ namespace Plenum
         }
         private bool ShouldAddAdditionalPositions()
         {
-            return FanCount > 1 && MidColumns;
+            return Fan_Count > 1 && Mid_Columns;
         }
         private void AddAdditionalPositions(double xTranslation, ref double zTranslation)
         {
-            for (int i = 1; i < FanCount; i++)
+            for (int i = 1; i < Fan_Count; i++)
             {
-                if (CallerType == Design.Johnson && i == FanCount - 1)
+                if (CallerType == Design.Johnson && i == Fan_Count - 1)
                 {
                     continue;
                 }
-                zTranslation -= Length / FanCount;
+                zTranslation -= Plenum_Length / Fan_Count;
                 _position.Add(PositionData.Create(tZ: zTranslation, tX: xTranslation));
                 _position.Add(PositionData.Create(tZ: zTranslation, tX: -xTranslation, rY: 180));
             }
@@ -207,22 +207,22 @@ namespace Plenum
             mTools.EditDimension("HoleC", "sk:Hole", CornerAngle.HolePositions[8] + CornerAngle.YTranslation, modelDoc2);
             mTools.EditDimension("HoleD", "sk:Hole", CornerAngle.HolePositions[9] + CornerAngle.YTranslation, modelDoc2);
             mTools.EditDimension("HoleE", "sk:Hole", CornerAngle.HolePositions[10] + CornerAngle.YTranslation, modelDoc2);
-            mTools.EditDimension("HoleF", "sk:Hole", PlenumDepth + 1, modelDoc2);
+            mTools.EditDimension("HoleF", "sk:Hole", Plenum_Depth + 1, modelDoc2);
         }
         private void EditDimensions_NoMidColumns(ModelDoc2 modelDoc2)
         {
             double angleSpacing;
-            if (MidColumns)
+            if (Mid_Columns)
                 angleSpacing = LocalLength - 1.5 * 2;
             else
-                angleSpacing = (LocalLength - 1.5 * 2) / FanCount + DividerPanel.THK / 2 + CornerAngle.Gauge;
+                angleSpacing = (LocalLength - 1.5 * 2) / Fan_Count + DividerPanel.THK / 2 + CornerAngle.Gauge;
             mTools.EditDimension("CornerAngleSpacing", "sk:Hole", angleSpacing, modelDoc2);
 
 
             var fanSpacingList = FanCenter.ZTranslation(CallerType);
             double fanSpacing = fanSpacingList[0] - fanSpacingList[fanSpacingList.Count - 1];
 
-            double fanLocation = (LocalLength / 2) - (MidColumns ? 0 : fanSpacing / FanCount);
+            double fanLocation = (LocalLength / 2) - (Mid_Columns ? 0 : fanSpacing / Fan_Count);
             mTools.EditDimension("FanLocation", "sk:Hole", fanLocation, modelDoc2);
             mTools.EditDimension("FanLocation", "sk:BottomHole", fanLocation, modelDoc2);
 
@@ -234,10 +234,10 @@ namespace Plenum
 
 
             double count;
-            if (FanCount < 2)
+            if (Fan_Count < 2)
                 count = 2;
             else
-                count = FanCount;
+                count = Fan_Count;
             mTools.EditDimension("CornerAngleCount", "sk:Hole", count, modelDoc2);
             mTools.EditDimension("FanCount", "sk:Hole", count, modelDoc2);
             mTools.EditDimension("FanCount", "sk:BottomHole", count, modelDoc2);
@@ -277,8 +277,8 @@ namespace Plenum
         {
             get
             {
-                double denominator = MidColumns ? FanCount : 1;
-                double baseLength = Length / denominator;
+                double denominator = Mid_Columns ? Fan_Count : 1;
+                double baseLength = Plenum_Length / denominator;
 
                 switch (CallerType)
                 {

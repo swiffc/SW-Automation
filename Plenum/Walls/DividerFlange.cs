@@ -23,7 +23,7 @@ namespace Plenum.Walls
         {
             get
             {
-                return FanCount > 1 ? true : false;
+                return Fan_Count > 1 ? true : false;
             }
         }
         internal static double THK => DividerPanel.THK;
@@ -51,7 +51,7 @@ namespace Plenum.Walls
 
             double maxValue = DividerPanel.THK / 2 + Flange;
             double valueLimit = Beam_Depth / 2 - Beam_FlangeTHK - mTools.InterferenceClearance;
-            if ((CallerType != Design.Standard && MidColumns))
+            if ((CallerType != Design.Standard && Mid_Columns))
                 mTools.EditDimension("Width", "sk:ColumnSeal", maxValue, modelDoc2);
             else if (maxValue > valueLimit)
                 mTools.EditDimension("Width", "sk:ColumnSeal", valueLimit, modelDoc2);
@@ -67,11 +67,11 @@ namespace Plenum.Walls
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
             bool suppress = true;
-            if (CallerType == Design.Standard && MidColumns)
+            if (CallerType == Design.Standard && Mid_Columns)
                 suppress = false;
-            else if (CallerType == Design.Legacy && MidColumns)
+            else if (CallerType == Design.Legacy && Mid_Columns)
                 suppress = false;
-            else if (CallerType == Design.Johnson && MidColumns)
+            else if (CallerType == Design.Johnson && Mid_Columns)
                 suppress = false;
 
             mTools.SuppressFeatures(suppress, modelDoc2, "ColumnSeal", "1", "2", "3");
@@ -85,23 +85,23 @@ namespace Plenum.Walls
             {
                 double length;
                 if (CallerType == Design.Standard)
-                    if (MidColumns)
-                        length = Width - Beam_FlangeWidth - mTools.InterferenceClearance * 2;
+                    if (Mid_Columns)
+                        length = Plenum_Width - Beam_FlangeWidth - mTools.InterferenceClearance * 2;
                     else
-                        length = Width - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
+                        length = Plenum_Width - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
 
-                else if (CallerType == Design.Johnson && !MidColumns)
-                    length = Width + Beam_Depth - CornerAngle.Leg * 2 - mTools.InterferenceClearance * 2;
-                else if (CallerType == Design.Johnson && MidColumns)
-                    length = Width - Beam_Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
+                else if (CallerType == Design.Johnson && !Mid_Columns)
+                    length = Plenum_Width + Beam_Depth - CornerAngle.Leg * 2 - mTools.InterferenceClearance * 2;
+                else if (CallerType == Design.Johnson && Mid_Columns)
+                    length = Plenum_Width - Beam_Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
 
-                else if (CallerType == Design.Legacy && !MidColumns)
-                    length = Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
-                else if (CallerType == Design.Legacy && MidColumns)
-                    length = Width - Beam_Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
+                else if (CallerType == Design.Legacy && !Mid_Columns)
+                    length = Plenum_Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - CornerAngle.Leg * 2 - mTools.AssemblyClearance * 2;
+                else if (CallerType == Design.Legacy && Mid_Columns)
+                    length = Plenum_Width - Beam_Depth - DividerAngle.LongLeg * 2 - mTools.AssemblyClearance * 3;
 
                 else
-                    length = Width - Beam_Depth - mTools.AssemblyClearance * 4;
+                    length = Plenum_Width - Beam_Depth - mTools.AssemblyClearance * 4;
                 return length;
             }
         }
@@ -120,12 +120,12 @@ namespace Plenum.Walls
 
                 List<PositionData> _position = new List<PositionData>();
 
-                if (FanCount > 1)
+                if (Fan_Count > 1)
                 {
-                    for (int i = 1; i < FanCount; i++)
+                    for (int i = 1; i < Fan_Count; i++)
                     {
-                        zTranslation -= Length / FanCount;
-                        _position.Add(PositionData.Create(tZ: zTranslation, tY: -PlenumDepth));
+                        zTranslation -= Length / Fan_Count;
+                        _position.Add(PositionData.Create(tZ: zTranslation, tY: -Plenum_Depth));
                     }
                 }
 

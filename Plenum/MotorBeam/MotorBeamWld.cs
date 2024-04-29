@@ -87,7 +87,7 @@ namespace Plenum
                     double yTranslation = 6;
 
                     _position = new List<PositionData>();
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
                         _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation));
                     }
@@ -109,11 +109,11 @@ namespace Plenum
                 switch (CallerType)
                 {
                     case Design.Standard:
-                        return Width - mTools.AssemblyClearance * 2;
+                        return Plenum_Width - mTools.AssemblyClearance * 2;
                     case Design.Johnson:
-                        return Width + Beam_Depth - mTools.AssemblyClearance * 2;
+                        return Plenum_Width + Beam_Depth - mTools.AssemblyClearance * 2;
                     case Design.Legacy:
-                        return Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.AssemblyClearance * 2;
+                        return Plenum_Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.AssemblyClearance * 2;
                 }
                 return _length;
             }

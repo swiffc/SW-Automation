@@ -57,7 +57,7 @@ namespace Plenum
         {
             get
             {
-                double minimumHeight = PlenumDepth + 6;
+                double minimumHeight = Plenum_Depth + 6;
                 if (!_height.HasValue || _height <= minimumHeight)
                     _height = minimumHeight;
                 return (double)_height;

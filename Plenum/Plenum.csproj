@@ -86,16 +86,6 @@
     <Compile Include="JohnsonBeam\Children\JohnsonBeamPart.cs" />
     <Compile Include="JohnsonBeam\Children\JohnsonBeamPlate.cs" />
     <Compile Include="JohnsonBeam\JohnsonBeamWld.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="StandardParts\FanGuard.cs" />
     <Compile Include="Stiffeners\CornerAngle.cs" />
     <Compile Include="Helpers\BaseClasses\Assembly.cs" />
@@ -139,10 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileTools\FileTools.csproj">
@@ -161,10 +147,6 @@
   <ItemGroup>
     <EmbeddedResource Include="PlenumUI.resx">
       <DependentUpon>PlenumUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

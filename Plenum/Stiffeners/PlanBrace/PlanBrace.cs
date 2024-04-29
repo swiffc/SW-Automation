@@ -22,7 +22,7 @@ namespace Plenum
         {
             get
             {
-                bool value = MotorShaft.ToLower() == "up" ? true : false;
+                bool value = MotorShaft_Orientation.ToLower().Contains("up") ? true : false;
                 return value;
             }
         }
@@ -37,7 +37,7 @@ namespace Plenum
         protected double GetNominalLength()
         {
             double slotGauge = 1.5;
-            double sectionLength = Length / FanCount + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
             double sectionThird = sectionLength / 3 - slotGauge * 2;
             double angle = 45;
 
@@ -50,13 +50,13 @@ namespace Plenum
             switch (CallerType)
             {
                 case Design.Standard:
-                    xTranslation = Width / 2;
+                    xTranslation = Plenum_Width / 2;
                     break;
                 case Design.Johnson:
-                    xTranslation = Width / 2 + Beam_Depth / 2;
+                    xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
                     break;
                 case Design.Legacy:
-                    xTranslation = Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
+                    xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
                     break;
                 default: throw new ArgumentException();
             }
@@ -64,7 +64,7 @@ namespace Plenum
             yTranslation = -4;
             angle = 45;
 
-            double sectionLength = Length / FanCount + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
             double sectionThird = sectionLength / 3;
 
             mTools.AAS(angle, out double oppositeSide, sectionThird / 2, out _);

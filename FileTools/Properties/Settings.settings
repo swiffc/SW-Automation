@@ -20,5 +20,56 @@
     <Setting Name="PlenumDesignSetting" Type="System.String" Scope="User">
       <Value Profile="(Default)">Legacy</Value>
     </Setting>
+    <Setting Name="Plenum_Length" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">240</Value>
+    </Setting>
+    <Setting Name="Plenum_Width" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">108</Value>
+    </Setting>
+    <Setting Name="Fan_Count" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Plenum_Depth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">36</Value>
+    </Setting>
+    <Setting Name="Mid_Columns" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Fan_Diameter_Feet" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="FanRing_Depth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="MotorShaft_Orientation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Motor Shaft Down</Value>
+    </Setting>
+    <Setting Name="MaterialSpecSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A36</Value>
+    </Setting>
+    <Setting Name="Beam_Depth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="Beam_WebTHK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.25</Value>
+    </Setting>
+    <Setting Name="Beam_FlangeWidth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="Beam_FlangeTHK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.25</Value>
+    </Setting>
+    <Setting Name="Beam_K" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.625</Value>
+    </Setting>
+    <Setting Name="Beam_K1" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.375</Value>
+    </Setting>
+    <Setting Name="Beam_FlangeGage" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.5</Value>
+    </Setting>
+    <Setting Name="Beam_WebGage" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2.25</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

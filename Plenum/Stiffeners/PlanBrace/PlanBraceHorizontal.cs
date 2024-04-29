@@ -23,7 +23,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                return SectionThird > 66 && MotorShaft.ToLower() == "up" ? true : false;
+                return SectionThird > 66 && MotorShaft_Orientation.ToLower().Contains("up") ? true : false;
             }
         }
         public override RawMaterial Shape => RawMaterial.Angle;
@@ -50,7 +50,7 @@ namespace Plenum.Stiffeners
 
                 if (Enabled)
                 {
-                    double xTranslation = Width / 2 + (CallerType == Design.Johnson ? Beam_Depth / 2 : 0);
+                    double xTranslation = Plenum_Width / 2 + (CallerType == Design.Johnson ? Beam_Depth / 2 : 0);
                     double yTranslation = -4;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
 
@@ -72,8 +72,8 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                double length = Length + (PlenumDesign == Design.Johnson ? Johnson.ExtraLength : 0) * 2;
-                return length / FanCount / 3;
+                double length = Plenum_Length + (PlenumDesign == Design.Johnson ? Johnson.ExtraLength : 0) * 2;
+                return length / Fan_Count / 3;
             }
         }
 

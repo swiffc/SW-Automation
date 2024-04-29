@@ -47,8 +47,8 @@ namespace Plenum.Floor.Derived.Derived
                     if (CallerType != Design.Legacy && FloorPanel.ExtensionRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
-                        int i = FanCount == 1 ? 0 : FanCount - 1;
+                        double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
+                        int i = Fan_Count == 1 ? 0 : Fan_Count - 1;
                         double zOffset = OuterFloorPanel.GetLength() + FloorSplice.NominalLength / 2 + mTools.AssemblyClearance;
 
                         _position.Add(PositionData.Create(tZ: zTranslation[0] + zOffset, tY: -yTranslation));

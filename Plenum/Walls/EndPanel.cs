@@ -37,7 +37,7 @@ namespace Plenum
             get
             {
                 double value = EndPanel_THK + bTable.GetBendRadius(EndPanel_THK) + FloorPanel.HoleToEdge1;
-                if (CallerType == Design.Legacy && FanCount > 1)
+                if (CallerType == Design.Legacy && Fan_Count > 1)
                     value += EndPanel_THK / 2 + EndPanel_THK;
                 return value;
             }
@@ -49,11 +49,11 @@ namespace Plenum
                 switch (CallerType)
                 {
                     case Design.Standard:
-                        return Width - mTools.AssemblyClearance * 2;
+                        return Plenum_Width - mTools.AssemblyClearance * 2;
                     case Design.Johnson:
-                        return Width + Beam_Depth - mTools.AssemblyClearance * 2;
+                        return Plenum_Width + Beam_Depth - mTools.AssemblyClearance * 2;
                     case Design.Legacy:
-                        return Width - Beam_Depth - mTools.AssemblyClearance * 2;
+                        return Plenum_Width - Beam_Depth - mTools.AssemblyClearance * 2;
                     default:
                         throw new KeyNotFoundException();
                 }
@@ -70,7 +70,7 @@ namespace Plenum
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             mTools.EditDimension("Width", "sk:Web", LocalWidth, modelDoc2);
-            mTools.EditDimension("Height", "sk:Web", PlenumDepth, modelDoc2);
+            mTools.EditDimension("Height", "sk:Web", Plenum_Depth, modelDoc2);
             mTools.EditDimension("THK", "Sheet-Metal", EndPanel_THK, modelDoc2);
             mTools.EditDimension("innerR", "TopFlangeR", bTable.GetBendRadius(EndPanel_THK), modelDoc2);
             mTools.EditDimension("innerR", "BottomFlangeR", bTable.GetBendRadius(EndPanel_THK), modelDoc2);
@@ -84,7 +84,7 @@ namespace Plenum
             mTools.EditDimension("Hole5", "sk:Hole", CornerAngle.HolePositions[5] + CornerAngle.YTranslation, modelDoc2);
 
             mTools.EditDimension("PlanBraceX", "sk:Hole", GetPlanBraceHole(), modelDoc2);
-            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled || CallerType == Design.Johnson ? PlenumDepth : 0), modelDoc2);
+            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled || CallerType == Design.Johnson ? Plenum_Depth : 0), modelDoc2);
 
             double span = CallerType == Design.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge_General * 3 : LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge_General * 3 - mTools.AssemblyClearance;
 
@@ -132,7 +132,7 @@ namespace Plenum
                     lengthModifier = -EndPanel_THK;
                     break;
             }
-            double length = Length / 2 + lengthModifier;
+            double length = Plenum_Length / 2 + lengthModifier;
 
             return length;
         }
@@ -141,9 +141,9 @@ namespace Plenum
         // Private methods
         private double GetPlanBraceHole()
         {
-            double sectionThird = Length / FanCount / 3;
+            double sectionThird = Plenum_Length / Fan_Count / 3;
             mTools.AAS(45, sectionThird + Beam_Depth / 2, out double adjacentSide, out _);
-            double value = Width - adjacentSide * 2;
+            double value = Plenum_Width - adjacentSide * 2;
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)
             {

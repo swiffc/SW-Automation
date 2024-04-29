@@ -25,10 +25,10 @@ namespace Plenum
                 if (_position == null)
                 {
                     _position = new List<PositionData>();
-                    if (FanCount > 1 && MidColumns && CallerType == Design.Johnson)
+                    if (Fan_Count > 1 && Mid_Columns && CallerType == Design.Johnson)
                     {
-                        double xTranslation = Width / 2 + Beam_Depth / 2;
-                        double zTranslation = (Length / 2) - (FanCount > 0 ? Length / (2 * FanCount) : 0);
+                        double xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
+                        double zTranslation = (Plenum_Length / 2) - (Fan_Count > 0 ? Plenum_Length / (2 * Fan_Count) : 0);
                         _position.Add(PositionData.Create(tZ: -zTranslation, tX: xTranslation));
                         _position.Add(PositionData.Create(tZ: zTranslation, tX: -xTranslation, rY: 180));
                     }

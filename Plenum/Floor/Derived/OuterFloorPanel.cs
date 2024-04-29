@@ -48,18 +48,18 @@ namespace Plenum.Floor.Derived.Derived
         internal static void GetLengthAndRotation(out double zColumnnCut, out double rotate)
         {
             rotate = 0;
-            if (CallerType == Design.Johnson && FanCount != 1)
+            if (CallerType == Design.Johnson && Fan_Count != 1)
             {
                 var fanLocation = FanCenter.ZTranslation(CallerType);
                 double firstFan = fanLocation[0];
                 double lastFan = fanLocation[fanLocation.Count - 1];
                 double fanSpan = firstFan + Math.Abs(lastFan);
-                zColumnnCut = (Length - fanSpan) / 2;
+                zColumnnCut = (Plenum_Length - fanSpan) / 2;
                 rotate = 90;
             }
             else
             {
-                zColumnnCut = Length / FanCount / 2;
+                zColumnnCut = Plenum_Length / Fan_Count / 2;
             }
         }
 
@@ -68,7 +68,7 @@ namespace Plenum.Floor.Derived.Derived
         {
             GetLengthAndRotation(out double length, out double rotate);
 
-            mTools.EditDimension("Width", "sk:ColumnCut", Width / 2, modelDoc2);
+            mTools.EditDimension("Width", "sk:ColumnCut", Plenum_Width / 2, modelDoc2);
             mTools.EditDimension("Length", "sk:ColumnCut", length, modelDoc2);
             mTools.EditDimension("Rotate", "sk:ColumnCut", rotate, modelDoc2);
 
@@ -110,18 +110,18 @@ namespace Plenum.Floor.Derived.Derived
             switch (callerType)
             {
                 case Design.Standard:
-                    calculatedLength = Length / (FanCount * 2) + Beam_Depth / 2 - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
+                    calculatedLength = Plenum_Length / (Fan_Count * 2) + Beam_Depth / 2 - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
                     break;
                 case Design.Johnson:
-                    if (FanCount == 1)
+                    if (Fan_Count == 1)
                     {
-                        calculatedLength = Length / FanCount / 2 + Johnson.ExtraLength - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
+                        calculatedLength = Plenum_Length / Fan_Count / 2 + Johnson.ExtraLength - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
                         break;
                     }
-                    calculatedLength = (Length / FanCount + Johnson.ExtraLength) / 2 - bTools.GetBendRadius(EndPanel_THK);
+                    calculatedLength = (Plenum_Length / Fan_Count + Johnson.ExtraLength) / 2 - bTools.GetBendRadius(EndPanel_THK);
                     break;
                 case Design.Legacy:
-                    calculatedLength = Length / (FanCount * 2) - bTools.GetBendRadius(EndPanel_THK);
+                    calculatedLength = Plenum_Length / (Fan_Count * 2) - bTools.GetBendRadius(EndPanel_THK);
                     break;
             }
             if (calculatedLength == 0)
@@ -148,8 +148,8 @@ namespace Plenum.Floor.Derived.Derived
                     if (CallerType != Design.Legacy)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
-                        int i = FanCount == 1 ? 0 : FanCount - 1;
+                        double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
+                        int i = Fan_Count == 1 ? 0 : Fan_Count - 1;
 
                         _position.Add(PositionData.Create(tZ: zTranslation[0], tY: -yTranslation));
                         _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation, rY: 180));

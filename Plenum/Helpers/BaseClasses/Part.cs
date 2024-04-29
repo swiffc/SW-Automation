@@ -11,6 +11,7 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Base.Part;
 
 namespace Plenum
 {
@@ -72,7 +73,7 @@ namespace Plenum
             }
         }
         protected static Design CallerType { get; set; }
-        public static MaterialSpec Material { get; set; } = MaterialSpec.A36;
+        public static Spec Material { get; set; } = Spec.A36;
 
 
         // Backing fields

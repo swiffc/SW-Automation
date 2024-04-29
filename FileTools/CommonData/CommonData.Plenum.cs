@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FileTools.Base.Part;
 using static FileTools.Properties.Settings;
 
 namespace FileTools.CommonData
@@ -11,7 +12,7 @@ namespace FileTools.CommonData
     {
         // Plenum
         private static int _fanCount = 2;
-        static public int FanCount
+        static public int Fan_Count
         #region FanCount rules
         {
             get => _fanCount;
@@ -28,32 +29,77 @@ namespace FileTools.CommonData
         public static event PropertyChangeHandler OnFanCountChanged;
 
         #endregion
-        static public double PlenumDepth { get; set; } = 36;
+        static public double Plenum_Depth { get; set; } = 36;
         static public double BottomOfPlenumToClipHole { get; set; } = 2.5;
         static public double EndPanel_THK => Default.EndPanel_THK;
         static public double SidePanel_THK => Default.SidePanel_THK;
-        // Property to get and set the PlenumDesign with conversion
         public static Design PlenumDesign
         {
             get
             {
-                if (Enum.TryParse(Properties.Settings.Default.PlenumDesignSetting, out Design design))
+                if (Enum.TryParse(Default.PlenumDesignSetting, out Design design))
                 {
                     return design;
                 }
-                return Design.Standard; // Or your default
+                return Design.Standard; 
             }
             set
             {
-                Properties.Settings.Default.PlenumDesignSetting = value.ToString();
-                Properties.Settings.Default.Save(); // Don't forget to save the setting
+                Default.PlenumDesignSetting = value.ToString();
+                Default.Save(); 
             }
         }
+        public static Spec MaterialSpec
+        {
+            get
+            {
+                if (Enum.TryParse(Default.MaterialSpecSetting, out Spec spec))
+                {
+                    return spec;
+                }
+                return Spec.A36;
+            }
+            set
+            {
+                Default.MaterialSpecSetting = value.ToString();
+                Default.Save();
+            }
+        }
+
+
+
+
+
         public enum Design
         {
             Standard,
             Johnson,
             Legacy
+        }
+        public static double _fanDiameterFeet => Default.Fan_Diameter_Feet;
+        public static double FanDiameter
+        {
+            get
+            {
+                return _fanDiameterFeet * 12;
+            }
+            set
+            {
+                Default.Fan_Diameter_Feet = value;
+            }
+        }
+        private static double _ringDepth => Default.FanRing_Depth;
+        public static double Ring_Depth
+        {
+            get
+            {
+                var roundedUp = Math.Ceiling(_ringDepth);
+                return roundedUp % 2 == 0 ? roundedUp : roundedUp + 1;
+            }
+            set
+            {
+                Default.FanRing_Depth = value;
+            }
         }
     }
 }

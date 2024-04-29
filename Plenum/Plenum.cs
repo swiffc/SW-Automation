@@ -29,19 +29,7 @@ namespace Plenum
     public class Plenum
     {
         // Public static properties
-        public static double _fanDiameterFeet = 8;
-        public static double FanDiameter
-        {
-            get
-            {
-                return _fanDiameterFeet * 12;
-            }
-            set
-            {
-                _fanDiameterFeet = value;
-            }
-        }
-        public static string MotorShaft { get; set; } = "Down";
+
 
 
         // Toggles

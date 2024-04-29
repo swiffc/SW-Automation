@@ -26,7 +26,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                return MotorShaft.ToLower() == "down" ? true : false;
+                return MotorShaft_Orientation.ToLower().Contains("down") ? true : false;
             }
         }
         public override RawMaterial Shape => RawMaterial.Plate;
@@ -46,11 +46,11 @@ namespace Plenum.Stiffeners
                 RadialBoundary);
 
             // Boundary limit in Z direction
-            double z_FanOriginToBounds = Length / (FanCount * 2) - DividerPanel.Flange + DividerPanel.THK / 2
+            double z_FanOriginToBounds = Plenum_Length / (Fan_Count * 2) - DividerPanel.Flange + DividerPanel.THK / 2
                 - (FloorPanel.ExtensionRequired == true ? InnerFloorExtension.NominalLength : 0);
 
             // Boundary limit in the X direction
-            double x_FanOriginToBounds = Width / 2;
+            double x_FanOriginToBounds = Plenum_Width / 2;
             switch (callerType)
             {
                 case Design.Standard:
@@ -139,7 +139,7 @@ namespace Plenum.Stiffeners
 
                 if (Enabled)
                 {
-                    double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK) - FloorPanel.THK;
+                    double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK) - FloorPanel.THK;
                     double length = GetLength(CallerType, out double xShift);
 
                     // Locate fan center
@@ -152,12 +152,12 @@ namespace Plenum.Stiffeners
                     mTools.AAS(Angle, out _, out double zReference, length / 2);
 
                     // Refine location
-                    double zBounds = Length / (FanCount * 2) - DividerPanel.Flange + DividerPanel.THK / 2
+                    double zBounds = Plenum_Length / (Fan_Count * 2) - DividerPanel.Flange + DividerPanel.THK / 2
                         - (FloorPanel.ExtensionRequired == true ? InnerFloorExtension.NominalLength : 0);
                     double zOffset2 = zBounds - zOffset - zReference;
                     mTools.AAS(Angle, zOffset2, out double xOffset2, out _);
 
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
                         _position.Add(PositionData.Create(tX: -xTranslation - XShiftAdjustment + xOffset2 - xShift, tY: -yTranslation, tZ: zTranslation[i] + zOffset + zOffset2 + ZShiftAdjustment, rY: Angle));
                         _position.Add(PositionData.Create(tX: -xTranslation - XShiftAdjustment + xOffset2 - xShift, tY: -yTranslation, tZ: zTranslation[i] - zOffset - zOffset2 - ZShiftAdjustment, rY: 180 - Angle));

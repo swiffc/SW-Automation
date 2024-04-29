@@ -44,7 +44,7 @@ namespace Plenum.Floor
         // Static methods
         internal static double GetWidth(Design callerType)
         {
-            return Width / 2 - bTools.GetBendRadius(SidePanel_THK) - mTools.AssemblyClearance / 2 +
+            return Plenum_Width / 2 - bTools.GetBendRadius(SidePanel_THK) - mTools.AssemblyClearance / 2 +
                         (callerType == Design.Johnson ? Beam_Depth / 2 :
                          callerType == Design.Legacy ? Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK : 0);
         }
@@ -100,7 +100,7 @@ namespace Plenum.Floor
             }
 
 
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("Down"))
             {
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");
@@ -147,7 +147,7 @@ namespace Plenum.Floor
                 mTools.AAS(FloorStiffener.Angle, out _, out double zReference, length / 2);
 
                 // Refine location
-                double zBounds = Length / (FanCount * 2) - DividerPanel.Flange + DividerPanel.THK / 2
+                double zBounds = Plenum_Length / (Fan_Count * 2) - DividerPanel.Flange + DividerPanel.THK / 2
                     - (FloorPanel.ExtensionRequired == true ? InnerFloorExtension.NominalLength : 0);
                 double zOffset2 = zBounds - zOffset - zReference;
                 mTools.AAS(FloorStiffener.Angle, zOffset2, out double xOffset2, out _);
@@ -187,7 +187,7 @@ namespace Plenum.Floor
         }
         private void EditDimensions_MotorShaft(ModelDoc2 modelDoc2)
         {
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
             {
                 mTools.EditDimension("Count", "sk:ShaftDownRadialHole", FanRing.RadialCount.ShaftDown, modelDoc2);
                 mTools.EditDimension("BoltCircleR", "sk:ShaftDownRadialHole", FanRing.Radius + 1.125, modelDoc2);
@@ -244,7 +244,7 @@ namespace Plenum.Floor
 
             double check = _fanDiameterFeet;
 
-            if (_fanDiameterFeet > 6 && Width/2 - FanRing.Radius < 12)
+            if (_fanDiameterFeet > 6 && Plenum_Width/2 - FanRing.Radius < 12)
             {
                 SpliceRequired = true;
                 panelLength -= FloorSplice.NominalLength / 2;

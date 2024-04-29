@@ -25,7 +25,7 @@ namespace Structure
         {
             this.Invoke((MethodInvoker)delegate
             {
-                midColumns_Box.Checked = CommonData.MidColumns;
+                midColumns_Box.Checked = CommonData.Mid_Columns;
             });
         }
 
@@ -66,10 +66,10 @@ namespace Structure
             #endregion
             #region Columns_Load
 
-            width_TextBox.Text = CommonData.Width.ToString();
-            length_TextBox.Text = CommonData.Length.ToString();
+            width_TextBox.Text = CommonData.Plenum_Width.ToString();
+            length_TextBox.Text = CommonData.Plenum_Length.ToString();
             height_TextBox.Text = CommonData.TotalColumnHeight.ToString();
-            midColumns_Box.Checked = CommonData.MidColumns;
+            midColumns_Box.Checked = CommonData.Mid_Columns;
             rotate_Box.Checked = Default.Beams_AreRotated;
             beamSize_Box.Text = Beam_Size;
             textBox_Depth.Text = Beam_Depth.ToString();
@@ -91,13 +91,13 @@ namespace Structure
             #endregion
             #region Plenum_Load
 
-            fanCount_Box.Text = CommonData.FanCount.ToString();
-            depth_Box.Text = CommonData.PlenumDepth.ToString();
+            fanCount_Box.Text = CommonData.Fan_Count.ToString();
+            depth_Box.Text = CommonData.Plenum_Depth.ToString();
 
             #endregion
             #region MachineryMount_Load
 
-            mmHeight_Box.Text = CommonData.MachineryMountHeight.ToString();
+            mmHeight_Box.Text = CommonData.MachineryMount_Height.ToString();
 
             #endregion
             #region Brace_Load
@@ -155,14 +155,12 @@ namespace Structure
 
         private void width_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(width_TextBox.Text, out double value))
-                CommonData.Width = value;
+            UI_DoubleChanged(width_TextBox.Text, x => Default.Plenum_Width = x);
         }
 
         private void length_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(length_TextBox.Text, out double value))
-                CommonData.Length = value;
+            UI_DoubleChanged(length_TextBox.Text, x => Default.Plenum_Length = x);
         }
 
         private void height_TextBox_TextChanged(object sender, EventArgs e)
@@ -173,7 +171,7 @@ namespace Structure
 
         private void midColumn_Box_CheckedChanged(object sender, EventArgs e)
         {
-            CommonData.MidColumns = midColumns_Box.Checked;
+            CommonData.Mid_Columns = midColumns_Box.Checked;
         }
         private void rotate_Box_CheckedChanged(object sender, EventArgs e)
         {
@@ -292,12 +290,12 @@ namespace Structure
         private void fanCount_Box_TextChanged(object sender, EventArgs e)
         {
             if (int.TryParse(fanCount_Box.Text, out int value))
-                CommonData.FanCount = value;
+                CommonData.Fan_Count = value;
         }
         private void depth_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(depth_Box.Text, out double value))
-                CommonData.PlenumDepth = value;
+                CommonData.Plenum_Depth = value;
         }
 
 
@@ -307,7 +305,7 @@ namespace Structure
         private void mmHeight_Box_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(mmHeight_Box.Text, out double value))
-                CommonData.MachineryMountHeight = value;
+                CommonData.MachineryMount_Height = value;
         }
 
 

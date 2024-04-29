@@ -58,15 +58,15 @@ namespace Plenum
 
                     var zTranslations = FanCenter.ZTranslation(CallerType);
 
-                    double sectionThird = (Length / FanCount + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0)) / 3;
+                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0)) / 3;
                     double positionAdjust = adjust;
 
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
-                        if (i != 0 && i != FanCount - 1 && CallerType == Design.Johnson)
+                        if (i != 0 && i != Fan_Count - 1 && CallerType == Design.Johnson)
                             continue;
 
-                        if (i != FanCount - 1 // This block will run for every iteration except the last one,
+                        if (i != Fan_Count - 1 // This block will run for every iteration except the last one,
                             || CallerType == Design.Legacy) // unless CallerType is Legacy, in which case it runs for all iterations including the last one.
                         {
                             _position.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslations[i] - sectionThird + positionAdjust, rY: -angle));

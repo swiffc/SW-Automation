@@ -23,7 +23,7 @@ namespace Plenum
         {
             get
             {
-                return FanCount > 1 ? true : false;
+                return Fan_Count > 1 ? true : false;
             }
         }
         internal static double THK => EndPanel_THK;
@@ -35,22 +35,22 @@ namespace Plenum
                 switch (PlenumDesign)
                 {
                     case Design.Standard:
-                        if (MidColumns)
-                            return Width - Beam_WebTHK - mTools.InterferenceClearance * 2;
+                        if (Mid_Columns)
+                            return Plenum_Width - Beam_WebTHK - mTools.InterferenceClearance * 2;
                         else
-                            return Width - CornerAngle.Gauge * 2 + HoleToEdge * 2;
+                            return Plenum_Width - CornerAngle.Gauge * 2 + HoleToEdge * 2;
 
                     case Design.Johnson:
-                        if (MidColumns)
-                            return Width - Beam_Depth - mTools.InterferenceClearance * 2;
+                        if (Mid_Columns)
+                            return Plenum_Width - Beam_Depth - mTools.InterferenceClearance * 2;
                         else
-                            return Width + Beam_Depth - mTools.InterferenceClearance * 2;
+                            return Plenum_Width + Beam_Depth - mTools.InterferenceClearance * 2;
 
                     case Design.Legacy:
-                        if (MidColumns)
-                            return Width - Beam_Depth - mTools.InterferenceClearance * 2;
+                        if (Mid_Columns)
+                            return Plenum_Width - Beam_Depth - mTools.InterferenceClearance * 2;
                         else
-                            return Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.InterferenceClearance * 2;
+                            return Plenum_Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.InterferenceClearance * 2;
                     default:
                         throw new Exception();
                 }
@@ -99,7 +99,7 @@ namespace Plenum
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             mTools.EditDimension("Width", "sk:Web", LocalWidth, modelDoc2);
-            mTools.EditDimension("Height", "sk:Web", PlenumDepth, modelDoc2);
+            mTools.EditDimension("Height", "sk:Web", Plenum_Depth, modelDoc2);
             mTools.EditDimension("THK", "Sheet-Metal", THK, modelDoc2);
             mTools.EditDimension("innerR", "TopFlangeR", bTable.GetBendRadius(THK), modelDoc2);
             mTools.EditDimension("innerR", "BottomFlangeR", bTable.GetBendRadius(THK), modelDoc2);
@@ -112,7 +112,7 @@ namespace Plenum
             mTools.EditDimension("Hole5", "sk:Hole", CornerAngle.HolePositions[5] + CornerAngle.YTranslation, modelDoc2);
 
             mTools.EditDimension("PlanBraceX", "sk:Hole", GetPlanBraceHole(), modelDoc2);
-            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled ? PlenumDepth : 0), modelDoc2);
+            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled ? Plenum_Depth : 0), modelDoc2);
 
             mTools.HolePattern(BottomHoleSpan(), out double count, out double spacing);
             mTools.EditDimension("Count1", "sk:BottomHole", count, modelDoc2);
@@ -138,7 +138,7 @@ namespace Plenum
 
             mTools.SuppressFeatures(suppress, modelDoc2, "ColumnCut", "ColumnCutMirror");
 
-            if (MidColumns)
+            if (Mid_Columns)
                 mTools.SuppressFeatures(true, modelDoc2, "SideCut");
             else
                 mTools.SuppressFeatures(false, modelDoc2, "SideCut");
@@ -150,7 +150,7 @@ namespace Plenum
         {
             //double sectionThird = Length / FanCount / 3;
             mTools.AAS(45, PlanBraceHorizontal.SectionThird - EndPanel_THK / 2, out double adjacentSide, out _);
-            double value = Width - adjacentSide * 2 + (CallerType == Design.Johnson ? Beam_Depth : 0);
+            double value = Plenum_Width - adjacentSide * 2 + (CallerType == Design.Johnson ? Beam_Depth : 0);
 
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)
@@ -170,16 +170,16 @@ namespace Plenum
         {
             get
             {
-                double zTranslation = Length / 2 - EndPanel_THK / 2;
+                double zTranslation = Plenum_Length / 2 - EndPanel_THK / 2;
 
 
                 List<PositionData> _position = new List<PositionData>();
 
-                if (FanCount > 1)
+                if (Fan_Count > 1)
                 {
-                    for (int i = 1; i < FanCount; i++)
+                    for (int i = 1; i < Fan_Count; i++)
                     {
-                        zTranslation -= Length / FanCount;
+                        zTranslation -= Plenum_Length / Fan_Count;
                         _position.Add(PositionData.Create(tZ: zTranslation));
                     }
                 }

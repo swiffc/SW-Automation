@@ -22,7 +22,7 @@ namespace Plenum.Floor.Derived
         {
             get
             {
-                return FanCount > 1 && FloorPanel.ExtensionRequired ? true : false;
+                return Fan_Count > 1 && FloorPanel.ExtensionRequired ? true : false;
             }
         }
         internal static double NominalLength
@@ -71,12 +71,12 @@ namespace Plenum.Floor.Derived
                     if (FloorPanel.ExtensionRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = PlenumDepth - Math.Max(EndPanel_THK, SidePanel_THK);
+                        double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
                         double zOffset = InnerFloorPanel.GetLength() + FloorSplice.NominalLength / 2 + mTools.AssemblyClearance;
 
-                        for (int i = 0; i < FanCount; i++)
+                        for (int i = 0; i < Fan_Count; i++)
                         {
-                            bool isNotLastForNonLegacy = CallerType != Design.Legacy && i != FanCount - 1;
+                            bool isNotLastForNonLegacy = CallerType != Design.Legacy && i != Fan_Count - 1;
                             bool isNotFirstForNonLegacy = CallerType != Design.Legacy && i != 0;
 
                             if (CallerType == Design.Legacy || isNotLastForNonLegacy)

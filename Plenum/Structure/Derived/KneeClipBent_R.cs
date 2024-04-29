@@ -30,8 +30,8 @@ namespace Plenum.Structure.Derived
 
                 if (PlenumDesign == Design.Standard)
                 {
-                    double xTranslation = - Width / 2 + ColumnCenterToPlenumEndClipHole();
-                    double yTranslation = -PlenumDepth - BottomOfPlenumToClipHole;
+                    double xTranslation = - Plenum_Width / 2 + ColumnCenterToPlenumEndClipHole();
+                    double yTranslation = -Plenum_Depth - BottomOfPlenumToClipHole;
                     double zTranslation = EndPanel.CalculateZTranslation() + EndPanel_THK - Leg + Clip_THK/2;
 
                     pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation, rY: 180));
@@ -40,26 +40,26 @@ namespace Plenum.Structure.Derived
 
                 else
                 {
-                    double xTranslation = Width /2 ;
-                    double yTranslation = -PlenumDepth - BottomOfPlenumToClipHole;
-                    double zTranslation = Length / 2 - ColumnCenterToPlenumSideClipHole();
+                    double xTranslation = Plenum_Width /2 ;
+                    double yTranslation = -Plenum_Depth - BottomOfPlenumToClipHole;
+                    double zTranslation = Plenum_Length / 2 - ColumnCenterToPlenumSideClipHole();
 
                     pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation, rY: -90));
                     pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 90));
 
-                    if (MidColumns && BraceType.Contains("L"))
+                    if (Mid_Columns && BraceType.Contains("L"))
                     {
-                        for (int i = 0; i < FanCount - 1; i++)
+                        for (int i = 0; i < Fan_Count - 1; i++)
                         {
                             double z = zTranslation;
-                            z -= Length / FanCount;
+                            z -= Plenum_Length / Fan_Count;
                             pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: -90));
                         }
 
-                        for (int i = 0; i < FanCount - 1; i++)
+                        for (int i = 0; i < Fan_Count - 1; i++)
                         {
                             double z = zTranslation;
-                            z -= Length / FanCount;
+                            z -= Plenum_Length / Fan_Count;
                             pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -z, rY: 90));
                         }
                     }

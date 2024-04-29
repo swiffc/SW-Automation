@@ -57,7 +57,7 @@
     <Compile Include="Drive Mount\Channels\SideChannel.cs" />
     <Compile Include="Drive Mount\DriveMount.cs" />
     <Compile Include="Drive Mount\Pipe\ShaftSleeve.cs" />
-    <Compile Include="Drive Mount\Plate\EndPanel.cs" />
+    <Compile Include="Drive Mount\Plate\MountingPanel.cs" />
     <Compile Include="Drive Mount\Plate\EndStiffener.cs" />
     <Compile Include="Drive Mount\Plate\ShaftPanel.cs" />
     <Compile Include="Drive Mount\Plate\VibeMountPlate.cs" />

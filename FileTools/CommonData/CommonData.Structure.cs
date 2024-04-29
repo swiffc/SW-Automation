@@ -8,15 +8,15 @@ namespace FileTools.CommonData
     public static partial class CommonData
     {
         // Footprint
-        static public double Width { get; set; } = 108;
-        static public double Length { get; set; } = 240;
+        static public double Plenum_Width => Default.Plenum_Width;
+        static public double Plenum_Length => Default.Plenum_Length;
         static public double TotalColumnHeight { get; set; } = 120;
         static private bool _midColumns = true;
         #region MidColumn rules
 
-        static public bool MidColumns
+        static public bool Mid_Columns
         {
-            get => FanCount != 1 && _midColumns;
+            get => Fan_Count != 1 && _midColumns;
             set => MidColumnsInternal = value;
         }
         static private bool MidColumnsInternal
@@ -36,156 +36,117 @@ namespace FileTools.CommonData
         {
             get
             {
-                if (_depth.HasValue)
-                {
-                    return _depth.Value;
-                }
-
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
                 {
-                    return wShape.Depth;
+                    Default.Beam_Depth = wShape.Depth;
+                    Default.Save();
+                    return Default.Beam_Depth;
                 }
                 else
                 {
-                    return 6;
+                    Default.Beam_Depth = 6;
+                    Default.Save();
+                    return Default.Beam_Depth;
                 }
             }
             set
             {
-                _depth = value;
+                Default.Beam_Depth = value;
             }
         }
+
         public static double Beam_WebTHK
         {
             get
             {
-                if (_webTHK.HasValue)
-                {
-                    return _webTHK.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.WebTHK;
-                }
                 return 0.25;
             }
-            set { _webTHK = value; }
+            set
+            {
+                Default.Beam_WebTHK = value;
+            }
         }
         public static double Beam_FlangeWidth
         {
             get
             {
-                if (_flangeWidth.HasValue)
-                {
-                    return _flangeWidth.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.FlangeWidth;
-                }
                 return 6;
             }
-            set { _flangeWidth = value; }
+            set
+            {
+                Default.Beam_FlangeWidth = value;
+            }
         }
         public static double Beam_FlangeTHK
         {
             get
             {
-                if (_flangeTHK.HasValue)
-                {
-                    return _flangeTHK.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.FlgTHK;
-                }
                 return 0.25;
             }
-            set { _flangeTHK = value; }
+            set
+            {
+                Default.Beam_FlangeTHK = value;
+            }
         }
         public static double Beam_K
         {
             get
             {
-                if (_k.HasValue)
-                {
-                    return _k.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.K;
-                }
                 return 0.625;
             }
-            set { _k = value; }
+            set
+            {
+                Default.Beam_K = value;
+            }
         }
         public static double Beam_K1
         {
             get
             {
-                if (_k1.HasValue)
-                {
-                    return _k1.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.K1;
-                }
                 return 0.375;
             }
-            set { _k1 = value; }
+            set
+            {
+                Default.Beam_K1 = value;
+            }
         }
         public static double Beam_FlangeGage
         {
             get
             {
-                if (_flangeGage.HasValue)
-                {
-                    return _flangeGage.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.FlangeGage;
-                }
                 return 3.5;
             }
-            set { _flangeGage = value; }
+            set
+            {
+                Default.Beam_FlangeGage = value;
+            }
         }
         public static double Beam_WebGage
         {
             get
             {
-                if (_webGage.HasValue)
-                {
-                    return _webGage.Value;
-                }
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                {
                     return wShape.WebGage;
-                }
                 return 2.25;
             }
-            set { _webGage = value; }
+            set
+            {
+                Default.Beam_WebGage = value;
+            }
         }
-        public static void ResetSize()
-        {
-            _depth = null;
-            _webTHK = null;
-            _flangeWidth = null;
-            _flangeTHK = null;
-            _k = null;
-            _k1 = null;
-            _flangeGage = null;
-            _webGage = null;
-        }
-        private static double? _depth;
-        private static double? _webTHK;
-        private static double? _flangeWidth;
-        private static double? _flangeTHK;
-        private static double? _k;
-        private static double? _k1;
-        private static double? _flangeGage;
-        private static double? _webGage;
+
 
 
         // WT Size
@@ -201,7 +162,7 @@ namespace FileTools.CommonData
 
         // Bracing
         static public double ClipHeight { get; set; } = 20;
-        private static string _braceType = "TX";
+        private static string _braceType = "L";
         #region BraceType Rules
 
         public static string BraceType
@@ -220,7 +181,7 @@ namespace FileTools.CommonData
         }
 
         #endregion
-        static public double BraceAngle { get; set; } = 30;
+        static public double BraceAngle { get; set; } = 10;
         static public double HoleToEnd { get; set; } = 1.125;
         public static double ColumnBoundsToHole => 2.0;
         public static double PlenumBoundsToHole => 2.5;
@@ -231,7 +192,7 @@ namespace FileTools.CommonData
         public static double HoleToEdge
         {
             get { return _holeToEdge; }
-            private set { _holeToEdge = value; } 
+            private set { _holeToEdge = value; }
         }
 
         #endregion
@@ -250,6 +211,9 @@ namespace FileTools.CommonData
         }
 
         #endregion
+
+
+
 
 
         // Public methods
@@ -275,7 +239,7 @@ namespace FileTools.CommonData
         {
             CalculateLengthAndPositionData(out _, out double yTranslation_TeeClip, out _);
 
-            double yPlenumClipHole = TotalColumnHeight - PlenumDepth - BottomOfPlenumToClipHole;
+            double yPlenumClipHole = TotalColumnHeight - Plenum_Depth - BottomOfPlenumToClipHole;
             double yStructureClipHole = BraceType.Contains("L") ? ClipHeight : yTranslation_TeeClip;
 
             // Triangle --> [structure knee brace clip hole] to [plenum knee brace clip hole]
@@ -305,7 +269,7 @@ namespace FileTools.CommonData
             yLowerBounds_TeeClip = BasePlate_THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole;
 
             // Y location of plenum clip hole that's closest to the bottom of the plenum
-            double yUpperBounds = TotalColumnHeight - PlenumDepth - BottomOfPlenumToClipHole;
+            double yUpperBounds = TotalColumnHeight - Plenum_Depth - BottomOfPlenumToClipHole;
 
             // Triangle --> [T-clip hole that's closest to the column bounds] to [plenum clip hole that's closest to the bottom of the plenum]
             double yTriangle = yUpperBounds - yLowerBounds_TeeClip;
@@ -320,9 +284,9 @@ namespace FileTools.CommonData
             AAS(BraceAngle, out double yHoleClosestToColumn_To_FlangeGageCenterPoint, out double zHoleClosestToColumn_To_FlangeGageCenterPoint, WT_FlangeGage / 2);
 
             // Position
-            double xTranslation = -Width / 2 - Clip_THK / 2;
+            double xTranslation = -Plenum_Width / 2 - Clip_THK / 2;
             double yTranslation = BasePlate_THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole + yTriangle / 2 - yHoleClosestToColumn_To_FlangeGageCenterPoint;
-            double zTranslation = Length / 2 - zColumnCenterToHoleColsestToColumn - zTriangle / 2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
+            double zTranslation = Plenum_Length / 2 - zColumnCenterToHoleColsestToColumn - zTriangle / 2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
 
             _position = PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: BraceAngle);
 

@@ -18,6 +18,7 @@ using Plenum.Helpers.Static;
 using ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.StandardParts
 {
@@ -128,12 +129,12 @@ namespace Plenum.StandardParts
             {
                 _position = new List<PositionData>();
 
-                if (MotorShaft.ToLower() == "down")
+                if (MotorShaft_Orientation.ToLower().Contains("down"))
                 {
-                    double yTranslation = PlenumDepth - Math.Max(SidePanel_THK, EndPanel_THK) + FanRing.Depth;
+                    double yTranslation = Plenum_Depth - Math.Max(SidePanel_THK, EndPanel_THK) + Default.FanRing_Depth;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
 
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
                         double check = zTranslation[i];
                         _position.Add(PositionData.Create(tY: -yTranslation, tZ: zTranslation[i]));

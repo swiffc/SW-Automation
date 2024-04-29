@@ -21,6 +21,7 @@ using static Plenum.Plenum;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using static FileTools.Properties.Settings;
+using static FileTools.Base.Part;
 
 namespace Plenum
 {
@@ -65,41 +66,27 @@ namespace Plenum
         // Plenum
         private void txt_Length_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(txt_Length1.Text, out double length))
-            {
-                Length = length;
-                Properties.Settings.Default.Length = length; 
-                Properties.Settings.Default.Save();
-            }
+            UI_DoubleChanged(txt_Length1.Text, x => Default.Plenum_Length = x);
         }
 
         private void txt_Width1_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(txt_Width1.Text, out double width))
-            {
-                CommonData.Width = width;
-            }
+            UI_DoubleChanged(txt_Width1.Text, x => Default.Plenum_Width = x);
         }
 
         private void txt_Depth1_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(txt_Depth1.Text, out double depth))
-            {
-                CommonData.PlenumDepth = depth;
-            }
+            UI_DoubleChanged(txt_Depth1.Text, x => Default.Plenum_Depth = x);
         }
 
         private void txt_FanCount1_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(txt_FanCount1.Text, out int fanCount))
-            {
-                CommonData.FanCount = fanCount;
-            }
+            UI_IntChanged(txt_FanCount1.Text, x => Default.Fan_Count = x);
         }
 
         private void checkBox_MidCol_CheckedChanged(object sender, EventArgs e)
         {
-            CommonData.MidColumns = checkBox_MidCol.Checked;
+            UI_BoolChanged(checkBox_MidCol.Checked, value => Default.Mid_Columns = value);
         }
 
 
@@ -108,55 +95,61 @@ namespace Plenum
 
         private void textBox_Depth_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_Depth.Text, out double depth))
+            if (isUserChange)
             {
-                Beam_Depth = depth;
-                PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
+                UI_DoubleChanged(textBox_Depth.Text, x => Default.Beam_Depth = x);
+                Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
+                Default.Save();
             }
         }
 
         private void textBox_WebTHK_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_WebTHK.Text, out double webTHK))
+            if (isUserChange)
             {
-                Beam_WebTHK = webTHK;
-                PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
+                UI_DoubleChanged(textBox_WebTHK.Text, x => Default.Beam_WebTHK = x);
+                Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
+                Default.Save();
             }
         }
 
         private void textBox_FlangeWidth_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_FlangeWidth.Text, out double flangeWidth))
+            if (isUserChange)
             {
-                Beam_FlangeWidth = flangeWidth;
-                PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
+                UI_DoubleChanged(textBox_FlangeWidth.Text, x => Default.Beam_FlangeWidth = x);
+                Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
+                Default.Save();
             }
         }
 
         private void textBox_FlangeTHK_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_FlangeTHK.Text, out double flangeTHK))
+            if (isUserChange)
             {
-                Beam_FlangeTHK = flangeTHK;
-                PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
+                UI_DoubleChanged(textBox_FlangeTHK.Text, x => Default.Beam_FlangeTHK = x);
+                Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
+                Default.Save();
             }
         }
 
         private void textBox_K_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_K.Text, out double k))
+            if (isUserChange)
             {
-                Beam_K = k;
-                PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
+                UI_DoubleChanged(textBox_K.Text, x => Default.Beam_K = x);
+                Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
+                Default.Save();
             }
         }
 
         private void textBox_K1_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_K1.Text, out double k1))
+            if (isUserChange)
             {
-                Beam_K1 = k1;
-                PlenumColumn.Size = comboBox_ColumnSize.Text = "Custom";
+                UI_DoubleChanged(textBox_K1.Text, x => Default.Beam_K1 = x);
+                Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
+                Default.Save();
             }
         }
 
@@ -175,46 +168,35 @@ namespace Plenum
             txt_Initials.Text = JobInfo.Initials;
 
             // Plenum
-            txt_Length1.Text = Properties.Settings.Default.Length.ToString();
-            txt_Width1.Text = CommonData.Width.ToString();
-            txt_Depth1.Text = CommonData.PlenumDepth.ToString();
-            checkBox_MidCol.Checked = CommonData.MidColumns;
+            txt_Length1.Text = Default.Plenum_Length.ToString();
+            txt_Width1.Text = Default.Plenum_Width.ToString();
+            txt_Depth1.Text = Default.Plenum_Depth.ToString();
+            checkBox_MidCol.Checked = Default.Mid_Columns;
             EndcomboBox1.Text = EndPanel_THK.ToString();
             SidecomboBox2.Text = SidePanel_THK.ToString();
 
             // Beam
-            comboBox_ColumnSize.Text = PlenumColumn.Size;
-            textBox_Depth.Text = Beam_Depth.ToString();
-            textBox_WebTHK.Text = Beam_WebTHK.ToString();
-            textBox_FlangeWidth.Text = Beam_FlangeWidth.ToString();
-            textBox_FlangeTHK.Text = Beam_FlangeTHK.ToString();
-            textBox_K.Text = Beam_K.ToString();
-            textBox_K1.Text = Beam_K1.ToString();
+            comboBox_ColumnSize.Text = Default.Beam_Size;
+            textBox_Depth.Text = Default.Beam_Depth.ToString();
+            textBox_WebTHK.Text = Default.Beam_WebTHK.ToString();
+            textBox_FlangeWidth.Text = Default.Beam_FlangeWidth.ToString();
+            textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
+            textBox_K.Text = Default.Beam_K.ToString();
+            textBox_K1.Text = Default.Beam_K1.ToString();
 
             // Fan
-            txt_FanCount1.Text = CommonData.FanCount.ToString();
-            txt_FanDiameter.Text = Plenum._fanDiameterFeet.ToString();
-            txt_RingDepth.Text = FanRing.Depth.ToString();
+            txt_FanCount1.Text = Default.Fan_Count.ToString();
+            txt_FanDiameter.Text = Default.Fan_Diameter_Feet.ToString();
+            txt_RingDepth.Text = Default.FanRing_Depth.ToString();
 
             checkBox1_MTRBeam.Checked = MotorBeamWld.Enabled;
             textBox1_columnLength.Text = PlenumColumn.Height.ToString();
 
-            if (Plenum.MotorShaft.ToLower() == "down")
-                comboBox1_driveDesign.Text = "Motor Shaft Down";
-            else
-                comboBox1_driveDesign.Text = "Motor Shaft Up";
+            comboBox1_driveDesign.Text = Default.MotorShaft_Orientation.ToString();
 
             textBox_ExtraLength.Text = Johnson._extraLength == 0 ? "" : Johnson._extraLength.ToString();
 
-            switch (Part.Material)
-            {
-                case MaterialSpec.A36:
-                    materialCombo.Text = "A36";
-                    break;
-                case MaterialSpec.A572_50:
-                    materialCombo.Text = "A572_50";
-                    break;
-            }
+            materialCombo.Text = Default.MaterialSpecSetting.ToString();
 
             txt_xShift.Text = FloorStiffener.XShiftAdjustment.ToString();
             lengthAdj.Text = FloorStiffener.LengthAdjustment.ToString();
@@ -235,26 +217,35 @@ namespace Plenum
         {
             isUserChange = false;
 
-            PlenumColumn.Size = comboBox_ColumnSize.Text;
-            if (PlenumColumn.Size != "Custom")
+            UI_StringChanged(comboBox_ColumnSize.Text, x => Default.Beam_Size = x);
+            if (Default.Beam_Size != "Custom")
             {
-                Beam.ResetSize();
-                textBox_Depth.Text = Beam_Depth.ToString();
-                textBox_WebTHK.Text = Beam_WebTHK.ToString();
-                textBox_FlangeWidth.Text = Beam_FlangeWidth.ToString();
-                textBox_FlangeTHK.Text = Beam_FlangeTHK.ToString();
-                textBox_K.Text = Beam_K.ToString();
-                textBox_K1.Text = Beam_K1.ToString();
+                Default.Beam_Depth = Beam_Depth;
+                textBox_Depth.Text = Default.Beam_Depth.ToString();
+
+                Default.Beam_WebTHK = Beam_WebTHK;
+                textBox_WebTHK.Text = Default.Beam_WebTHK.ToString();
+
+                Default.Beam_FlangeWidth = Beam_FlangeWidth;
+                textBox_FlangeWidth.Text = Default.Beam_FlangeWidth.ToString();
+
+                Default.Beam_FlangeTHK = Beam_FlangeTHK;
+                textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
+
+                Default.Beam_K = Beam_K;
+                textBox_K.Text = Default.Beam_K.ToString();
+
+                Default.Beam_K1 = Beam_K1;
+                textBox_K1.Text = Default.Beam_K1.ToString();
+
+                Default.Save();
             }
 
             isUserChange = true;
         }
         private void comboBox1_driveDesign_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1_driveDesign.Text == "Motor Shaft Down")
-                Plenum.MotorShaft = "Down";
-            else
-                Plenum.MotorShaft = "Up";
+            UI_StringChanged(comboBox1_driveDesign.Text, x => Default.MotorShaft_Orientation = x);
         }
 
         private void btn_Johnson_Click(object sender, EventArgs e)
@@ -280,16 +271,12 @@ namespace Plenum
 
         private void txt_FanDiameter_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(txt_FanDiameter.Text, out double fanDiameter))
-            {
-                Plenum.FanDiameter = fanDiameter;
-            }
+            UI_DoubleChanged(txt_FanDiameter.Text, x => Default.Fan_Diameter_Feet = x);
         }
 
         private void txt_RingDepth_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(txt_RingDepth.Text, out double ringDepth))
-                FanRing.Depth = ringDepth;
+            UI_DoubleChanged(txt_RingDepth.Text, x => Default.FanRing_Depth = x);
         }
 
         private void textBox1_columnLength_TextChanged(object sender, EventArgs e)
@@ -349,15 +336,7 @@ namespace Plenum
 
         private void materialCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (materialCombo.Text)
-            {
-                case "A36":
-                    Part.Material = MaterialSpec.A36;
-                    break;
-                case "A572_50":
-                    Part.Material = MaterialSpec.A572_50;
-                    break;
-            }
+            UI_StringChanged(materialCombo.Text, x => Default.MaterialSpecSetting = x);
         }
 
         private void xShift_TextChanged(object sender, EventArgs e)

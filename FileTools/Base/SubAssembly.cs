@@ -74,9 +74,9 @@ namespace FileTools.Base
         #region Wrapper Properties
 
         // Structure
-        protected static double Width => CommonData.CommonData.Width;
-        protected static double Length => CommonData.CommonData.Length;
-        protected static bool MidColumns => CommonData.CommonData.MidColumns;
+        protected static double Width => CommonData.CommonData.Plenum_Width;
+        protected static double Length => CommonData.CommonData.Plenum_Length;
+        protected static bool MidColumns => CommonData.CommonData.Mid_Columns;
         protected static double ClipHeight => CommonData.CommonData.ClipHeight;
         protected static double BraceAngle => CommonData.CommonData.BraceAngle;
         protected static double ColumnHeight => CommonData.CommonData.TotalColumnHeight;
@@ -84,8 +84,8 @@ namespace FileTools.Base
 
 
         // Plenum
-        protected static int FanCount => CommonData.CommonData.FanCount;
-        protected static double PlenumDepth => CommonData.CommonData.PlenumDepth;
+        protected static int FanCount => CommonData.CommonData.Fan_Count;
+        protected static double PlenumDepth => CommonData.CommonData.Plenum_Depth;
 
         #endregion
     }
