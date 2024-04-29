@@ -13,6 +13,7 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -58,7 +59,7 @@ namespace Plenum
 
                     var zTranslations = FanCenter.ZTranslation(CallerType);
 
-                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0)) / 3;
+                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0)) / 3;
                     double positionAdjust = adjust;
 
                     for (int i = 0; i < Fan_Count; i++)

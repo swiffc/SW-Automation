@@ -30,36 +30,93 @@ namespace Plenum
         public PlenumUI()
         {
             InitializeComponent();
+
+            SettingsChanged += UpdateUI;
+        }
+
+        private void UpdateUI()
+        {
+            isUserChange = false;
+
+            // Job
+            txt_JobNumber.Text = Default.Project;
+            txt_JobCustomer.Text = Default.Customer;
+            txt_JobClient.Text = Default.Client;
+            txt_JobLocation.Text = Default.PlantLocation;
+            txt_JobPO.Text = Default.PurchaseOrder;
+            txt_JobItemNo.Text = Default.ItemNumber;
+            txt_Initials.Text = Default.Initials;
+
+            // Plenum
+            txt_Length1.Text = Default.Plenum_Length.ToString();
+            txt_Width1.Text = Default.Plenum_Width.ToString();
+            txt_Depth1.Text = Default.Plenum_Depth.ToString();
+            checkBox_MidCol.Checked = Default.Mid_Columns;
+            EndcomboBox1.Text = Default.EndPanel_THK.ToString();
+            SidecomboBox2.Text = Default.SidePanel_THK.ToString();
+
+            // Beam
+            comboBox_ColumnSize.Text = Default.Beam_Size;
+            textBox_Depth.Text = Default.Beam_Depth.ToString();
+            textBox_WebTHK.Text = Default.Beam_WebTHK.ToString();
+            textBox_FlangeWidth.Text = Default.Beam_FlangeWidth.ToString();
+            textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
+            textBox_K.Text = Default.Beam_K.ToString();
+            textBox_K1.Text = Default.Beam_K1.ToString();
+
+            // Fan
+            txt_FanCount1.Text = Default.Fan_Count.ToString();
+            txt_FanDiameter.Text = Default.Fan_Diameter_Feet.ToString();
+            txt_RingDepth.Text = Default.FanRing_Depth.ToString();
+
+            checkBox1_MTRBeam.Checked = Default.MotorBeam_Required;
+            textBox1_columnLength.Text = PlenumColumn_Height.ToString();
+
+            comboBox1_driveDesign.Text = Default.MotorShaft_Orientation.ToString();
+
+            textBox_ExtraLength.Text = Default.Johnson_ExtraLength < 1 ? "" : Default.Johnson_ExtraLength.ToString();
+
+            materialCombo.Text = Default.MaterialSpecSetting.ToString();
+
+            txt_xShift.Text = FloorStiffener.XShiftAdjustment.ToString();
+            lengthAdj.Text = FloorStiffener.LengthAdjustment.ToString();
+            zShift_txt.Text = FloorStiffener.ZShiftAdjustment.ToString();
+
+            checkBox2_dwg.Checked = Default.Toggle_CreateDrawing;
+            checkBox3_save.Checked = Default.Toggle_Save;
+            checkBox4_delete.Checked = Default.Toggle_DeleteFiles;
+
+            isUserChange = true;
         }
 
         // Job
         private void txt_JobNumber_TextChanged(object sender, EventArgs e)
         {
-            JobInfo.Project = txt_JobNumber.Text;
+            UI_StringChanged(txt_JobNumber.Text, x => Default.Project = x);
         }
         private void txt_JobCustomer_TextChanged(object sender, EventArgs e)
         {
-            JobInfo.Customer = txt_JobCustomer.Text;
+            UI_StringChanged(txt_JobCustomer.Text, x => Default.Customer = x);
         }
         private void txt_JobClient_TextChanged_1(object sender, EventArgs e)
         {
-            JobInfo.Client = txt_JobClient.Text;
+            UI_StringChanged(txt_JobClient.Text, x => Default.Client = x);
         }
         private void txt_JobLocation_TextChanged_1(object sender, EventArgs e)
         {
-            JobInfo.PlantLocation = txt_JobLocation.Text;
+            UI_StringChanged(txt_JobLocation.Text, x => Default.PlantLocation = x);
         }
         private void txt_JobPO_TextChanged_1(object sender, EventArgs e)
         {
-            JobInfo.PurchaseOrder = txt_JobPO.Text;
+            UI_StringChanged(txt_JobPO.Text, x => Default.PurchaseOrder = x);
         }
         private void txt_JobItemNo_TextChanged_1(object sender, EventArgs e)
         {
-            JobInfo.ItemNumber = txt_JobItemNo.Text;
+            UI_StringChanged(txt_JobItemNo.Text, x => Default.ItemNumber = x);
         }
         private void txt_Initials_TextChanged_1(object sender, EventArgs e)
         {
-            JobInfo.Initials = txt_Initials.Text;
+            UI_StringChanged(txt_Initials.Text, x => Default.Initials = x);
         }
 
 
@@ -99,7 +156,6 @@ namespace Plenum
             {
                 UI_DoubleChanged(textBox_Depth.Text, x => Default.Beam_Depth = x);
                 Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
-                Default.Save();
             }
         }
 
@@ -109,7 +165,6 @@ namespace Plenum
             {
                 UI_DoubleChanged(textBox_WebTHK.Text, x => Default.Beam_WebTHK = x);
                 Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
-                Default.Save();
             }
         }
 
@@ -119,7 +174,6 @@ namespace Plenum
             {
                 UI_DoubleChanged(textBox_FlangeWidth.Text, x => Default.Beam_FlangeWidth = x);
                 Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
-                Default.Save();
             }
         }
 
@@ -129,7 +183,6 @@ namespace Plenum
             {
                 UI_DoubleChanged(textBox_FlangeTHK.Text, x => Default.Beam_FlangeTHK = x);
                 Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
-                Default.Save();
             }
         }
 
@@ -139,7 +192,6 @@ namespace Plenum
             {
                 UI_DoubleChanged(textBox_K.Text, x => Default.Beam_K = x);
                 Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
-                Default.Save();
             }
         }
 
@@ -149,7 +201,6 @@ namespace Plenum
             {
                 UI_DoubleChanged(textBox_K1.Text, x => Default.Beam_K1 = x);
                 Default.Beam_Size = comboBox_ColumnSize.Text = "Custom";
-                Default.Save();
             }
         }
 
@@ -158,54 +209,7 @@ namespace Plenum
         // Refresh UI
         private void PlenumUI_Load(object sender, EventArgs e)
         {
-            // Job
-            txt_JobNumber.Text = JobInfo.Project;
-            txt_JobCustomer.Text = JobInfo.Customer;
-            txt_JobClient.Text = JobInfo.Client;
-            txt_JobLocation.Text = JobInfo.PlantLocation;
-            txt_JobPO.Text = JobInfo.PurchaseOrder;
-            txt_JobItemNo.Text = JobInfo.ItemNumber;
-            txt_Initials.Text = JobInfo.Initials;
-
-            // Plenum
-            txt_Length1.Text = Default.Plenum_Length.ToString();
-            txt_Width1.Text = Default.Plenum_Width.ToString();
-            txt_Depth1.Text = Default.Plenum_Depth.ToString();
-            checkBox_MidCol.Checked = Default.Mid_Columns;
-            EndcomboBox1.Text = EndPanel_THK.ToString();
-            SidecomboBox2.Text = SidePanel_THK.ToString();
-
-            // Beam
-            comboBox_ColumnSize.Text = Default.Beam_Size;
-            textBox_Depth.Text = Default.Beam_Depth.ToString();
-            textBox_WebTHK.Text = Default.Beam_WebTHK.ToString();
-            textBox_FlangeWidth.Text = Default.Beam_FlangeWidth.ToString();
-            textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
-            textBox_K.Text = Default.Beam_K.ToString();
-            textBox_K1.Text = Default.Beam_K1.ToString();
-
-            // Fan
-            txt_FanCount1.Text = Default.Fan_Count.ToString();
-            txt_FanDiameter.Text = Default.Fan_Diameter_Feet.ToString();
-            txt_RingDepth.Text = Default.FanRing_Depth.ToString();
-
-            checkBox1_MTRBeam.Checked = MotorBeamWld.Enabled;
-            textBox1_columnLength.Text = PlenumColumn.Height.ToString();
-
-            comboBox1_driveDesign.Text = Default.MotorShaft_Orientation.ToString();
-
-            textBox_ExtraLength.Text = Johnson._extraLength == 0 ? "" : Johnson._extraLength.ToString();
-
-            materialCombo.Text = Default.MaterialSpecSetting.ToString();
-
-            txt_xShift.Text = FloorStiffener.XShiftAdjustment.ToString();
-            lengthAdj.Text = FloorStiffener.LengthAdjustment.ToString();
-            zShift_txt.Text = FloorStiffener.ZShiftAdjustment.ToString();
-
-            checkBox1_locations.Checked = ToggleRelocate;
-            checkBox2_dwg.Checked = CommonData.ToggleCreateDrawing;
-            checkBox3_save.Checked = CommonData.ToggleSave;
-            checkBox4_delete.Checked = CommonData.ToggleDeleteFiles;
+            UpdateUI();
         }
 
         private void btn_Standard_Click(object sender, EventArgs e)
@@ -215,11 +219,11 @@ namespace Plenum
 
         private void comboBox_ColumnSize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            isUserChange = false;
-
             UI_StringChanged(comboBox_ColumnSize.Text, x => Default.Beam_Size = x);
             if (Default.Beam_Size != "Custom")
             {
+                isUserChange = false;
+
                 Default.Beam_Depth = Beam_Depth;
                 textBox_Depth.Text = Default.Beam_Depth.ToString();
 
@@ -237,8 +241,6 @@ namespace Plenum
 
                 Default.Beam_K1 = Beam_K1;
                 textBox_K1.Text = Default.Beam_K1.ToString();
-
-                Default.Save();
             }
 
             isUserChange = true;
@@ -260,13 +262,12 @@ namespace Plenum
 
         private void textBox_ExtraLength_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(textBox_ExtraLength.Text, out double extraLength))
-                Johnson.ExtraLength = extraLength;
+            UI_DoubleChanged(textBox_ExtraLength.Text, x => Default.Johnson_ExtraLength = x);
         }
 
         private void checkBox1_MTRBeam_CheckedChanged(object sender, EventArgs e)
         {
-            MotorBeamWld.Enabled = checkBox1_MTRBeam.Checked;
+            UI_BoolChanged(checkBox1_MTRBeam.Checked, x => Default.MotorBeam_Required = x);
         }
 
         private void txt_FanDiameter_TextChanged(object sender, EventArgs e)
@@ -281,8 +282,7 @@ namespace Plenum
 
         private void textBox1_columnLength_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(textBox1_columnLength.Text, out double columnLength))
-                PlenumColumn.Height = columnLength;
+            UI_DoubleChanged(textBox1_columnLength.Text, x => Default.PlenumColumn_Height = x);
         }
 
         private void button1_save_Click(object sender, EventArgs e)
@@ -292,46 +292,12 @@ namespace Plenum
 
         private void endComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (EndcomboBox1.Text)
-            {
-                case "0.1344":
-                    Default.EndPanel_THK = 0.1344;
-                    break;
-                case "0.1875":
-                    Default.EndPanel_THK = 0.1875;
-                    break;
-                case "0.2500":
-                    Default.EndPanel_THK = 0.2500;
-                    break;
-                case "0.3125":
-                    Default.EndPanel_THK = 0.3125;
-                    break;
-                case "0.3750":
-                    Default.EndPanel_THK = 0.3750;
-                    break;
-            }
+            UI_DoubleChanged(EndcomboBox1.Text, x => Default.EndPanel_THK = x);
         }
 
         private void sideComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (SidecomboBox2.Text)
-            {
-                case "0.1344":
-                    Default.SidePanel_THK = 0.1344;
-                    break;
-                case "0.1875":
-                    Default.SidePanel_THK = 0.1875;
-                    break;
-                case "0.2500":
-                    Default.SidePanel_THK = 0.2500;
-                    break;
-                case "0.3125":
-                    Default.SidePanel_THK = 0.3125;
-                    break;
-                case "0.3750":
-                    Default.SidePanel_THK = 0.3750;
-                    break;
-            }
+            UI_DoubleChanged(SidecomboBox2.Text, X => Default.SidePanel_THK = X);
         }
 
         private void materialCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -372,31 +338,27 @@ namespace Plenum
             new Legacy(Design.Legacy);
         }
 
-        private void checkBox1_locations_CheckedChanged(object sender, EventArgs e)
-        {
-            ToggleRelocate = checkBox1_locations.Checked;
-        }
-
         private void checkBox2_dwg_CheckedChanged(object sender, EventArgs e)
         {
-            CommonData.ToggleCreateDrawing = checkBox2_dwg.Checked;
+            Default.Toggle_CreateDrawing = checkBox2_dwg.Checked;
+            UI_BoolChanged(checkBox2_dwg.Checked, x => Default.Toggle_CreateDrawing = x);
         }
 
         private void checkBox3_save_CheckedChanged(object sender, EventArgs e)
         {
-            CommonData.ToggleSave = checkBox3_save.Checked;
+            Default.Toggle_Save = checkBox3_save.Checked;
+            UI_BoolChanged(checkBox3_save.Checked, x => Default.Toggle_Save = x);
         }
 
         private void checkBox4_delete_CheckedChanged(object sender, EventArgs e)
         {
-            CommonData.ToggleDeleteFiles = checkBox4_delete.Checked;
+            Default.Toggle_DeleteFiles = checkBox4_delete.Checked;
+            UI_BoolChanged(checkBox4_delete.Checked, x => Default.Toggle_DeleteFiles = x);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             mTools.Unlock();
         }
-
-
     }
 }

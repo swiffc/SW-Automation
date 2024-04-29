@@ -13,6 +13,7 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -34,7 +35,7 @@ namespace Plenum
         // Method overrides
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            double adjust = CallerType == Design.Johnson ? -(Johnson.ExtraLength + JohnsonBeamPart.WebTHK / 2) : Beam_Depth / 2;
+            double adjust = CallerType == Design.Johnson ? -(Default.Johnson_ExtraLength + JohnsonBeamPart.WebTHK / 2) : Beam_Depth / 2;
 
             double length = GetNominalLength();
             AdjustLengthZ(adjust, ref length);
@@ -53,14 +54,14 @@ namespace Plenum
 
                 if (CallerType != Design.Legacy)
                 {
-                    double adjust = CallerType == Design.Johnson ? -(Johnson.ExtraLength + JohnsonBeamPart.WebTHK / 2) / 2 : Beam_Depth / 4;
+                    double adjust = CallerType == Design.Johnson ? -(Default.Johnson_ExtraLength + JohnsonBeamPart.WebTHK / 2) / 2 : Beam_Depth / 4;
 
                     GetPositionAtNominalLength(out double xTranslation, out double yTranslation, out double angle, true);
                     xTranslation -= adjust;
 
                     var zTranslations = FanCenter.ZTranslation(CallerType);
 
-                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0)) / 3;
+                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0)) / 3;
                     double positionAdjust = -adjust;
 
                     _position.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslations[0] + sectionThird - positionAdjust, rY: -angle - 180));

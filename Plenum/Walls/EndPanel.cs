@@ -13,6 +13,7 @@ using Plenum.Floor;
 using System;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -126,7 +127,7 @@ namespace Plenum
                     lengthModifier = Beam_Depth / 2;
                     break;
                 case Design.Johnson:
-                    lengthModifier = Johnson.ExtraLength;
+                    lengthModifier = Default.Johnson_ExtraLength;
                     break;
                     case Design.Legacy:
                     lengthModifier = -EndPanel_THK;

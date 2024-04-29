@@ -11,6 +11,7 @@ using System;
 using static FileTools.FileTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -24,7 +25,7 @@ namespace Plenum
         {
             get
             {
-                return Plenum_Length / (Mid_Columns ? Fan_Count : 1) - mTools.AssemblyClearance * 2 - mTools.AssemblyClearance + Johnson.ExtraLength;
+                return Plenum_Length / (Mid_Columns ? Fan_Count : 1) - mTools.AssemblyClearance * 2 - mTools.AssemblyClearance + Default.Johnson_ExtraLength;
             }
         }
         private static double HoleToEdge => 3;
@@ -40,8 +41,8 @@ namespace Plenum
         // Private methods
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            mTools.EditDimension("HalfLength", "sk:Web", LocalLength / 2 - Johnson.ExtraLength / 2 - mTools.AssemblyClearance / 2, modelDoc2);
-            mTools.EditDimension("HalfLengthExtra", "sk:Web", LocalLength / 2 + Johnson.ExtraLength / 2 - mTools.AssemblyClearance / 2, modelDoc2);
+            mTools.EditDimension("HalfLength", "sk:Web", LocalLength / 2 - Default.Johnson_ExtraLength / 2 - mTools.AssemblyClearance / 2, modelDoc2);
+            mTools.EditDimension("HalfLengthExtra", "sk:Web", LocalLength / 2 + Default.Johnson_ExtraLength / 2 - mTools.AssemblyClearance / 2, modelDoc2);
             mTools.EditDimension("Height", "sk:Web", Plenum_Depth, modelDoc2);
             mTools.EditDimension("THK", "Sheet-Metal", THK, modelDoc2);
             mTools.EditDimension("innerR", "Sheet-Metal", bTable.GetBendRadius(THK), modelDoc2);
@@ -57,17 +58,17 @@ namespace Plenum
             mTools.EditDimension("Hole8", "sk:Hole", CornerAngle.HolePositions[8] + CornerAngle.YTranslation, modelDoc2);
             mTools.EditDimension("Hole9", "sk:Hole", CornerAngle.HolePositions[9] + CornerAngle.YTranslation, modelDoc2);
             mTools.EditDimension("Hole10", "sk:Hole", CornerAngle.HolePositions[10] + CornerAngle.YTranslation, modelDoc2);
-            mTools.EditDimension("ExtraLength", "sk:Hole", Johnson.ExtraLength - mTools.AssemblyClearance * 2, modelDoc2);
+            mTools.EditDimension("ExtraLength", "sk:Hole", Default.Johnson_ExtraLength - mTools.AssemblyClearance * 2, modelDoc2);
 
             mTools.EditDimension("Length", "sk:ColumnCut", Plenum_Length / Fan_Count - mTools.InterferenceClearance, modelDoc2);
             mTools.EditDimension("FlangeWidth", "sk:ColumnCut", Beam_FlangeWidth + mTools.AssemblyClearance * 2, modelDoc2);
-            mTools.EditDimension("PlanBraceZ", "sk:Hole", (Plenum_Length + Johnson.ExtraLength * 2) / Fan_Count / 3, modelDoc2);
+            mTools.EditDimension("PlanBraceZ", "sk:Hole", (Plenum_Length + Default.Johnson_ExtraLength * 2) / Fan_Count / 3, modelDoc2);
 
             SidePanel.EditDimensions_191(modelDoc2);
             SidePanel.EditDimensions_192(modelDoc2);
             SidePanel.EditDimensions_206(modelDoc2);
 
-            mTools.HolePattern(Johnson.ExtraLength - Beam_FlangeWidth / 2 - mTools.AssemblyClearance - mTools.InterferenceClearance - HoleToEdge * 2, out double countExtra, out double spacingExtra);
+            mTools.HolePattern(Default.Johnson_ExtraLength - Beam_FlangeWidth / 2 - mTools.AssemblyClearance - mTools.InterferenceClearance - HoleToEdge * 2, out double countExtra, out double spacingExtra);
             mTools.EditDimension("SpacingExtra", "sk:BundleHole", spacingExtra, modelDoc2);
             mTools.EditDimension("CountExtra", "sk:BundleHole", countExtra, modelDoc2);
 

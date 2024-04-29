@@ -14,6 +14,7 @@ using Plenum.Floor.Derived;
 using static FileTools.FileTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Floor
 {
@@ -46,7 +47,7 @@ namespace Plenum.Floor
             if (CallerType != Design.Johnson)
             {
                 mTools.EditDimension("X", "sk:ColumnCut", Plenum_Width / 2, modelDoc2);
-                mTools.EditDimension("Z", "sk:ColumnCut", (Plenum_Length + (CallerType == Design.Johnson ? Johnson.ExtraLength * 2 : 0)) / Fan_Count / 2 - InnerFloorPanel.GetLength() - FloorSplice.NominalLength / 2 - mTools.AssemblyClearance, modelDoc2);
+                mTools.EditDimension("Z", "sk:ColumnCut", (Plenum_Length + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength * 2 : 0)) / Fan_Count / 2 - InnerFloorPanel.GetLength() - FloorSplice.NominalLength / 2 - mTools.AssemblyClearance, modelDoc2);
                 mTools.EditDimension("Depth", "sk:ColumnCut", Beam_Depth / 2 + mTools.AssemblyClearance, modelDoc2);
                 mTools.EditDimension("FlangeWidth", "sk:ColumnCut", Beam_FlangeWidth / 2 + mTools.AssemblyClearance, modelDoc2);
                 mTools.EditDimension("WebTHK", "sk:ColumnCut", Beam_WebTHK / 2 + mTools.AssemblyClearance, modelDoc2);

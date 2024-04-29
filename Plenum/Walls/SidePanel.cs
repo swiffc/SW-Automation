@@ -14,6 +14,7 @@ using static FileTools.FileTools;
 using Plenum.Helpers.Static;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -103,7 +104,7 @@ namespace Plenum
             }
             else
             {
-                length += Johnson.ExtraLength * 2 - mTools.AssemblyClearance * 2;
+                length += Default.Johnson_ExtraLength * 2 - mTools.AssemblyClearance * 2;
             }
 
             return length;

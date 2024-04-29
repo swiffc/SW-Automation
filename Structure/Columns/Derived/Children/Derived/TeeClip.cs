@@ -21,7 +21,7 @@ namespace Structure.Columns.Derived.Children.Derived
             get
             {
                 double columnBounds = Beams_AreRotated ? Beam_WebTHK : Beam_Depth;
-                double landing = (BasePlate.LocalLength - columnBounds) / 2;
+                double landing = (BasePlate.BasePlate_Length - columnBounds) / 2;
 
                 if (landing <= 0)
                     return 1;

@@ -10,13 +10,14 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
     internal class MotorBeamWld : IComponentInfo
     {
         // Static properties
-        public static bool Enabled { get; set; } = true;
+        public static bool Enabled => Default.MotorBeam_Required;
 
 
         // Constructor

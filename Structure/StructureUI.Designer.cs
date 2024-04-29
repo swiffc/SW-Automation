@@ -1,4 +1,6 @@
-﻿namespace Structure
+﻿using static FileTools.CommonData.CommonData;
+
+namespace Structure
 {
     partial class StructureUI
     {
@@ -17,6 +19,8 @@
             {
                 components.Dispose();
             }
+            if (disposing)
+                SettingsChanged -= UpdateUI;
             base.Dispose(disposing);
         }
 
@@ -250,6 +254,7 @@
             this.initials_Box.Name = "initials_Box";
             this.initials_Box.Size = new System.Drawing.Size(100, 20);
             this.initials_Box.TabIndex = 53;
+            this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
             // itemNumber_Box
             // 
@@ -257,6 +262,7 @@
             this.itemNumber_Box.Name = "itemNumber_Box";
             this.itemNumber_Box.Size = new System.Drawing.Size(100, 20);
             this.itemNumber_Box.TabIndex = 52;
+            this.itemNumber_Box.TextChanged += new System.EventHandler(this.itemNumber_Box_TextChanged);
             // 
             // purchaseOrder_Box
             // 
@@ -264,6 +270,7 @@
             this.purchaseOrder_Box.Name = "purchaseOrder_Box";
             this.purchaseOrder_Box.Size = new System.Drawing.Size(100, 20);
             this.purchaseOrder_Box.TabIndex = 51;
+            this.purchaseOrder_Box.TextChanged += new System.EventHandler(this.purchaseOrder_Box_TextChanged);
             // 
             // location_Box
             // 
@@ -271,6 +278,7 @@
             this.location_Box.Name = "location_Box";
             this.location_Box.Size = new System.Drawing.Size(100, 20);
             this.location_Box.TabIndex = 50;
+            this.location_Box.TextChanged += new System.EventHandler(this.location_Box_TextChanged);
             // 
             // client_Box
             // 
@@ -278,6 +286,7 @@
             this.client_Box.Name = "client_Box";
             this.client_Box.Size = new System.Drawing.Size(100, 20);
             this.client_Box.TabIndex = 49;
+            this.client_Box.TextChanged += new System.EventHandler(this.client_Box_TextChanged);
             // 
             // customer_Box
             // 
@@ -285,6 +294,7 @@
             this.customer_Box.Name = "customer_Box";
             this.customer_Box.Size = new System.Drawing.Size(100, 20);
             this.customer_Box.TabIndex = 48;
+            this.customer_Box.TextChanged += new System.EventHandler(this.customer_Box_TextChanged);
             // 
             // job_Box
             // 
@@ -292,6 +302,7 @@
             this.job_Box.Name = "job_Box";
             this.job_Box.Size = new System.Drawing.Size(100, 20);
             this.job_Box.TabIndex = 47;
+            this.job_Box.TextChanged += new System.EventHandler(this.job_Box_TextChanged);
             // 
             // label15
             // 

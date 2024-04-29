@@ -9,11 +9,11 @@ namespace Structure.Columns.Derived.Children
     internal class BasePlate : Part
     {
         // Static properties
-        internal static double LocalWidth { get; set; } = 8;
-        internal static double LocalLength { get; set; } = 8;
-        internal static double WidthHoleSpacing { get; set; } = 3.5;
-        internal static double LengthHoleSpacing { get; set; } = 3.5;
-        internal static double HoleDiameter { get; set; } = 0.8125;
+        internal static double BasePlate_Width { get; set; } = 8;
+        internal static double BasePlate_Length { get; set; } = 8;
+        internal static double BasePlate_WidthHoleSpacing { get; set; } = 3.5;
+        internal static double BasePlate_LengthHoleSpacing { get; set; } = 3.5;
+        internal static double BasePlate_HoleDiameter { get; set; } = 0.8125;
 
 
         // Constructor
@@ -23,13 +23,13 @@ namespace Structure.Columns.Derived.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Width", "sk:Plate", LocalWidth);
-            EditDimension("Length", "sk:Plate", LocalLength);
+            EditDimension("Width", "sk:Plate", BasePlate_Width);
+            EditDimension("Length", "sk:Plate", BasePlate_Length);
             EditDimension("THK", "Plate", BasePlate_THK);
 
-            EditDimension("Diameter", "sk:Hole", HoleDiameter);
-            EditDimension("WidthSpacing", "sk:Hole", WidthHoleSpacing);
-            EditDimension("LengthSpacing", "sk:Hole", LengthHoleSpacing);
+            EditDimension("Diameter", "sk:Hole", BasePlate_HoleDiameter);
+            EditDimension("WidthSpacing", "sk:Hole", BasePlate_WidthHoleSpacing);
+            EditDimension("LengthSpacing", "sk:Hole", BasePlate_LengthHoleSpacing);
         }
 
 

@@ -12,6 +12,7 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -37,7 +38,7 @@ namespace Plenum
         protected double GetNominalLength()
         {
             double slotGauge = 1.5;
-            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0);
             double sectionThird = sectionLength / 3 - slotGauge * 2;
             double angle = 45;
 
@@ -64,7 +65,7 @@ namespace Plenum
             yTranslation = -4;
             angle = 45;
 
-            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0);
             double sectionThird = sectionLength / 3;
 
             mTools.AAS(angle, out double oppositeSide, sectionThird / 2, out _);

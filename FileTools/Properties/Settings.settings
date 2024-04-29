@@ -6,19 +6,19 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Clip_THK" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.25</Value>
+      <Value Profile="(Default)">0.5</Value>
     </Setting>
     <Setting Name="EndPanel_THK" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.1344</Value>
+      <Value Profile="(Default)">0.375</Value>
     </Setting>
     <Setting Name="SidePanel_THK" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.1344</Value>
+      <Value Profile="(Default)">0.375</Value>
     </Setting>
     <Setting Name="Beam_Size" Type="System.String" Scope="User">
-      <Value Profile="(Default)">W6x15</Value>
+      <Value Profile="(Default)">W8x31</Value>
     </Setting>
     <Setting Name="PlenumDesignSetting" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Legacy</Value>
+      <Value Profile="(Default)">Standard</Value>
     </Setting>
     <Setting Name="Plenum_Length" Type="System.Double" Scope="User">
       <Value Profile="(Default)">240</Value>
@@ -33,7 +33,7 @@
       <Value Profile="(Default)">36</Value>
     </Setting>
     <Setting Name="Mid_Columns" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Fan_Diameter_Feet" Type="System.Double" Scope="User">
       <Value Profile="(Default)">8</Value>
@@ -45,7 +45,7 @@
       <Value Profile="(Default)">Motor Shaft Down</Value>
     </Setting>
     <Setting Name="MaterialSpecSetting" Type="System.String" Scope="User">
-      <Value Profile="(Default)">A36</Value>
+      <Value Profile="(Default)">A572_50</Value>
     </Setting>
     <Setting Name="Beam_Depth" Type="System.Double" Scope="User">
       <Value Profile="(Default)">6</Value>
@@ -69,6 +69,114 @@
       <Value Profile="(Default)">3.5</Value>
     </Setting>
     <Setting Name="Beam_WebGage" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2.25</Value>
+    </Setting>
+    <Setting Name="PlenumColumn_Height" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MotorBeam_Required" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Project" Type="System.String" Scope="User">
+      <Value Profile="(Default)">M000</Value>
+    </Setting>
+    <Setting Name="Customer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Customer</Value>
+    </Setting>
+    <Setting Name="Client" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Client</Value>
+    </Setting>
+    <Setting Name="PlantLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Location</Value>
+    </Setting>
+    <Setting Name="PurchaseOrder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Purchase Order</Value>
+    </Setting>
+    <Setting Name="ItemNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Item Number</Value>
+    </Setting>
+    <Setting Name="Initials" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Your Initials</Value>
+    </Setting>
+    <Setting Name="Bank" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="Johnson_ExtraLength" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Toggle_CreateDrawing" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Toggle_Save" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Toggle_DeleteFiles" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TotalColumnHeight" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="BasePlate_Width" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="BasePlate_Length" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="BasePlate_WidthHoleSpacing" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4.5</Value>
+    </Setting>
+    <Setting Name="BasePlate_LengthHoleSpacing" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4.5</Value>
+    </Setting>
+    <Setting Name="BasePlate_HoleDiameter" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.8125</Value>
+    </Setting>
+    <Setting Name="MachineryMount_Height" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="BraceType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L</Value>
+    </Setting>
+    <Setting Name="HoleDiameter_Structural" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.8125</Value>
+    </Setting>
+    <Setting Name="BraceAngle" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="AngleBrace_Leg1" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="AngleBrace_Leg2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="AngleBrace_Gage" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">1.75</Value>
+    </Setting>
+    <Setting Name="AngleBrace_THK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.25</Value>
+    </Setting>
+    <Setting Name="AngleBrace_K" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.5625</Value>
+    </Setting>
+    <Setting Name="WT_Depth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2.125</Value>
+    </Setting>
+    <Setting Name="WT_StemTHK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.25</Value>
+    </Setting>
+    <Setting Name="WT_FlangeWidth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="WT_FlangeTHK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.375</Value>
+    </Setting>
+    <Setting Name="WT_K" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.6875</Value>
+    </Setting>
+    <Setting Name="WT_K1" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.4375</Value>
+    </Setting>
+    <Setting Name="WT_FlangeGage" Type="System.Double" Scope="User">
       <Value Profile="(Default)">2.25</Value>
     </Setting>
   </Settings>

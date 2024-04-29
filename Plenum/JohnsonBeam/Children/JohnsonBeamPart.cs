@@ -12,6 +12,7 @@ using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
+using static FileTools.Properties.Settings;
 using FileTools.CommonData;
 
 namespace Plenum.JohnsonBeam.Children
@@ -38,11 +39,11 @@ namespace Plenum.JohnsonBeam.Children
         {
             mTools.EditDimension("Length", "Beam", JohnsonBeamPart.Length, modelDoc2);
 
-            double totalLength = Length + Johnson.ExtraLength * 2;
+            double totalLength = Length + Default.Johnson_ExtraLength * 2;
             double endFanToEndPanel = totalLength / 4;
-            double sectionThird = (Length + Johnson.ExtraLength * 2) / Fan_Count  / 3;
+            double sectionThird = (Length + Default.Johnson_ExtraLength * 2) / Fan_Count  / 3;
 
-            double zTotal = endFanToEndPanel - Johnson.ExtraLength;
+            double zTotal = endFanToEndPanel - Default.Johnson_ExtraLength;
             double z = zTotal - sectionThird / 2;
 
             double x = Plenum_Width / 2 + Beam_Depth/2 - z + mTools.AssemblyClearance;

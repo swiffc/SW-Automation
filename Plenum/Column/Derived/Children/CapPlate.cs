@@ -10,6 +10,7 @@ using static Plenum.Plenum;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using static FileTools.FileTools;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -48,7 +49,7 @@ namespace Plenum
                 if (_position == null)
                 {
                     double yRotation = CallerType == Design.Legacy ? 90 : 0;
-                    return new List<PositionData> { PositionData.Create(tY: -PlenumColumn.Height, rY: yRotation) };
+                    return new List<PositionData> { PositionData.Create(tY: -Default.PlenumColumn_Height, rY: yRotation) };
                 }
                 return _position;
             }

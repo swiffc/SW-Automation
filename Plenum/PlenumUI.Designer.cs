@@ -20,6 +20,8 @@ namespace Plenum
             {
                 components.Dispose();
             }
+            if (disposing)
+                SettingsChanged -= UpdateUI;
             base.Dispose(disposing);
         }
 
@@ -36,7 +38,6 @@ namespace Plenum
             this.checkBox4_delete = new System.Windows.Forms.CheckBox();
             this.checkBox3_save = new System.Windows.Forms.CheckBox();
             this.checkBox2_dwg = new System.Windows.Forms.CheckBox();
-            this.checkBox1_locations = new System.Windows.Forms.CheckBox();
             this.leg_floor = new System.Windows.Forms.Button();
             this.jhn_floor = new System.Windows.Forms.Button();
             this.std_floor = new System.Windows.Forms.Button();
@@ -65,6 +66,13 @@ namespace Plenum
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tab_Plenum = new System.Windows.Forms.TabPage();
+            this.txt_Initials = new System.Windows.Forms.TextBox();
+            this.txt_JobItemNo = new System.Windows.Forms.TextBox();
+            this.txt_JobPO = new System.Windows.Forms.TextBox();
+            this.txt_JobLocation = new System.Windows.Forms.TextBox();
+            this.txt_JobClient = new System.Windows.Forms.TextBox();
+            this.txt_JobCustomer = new System.Windows.Forms.TextBox();
+            this.txt_JobNumber = new System.Windows.Forms.TextBox();
             this.materialCombo = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.SidecomboBox2 = new System.Windows.Forms.ComboBox();
@@ -100,13 +108,6 @@ namespace Plenum
             this.txt_Width = new System.Windows.Forms.Label();
             this.txt_Length = new System.Windows.Forms.Label();
             this.txt_plen = new System.Windows.Forms.TabControl();
-            this.txt_Initials = new System.Windows.Forms.TextBox();
-            this.txt_JobItemNo = new System.Windows.Forms.TextBox();
-            this.txt_JobPO = new System.Windows.Forms.TextBox();
-            this.txt_JobLocation = new System.Windows.Forms.TextBox();
-            this.txt_JobClient = new System.Windows.Forms.TextBox();
-            this.txt_JobCustomer = new System.Windows.Forms.TextBox();
-            this.txt_JobNumber = new System.Windows.Forms.TextBox();
             this.tab_AdvOptions.SuspendLayout();
             this.tab_Plenum.SuspendLayout();
             this.txt_plen.SuspendLayout();
@@ -118,7 +119,6 @@ namespace Plenum
             this.tab_AdvOptions.Controls.Add(this.checkBox4_delete);
             this.tab_AdvOptions.Controls.Add(this.checkBox3_save);
             this.tab_AdvOptions.Controls.Add(this.checkBox2_dwg);
-            this.tab_AdvOptions.Controls.Add(this.checkBox1_locations);
             this.tab_AdvOptions.Controls.Add(this.leg_floor);
             this.tab_AdvOptions.Controls.Add(this.jhn_floor);
             this.tab_AdvOptions.Controls.Add(this.std_floor);
@@ -167,7 +167,7 @@ namespace Plenum
             // checkBox4_delete
             // 
             this.checkBox4_delete.AutoSize = true;
-            this.checkBox4_delete.Location = new System.Drawing.Point(279, 121);
+            this.checkBox4_delete.Location = new System.Drawing.Point(275, 109);
             this.checkBox4_delete.Name = "checkBox4_delete";
             this.checkBox4_delete.Size = new System.Drawing.Size(128, 17);
             this.checkBox4_delete.TabIndex = 31;
@@ -178,7 +178,7 @@ namespace Plenum
             // checkBox3_save
             // 
             this.checkBox3_save.AutoSize = true;
-            this.checkBox3_save.Location = new System.Drawing.Point(279, 98);
+            this.checkBox3_save.Location = new System.Drawing.Point(275, 86);
             this.checkBox3_save.Name = "checkBox3_save";
             this.checkBox3_save.Size = new System.Drawing.Size(76, 17);
             this.checkBox3_save.TabIndex = 30;
@@ -189,7 +189,7 @@ namespace Plenum
             // checkBox2_dwg
             // 
             this.checkBox2_dwg.AutoSize = true;
-            this.checkBox2_dwg.Location = new System.Drawing.Point(279, 75);
+            this.checkBox2_dwg.Location = new System.Drawing.Point(275, 63);
             this.checkBox2_dwg.Name = "checkBox2_dwg";
             this.checkBox2_dwg.Size = new System.Drawing.Size(118, 17);
             this.checkBox2_dwg.TabIndex = 29;
@@ -197,44 +197,33 @@ namespace Plenum
             this.checkBox2_dwg.UseVisualStyleBackColor = true;
             this.checkBox2_dwg.CheckedChanged += new System.EventHandler(this.checkBox2_dwg_CheckedChanged);
             // 
-            // checkBox1_locations
-            // 
-            this.checkBox1_locations.AutoSize = true;
-            this.checkBox1_locations.Location = new System.Drawing.Point(279, 52);
-            this.checkBox1_locations.Name = "checkBox1_locations";
-            this.checkBox1_locations.Size = new System.Drawing.Size(167, 17);
-            this.checkBox1_locations.TabIndex = 28;
-            this.checkBox1_locations.Text = "Update Component Locations";
-            this.checkBox1_locations.UseVisualStyleBackColor = true;
-            this.checkBox1_locations.CheckedChanged += new System.EventHandler(this.checkBox1_locations_CheckedChanged);
-            // 
             // leg_floor
             // 
-            this.leg_floor.Location = new System.Drawing.Point(333, 448);
+            this.leg_floor.Location = new System.Drawing.Point(333, 439);
             this.leg_floor.Name = "leg_floor";
-            this.leg_floor.Size = new System.Drawing.Size(75, 46);
+            this.leg_floor.Size = new System.Drawing.Size(75, 55);
             this.leg_floor.TabIndex = 27;
-            this.leg_floor.Text = "Legacy Stiffener";
+            this.leg_floor.Text = "Update Legacy Stiffener";
             this.leg_floor.UseVisualStyleBackColor = true;
             this.leg_floor.Click += new System.EventHandler(this.leg_floor_Click);
             // 
             // jhn_floor
             // 
-            this.jhn_floor.Location = new System.Drawing.Point(186, 448);
+            this.jhn_floor.Location = new System.Drawing.Point(186, 439);
             this.jhn_floor.Name = "jhn_floor";
-            this.jhn_floor.Size = new System.Drawing.Size(75, 46);
+            this.jhn_floor.Size = new System.Drawing.Size(75, 55);
             this.jhn_floor.TabIndex = 26;
-            this.jhn_floor.Text = "Johnson Stiffener";
+            this.jhn_floor.Text = "Update Johnson Stiffener";
             this.jhn_floor.UseVisualStyleBackColor = true;
             this.jhn_floor.Click += new System.EventHandler(this.jhn_floor_Click);
             // 
             // std_floor
             // 
-            this.std_floor.Location = new System.Drawing.Point(43, 448);
+            this.std_floor.Location = new System.Drawing.Point(43, 439);
             this.std_floor.Name = "std_floor";
-            this.std_floor.Size = new System.Drawing.Size(75, 46);
+            this.std_floor.Size = new System.Drawing.Size(75, 55);
             this.std_floor.TabIndex = 25;
-            this.std_floor.Text = "Standard Stiffener";
+            this.std_floor.Text = "Update Standard Stiffener";
             this.std_floor.UseVisualStyleBackColor = true;
             this.std_floor.Click += new System.EventHandler(this.std_floor_Click);
             // 
@@ -503,6 +492,62 @@ namespace Plenum
             this.tab_Plenum.Text = "Plenum";
             this.tab_Plenum.UseVisualStyleBackColor = true;
             // 
+            // txt_Initials
+            // 
+            this.txt_Initials.Location = new System.Drawing.Point(285, 381);
+            this.txt_Initials.Name = "txt_Initials";
+            this.txt_Initials.Size = new System.Drawing.Size(100, 20);
+            this.txt_Initials.TabIndex = 50;
+            this.txt_Initials.TextChanged += new System.EventHandler(this.txt_Initials_TextChanged_1);
+            // 
+            // txt_JobItemNo
+            // 
+            this.txt_JobItemNo.Location = new System.Drawing.Point(285, 352);
+            this.txt_JobItemNo.Name = "txt_JobItemNo";
+            this.txt_JobItemNo.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobItemNo.TabIndex = 49;
+            this.txt_JobItemNo.TextChanged += new System.EventHandler(this.txt_JobItemNo_TextChanged_1);
+            // 
+            // txt_JobPO
+            // 
+            this.txt_JobPO.Location = new System.Drawing.Point(285, 326);
+            this.txt_JobPO.Name = "txt_JobPO";
+            this.txt_JobPO.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobPO.TabIndex = 48;
+            this.txt_JobPO.TextChanged += new System.EventHandler(this.txt_JobPO_TextChanged_1);
+            // 
+            // txt_JobLocation
+            // 
+            this.txt_JobLocation.Location = new System.Drawing.Point(285, 300);
+            this.txt_JobLocation.Name = "txt_JobLocation";
+            this.txt_JobLocation.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobLocation.TabIndex = 47;
+            this.txt_JobLocation.TextChanged += new System.EventHandler(this.txt_JobLocation_TextChanged_1);
+            // 
+            // txt_JobClient
+            // 
+            this.txt_JobClient.Location = new System.Drawing.Point(285, 274);
+            this.txt_JobClient.Name = "txt_JobClient";
+            this.txt_JobClient.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobClient.TabIndex = 46;
+            this.txt_JobClient.TextChanged += new System.EventHandler(this.txt_JobClient_TextChanged_1);
+            // 
+            // txt_JobCustomer
+            // 
+            this.txt_JobCustomer.Location = new System.Drawing.Point(285, 248);
+            this.txt_JobCustomer.Name = "txt_JobCustomer";
+            this.txt_JobCustomer.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobCustomer.TabIndex = 45;
+            this.txt_JobCustomer.TextChanged += new System.EventHandler(this.txt_JobCustomer_TextChanged);
+            // 
+            // txt_JobNumber
+            // 
+            this.txt_JobNumber.Location = new System.Drawing.Point(285, 222);
+            this.txt_JobNumber.Name = "txt_JobNumber";
+            this.txt_JobNumber.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobNumber.TabIndex = 44;
+            this.txt_JobNumber.TextChanged += new System.EventHandler(this.txt_JobNumber_TextChanged);
+            // 
             // materialCombo
             // 
             this.materialCombo.FormattingEnabled = true;
@@ -716,7 +761,7 @@ namespace Plenum
             this.checkBox1_MTRBeam.AutoSize = true;
             this.checkBox1_MTRBeam.Location = new System.Drawing.Point(341, 107);
             this.checkBox1_MTRBeam.Name = "checkBox1_MTRBeam";
-            //this.checkBox1_MTRBeam_Size = new System.Drawing.Size(15, 14);
+            this.checkBox1_MTRBeam.Size = new System.Drawing.Size(15, 14);
             this.checkBox1_MTRBeam.TabIndex = 25;
             this.checkBox1_MTRBeam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1_MTRBeam.UseVisualStyleBackColor = true;
@@ -856,62 +901,6 @@ namespace Plenum
             this.txt_plen.Size = new System.Drawing.Size(466, 537);
             this.txt_plen.TabIndex = 2;
             // 
-            // txt_Initials
-            // 
-            this.txt_Initials.Location = new System.Drawing.Point(285, 381);
-            this.txt_Initials.Name = "txt_Initials";
-            this.txt_Initials.Size = new System.Drawing.Size(100, 20);
-            this.txt_Initials.TabIndex = 50;
-            this.txt_Initials.TextChanged += new System.EventHandler(this.txt_Initials_TextChanged_1);
-            // 
-            // txt_JobItemNo
-            // 
-            this.txt_JobItemNo.Location = new System.Drawing.Point(285, 352);
-            this.txt_JobItemNo.Name = "txt_JobItemNo";
-            this.txt_JobItemNo.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobItemNo.TabIndex = 49;
-            this.txt_JobItemNo.TextChanged += new System.EventHandler(this.txt_JobItemNo_TextChanged_1);
-            // 
-            // txt_JobPO
-            // 
-            this.txt_JobPO.Location = new System.Drawing.Point(285, 326);
-            this.txt_JobPO.Name = "txt_JobPO";
-            this.txt_JobPO.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobPO.TabIndex = 48;
-            this.txt_JobPO.TextChanged += new System.EventHandler(this.txt_JobPO_TextChanged_1);
-            // 
-            // txt_JobLocation
-            // 
-            this.txt_JobLocation.Location = new System.Drawing.Point(285, 300);
-            this.txt_JobLocation.Name = "txt_JobLocation";
-            this.txt_JobLocation.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobLocation.TabIndex = 47;
-            this.txt_JobLocation.TextChanged += new System.EventHandler(this.txt_JobLocation_TextChanged_1);
-            // 
-            // txt_JobClient
-            // 
-            this.txt_JobClient.Location = new System.Drawing.Point(285, 274);
-            this.txt_JobClient.Name = "txt_JobClient";
-            this.txt_JobClient.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobClient.TabIndex = 46;
-            this.txt_JobClient.TextChanged += new System.EventHandler(this.txt_JobClient_TextChanged_1);
-            // 
-            // txt_JobCustomer
-            // 
-            this.txt_JobCustomer.Location = new System.Drawing.Point(285, 248);
-            this.txt_JobCustomer.Name = "txt_JobCustomer";
-            this.txt_JobCustomer.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobCustomer.TabIndex = 45;
-            this.txt_JobCustomer.TextChanged += new System.EventHandler(this.txt_JobCustomer_TextChanged);
-            // 
-            // txt_JobNumber
-            // 
-            this.txt_JobNumber.Location = new System.Drawing.Point(285, 222);
-            this.txt_JobNumber.Name = "txt_JobNumber";
-            this.txt_JobNumber.Size = new System.Drawing.Size(100, 20);
-            this.txt_JobNumber.TabIndex = 44;
-            this.txt_JobNumber.TextChanged += new System.EventHandler(this.txt_JobNumber_TextChanged);
-            // 
             // PlenumUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -995,7 +984,6 @@ namespace Plenum
         private System.Windows.Forms.Button leg_floor;
         private System.Windows.Forms.Button jhn_floor;
         private System.Windows.Forms.Button std_floor;
-        private System.Windows.Forms.CheckBox checkBox1_locations;
         private System.Windows.Forms.CheckBox checkBox4_delete;
         private System.Windows.Forms.CheckBox checkBox3_save;
         private System.Windows.Forms.CheckBox checkBox2_dwg;

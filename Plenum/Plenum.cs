@@ -23,17 +23,12 @@ using static FileTools.StaticFileTools;
 using Plenum.Structure;
 using static FileTools.CommonData.CommonData;
 using Plenum.Structure.Derived;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
     public class Plenum
     {
-        // Public static properties
-
-
-
-        // Toggles
-        public static bool ToggleRelocate { get; set; } = true;
 
 
         // Main method
@@ -58,20 +53,18 @@ namespace Plenum
                 {
                     AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     var components = InstantiateComponents(callerType, StaticParentDictionary.Values.ToArray());
-
-                    if (ToggleRelocate)
                         LocateComponents(components);
 
-                    if (ToggleCreateDrawing)
+                    if (Default.Toggle_CreateDrawing)
                     {
                         CreateDrawing(components);
                         AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     }
 
-                    if (ToggleSave || ToggleDeleteFiles)
+                    if (Default.Toggle_Save || Default.Toggle_DeleteFiles)
                         mTools.SaveEverything();
 
-                    if (ToggleDeleteFiles)
+                    if (Default.Toggle_DeleteFiles)
                     {
                         mTools.CloseEverything();
                         mTools.ClearList_ToBeDeleted();
@@ -84,7 +77,7 @@ namespace Plenum
                 }
                 else
                 {
-                    JobInfo.Bank = FTools.AddNew_Bank();
+                    Default.Bank = FTools.AddNew_Bank();
                 }
 
             } while (!bankExists);
@@ -301,9 +294,9 @@ namespace Plenum
             get
             {
                 return new Ftools
-                    (AssemblyName, JobInfo.Project, JobInfo.Bank, StaticPartNo,
-                    JobInfo.Initials, JobInfo.Customer, JobInfo.Client,
-                    JobInfo.PlantLocation, JobInfo.PurchaseOrder, JobInfo.ItemNumber);
+                    (AssemblyName, Default.Project, Default.Bank, StaticPartNo,
+                    Default.Initials, Default.Customer, Default.Client,
+                    Default.PlantLocation, Default.PurchaseOrder, Default.ItemNumber);
             }
         }
 
@@ -313,7 +306,7 @@ namespace Plenum
         {
             get
             {
-                return $@"{FTools.DesktopFolderPath}\{JobInfo.Project}-{StaticPartNo}{JobInfo.Bank}.SLDASM";
+                return $@"{FTools.DesktopFolderPath}\{Default.Project}-{StaticPartNo}{Default.Bank}.SLDASM";
             }
         }
     }

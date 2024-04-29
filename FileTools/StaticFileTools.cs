@@ -13,6 +13,7 @@ using static FileTools.RawMaterial;
 using static ModelTools.ReleaseCOM;
 using static System.Net.WebRequestMethods;
 using static Tools.ModelTools;
+using static FileTools.Properties.Settings;
 
 namespace FileTools
 {
@@ -21,12 +22,12 @@ namespace FileTools
         // Public methods
         public static string GetFilePath(string partNo, string fileType)
         {
-            return $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.{fileType}";
+            return $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.{fileType}";
         }
         public static char AddNew_Bank()
         {
-            string assemblyFileName = $"{Project}-{AssemblyNumber}{Bank}.SLDASM";
-            string drawingFileName = $"{Project}-{AssemblyNumber}{Bank}.SLDDRW";
+            string assemblyFileName = $"{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
+            string drawingFileName = $"{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDDRW";
 
             string assemblyTemplateFile = $@"{TemplateFolderPath}\JOBNO-{AssemblyNumber}.SLDASM";
             string drawingTemplateFile = $@"{TemplateFolderPath}\JOBNO-{AssemblyNumber}.SLDDRW";
@@ -40,7 +41,7 @@ namespace FileTools
             while (fileExists)
             {
                 Debug.WriteLine($"{assemblyDesktopPath} already exists");
-                Bank++;
+                Default.Bank++;
                 assemblyDesktopPath = $@"{DesktopFolderPath}\{assemblyFileName}";
             }
 
@@ -54,7 +55,7 @@ namespace FileTools
             // Open bank assembly
             Open(assemblyDesktopPath);
 
-            return Bank;
+            return Default.Bank;
         }
         public static AssemblyDoc OpenAssembly(string filePath, string configurationName, bool silent = false)
         {
@@ -163,7 +164,7 @@ namespace FileTools
                 partNo2 = SkipInvalidChars(partNo2);
 
                 string fileName = $"{partNo1}{(partNo2 != ' ' ? partNo2.ToString() : "")}.SLDPRT";
-                string desktopFile = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{fileName}";
+                string desktopFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{fileName}";
 
                 if (!System.IO.File.Exists(desktopFile))
                 {
@@ -606,13 +607,13 @@ namespace FileTools
                 Debug.WriteLine($"{config.Name} - {GetConfigurationTitle(modelDoc2)}");
 
                 // Job info
-                SetProperty("Project", Project, modelDoc2);
-                SetProperty("Bank", Bank.ToString(), modelDoc2);
-                SetProperty("Customer", Customer, modelDoc2);
-                SetProperty("Client", Client, modelDoc2);
-                SetProperty("Location", Location, modelDoc2);
-                SetProperty("PO", PurchaseOrder, modelDoc2);
-                SetProperty("ItemNo", ItemNumber, modelDoc2);
+                SetProperty("Project", Default.Project, modelDoc2);
+                SetProperty("Bank", Default.Bank.ToString(), modelDoc2);
+                SetProperty("Customer", Default.Customer, modelDoc2);
+                SetProperty("Client", Default.Client, modelDoc2);
+                SetProperty("Location", Default.PlantLocation, modelDoc2);
+                SetProperty("PO", Default.PurchaseOrder, modelDoc2);
+                SetProperty("ItemNo", Default.ItemNumber, modelDoc2);
 
                 return modelDoc2;
             }
@@ -711,12 +712,12 @@ namespace FileTools
         {
             string DesktopFolderPath =
                 System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) +
-                $"{Project}-{AssemblyNumber}{Bank}";
+                $"{Default.Project}-{AssemblyNumber}{Default.Bank}";
 
             int partNo = GetUniquePartNo();
             if (partNo != -1)
             {
-                string destinationFile = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.SLDPRT";
+                string destinationFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.SLDPRT";
                 CopyAsReadWrite(templateFile, destinationFile);
                 Debug.WriteLine($"   Created new {destinationFile} as {Path.GetFileNameWithoutExtension(destinationFile)}");
             }
@@ -727,7 +728,7 @@ namespace FileTools
             int partNo = GetUniquePartNo();
             if (partNo != -1)
             {
-                string destinationFile = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.SLDASM";
+                string destinationFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.SLDASM";
                 CopyAsReadWrite(templateFile, destinationFile);
                 Debug.WriteLine($"   Created new {destinationFile} as {Path.GetFileNameWithoutExtension(destinationFile)}");
             }
@@ -739,8 +740,8 @@ namespace FileTools
 
             while (true)
             {
-                string desktopFile_Part = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.SLDPRT";
-                string desktopFile_Assembly = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{partNo}.SLDASM";
+                string desktopFile_Part = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.SLDPRT";
+                string desktopFile_Assembly = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.SLDASM";
 
                 if (!System.IO.File.Exists(desktopFile_Part) && !System.IO.File.Exists(desktopFile_Assembly))
                 {
@@ -971,7 +972,7 @@ namespace FileTools
         }
         private static bool TryCreateDrawing(out string desktopDrawing)
         {
-            string fileName = $"{Project}-{AssemblyNumber}{Bank}.SLDDRW";
+            string fileName = $"{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDDRW";
 
             string templateDrawing = $@"{TemplateFolderPath}\JOBNO-{AssemblyNumber}.SLDDRW";
             desktopDrawing = $@"{DesktopFolderPath}\{fileName}";
@@ -1001,13 +1002,13 @@ namespace FileTools
             string newReferenceASM;
             if (dynamicPartNo == null)
             {
-                newReferenceASM = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}.SLDASM";
+                newReferenceASM = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
             }
             else
             {
-                newReferenceASM = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{dynamicPartNo}.SLDASM";
+                newReferenceASM = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{dynamicPartNo}.SLDASM";
             }
-            string newReferencePRT = $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}-{dynamicPartNo}.SLDPRT";
+            string newReferencePRT = $@"{DesktopFolderPath}\{Default.Project} - {AssemblyNumber} {Default.Bank}-{dynamicPartNo}.SLDPRT";
             string newReference = System.IO.File.Exists(newReferenceASM) ? newReferenceASM : newReferencePRT;
 
             bool check = false;
@@ -1021,7 +1022,7 @@ namespace FileTools
                 Debug.WriteLine($"Exception when replacing reference: {ex.Message}");
             }
 
-            Debug.WriteLine($"   Replaced sheet reference to {Project}-{AssemblyNumber}{Bank}-{dynamicPartNo}: {check}");
+            Debug.WriteLine($"   Replaced sheet reference to {Default.Project}-{AssemblyNumber}{Default.Bank}-{dynamicPartNo}: {check}");
             if (check == false)
             {
                 bool check1 = System.IO.File.Exists(oldReference) ? true : false;
@@ -1050,7 +1051,7 @@ namespace FileTools
             IFeatureManager featureManager = modelDoc2.FeatureManager;
             featureManager.EnableFeatureTree = false;
 
-            SetProperty("DrawnBy", Initials, modelDoc2);
+            SetProperty("DrawnBy", Default.Initials, modelDoc2);
             SetProperty("DrawnDate", DateTime.Now.ToString("M/d/yyyy"), modelDoc2);
 
             return modelDoc2 as DrawingDoc;
@@ -1091,11 +1092,11 @@ namespace FileTools
         }
         private static void RenameSheet(string sheetName, string dynamicPartNo, DrawingDoc drawingDoc)
         {
-            string newName = $"{Project}-{AssemblyNumber}{Bank}-{dynamicPartNo}";
+            string newName = $"{Default.Project}-{AssemblyNumber}{Default.Bank}-{dynamicPartNo}";
             Sheet sheet = drawingDoc.Sheet[sheetName];
             sheet.SetName(newName);
 
-            Debug.WriteLine($"   Sheet {sheetName} has been renamed to {Project}-{AssemblyNumber}{Bank}-{dynamicPartNo}");
+            Debug.WriteLine($"   Sheet {sheetName} has been renamed to {Default.Project}-{AssemblyNumber}{Default.Bank}-{dynamicPartNo}");
         }
         private static void AddGrandChildren(ref List<IComponentInfo2> components, List<IComponentInfo2> grandChildren)
         {
@@ -1107,22 +1108,14 @@ namespace FileTools
 
 
         // Public properties
-        public static string DesktopFolderPath => $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)}\\{Project}-{AssemblyNumber}{Bank}";
-        public static char Bank { get; set; } = 'A';
-        public static string Project { get; set; } = "M000";
+        public static string DesktopFolderPath => $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)}\\{Default.Project}-{AssemblyNumber}{Default.Bank}";
         public static int AssemblyNumber { get; set; }
         public static string AssemblyDesc { get; set; }
         private static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
-        public static string Customer { get; set; } = "Customer";
-        public static string Client { get; set; } = "Client";
-        public static string Location { get; set; } = "Location";
-        public static string PurchaseOrder { get; set; } = "PurchaseOrder";
-        public static string ItemNumber { get; set; } = "ItemNumber";
-        public static string Initials { get; set; } = "Initials";
         public static Spec StaticMaterialSpec { get; set; } = Spec.A36;
         public static string TemplateFolderPath =>
                 $@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\{AssemblyDesc}";
         public static AssemblyDoc MainAssemblyDoc { get; set; }
-        public static string AssemblyPath => $@"{DesktopFolderPath}\{Project}-{AssemblyNumber}{Bank}.SLDASM";
+        public static string AssemblyPath => $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
     }
 }

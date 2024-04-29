@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using static Plenum.Plenum;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
+
 
 namespace Plenum.Helpers.Static
 {
@@ -30,7 +32,7 @@ namespace Plenum.Helpers.Static
             // Add in the skipped Johnson locations
             if (callerType == Design.Johnson && Fan_Count != 1)
             {
-                zTranslation = (Plenum_Length / 2) + Johnson.ExtraLength - ((Plenum_Length / Fan_Count) + Johnson.ExtraLength) / 2;
+                zTranslation = (Plenum_Length / 2) + Default.Johnson_ExtraLength - ((Plenum_Length / Fan_Count) + Default.Johnson_ExtraLength) / 2;
                 zList.Insert(0, zTranslation);
                 zList.Add(-zTranslation);
             }

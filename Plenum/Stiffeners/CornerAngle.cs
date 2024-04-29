@@ -11,6 +11,7 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -22,7 +23,7 @@ namespace Plenum
         {
             get
             {
-                double negateHole = PlenumColumn.Height + 1;
+                double negateHole = Default.PlenumColumn_Height + 1;
 
                 double holeToEdge = 1.25;
                 double lastHole = LocalLength - holeToEdge;
@@ -148,7 +149,7 @@ namespace Plenum
                         break;
                     case Design.Johnson:
                         xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
-                        zTranslation = Plenum_Length / 2 + Johnson.ExtraLength;
+                        zTranslation = Plenum_Length / 2 + Default.Johnson_ExtraLength;
                         xTranslation2 = -(Plenum_Width / 2 - Beam_Depth / 2);
                         zTranslation2 = -(Plenum_Length / 2);
                         break;

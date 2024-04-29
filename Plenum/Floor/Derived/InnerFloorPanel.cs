@@ -16,6 +16,7 @@ using static FileTools.FileTools;
 using Plenum.Walls;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Floor.Derived
 {
@@ -39,7 +40,7 @@ namespace Plenum.Floor.Derived
         protected override void EditDimensions_ColumnCut(ModelDoc2 modelDoc2)
         {
             mTools.EditDimension("Width", "sk:ColumnCut", Plenum_Width / 2, modelDoc2);
-            mTools.EditDimension("Length", "sk:ColumnCut", Plenum_Length / Fan_Count / 2 + (CallerType == Design.Johnson ? Johnson.ExtraLength/2 : 0), modelDoc2);
+            mTools.EditDimension("Length", "sk:ColumnCut", Plenum_Length / Fan_Count / 2 + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength / 2 : 0), modelDoc2);
 
             mTools.EditDimension("Depth", "sk:ColumnCut", Beam_Depth / 2 + mTools.AssemblyClearance, modelDoc2);
             mTools.EditDimension("FlangeWidth", "sk:ColumnCut", Beam_FlangeWidth / 2 + mTools.AssemblyClearance, modelDoc2);
@@ -117,7 +118,7 @@ namespace Plenum.Floor.Derived
                     calculatedLength = Plenum_Length / (Fan_Count * 2) - EndPanel_THK / 2 - DividerPanel.THK - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
                     break;
                 case Design.Johnson:
-                    calculatedLength = (Plenum_Length + Johnson.ExtraLength * 2) / (Fan_Count * 2) - DividerPanel.THK / 2 - DividerAngle.THK - bTools.GetBendRadius(DividerPanel.THK) - mTools.AssemblyClearance / 2;
+                    calculatedLength = (Plenum_Length + Default.Johnson_ExtraLength * 2) / (Fan_Count * 2) - DividerPanel.THK / 2 - DividerAngle.THK - bTools.GetBendRadius(DividerPanel.THK) - mTools.AssemblyClearance / 2;
                     break;
                 case Design.Legacy:
                     calculatedLength = Plenum_Length / (Fan_Count * 2) - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2 + (Fan_Count > 1 ? -DividerPanel.THK / 2 - DividerFlange.THK : 0);

@@ -3,19 +3,12 @@ using Structure.Braces.Derived;
 using Structure.Columns.Derived.Children;
 using static FileTools.FileTools;
 using static FileTools.CommonData.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Braces
 {
     internal abstract class AngleBrace : Part
     {
-        // Static properties
-        static public double Leg1 { get; set; } = 3;
-        static public double Leg2 { get; set; } = 3;
-        static public double Gage { get; set; } = 1.75;
-        static public double THK { get; set; } = 0.25;
-        static public double K { get; set; } = 0.5625;
-
-
         // Constructor
         protected AngleBrace(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
@@ -25,16 +18,16 @@ namespace Structure.Braces
         {
             EditDimension("Length", "L", (BraceType == "L" || BraceType == "LL") ? BraceL.LocalLength : BraceX.LocalLength);
             EditDimension("Diameter", "sk:Hole", HoleDiameter_Structural);
-            EditDimension("Leg1", "sk:L", Leg1);
-            EditDimension("Leg2", "sk:L", Leg2);
-            EditDimension("Gage", "sk:L", Gage);
-            EditDimension("THK", "sk:L", THK);
-            EditDimension("K", "sk:L", K);
+            EditDimension("Leg1", "sk:L", Default.AngleBrace_Leg1);
+            EditDimension("Leg2", "sk:L", Default.AngleBrace_Leg2);
+            EditDimension("Gage", "sk:L", Default.AngleBrace_Gage);
+            EditDimension("THK", "sk:L", Default.AngleBrace_THK);
+            EditDimension("K", "sk:L", Default.AngleBrace_K);
         }
 
 
         // Property overrides
-        public override string SizeOrThickness => (Leg1 >= Leg2) ? $"{Leg1}x{Leg2}x{THK}" : $"{Leg2}x{Leg1}x{THK}";
+        public override string SizeOrThickness => (Default.AngleBrace_Leg1 >= Default.AngleBrace_Leg2) ? $"{Default.AngleBrace_Leg1}x{Default.AngleBrace_Leg2}x{Default.AngleBrace_THK}" : $"{Default.AngleBrace_Leg2}x{Default.AngleBrace_Leg1}x{Default.AngleBrace_THK}";
         public override Shape RawMaterialShape => Shape.Angle;
     }
 }

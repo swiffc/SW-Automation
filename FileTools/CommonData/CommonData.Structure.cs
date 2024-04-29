@@ -10,28 +10,27 @@ namespace FileTools.CommonData
         // Footprint
         static public double Plenum_Width => Default.Plenum_Width;
         static public double Plenum_Length => Default.Plenum_Length;
-        static public double TotalColumnHeight { get; set; } = 120;
-        static private bool _midColumns = true;
+        static public double TotalColumnHeight => Default.TotalColumnHeight;
         #region MidColumn rules
 
         static public bool Mid_Columns
         {
-            get => Fan_Count != 1 && _midColumns;
+            get => Fan_Count != 1 && Default.Mid_Columns;
             set => MidColumnsInternal = value;
         }
         static private bool MidColumnsInternal
         {
-            get => _midColumns;
-            set => _midColumns = value;
+            get => Default.Mid_Columns;
+            set => Default.Mid_Columns = value;
         }
-        static public double BasePlate_THK { get; set; } = 0.5;
 
         #endregion
-
+        static public double BasePlate_THK { get; set; } = 0.5;
 
         // Beams
         public static string Beam_Size => Default.Beam_Size;
         static public bool Beams_AreRotated => Default.Beams_AreRotated;
+        // this is how i want my is-else statemnets set up
         public static double Beam_Depth
         {
             get
@@ -39,55 +38,71 @@ namespace FileTools.CommonData
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
                 {
                     Default.Beam_Depth = wShape.Depth;
-                    Default.Save();
-                    return Default.Beam_Depth;
                 }
                 else
                 {
                     Default.Beam_Depth = 6;
-                    Default.Save();
-                    return Default.Beam_Depth;
                 }
+                return Default.Beam_Depth;
             }
             set
             {
                 Default.Beam_Depth = value;
             }
         }
-
         public static double Beam_WebTHK
         {
             get
             {
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.WebTHK;
-                return 0.25;
+                {
+                    Default.Beam_WebTHK = wShape.WebTHK;
+                }
+                else
+                {
+                    Default.Beam_WebTHK = 0.25;
+                }
+                return Default.Beam_WebTHK;
             }
             set
             {
                 Default.Beam_WebTHK = value;
             }
         }
+
         public static double Beam_FlangeWidth
         {
             get
             {
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.FlangeWidth;
-                return 6;
+                {
+                    Default.Beam_FlangeWidth = wShape.FlangeWidth;
+                }
+                else
+                {
+                    Default.Beam_FlangeWidth = 6;
+                }
+                return Default.Beam_FlangeWidth;
             }
             set
             {
                 Default.Beam_FlangeWidth = value;
             }
         }
+
         public static double Beam_FlangeTHK
         {
             get
             {
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.FlgTHK;
-                return 0.25;
+                {
+                    Default.Beam_FlangeTHK = wShape.FlgTHK;
+                }
+                else
+                {
+                    Default.Beam_FlangeTHK = 0.25;
+                }
+                return Default.Beam_FlangeTHK;
             }
             set
             {
@@ -99,89 +114,77 @@ namespace FileTools.CommonData
             get
             {
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.K;
-                return 0.625;
+                {
+                    Default.Beam_K = wShape.K;
+                }
+                else
+                {
+                    Default.Beam_K = 0.625;
+                }
+                return Default.Beam_K;
             }
             set
             {
                 Default.Beam_K = value;
             }
         }
+
         public static double Beam_K1
         {
             get
             {
                 if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.K1;
-                return 0.375;
+                {
+                    Default.Beam_K1 = wShape.K1;
+                }
+                else
+                {
+                    Default.Beam_K1 = 0.375;
+                }
+                return Default.Beam_K1;
             }
             set
             {
                 Default.Beam_K1 = value;
             }
         }
-        public static double Beam_FlangeGage
-        {
-            get
-            {
-                if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.FlangeGage;
-                return 3.5;
-            }
-            set
-            {
-                Default.Beam_FlangeGage = value;
-            }
-        }
-        public static double Beam_WebGage
-        {
-            get
-            {
-                if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
-                    return wShape.WebGage;
-                return 2.25;
-            }
-            set
-            {
-                Default.Beam_WebGage = value;
-            }
-        }
+
+
+
 
 
 
         // WT Size
-        static public string WT_Size { get; set; } = "WT2x6.5";
-        static public double WT_Depth { get; set; } = 2.125;
-        static public double WT_StemTHK { get; set; } = 0.25;
-        static public double WT_FlangeWidth { get; set; } = 4;
-        static public double WT_FlangeTHK { get; set; } = 0.375;
-        static public double WT_K { get; set; } = 0.6875;
-        static public double WT_K1 { get; set; } = 0.4375;
-        static public double WT_FlangeGage { get; set; } = 2.25;
+        static public double WT_Depth => Default.WT_Depth;
+        static public double WT_StemTHK => Default.WT_StemTHK;
+        static public double WT_FlangeWidth => Default.WT_FlangeWidth;
+        static public double WT_FlangeTHK => Default.WT_FlangeTHK;
+        static public double WT_K => Default.WT_K;
+        static public double WT_K1 => Default.WT_K1;
+        static public double WT_FlangeGage => Default.WT_FlangeGage;
 
 
         // Bracing
         static public double ClipHeight { get; set; } = 20;
-        private static string _braceType = "L";
         #region BraceType Rules
 
         public static string BraceType
         {
             get
             {
-                return _braceType;
+                return Default.BraceType;
             }
             set
             {
                 if (value == "L" || value == "LL" || value == "T" || value == "X" || value == "TX")
-                    _braceType = value;
+                    Default.BraceType = value;
                 else
-                    _braceType = "L";
+                    Default.BraceType = "L";
             }
         }
 
         #endregion
-        static public double BraceAngle { get; set; } = 10;
+        static public double BraceAngle => Default.BraceAngle;
         static public double HoleToEnd { get; set; } = 1.125;
         public static double ColumnBoundsToHole => 2.0;
         public static double PlenumBoundsToHole => 2.5;

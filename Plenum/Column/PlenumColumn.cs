@@ -15,7 +15,6 @@ namespace Plenum
         public static bool Enabled { get; set; } = true;
         // Static properties
         internal static string Size { get; set; } = "W6x15";
-        private static double? _height; // user input
 
 
         // Constructor
@@ -50,22 +49,5 @@ namespace Plenum
         // Children
         internal CapPlate Plate { get; set; }
         internal JohnsonTopPlate JohnsonTopPlate { get; set; }
-
-
-        // Internal properties
-        internal static double Height
-        {
-            get
-            {
-                double minimumHeight = Plenum_Depth + 6;
-                if (!_height.HasValue || _height <= minimumHeight)
-                    _height = minimumHeight;
-                return (double)_height;
-            }
-            set
-            {
-                _height = value;
-            }
-        }
     }
 }

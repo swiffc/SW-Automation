@@ -15,6 +15,7 @@ using Plenum.Helpers.Static;
 using System.Diagnostics;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Floor.Derived.Derived
 {
@@ -115,10 +116,10 @@ namespace Plenum.Floor.Derived.Derived
                 case Design.Johnson:
                     if (Fan_Count == 1)
                     {
-                        calculatedLength = Plenum_Length / Fan_Count / 2 + Johnson.ExtraLength - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
+                        calculatedLength = Plenum_Length / Fan_Count / 2 + Default.Johnson_ExtraLength - bTools.GetBendRadius(EndPanel_THK) - mTools.AssemblyClearance / 2;
                         break;
                     }
-                    calculatedLength = (Plenum_Length / Fan_Count + Johnson.ExtraLength) / 2 - bTools.GetBendRadius(EndPanel_THK);
+                    calculatedLength = (Plenum_Length / Fan_Count + Default.Johnson_ExtraLength) / 2 - bTools.GetBendRadius(EndPanel_THK);
                     break;
                 case Design.Legacy:
                     calculatedLength = Plenum_Length / (Fan_Count * 2) - bTools.GetBendRadius(EndPanel_THK);

@@ -8,6 +8,7 @@ using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -175,7 +176,7 @@ namespace Plenum
                 mTools.EditDimension("Hole2", "sk:FlangeHole", CornerAngle.HolePositions[8] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole3", "sk:FlangeHole", CornerAngle.HolePositions[9] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole4", "sk:FlangeHole", CornerAngle.HolePositions[10] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
-                mTools.EditDimension("Hole5", "sk:FlangeHole", PlenumColumn.Height + 1, modelDoc2);
+                mTools.EditDimension("Hole5", "sk:FlangeHole", Default.PlenumColumn_Height + 1, modelDoc2);
 
                 mTools.EditDimension("Gage", "sk:FlangeHole2", DividerAngle.ShortGauge + EndPanel_THK / 2, modelDoc2);
 
@@ -238,11 +239,11 @@ namespace Plenum
             {
                 if (CallerType == Design.Johnson)
                 {
-                    return PlenumColumn.Height - CapPlate.THK - 0.5;
+                    return Default.PlenumColumn_Height - CapPlate.THK - 0.5;
                 }
                 else
                 {
-                    return PlenumColumn.Height - CapPlate.THK;
+                    return Default.PlenumColumn_Height - CapPlate.THK;
                 }
             }
         }

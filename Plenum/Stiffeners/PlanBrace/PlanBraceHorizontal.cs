@@ -13,6 +13,7 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Stiffeners
 {
@@ -72,7 +73,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                double length = Plenum_Length + (PlenumDesign == Design.Johnson ? Johnson.ExtraLength : 0) * 2;
+                double length = Plenum_Length + (PlenumDesign == Design.Johnson ? Default.Johnson_ExtraLength : 0) * 2;
                 return length / Fan_Count / 3;
             }
         }

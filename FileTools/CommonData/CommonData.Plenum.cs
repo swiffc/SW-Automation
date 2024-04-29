@@ -11,16 +11,15 @@ namespace FileTools.CommonData
     public static partial class CommonData
     {
         // Plenum
-        private static int _fanCount = 2;
         static public int Fan_Count
         #region FanCount rules
         {
-            get => _fanCount;
+            get => Default.Fan_Count;
             set
             {
-                if (value != _fanCount)
+                if (value != Default.Fan_Count)
                 {
-                    _fanCount = value >= 1 ? value : 1;
+                    Default.Fan_Count = value >= 1 ? value : 1;
                     OnFanCountChanged?.Invoke();
                 }
             }
@@ -29,7 +28,7 @@ namespace FileTools.CommonData
         public static event PropertyChangeHandler OnFanCountChanged;
 
         #endregion
-        static public double Plenum_Depth { get; set; } = 36;
+        static public double Plenum_Depth => Default.Plenum_Depth;
         static public double BottomOfPlenumToClipHole { get; set; } = 2.5;
         static public double EndPanel_THK => Default.EndPanel_THK;
         static public double SidePanel_THK => Default.SidePanel_THK;
@@ -46,7 +45,6 @@ namespace FileTools.CommonData
             set
             {
                 Default.PlenumDesignSetting = value.ToString();
-                Default.Save(); 
             }
         }
         public static Spec MaterialSpec
@@ -62,13 +60,48 @@ namespace FileTools.CommonData
             set
             {
                 Default.MaterialSpecSetting = value.ToString();
-                Default.Save();
             }
         }
-
-
-
-
+        public static double PlenumColumn_Height
+        {
+            get
+            {
+                double minimumHeight = Plenum_Depth + 6;
+                if (Default.PlenumColumn_Height <= minimumHeight)
+                    Default.PlenumColumn_Height = minimumHeight;
+                return Default.PlenumColumn_Height;
+            }
+            set
+            {
+                double minimumHeight = Plenum_Depth + 6;
+                if (Default.PlenumColumn_Height <= minimumHeight)
+                    Default.PlenumColumn_Height = minimumHeight;
+                Default.PlenumColumn_Height = value;
+            }
+        }
+        public static double Johnson_ExtraLength
+        {
+            get
+            {
+                if (Default.Johnson_ExtraLength < MinimumExtraLength)
+                {
+                    return MinimumExtraLength;
+                }
+                return Default.Johnson_ExtraLength;
+            }
+            set
+            {
+                if (value < MinimumExtraLength)
+                {
+                    Default.Johnson_ExtraLength = MinimumExtraLength;
+                }
+                else
+                {
+                    Default.Johnson_ExtraLength = value;
+                }
+            }
+        }
+        private static double MinimumExtraLength = 12;
 
         public enum Design
         {

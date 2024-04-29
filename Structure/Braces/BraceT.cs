@@ -66,7 +66,7 @@ namespace Structure.Braces
         public override bool Enabled => new[] { "T", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "131T";
         public override Shape RawMaterialShape => Shape.Tee;
-        public override string SizeOrThickness => WT_Size;
+        public override string SizeOrThickness => "WT";
         public override List<PositionData> Position
         {
             get
