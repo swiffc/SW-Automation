@@ -46,6 +46,83 @@ namespace Plenum.Structure
         }
 
 
+        // Private methods
+        private List<PositionData> StandardClips()
+        {
+            KneeClipBent.GetWidth(out _, out double holeToPlateCenter);
+            double yTranslation = -Plenum_Depth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
+
+            double xTranslation = -Plenum_Width / 2 + ColumnCenterToPlenumEndClipHole() + holeToPlateCenter;
+            double zTranslation = Plenum_Length / 2 + Beam_Depth / 2;
+
+            return new List<PositionData>
+            {
+                PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation),
+                PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation),
+
+                PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180),
+                PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180),
+            };
+        }
+        private List<PositionData> LegacyAndJohnsonClips()
+        {
+            KneeClipBent.GetWidth(out _, out double holeToPlateCenter);
+            double yTranslation = -Plenum_Depth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
+
+            double xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
+            double zTranslation = Plenum_Length / 2 - ColumnCenterToPlenumSideClipHole() - holeToPlateCenter;
+
+            var pos = new List<PositionData>
+            {
+                PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rY: -90),
+                PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -zTranslation, rY: -90),
+
+                PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation, rY: 90),
+                PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 90),
+            };
+
+            if (BraceType.Contains("L"))
+            {
+                CenterPanelClips(ref pos);
+
+                if (Mid_Columns)
+                {
+                    for (int i = 0; i < Fan_Count - 1; i++)
+                    {
+                        double z = zTranslation;
+                        z -= Plenum_Length / Fan_Count;
+                        pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z, rY: -90));
+                        pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -z, rY: -90));
+                    }
+
+                    for (int i = 0; i < Fan_Count - 1; i++)
+                    {
+                        double z = zTranslation;
+                        z -= Plenum_Length / Fan_Count;
+                        pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: 90));
+                        pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -z, rY: 90));
+                    }
+                }
+            }
+
+            return pos;
+        }
+        private void CenterPanelClips(ref List<PositionData> pos)
+        {
+            double xTranslation = Plenum_Width / 2 - ColumnCenterToPlenumEndClipHole();
+            double yTranslation = -Plenum_Depth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
+            double zTranslation = Plenum_Length / 2;
+
+            for (int i = 1; i < Fan_Count; i++)
+            {
+                double z = zTranslation + EndPanel_THK/2;
+                z -= Plenum_Length / Fan_Count;
+                pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z, rY: 180));
+                pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: 180));
+            }
+        }
+
+
         // Property overrides
         public override string StaticPartNo => "140";
         public override RawMaterial Shape => RawMaterial.Plate;
@@ -55,58 +132,14 @@ namespace Plenum.Structure
         {
             get
             {
-                KneeClipBent.GetWidth(out _, out double holeToPlateCenter);
-                double yTranslation = -Plenum_Depth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
+                List<PositionData> pos = null;
 
                 if (PlenumDesign == Design.Standard)
-                {
-                    double xTranslation = -Plenum_Width / 2 + ColumnCenterToPlenumEndClipHole() + holeToPlateCenter;
-                    double zTranslation = Plenum_Length / 2 + Beam_Depth / 2;
+                    pos = StandardClips();
+                else 
+                    pos = LegacyAndJohnsonClips();
 
-                    return new List<PositionData>
-                    {
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation),
-                        PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation),
-
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180),
-                        PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 180),
-                    };
-                }
-                else // Legacy
-                {
-                    double xTranslation = Plenum_Width/2 + Beam_Depth/2 - Beam_FlangeTHK - SidePanel_THK;
-                    double zTranslation = Plenum_Length/2 - ColumnCenterToPlenumSideClipHole() - holeToPlateCenter;
-
-                    var pos =  new List<PositionData>
-                    {
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rY: -90),
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -zTranslation, rY: -90),
-
-                        PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation, rY: 90),
-                        PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 90),
-                    };
-
-                    if (Mid_Columns && BraceType.Contains("L"))
-                    {
-                        for (int i = 0; i < Fan_Count - 1; i++)
-                        {
-                            double z = zTranslation;
-                            z -= Plenum_Length / Fan_Count;
-                            pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z, rY: -90));
-                            pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -z, rY: -90));
-                        }
-
-                        for (int i = 0; i < Fan_Count - 1; i++)
-                        {
-                            double z = zTranslation;
-                            z -= Plenum_Length / Fan_Count;
-                            pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: 90));
-                            pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -z, rY: 90));
-                        }
-                    }
-
-                    return pos;
-                }
+                return pos;
             }
         }
 

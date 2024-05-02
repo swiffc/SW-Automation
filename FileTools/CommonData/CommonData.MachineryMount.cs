@@ -12,7 +12,7 @@ namespace FileTools.CommonData
     {
         // User inputs
         static public double MachineryMount_Height => Default.MachineryMount_Height;
-        static public double MachineryMount_Width { get; set; } = 36;
+        static public double MachineryMount_Width => Default.MachineryMount_Width;
         public static string MotorShaft_Orientation => Default.MotorShaft_Orientation;
 
 

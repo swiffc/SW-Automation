@@ -19,11 +19,21 @@ namespace FileTools.CommonData
 
         public static void UI_DoubleChanged(string textBoxText, Action<double> setProperty)
         {
-            if (double.TryParse(textBoxText, out double value))
+            bool saveIsEnabled = true;
+            if (textBoxText == "-" || textBoxText.EndsWith(".") || textBoxText.EndsWith(".0") || textBoxText.StartsWith("."))
+            {
+                saveIsEnabled = false;
+            }
+            else if (double.TryParse(textBoxText, out double value))
+            {
                 setProperty(value);
+            }
             else
+            {
                 setProperty(0.001);
-            SaveSettings();
+            }
+            if (saveIsEnabled)
+                SaveSettings();
         }
         public static void UI_IntChanged(string textBoxText, Action<int> setProperty)
         {
@@ -39,6 +49,11 @@ namespace FileTools.CommonData
         public static void UI_StringChanged(string textBoxText, Action<string> setProperty)
         {
             setProperty(textBoxText);
+            SaveSettings();
+        }
+        public static void UI_CharChanged(string textBoxText, Action<char> setProperty)
+        {
+            setProperty(textBoxText[0]);
             SaveSettings();
         }
     }

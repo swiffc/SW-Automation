@@ -54,7 +54,7 @@ namespace Plenum.Floor
                 mTools.EditDimension("FlangeTHK", "sk:ColumnCut", Beam_FlangeTHK / 2 + mTools.AssemblyClearance, modelDoc2);
             }
 
-
+            mTools.EditDimension("Rotate", "sk:ColumnCut", PlenumDesign == Design.Standard ? 0 : 90, modelDoc2);
 
         }
     }

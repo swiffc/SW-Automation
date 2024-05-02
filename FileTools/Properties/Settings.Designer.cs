@@ -301,18 +301,6 @@ namespace FileTools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double PlenumColumn_Height {
-            get {
-                return ((double)(this["PlenumColumn_Height"]));
-            }
-            set {
-                this["PlenumColumn_Height"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool MotorBeam_Required {
             get {
@@ -541,7 +529,7 @@ namespace FileTools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        [global::System.Configuration.DefaultSettingValueAttribute("54")]
         public double MachineryMount_Height {
             get {
                 return ((double)(this["MachineryMount_Height"]));
@@ -728,6 +716,54 @@ namespace FileTools.Properties {
             }
             set {
                 this["WT_FlangeGage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36")]
+        public double MachineryMount_Width {
+            get {
+                return ((double)(this["MachineryMount_Width"]));
+            }
+            set {
+                this["MachineryMount_Width"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ShippingBeam_Height {
+            get {
+                return ((double)(this["ShippingBeam_Height"]));
+            }
+            set {
+                this["ShippingBeam_Height"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        public double BasePlate_THK {
+            get {
+                return ((double)(this["BasePlate_THK"]));
+            }
+            set {
+                this["BasePlate_THK"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public double Clip_Height {
+            get {
+                return ((double)(this["Clip_Height"]));
+            }
+            set {
+                this["Clip_Height"] = value;
             }
         }
     }

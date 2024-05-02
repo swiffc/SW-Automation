@@ -40,6 +40,8 @@ namespace Plenum
                 double value = EndPanel_THK + bTable.GetBendRadius(EndPanel_THK) + FloorPanel.HoleToEdge1;
                 if (CallerType == Design.Legacy && Fan_Count > 1)
                     value += EndPanel_THK / 2 + EndPanel_THK;
+                if (CallerType == Design.Legacy)
+                    value -= EndPanel_THK;
                 return value;
             }
         }

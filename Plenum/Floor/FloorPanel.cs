@@ -44,9 +44,18 @@ namespace Plenum.Floor
         // Static methods
         internal static double GetWidth(Design callerType)
         {
-            return Plenum_Width / 2 - bTools.GetBendRadius(SidePanel_THK) - mTools.AssemblyClearance / 2 +
-                        (callerType == Design.Johnson ? Beam_Depth / 2 :
-                         callerType == Design.Legacy ? Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK : 0);
+            var value = Plenum_Width / 2 - bTools.GetBendRadius(SidePanel_THK) - mTools.AssemblyClearance / 2;
+
+            if (PlenumDesign == Design.Standard)
+                value -= SidePanel_THK;
+
+            else if (PlenumDesign == Design.Johnson)
+                value += Beam_Depth / 2;
+
+            else if (PlenumDesign == Design.Legacy)
+                value += Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
+
+            return value;
         }
 
 
@@ -100,7 +109,7 @@ namespace Plenum.Floor
             }
 
 
-            if (MotorShaft_Orientation.ToLower().Contains("Down"))
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
             {
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");
@@ -191,7 +200,7 @@ namespace Plenum.Floor
             {
                 mTools.EditDimension("Count", "sk:ShaftDownRadialHole", FanRing.RadialCount.ShaftDown, modelDoc2);
                 mTools.EditDimension("BoltCircleR", "sk:ShaftDownRadialHole", FanRing.Radius + 1.125, modelDoc2);
-                mTools.EditDimension("Angle", "sk:ShaftDownRadialHole", 360/ FanRing.RadialCount.ShaftDown/2, modelDoc2);
+                mTools.EditDimension("Angle", "sk:ShaftDownRadialHole", 360 / FanRing.RadialCount.ShaftDown / 2, modelDoc2);
             }
             else
             {
@@ -244,7 +253,7 @@ namespace Plenum.Floor
 
             double check = _fanDiameterFeet;
 
-            if (_fanDiameterFeet > 6 && Plenum_Width/2 - FanRing.Radius < 12)
+            if (_fanDiameterFeet > 6 && Plenum_Width / 2 - FanRing.Radius < 12)
             {
                 SpliceRequired = true;
                 panelLength -= FloorSplice.NominalLength / 2;

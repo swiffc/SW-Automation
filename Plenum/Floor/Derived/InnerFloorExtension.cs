@@ -49,7 +49,6 @@ namespace Plenum.Floor.Derived
             base.EditDimensions(modelDoc2);
 
             mTools.EditDimension("Length", "sk:Plate", NominalLength - mTools.AssemblyClearance / 2, modelDoc2);
-            mTools.EditDimension("Rotate", "sk:ColumnCut", CallerType == Design.Johnson ? 90 : 0, modelDoc2);
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {

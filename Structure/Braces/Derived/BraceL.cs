@@ -12,6 +12,7 @@ using System;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using FileTools;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Braces.Derived
 {
@@ -85,7 +86,7 @@ namespace Structure.Braces.Derived
 
             var sidePattern = PositionPatternZ(sidePositions, columnToColumn);
             var oppositeSidePattern = PositionPatternZ(oppositeSide, -columnToColumn);
-            var endPattern = PositionPatternZ(endPositions, columnToColumn);
+            var endPattern = PositionPatternZ(endPositions, columnToColumn, -Clip_THK/2);
 
             var pos = new List<PositionData>();
             pos.AddRange(sidePattern);
@@ -158,8 +159,7 @@ namespace Structure.Braces.Derived
 
             double xTranslation;
             double zTranslation;
-            string test = PlenumDesign.ToString();
-            if (PlenumDesign == Design.Standard)
+            if (!Default.Beams_AreRotated)
             {
                 xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
                 zTranslation = Length / 2 - Clip_THK / 2;
@@ -200,7 +200,7 @@ namespace Structure.Braces.Derived
 
             return pos;
         }
-        private static List<PositionData> PositionPatternZ(List<PositionData> referencePosition, double increment)
+        private static List<PositionData> PositionPatternZ(List<PositionData> referencePosition, double increment, double extraZ = 0)
         {
             var pos = new List<PositionData>();
 
@@ -211,7 +211,7 @@ namespace Structure.Braces.Derived
                     PositionData modifiedPos = new PositionData(
                         originalPos.TranslationX,
                         originalPos.TranslationY,
-                        originalPos.TranslationZ - increment * i,
+                        originalPos.TranslationZ - increment * i + extraZ,
                         originalPos.RotationX,
                         originalPos.RotationY,
                         originalPos.RotationZ

@@ -49,7 +49,7 @@ namespace Plenum
                 if (_position == null)
                 {
                     double yRotation = CallerType == Design.Legacy ? 90 : 0;
-                    return new List<PositionData> { PositionData.Create(tY: -Default.PlenumColumn_Height, rY: yRotation) };
+                    return new List<PositionData> { PositionData.Create(tY: -PlenumColumn_Height, rY: yRotation) };
                 }
                 return _position;
             }

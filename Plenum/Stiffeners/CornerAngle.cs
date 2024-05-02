@@ -23,7 +23,7 @@ namespace Plenum
         {
             get
             {
-                double negateHole = Default.PlenumColumn_Height + 1;
+                double negateHole =  + 1;
 
                 double holeToEdge = 1.25;
                 double lastHole = LocalLength - holeToEdge;
@@ -127,6 +127,9 @@ namespace Plenum
             mTools.EditDimension("Hole8", "sk:Hole6", HolePositions[8], modelDoc2);
             mTools.EditDimension("Hole9", "sk:Hole6", HolePositions[9], modelDoc2);
             mTools.EditDimension("Hole10", "sk:Hole6", HolePositions[10], modelDoc2);
+
+            mTools.EditDimension("Gage0", "sk:Hole0", PlenumDesign == Design.Standard ? Gauge - SidePanel_THK : Gauge, modelDoc2);
+            mTools.EditDimension("Gage6", "sk:Hole6", PlenumDesign == Design.Legacy ? Gauge - EndPanel_THK : Gauge, modelDoc2);
         }
 
 
@@ -138,33 +141,31 @@ namespace Plenum
 
                 double yTranslation = YTranslation;
                 double xTranslation, zTranslation;
-                double xTranslation2;
                 double zTranslation2;
 
                 switch (CallerType)
                 {
                     case Design.Standard:
-                        xTranslation = xTranslation2 = Plenum_Width / 2;
+                        xTranslation = Plenum_Width / 2 - SidePanel_THK;
                         zTranslation = zTranslation2 = Plenum_Length / 2 - Beam_Depth / 2;
                         break;
                     case Design.Johnson:
                         xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
                         zTranslation = Plenum_Length / 2 + Default.Johnson_ExtraLength;
-                        xTranslation2 = -(Plenum_Width / 2 - Beam_Depth / 2);
                         zTranslation2 = -(Plenum_Length / 2);
                         break;
                     case Design.Legacy:
-                        xTranslation = xTranslation2 = Plenum_Width / 2 - Beam_Depth / 2;
-                        zTranslation = zTranslation2 = Plenum_Length / 2;
+                        xTranslation = Plenum_Width / 2 - Beam_Depth / 2;
+                        zTranslation = zTranslation2 = Plenum_Length / 2 - EndPanel_THK;
                         break;
                     default:
                         xTranslation = 0;
                         zTranslation = 0;
-                        xTranslation2 = 0;
                         zTranslation2 = 0;
                         break;
                 }
 
+                // Corners
                 _position = new List<PositionData>
                     {
                         PositionData.Create(tX: xTranslation, tY: -yTranslation, tZ: zTranslation),
@@ -173,12 +174,8 @@ namespace Plenum
                         PositionData.Create(tX: -xTranslation, tY: -yTranslation, tZ: -zTranslation, rY: 180)
                     };
 
-                xTranslation = Plenum_Width / 2;
-
                 if (!Mid_Columns)
-                    xTranslation += Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
-
-                xTranslation2 = xTranslation;
+                    xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
 
                 if (Fan_Count > 1 && Mid_Columns)
                 {
@@ -187,10 +184,10 @@ namespace Plenum
                         double zOffset = i * (Plenum_Length / Fan_Count);
                         if (CallerType == Design.Standard)
                         {
-                            _position.Add(PositionData.Create(tX: xTranslation2, tY: -yTranslation, tZ: zTranslation2 - zOffset));
-                            _position.Add(PositionData.Create(tX: -xTranslation2, tY: -yTranslation - LocalLength, tZ: zTranslation2 - zOffset, rZ: 180));
-                            _position.Add(PositionData.Create(tX: xTranslation2, tY: -yTranslation - LocalLength, tZ: -(zTranslation2 - zOffset), rX: 180));
-                            _position.Add(PositionData.Create(tX: -xTranslation2, tY: -yTranslation, tZ: -(zTranslation2 - zOffset), rY: 180));
+                            _position.Add(PositionData.Create(tX: xTranslation, tY: -yTranslation, tZ: zTranslation2 - zOffset));
+                            _position.Add(PositionData.Create(tX: -xTranslation, tY: -yTranslation - LocalLength, tZ: zTranslation2 - zOffset, rZ: 180));
+                            _position.Add(PositionData.Create(tX: xTranslation, tY: -yTranslation - LocalLength, tZ: -(zTranslation2 - zOffset), rX: 180));
+                            _position.Add(PositionData.Create(tX: -xTranslation, tY: -yTranslation, tZ: -(zTranslation2 - zOffset), rY: 180));
                         }
 
                     }

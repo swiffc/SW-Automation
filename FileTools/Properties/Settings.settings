@@ -71,9 +71,6 @@
     <Setting Name="Beam_WebGage" Type="System.Double" Scope="User">
       <Value Profile="(Default)">2.25</Value>
     </Setting>
-    <Setting Name="PlenumColumn_Height" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
     <Setting Name="MotorBeam_Required" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -132,7 +129,7 @@
       <Value Profile="(Default)">0.8125</Value>
     </Setting>
     <Setting Name="MachineryMount_Height" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">6</Value>
+      <Value Profile="(Default)">54</Value>
     </Setting>
     <Setting Name="BraceType" Type="System.String" Scope="User">
       <Value Profile="(Default)">L</Value>
@@ -178,6 +175,18 @@
     </Setting>
     <Setting Name="WT_FlangeGage" Type="System.Double" Scope="User">
       <Value Profile="(Default)">2.25</Value>
+    </Setting>
+    <Setting Name="MachineryMount_Width" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">36</Value>
+    </Setting>
+    <Setting Name="ShippingBeam_Height" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BasePlate_THK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="Clip_Height" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">20</Value>
     </Setting>
   </Settings>
 </SettingsFile>

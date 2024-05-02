@@ -70,7 +70,6 @@ namespace Plenum
             txt_RingDepth.Text = Default.FanRing_Depth.ToString();
 
             checkBox1_MTRBeam.Checked = Default.MotorBeam_Required;
-            textBox1_columnLength.Text = PlenumColumn_Height.ToString();
 
             comboBox1_driveDesign.Text = Default.MotorShaft_Orientation.ToString();
 
@@ -85,6 +84,18 @@ namespace Plenum
             checkBox2_dwg.Checked = Default.Toggle_CreateDrawing;
             checkBox3_save.Checked = Default.Toggle_Save;
             checkBox4_delete.Checked = Default.Toggle_DeleteFiles;
+
+            textBox_Bank.Text = Default.Bank.ToString();
+            comboBox_BraceType.Text = Default.BraceType.ToString();
+            textBox_BraceAngle.Text = Default.BraceAngle.ToString();
+            textBox_DriveWidth.Text = Default.MachineryMount_Width.ToString();
+            textBoxShipBeamHeight.Text = Default.ShippingBeam_Height.ToString();
+            textBox_ClipHeight.Text = Default.Clip_Height.ToString();
+
+            textBox_TotalColumnHeight.Text = Default.TotalColumnHeight.ToString();
+            mmHeight_Box.Text = Default.MachineryMount_Height.ToString();
+            clipTHK_Box.Text = Default.Clip_THK.ToString();
+            braceHoleDiameter_Box.Text = Default.HoleDiameter_Structural.ToString();
 
             isUserChange = true;
         }
@@ -280,11 +291,6 @@ namespace Plenum
             UI_DoubleChanged(txt_RingDepth.Text, x => Default.FanRing_Depth = x);
         }
 
-        private void textBox1_columnLength_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(textBox1_columnLength.Text, x => Default.PlenumColumn_Height = x);
-        }
-
         private void button1_save_Click(object sender, EventArgs e)
         {
             mTools.SaveEverything();
@@ -359,6 +365,67 @@ namespace Plenum
         private void button1_Click(object sender, EventArgs e)
         {
             mTools.Unlock();
+        }
+
+        private void textBox_Bank_TextChanged(object sender, EventArgs e)
+        {
+            UI_CharChanged(textBox_Bank.Text, x => Default.Bank = x);
+        }
+
+        private void comboBox_BraceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(comboBox_BraceType.Text, x => Default.BraceType = x);
+        }
+
+        private void textBox_BraceAngle_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_BraceAngle.Text, x => Default.BraceAngle = x);
+        }
+
+        private void textBox_DriveWidth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_DriveWidth.Text, x => Default.MachineryMount_Width = x);
+        }
+
+        private void textBoxShipBeamHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBoxShipBeamHeight.Text, x => Default.ShippingBeam_Height = x);
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_ClipHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_ClipHeight.Text, x => Default.Clip_Height = x);
+
+        }
+
+        private void textBox_TotalColumnHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_TotalColumnHeight.Text, x => Default.TotalColumnHeight = x);
+        }
+
+        private void mmHeight_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(mmHeight_Box.Text, x => Default.MachineryMount_Height = x);
+        }
+
+        private void clipTHK_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(clipTHK_Box.Text, x => Default.Clip_THK = x);
+        }
+
+        private void braceHoleDiameter_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(braceHoleDiameter_Box.Text, x => Default.HoleDiameter_Structural = x);
         }
     }
 }

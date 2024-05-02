@@ -55,6 +55,7 @@ namespace Structure
 
             #region Job_Load
 
+            textBox_Bank.Text = Default.Bank.ToString();
             job_Box.Text = Default.Project;
             customer_Box.Text = Default.Customer;
             client_Box.Text = Default.Client;
@@ -78,6 +79,7 @@ namespace Structure
             textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
             textBox_K.Text = Default.Beam_K.ToString();
             textBox_K1.Text = Default.Beam_K1.ToString();
+            materialCombo.Text = Default.MaterialSpecSetting.ToString();
 
             #endregion
             #region BasePlate_Load
@@ -87,6 +89,7 @@ namespace Structure
             wSPA_Box.Text = Default.BasePlate_WidthHoleSpacing.ToString();
             lSPA_Box.Text = Default.BasePlate_LengthHoleSpacing.ToString();
             dia_Box.Text = Default.BasePlate_HoleDiameter.ToString();
+            textBox_BasePlateTHK.Text = Default.BasePlate_THK.ToString();
 
             #endregion
             #region Plenum_Load
@@ -98,6 +101,7 @@ namespace Structure
             #region MachineryMount_Load
 
             mmHeight_Box.Text = Default.MachineryMount_Height.ToString();
+            textBox_DriveWidth.Text = Default.MachineryMount_Width.ToString();
 
             #endregion
             #region Brace_Load
@@ -107,6 +111,7 @@ namespace Structure
             clipTHK_Box.Text = Default.Clip_THK.ToString();
             braceHoleDiameter_Box.Text = Default.HoleDiameter_Structural.ToString();
             braceAngle_Box.Text = Default.BraceAngle.ToString();
+            textBox_ClipHeight.Text = Default.Clip_Height.ToString();
 
             #endregion
             #region Toggles_Load
@@ -114,6 +119,11 @@ namespace Structure
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
             save_Toggle.Checked = Default.Toggle_Save;
             delete_Toggle.Checked = Default.Toggle_DeleteFiles;
+
+            #endregion
+            #region ShipBeam_Load
+
+            textBoxShipBeamHeight.Text = Default.ShippingBeam_Height.ToString();
 
             #endregion
 
@@ -125,6 +135,10 @@ namespace Structure
         }
         #region Job_Changed
 
+        private void textBox_Bank_TextChanged(object sender, EventArgs e)
+        {
+            UI_CharChanged(textBox_Bank.Text, x => Default.Bank = x);
+        }
         private void job_Box_TextChanged(object sender, EventArgs e)
         {
             UI_StringChanged(job_Box.Text, x => Default.Project = x);
@@ -220,7 +234,7 @@ namespace Structure
                 UI_DoubleChanged(textBox_Depth.Text, x => Default.Beam_Depth = x);
                 Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
-            
+
         }
 
         private void textBox_WebTHK_TextChanged(object sender, EventArgs e)
@@ -267,6 +281,11 @@ namespace Structure
                 Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
+        private void materialCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(materialCombo.Text, x => Default.MaterialSpecSetting = x);
+        }
+
 
         #endregion
         #region BasePlate_Changed
@@ -295,6 +314,10 @@ namespace Structure
         {
             UI_DoubleChanged(dia_Box.Text, x => Default.BasePlate_HoleDiameter = x);
         }
+        private void textBox_BasePlateTHK_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_BasePlateTHK.Text, x => Default.BasePlate_THK = x);
+        }
 
         #endregion
         #region Plenum_Changed
@@ -316,10 +339,13 @@ namespace Structure
         {
             UI_DoubleChanged(mmHeight_Box.Text, x => Default.MachineryMount_Height = x);
         }
-
+        private void textBox_DriveWidth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_DriveWidth.Text, x => Default.MachineryMount_Width = x);
+        }
 
         #endregion
-        #region Braced_Changed
+        #region Brace_Changed
 
         // General
         private void braceType_Box_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -371,7 +397,7 @@ namespace Structure
                     break;
 
                 default:
-                    SetTextBoxesState(wtBoxes, false); 
+                    SetTextBoxesState(wtBoxes, false);
                     SetTextBoxesState(lBoxes, false);
                     PopulateL();
                     PopulateWT();
@@ -380,7 +406,7 @@ namespace Structure
         }
         private void clipTHK_Box_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(clipTHK_Box.Text, x => Default.Clip_THK = x);    
+            UI_DoubleChanged(clipTHK_Box.Text, x => Default.Clip_THK = x);
         }
         private void braceHoleDiameter_Box_TextChanged_1(object sender, EventArgs e)
         {
@@ -389,6 +415,10 @@ namespace Structure
         private void braceAngle_Box_TextChanged_1(object sender, EventArgs e)
         {
             UI_DoubleChanged(braceAngle_Box.Text, x => Default.BraceAngle = x);
+        }
+        private void textBox_ClipHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_ClipHeight.Text, x => Default.Clip_Height = x);
         }
 
 
@@ -464,8 +494,25 @@ namespace Structure
             UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
         }
 
+
+
+
+
+
+
+        #endregion
+        #region ShipBeam_Changed
+
+        private void textBoxShipBeamHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBoxShipBeamHeight.Text, x => Default.ShippingBeam_Height = x);
+        }
+
         #endregion
 
+        private void label50_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

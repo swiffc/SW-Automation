@@ -27,6 +27,13 @@ namespace Plenum.Structure
         public WallStiffener(Design callerType) : base(callerType) { }
 
 
+        // Method overrides
+        protected override void EditDimensions(ModelDoc2 modelDoc2)
+        {
+            EditDimension("Length", "L", CornerAngle.LocalLength, modelDoc2);
+        }
+
+
         // Private methods
         private void AddEndStiffenersAtBraceClips(ref List<PositionData> pos)
         {
@@ -42,6 +49,19 @@ namespace Plenum.Structure
                 PositionData.Create(tX: -xTranslation, tY: YTranslation_AllBraces, tZ: -ZTranslation_EndPanelBrace, rY: 180, rZ: 180),
             };
             pos.AddRange(endBraceStiffeners);
+        }
+        private void AddDividerStiffenersAtBraceClips(ref List<PositionData> pos)
+        {
+            double bentClipWidth = KneeClipBent.GetWidth(out _, out double holeToPlateCenter);
+            double xTranslation = -Plenum_Width / 2 + ColumnCenterToPlenumEndClipHole() + holeToPlateCenter + bentClipWidth / 2 + Clearance;
+            double z = Plenum_Length / 2 + DividerPanel.THK;
+
+            for (int i = 1; i < Fan_Count; i++)
+            {
+                z -= Plenum_Length / Fan_Count;
+                pos.Add(PositionData.Create(tX: xTranslation, tY: YTranslation_AllBraces, tZ: z, rY: 180));
+                pos.Add(PositionData.Create(tX: -xTranslation, tY: YTranslation_AllBraces, tZ: z, rY: 180, rZ: 180));
+            }
         }
         private void AddEndStiffenersEvenlySpread(ref List<PositionData> pos)
         {
@@ -129,7 +149,22 @@ namespace Plenum.Structure
         // Private properties
         private double XTranslation_SidePanelBrace => SidePanel.CalculateXTranslation() - SidePanel_THK;
         private double YTranslation_AllBraces => -Plenum_Depth / 2;
-        private double ZTranslation_EndPanelBrace => Plenum_Length / 2 + Beam_Depth / 2;
+        private double ZTranslation_EndPanelBrace
+        {
+            get
+            {
+                switch (PlenumDesign)
+                {
+                    case Design.Standard:
+                        return Plenum_Length / 2 + Beam_Depth / 2;
+                    case Design.Johnson:
+                        return Plenum_Length / 2;
+                    case Design.Legacy:
+                        return Plenum_Length / 2 - EndPanel_THK;
+                }
+                throw new NotImplementedException();
+            }
+        }
         private double Clearance => 0.5;
 
 
@@ -150,6 +185,7 @@ namespace Plenum.Structure
                 {
                     AddEndStiffenersAtBraceClips(ref pos);
                     AddSideStiffenersAtBraceClips(ref pos);
+                    AddDividerStiffenersAtBraceClips(ref pos);
                 }
                 else
                     AddEndStiffenersEvenlySpread(ref pos);

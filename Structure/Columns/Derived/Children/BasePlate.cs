@@ -3,19 +3,12 @@ using ModelTools;
 using SolidWorks.Interop.sldworks;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Columns.Derived.Children
 {
     internal class BasePlate : Part
     {
-        // Static properties
-        internal static double BasePlate_Width { get; set; } = 8;
-        internal static double BasePlate_Length { get; set; } = 8;
-        internal static double BasePlate_WidthHoleSpacing { get; set; } = 3.5;
-        internal static double BasePlate_LengthHoleSpacing { get; set; } = 3.5;
-        internal static double BasePlate_HoleDiameter { get; set; } = 0.8125;
-
-
         // Constructor
         public BasePlate(SubAssembly parentAssembly) : base(parentAssembly) { }
 
@@ -23,13 +16,13 @@ namespace Structure.Columns.Derived.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Width", "sk:Plate", BasePlate_Width);
-            EditDimension("Length", "sk:Plate", BasePlate_Length);
+            EditDimension("Width", "sk:Plate", Default.BasePlate_Width);
+            EditDimension("Length", "sk:Plate", Default.BasePlate_Length);
             EditDimension("THK", "Plate", BasePlate_THK);
 
-            EditDimension("Diameter", "sk:Hole", BasePlate_HoleDiameter);
-            EditDimension("WidthSpacing", "sk:Hole", BasePlate_WidthHoleSpacing);
-            EditDimension("LengthSpacing", "sk:Hole", BasePlate_LengthHoleSpacing);
+            EditDimension("Diameter", "sk:Hole", Default.BasePlate_HoleDiameter);
+            EditDimension("WidthSpacing", "sk:Hole", Default.BasePlate_WidthHoleSpacing);
+            EditDimension("LengthSpacing", "sk:Hole", Default.BasePlate_LengthHoleSpacing);
         }
 
 

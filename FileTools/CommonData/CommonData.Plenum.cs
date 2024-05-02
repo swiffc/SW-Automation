@@ -40,7 +40,7 @@ namespace FileTools.CommonData
                 {
                     return design;
                 }
-                return Design.Standard; 
+                return Design.Standard;
             }
             set
             {
@@ -66,19 +66,11 @@ namespace FileTools.CommonData
         {
             get
             {
-                double minimumHeight = Plenum_Depth + 6;
-                if (Default.PlenumColumn_Height <= minimumHeight)
-                    Default.PlenumColumn_Height = minimumHeight;
-                return Default.PlenumColumn_Height;
-            }
-            set
-            {
-                double minimumHeight = Plenum_Depth + 6;
-                if (Default.PlenumColumn_Height <= minimumHeight)
-                    Default.PlenumColumn_Height = minimumHeight;
-                Default.PlenumColumn_Height = value;
+                var value = TotalColumnHeight - FieldColumnn_Height;
+                return value;
             }
         }
+
         public static double Johnson_ExtraLength
         {
             get

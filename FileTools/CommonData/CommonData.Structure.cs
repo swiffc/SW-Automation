@@ -11,6 +11,14 @@ namespace FileTools.CommonData
         static public double Plenum_Width => Default.Plenum_Width;
         static public double Plenum_Length => Default.Plenum_Length;
         static public double TotalColumnHeight => Default.TotalColumnHeight;
+        static public double FieldColumnn_Height
+        {
+            get
+            {
+                var value = TotalColumnHeight - Plenum_Depth - MachineryMount_Height + ShippingBeam_Height;
+                return value;
+            }
+        }
         #region MidColumn rules
 
         static public bool Mid_Columns
@@ -25,12 +33,11 @@ namespace FileTools.CommonData
         }
 
         #endregion
-        static public double BasePlate_THK { get; set; } = 0.5;
+        static public double BasePlate_THK => Default.BasePlate_THK;
 
         // Beams
         public static string Beam_Size => Default.Beam_Size;
         static public bool Beams_AreRotated => Default.Beams_AreRotated;
-        // this is how i want my is-else statemnets set up
         public static double Beam_Depth
         {
             get
@@ -69,7 +76,6 @@ namespace FileTools.CommonData
                 Default.Beam_WebTHK = value;
             }
         }
-
         public static double Beam_FlangeWidth
         {
             get
@@ -89,7 +95,6 @@ namespace FileTools.CommonData
                 Default.Beam_FlangeWidth = value;
             }
         }
-
         public static double Beam_FlangeTHK
         {
             get
@@ -128,7 +133,6 @@ namespace FileTools.CommonData
                 Default.Beam_K = value;
             }
         }
-
         public static double Beam_K1
         {
             get
@@ -165,7 +169,7 @@ namespace FileTools.CommonData
 
 
         // Bracing
-        static public double ClipHeight { get; set; } = 20;
+        static public double ClipHeight = Default.Clip_Height;
         #region BraceType Rules
 
         public static string BraceType
@@ -199,16 +203,15 @@ namespace FileTools.CommonData
         }
 
         #endregion
-        private static double _holeDiameter = 0.8125;
         #region HoleDiameter Rules
 
         public static double HoleDiameter_Structural
         {
-            get { return _holeDiameter; }
+            get { return Default.HoleDiameter_Structural; }
             set
             {
-                _holeDiameter = value;
-                HoleToEdge = _holeDiameter > 1 ? 2.0 // Danny said 2" is fine, but logic can be implemented whenever needed
+                Default.HoleDiameter_Structural = value;
+                HoleToEdge = Default.HoleDiameter_Structural > 1 ? 2.0 // Danny said 2" is fine, but logic can be implemented whenever needed
                     : 2.0;
             }
         }
