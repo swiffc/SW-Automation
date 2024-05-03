@@ -4,7 +4,11 @@ using System.Collections.Generic;
 
 namespace Structure.Columns.Derived
 {
+<<<<<<< HEAD
     internal class ColumnMid : Column
+=======
+    internal class ColumnMid : FieldColumn
+>>>>>>> releases/v4.0.0
     {
         // Constructor
         public ColumnMid(SW_Assembly parentAssembly) : base(parentAssembly) { }
@@ -23,7 +27,11 @@ namespace Structure.Columns.Derived
                 for (int i = 0; i < FanCount - 1; i++)
                 {
                     pos.Add(PositionData.Create(tX: -Width / 2, tZ: zTranslation));
+<<<<<<< HEAD
                     pos.Add(PositionData.Create(tX: Width / 2, tZ: zTranslation));
+=======
+                    pos.Add(PositionData.Create(tX: Width / 2, tZ: zTranslation, rY: 180));
+>>>>>>> releases/v4.0.0
                     zTranslation -= Length / FanCount;
                 }
 

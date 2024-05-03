@@ -5,14 +5,19 @@ winexe
 C#
 .cs
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\acmurr\Desktop\Repo\UserInterface\obj\Release\
 =======
 C:\Solidworks Automation\UserInterface\obj\Release\
 >>>>>>> e46e44a8bba98da4df540f90dd77dbb9497b467e
+=======
+C:\Solidworks Automation\UserInterface\obj\Release\
+>>>>>>> releases/v4.0.0
 UserInterface
 none
 false
 TRACE
+<<<<<<< HEAD
 <<<<<<< HEAD
 C:\Users\acmurr\Desktop\Repo\UserInterface\App.xaml
 5-1353526089
@@ -23,6 +28,8 @@ MainWindow.xaml;MVVM\View\DiscoveryView.xaml;MVVM\View\HomeView.xaml;Theme\MenuB
 
 False
 =======
+=======
+>>>>>>> releases/v4.0.0
 C:\Solidworks Automation\UserInterface\App.xaml
 5-1353526089
 
@@ -31,5 +38,8 @@ C:\Solidworks Automation\UserInterface\App.xaml
 MainWindow.xaml;MVVM\View\DiscoveryView.xaml;MVVM\View\HomeView.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;
 
 True
+<<<<<<< HEAD
 >>>>>>> e46e44a8bba98da4df540f90dd77dbb9497b467e
+=======
+>>>>>>> releases/v4.0.0
 

@@ -630,6 +630,14 @@ namespace Tools
             oppositeSide = hypotenuse * Math.Sin(oppositeAngleRadians);
             adjacentSide = hypotenuse * Math.Cos(oppositeAngleRadians);
         }
+<<<<<<< HEAD
+=======
+        public static void AAS(out double oppositeAngle, double oppositeSide, double adjacentSide, out double hypotenuse)
+        {
+            hypotenuse = Math.Sqrt(Math.Pow(oppositeSide, 2) + Math.Pow(adjacentSide, 2));
+            oppositeAngle = Math.Atan2(oppositeSide, adjacentSide) * (180.0 / Math.PI);
+        }
+>>>>>>> releases/v4.0.0
 
 
 

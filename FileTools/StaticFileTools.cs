@@ -289,7 +289,11 @@ namespace FileTools
                             }
                         }
                     }
+<<<<<<< HEAD
                     //Release(assemblyComp);
+=======
+                    //Release(assemblyComp); 
+>>>>>>> releases/v4.0.0
                 }
             }
 
@@ -463,10 +467,19 @@ namespace FileTools
             AddGrandChildren(ref components, swAssembly.GrandChildren);
 
             // Remove duplicate instances based on PartNo
+<<<<<<< HEAD
             components = components.GroupBy(comp => comp.PartNo)
                                    .Select(group => group.First())
                                    .ToList();
 
+=======
+            components = components.Where(comp => !string.IsNullOrEmpty(comp.PartNo))
+                                   .GroupBy(comp => comp.PartNo)
+                                   .Select(group => group.First())
+                                   .ToList();
+
+
+>>>>>>> releases/v4.0.0
             // Replace references
             foreach (var component in components)
                 ReplaceDrawingReference(component.PartNo, drawingPath, component.StaticPartNo);
@@ -581,6 +594,10 @@ namespace FileTools
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> releases/v4.0.0
         // Private methods
         private static void CopyAsReadWrite(string sourceFile, string destinationFile)
         {
@@ -759,12 +776,24 @@ namespace FileTools
             {
                 foreach (var component in componentsArray)
                 {
+<<<<<<< HEAD
                     string componentName = component.Name2;
 
                     // Check if the component name contains the file name and does not contain "/"
                     if (componentName.Contains(fileName) && !componentName.Contains("/"))
                     {
                         matchingComponents.Add(component);
+=======
+                    if (component != null)
+                    {
+                        string componentName = component.Name2;
+
+                        // Check if the component name contains the file name and does not contain "/"
+                        if (componentName.Contains(fileName) && !componentName.Contains("/"))
+                        {
+                            matchingComponents.Add(component);
+                        }
+>>>>>>> releases/v4.0.0
                     }
                 }
             }

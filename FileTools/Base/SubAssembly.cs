@@ -73,6 +73,7 @@ namespace FileTools.Base
 
         #region Wrapper Properties
 
+<<<<<<< HEAD
         // Footprint
         public double Width => SharedProperties.Width;
         public double Length => SharedProperties.Length;
@@ -81,6 +82,21 @@ namespace FileTools.Base
 
         // Plenum
         public int FanCount => SharedProperties.FanCount;
+=======
+        // Structure
+        protected static double Width => SharedProperties.Width;
+        protected static double Length => SharedProperties.Length;
+        protected static bool MidColumns => SharedProperties.MidColumns;
+        protected static double ClipHeight => SharedProperties.ClipHeight;
+        protected static double BraceAngle => SharedProperties.BraceAngle;
+        protected static double ColumnHeight => SharedProperties.TotalColumnHeight;
+        protected static string BraceType => SharedProperties.BraceType;
+
+
+        // Plenum
+        protected static int FanCount => SharedProperties.FanCount;
+        protected static double PlenumDepth => SharedProperties.PlenumDepth;
+>>>>>>> releases/v4.0.0
 
         #endregion
     }

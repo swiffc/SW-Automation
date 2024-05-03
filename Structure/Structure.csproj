@@ -52,12 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Braces\BraceL.cs" />
     <Compile Include="Columns\Derived\Children\BasePlate.cs" />
     <Compile Include="Columns\Column.cs" />
     <Compile Include="Columns\Derived\Children\Beam.cs" />
     <Compile Include="Columns\Derived\Children\EndPlate.cs" />
     <Compile Include="Columns\Derived\Children\WebClip.cs" />
+=======
+    <Compile Include="Braces\AngleBrace.cs" />
+    <Compile Include="Braces\Derived\BraceL.cs" />
+    <Compile Include="Braces\BraceT.cs" />
+    <Compile Include="Braces\Derived\BraceX.cs" />
+    <Compile Include="Braces\Spacer.cs" />
+    <Compile Include="Columns\Derived\Children\BasePlate.cs" />
+    <Compile Include="Columns\FieldColumn.cs" />
+    <Compile Include="Columns\Derived\Children\Beam.cs" />
+    <Compile Include="Columns\Derived\Children\Clip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\TeeClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\XClip.cs" />
+    <Compile Include="Columns\Derived\Children\EndPlate.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\FlangeClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\WebClip.cs" />
+>>>>>>> releases/v4.0.0
     <Compile Include="Columns\Derived\ColumnLeft.cs" />
     <Compile Include="Columns\Derived\ColumnMid.cs" />
     <Compile Include="Columns\Derived\ColumnRight.cs" />
@@ -82,11 +99,22 @@
       <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
       <Name>ModelTools</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\Plenum\Plenum.csproj">
+      <Project>{d5899a85-9656-431e-9836-2849aeeefef7}</Project>
+      <Name>Plenum</Name>
+    </ProjectReference>
+>>>>>>> releases/v4.0.0
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="StructureUI.resx">
       <DependentUpon>StructureUI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup />
+>>>>>>> releases/v4.0.0
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

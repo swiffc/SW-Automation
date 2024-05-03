@@ -36,10 +36,17 @@ namespace FileTools
 
 
             // Beam
+<<<<<<< HEAD
             { ("6x15",             Spec.A992),         ("13011-HPC",   "BEAM_W_6x15_A992") },
             { ("6x20",             Spec.A992),         ("13012-HPC",   "BEAM_W_6x20_A992") },
             { ("6x25",             Spec.A992),         ("13015-HPC",   "BEAM_W_6x25_A992") },
             { ("8x31",             Spec.A992),         ("13027-HPC",   "BEAM_W_8x31_A992") },
+=======
+            { ("W6x15",             Spec.A992),         ("13011-HPC",   "BEAM_W_6x15_A992") },
+            { ("W6x20",             Spec.A992),         ("13012-HPC",   "BEAM_W_6x20_A992") },
+            { ("W6x25",             Spec.A992),         ("13015-HPC",   "BEAM_W_6x25_A992") },
+            { ("W8x31",             Spec.A992),         ("13027-HPC",   "BEAM_W_8x31_A992") },
+>>>>>>> releases/v4.0.0
 
 
             // Angle

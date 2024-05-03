@@ -49,6 +49,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btn_HoodUI = new System.Windows.Forms.Button();
             this.plenum_button = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.launch25 = new System.Windows.Forms.Button();
+>>>>>>> releases/v4.0.0
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,7 +169,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(200, 53);
             this.button10.TabIndex = 11;
-            this.button10.Text = "Launch Walkway Interface";
+            this.button10.Text = "28 (Walkway)";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.WalkwayTool_Click);
             // 
@@ -238,7 +242,11 @@
             this.btn_HoodUI.Name = "btn_HoodUI";
             this.btn_HoodUI.Size = new System.Drawing.Size(200, 53);
             this.btn_HoodUI.TabIndex = 18;
+<<<<<<< HEAD
             this.btn_HoodUI.Text = "Launch Hood Interface";
+=======
+            this.btn_HoodUI.Text = "3 (Hood)";
+>>>>>>> releases/v4.0.0
             this.btn_HoodUI.UseVisualStyleBackColor = true;
             this.btn_HoodUI.Click += new System.EventHandler(this.btn_HoodUI_Click);
             // 
@@ -249,15 +257,37 @@
             this.plenum_button.Name = "plenum_button";
             this.plenum_button.Size = new System.Drawing.Size(200, 53);
             this.plenum_button.TabIndex = 19;
+<<<<<<< HEAD
             this.plenum_button.Text = "Launch Plenum Interface";
             this.plenum_button.UseVisualStyleBackColor = true;
             this.plenum_button.Click += new System.EventHandler(this.plenum_button_Click);
             // 
+=======
+            this.plenum_button.Text = "5 (Plenum)";
+            this.plenum_button.UseVisualStyleBackColor = true;
+            this.plenum_button.Click += new System.EventHandler(this.plenum_button_Click);
+            // 
+            // launch25
+            // 
+            this.launch25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.launch25.Location = new System.Drawing.Point(16, 672);
+            this.launch25.Name = "launch25";
+            this.launch25.Size = new System.Drawing.Size(200, 53);
+            this.launch25.TabIndex = 20;
+            this.launch25.Text = "25 (Sub-Structure)";
+            this.launch25.UseVisualStyleBackColor = true;
+            this.launch25.Click += new System.EventHandler(this.launch25_Click);
+            // 
+>>>>>>> releases/v4.0.0
             // TaskpaneHostUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.launch25);
+>>>>>>> releases/v4.0.0
             this.Controls.Add(this.plenum_button);
             this.Controls.Add(this.btn_HoodUI);
             this.Controls.Add(this.button3);
@@ -278,7 +308,11 @@
             this.Controls.Add(this.PreviousSheet);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaskpaneHostUI";
+<<<<<<< HEAD
             this.Size = new System.Drawing.Size(234, 682);
+=======
+            this.Size = new System.Drawing.Size(234, 764);
+>>>>>>> releases/v4.0.0
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,5 +340,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_HoodUI;
         private System.Windows.Forms.Button plenum_button;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Button launch25;
+>>>>>>> releases/v4.0.0
     }
 }

@@ -18,6 +18,10 @@ namespace FileTools.Base
             if (Enabled)
             {
                 _parentAssembly = parentSubAssembly;
+<<<<<<< HEAD
+=======
+                ParentSubAssembly = parentSubAssembly;
+>>>>>>> releases/v4.0.0
                 InitializePart();
             }
         }
@@ -60,11 +64,19 @@ namespace FileTools.Base
                     else
                     {
                         swSetValueReturnStatus_e status = (swSetValueReturnStatus_e)message;
+<<<<<<< HEAD
                         Debug.WriteLine($"   Error: Dimension {equationName} could not be set. Return status: {status}");
                     }
                 }
                 else
                     Debug.WriteLine($"   Error: Dimension {equationName} not found.");
+=======
+                        Debug.WriteLine($"ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR: Dimension {equationName} could not be set. Return status: {status}");
+                    }
+                }
+                else
+                    Debug.WriteLine($"ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR: Dimension {equationName} not found.");
+>>>>>>> releases/v4.0.0
             }
             catch (Exception ex)
             {
@@ -193,7 +205,12 @@ namespace FileTools.Base
             }
         }
         public Spec MaterialSpec { get; set; } = StaticMaterialSpec;
+<<<<<<< HEAD
         public ModelDoc2 ModelDoc2 {  get; set; }
+=======
+        public ModelDoc2 ModelDoc2 { get; set; }
+        public SubAssembly ParentSubAssembly { get; set; }
+>>>>>>> releases/v4.0.0
 
 
         // Public Enums
@@ -202,7 +219,12 @@ namespace FileTools.Base
             Plate,
             Beam,
             Angle,
+<<<<<<< HEAD
             Channel
+=======
+            Channel,
+            Tee
+>>>>>>> releases/v4.0.0
         }
         public enum Spec
         {
@@ -214,8 +236,33 @@ namespace FileTools.Base
 
 
         // Private properties
+<<<<<<< HEAD
         private readonly SW_Assembly _parentAssembly;
         private string _partNo = null;
         private bool _partNoCalculated = false;
+=======
+        public readonly SW_Assembly _parentAssembly;
+        private string _partNo = null;
+        private bool _partNoCalculated = false;
+
+
+        #region Wrapper Properties
+
+        // Structure
+        protected static double Width => SharedProperties.Width;
+        protected static double Length => SharedProperties.Length;
+        protected static bool MidColumns => SharedProperties.MidColumns;
+        protected static double ClipHeight => SharedProperties.ClipHeight;
+        protected static double BraceAngle => SharedProperties.BraceAngle;
+        protected static double ColumnHeight => SharedProperties.TotalColumnHeight;
+        protected static string BraceType => SharedProperties.BraceType;
+
+
+        // Plenum
+        protected static int FanCount => SharedProperties.FanCount;
+        protected static double PlenumDepth => SharedProperties.PlenumDepth;
+
+        #endregion
+>>>>>>> releases/v4.0.0
     }
 }
