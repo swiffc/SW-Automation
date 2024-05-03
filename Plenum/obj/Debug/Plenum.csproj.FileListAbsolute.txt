@@ -15,3 +15,4 @@ C:\Users\acmurr\Desktop\Repo\Plenum\obj\Debug\Plenum.csproj.CoreCompileInputs.ca
 C:\Users\acmurr\Desktop\Repo\Plenum\obj\Debug\Plenum.csproj.Up2Date
 C:\Users\acmurr\Desktop\Repo\Plenum\obj\Debug\Plenum.exe
 C:\Users\acmurr\Desktop\Repo\Plenum\obj\Debug\Plenum.pdb
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Debug\Plenum.Properties.Resources.resources

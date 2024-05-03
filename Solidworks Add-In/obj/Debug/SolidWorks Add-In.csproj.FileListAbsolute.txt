@@ -1,0 +1,7 @@
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\SolidWorks_Add_In.Properties.Resources.resources
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\SolidWorks_Add_In.TaskpaneHostUI.resources
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\SolidWorks Add-In.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\Automation Guy.dll
+C:\Users\acmurr\Desktop\Repo\Solidworks Add-In\obj\Debug\Automation Guy.pdb

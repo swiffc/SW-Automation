@@ -12,17 +12,9 @@ DEBUG;TRACE
 C:\Users\acmurr\Desktop\Repo\UserInterface\App.xaml
 5-1353526089
 
-<<<<<<< HEAD
 121426169152
 13-946294123
 MainWindow.xaml;MVVM\View\DiscoveryView.xaml;MVVM\View\HomeView.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;
 
 False
-=======
-13-604911174
-13-946294123
-MainWindow.xaml;MVVM\View\DiscoveryView.xaml;MVVM\View\HomeView.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;
-
-True
->>>>>>> e46e44a8bba98da4df540f90dd77dbb9497b467e
 
