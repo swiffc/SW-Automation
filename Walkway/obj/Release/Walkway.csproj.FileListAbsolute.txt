@@ -12,3 +12,22 @@ C:\Solidworks Automation\Walkway\obj\Release\Walkway.csproj.CoreCompileInputs.ca
 C:\Solidworks Automation\Walkway\obj\Release\Walkway.csproj.Up2Date
 C:\Solidworks Automation\Walkway\obj\Release\Walkway.exe
 C:\Solidworks Automation\Walkway\obj\Release\Walkway.pdb
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\Walkway.exe.config
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\Walkway.exe
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\Walkway.pdb
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\DrawingToolz.exe
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\System.Numerics.Vectors.dll
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\Tools.dll
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\DrawingToolz.pdb
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\System.Numerics.Vectors.xml
+C:\Users\acmurr\Desktop\Repo\Walkway\bin\Release\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.WalkwayUI.resources
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.exe
+C:\Users\acmurr\Desktop\Repo\Walkway\obj\Release\Walkway.pdb

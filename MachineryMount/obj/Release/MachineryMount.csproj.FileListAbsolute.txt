@@ -1,0 +1,12 @@
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\MachineryMount.dll
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\MachineryMount.pdb
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\Tools.dll
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\MachineryMount\bin\Release\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\MachineryMount\obj\Release\MachineryMount.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\MachineryMount\obj\Release\MachineryMount.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\MachineryMount\obj\Release\Machiner.B12C727E.Up2Date
+C:\Users\acmurr\Desktop\Repo\MachineryMount\obj\Release\MachineryMount.dll
+C:\Users\acmurr\Desktop\Repo\MachineryMount\obj\Release\MachineryMount.pdb

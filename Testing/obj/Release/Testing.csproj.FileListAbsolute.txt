@@ -1,0 +1,30 @@
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\logo-small.bmp
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Testing.exe.config
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Testing.exe
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Testing.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Automation Guy.dll
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\DrawingToolz.exe
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Walkway.exe
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Hood.exe
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Plenum.exe
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Structure.exe
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Tools.dll
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Automation Guy.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\DrawingToolz.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Walkway.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Walkway.exe.config
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Hood.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Hood.exe.config
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Plenum.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Plenum.exe.config
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Structure.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Structure.exe.config
+C:\Users\acmurr\Desktop\Repo\Testing\bin\Release\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\Testing\obj\Release\Testing.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Testing\obj\Release\Testing.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Testing\obj\Release\Testing.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\Testing\obj\Release\Testing.exe
+C:\Users\acmurr\Desktop\Repo\Testing\obj\Release\Testing.pdb

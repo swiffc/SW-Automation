@@ -14,3 +14,20 @@ C:\Solidworks Automation\Hood\obj\Release\Hood.csproj.CoreCompileInputs.cache
 C:\Solidworks Automation\Hood\obj\Release\Hood.csproj.Up2Date
 C:\Solidworks Automation\Hood\obj\Release\Hood.exe
 C:\Solidworks Automation\Hood\obj\Release\Hood.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\Hood.exe.config
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\Hood.exe
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\Hood.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\System.Numerics.Vectors.dll
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\Tools.dll
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Release\System.Numerics.Vectors.xml
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.HoodUI.resources
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.exe
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Release\Hood.pdb

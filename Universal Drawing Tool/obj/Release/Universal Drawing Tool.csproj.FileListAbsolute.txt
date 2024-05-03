@@ -7,3 +7,12 @@ C:\Solidworks Automation\Universal Drawing Tool\obj\Release\Universal Drawing To
 C:\Solidworks Automation\Universal Drawing Tool\obj\Release\Universa.72E81272.Up2Date
 C:\Solidworks Automation\Universal Drawing Tool\obj\Release\DrawingToolz.exe
 C:\Solidworks Automation\Universal Drawing Tool\obj\Release\DrawingToolz.pdb
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Release\DrawingToolz.exe
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Release\DrawingToolz.pdb
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Release\System.Numerics.Vectors.dll
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\bin\Release\System.Numerics.Vectors.xml
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Release\Universal Drawing Tool.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Release\Universal Drawing Tool.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Release\Universa.72E81272.Up2Date
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Release\DrawingToolz.exe
+C:\Users\acmurr\Desktop\Repo\Universal Drawing Tool\obj\Release\DrawingToolz.pdb

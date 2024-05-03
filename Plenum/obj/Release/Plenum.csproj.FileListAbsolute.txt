@@ -15,3 +15,20 @@ C:\Solidworks Automation\Plenum\obj\Release\Plenum.csproj.CoreCompileInputs.cach
 C:\Solidworks Automation\Plenum\obj\Release\Plenum.csproj.Up2Date
 C:\Solidworks Automation\Plenum\obj\Release\Plenum.exe
 C:\Solidworks Automation\Plenum\obj\Release\Plenum.pdb
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\Plenum.exe.config
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\Plenum.exe
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\Plenum.pdb
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\DrawingToolz.exe
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\Tools.dll
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\Plenum\bin\Release\DrawingToolz.pdb
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.PlenumUI.resources
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.exe
+C:\Users\acmurr\Desktop\Repo\Plenum\obj\Release\Plenum.pdb
