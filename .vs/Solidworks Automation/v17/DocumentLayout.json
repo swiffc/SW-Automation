@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\acmurr\\Desktop\\Repo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B98B809C-BE32-417B-AEC4-4917A12B722E}|Structure\\Structure.csproj|c:\\users\\acmurr\\desktop\\repo\\structure\\structure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B98B809C-BE32-417B-AEC4-4917A12B722E}|Structure\\Structure.csproj|solutionrelative:structure\\structure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\acmurr\\Desktop\\Repo\\Structure\\Structure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Structure\\Structure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Structure\\Structure.cs",
               "ToolTip": "C:\\Users\\acmurr\\Desktop\\Repo\\Structure\\Structure.cs",
               "RelativeToolTip": "Structure\\Structure.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T20:37:21.934Z",
               "EditorCaption": ""
