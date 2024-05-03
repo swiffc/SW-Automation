@@ -1,9 +1,0 @@
-C:\Solidworks Automation\FileTools\bin\Release\FileTools.dll
-C:\Solidworks Automation\FileTools\bin\Release\FileTools.pdb
-C:\Solidworks Automation\FileTools\bin\Release\Tools.dll
-C:\Solidworks Automation\FileTools\bin\Release\Tools.pdb
-C:\Solidworks Automation\FileTools\obj\Release\FileTools.csproj.AssemblyReference.cache
-C:\Solidworks Automation\FileTools\obj\Release\FileTools.csproj.CoreCompileInputs.cache
-C:\Solidworks Automation\FileTools\obj\Release\FileTools.csproj.Up2Date
-C:\Solidworks Automation\FileTools\obj\Release\FileTools.dll
-C:\Solidworks Automation\FileTools\obj\Release\FileTools.pdb
