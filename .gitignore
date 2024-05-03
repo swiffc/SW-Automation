@@ -2,6 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
 /.vs/Solidworks Automation
 /.vs
 /Addin Installer/.vs
+=======
+/.vs/Solidworks Automation/FileContentIndex
+>>>>>>> releases/v4.0.0
