@@ -1,0 +1,6 @@
+C:\Users\acmurr\Desktop\Repo\AddInUpdater\bin\Debug\AddInUpdater.exe
+C:\Users\acmurr\Desktop\Repo\AddInUpdater\bin\Debug\AddInUpdater.pdb
+C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Debug\AddInUpdater.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Debug\AddInUpdater.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Debug\AddInUpdater.exe
+C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Debug\AddInUpdater.pdb

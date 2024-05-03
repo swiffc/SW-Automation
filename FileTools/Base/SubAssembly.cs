@@ -73,6 +73,16 @@ namespace FileTools.Base
 
         #region Wrapper Properties
 
+<<<<<<< HEAD
+        // Footprint
+        public double Width => SharedProperties.Width;
+        public double Length => SharedProperties.Length;
+        public bool MidColumns => SharedProperties.MidColumns;
+
+
+        // Plenum
+        public int FanCount => SharedProperties.FanCount;
+=======
         // Structure
         protected static double Width => SharedProperties.Width;
         protected static double Length => SharedProperties.Length;
@@ -86,6 +96,7 @@ namespace FileTools.Base
         // Plenum
         protected static int FanCount => SharedProperties.FanCount;
         protected static double PlenumDepth => SharedProperties.PlenumDepth;
+>>>>>>> releases/v4.0.0
 
         #endregion
     }

@@ -1,0 +1,10 @@
+C:\Users\acmurr\Desktop\Repo\FileTools\bin\Debug\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\FileTools\bin\Debug\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\FileTools\bin\Debug\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\FileTools\bin\Debug\Tools.dll
+C:\Users\acmurr\Desktop\Repo\FileTools\bin\Debug\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\FileTools\obj\Debug\FileTools.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\FileTools\obj\Debug\FileTools.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\FileTools\obj\Debug\FileTools.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\FileTools\obj\Debug\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\FileTools\obj\Debug\FileTools.pdb

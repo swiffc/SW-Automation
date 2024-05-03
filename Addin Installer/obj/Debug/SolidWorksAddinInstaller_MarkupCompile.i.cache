@@ -4,16 +4,38 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+<<<<<<< HEAD
+C:\Users\acmurr\Desktop\Repo\Addin Installer\obj\Debug\
+=======
 C:\Solidworks Automation\Addin Installer\obj\Debug\
+>>>>>>> e46e44a8bba98da4df540f90dd77dbb9497b467e
+=======
+C:\Solidworks Automation\Addin Installer\obj\Debug\
+>>>>>>> releases/v4.0.0
 SolidWorksAddinInstaller
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+<<<<<<< HEAD
+C:\Users\acmurr\Desktop\Repo\Addin Installer\App.xaml
+1219584333
+
+8-802157605
+15-1720287385
+=======
+=======
+>>>>>>> releases/v4.0.0
 C:\Solidworks Automation\Addin Installer\App.xaml
 1219584333
 
 8-802157605
 151491964661
+<<<<<<< HEAD
+>>>>>>> e46e44a8bba98da4df540f90dd77dbb9497b467e
+=======
+>>>>>>> releases/v4.0.0
 MainWindow.xaml;
 
 True

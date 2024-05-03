@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Braces\BraceL.cs" />
+    <Compile Include="Columns\Derived\Children\BasePlate.cs" />
+    <Compile Include="Columns\Column.cs" />
+    <Compile Include="Columns\Derived\Children\Beam.cs" />
+    <Compile Include="Columns\Derived\Children\EndPlate.cs" />
+    <Compile Include="Columns\Derived\Children\WebClip.cs" />
     <Compile Include="Braces\AngleBrace.cs" />
     <Compile Include="Braces\Derived\BraceL.cs" />
     <Compile Include="Braces\BraceT.cs" />

@@ -1,0 +1,17 @@
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\Hood.exe.config
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\Hood.exe
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\Hood.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\FileTools.dll
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\Tools.dll
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\FileTools.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\FileTools.dll.config
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\Tools.pdb
+C:\Users\acmurr\Desktop\Repo\Hood\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.HoodUI.resources
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.csproj.GenerateResource.cache
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.csproj.Up2Date
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.exe
+C:\Users\acmurr\Desktop\Repo\Hood\obj\Debug\Hood.pdb

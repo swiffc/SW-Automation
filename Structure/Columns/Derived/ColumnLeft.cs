@@ -4,7 +4,11 @@ using System.Collections.Generic;
 
 namespace Structure.Columns.Derived
 {
+<<<<<<< HEAD
+    internal class ColumnLeft : Column
+=======
     internal class ColumnLeft : FieldColumn
+>>>>>>> releases/v4.0.0
     {
         // Constructor
         public ColumnLeft(SW_Assembly parentAssembly) : base(parentAssembly) { }
@@ -20,7 +24,11 @@ namespace Structure.Columns.Derived
                 return new List<PositionData>
                 {
                     PositionData.Create(tX: -Width/2, tZ: Length/2),
+<<<<<<< HEAD
+                    PositionData.Create(tX: Width/2, tZ: -Length/2),
+=======
                     PositionData.Create(tX: Width/2, tZ: -Length/2, rY: 180),
+>>>>>>> releases/v4.0.0
                 };
             }
         }
