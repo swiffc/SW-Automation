@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\acmurr\\Desktop\\Repo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8A0435E0-E9A0-4083-864D-7563D7F829B2}|FileTools\\FileTools.csproj|c:\\users\\acmurr\\desktop\\repo\\filetools\\base\\mainassembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0435E0-E9A0-4083-864D-7563D7F829B2}|FileTools\\FileTools.csproj|solutionrelative:filetools\\base\\mainassembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0435E0-E9A0-4083-864D-7563D7F829B2}|FileTools\\FileTools.csproj|c:\\users\\acmurr\\desktop\\repo\\filetools\\rawmaterial_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0435E0-E9A0-4083-864D-7563D7F829B2}|FileTools\\FileTools.csproj|solutionrelative:filetools\\rawmaterial_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D5899A85-9656-431E-9836-2849AEEEFEF7}|Plenum\\Plenum.csproj|c:\\users\\acmurr\\desktop\\repo\\plenum\\walls\\sidepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5899A85-9656-431E-9836-2849AEEEFEF7}|Plenum\\Plenum.csproj|solutionrelative:plenum\\walls\\sidepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 255,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,20 +46,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RawMaterial_1.cs",
+              "DocumentMoniker": "C:\\Users\\acmurr\\Desktop\\Repo\\FileTools\\RawMaterial_1.cs",
+              "RelativeDocumentMoniker": "FileTools\\RawMaterial_1.cs",
+              "ToolTip": "C:\\Users\\acmurr\\Desktop\\Repo\\FileTools\\RawMaterial_1.cs",
+              "RelativeToolTip": "FileTools\\RawMaterial_1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T21:32:30.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainAssembly.cs",
+              "DocumentMoniker": "C:\\Users\\acmurr\\Desktop\\Repo\\FileTools\\Base\\MainAssembly.cs",
+              "RelativeDocumentMoniker": "FileTools\\Base\\MainAssembly.cs",
+              "ToolTip": "C:\\Users\\acmurr\\Desktop\\Repo\\FileTools\\Base\\MainAssembly.cs",
+              "RelativeToolTip": "FileTools\\Base\\MainAssembly.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAD4vx0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T21:32:24.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SidePanel.cs",
               "DocumentMoniker": "C:\\Users\\acmurr\\Desktop\\Repo\\Plenum\\Walls\\SidePanel.cs",
               "RelativeDocumentMoniker": "Plenum\\Walls\\SidePanel.cs",
               "ToolTip": "C:\\Users\\acmurr\\Desktop\\Repo\\Plenum\\Walls\\SidePanel.cs",
               "RelativeToolTip": "Plenum\\Walls\\SidePanel.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAADwvwAAAAAAAAAA",
+              "ViewState": "AQIAAGIAAAAAAAAAAADwv4IAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T21:31:30.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Plenum.cs",
               "DocumentMoniker": "C:\\Users\\acmurr\\Desktop\\Repo\\Plenum\\Plenum.cs",
               "RelativeDocumentMoniker": "Plenum\\Plenum.cs",
