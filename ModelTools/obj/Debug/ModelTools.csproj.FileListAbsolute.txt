@@ -1,9 +1,0 @@
-C:\Users\acmurr\Desktop\Repo\ModelTools\bin\Debug\Tools.dll
-C:\Users\acmurr\Desktop\Repo\ModelTools\bin\Debug\Tools.pdb
-C:\Users\acmurr\Desktop\Repo\ModelTools\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\acmurr\Desktop\Repo\ModelTools\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\acmurr\Desktop\Repo\ModelTools\obj\Debug\ModelTools.csproj.AssemblyReference.cache
-C:\Users\acmurr\Desktop\Repo\ModelTools\obj\Debug\ModelTools.csproj.CoreCompileInputs.cache
-C:\Users\acmurr\Desktop\Repo\ModelTools\obj\Debug\ModelTools.csproj.Up2Date
-C:\Users\acmurr\Desktop\Repo\ModelTools\obj\Debug\Tools.dll
-C:\Users\acmurr\Desktop\Repo\ModelTools\obj\Debug\Tools.pdb
