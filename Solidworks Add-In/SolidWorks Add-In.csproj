@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SolidWorks_Add_In</RootNamespace>
-    <AssemblyName>Automation Guy v1.0.0</AssemblyName>
+    <AssemblyName>Automation Guy</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPDM.Interop.epdm">
+      <HintPath>..\Libraries\EPDM Interop\EPDM.Interop.epdm.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="SolidWorks.Interop.sldworks">
       <HintPath>..\Libraries\Solidworks Interop\SolidWorks.Interop.sldworks.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -42,6 +46,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,6 +88,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hood\Hood.csproj">
+      <Project>{7e6a3a9f-0348-4f9e-bc9a-dc929d613d31}</Project>
+      <Name>Hood</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plenum\Plenum.csproj">
+      <Project>{D5899A85-9656-431E-9836-2849AEEEFEF7}</Project>
+      <Name>Plenum</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Universal Drawing Tool\Universal Drawing Tool.csproj">
       <Project>{586fad54-bf99-4a06-8dfa-c3ed13c1b410}</Project>
       <Name>Universal Drawing Tool</Name>
@@ -88,6 +104,9 @@
       <Project>{e7f20cf6-1a9d-42cd-ab57-e4a9d3ce85c3}</Project>
       <Name>Walkway</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

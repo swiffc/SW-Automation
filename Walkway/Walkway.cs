@@ -1,29 +1,21 @@
-﻿using EPDM.Interop.epdm;
+﻿
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
-using SolidWorks.Interop.swdocumentmgr;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
 using System.Windows;
-using System.Windows.Annotations;
 using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media.Media3D;
-using System.Xml.Linq;
 using Walkway.Tools;
-using static System.Net.WebRequestMethods;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Walkway
 {
     public class Walkway
     {
-        
+
         // Static Read-Write Properties (User Inputs)
         internal static string Project { get; set; } = "N001";
         internal static string Customer { get; set; } = "Customer";
@@ -169,106 +161,106 @@ namespace Walkway
                 supportPath = support.Reference.FilePath;
             }
         }
-            private static void PlacePlatform(List<Component2> componentList, WalkwayPlatform platform, AssemblyDoc assemblyDoc)
+        private static void PlacePlatform(List<Component2> componentList, WalkwayPlatform platform, AssemblyDoc assemblyDoc)
+        {
+            Component2 platformComponent = GetInstance(componentList, 1); Debug.WriteLine(" (platform)");
+
+            if (platformComponent == null && platform.Platform.PartNo.Dynamic != null)
             {
-                Component2 platformComponent = GetInstance(componentList, 1); Debug.WriteLine(" (platform)");
-
-                if (platformComponent == null && platform.Platform.PartNo.Dynamic != null)
-                {
-                    platformComponent = InsertComponent(platform.Platform.FilePath, assemblyDoc);
-                }
-
-                if (platformComponent != null)
-                {
-                    // Set location
-                    ApplyPositionInformation(platformComponent);
-
-                    // Release COM object
-                    Optimize.Release(ref platformComponent);
-                }
+                platformComponent = InsertComponent(platform.Platform.FilePath, assemblyDoc);
             }
-            private static void PlaceHandRails(List<Component2> componentList, HandRail rail, AssemblyDoc assemblyDoc, double walkwayWidth, double railHeight)
+            
+            if (platformComponent != null)
             {
-                Component2 leftRail = GetInstance(componentList, 1); Debug.WriteLine(" (left rail)");
-                Component2 rightRail = GetInstance(componentList, 2); Debug.WriteLine(" (right rail)");
+                // Set location
+                ApplyPositionInformation(platformComponent);
 
-                if (leftRail == null && rail.Rail.PartNo.Dynamic != null)
-                {
-                    leftRail = InsertComponent(rail.Rail.FilePath, assemblyDoc);
-                }
-
-                if (leftRail != null)
-                {
-                    // Set location
-                    X_Translation(-walkwayWidth / 2);
-                    Y_Translation(railHeight);
-                    ApplyPositionInformation(leftRail);
-
-                    // Release COM object
-                    Optimize.Release(ref leftRail);
-                }
-
-
-
-
-                if (rightRail == null && rail.Rail.PartNo.Dynamic != null)
-                {
-                    rightRail = InsertComponent(rail.Rail.FilePath, assemblyDoc);
-                }
-
-                if (rightRail != null)
-                {
-                    // Set location
-                    X_Translation(walkwayWidth / 2);
-                    Y_Translation(railHeight);
-                    Y_Axis_180_Degree_Rotate();
-                    ApplyPositionInformation(rightRail);
-
-                    // Release COM object
-                    Optimize.Release(ref rightRail);
-                }
+                // Release COM object
+                Optimize.Release(ref platformComponent);
             }
-            private static void PlaceSupportBeams(List<Component2> componentList, Support support, AssemblyDoc assemblyDoc, double floorHeight, double plenumCenterWidth)
+        }
+        private static void PlaceHandRails(List<Component2> componentList, HandRail rail, AssemblyDoc assemblyDoc, double walkwayWidth, double railHeight)
+        {
+            Component2 leftRail = GetInstance(componentList, 1); Debug.WriteLine(" (left rail)");
+            Component2 rightRail = GetInstance(componentList, 2); Debug.WriteLine(" (right rail)");
+
+            if (leftRail == null && rail.Rail.PartNo.Dynamic != null)
             {
-                Component2 leftBeam = GetInstance(componentList, 1); Debug.WriteLine(" (left beam)");
-                Component2 rightBeam = GetInstance(componentList, 2); Debug.WriteLine(" (right beam)");
-
-                if (leftBeam == null && support.Reference.PartNo.Dynamic != null)
-                {
-                    leftBeam = InsertComponent(support.Reference.FilePath, assemblyDoc);
-                }
-
-                if (leftBeam != null)
-                {
-                    // Set location
-                    Y_Translation(-floorHeight - support.Reference.StringerDepth);
-                    Z_Translation(plenumCenterWidth / 2);
-                    ApplyPositionInformation(leftBeam);
-
-                    // Release COM object
-                    Optimize.Release(ref leftBeam);
-                }
-
-
-
-
-                if (rightBeam == null && support.Reference.PartNo.Dynamic != null)
-                {
-                    rightBeam = InsertComponent(support.Reference.FilePath, assemblyDoc);
-                }
-
-                if (rightBeam != null)
-                {
-                    // Set location
-                    Y_Translation(-floorHeight - support.Reference.StringerDepth);
-                    Z_Translation(-plenumCenterWidth / 2);
-                    ApplyPositionInformation(rightBeam);
-
-                    // Release COM object
-                    Optimize.Release(ref rightBeam);
-                }
-
+                leftRail = InsertComponent(rail.Rail.FilePath, assemblyDoc);
             }
+
+            if (leftRail != null)
+            {
+                // Set location
+                X_Translation(-walkwayWidth / 2);
+                Y_Translation(railHeight);
+                ApplyPositionInformation(leftRail);
+
+                // Release COM object
+                Optimize.Release(ref leftRail);
+            }
+
+
+
+
+            if (rightRail == null && rail.Rail.PartNo.Dynamic != null)
+            {
+                rightRail = InsertComponent(rail.Rail.FilePath, assemblyDoc);
+            }
+
+            if (rightRail != null)
+            {
+                // Set location
+                X_Translation(walkwayWidth / 2);
+                Y_Translation(railHeight);
+                Y_Axis_180_Degree_Rotate();
+                ApplyPositionInformation(rightRail);
+
+                // Release COM object
+                Optimize.Release(ref rightRail);
+            }
+        }
+        private static void PlaceSupportBeams(List<Component2> componentList, Support support, AssemblyDoc assemblyDoc, double floorHeight, double plenumCenterWidth)
+        {
+            Component2 leftBeam = GetInstance(componentList, 1); Debug.WriteLine(" (left beam)");
+            Component2 rightBeam = GetInstance(componentList, 2); Debug.WriteLine(" (right beam)");
+
+            if (leftBeam == null && support.Reference.PartNo.Dynamic != null)
+            {
+                leftBeam = InsertComponent(support.Reference.FilePath, assemblyDoc);
+            }
+
+            if (leftBeam != null)
+            {
+                // Set location
+                Y_Translation(-floorHeight - support.Reference.StringerDepth);
+                Z_Translation(plenumCenterWidth / 2);
+                ApplyPositionInformation(leftBeam);
+
+                // Release COM object
+                Optimize.Release(ref leftBeam);
+            }
+
+
+
+
+            if (rightBeam == null && support.Reference.PartNo.Dynamic != null)
+            {
+                rightBeam = InsertComponent(support.Reference.FilePath, assemblyDoc);
+            }
+
+            if (rightBeam != null)
+            {
+                // Set location
+                Y_Translation(-floorHeight - support.Reference.StringerDepth);
+                Z_Translation(-plenumCenterWidth / 2);
+                ApplyPositionInformation(rightBeam);
+
+                // Release COM object
+                Optimize.Release(ref rightBeam);
+            }
+
+        }
 
 
 
@@ -320,60 +312,60 @@ namespace Walkway
 
             return selectedComponents;
         }
-            private static void AddChildrenToSelection(Dictionary<Component2, (string FileName, string StaticPartNo, string DynamicPartNo, char? Bank)> selectedComponents)
+        private static void AddChildrenToSelection(Dictionary<Component2, (string FileName, string StaticPartNo, string DynamicPartNo, char? Bank)> selectedComponents)
+        {
+            bool newEntriesAdded;
+
+            do
             {
-                bool newEntriesAdded;
+                newEntriesAdded = false;  // Reset the flag at the start of each loop iteration
 
-                do
+                var newEntries = new Dictionary<Component2, (string FileName, string StaticPartNo, string DynamicPartNo, char? Bank)>();
+
+                if (selectedComponents.Values.Any(value =>
+                        value.StaticPartNo == Platform_PartNo_Static ||
+                        value.StaticPartNo == "Bank" ||
+                        value.StaticPartNo == Handrail_PartNo_Static ||
+                        value.StaticPartNo == SupportAssembly_PartNo_Static ||
+                        value.StaticPartNo == SupportBeamWeldment_PartNo_Static))
                 {
-                    newEntriesAdded = false;  // Reset the flag at the start of each loop iteration
-
-                    var newEntries = new Dictionary<Component2, (string FileName, string StaticPartNo, string DynamicPartNo, char? Bank)>();
-
-                    if (selectedComponents.Values.Any(value =>
-                            value.StaticPartNo == Platform_PartNo_Static ||
-                            value.StaticPartNo == "Bank" ||
-                            value.StaticPartNo == Handrail_PartNo_Static ||
-                            value.StaticPartNo == SupportAssembly_PartNo_Static ||
-                            value.StaticPartNo == SupportBeamWeldment_PartNo_Static))
+                    foreach (var componentEntry in selectedComponents)
                     {
-                        foreach (var componentEntry in selectedComponents)
+                        Component2 component = componentEntry.Key;
+
+                        object[] childComponents = component.GetChildren();
+
+                        if (childComponents != null)
                         {
-                            Component2 component = componentEntry.Key;
-
-                            object[] childComponents = component.GetChildren();
-
-                            if (childComponents != null)
+                            foreach (Component2 childComponent in childComponents)
                             {
-                                foreach (Component2 childComponent in childComponents)
+                                // Avoid processing already processed components
+                                if (!selectedComponents.ContainsKey(childComponent) && !newEntries.ContainsKey(childComponent))
                                 {
-                                    // Avoid processing already processed components
-                                    if (!selectedComponents.ContainsKey(childComponent) && !newEntries.ContainsKey(childComponent))
-                                    {
-                                        string fileName = childComponent.GetPathName();
-                                        string dynamicPartNo = Path.GetFileNameWithoutExtension(fileName).Split('-').Last();
-                                        string staticPartNo = SW.GetConfigurationNames(fileName)[0];
-                                        char? bank = Path.GetFileNameWithoutExtension(fileName).Split('-').ElementAtOrDefault(1)?.ElementAtOrDefault(2);
+                                    string fileName = childComponent.GetPathName();
+                                    string dynamicPartNo = Path.GetFileNameWithoutExtension(fileName).Split('-').Last();
+                                    string staticPartNo = SW.GetConfigurationNames(fileName)[0];
+                                    char? bank = Path.GetFileNameWithoutExtension(fileName).Split('-').ElementAtOrDefault(1)?.ElementAtOrDefault(2);
 
-                                        // Store the child component data in the newEntries dictionary
-                                        newEntries[childComponent] = (fileName, staticPartNo, dynamicPartNo, bank);
-                                        Debug.WriteLine($"      Child of parent {Path.GetFileNameWithoutExtension(componentEntry.Value.FileName)}  -->  {Path.GetFileNameWithoutExtension(fileName)}");
+                                    // Store the child component data in the newEntries dictionary
+                                    newEntries[childComponent] = (fileName, staticPartNo, dynamicPartNo, bank);
+                                    Debug.WriteLine($"      Child of parent {Path.GetFileNameWithoutExtension(componentEntry.Value.FileName)}  -->  {Path.GetFileNameWithoutExtension(fileName)}");
 
-                                        newEntriesAdded = true;  // Set the flag to true as new entries are being added
-                                    }
+                                    newEntriesAdded = true;  // Set the flag to true as new entries are being added
                                 }
                             }
                         }
                     }
+                }
 
-                    // Merge the new entries with the selectedComponents dictionary inside the loop
-                    foreach (var entry in newEntries)
-                    {
-                        selectedComponents[entry.Key] = entry.Value;
-                    }
+                // Merge the new entries with the selectedComponents dictionary inside the loop
+                foreach (var entry in newEntries)
+                {
+                    selectedComponents[entry.Key] = entry.Value;
+                }
 
-                } while (newEntriesAdded);  // Continue looping as long as new entries are being added
-            }
+            } while (newEntriesAdded);  // Continue looping as long as new entries are being added
+        }
         internal static void AddParentToSelection(Dictionary<Component2, (string FilePath, string StaticPartNo, string DynamicPartNo, char? Bank)> filteredComponents)
         {
             var updatedComponents = new Dictionary<Component2, (string, string, string, char?)>();
@@ -525,28 +517,28 @@ namespace Walkway
                 return "-1";
             }
         }
-            private static int HandlePartFile(string templateFile)
+        private static int HandlePartFile(string templateFile)
+        {
+            int partNo = GetUniquePartNo();
+            if (partNo != -1)
             {
-                int partNo = GetUniquePartNo();
-                if (partNo != -1)
-                {
-                    string destinationFile = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDPRT";
-                    CopyAsReadWrite(templateFile, destinationFile);
-                    Debug.WriteLine($"Created {destinationFile} from template file {templateFile}");
-                }
-                return partNo;
+                string destinationFile = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDPRT";
+                CopyAsReadWrite(templateFile, destinationFile);
+                Debug.WriteLine($"Created {destinationFile} from template file {templateFile}");
             }
-            private static int HandleAssemblyFile(string templateFile)
+            return partNo;
+        }
+        private static int HandleAssemblyFile(string templateFile)
+        {
+            int partNo = GetUniquePartNo();
+            if (partNo != -1)
             {
-                int partNo = GetUniquePartNo();
-                if (partNo != -1)
-                {
-                    string destinationFile = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDASM";
-                    CopyAsReadWrite(templateFile, destinationFile);
-                    Debug.WriteLine($"Created {destinationFile} from template file {templateFile}");
-                }
-                return partNo;
+                string destinationFile = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDASM";
+                CopyAsReadWrite(templateFile, destinationFile);
+                Debug.WriteLine($"Created {destinationFile} from template file {templateFile}");
             }
+            return partNo;
+        }
         internal static string CreateNew_SubComponentFile(string staticPartNo)
         {
             string templateFile = $@"{TemplateFolderPath}\JOBNO-{staticPartNo}.SLDPRT";
@@ -572,49 +564,49 @@ namespace Walkway
                 (partNo1, partNo2) = IncrementPartNo(partNo1, partNo2);
             }
         }
-            private static (char, char) IncrementPartNo(char partNo1, char partNo2)
+        private static (char, char) IncrementPartNo(char partNo1, char partNo2)
+        {
+            if (partNo1 == 'Z')
             {
-                if (partNo1 == 'Z')
-                {
-                    return ('A', 'A');
-                }
-                else if (partNo2 != ' ' && partNo2 != 'Z')
-                {
-                    return (partNo1, (char)(partNo2 + 1));
-                }
-                else if (partNo2 == 'Z')
-                {
-                    return ((char)(partNo1 + 1), 'A');
-                }
-                else
-                {
-                    return ((char)(partNo1 + 1), ' ');
-                }
+                return ('A', 'A');
             }
-            private static char SkipInvalidChars(char partNo)
+            else if (partNo2 != ' ' && partNo2 != 'Z')
             {
-                while (partNo == 'I' || partNo == 'O')
-                {
-                    partNo++;
-                }
-                return partNo;
+                return (partNo1, (char)(partNo2 + 1));
             }
+            else if (partNo2 == 'Z')
+            {
+                return ((char)(partNo1 + 1), 'A');
+            }
+            else
+            {
+                return ((char)(partNo1 + 1), ' ');
+            }
+        }
+        private static char SkipInvalidChars(char partNo)
+        {
+            while (partNo == 'I' || partNo == 'O')
+            {
+                partNo++;
+            }
+            return partNo;
+        }
         private static int GetUniquePartNo()
+        {
+            int partNo = 1;
+
+            while (true)
             {
-                int partNo = 1;
+                string desktopFile_Part = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDPRT";
+                string desktopFile_Assembly = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDASM";
 
-                while (true)
+                if (!System.IO.File.Exists(desktopFile_Part) && !System.IO.File.Exists(desktopFile_Assembly))
                 {
-                    string desktopFile_Part = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDPRT";
-                    string desktopFile_Assembly = $@"{DesktopFolderPath}\{Project}-28{Bank}-{partNo}.SLDASM";
-
-                    if (!System.IO.File.Exists(desktopFile_Part) && !System.IO.File.Exists(desktopFile_Assembly))
-                    {
-                        return partNo;
-                    }
-                    partNo++;
+                    return partNo;
                 }
+                partNo++;
             }
+        }
         internal static void CopyAsReadWrite(string sourceFile, string destinationFile)
         {
             System.IO.File.Copy(sourceFile, destinationFile);
@@ -654,11 +646,11 @@ namespace Walkway
 
             return matchingComponents;
         }
-            private static string GetFileNameFromPath(string filePath)
-            {
-                string[] fileNameParts = Path.GetFileNameWithoutExtension(filePath).Split('.');
-                return fileNameParts[0];
-            }
+        private static string GetFileNameFromPath(string filePath)
+        {
+            string[] fileNameParts = Path.GetFileNameWithoutExtension(filePath).Split('.');
+            return fileNameParts[0];
+        }
         internal static string GetDynamicPartNo(Dictionary<Component2, (string FileName, string StaticPartNo, string DynamicPartNo, char? Bank)> components, params string[] staticPartNos)
         {
             return components
@@ -696,16 +688,16 @@ namespace Walkway
                 bool check1 = System.IO.File.Exists(oldReference) ? true : false;
                 bool check2 = System.IO.File.Exists(drawingToBeModified) ? true : false;
                 bool check3 = System.IO.File.Exists(newReference) ? true : false;
-                Debug.WriteLine($"Could not replace reference:"+ "\n" +
-                                $"                            {oldReference} " + 
+                Debug.WriteLine($"Could not replace reference:" + "\n" +
+                                $"                            {oldReference} " +
                                 "\n" + $"                               File exists: {check1}" + "\n" + "\n" +
                                 $"                                 in drawing " + "\n" +
-                                $"                            {drawingToBeModified} " + 
+                                $"                            {drawingToBeModified} " +
                                 "\n" + $"                               File exists: {check2}" + "\n" + "\n" +
                                 $"                                 with reference " + "\n" +
                                 $"                            {newReference}" +
-                                "\n" + $"                               File exists: {check3}" + "\n"+ "\n");
-                
+                                "\n" + $"                               File exists: {check3}" + "\n" + "\n");
+
             }
         }
         internal static void MigrateSheetsToBankDrawing(DrawingDoc tempDrawingDoc)
@@ -841,24 +833,24 @@ namespace Walkway
 
             // Save and close bank desktop drawing
             Debug.WriteLine("");
-            Drawing.Drawing.SortSheetsInDrawing();
+            //DrawingToolz.DrawingToolz.SortSheetsInDrawing();
             SaveDrawing(bank_ModelDoc2);
             Optimize.Release(ref bank_ModelDoc2);
             Optimize.Release(ref bank_DesktopDrawing);
             Close(bank_DesktopDrawingPath);
         }
-            private static void SaveDrawing(ModelDoc2 modelDoc2)
-            {
-                modelDoc2.Save3((int)swSaveAsOptions_e.swSaveAsOptions_Silent, 0, 0);
-                string docName = modelDoc2.GetTitle();
-                string[] partNumber = docName.Split('-');
-                Debug.WriteLine($"Saved file {partNumber[1]}");
-            }
-            private static void RenameSheet(DrawingDoc drawingDoc, string read_SheetName, string write_SheetName)
-            {
-                drawingDoc.Sheet[read_SheetName].SetName(write_SheetName);
-                Debug.WriteLine($"   Sheet: {read_SheetName}, has been renamed to {write_SheetName}");
-            }
+        private static void SaveDrawing(ModelDoc2 modelDoc2)
+        {
+            modelDoc2.Save3((int)swSaveAsOptions_e.swSaveAsOptions_Silent, 0, 0);
+            string docName = modelDoc2.GetTitle();
+            string[] partNumber = docName.Split('-');
+            Debug.WriteLine($"Saved file {partNumber[1]}");
+        }
+        private static void RenameSheet(DrawingDoc drawingDoc, string read_SheetName, string write_SheetName)
+        {
+            drawingDoc.Sheet[read_SheetName].SetName(write_SheetName);
+            Debug.WriteLine($"   Sheet: {read_SheetName}, has been renamed to {write_SheetName}");
+        }
         internal static void RenameSheet(string sheetName, string dynamicPartNo, DrawingDoc drawingDoc)
         {
             drawingDoc.Sheet[sheetName].SetName($"{Project}-28{Bank}-{dynamicPartNo}");
@@ -1032,7 +1024,7 @@ namespace Walkway
                 (int)swAddComponentConfigOptions_e.swAddComponentConfigOptions_CurrentSelectedConfig, null,
                 false, "Default",
                 0, 0, 0);
-            Debug.Write($"      Inserted new comonent:    {component2.Name2}");
+            Debug.Write($"      Inserted new component:    {component2.Name2}");
             return component2;
         }
         internal static void FixComponentLocations(AssemblyDoc assemblyDoc)
@@ -1081,7 +1073,7 @@ namespace Walkway
             }
             return unfixedComponents;
         }
-        
+
 
 
 
@@ -1140,11 +1132,11 @@ namespace Walkway
 
             return modelDoc2;
         }
-            private static string GetPartNumber(string filePath)
-            {
-                string fileName = Path.GetFileNameWithoutExtension(filePath);
-                return fileName.Substring(fileName.IndexOf("-") + 1);
-            }
+        private static string GetPartNumber(string filePath)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(filePath);
+            return fileName.Substring(fileName.IndexOf("-") + 1);
+        }
         internal static bool EditDimension(string dimensionName, string treeName, double newValue, ModelDoc2 modelDoc2)
         {
             // Initialize as false. Will be set to true if edit is successful.
@@ -1269,7 +1261,7 @@ namespace Walkway
             {
                 Component2 component2 = obj as Component2;
                 ModelDoc2 modelDoc2 = component2.GetModelDoc2();
-                modelDoc2.Save3(1,0,0);
+                modelDoc2.Save3(1, 0, 0);
                 Optimize.Release(ref modelDoc2);
             }
 
@@ -1300,7 +1292,7 @@ namespace Walkway
         }
         public static void AddNewSubComponent(string partNumber)
         {
-            string filePath =  $@"{DesktopFolderPath}\{Project}-28{Bank}-{CreateNew_SubComponentFile(partNumber)}.SLDPRT";
+            string filePath = $@"{DesktopFolderPath}\{Project}-28{Bank}-{CreateNew_SubComponentFile(partNumber)}.SLDPRT";
 
             AddNew(filePath);
         }

@@ -7,15 +7,3 @@ C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.exe
 C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.pdb
 C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.WalkwayUI.resources
 C:\Users\khowell\source\repos\WalkwayAddin\Walkway\obj\Debug\Walkway.csproj.GenerateResource.cache
-C:\Solidworks Automation\Walkway\bin\Debug\Walkway.pdb
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.csproj.AssemblyReference.cache
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.WalkwayUI.resources
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.csproj.GenerateResource.cache
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.csproj.CoreCompileInputs.cache
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.pdb
-C:\Solidworks Automation\Walkway\bin\Debug\Walkway.exe.config
-C:\Solidworks Automation\Walkway\bin\Debug\Walkway.exe
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.exe
-C:\Solidworks Automation\Walkway\bin\Debug\Universal Drwing Tool.exe
-C:\Solidworks Automation\Walkway\bin\Debug\Universal Drwing Tool.pdb
-C:\Solidworks Automation\Walkway\obj\Debug\Walkway.csproj.CopyComplete
