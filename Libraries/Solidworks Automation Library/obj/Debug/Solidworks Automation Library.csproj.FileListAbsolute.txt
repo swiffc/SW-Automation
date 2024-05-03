@@ -1,6 +1,0 @@
-C:\Solidworks Automation\Libraries\Solidworks Automation Library\obj\Debug\Solidworks Automation Library.csproj.AssemblyReference.cache
-C:\Solidworks Automation\Libraries\Solidworks Automation Library\obj\Debug\Solidworks Automation Library.csproj.CoreCompileInputs.cache
-C:\Solidworks Automation\Libraries\Solidworks Automation Library\bin\Debug\Solidworks Automation Library.dll
-C:\Solidworks Automation\Libraries\Solidworks Automation Library\bin\Debug\Solidworks Automation Library.pdb
-C:\Solidworks Automation\Libraries\Solidworks Automation Library\obj\Debug\Solidworks Automation Library.dll
-C:\Solidworks Automation\Libraries\Solidworks Automation Library\obj\Debug\Solidworks Automation Library.pdb
