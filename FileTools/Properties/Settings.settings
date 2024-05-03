@@ -132,7 +132,7 @@
       <Value Profile="(Default)">54</Value>
     </Setting>
     <Setting Name="BraceType" Type="System.String" Scope="User">
-      <Value Profile="(Default)">L</Value>
+      <Value Profile="(Default)">TX</Value>
     </Setting>
     <Setting Name="HoleDiameter_Structural" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.8125</Value>
@@ -187,6 +187,15 @@
     </Setting>
     <Setting Name="Clip_Height" Type="System.Double" Scope="User">
       <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="FloorSplice_LengthOverride" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="EndStiffenerCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DividerStiffenerCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -126,5 +126,7 @@ namespace FileTools.CommonData
                 Default.FanRing_Depth = value;
             }
         }
+        public static int EndStiffenerCount => Default.EndStiffenerCount;
+        public static int DividerStiffenerCount => Default.DividerStiffenerCount;
     }
 }

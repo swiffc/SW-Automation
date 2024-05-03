@@ -34,6 +34,8 @@ namespace Plenum
         private void InitializeComponent()
         {
             this.tab_AdvOptions = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBox_SpliceOverride = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox4_delete = new System.Windows.Forms.CheckBox();
             this.checkBox3_save = new System.Windows.Forms.CheckBox();
@@ -66,6 +68,8 @@ namespace Plenum
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tab_Plenum = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.flangeGageWT_Box = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.braceHoleDiameter_Box = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -126,6 +130,10 @@ namespace Plenum
             this.txt_Width = new System.Windows.Forms.Label();
             this.txt_Length = new System.Windows.Forms.Label();
             this.txt_plen = new System.Windows.Forms.TabControl();
+            this.textBox_EndOverride = new System.Windows.Forms.TextBox();
+            this.textBox_DividerOverride = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.tab_AdvOptions.SuspendLayout();
             this.tab_Plenum.SuspendLayout();
             this.txt_plen.SuspendLayout();
@@ -133,6 +141,12 @@ namespace Plenum
             // 
             // tab_AdvOptions
             // 
+            this.tab_AdvOptions.Controls.Add(this.label37);
+            this.tab_AdvOptions.Controls.Add(this.label36);
+            this.tab_AdvOptions.Controls.Add(this.textBox_DividerOverride);
+            this.tab_AdvOptions.Controls.Add(this.textBox_EndOverride);
+            this.tab_AdvOptions.Controls.Add(this.label35);
+            this.tab_AdvOptions.Controls.Add(this.textBox_SpliceOverride);
             this.tab_AdvOptions.Controls.Add(this.button1);
             this.tab_AdvOptions.Controls.Add(this.checkBox4_delete);
             this.tab_AdvOptions.Controls.Add(this.checkBox3_save);
@@ -171,6 +185,23 @@ namespace Plenum
             this.tab_AdvOptions.TabIndex = 2;
             this.tab_AdvOptions.Text = "Advanced Options";
             this.tab_AdvOptions.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(158, 230);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(168, 13);
+            this.label35.TabIndex = 38;
+            this.label35.Text = "Floor Splice Plate Length Override";
+            // 
+            // textBox_SpliceOverride
+            // 
+            this.textBox_SpliceOverride.Location = new System.Drawing.Point(332, 227);
+            this.textBox_SpliceOverride.Name = "textBox_SpliceOverride";
+            this.textBox_SpliceOverride.Size = new System.Drawing.Size(100, 20);
+            this.textBox_SpliceOverride.TabIndex = 37;
+            this.textBox_SpliceOverride.TextChanged += new System.EventHandler(this.textBox_SpliceOverride_TextChanged);
             // 
             // button1
             // 
@@ -461,6 +492,8 @@ namespace Plenum
             // 
             // tab_Plenum
             // 
+            this.tab_Plenum.Controls.Add(this.label34);
+            this.tab_Plenum.Controls.Add(this.flangeGageWT_Box);
             this.tab_Plenum.Controls.Add(this.label33);
             this.tab_Plenum.Controls.Add(this.braceHoleDiameter_Box);
             this.tab_Plenum.Controls.Add(this.label32);
@@ -528,10 +561,27 @@ namespace Plenum
             this.tab_Plenum.Text = "Plenum";
             this.tab_Plenum.UseVisualStyleBackColor = true;
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(18, 422);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(147, 13);
+            this.label34.TabIndex = 121;
+            this.label34.Text = "Flange Gage (WT brace only)";
+            // 
+            // flangeGageWT_Box
+            // 
+            this.flangeGageWT_Box.Location = new System.Drawing.Point(171, 419);
+            this.flangeGageWT_Box.Name = "flangeGageWT_Box";
+            this.flangeGageWT_Box.Size = new System.Drawing.Size(100, 20);
+            this.flangeGageWT_Box.TabIndex = 120;
+            this.flangeGageWT_Box.TextChanged += new System.EventHandler(this.flangeGageWT_Box_TextChanged);
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(14, 460);
+            this.label33.Location = new System.Drawing.Point(60, 396);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(105, 13);
             this.label33.TabIndex = 119;
@@ -539,7 +589,7 @@ namespace Plenum
             // 
             // braceHoleDiameter_Box
             // 
-            this.braceHoleDiameter_Box.Location = new System.Drawing.Point(125, 457);
+            this.braceHoleDiameter_Box.Location = new System.Drawing.Point(171, 393);
             this.braceHoleDiameter_Box.Name = "braceHoleDiameter_Box";
             this.braceHoleDiameter_Box.Size = new System.Drawing.Size(100, 20);
             this.braceHoleDiameter_Box.TabIndex = 118;
@@ -548,7 +598,7 @@ namespace Plenum
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(12, 434);
+            this.label32.Location = new System.Drawing.Point(58, 370);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(107, 13);
             this.label32.TabIndex = 117;
@@ -556,7 +606,7 @@ namespace Plenum
             // 
             // clipTHK_Box
             // 
-            this.clipTHK_Box.Location = new System.Drawing.Point(125, 431);
+            this.clipTHK_Box.Location = new System.Drawing.Point(171, 367);
             this.clipTHK_Box.Name = "clipTHK_Box";
             this.clipTHK_Box.Size = new System.Drawing.Size(100, 20);
             this.clipTHK_Box.TabIndex = 116;
@@ -565,7 +615,7 @@ namespace Plenum
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(53, 356);
+            this.label21.Location = new System.Drawing.Point(53, 250);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(66, 13);
             this.label21.TabIndex = 115;
@@ -573,7 +623,7 @@ namespace Plenum
             // 
             // mmHeight_Box
             // 
-            this.mmHeight_Box.Location = new System.Drawing.Point(125, 353);
+            this.mmHeight_Box.Location = new System.Drawing.Point(125, 247);
             this.mmHeight_Box.Name = "mmHeight_Box";
             this.mmHeight_Box.Size = new System.Drawing.Size(100, 20);
             this.mmHeight_Box.TabIndex = 114;
@@ -600,7 +650,7 @@ namespace Plenum
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(30, 408);
+            this.label50.Location = new System.Drawing.Point(76, 344);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(89, 13);
             this.label50.TabIndex = 111;
@@ -608,7 +658,7 @@ namespace Plenum
             // 
             // textBox_ClipHeight
             // 
-            this.textBox_ClipHeight.Location = new System.Drawing.Point(125, 405);
+            this.textBox_ClipHeight.Location = new System.Drawing.Point(171, 341);
             this.textBox_ClipHeight.Name = "textBox_ClipHeight";
             this.textBox_ClipHeight.Size = new System.Drawing.Size(100, 20);
             this.textBox_ClipHeight.TabIndex = 110;
@@ -633,7 +683,7 @@ namespace Plenum
             "T",
             "X",
             "TX"});
-            this.comboBox_BraceType.Location = new System.Drawing.Point(125, 272);
+            this.comboBox_BraceType.Location = new System.Drawing.Point(171, 288);
             this.comboBox_BraceType.Name = "comboBox_BraceType";
             this.comboBox_BraceType.Size = new System.Drawing.Size(110, 21);
             this.comboBox_BraceType.TabIndex = 60;
@@ -641,7 +691,7 @@ namespace Plenum
             // 
             // textBoxShipBeamHeight
             // 
-            this.textBoxShipBeamHeight.Location = new System.Drawing.Point(125, 379);
+            this.textBoxShipBeamHeight.Location = new System.Drawing.Point(113, 465);
             this.textBoxShipBeamHeight.Name = "textBoxShipBeamHeight";
             this.textBoxShipBeamHeight.Size = new System.Drawing.Size(100, 20);
             this.textBoxShipBeamHeight.TabIndex = 58;
@@ -651,7 +701,7 @@ namespace Plenum
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 382);
+            this.label4.Location = new System.Drawing.Point(15, 468);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 59;
@@ -659,7 +709,7 @@ namespace Plenum
             // 
             // textBox_DriveWidth
             // 
-            this.textBox_DriveWidth.Location = new System.Drawing.Point(125, 325);
+            this.textBox_DriveWidth.Location = new System.Drawing.Point(125, 219);
             this.textBox_DriveWidth.Name = "textBox_DriveWidth";
             this.textBox_DriveWidth.Size = new System.Drawing.Size(100, 20);
             this.textBox_DriveWidth.TabIndex = 56;
@@ -669,7 +719,7 @@ namespace Plenum
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 328);
+            this.label3.Location = new System.Drawing.Point(53, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 57;
@@ -678,7 +728,7 @@ namespace Plenum
             // 
             // textBox_BraceAngle
             // 
-            this.textBox_BraceAngle.Location = new System.Drawing.Point(125, 299);
+            this.textBox_BraceAngle.Location = new System.Drawing.Point(171, 315);
             this.textBox_BraceAngle.Name = "textBox_BraceAngle";
             this.textBox_BraceAngle.Size = new System.Drawing.Size(100, 20);
             this.textBox_BraceAngle.TabIndex = 54;
@@ -688,7 +738,7 @@ namespace Plenum
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 302);
+            this.label2.Location = new System.Drawing.Point(102, 318);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 55;
@@ -698,7 +748,7 @@ namespace Plenum
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 275);
+            this.label1.Location = new System.Drawing.Point(103, 291);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 53;
@@ -774,7 +824,7 @@ namespace Plenum
             this.materialCombo.Items.AddRange(new object[] {
             "A36",
             "A572_50"});
-            this.materialCombo.Location = new System.Drawing.Point(125, 245);
+            this.materialCombo.Location = new System.Drawing.Point(331, 453);
             this.materialCombo.Name = "materialCombo";
             this.materialCombo.Size = new System.Drawing.Size(110, 21);
             this.materialCombo.TabIndex = 43;
@@ -784,7 +834,7 @@ namespace Plenum
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(74, 248);
+            this.label23.Location = new System.Drawing.Point(280, 456);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(44, 13);
             this.label23.TabIndex = 42;
@@ -825,7 +875,7 @@ namespace Plenum
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(51, 221);
+            this.label22.Location = new System.Drawing.Point(51, 195);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(68, 13);
             this.label22.TabIndex = 39;
@@ -837,7 +887,7 @@ namespace Plenum
             this.comboBox1_driveDesign.Items.AddRange(new object[] {
             "Motor Shaft Down",
             "Motor Shaft Up"});
-            this.comboBox1_driveDesign.Location = new System.Drawing.Point(125, 218);
+            this.comboBox1_driveDesign.Location = new System.Drawing.Point(125, 192);
             this.comboBox1_driveDesign.Name = "comboBox1_driveDesign";
             this.comboBox1_driveDesign.Size = new System.Drawing.Size(110, 21);
             this.comboBox1_driveDesign.TabIndex = 38;
@@ -857,7 +907,7 @@ namespace Plenum
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(11, 172);
+            this.label20.Location = new System.Drawing.Point(11, 154);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 13);
             this.label20.TabIndex = 34;
@@ -865,7 +915,7 @@ namespace Plenum
             // 
             // txt_RingDepth
             // 
-            this.txt_RingDepth.Location = new System.Drawing.Point(99, 169);
+            this.txt_RingDepth.Location = new System.Drawing.Point(99, 151);
             this.txt_RingDepth.Name = "txt_RingDepth";
             this.txt_RingDepth.Size = new System.Drawing.Size(100, 20);
             this.txt_RingDepth.TabIndex = 33;
@@ -873,7 +923,7 @@ namespace Plenum
             // 
             // txt_FanDiameter
             // 
-            this.txt_FanDiameter.Location = new System.Drawing.Point(99, 143);
+            this.txt_FanDiameter.Location = new System.Drawing.Point(99, 125);
             this.txt_FanDiameter.Name = "txt_FanDiameter";
             this.txt_FanDiameter.Size = new System.Drawing.Size(100, 20);
             this.txt_FanDiameter.TabIndex = 27;
@@ -889,7 +939,7 @@ namespace Plenum
             // 
             // txt_FanCount1
             // 
-            this.txt_FanCount1.Location = new System.Drawing.Point(99, 117);
+            this.txt_FanCount1.Location = new System.Drawing.Point(99, 99);
             this.txt_FanCount1.Name = "txt_FanCount1";
             this.txt_FanCount1.Size = new System.Drawing.Size(100, 20);
             this.txt_FanCount1.TabIndex = 13;
@@ -943,7 +993,7 @@ namespace Plenum
             // 
             this.label_FanDiameter.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label_FanDiameter.AutoSize = true;
-            this.label_FanDiameter.Location = new System.Drawing.Point(26, 146);
+            this.label_FanDiameter.Location = new System.Drawing.Point(26, 128);
             this.label_FanDiameter.Name = "label_FanDiameter";
             this.label_FanDiameter.Size = new System.Drawing.Size(70, 13);
             this.label_FanDiameter.TabIndex = 28;
@@ -1058,7 +1108,7 @@ namespace Plenum
             // 
             this.txt_FanCount.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txt_FanCount.AutoSize = true;
-            this.txt_FanCount.Location = new System.Drawing.Point(37, 120);
+            this.txt_FanCount.Location = new System.Drawing.Point(37, 102);
             this.txt_FanCount.Name = "txt_FanCount";
             this.txt_FanCount.Size = new System.Drawing.Size(56, 13);
             this.txt_FanCount.TabIndex = 14;
@@ -1104,14 +1154,49 @@ namespace Plenum
             this.txt_plen.Size = new System.Drawing.Size(466, 607);
             this.txt_plen.TabIndex = 2;
             // 
+            // textBox_EndOverride
+            // 
+            this.textBox_EndOverride.Location = new System.Drawing.Point(57, 265);
+            this.textBox_EndOverride.Name = "textBox_EndOverride";
+            this.textBox_EndOverride.Size = new System.Drawing.Size(100, 20);
+            this.textBox_EndOverride.TabIndex = 39;
+            this.textBox_EndOverride.TextChanged += new System.EventHandler(this.textBox_EndOverride_TextChanged);
+            // 
+            // textBox_DividerOverride
+            // 
+            this.textBox_DividerOverride.Location = new System.Drawing.Point(57, 291);
+            this.textBox_DividerOverride.Name = "textBox_DividerOverride";
+            this.textBox_DividerOverride.Size = new System.Drawing.Size(100, 20);
+            this.textBox_DividerOverride.TabIndex = 40;
+            this.textBox_DividerOverride.TextChanged += new System.EventHandler(this.textBox_SideOverride_TextChanged);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(163, 268);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(168, 13);
+            this.label36.TabIndex = 41;
+            this.label36.Text = "Number of End Stiffeners Override";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(163, 294);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(182, 13);
+            this.label37.TabIndex = 42;
+            this.label37.Text = "Number of Divider Stiffeners Override";
+            // 
             // PlenumUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 631);
+            this.ClientSize = new System.Drawing.Size(490, 629);
             this.Controls.Add(this.txt_plen);
             this.Name = "PlenumUI";
             this.Text = "PlenumUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlenumUI_FormClosing);
             this.Load += new System.EventHandler(this.PlenumUI_Load);
             this.tab_AdvOptions.ResumeLayout(false);
             this.tab_AdvOptions.PerformLayout();
@@ -1216,5 +1301,13 @@ namespace Plenum
         private System.Windows.Forms.TextBox clipTHK_Box;
         private System.Windows.Forms.TextBox braceHoleDiameter_Box;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox flangeGageWT_Box;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox textBox_SpliceOverride;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBox_DividerOverride;
+        private System.Windows.Forms.TextBox textBox_EndOverride;
     }
 }

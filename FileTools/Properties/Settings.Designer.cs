@@ -541,7 +541,7 @@ namespace FileTools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("L")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TX")]
         public string BraceType {
             get {
                 return ((string)(this["BraceType"]));
@@ -764,6 +764,42 @@ namespace FileTools.Properties {
             }
             set {
                 this["Clip_Height"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FloorSplice_LengthOverride {
+            get {
+                return ((double)(this["FloorSplice_LengthOverride"]));
+            }
+            set {
+                this["FloorSplice_LengthOverride"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int EndStiffenerCount {
+            get {
+                return ((int)(this["EndStiffenerCount"]));
+            }
+            set {
+                this["EndStiffenerCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int DividerStiffenerCount {
+            get {
+                return ((int)(this["DividerStiffenerCount"]));
+            }
+            set {
+                this["DividerStiffenerCount"] = value;
             }
         }
     }

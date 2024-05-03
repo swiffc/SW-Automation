@@ -73,7 +73,7 @@ namespace Plenum
 
                     AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     mTools.Rebuild(true);
-                    TurnOffBendLines();
+                    TurnOffBendLines(AssemblyDoc as ModelDoc2);
                 }
                 else
                 {
@@ -232,36 +232,36 @@ namespace Plenum
         // Dictionaries
         internal static Dictionary<string, Type> StaticParentDictionary = new Dictionary<string, Type>
         {
-            //{ "113", typeof(JohnsonBeamWld) },
-            //{ "116", typeof(MidColumn) },
-            //{ "117", typeof(EndColumn) },
+            { "113", typeof(JohnsonBeamWld) },
+            { "116", typeof(MidColumn) },
+            { "117", typeof(EndColumn) },
             { "140", typeof(BackingPlate) },
             { "142", typeof(KneeClipBent_L) },
             { "144", typeof(KneeClipBent_R) },
-            //{ "146", typeof(KneeClipFlat) },
-            //{ "156", typeof(EndPanel) },
-            //{ "166", typeof(DividerPanel) },
-            //{ "176P", typeof(DividerFlange) },
-            //{ "178", typeof(PlanBraceEnd) },
-            //{ "179", typeof(PlanBraceMiddle) },
-            //{ "180", typeof(PlanBraceHorizontal) },
-            //{ "181", typeof(SidePanel) },
-            //{ "181L", typeof(SidePanelLeft) },
-            //{ "181R", typeof(SidePanelRight) },
-            //{ "185", typeof(DividerAngle) },
-            //{ "186", typeof(CornerAngle) },
+            { "146", typeof(KneeClipFlat) },
+            { "156", typeof(EndPanel) },
+            { "166", typeof(DividerPanel) },
+            { "176P", typeof(DividerFlange) },
+            { "178", typeof(PlanBraceEnd) },
+            { "179", typeof(PlanBraceMiddle) },
+            { "180", typeof(PlanBraceHorizontal) },
+            { "181", typeof(SidePanel) },
+            { "181L", typeof(SidePanelLeft) },
+            { "181R", typeof(SidePanelRight) },
+            { "185", typeof(DividerAngle) },
+            { "186", typeof(CornerAngle) },
             { "186S", typeof(WallStiffener) },
-            //{ "191", typeof(OuterFloorPanelLeft) },
-            //{ "192", typeof(FloorSplice) },
-            //{ "193", typeof(OuterFloorPanelRight) },
-            //{ "195", typeof(InnerFloorPanelLeft) },
-            //{ "196", typeof(FanRing) },
-            //{ "197", typeof(InnerFloorPanelRight) },
-            //{ "201", typeof(FloorStiffener) },
-            //{ "206", typeof(OuterFloorExtension) },
-            //{ "207", typeof(InnerFloorExtension) },
-            //{ "266", typeof(MotorBeamWld) },
-            //{ $"FG{FanDiameter}", typeof(FanGuard) },
+            { "191", typeof(OuterFloorPanelLeft) },
+            { "192", typeof(FloorSplice) },
+            { "193", typeof(OuterFloorPanelRight) },
+            { "195", typeof(InnerFloorPanelLeft) },
+            { "196", typeof(FanRing) },
+            { "197", typeof(InnerFloorPanelRight) },
+            { "201", typeof(FloorStiffener) },
+            { "206", typeof(OuterFloorExtension) },
+            { "207", typeof(InnerFloorExtension) },
+            { "266", typeof(MotorBeamWld) },
+            { $"FG{FanDiameter}", typeof(FanGuard) },
         };
         internal static Dictionary<string, Type> StaticChildDictionary = new Dictionary<string, Type>
         {

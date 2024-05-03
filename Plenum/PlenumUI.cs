@@ -74,6 +74,7 @@ namespace Plenum
             comboBox1_driveDesign.Text = Default.MotorShaft_Orientation.ToString();
 
             textBox_ExtraLength.Text = Default.Johnson_ExtraLength < 1 ? "" : Default.Johnson_ExtraLength.ToString();
+            textBox_SpliceOverride.Text = Default.FloorSplice_LengthOverride == 0 ? "" : Default.FloorSplice_LengthOverride.ToString();
 
             materialCombo.Text = Default.MaterialSpecSetting.ToString();
 
@@ -96,6 +97,10 @@ namespace Plenum
             mmHeight_Box.Text = Default.MachineryMount_Height.ToString();
             clipTHK_Box.Text = Default.Clip_THK.ToString();
             braceHoleDiameter_Box.Text = Default.HoleDiameter_Structural.ToString();
+            flangeGageWT_Box.Text = WT_FlangeGage.ToString();
+
+            textBox_EndOverride.Text = Default.EndStiffenerCount.ToString();
+            textBox_DividerOverride.Text = Default.DividerStiffenerCount.ToString();
 
             isUserChange = true;
         }
@@ -226,6 +231,8 @@ namespace Plenum
         private void btn_Standard_Click(object sender, EventArgs e)
         {
             new Standard();
+            Default.Beams_AreRotated = false;
+            SaveSettings();
         }
 
         private void comboBox_ColumnSize_SelectedIndexChanged(object sender, EventArgs e)
@@ -264,11 +271,15 @@ namespace Plenum
         private void btn_Johnson_Click(object sender, EventArgs e)
         {
             new Johnson();
+            Default.Beams_AreRotated = true;
+            SaveSettings();
         }
 
         private void btn_Legacy_Click(object sender, EventArgs e)
         {
             new Legacy();
+            Default.Beams_AreRotated = true;
+            SaveSettings();
         }
 
         private void textBox_ExtraLength_TextChanged(object sender, EventArgs e)
@@ -426,6 +437,44 @@ namespace Plenum
         private void braceHoleDiameter_Box_TextChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(braceHoleDiameter_Box.Text, x => Default.HoleDiameter_Structural = x);
+        }
+
+        private void flangeGageWT_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(flangeGageWT_Box.Text, x => Default.WT_FlangeGage = x);
+        }
+
+        private void textBox_SpliceOverride_TextChanged(object sender, EventArgs e)
+        {
+            bool saveIsEnabled = true;
+            if (textBox_SpliceOverride.Text.EndsWith(".") ||
+                textBox_SpliceOverride.Text.EndsWith(".0"))
+            {
+                saveIsEnabled = false;
+            }
+
+            if (double.TryParse(textBox_SpliceOverride.Text, out double splice))
+                Default.FloorSplice_LengthOverride = splice;
+            else
+                Default.FloorSplice_LengthOverride = 0;
+
+            if (saveIsEnabled)
+                SaveSettings();
+        }
+
+        private void PlenumUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveSettings();
+        }
+
+        private void textBox_EndOverride_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(textBox_EndOverride.Text, x => Default.EndStiffenerCount = x);
+        }
+
+        private void textBox_SideOverride_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(textBox_DividerOverride.Text, x => Default.DividerStiffenerCount = x);
         }
     }
 }

@@ -39,9 +39,9 @@ namespace Plenum.JohnsonBeam.Children
         {
             mTools.EditDimension("Length", "Beam", JohnsonBeamPart.Length, modelDoc2);
 
-            double totalLength = Length + Default.Johnson_ExtraLength * 2;
+            double totalLength = Plenum_Length + Default.Johnson_ExtraLength * 2;
             double endFanToEndPanel = totalLength / 4;
-            double sectionThird = (Length + Default.Johnson_ExtraLength * 2) / Fan_Count  / 3;
+            double sectionThird = (Plenum_Length + Default.Johnson_ExtraLength * 2) / Fan_Count  / 3;
 
             double zTotal = endFanToEndPanel - Default.Johnson_ExtraLength;
             double z = zTotal - sectionThird / 2;

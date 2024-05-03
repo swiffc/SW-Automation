@@ -51,7 +51,7 @@ namespace Plenum
             switch (CallerType)
             {
                 case Design.Standard:
-                    xTranslation = Plenum_Width / 2;
+                    xTranslation = Plenum_Width / 2 - Default.SidePanel_THK;
                     break;
                 case Design.Johnson:
                     xTranslation = Plenum_Width / 2 + Beam_Depth / 2;

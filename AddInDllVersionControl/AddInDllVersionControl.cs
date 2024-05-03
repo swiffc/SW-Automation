@@ -38,9 +38,9 @@ namespace AddInDllVersionControl
                         // Close SolidWorks
                         swApp.ExitApp();
                     }
-                    catch (COMException)
+                    catch (Exception ex)
                     {
-                        // Handle the case where SolidWorks cannot be closed or is not responding
+                        Console.WriteLine("An exception occured: " + ex.Message);
                     }
                 }
             }

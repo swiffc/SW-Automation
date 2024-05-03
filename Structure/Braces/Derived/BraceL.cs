@@ -28,6 +28,7 @@ namespace Structure.Braces.Derived
         }
         static public double HoleToEnd => CommonData.HoleToEnd;
         static public double HoleToHole => 2.5;
+        static private double RotationAdjustment => -BraceAngle * 2 + 180;
 
 
         // Constructor
@@ -141,13 +142,13 @@ namespace Structure.Braces.Derived
                 var side_101LL = side_101;
                 side_101LL.TranslationX -= Clip_THK;
                 side_101LL.RotationY += 180;
-                side_101LL.RotationX += 90 + BraceAngle;
+                side_101LL.RotationX += RotationAdjustment;
                 pos.Add(side_101LL);
 
                 var side_106LL = side_106;
                 side_106LL.TranslationX += Clip_THK;
                 side_106LL.RotationY += 180;
-                side_106LL.RotationX -= 90 + BraceAngle;
+                side_106LL.RotationX -= RotationAdjustment;
                 pos.Add(side_106LL);
             }
 
@@ -188,13 +189,13 @@ namespace Structure.Braces.Derived
                 var end_101LL = end_101;
                 end_101LL.TranslationZ += Clip_THK;
                 end_101LL.RotationY += 180;
-                end_101LL.RotationX -= 90 + BraceAngle;
+                end_101LL.RotationX -= RotationAdjustment;
                 pos.Add(end_101LL);
 
                 var end_106LL = end_106;
                 end_106LL.TranslationZ += Clip_THK;
                 end_106LL.RotationY += 180;
-                end_106LL.RotationX += 90 + BraceAngle;
+                end_106LL.RotationX += RotationAdjustment;
                 pos.Add(end_106LL);
             }
 

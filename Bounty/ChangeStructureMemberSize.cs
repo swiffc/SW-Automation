@@ -1,4 +1,5 @@
 ﻿using SolidWorks.Interop.sldworks;
+using SolidWorks.Interop.swconst;
 using System;
 using System.Runtime.InteropServices;
 
@@ -20,6 +21,11 @@ namespace Bounty
             Console.WriteLine($"Attempting to set {member.ConfigurationName} to {newSize}");
             member.ConfigurationName = newSize;
             Console.WriteLine($"  Result: {member.ConfigurationName}");
+        }
+
+        public static void TurnOffBendLines(ModelDoc2 modelDoc2)
+        {
+            modelDoc2.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swDisplayBendLines, false);
         }
     }
 }

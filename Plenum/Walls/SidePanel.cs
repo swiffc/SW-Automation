@@ -212,11 +212,13 @@ namespace Plenum
         }
         private void EditDimensions_NoMidColumns(ModelDoc2 modelDoc2)
         {
+            double holeToEdge = CallerType == Design.Legacy ? 1.25 : 1.5;
+
             double angleSpacing;
             if (Mid_Columns)
-                angleSpacing = LocalLength - 1.25 * 2;
+                angleSpacing = LocalLength - holeToEdge * 2;
             else
-                angleSpacing = (LocalLength - 1.25 * 2) / Fan_Count + DividerPanel.THK / 2 + CornerAngle.Gauge;
+                angleSpacing = (LocalLength - holeToEdge * 2) / Fan_Count + DividerPanel.THK / 2 + CornerAngle.Gauge;
             mTools.EditDimension("CornerAngleSpacing", "sk:Hole", angleSpacing, modelDoc2);
 
 

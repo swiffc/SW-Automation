@@ -83,8 +83,6 @@ namespace Plenum.Structure
 
             if (BraceType.Contains("L"))
             {
-                CenterPanelClips(ref pos);
-
                 if (Mid_Columns)
                 {
                     for (int i = 0; i < Fan_Count - 1; i++)
@@ -111,14 +109,13 @@ namespace Plenum.Structure
         {
             double xTranslation = Plenum_Width / 2 - ColumnCenterToPlenumEndClipHole();
             double yTranslation = -Plenum_Depth + Math.Max(EndPanel_THK, SidePanel_THK) + FloorPanel.THK;
-            double zTranslation = Plenum_Length / 2;
+            double zTranslation = Plenum_Length / 2 + EndPanel_THK / 2;
 
             for (int i = 1; i < Fan_Count; i++)
             {
-                double z = zTranslation + EndPanel_THK/2;
-                z -= Plenum_Length / Fan_Count;
-                pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z, rY: 180));
-                pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: 180));
+                zTranslation -= Plenum_Length / Fan_Count;
+                pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rY: 180));
+                pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation, rY: 180));
             }
         }
 
@@ -132,12 +129,15 @@ namespace Plenum.Structure
         {
             get
             {
-                List<PositionData> pos = null;
+                List<PositionData> pos = new List<PositionData>();
 
                 if (PlenumDesign == Design.Standard)
                     pos = StandardClips();
-                else 
+                else
                     pos = LegacyAndJohnsonClips();
+
+                if (BraceType.Contains("L"))
+                    CenterPanelClips(ref pos);
 
                 return pos;
             }

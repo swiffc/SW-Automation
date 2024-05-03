@@ -13,6 +13,7 @@ using static FileTools.FileTools;
 using Plenum.Floor;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -148,10 +149,9 @@ namespace Plenum
         // Private methods
         private double GetPlanBraceHole()
         {
-            //double sectionThird = Length / FanCount / 3;
             mTools.AAS(45, PlanBraceHorizontal.SectionThird - EndPanel_THK / 2, out double adjacentSide, out _);
+            adjacentSide += PlenumDesign == Design.Standard ? Default.SidePanel_THK : 0;
             double value = Plenum_Width - adjacentSide * 2 + (CallerType == Design.Johnson ? Beam_Depth : 0);
-
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)
             {

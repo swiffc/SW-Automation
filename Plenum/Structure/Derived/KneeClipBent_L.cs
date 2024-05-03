@@ -39,8 +39,6 @@ namespace Plenum.Structure.Derived
 
             if (BraceType.Contains("L"))
             {
-                CenterPanelClips(ref pos);
-
                 if (Mid_Columns)
                 {
                     for (int i = 0; i < Fan_Count - 1; i++)
@@ -67,9 +65,8 @@ namespace Plenum.Structure.Derived
 
             for (int i = 1; i < Fan_Count; i++)
             {
-                double z = zTranslation;
-                z -= Plenum_Length / Fan_Count;
-                pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z));
+                zTranslation -= Plenum_Length / Fan_Count;
+                pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslation));
             }
         }
 
@@ -84,6 +81,9 @@ namespace Plenum.Structure.Derived
             get
             {
                 var pos = new List<PositionData>();
+
+                if (BraceType.Contains("L"))
+                    CenterPanelClips(ref pos);
 
                 if (PlenumDesign == Design.Standard)
                     StandardClips(ref pos);

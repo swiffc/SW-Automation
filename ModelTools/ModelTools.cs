@@ -746,9 +746,11 @@ namespace Tools
         }
         public static void Rotate(double xDegrees, double yDegrees, double zDegrees)
         {
-            Matrix4x4 zRotation = Z_Axis_Rotate2(zDegrees);
+
+
             Matrix4x4 xRotation = X_Axis_Rotate2(xDegrees);
             Matrix4x4 yRotation = Y_Axis_Rotate2(yDegrees);
+            Matrix4x4 zRotation = Z_Axis_Rotate2(zDegrees);
 
             Matrix4x4 matrix = Matrix4x4.Multiply(Matrix4x4.Multiply(xRotation, yRotation), zRotation);
 

@@ -5,6 +5,7 @@ using static Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using static FileTools.Properties.Settings;
+using SolidWorks.Interop.sldworks;
 
 namespace FileTools.Base
 {
@@ -45,6 +46,7 @@ namespace FileTools.Base
 
                     OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                     Rebuild(true);
+                    TurnOffBendLines(AssemblyDoc as ModelDoc2);
                 }
                 else
                 {

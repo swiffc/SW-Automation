@@ -115,7 +115,7 @@ namespace Plenum.Walls
             get
             {
 
-                double zTranslation = Length / 2 - SidePanel_THK / 2;
+                double zTranslation = Plenum_Length / 2 - EndPanel_THK / 2;
 
 
                 List<PositionData> _position = new List<PositionData>();
@@ -124,7 +124,7 @@ namespace Plenum.Walls
                 {
                     for (int i = 1; i < Fan_Count; i++)
                     {
-                        zTranslation -= Length / Fan_Count;
+                        zTranslation -= Plenum_Length / Fan_Count;
                         _position.Add(PositionData.Create(tZ: zTranslation, tY: -Plenum_Depth));
                     }
                 }

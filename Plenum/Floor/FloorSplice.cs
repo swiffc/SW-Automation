@@ -13,12 +13,14 @@ using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Floor
 {
     internal class FloorSplice : Part
     {
         public static bool Enabled { get; set; } = FloorPanel.SpliceRequired;
+        public static double LengthOverride => Default.FloorSplice_LengthOverride;
 
         // Constructor
         public FloorSplice(Design callerType) : base(callerType) { }
@@ -29,7 +31,9 @@ namespace Plenum.Floor
         {
             get
             {
-                return FanDiameter <= 156 ? 30 : 72;
+                if (LengthOverride > 0 )
+                    return LengthOverride;
+                else return FanDiameter <= 156 ? 30 : 72;
             }
         }
 

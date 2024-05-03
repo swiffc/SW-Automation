@@ -49,17 +49,17 @@ namespace Plenum.JohnsonBeam
         {
             get
             {
-                _position = new List<PositionData>();
+                var pos  = new List<PositionData>();
 
                 if (CallerType == Design.Johnson)
                 {
-                    double zTranslation = Length / 2;
+                    double zTranslation = Plenum_Length / 2;
 
-                    _position.Add(PositionData.Create(tZ: zTranslation));
-                    _position.Add(PositionData.Create(tZ: -zTranslation, rY: 180));
+                    pos.Add(PositionData.Create(tZ: zTranslation));
+                    pos.Add(PositionData.Create(tZ: -zTranslation, rY: 180));
                 }
 
-                return _position;
+                return pos;
             }
         }
         protected override AssemblyDoc ParentAssembly => Plenum.AssemblyDoc;

@@ -20,7 +20,17 @@ namespace FileTools.CommonData
         public static void UI_DoubleChanged(string textBoxText, Action<double> setProperty)
         {
             bool saveIsEnabled = true;
-            if (textBoxText == "-" || textBoxText.EndsWith(".") || textBoxText.EndsWith(".0") || textBoxText.StartsWith("."))
+            if (
+                (textBoxText.StartsWith("-0") && textBoxText.EndsWith(".0")) || // -0.0
+                (textBoxText.StartsWith("-0") && textBoxText.EndsWith(".")) ||  // -0.
+                (textBoxText.StartsWith("-") && textBoxText.EndsWith("0")) ||   // -0
+                (textBoxText.StartsWith("-") && textBoxText.EndsWith("-")) ||   // -
+                (textBoxText.StartsWith("-") && textBoxText.EndsWith(".")) ||   // - .
+                (textBoxText.StartsWith("-") && textBoxText.EndsWith(".0")) ||  // - .0
+                (textBoxText.StartsWith("0") && textBoxText.EndsWith(".0")) ||  //  0.0
+                (textBoxText.StartsWith("0") && textBoxText.EndsWith(".")) ||   //  0.
+                (textBoxText.StartsWith(".") && textBoxText.EndsWith(".")) ||   //   .
+                (textBoxText.StartsWith(".") && textBoxText.EndsWith(".0")))    //   .0
             {
                 saveIsEnabled = false;
             }
@@ -32,8 +42,13 @@ namespace FileTools.CommonData
             {
                 setProperty(0.001);
             }
+
             if (saveIsEnabled)
+            {
                 SaveSettings();
+            }
+                
+                
         }
         public static void UI_IntChanged(string textBoxText, Action<int> setProperty)
         {

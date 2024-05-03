@@ -146,6 +146,7 @@ namespace Plenum
         {
             double sectionThird = Plenum_Length / Fan_Count / 3;
             mTools.AAS(45, sectionThird + Beam_Depth / 2, out double adjacentSide, out _);
+            adjacentSide += PlenumDesign == Design.Standard ? Default.SidePanel_THK : 0;
             double value = Plenum_Width - adjacentSide * 2;
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)

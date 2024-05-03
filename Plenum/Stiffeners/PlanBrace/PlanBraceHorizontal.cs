@@ -51,7 +51,20 @@ namespace Plenum.Stiffeners
 
                 if (Enabled)
                 {
-                    double xTranslation = Plenum_Width / 2 + (CallerType == Design.Johnson ? Beam_Depth / 2 : 0);
+                    double xTranslation = 0;
+                    switch (PlenumDesign)
+                    {
+                        case Design.Standard:
+                            xTranslation = Plenum_Width / 2;
+                            break;
+                        case Design.Johnson:
+                            xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
+                            break;
+                        case Design.Legacy:
+                            xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - Default.SidePanel_THK;
+                            break;
+                            throw new NotImplementedException();
+                    }
                     double yTranslation = -4;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
 

@@ -12,6 +12,7 @@ using static Tools.ModelTools;
 using static ModelTools.BendTable;
 using Plenum.Floor;
 using Plenum.Helpers.Static;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Structure
 {
@@ -65,7 +66,7 @@ namespace Plenum.Structure
         }
         private void AddEndStiffenersEvenlySpread(ref List<PositionData> pos)
         {
-            double stiffenerCount = 3;
+            double stiffenerCount = EndStiffenerCount;
             double xTranslation = -Plenum_Width / 2 + Plenum_Width / (stiffenerCount + 1) - Gage;
             bool isFirstStiffenerToBeFlipped = false;
 
@@ -80,6 +81,45 @@ namespace Plenum.Structure
                 pos.Add(PositionData.Create(tX: xTranslation, tY: YTranslation_AllBraces, tZ: ZTranslation_EndPanelBrace, rZ: zRotation));
                 pos.Add(PositionData.Create(tX: xTranslation, tY: YTranslation_AllBraces, tZ: -ZTranslation_EndPanelBrace, rX: 180, rZ: zRotation));
                 xTranslation += Plenum_Width / (stiffenerCount + 1);
+            }
+        }
+        private void AddDividerStiffenersEvenlySpread(ref List<PositionData> pos)
+        {
+            double stiffenerCount = DividerStiffenerCount;
+            double xTranslation = -Plenum_Width / 2 + Plenum_Width / (stiffenerCount + 1) - Gage;
+            bool isFirstStiffenerToBeFlipped = false;
+            double z = 0;
+            switch (PlenumDesign)
+            {
+                case Design.Standard:
+                    z = ZTranslation_EndPanelBrace + DividerPanel.THK * 0.5 - Beam_Depth / 2;
+                    break;
+                case Design.Johnson:
+                    z = ZTranslation_EndPanelBrace - Johnson_ExtraLength + EndPanel_THK * 0.5;
+                    break;
+                case Design.Legacy:
+                    z = ZTranslation_EndPanelBrace + DividerPanel.THK * 1.5;
+                    break;
+            }
+            double savedX = xTranslation;
+
+            // for each center pannel
+            for (int j = 1; j < Fan_Count; j++)
+            {
+                z -= Plenum_Length / Fan_Count;
+                //z -= PlenumDesign == Design.Johnson ? (Default.Johnson_ExtraLength + EndPanel_THK) : 0;
+                for (int i = 0; i < stiffenerCount; i++) // for each stiffener on a panel
+                {
+                    double zRotation = i > stiffenerCount / 2 ? 0 : 180;
+                    if (i > stiffenerCount / 2 && !isFirstStiffenerToBeFlipped)
+                    {
+                        xTranslation += Gage * 2;
+                        isFirstStiffenerToBeFlipped = true;
+                    }
+                    pos.Add(PositionData.Create(tX: xTranslation, tY: YTranslation_AllBraces, tZ: z, rZ: zRotation, rX: 180));
+                    xTranslation += Plenum_Width / (stiffenerCount + 1);
+                }
+                xTranslation = savedX;
             }
         }
         private void AddSideStiffenersAtBraceClips(ref List<PositionData> pos)
@@ -158,7 +198,7 @@ namespace Plenum.Structure
                     case Design.Standard:
                         return Plenum_Length / 2 + Beam_Depth / 2;
                     case Design.Johnson:
-                        return Plenum_Length / 2;
+                        return Plenum_Length / 2 + Default.Johnson_ExtraLength;
                     case Design.Legacy:
                         return Plenum_Length / 2 - EndPanel_THK;
                 }
@@ -188,7 +228,10 @@ namespace Plenum.Structure
                     AddDividerStiffenersAtBraceClips(ref pos);
                 }
                 else
+                {
                     AddEndStiffenersEvenlySpread(ref pos);
+                    AddDividerStiffenersEvenlySpread(ref pos);
+                }
 
 
                 return pos;

@@ -15,9 +15,10 @@ namespace SolidWorks_Add_In
     /// </summary>
     public class TaskpaneIntegration : SwAddin
     {
-        static public string VersionNumber => "4.1.0";
-        static public string SpeechBubble => 
-            @"""" +                          "Sub-Structure Automation Is Live"
+        static public string VersionNumber => "4.1.1";
+        static public string SpeechBubble =>
+            @"""" + "Plenum clips and bracing added." + "\n" +
+                    "Early release before holes are supported"
           + @"""";
 
         #region Private Members
@@ -73,7 +74,9 @@ namespace SolidWorks_Add_In
             var ok = mSolidWorksApplication.SetAddinCallbackInfo2(0, this, mSwCookie);
 
             // Version control
-            //CheckVersions();
+            string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            if (!desktopPath.Contains("acmurr"))
+                CheckVersions();
 
             // Create our UI
             LoadUI();

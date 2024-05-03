@@ -110,7 +110,7 @@ namespace Plenum
                 switch (CallerType)
                 {
                     case Design.Standard:
-                        return Plenum_Width - mTools.AssemblyClearance * 2;
+                        return Plenum_Width - mTools.AssemblyClearance * 2 - SidePanel_THK * 2;
                     case Design.Johnson:
                         return Plenum_Width + Beam_Depth - mTools.AssemblyClearance * 2;
                     case Design.Legacy:

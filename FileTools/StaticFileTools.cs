@@ -579,11 +579,10 @@ namespace FileTools
 
             return components;
         }
-        public static void TurnOffBendLines()
+        public static void TurnOffBendLines(ModelDoc2 modelDoc2)
         {
-            SW.IActiveDoc2.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swDisplayBendLines, false);
+            modelDoc2.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swDisplayBendLines, false);
         }
-
 
 
 
