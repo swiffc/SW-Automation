@@ -1,0 +1,7 @@
+C:\Users\acmurr\Desktop\Repo\Bounty\bin\Debug\Bounty.exe.config
+C:\Users\acmurr\Desktop\Repo\Bounty\bin\Debug\Bounty.exe
+C:\Users\acmurr\Desktop\Repo\Bounty\bin\Debug\Bounty.pdb
+C:\Users\acmurr\Desktop\Repo\Bounty\obj\Debug\Bounty.csproj.AssemblyReference.cache
+C:\Users\acmurr\Desktop\Repo\Bounty\obj\Debug\Bounty.csproj.CoreCompileInputs.cache
+C:\Users\acmurr\Desktop\Repo\Bounty\obj\Debug\Bounty.exe
+C:\Users\acmurr\Desktop\Repo\Bounty\obj\Debug\Bounty.pdb
