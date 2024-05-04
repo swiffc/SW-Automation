@@ -8,7 +8,7 @@ using static FileTools.Base.Part;
 
 namespace FileTools
 {
-    public static partial class RawMaterial_2
+    public static partial class RawMaterial
     {
 
 

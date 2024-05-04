@@ -11,13 +11,15 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
     internal abstract class Assembly : IComponentInfo
     {
         // Constructor
-        protected Assembly(CallerType callerType)
+        protected Assembly(Design callerType)
         {
             CallerType = callerType;
             AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, true);
@@ -189,7 +191,7 @@ namespace Plenum
                 return _partNo;
             }
         }
-        protected static CallerType CallerType { get; set; }
+        protected static Design CallerType { get; set; }
         protected AssemblyDoc AssemblyDoc { get; set; }
 
 

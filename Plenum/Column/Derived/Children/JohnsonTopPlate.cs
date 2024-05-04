@@ -6,6 +6,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -16,14 +18,14 @@ namespace Plenum
         {
             get
             {
-                return CallerType == CallerType.Johnson ? true : false;
+                return CallerType == Design.Johnson ? true : false;
             }
         }
         internal static AssemblyDoc CallerDoc { get; set; }
 
 
         // Constructor
-        public JohnsonTopPlate(CallerType callerType) : base(callerType)
+        public JohnsonTopPlate(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }
@@ -32,8 +34,8 @@ namespace Plenum
         // Private methods
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            mTools.EditDimension("Width", "sk:Plate", Beam.FlangeWidth, modelDoc2);
-            mTools.EditDimension("Depth", "sk:Plate", Beam.Depth, modelDoc2);
+            mTools.EditDimension("Width", "sk:Plate", Beam_FlangeWidth, modelDoc2);
+            mTools.EditDimension("Depth", "sk:Plate", Beam_Depth, modelDoc2);
         }
 
 
@@ -46,7 +48,7 @@ namespace Plenum
                 {
                     _position = new List<PositionData>();
 
-                    if (CallerType == CallerType.Johnson)
+                    if (CallerType == Design.Johnson)
                     {
 
                         _position.Add(PositionData.Create());

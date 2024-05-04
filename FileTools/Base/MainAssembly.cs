@@ -2,7 +2,10 @@
 using System.IO;
 using static FileTools.StaticFileTools;
 using static Tools.ModelTools;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
+using SolidWorks.Interop.sldworks;
 
 namespace FileTools.Base
 {
@@ -24,16 +27,16 @@ namespace FileTools.Base
                     var componentList = InstantiateComponents(this);
                     LocateComponents(componentList, this);
 
-                    if (ToggleCreateDrawing)
+                    if (Default.Toggle_CreateDrawing)
                         CreateDrawing(componentList, this);
 
-                    if (ToggleSave && !ToggleDeleteFiles)
+                    if (Default.Toggle_Save && !Default.Toggle_DeleteFiles)
                     {
                         OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                         SaveEverything();
                     } 
 
-                    if (ToggleDeleteFiles)
+                    if (Default.Toggle_DeleteFiles)
                     {
                         OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                         SaveEverything();
@@ -43,10 +46,11 @@ namespace FileTools.Base
 
                     OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                     Rebuild(true);
+                    TurnOffBendLines(AssemblyDoc as ModelDoc2);
                 }
                 else
                 {
-                    Bank = AddNew_Bank();
+                    Default.Bank = AddNew_Bank();
                 }
             } while (!bankExists);
         }

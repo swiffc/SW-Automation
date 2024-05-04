@@ -11,6 +11,9 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Stiffeners
 {
@@ -21,14 +24,14 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                return SectionThird > 66 && MotorShaft.ToLower() == "up" ? true : false;
+                return SectionThird > 66 && MotorShaft_Orientation.ToLower().Contains("up") ? true : false;
             }
         }
         public override RawMaterial Shape => RawMaterial.Angle;
         public override string Size => "L2.5x2.5x0.1875";
 
         // Constructor
-        public PlanBraceHorizontal(CallerType callerType) : base(callerType) { }
+        public PlanBraceHorizontal(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -48,7 +51,20 @@ namespace Plenum.Stiffeners
 
                 if (Enabled)
                 {
-                    double xTranslation = Width / 2 + (CallerType == CallerType.Johnson ? Beam.Depth / 2 : 0);
+                    double xTranslation = 0;
+                    switch (PlenumDesign)
+                    {
+                        case Design.Standard:
+                            xTranslation = Plenum_Width / 2;
+                            break;
+                        case Design.Johnson:
+                            xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
+                            break;
+                        case Design.Legacy:
+                            xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - Default.SidePanel_THK;
+                            break;
+                            throw new NotImplementedException();
+                    }
                     double yTranslation = -4;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
 
@@ -70,8 +86,8 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                double length = Length + (StaticCaller == CallerType.Johnson ? Johnson.ExtraLength : 0) * 2;
-                return length / FanCount / 3;
+                double length = Plenum_Length + (PlenumDesign == Design.Johnson ? Default.Johnson_ExtraLength : 0) * 2;
+                return length / Fan_Count / 3;
             }
         }
 

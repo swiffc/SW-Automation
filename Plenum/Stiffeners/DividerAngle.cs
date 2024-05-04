@@ -6,6 +6,8 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -16,7 +18,7 @@ namespace Plenum
         {
             get
             {
-                return MidColumns && FanCount > 1 ? true : false;
+                return Mid_Columns && Fan_Count > 1 ? true : false;
             }
         }
         internal static double THK => DividerPanel.THK;
@@ -27,7 +29,7 @@ namespace Plenum
 
 
         // Constructor
-        public DividerAngle(CallerType callerType) : base(callerType) { }
+        public DividerAngle(Design callerType) : base(callerType) { }
 
         public override RawMaterial Shape => RawMaterial.Plate;
         public override string Size => THK.ToString();
@@ -56,20 +58,20 @@ namespace Plenum
             {
                 if (_position == null)
                 {
-                    double xTranslation = Width / 2 - Beam.WebTHK / 2;
+                    double xTranslation = Plenum_Width / 2 - Beam_WebTHK / 2;
                     double yTranslation = CornerAngle.YTranslation;
-                    double zTranslation = Length / 2 - EndPanel.THK / 2;
-                    double zTranslation2 = Length / 2 + EndPanel.THK / 2;
-                    if (CallerType == CallerType.Johnson || CallerType == CallerType.Legacy)
+                    double zTranslation = Plenum_Length / 2 - EndPanel_THK / 2;
+                    double zTranslation2 = Plenum_Length / 2 + EndPanel_THK / 2;
+                    if (CallerType == Design.Johnson || CallerType == Design.Legacy)
                     {
-                        xTranslation = Width / 2 - Beam.Depth / 2;
+                        xTranslation = Plenum_Width / 2 - Beam_Depth / 2;
                     }
 
                     _position = new List<PositionData>();
 
-                    for (int i = 1; i < FanCount; i++)
+                    for (int i = 1; i < Fan_Count; i++)
                     {
-                        double zOffset = i * (Length / FanCount);
+                        double zOffset = i * (Plenum_Length / Fan_Count);
                         _position.Add(PositionData.Create(tX: xTranslation, tY: -yTranslation, tZ: zTranslation - zOffset));
                         _position.Add(PositionData.Create(tX: -xTranslation, tY: -yTranslation, tZ: zTranslation2 - zOffset, rY: 180));
                     }

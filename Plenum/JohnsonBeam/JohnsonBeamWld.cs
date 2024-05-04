@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Plenum.Plenum;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.JohnsonBeam
 {
@@ -15,11 +17,11 @@ namespace Plenum.JohnsonBeam
         // Static properties
         public static bool Enabled { get; set; } = false;
         internal new static AssemblyDoc AssemblyDoc { get; set; }
-        internal static double Length => Width - Beam.Depth;
+        internal static double Length => Plenum_Width - Beam_Depth;
 
 
         // Constructor
-        public JohnsonBeamWld(CallerType callerType) : base(callerType) { }
+        public JohnsonBeamWld(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -47,17 +49,17 @@ namespace Plenum.JohnsonBeam
         {
             get
             {
-                _position = new List<PositionData>();
+                var pos  = new List<PositionData>();
 
-                if (CallerType == CallerType.Johnson)
+                if (CallerType == Design.Johnson)
                 {
-                    double zTranslation = Plenum.Length / 2;
+                    double zTranslation = Plenum_Length / 2;
 
-                    _position.Add(PositionData.Create(tZ: zTranslation));
-                    _position.Add(PositionData.Create(tZ: -zTranslation, rY: 180));
+                    pos.Add(PositionData.Create(tZ: zTranslation));
+                    pos.Add(PositionData.Create(tZ: -zTranslation, rY: 180));
                 }
 
-                return _position;
+                return pos;
             }
         }
         protected override AssemblyDoc ParentAssembly => Plenum.AssemblyDoc;

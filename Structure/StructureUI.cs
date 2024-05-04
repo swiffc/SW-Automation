@@ -4,7 +4,9 @@ using Structure.Columns.Derived.Children;
 using System;
 using System.Windows.Forms;
 using static Tools.ModelTools;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure
 {
@@ -14,18 +16,21 @@ namespace Structure
         {
             InitializeComponent();
 
-            SharedProperties.OnFanCountChanged += SharedProperties_OnFanCountChanged;
+            CommonData.OnFanCountChanged += SharedProperties_OnFanCountChanged;
+
+            SettingsChanged += UpdateUI;
         }
-        #region CustomEvents
+        #region Events
 
         private DataGridView dataGridView;
         private void SharedProperties_OnFanCountChanged()
         {
             this.Invoke((MethodInvoker)delegate
             {
-                midColumns_Box.Checked = SharedProperties.MidColumns;
+                midColumns_Box.Checked = CommonData.Mid_Columns;
             });
         }
+        private bool isUserChange = true;
 
         #endregion
         #region Buttons
@@ -44,101 +49,129 @@ namespace Structure
         }
 
         #endregion
-        private void StructureUI_Load(object sender, EventArgs e)
+        private void UpdateUI()
         {
+            isUserChange = false;
+
             #region Job_Load
 
-            job_Box.Text = StaticFileTools.Project;
-            customer_Box.Text = StaticFileTools.Customer;
-            client_Box.Text = StaticFileTools.Client;
-            location_Box.Text = StaticFileTools.Location;
-            purchaseOrder_Box.Text = StaticFileTools.PurchaseOrder;
-            itemNumber_Box.Text = StaticFileTools.ItemNumber;
-            initials_Box.Text = StaticFileTools.Initials;
+            textBox_Bank.Text = Default.Bank.ToString();
+            job_Box.Text = Default.Project;
+            customer_Box.Text = Default.Customer;
+            client_Box.Text = Default.Client;
+            location_Box.Text = Default.PlantLocation;
+            purchaseOrder_Box.Text = Default.PurchaseOrder;
+            itemNumber_Box.Text = Default.ItemNumber;
+            initials_Box.Text = Default.Initials;
 
             #endregion
             #region Columns_Load
 
-            width_TextBox.Text = SharedProperties.Width.ToString();
-            length_TextBox.Text = SharedProperties.Length.ToString();
-            height_TextBox.Text = SharedProperties.TotalColumnHeight.ToString();
-            midColumns_Box.Checked = SharedProperties.MidColumns;
-            rotate_Box.Checked = Beam.IsRotated;
-            beamSize_Box.Text = Beam.Size;
-            textBox_Depth.Text = Beam.Depth.ToString();
-            textBox_WebTHK.Text = Beam.WebTHK.ToString();
-            textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
-            textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
-            textBox_K.Text = Beam.K.ToString();
-            textBox_K1.Text = Beam.K1.ToString();
+            width_TextBox.Text = Default.Plenum_Width.ToString();
+            length_TextBox.Text = Default.Plenum_Length.ToString();
+            height_TextBox.Text = Default.TotalColumnHeight.ToString();
+            midColumns_Box.Checked = Default.Mid_Columns;
+            rotate_Box.Checked = Default.Beams_AreRotated;
+            beamSize_Box.Text = Default.Beam_Size;
+            textBox_Depth.Text = Default.Beam_Depth.ToString();
+            textBox_WebTHK.Text = Default.Beam_WebTHK.ToString();
+            textBox_FlangeWidth.Text = Default.Beam_FlangeWidth.ToString();
+            textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
+            textBox_K.Text = Default.Beam_K.ToString();
+            textBox_K1.Text = Default.Beam_K1.ToString();
+            materialCombo.Text = Default.MaterialSpecSetting.ToString();
 
             #endregion
             #region BasePlate_Load
 
-            bpWidth_Box.Text = BasePlate.LocalWidth.ToString();
-            bpLength_Box.Text = BasePlate.LocalLength.ToString();
-            wSPA_Box.Text = BasePlate.WidthHoleSpacing.ToString();
-            lSPA_Box.Text = BasePlate.LengthHoleSpacing.ToString();
-            dia_Box.Text = BasePlate.HoleDiameter.ToString();
+            bpWidth_Box.Text = Default.BasePlate_Width.ToString();
+            bpLength_Box.Text = Default.BasePlate_Length.ToString();
+            wSPA_Box.Text = Default.BasePlate_WidthHoleSpacing.ToString();
+            lSPA_Box.Text = Default.BasePlate_LengthHoleSpacing.ToString();
+            dia_Box.Text = Default.BasePlate_HoleDiameter.ToString();
+            textBox_BasePlateTHK.Text = Default.BasePlate_THK.ToString();
 
             #endregion
             #region Plenum_Load
 
-            fanCount_Box.Text = SharedProperties.FanCount.ToString();
-            depth_Box.Text = SharedProperties.PlenumDepth.ToString();
+            fanCount_Box.Text = Default.Fan_Count.ToString();
+            depth_Box.Text = Default.Plenum_Depth.ToString();
 
             #endregion
             #region MachineryMount_Load
 
-            mmHeight_Box.Text = SharedProperties.MachineryMountHeight.ToString();
+            mmHeight_Box.Text = Default.MachineryMount_Height.ToString();
+            textBox_DriveWidth.Text = Default.MachineryMount_Width.ToString();
 
             #endregion
             #region Brace_Load
 
             // General
-            braceType_Box.Text = SharedProperties.BraceType;
-            clipTHK_Box.Text = Clip.THK.ToString();
-            braceHoleDiameter_Box.Text = Clip.HoleDiameter.ToString();
-            braceAngle_Box.Text = SharedProperties.BraceAngle.ToString();
+            braceType_Box.Text = Default.BraceType;
+            clipTHK_Box.Text = Default.Clip_THK.ToString();
+            braceHoleDiameter_Box.Text = Default.HoleDiameter_Structural.ToString();
+            braceAngle_Box.Text = Default.BraceAngle.ToString();
+            textBox_ClipHeight.Text = Default.Clip_Height.ToString();
 
             #endregion
             #region Toggles_Load
 
-            createDrawing_Toggle.Checked = ToggleCreateDrawing;
-            save_Toggle.Checked = ToggleSave;
-            delete_Toggle.Checked = ToggleDeleteFiles;
+            createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
+            save_Toggle.Checked = Default.Toggle_Save;
+            delete_Toggle.Checked = Default.Toggle_DeleteFiles;
 
             #endregion
+            #region ShipBeam_Load
+
+            textBoxShipBeamHeight.Text = Default.ShippingBeam_Height.ToString();
+
+            #endregion
+
+            isUserChange = true;
+        }
+        private void StructureUI_Load(object sender, EventArgs e)
+        {
+            UpdateUI();
         }
         #region Job_Changed
 
-        private void txt_JobNumber_TextChanged(object sender, EventArgs e)
+        private void textBox_Bank_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.Project = job_Box.Text;
+            UI_CharChanged(textBox_Bank.Text, x => Default.Bank = x);
         }
-        private void txt_JobCustomer_TextChanged(object sender, EventArgs e)
+        private void job_Box_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.Customer = customer_Box.Text;
+            UI_StringChanged(job_Box.Text, x => Default.Project = x);
         }
-        private void txt_JobClient_TextChanged(object sender, EventArgs e)
+
+        private void customer_Box_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.Client = client_Box.Text;
+            UI_StringChanged(customer_Box.Text, x => Default.Customer = x);
         }
-        private void txt_JobLocation_TextChanged(object sender, EventArgs e)
+
+        private void client_Box_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.Location = location_Box.Text;
+            UI_StringChanged(client_Box.Text, x => Default.Client = x);
         }
-        private void txt_JobPO_TextChanged(object sender, EventArgs e)
+
+        private void location_Box_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.PurchaseOrder = purchaseOrder_Box.Text;
+            UI_StringChanged(location_Box.Text, x => Default.PlantLocation = x);
         }
-        private void txt_JobItemNo_TextChanged(object sender, EventArgs e)
+
+        private void purchaseOrder_Box_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.ItemNumber = itemNumber_Box.Text;
+            UI_StringChanged(purchaseOrder_Box.Text, x => Default.PurchaseOrder = x);
         }
-        private void txt_Initials_TextChanged(object sender, EventArgs e)
+
+        private void itemNumber_Box_TextChanged(object sender, EventArgs e)
         {
-            StaticFileTools.Initials = initials_Box.Text;
+            UI_StringChanged(itemNumber_Box.Text, x => Default.ItemNumber = x);
+        }
+
+        private void initials_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(initials_Box.Text, x => Default.Initials = x);
         }
 
 
@@ -148,134 +181,142 @@ namespace Structure
 
         private void width_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(width_TextBox.Text, out double value))
-                SharedProperties.Width = value;
+            UI_DoubleChanged(width_TextBox.Text, x => Default.Plenum_Width = x);
         }
-
         private void length_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(length_TextBox.Text, out double value))
-                SharedProperties.Length = value;
+            UI_DoubleChanged(length_TextBox.Text, x => Default.Plenum_Length = x);
         }
-
         private void height_TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(height_TextBox.Text, out double value))
-                SharedProperties.TotalColumnHeight = value;
+            UI_DoubleChanged(height_TextBox.Text, x => Default.TotalColumnHeight = x);
         }
-
         private void midColumn_Box_CheckedChanged(object sender, EventArgs e)
         {
-            SharedProperties.MidColumns = midColumns_Box.Checked;
+            UI_BoolChanged(midColumns_Box.Checked, x => Default.Mid_Columns = x);
         }
         private void rotate_Box_CheckedChanged(object sender, EventArgs e)
         {
-            Beam.IsRotated = rotate_Box.Checked;
+            UI_BoolChanged(rotate_Box.Checked, x => Default.Beams_AreRotated = x);
         }
-        private bool isUserChange = true;
         private void beamSize_Box_SelectedIndexChanged(object sender, EventArgs e)
         {
-            isUserChange = false;
-
-            Beam.Size = beamSize_Box.Text;
-            if (Beam.Size != "Custom")
+            UI_StringChanged(beamSize_Box.Text, x => Default.Beam_Size = x);
+            if (Beam_Size != "Custom")
             {
-                Beam.ResetSize();
-                textBox_Depth.Text = Beam.Depth.ToString();
-                textBox_WebTHK.Text = Beam.WebTHK.ToString();
-                textBox_FlangeWidth.Text = Beam.FlangeWidth.ToString();
-                textBox_FlangeTHK.Text = Beam.FlangeTHK.ToString();
-                textBox_K.Text = Beam.K.ToString();
-                textBox_K1.Text = Beam.K1.ToString();
+                isUserChange = false;
+
+                Default.Beam_Depth = Beam_Depth;
+                textBox_Depth.Text = Default.Beam_Depth.ToString();
+
+                Default.Beam_WebTHK = Beam_WebTHK;
+                textBox_WebTHK.Text = Default.Beam_WebTHK.ToString();
+
+                Default.Beam_FlangeWidth = Beam_FlangeWidth;
+                textBox_FlangeWidth.Text = Default.Beam_FlangeWidth.ToString();
+
+                Default.Beam_FlangeTHK = Beam_FlangeTHK;
+                textBox_FlangeTHK.Text = Default.Beam_FlangeTHK.ToString();
+
+                Default.Beam_K = Beam_K;
+                textBox_K.Text = Default.Beam_K.ToString();
+
+                Default.Beam_K1 = Beam_K1;
+                textBox_K1.Text = Default.Beam_K1.ToString();
             }
 
             isUserChange = true;
         }
         private void textBox_Depth_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_Depth.Text, out double depth))
+            if (isUserChange)
             {
-                Beam.Depth = depth;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                UI_DoubleChanged(textBox_Depth.Text, x => Default.Beam_Depth = x);
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
+
         }
 
         private void textBox_WebTHK_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_WebTHK.Text, out double webTHK))
+            if (isUserChange)
             {
-                Beam.WebTHK = webTHK;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                UI_DoubleChanged(textBox_WebTHK.Text, x => Default.Beam_WebTHK = x);
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
         private void textBox_FlangeWidth_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_FlangeWidth.Text, out double flangeWidth))
+            if (isUserChange)
             {
-                Beam.FlangeWidth = flangeWidth;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                UI_DoubleChanged(textBox_FlangeWidth.Text, x => Default.Beam_FlangeWidth = x);
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
         private void textBox_FlangeTHK_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_FlangeTHK.Text, out double flangeTHK))
+            if (isUserChange)
             {
-                Beam.FlangeTHK = flangeTHK;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                UI_DoubleChanged(textBox_FlangeTHK.Text, x => Default.Beam_FlangeTHK = x);
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
         private void textBox_K_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_K.Text, out double k))
+            if (isUserChange)
             {
-                Beam.K = k;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                UI_DoubleChanged(textBox_K.Text, x => Default.Beam_K = x);
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
 
         private void textBox_K1_TextChanged(object sender, EventArgs e)
         {
-            if (isUserChange && double.TryParse(textBox_K1.Text, out double k1))
+            if (isUserChange)
             {
-                Beam.K1 = k1;
-                Beam.Size = beamSize_Box.Text = "Custom";
+                UI_DoubleChanged(textBox_K1.Text, x => Default.Beam_K1 = x);
+                Default.Beam_Size = beamSize_Box.Text = "Custom";
             }
         }
+        private void materialCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(materialCombo.Text, x => Default.MaterialSpecSetting = x);
+        }
+
 
         #endregion
         #region BasePlate_Changed
 
         private void bpWidth_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(bpWidth_Box.Text, out double value))
-                BasePlate.LocalWidth = value;
+            UI_DoubleChanged(bpWidth_Box.Text, x => Default.BasePlate_Width = x);
         }
 
         private void bpLength_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(bpLength_Box.Text, out double value))
-                BasePlate.LocalLength = value;
+            UI_DoubleChanged(bpLength_Box.Text, x => Default.BasePlate_Length = x);
         }
 
         private void wSPA_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(wSPA_Box.Text, out double value))
-                BasePlate.WidthHoleSpacing = value;
+            UI_DoubleChanged(wSPA_Box.Text, x => Default.BasePlate_WidthHoleSpacing = x);
         }
 
         private void lSPA_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(lSPA_Box.Text, out double value))
-                BasePlate.LengthHoleSpacing = value;
+            UI_DoubleChanged(lSPA_Box.Text, x => Default.BasePlate_LengthHoleSpacing = x);
         }
 
         private void dia_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(dia_Box.Text, out double value))
-                BasePlate.HoleDiameter = value;
+            UI_DoubleChanged(dia_Box.Text, x => Default.BasePlate_HoleDiameter = x);
+        }
+        private void textBox_BasePlateTHK_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_BasePlateTHK.Text, x => Default.BasePlate_THK = x);
         }
 
         #endregion
@@ -283,13 +324,11 @@ namespace Structure
 
         private void fanCount_Box_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(fanCount_Box.Text, out int value))
-                SharedProperties.FanCount = value;
+            UI_IntChanged(fanCount_Box.Text, x => Default.Fan_Count = x);
         }
         private void depth_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(depth_Box.Text, out double value))
-                SharedProperties.PlenumDepth = value;
+            UI_IntChanged(depth_Box.Text, x => Default.Plenum_Depth = x);
         }
 
 
@@ -298,18 +337,20 @@ namespace Structure
 
         private void mmHeight_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(mmHeight_Box.Text, out double value))
-                SharedProperties.MachineryMountHeight = value;
+            UI_DoubleChanged(mmHeight_Box.Text, x => Default.MachineryMount_Height = x);
+        }
+        private void textBox_DriveWidth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_DriveWidth.Text, x => Default.MachineryMount_Width = x);
         }
 
-
         #endregion
-        #region Braced_Changed
+        #region Brace_Changed
 
         // General
         private void braceType_Box_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            SharedProperties.BraceType = braceType_Box.Text;
+            UI_StringChanged(braceType_Box.Text, x => Default.BraceType = x);
             TextBox[] wtBoxes = { depthWT_Box, stemTHKWT_Box, flangeWidthWT_Box, flangeTHKWT_Box, kWT_Box, k1WT_Box, flangeGageWT_Box };
             TextBox[] lBoxes = { leg1_Box, leg2_Box, gage_Box, thkL_Box, kL_Box };
 
@@ -324,21 +365,21 @@ namespace Structure
             }
             void PopulateL()
             {
-                leg1_Box.ReadOnly = false; leg1_Box.Text = AngleBrace.Leg1.ToString();
-                leg2_Box.ReadOnly = false; leg2_Box.Text = AngleBrace.Leg2.ToString();
-                gage_Box.ReadOnly = false; gage_Box.Text = AngleBrace.Gage.ToString();
-                thkL_Box.ReadOnly = false; thkL_Box.Text = AngleBrace.THK.ToString();
-                kL_Box.ReadOnly = false; kL_Box.Text = AngleBrace.K.ToString();
+                leg1_Box.ReadOnly = false; leg1_Box.Text = Default.AngleBrace_Leg1.ToString();
+                leg2_Box.ReadOnly = false; leg2_Box.Text = Default.AngleBrace_Leg2.ToString();
+                gage_Box.ReadOnly = false; gage_Box.Text = Default.AngleBrace_Gage.ToString();
+                thkL_Box.ReadOnly = false; thkL_Box.Text = Default.AngleBrace_THK.ToString();
+                kL_Box.ReadOnly = false; kL_Box.Text = Default.AngleBrace_K.ToString();
             }
             void PopulateWT()
             {
-                depthWT_Box.ReadOnly = false; depthWT_Box.Text = BraceT.Depth.ToString();
-                stemTHKWT_Box.ReadOnly = false; stemTHKWT_Box.Text = BraceT.StemTHK.ToString();
-                flangeWidthWT_Box.ReadOnly = false; flangeWidthWT_Box.Text = BraceT.FlangeWidth.ToString();
-                flangeTHKWT_Box.ReadOnly = false; flangeTHKWT_Box.Text = BraceT.FlangeTHK.ToString();
-                kWT_Box.ReadOnly = false; kWT_Box.Text = BraceT.K.ToString();
-                k1WT_Box.ReadOnly = false; k1WT_Box.Text = BraceT.K1.ToString();
-                flangeGageWT_Box.ReadOnly = false; flangeGageWT_Box.Text = BraceT.FlangeGage.ToString();
+                depthWT_Box.ReadOnly = false; depthWT_Box.Text = WT_Depth.ToString();
+                stemTHKWT_Box.ReadOnly = false; stemTHKWT_Box.Text = WT_StemTHK.ToString();
+                flangeWidthWT_Box.ReadOnly = false; flangeWidthWT_Box.Text = WT_FlangeWidth.ToString();
+                flangeTHKWT_Box.ReadOnly = false; flangeTHKWT_Box.Text = WT_FlangeTHK.ToString();
+                kWT_Box.ReadOnly = false; kWT_Box.Text = WT_K.ToString();
+                k1WT_Box.ReadOnly = false; k1WT_Box.Text = WT_K1.ToString();
+                flangeGageWT_Box.ReadOnly = false; flangeGageWT_Box.Text = WT_FlangeGage.ToString();
             }
 
             switch (braceType_Box.Text)
@@ -356,7 +397,7 @@ namespace Structure
                     break;
 
                 default:
-                    SetTextBoxesState(wtBoxes, false); 
+                    SetTextBoxesState(wtBoxes, false);
                     SetTextBoxesState(lBoxes, false);
                     PopulateL();
                     PopulateWT();
@@ -365,85 +406,74 @@ namespace Structure
         }
         private void clipTHK_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(clipTHK_Box.Text, out double value))
-                Clip.THK = value;
+            UI_DoubleChanged(clipTHK_Box.Text, x => Default.Clip_THK = x);
         }
         private void braceHoleDiameter_Box_TextChanged_1(object sender, EventArgs e)
         {
-            if (double.TryParse(braceHoleDiameter_Box.Text, out double value))
-                Clip.HoleDiameter = value;
+            UI_DoubleChanged(braceHoleDiameter_Box.Text, x => Default.HoleDiameter_Structural = x);
         }
         private void braceAngle_Box_TextChanged_1(object sender, EventArgs e)
         {
-            if (double.TryParse(braceAngle_Box.Text, out double value))
-                SharedProperties.BraceAngle = value;
+            UI_DoubleChanged(braceAngle_Box.Text, x => Default.BraceAngle = x);
+        }
+        private void textBox_ClipHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBox_ClipHeight.Text, x => Default.Clip_Height = x);
         }
 
 
         // L
         private void leg1_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(leg1_Box.Text, out double value))
-                AngleBrace.Leg1 = value;
+            UI_DoubleChanged(leg1_Box.Text, x => Default.AngleBrace_Leg1 = x);
         }
         private void leg2_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(leg2_Box.Text, out double value))
-                AngleBrace.Leg2 = value;
+            UI_DoubleChanged(leg2_Box.Text, x => Default.AngleBrace_Leg2 = x);
         }
         private void gage_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(gage_Box.Text, out double value))
-                AngleBrace.Gage = value;
+            UI_DoubleChanged(gage_Box.Text, x => Default.AngleBrace_Gage = x);
         }
         private void thk_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(thkL_Box.Text, out double value))
-                AngleBrace.THK = value;
-
+            UI_DoubleChanged(thkL_Box.Text, x => Default.AngleBrace_THK = x);
         }
         private void kL_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(kL_Box.Text, out double value))
-                AngleBrace.K = value;
+            UI_DoubleChanged(kL_Box.Text, x => Default.AngleBrace_K = x);
         }
 
 
         // WT
         private void depthWT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(depthWT_Box.Text, out double value))
-                BraceT.Depth = value;
+            UI_DoubleChanged(depthWT_Box.Text, x => Default.WT_Depth = x);
         }
         private void stemTHKWT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(stemTHKWT_Box.Text, out double value))
-                BraceT.StemTHK = value;
+            UI_DoubleChanged(stemTHKWT_Box.Text, x => Default.WT_StemTHK = x);
         }
         private void flangeWidthWT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(flangeWidthWT_Box.Text, out double value))
-                BraceT.FlangeWidth = value;
+            UI_DoubleChanged(flangeWidthWT_Box.Text, x => Default.WT_FlangeWidth = x);
         }
         private void flangeTHKWT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(flangeTHKWT_Box.Text, out double value))
-                BraceT.FlangeTHK = value;
+            UI_DoubleChanged(flangeTHKWT_Box.Text, x => Default.WT_FlangeTHK = x);
         }
         private void kWT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(kWT_Box.Text, out double value))
-                BraceT.K = value;
+            UI_DoubleChanged(kWT_Box.Text, x => Default.WT_K = x);
         }
         private void k1WT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(k1WT_Box.Text, out double value))
-                BraceT.K1 = value;
+
+            UI_DoubleChanged(k1WT_Box.Text, x => Default.WT_K1 = x);
         }
         private void flangeGageWT_Box_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(flangeGageWT_Box.Text, out double value))
-                BraceT.FlangeGage = value;
+            UI_DoubleChanged(flangeGageWT_Box.Text, x => Default.WT_FlangeGage = x);
         }
 
         #endregion
@@ -451,19 +481,38 @@ namespace Structure
 
         private void checkBox2_dwg_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleCreateDrawing = createDrawing_Toggle.Checked;
+            UI_BoolChanged(createDrawing_Toggle.Checked, x => Default.Toggle_CreateDrawing = x);
         }
 
         private void checkBox3_save_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleSave = save_Toggle.Checked;
+            UI_BoolChanged(save_Toggle.Checked, x => Default.Toggle_Save = x);
         }
 
         private void checkBox4_delete_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleDeleteFiles = delete_Toggle.Checked;
+            UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
+        }
+
+
+
+
+
+
+
+        #endregion
+        #region ShipBeam_Changed
+
+        private void textBoxShipBeamHeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(textBoxShipBeamHeight.Text, x => Default.ShippingBeam_Height = x);
         }
 
         #endregion
+
+        private void label50_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

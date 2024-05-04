@@ -61,7 +61,6 @@
     <Compile Include="AssemblyTools.cs" />
     <Compile Include="BendTable.cs" />
     <Compile Include="IComponentInfo.cs" />
-    <Compile Include="JobInfo.cs" />
     <Compile Include="ModelTools.cs" />
     <Compile Include="PositionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

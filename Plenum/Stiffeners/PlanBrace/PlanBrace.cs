@@ -10,6 +10,9 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -20,7 +23,7 @@ namespace Plenum
         {
             get
             {
-                bool value = MotorShaft.ToLower() == "up" ? true : false;
+                bool value = MotorShaft_Orientation.ToLower().Contains("up") ? true : false;
                 return value;
             }
         }
@@ -28,14 +31,14 @@ namespace Plenum
         public override string Size => "L2.5x2.5x0.1875";
 
         // Constructor
-        public PlanBrace(CallerType callerType) : base(callerType) { }
+        public PlanBrace(Design callerType) : base(callerType) { }
 
 
         // Protected methods
         protected double GetNominalLength()
         {
             double slotGauge = 1.5;
-            double sectionLength = Length / FanCount + (CallerType == CallerType.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0);
             double sectionThird = sectionLength / 3 - slotGauge * 2;
             double angle = 45;
 
@@ -47,14 +50,14 @@ namespace Plenum
         {
             switch (CallerType)
             {
-                case CallerType.Standard:
-                    xTranslation = Width / 2;
+                case Design.Standard:
+                    xTranslation = Plenum_Width / 2 - Default.SidePanel_THK;
                     break;
-                case CallerType.Johnson:
-                    xTranslation = Width / 2 + Beam.Depth / 2;
+                case Design.Johnson:
+                    xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
                     break;
-                case CallerType.Legacy:
-                    xTranslation = Width / 2 + Beam.Depth / 2 - Beam.FlangeTHK - SidePanel.THK;
+                case Design.Legacy:
+                    xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
                     break;
                 default: throw new ArgumentException();
             }
@@ -62,7 +65,7 @@ namespace Plenum
             yTranslation = -4;
             angle = 45;
 
-            double sectionLength = Length / FanCount + (CallerType == CallerType.Johnson ? Johnson.ExtraLength : 0);
+            double sectionLength = Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0);
             double sectionThird = sectionLength / 3;
 
             mTools.AAS(angle, out double oppositeSide, sectionThird / 2, out _);

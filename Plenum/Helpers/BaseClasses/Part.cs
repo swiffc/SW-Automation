@@ -9,13 +9,16 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Base.Part;
 
 namespace Plenum
 {
     internal abstract class Part : IComponentInfo
     {
         // Constructor
-        protected Part(CallerType callerType)
+        protected Part(Design callerType)
         {
             CallerType = callerType;
 
@@ -37,9 +40,9 @@ namespace Plenum
         // Abstract properties
         public abstract string StaticPartNo { get; }
         protected abstract AssemblyDoc ParentAssembly { get; }
-        public abstract List<PositionData> Position { get; }
         public abstract RawMaterial Shape {get;}
         public abstract string Size { get; }
+        public abstract List<PositionData> Position { get; }
 
 
         // Non-virtual properties
@@ -69,8 +72,8 @@ namespace Plenum
                 return _partNo;
             }
         }
-        protected static CallerType CallerType { get; set; }
-        public static MaterialSpec Material { get; set; } = MaterialSpec.A36;
+        protected static Design CallerType { get; set; }
+        public static Spec Material { get; set; } = Spec.A36;
 
 
         // Backing fields

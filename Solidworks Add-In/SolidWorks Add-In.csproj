@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DevUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevUI.Designer.cs">
+      <DependentUpon>DevUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,12 +80,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DevUI.resx">
+      <DependentUpon>DevUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TaskpaneHostUI.resx">
       <DependentUpon>TaskpaneHostUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +99,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileTools\FileTools.csproj">
+      <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
+      <Name>FileTools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hood\Hood.csproj">
       <Project>{7e6a3a9f-0348-4f9e-bc9a-dc929d613d31}</Project>
       <Name>Hood</Name>

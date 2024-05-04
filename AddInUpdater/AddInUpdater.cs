@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
+using System.Linq;
 
 namespace AddInUpdater
 {
@@ -12,6 +13,14 @@ namespace AddInUpdater
         {
             UpdateAddIn();
         }
+
+        private static List<string> FoldersToSkip = new List<string>
+        {
+            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\Hood\1976 Hood Program",
+            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\zRAGU - Design Table Automation",
+            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In",
+            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Installer",
+        };
 
         public static void UpdateAddIn(bool restartSolidworks = false)
         {
@@ -45,7 +54,7 @@ namespace AddInUpdater
         private static void GetAllFilesInFolderAndSubFolders(IEdmFolder5 folder)
         {
             // Process all files in the current folder
-            GetAllFilesInFolder(folder);
+            GetAllFilesInFolder(folder, true);
 
             // Get the position of the first subfolder
             IEdmPos5 subFolderPos = folder.GetFirstSubFolderPosition();
@@ -53,7 +62,7 @@ namespace AddInUpdater
             {
                 // Retrieve the subfolder at the current position
                 IEdmFolder5 subFolder = folder.GetNextSubFolder(subFolderPos);
-                if (subFolder != null)
+                if (subFolder != null && !FoldersToSkip.Contains(subFolder.LocalPath))
                 {
                     // Recursively process files in this subfolder
                     GetAllFilesInFolderAndSubFolders(subFolder);
@@ -61,7 +70,7 @@ namespace AddInUpdater
             }
         }
 
-        private static void GetAllFilesInFolder(IEdmFolder5 folder)
+        public static void GetAllFilesInFolder(IEdmFolder5 folder, bool skipCheckedOutFiles)
         {
             Console.WriteLine("\n" + $"Checking all files in {folder.Name}");
 
@@ -75,7 +84,7 @@ namespace AddInUpdater
                 if (file != null)
                 {
                     // Check if the file is checked out
-                    if (!file.IsLocked)
+                    if (!file.IsLocked || !skipCheckedOutFiles)
                     {
                         // Cast to IEdmFile12 to access GetLocalVersionNo2
                         IEdmFile12 file12 = file as IEdmFile12;

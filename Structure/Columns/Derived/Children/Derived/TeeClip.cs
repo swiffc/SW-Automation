@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Columns.Derived.Children.Derived
 {
@@ -17,8 +20,8 @@ namespace Structure.Columns.Derived.Children.Derived
         {
             get
             {
-                double columnBounds = Beam.IsRotated ? Beam.WebTHK : Beam.Depth;
-                double landing = (BasePlate.LocalLength - columnBounds) / 2;
+                double columnBounds = Beams_AreRotated ? Beam_WebTHK : Beam_Depth;
+                double landing = (Default.BasePlate_Length - columnBounds) / 2;
 
                 if (landing <= 0)
                     return 1;
@@ -26,8 +29,8 @@ namespace Structure.Columns.Derived.Children.Derived
                     return landing;
             }
         }
-        static public double OffsetFromColumnCenter => Beam.IsRotated ? Beam.WebTHK / 2 : Beam.FlangeWidth / 2;
-        static public double ColumnBoundToNearestHole => Beam.IsRotated ? Beam.FlangeWidth / 2 - Beam.WebTHK / 2 + ColumnBoundsToHole : ColumnBoundsToHole;
+        static public double OffsetFromColumnCenter => Beams_AreRotated ? Beam_WebTHK / 2 : Beam_FlangeWidth / 2;
+        static public double ColumnBoundToNearestHole => Beams_AreRotated ? Beam_FlangeWidth / 2 - Beam_WebTHK / 2 + ColumnBoundsToHole : ColumnBoundsToHole;
 
 
         // Constructor
@@ -42,7 +45,7 @@ namespace Structure.Columns.Derived.Children.Derived
             EditDimension("Offset", "sk:Plate", OffsetFromColumnCenter);
             EditDimension("ColumnBoundsToHole", "sk:Plate", ColumnBoundToNearestHole);
             EditDimension("Landing", "sk:Plate", Landing);
-            EditDimension("FlangeGage", "sk:Plate", BraceT.FlangeGage);
+            EditDimension("FlangeGage", "sk:Plate", WT_FlangeGage);
             EditDimension("Angle", "sk:Plate", BraceAngle);
 
         }
@@ -52,7 +55,7 @@ namespace Structure.Columns.Derived.Children.Derived
         public override bool Enabled => new[] { "T", "TX" }.Contains(BraceType);
         public override string StaticPartNo => "104T";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => THK.ToString();
+        public override string SizeOrThickness => Default.Clip_THK.ToString();
         public override List<PositionData> Position
         {
             get
@@ -64,7 +67,7 @@ namespace Structure.Columns.Derived.Children.Derived
                     double rotation = 90;
                     if (ParentSubAssembly.StaticPartNo == "101")
                         rotation *= -1;
-                    pos.Add(PositionData.Create(tY: BasePlate.THK, rY: rotation));
+                    pos.Add(PositionData.Create(tY: BasePlate_THK, rY: rotation));
                 }
 
                 return pos;

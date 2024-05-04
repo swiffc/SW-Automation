@@ -64,5 +64,11 @@
     <None Include="App.config" />
     <None Include="app.manifest" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddInUpdater\AddInUpdater.csproj">
+      <Project>{1b9a2b05-e9b3-42e2-923a-474dafa42d70}</Project>
+      <Name>AddInUpdater</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

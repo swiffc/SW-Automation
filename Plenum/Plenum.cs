@@ -1,61 +1,34 @@
-﻿using SolidWorks.Interop.sldworks;
-using System;
-using System.Reflection;
-using System.Security.Policy;
-using mTools = Tools.ModelTools;
-using cTools = ModelTools.ReleaseCOM;
-using Ftools = FileTools.FileTools;
-using aTools = ModelTools.AssemblyTools;
-using dTools = DrawingToolz.DrawingFileManager;
-using System.Collections.Generic;
-using System.Diagnostics;
-using ModelTools;
-using System.Windows.Forms;
-using System.IO;
+﻿using ModelTools;
 using Plenum.Floor;
 using Plenum.Floor.Derived;
-using Plenum.Walls;
-using Plenum.Helpers.Static;
 using Plenum.Floor.Derived.Derived;
-using Plenum.Stiffeners;
 using Plenum.JohnsonBeam;
-using Plenum.StandardParts;
-using System.ComponentModel;
-using System.Linq;
 using Plenum.JohnsonBeam.Children;
-using static Plenum.Plenum;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using Plenum.StandardParts;
+using Plenum.Stiffeners;
+using Plenum.Walls;
+using SolidWorks.Interop.sldworks;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
+using aTools = ModelTools.AssemblyTools;
+using cTools = ModelTools.ReleaseCOM;
+using Ftools = FileTools.FileTools;
+using mTools = Tools.ModelTools;
+using static FileTools.StaticFileTools;
+using Plenum.Structure;
+using static FileTools.CommonData.CommonData;
+using Plenum.Structure.Derived;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
     public class Plenum
     {
-        // Public static properties
-        public static double Length { get; set; } = 240;
-        public static double Width { get; set; } = 108;
-        public static double Depth { get; set; } = 36;
-        public static int FanCount { get; set; } = 2;
-        public static double _fanDiameterFeet = 8;
-        public static double FanDiameter
-        {
-            get
-            {
-                return _fanDiameterFeet * 12;
-            }
-            set
-            {
-                _fanDiameterFeet = value;
-            }
-        }
-        public static bool MidColumns { get; set; } = true;
-        public static string MotorShaft { get; set; } = "Down";
-
-
-        // Toggles
-        public static bool ToggleRelocate { get; set; } = true;
-        public static bool ToggleCreateDrawing { get; set; } = true;
-        public static bool ToggleSave { get; set; } = true;
-        public static bool ToggleDeleteFiles { get; set; } = true;
 
 
         // Main method
@@ -69,13 +42,8 @@ namespace Plenum
 
 
         // Protected methods
-        protected void InitializePlenum(CallerType callerType)
+        protected void InitializePlenum(Design callerType)
         {
-            try
-            {
-                mTools.Lock();
-            }
-            catch (Exception) { }
             bool bankExists;
             do
             {
@@ -85,20 +53,18 @@ namespace Plenum
                 {
                     AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     var components = InstantiateComponents(callerType, StaticParentDictionary.Values.ToArray());
-
-                    if (ToggleRelocate)
                         LocateComponents(components);
 
-                    if (ToggleCreateDrawing)
+                    if (Default.Toggle_CreateDrawing)
                     {
                         CreateDrawing(components);
                         AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     }
 
-                    if (ToggleSave || ToggleDeleteFiles)
+                    if (Default.Toggle_Save || Default.Toggle_DeleteFiles)
                         mTools.SaveEverything();
 
-                    if (ToggleDeleteFiles)
+                    if (Default.Toggle_DeleteFiles)
                     {
                         mTools.CloseEverything();
                         mTools.ClearList_ToBeDeleted();
@@ -107,16 +73,17 @@ namespace Plenum
 
                     AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     mTools.Rebuild(true);
+                    TurnOffBendLines(AssemblyDoc as ModelDoc2);
                 }
                 else
                 {
-                    JobInfo.Bank = FTools.AddNew_Bank();
+                    Default.Bank = FTools.AddNew_Bank();
                 }
 
             } while (!bankExists);
-            mTools.Unlock();
+
         }
-        protected void UpdateFloor(CallerType callerType)
+        protected void UpdateFloor(Design callerType)
         {
             try
             {
@@ -211,7 +178,7 @@ namespace Plenum
             bool checkDeletion = modelDoc2.Extension.DeleteSelection2(0);
             Debug.WriteLine($"   Sheet {sheetName} deleted: {checkDeletion}");
         }
-        private List<IComponentInfo> InstantiateComponents(CallerType callerType, params Type[] componentTypes)
+        private List<IComponentInfo> InstantiateComponents(Design callerType, params Type[] componentTypes)
         {
             var components = new List<IComponentInfo>();
 
@@ -255,21 +222,11 @@ namespace Plenum
 
         // Public properties
         public static AssemblyDoc AssemblyDoc { get; set; }
-        public static CallerType StaticCaller { get; set; }
 
 
         // Constants
         internal const string AssemblyName = "Plenum";
         protected const string StaticPartNo = "5";
-
-
-        // Enumerators
-        public enum CallerType
-        {
-            Standard,
-            Johnson,
-            Legacy
-        }
 
 
         // Dictionaries
@@ -278,6 +235,10 @@ namespace Plenum
             { "113", typeof(JohnsonBeamWld) },
             { "116", typeof(MidColumn) },
             { "117", typeof(EndColumn) },
+            { "140", typeof(BackingPlate) },
+            { "142", typeof(KneeClipBent_L) },
+            { "144", typeof(KneeClipBent_R) },
+            { "146", typeof(KneeClipFlat) },
             { "156", typeof(EndPanel) },
             { "166", typeof(DividerPanel) },
             { "176P", typeof(DividerFlange) },
@@ -289,6 +250,7 @@ namespace Plenum
             { "181R", typeof(SidePanelRight) },
             { "185", typeof(DividerAngle) },
             { "186", typeof(CornerAngle) },
+            { "186S", typeof(WallStiffener) },
             { "191", typeof(OuterFloorPanelLeft) },
             { "192", typeof(FloorSplice) },
             { "193", typeof(OuterFloorPanelRight) },
@@ -332,9 +294,9 @@ namespace Plenum
             get
             {
                 return new Ftools
-                    (AssemblyName, JobInfo.Project, JobInfo.Bank, StaticPartNo,
-                    JobInfo.Initials, JobInfo.Customer, JobInfo.Client,
-                    JobInfo.PlantLocation, JobInfo.PurchaseOrder, JobInfo.ItemNumber);
+                    (AssemblyName, Default.Project, Default.Bank, StaticPartNo,
+                    Default.Initials, Default.Customer, Default.Client,
+                    Default.PlantLocation, Default.PurchaseOrder, Default.ItemNumber);
             }
         }
 
@@ -344,7 +306,7 @@ namespace Plenum
         {
             get
             {
-                return $@"{FTools.DesktopFolderPath}\{JobInfo.Project}-{StaticPartNo}{JobInfo.Bank}.SLDASM";
+                return $@"{FTools.DesktopFolderPath}\{Default.Project}-{StaticPartNo}{Default.Bank}.SLDASM";
             }
         }
     }

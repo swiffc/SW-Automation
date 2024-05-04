@@ -1,57 +1,30 @@
 ﻿using Plenum.Floor;
 using Plenum.JohnsonBeam;
 using System;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
-    internal class Johnson : Plenum
+    public class Johnson : Plenum
     {
-        // Static properties
-        public static double ExtraLength
-        {
-            get
-            {
-                if (_extraLength < MinimumExtraLength)
-                {
-                    return MinimumExtraLength;
-                }
-                return _extraLength;
-            }
-            set
-            {
-                if (value < MinimumExtraLength)
-                {
-                    _extraLength = MinimumExtraLength;
-                }
-                else
-                {
-                    _extraLength = value;
-                }
-            }
-        }
-
-
         // Constructor
         public Johnson()
         {
+            Default.Beams_AreRotated = true;
             JohnsonBeamWld.Enabled = true;
             JohnsonSidePanel.Enabled = true;
-            StaticCaller = CallerType.Johnson;
+            PlenumDesign = Design.Johnson;
 
-            InitializePlenum(CallerType.Johnson);
+            InitializePlenum(Design.Johnson);
 
             FloorPanel.ClearBackingFields();
         }
-        public Johnson(CallerType callerType)
+        public Johnson(Design callerType)
         {
-            StaticCaller = callerType;
+            PlenumDesign = callerType;
             UpdateFloor(callerType);
         }
-
-
-
-        // Private properties
-        public static double _extraLength; // user input
-        private static double MinimumExtraLength = 12;
     }
 }

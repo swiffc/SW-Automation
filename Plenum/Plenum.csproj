@@ -86,11 +86,6 @@
     <Compile Include="JohnsonBeam\Children\JohnsonBeamPart.cs" />
     <Compile Include="JohnsonBeam\Children\JohnsonBeamPlate.cs" />
     <Compile Include="JohnsonBeam\JohnsonBeamWld.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="StandardParts\FanGuard.cs" />
     <Compile Include="Stiffeners\CornerAngle.cs" />
     <Compile Include="Helpers\BaseClasses\Assembly.cs" />
@@ -106,6 +101,12 @@
     <Compile Include="Stiffeners\PlanBrace\Derived\PlanBraceMiddle.cs" />
     <Compile Include="Stiffeners\PlanBrace\PlanBrace.cs" />
     <Compile Include="Stiffeners\PlanBrace\PlanBraceHorizontal.cs" />
+    <Compile Include="Structure\BackingPlate.cs" />
+    <Compile Include="Structure\Derived\KneeClipBent_L.cs" />
+    <Compile Include="Structure\Derived\KneeClipBent_R.cs" />
+    <Compile Include="Structure\KneeClipBent.cs" />
+    <Compile Include="Structure\KneeClipFlat.cs" />
+    <Compile Include="Structure\WallStiffener.cs" />
     <Compile Include="Walls\DividerFlange.cs" />
     <Compile Include="Walls\DividerPanel.cs" />
     <Compile Include="Walls\EndPanel.cs" />
@@ -146,10 +147,7 @@
   <ItemGroup>
     <EmbeddedResource Include="PlenumUI.resx">
       <DependentUpon>PlenumUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

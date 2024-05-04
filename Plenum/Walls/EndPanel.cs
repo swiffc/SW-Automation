@@ -11,6 +11,9 @@ using Plenum.Stiffeners;
 using static FileTools.FileTools;
 using Plenum.Floor;
 using System;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -18,7 +21,6 @@ namespace Plenum
     {
         // Static properties
         public static bool Enabled { get; set; } = true;
-        internal static double THK { get; set; } = 0.1344;
         internal static double BottomLeg
         {
             get
@@ -35,9 +37,11 @@ namespace Plenum
         {
             get
             {
-                double value = THK + bTable.GetBendRadius(THK) + FloorPanel.HoleToEdge1;
-                if (CallerType == CallerType.Legacy && FanCount > 1)
-                    value += THK / 2 + THK;
+                double value = EndPanel_THK + bTable.GetBendRadius(EndPanel_THK) + FloorPanel.HoleToEdge1;
+                if (CallerType == Design.Legacy && Fan_Count > 1)
+                    value += EndPanel_THK / 2 + EndPanel_THK;
+                if (CallerType == Design.Legacy)
+                    value -= EndPanel_THK;
                 return value;
             }
         }
@@ -47,12 +51,12 @@ namespace Plenum
             {
                 switch (CallerType)
                 {
-                    case CallerType.Standard:
-                        return Width - mTools.AssemblyClearance * 2;
-                    case CallerType.Johnson:
-                        return Width + Beam.Depth - mTools.AssemblyClearance * 2;
-                    case CallerType.Legacy:
-                        return Width - Beam.Depth - mTools.AssemblyClearance * 2;
+                    case Design.Standard:
+                        return Plenum_Width - mTools.AssemblyClearance * 2;
+                    case Design.Johnson:
+                        return Plenum_Width + Beam_Depth - mTools.AssemblyClearance * 2;
+                    case Design.Legacy:
+                        return Plenum_Width - Beam_Depth - mTools.AssemblyClearance * 2;
                     default:
                         throw new KeyNotFoundException();
                 }
@@ -62,17 +66,17 @@ namespace Plenum
 
 
         // Constructor
-        public EndPanel(CallerType callerType) : base(callerType) { }
+        public EndPanel(Design callerType) : base(callerType) { }
 
 
         // Method overrides
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             mTools.EditDimension("Width", "sk:Web", LocalWidth, modelDoc2);
-            mTools.EditDimension("Height", "sk:Web", Depth, modelDoc2);
-            mTools.EditDimension("THK", "Sheet-Metal", THK, modelDoc2);
-            mTools.EditDimension("innerR", "TopFlangeR", bTable.GetBendRadius(THK), modelDoc2);
-            mTools.EditDimension("innerR", "BottomFlangeR", bTable.GetBendRadius(THK), modelDoc2);
+            mTools.EditDimension("Height", "sk:Web", Plenum_Depth, modelDoc2);
+            mTools.EditDimension("THK", "Sheet-Metal", EndPanel_THK, modelDoc2);
+            mTools.EditDimension("innerR", "TopFlangeR", bTable.GetBendRadius(EndPanel_THK), modelDoc2);
+            mTools.EditDimension("innerR", "BottomFlangeR", bTable.GetBendRadius(EndPanel_THK), modelDoc2);
             mTools.EditDimension("Leg", "sk:BottomFlange", BottomLeg, modelDoc2);
 
             mTools.EditDimension("Hole0", "sk:Hole", CornerAngle.HolePositions[0] + CornerAngle.YTranslation, modelDoc2);
@@ -83,9 +87,9 @@ namespace Plenum
             mTools.EditDimension("Hole5", "sk:Hole", CornerAngle.HolePositions[5] + CornerAngle.YTranslation, modelDoc2);
 
             mTools.EditDimension("PlanBraceX", "sk:Hole", GetPlanBraceHole(), modelDoc2);
-            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled || CallerType == CallerType.Johnson ? Depth : 0), modelDoc2);
+            mTools.EditDimension("PlanBraceY", "sk:Hole", 4 + (!PlanBrace.Enabled || CallerType == Design.Johnson ? Plenum_Depth : 0), modelDoc2);
 
-            double span = CallerType == CallerType.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge * 3 : LocalWidth / 2 - Beam.FlangeWidth / 2 - mTools.HoleToEdge * 3 - mTools.AssemblyClearance;
+            double span = CallerType == Design.Johnson ? DividerPanel.LocalWidth / 2 - mTools.HoleToEdge_General * 3 : LocalWidth / 2 - Beam_FlangeWidth / 2 - mTools.HoleToEdge_General * 3 - mTools.AssemblyClearance;
 
             mTools.HolePattern(span, out double count, out double spacing);
             mTools.EditDimension("Count1", "sk:BottomHole", count, modelDoc2);
@@ -93,7 +97,7 @@ namespace Plenum
             mTools.EditDimension("Spacing1", "sk:BottomHole", spacing, modelDoc2);
             mTools.EditDimension("Spacing2", "sk:BottomHole", spacing, modelDoc2);
 
-            mTools.EditDimension("Width", "sk:ColumnCut", Beam.FlangeWidth / 2, modelDoc2);
+            mTools.EditDimension("Width", "sk:ColumnCut", Beam_FlangeWidth / 2, modelDoc2);
 
             mTools.EditDimension("Gauge", "sk:BottomHole", Gauge, modelDoc2);
 
@@ -102,25 +106,48 @@ namespace Plenum
         {
             switch (CallerType)
             {
-                case CallerType.Standard:
+                case Design.Standard:
                     mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "1", "2", "3", "4");
                     break;
-                case CallerType.Johnson:
+                case Design.Johnson:
                     mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "1", "2", "3", "4");
                     break;
-                case CallerType.Legacy:
+                case Design.Legacy:
                     mTools.SuppressFeatures(true, modelDoc2, "ColumnCut", "1", "2", "3", "4");
                     break;
             }
         }
 
 
+        // Static methods
+        public static double CalculateZTranslation()
+        {
+            double lengthModifier = 0;
+            switch (CallerType)
+            {
+                case Design.Standard:
+                    lengthModifier = Beam_Depth / 2;
+                    break;
+                case Design.Johnson:
+                    lengthModifier = Default.Johnson_ExtraLength;
+                    break;
+                    case Design.Legacy:
+                    lengthModifier = -EndPanel_THK;
+                    break;
+            }
+            double length = Plenum_Length / 2 + lengthModifier;
+
+            return length;
+        }
+
+
         // Private methods
         private double GetPlanBraceHole()
         {
-            double sectionThird = Length / FanCount / 3;
-            mTools.AAS(45, sectionThird + Beam.Depth / 2, out double adjacentSide, out _);
-            double value = Width - adjacentSide * 2;
+            double sectionThird = Plenum_Length / Fan_Count / 3;
+            mTools.AAS(45, sectionThird + Beam_Depth / 2, out double adjacentSide, out _);
+            adjacentSide += PlenumDesign == Design.Standard ? Default.SidePanel_THK : 0;
+            double value = Plenum_Width - adjacentSide * 2;
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)
             {
@@ -144,17 +171,7 @@ namespace Plenum
                     return _position;
                 }
 
-                double lengthModifier = 0;
-                switch (CallerType)
-                {
-                    case CallerType.Standard:
-                        lengthModifier = Beam.Depth / 2;
-                        break;
-                    case CallerType.Johnson:
-                        lengthModifier = Johnson.ExtraLength;
-                        break;
-                }
-                double length = Length / 2 + lengthModifier;
+                double length = CalculateZTranslation();
 
                 _position = new List<PositionData>
                 {
@@ -168,6 +185,6 @@ namespace Plenum
         public override string StaticPartNo => "156";
         protected override AssemblyDoc ParentAssembly => Plenum.AssemblyDoc;
         public override RawMaterial Shape => RawMaterial.Plate;
-        public override string Size => THK.ToString();
+        public override string Size => EndPanel_THK.ToString();
     }
 }

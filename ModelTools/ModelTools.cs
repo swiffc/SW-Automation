@@ -21,7 +21,7 @@ namespace Tools
         public static double AssemblyClearance => 0.125;
         public static double InterferenceClearance => 0.25;
         public static double MaxSheetWidth => 72;
-        public static double HoleToEdge => 3;
+        public static double HoleToEdge_General => 3;
 
         private static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
         public static ModelDoc2 Open(string filePath, string configurationName = null, bool newLine = false)
@@ -749,9 +749,11 @@ namespace Tools
         }
         public static void Rotate(double xDegrees, double yDegrees, double zDegrees)
         {
-            Matrix4x4 zRotation = Z_Axis_Rotate2(zDegrees);
+
+
             Matrix4x4 xRotation = X_Axis_Rotate2(xDegrees);
             Matrix4x4 yRotation = Y_Axis_Rotate2(yDegrees);
+            Matrix4x4 zRotation = Z_Axis_Rotate2(zDegrees);
 
             Matrix4x4 matrix = Matrix4x4.Multiply(Matrix4x4.Multiply(xRotation, yRotation), zRotation);
 

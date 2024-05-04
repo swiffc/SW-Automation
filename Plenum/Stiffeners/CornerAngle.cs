@@ -9,6 +9,9 @@ using aTools = ModelTools.AssemblyTools;
 using bTools = ModelTools.BendTable;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -20,7 +23,7 @@ namespace Plenum
         {
             get
             {
-                double negateHole = PlenumColumn.Height + 1;
+                double negateHole =  + 1;
 
                 double holeToEdge = 1.25;
                 double lastHole = LocalLength - holeToEdge;
@@ -29,10 +32,10 @@ namespace Plenum
 
                 double hole0 = holeToEdge;
                 double hole1 = holeToEdge + segmentLength;
-                double hole2 = Depth <= 18 ? lastHole : hole1 + segmentLength;
-                double hole3 = Depth <= 18 ? negateHole : Depth <= 24 ? lastHole : hole2 + segmentLength;
-                double hole4 = Depth <= 18 ? negateHole : Depth <= 24 ? negateHole : Depth <= 30 ? lastHole : hole3 + segmentLength;
-                double hole5 = Depth <= 18 ? negateHole : Depth <= 24 ? negateHole : Depth <= 30 ? negateHole : lastHole;
+                double hole2 = Plenum_Depth <= 18 ? lastHole : hole1 + segmentLength;
+                double hole3 = Plenum_Depth <= 18 ? negateHole : Plenum_Depth <= 24 ? lastHole : hole2 + segmentLength;
+                double hole4 = Plenum_Depth <= 18 ? negateHole : Plenum_Depth <= 24 ? negateHole : Plenum_Depth <= 30 ? lastHole : hole3 + segmentLength;
+                double hole5 = Plenum_Depth <= 18 ? negateHole : Plenum_Depth <= 24 ? negateHole : Plenum_Depth <= 30 ? negateHole : lastHole;
 
 
                 double holeToEdge2 = 3.25;
@@ -41,10 +44,10 @@ namespace Plenum
                 double segmentLength2 = spaceAvailable2 / (MinHoleCount - 1);
 
                 double hole6 = holeToEdge2;
-                double hole7 = Depth <= 18 ? lastHole2 : holeToEdge2 + segmentLength2;
-                double hole8 = Depth <= 18 ? negateHole : Depth <= 24 ? lastHole2 : hole7 + segmentLength2;
-                double hole9 = Depth <= 18 ? negateHole : Depth <= 24 ? negateHole : Depth <= 30 ? lastHole2 : hole8 + segmentLength2;
-                double hole10 = Depth <= 18 ? negateHole : Depth <= 24 ? negateHole : Depth <= 30 ? negateHole : lastHole2;
+                double hole7 = Plenum_Depth <= 18 ? lastHole2 : holeToEdge2 + segmentLength2;
+                double hole8 = Plenum_Depth <= 18 ? negateHole : Plenum_Depth <= 24 ? lastHole2 : hole7 + segmentLength2;
+                double hole9 = Plenum_Depth <= 18 ? negateHole : Plenum_Depth <= 24 ? negateHole : Plenum_Depth <= 30 ? lastHole2 : hole8 + segmentLength2;
+                double hole10 = Plenum_Depth <= 18 ? negateHole : Plenum_Depth <= 24 ? negateHole : Plenum_Depth <= 30 ? negateHole : lastHole2;
 
                 return new List<double>
                 {
@@ -67,14 +70,14 @@ namespace Plenum
         {
             get
             {
-                return Depth - YTranslation * 2;
+                return Plenum_Depth - YTranslation * 2;
             }
         }
         internal static double YTranslation
         {
             get
             {
-                double maxTHK = Math.Max(EndPanel.THK, SidePanel.THK);
+                double maxTHK = Math.Max(EndPanel_THK, SidePanel_THK);
                 return maxTHK + bTools.GetBendRadius(maxTHK);
             }
         }
@@ -82,15 +85,15 @@ namespace Plenum
         {
             get
             {
-                if (Depth <= 18)
+                if (Plenum_Depth <= 18)
                 {
                     return 2;
                 }
-                else if (Depth <= 24)
+                else if (Plenum_Depth <= 24)
                 {
                     return 3;
                 }
-                else if (Depth <= 30)
+                else if (Plenum_Depth <= 30)
                 {
                     return 4;
                 }
@@ -106,7 +109,7 @@ namespace Plenum
 
 
         // Constructor
-        public CornerAngle(CallerType callerType) : base(callerType) { }
+        public CornerAngle(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -124,6 +127,9 @@ namespace Plenum
             mTools.EditDimension("Hole8", "sk:Hole6", HolePositions[8], modelDoc2);
             mTools.EditDimension("Hole9", "sk:Hole6", HolePositions[9], modelDoc2);
             mTools.EditDimension("Hole10", "sk:Hole6", HolePositions[10], modelDoc2);
+
+            mTools.EditDimension("Gage0", "sk:Hole0", PlenumDesign == Design.Standard ? Gauge - SidePanel_THK : Gauge, modelDoc2);
+            mTools.EditDimension("Gage6", "sk:Hole6", PlenumDesign == Design.Legacy ? Gauge - EndPanel_THK : Gauge, modelDoc2);
         }
 
 
@@ -135,33 +141,31 @@ namespace Plenum
 
                 double yTranslation = YTranslation;
                 double xTranslation, zTranslation;
-                double xTranslation2;
                 double zTranslation2;
 
                 switch (CallerType)
                 {
-                    case CallerType.Standard:
-                        xTranslation = xTranslation2 = Width / 2;
-                        zTranslation = zTranslation2 = Length / 2 - Beam.Depth / 2;
+                    case Design.Standard:
+                        xTranslation = Plenum_Width / 2 - SidePanel_THK;
+                        zTranslation = zTranslation2 = Plenum_Length / 2 - Beam_Depth / 2;
                         break;
-                    case CallerType.Johnson:
-                        xTranslation = Width / 2 + Beam.Depth / 2;
-                        zTranslation = Length / 2 + Johnson.ExtraLength;
-                        xTranslation2 = -(Width / 2 - Beam.Depth / 2);
-                        zTranslation2 = -(Length / 2);
+                    case Design.Johnson:
+                        xTranslation = Plenum_Width / 2 + Beam_Depth / 2;
+                        zTranslation = Plenum_Length / 2 + Default.Johnson_ExtraLength;
+                        zTranslation2 = -(Plenum_Length / 2);
                         break;
-                    case CallerType.Legacy:
-                        xTranslation = xTranslation2 = Width / 2 - Beam.Depth / 2;
-                        zTranslation = zTranslation2 = Length / 2;
+                    case Design.Legacy:
+                        xTranslation = Plenum_Width / 2 - Beam_Depth / 2;
+                        zTranslation = zTranslation2 = Plenum_Length / 2 - EndPanel_THK;
                         break;
                     default:
                         xTranslation = 0;
                         zTranslation = 0;
-                        xTranslation2 = 0;
                         zTranslation2 = 0;
                         break;
                 }
 
+                // Corners
                 _position = new List<PositionData>
                     {
                         PositionData.Create(tX: xTranslation, tY: -yTranslation, tZ: zTranslation),
@@ -170,53 +174,49 @@ namespace Plenum
                         PositionData.Create(tX: -xTranslation, tY: -yTranslation, tZ: -zTranslation, rY: 180)
                     };
 
-                xTranslation = Width / 2;
+                if (!Mid_Columns)
+                    xTranslation = Plenum_Width / 2 + Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
 
-                if (!MidColumns)
-                    xTranslation += Beam.Depth / 2 - Beam.FlangeTHK - SidePanel.THK;
-
-                xTranslation2 = xTranslation;
-
-                if (FanCount > 1 && MidColumns)
+                if (Fan_Count > 1 && Mid_Columns)
                 {
-                    for (int i = 1; i < FanCount; i++)
+                    for (int i = 1; i < Fan_Count; i++)
                     {
-                        double zOffset = i * (Length / FanCount);
-                        if (CallerType == CallerType.Standard)
+                        double zOffset = i * (Plenum_Length / Fan_Count);
+                        if (CallerType == Design.Standard)
                         {
-                            _position.Add(PositionData.Create(tX: xTranslation2, tY: -yTranslation, tZ: zTranslation2 - zOffset));
-                            _position.Add(PositionData.Create(tX: -xTranslation2, tY: -yTranslation - LocalLength, tZ: zTranslation2 - zOffset, rZ: 180));
-                            _position.Add(PositionData.Create(tX: xTranslation2, tY: -yTranslation - LocalLength, tZ: -(zTranslation2 - zOffset), rX: 180));
-                            _position.Add(PositionData.Create(tX: -xTranslation2, tY: -yTranslation, tZ: -(zTranslation2 - zOffset), rY: 180));
+                            _position.Add(PositionData.Create(tX: xTranslation, tY: -yTranslation, tZ: zTranslation2 - zOffset));
+                            _position.Add(PositionData.Create(tX: -xTranslation, tY: -yTranslation - LocalLength, tZ: zTranslation2 - zOffset, rZ: 180));
+                            _position.Add(PositionData.Create(tX: xTranslation, tY: -yTranslation - LocalLength, tZ: -(zTranslation2 - zOffset), rX: 180));
+                            _position.Add(PositionData.Create(tX: -xTranslation, tY: -yTranslation, tZ: -(zTranslation2 - zOffset), rY: 180));
                         }
 
                     }
                 }
 
-                if (!MidColumns)
+                if (!Mid_Columns)
                 {
-                    double zTranslation3 = Length / 2 + DividerPanel.THK / 2;
+                    double zTranslation3 = Plenum_Length / 2 + DividerPanel.THK / 2;
                     double xTranslation3;
-                    if (CallerType == CallerType.Standard)
+                    if (CallerType == Design.Standard)
                     {
-                        xTranslation3 = Width / 2;
+                        xTranslation3 = Plenum_Width / 2;
                     }
-                    else if (CallerType == CallerType.Legacy)
+                    else if (CallerType == Design.Legacy)
                     {
-                        xTranslation3 = Width / 2 + Beam.Depth/2 - Beam.FlangeTHK - SidePanel.THK;
+                        xTranslation3 = Plenum_Width / 2 + Beam_Depth/2 - Beam_FlangeTHK - SidePanel_THK;
                     }
-                    else if (CallerType == CallerType.Johnson)
+                    else if (CallerType == Design.Johnson)
                     {
-                        xTranslation3 = Width / 2 + Beam.Depth / 2;
+                        xTranslation3 = Plenum_Width / 2 + Beam_Depth / 2;
                     }
                     else
                     {
-                        xTranslation3 = Width / 2; // temporary logic
+                        xTranslation3 = Plenum_Width / 2; // temporary logic
                     }
 
-                    for (int i = 1; i < FanCount; i++)
+                    for (int i = 1; i < Fan_Count; i++)
                     {
-                        zTranslation3 -= Length / FanCount;
+                        zTranslation3 -= Plenum_Length / Fan_Count;
                         _position.Add(PositionData.Create(tX: xTranslation3, tY: -yTranslation, tZ: zTranslation3 - DividerPanel.THK));
                         _position.Add(PositionData.Create(tX: -xTranslation3, tY: -yTranslation, tZ: zTranslation3, rY: 180));
                     }

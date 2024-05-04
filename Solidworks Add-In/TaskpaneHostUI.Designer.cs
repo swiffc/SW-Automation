@@ -209,6 +209,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.Version_MouseLeave);
             this.pictureBox1.MouseHover += new System.EventHandler(this.Version_MouseHover);
             // 
@@ -291,7 +292,7 @@
             this.Controls.Add(this.PreviousSheet);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaskpaneHostUI";
-            this.Size = new System.Drawing.Size(234, 764);
+            this.Size = new System.Drawing.Size(234, 741);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

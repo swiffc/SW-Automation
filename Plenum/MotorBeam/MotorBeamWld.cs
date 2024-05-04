@@ -8,17 +8,20 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
     internal class MotorBeamWld : IComponentInfo
     {
         // Static properties
-        public static bool Enabled { get; set; } = true;
+        public static bool Enabled => Default.MotorBeam_Required;
 
 
         // Constructor
-        public MotorBeamWld(CallerType callerType)
+        public MotorBeamWld(Design callerType)
         {
             CallerType = callerType;
             InitializeComponents();
@@ -85,7 +88,7 @@ namespace Plenum
                     double yTranslation = 6;
 
                     _position = new List<PositionData>();
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
                         _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation));
                     }
@@ -106,12 +109,12 @@ namespace Plenum
             {
                 switch (CallerType)
                 {
-                    case CallerType.Standard:
-                        return Width - mTools.AssemblyClearance * 2;
-                    case CallerType.Johnson:
-                        return Width + Beam.Depth - mTools.AssemblyClearance * 2;
-                    case CallerType.Legacy:
-                        return Width + Beam.Depth - Beam.FlangeTHK * 2 - SidePanel.THK * 2 - mTools.AssemblyClearance * 2;
+                    case Design.Standard:
+                        return Plenum_Width - mTools.AssemblyClearance * 2 - SidePanel_THK * 2;
+                    case Design.Johnson:
+                        return Plenum_Width + Beam_Depth - mTools.AssemblyClearance * 2;
+                    case Design.Legacy:
+                        return Plenum_Width + Beam_Depth - Beam_FlangeTHK * 2 - SidePanel_THK * 2 - mTools.AssemblyClearance * 2;
                 }
                 return _length;
             }
@@ -120,7 +123,7 @@ namespace Plenum
 
 
         // Private properties
-        private static CallerType CallerType { get; set; }
+        private static Design CallerType { get; set; }
         private string _filePath;
         private string _partNo;
         private List<PositionData> _position;

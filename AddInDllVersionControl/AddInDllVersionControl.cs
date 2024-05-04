@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows;
 using EPDM.Interop.epdm;
 using System.Threading;
+using static AddInUpdater.AddInUpdater;
 
 namespace AddInDllVersionControl
 {
@@ -19,6 +20,7 @@ namespace AddInDllVersionControl
         {
             string regasmPath = @"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegAsm.exe";
             string dllPath = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In\Automation Guy.dll";
+            string updaterPath = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInUpdater.exe";
 
             // Close Solidworks
             foreach (Process process in Process.GetProcesses())
@@ -36,9 +38,9 @@ namespace AddInDllVersionControl
                         // Close SolidWorks
                         swApp.ExitApp();
                     }
-                    catch (COMException)
+                    catch (Exception ex)
                     {
-                        // Handle the case where SolidWorks cannot be closed or is not responding
+                        Console.WriteLine("An exception occured: " + ex.Message);
                     }
                 }
             }
@@ -72,9 +74,15 @@ namespace AddInDllVersionControl
                 Console.WriteLine($"Could not update {dllPath} to the current version");
             }
 
+            // Update add-in dependencies
+            GetAllFilesInFolder(dllFolder, false);
+
+            // Update updater
+            IEdmFile5 updaterFile = vault.GetFileFromPath(updaterPath, out IEdmFolder5 updaterFolder); 
+            updaterFile.GetFileCopy(0);
+
             // Register the DLL
             RunRegasm(regasmPath, dllPath, false);
-
 
             // Relaunch Solidworks
             try

@@ -2,14 +2,14 @@
 using ModelTools;
 using Structure.Columns.Derived.Children;
 using System;
-using static FileTools.SharedProperties;
+using static FileTools.CommonData.CommonData;
 
 namespace Structure.Columns
 {
     internal abstract class FieldColumn : SubAssembly
     {
         // Static properties
-        static internal double Height => TotalColumnHeight - PlenumDepth - MachineryMountHeight + ShippingBeamHeight;
+        static internal double Height => FieldColumnn_Height;
 
 
         // Constructor

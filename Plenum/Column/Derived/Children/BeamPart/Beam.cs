@@ -7,176 +7,40 @@ using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
 
     internal abstract class Beam : Part
     {
-        // Static properties
-        internal static double Depth
-        {
-            get
-            {
-                if (_depth.HasValue)
-                {
-                    return _depth.Value;
-                }
-
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.Depth;
-                }
-                else
-                {
-                    return 6;
-                }
-            }
-            set
-            {
-                _depth = value;
-            }
-        }
-        internal static double WebTHK
-        {
-            get
-            {
-                if (_webTHK.HasValue)
-                {
-                    return _webTHK.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.WebTHK;
-                }
-                return 0.25;
-            }
-            set { _webTHK = value; }
-        }
-        internal static double FlangeWidth
-        {
-            get
-            {
-                if (_flangeWidth.HasValue)
-                {
-                    return _flangeWidth.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.FlangeWidth;
-                }
-                return 6;
-            }
-            set { _flangeWidth = value; }
-        }
-        internal static double FlangeTHK
-        {
-            get
-            {
-                if (_flangeTHK.HasValue)
-                {
-                    return _flangeTHK.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.FlgTHK;
-                }
-                return 0.25;
-            }
-            set { _flangeTHK = value; }
-        }
-        internal static double K
-        {
-            get
-            {
-                if (_k.HasValue)
-                {
-                    return _k.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.K;
-                }
-                return 0.625;
-            }
-            set { _k = value; }
-        }
-        internal static double K1
-        {
-            get
-            {
-                if (_k1.HasValue)
-                {
-                    return _k1.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.K1;
-                }
-                return 0.375;
-            }
-            set { _k1 = value; }
-        }
-        internal static double FlangeGage
-        {
-            get
-            {
-                if (_flangeGage.HasValue)
-                {
-                    return _flangeGage.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.FlangeGage;
-                }
-                return 3.5;
-            }
-            set { _flangeGage = value; }
-        }
-        internal static double WebGage
-        {
-            get
-            {
-                if (_webGage.HasValue)
-                {
-                    return _webGage.Value;
-                }
-                if (SteelBook.W_Shape.TryGetValue(PlenumColumn.Size, out var wShape))
-                {
-                    return wShape.WebGage;
-                }
-                return 2.25;
-            }
-            set { _webGage = value; }
-        }
-
-
         // Constructor
-        protected Beam(CallerType callerType) : base(callerType) { }
+        protected Beam(Design callerType) : base(callerType) { }
 
 
         // Private methods
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
-            mTools.EditDimension("Depth", "sk:Beam", Depth, modelDoc2);
-            mTools.EditDimension("WebTHK", "sk:Beam", WebTHK, modelDoc2);
-            mTools.EditDimension("FlangeWidth", "sk:Beam", FlangeWidth, modelDoc2);
-            mTools.EditDimension("FlangeTHK", "sk:Beam", FlangeTHK, modelDoc2);
-            mTools.EditDimension("K", "sk:Beam", K, modelDoc2);
-            mTools.EditDimension("K1", "sk:Beam", K1, modelDoc2);
+            mTools.EditDimension("Depth", "sk:Beam", Beam_Depth, modelDoc2);
+            mTools.EditDimension("WebTHK", "sk:Beam", Beam_WebTHK, modelDoc2);
+            mTools.EditDimension("FlangeWidth", "sk:Beam", Beam_FlangeWidth, modelDoc2);
+            mTools.EditDimension("FlangeTHK", "sk:Beam", Beam_FlangeTHK, modelDoc2);
+            mTools.EditDimension("K", "sk:Beam", Beam_K, modelDoc2);
+            mTools.EditDimension("K1", "sk:Beam", Beam_K1, modelDoc2);
             mTools.EditDimension("Length", "Beam", LocalLength, modelDoc2);
 
-            double johnsonPlate = CallerType == CallerType.Johnson ? 0.5 : 0;
-            if (CallerType == CallerType.Legacy || CallerType == CallerType.Johnson)
+            double johnsonPlate = CallerType == Design.Johnson ? 0.5 : 0;
+            if (CallerType == Design.Legacy || CallerType == Design.Johnson)
             {
                 mTools.EditDimension("Hole0", "sk:FlangeHole", CornerAngle.HolePositions[6] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole1", "sk:FlangeHole", CornerAngle.HolePositions[7] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole2", "sk:FlangeHole", CornerAngle.HolePositions[8] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole3", "sk:FlangeHole", CornerAngle.HolePositions[9] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
                 mTools.EditDimension("Hole4", "sk:FlangeHole", CornerAngle.HolePositions[10] + CornerAngle.YTranslation - johnsonPlate, modelDoc2);
-                mTools.EditDimension("Hole5", "sk:FlangeHole", PlenumColumn.Height + 1, modelDoc2);
+                mTools.EditDimension("Hole5", "sk:FlangeHole", PlenumColumn_Height + 1, modelDoc2);
 
-                mTools.EditDimension("Gage", "sk:FlangeHole2", DividerAngle.ShortGauge + EndPanel.THK / 2, modelDoc2);
+                mTools.EditDimension("Gage", "sk:FlangeHole2", DividerAngle.ShortGauge + EndPanel_THK / 2, modelDoc2);
 
             }
             else
@@ -214,7 +78,7 @@ namespace Plenum
                 if (_position == null)
                 {
                     double yTranslation = 0;
-                    if (CallerType == CallerType.Johnson)
+                    if (CallerType == Design.Johnson)
                     {
                         yTranslation = -0.5;
                     }
@@ -235,13 +99,13 @@ namespace Plenum
         {
             get
             {
-                if (CallerType == CallerType.Johnson)
+                if (CallerType == Design.Johnson)
                 {
-                    return PlenumColumn.Height - CapPlate.THK - 0.5;
+                    return PlenumColumn_Height - CapPlate.THK - 0.5;
                 }
                 else
                 {
-                    return PlenumColumn.Height - CapPlate.THK;
+                    return PlenumColumn_Height - CapPlate.THK;
                 }
             }
         }

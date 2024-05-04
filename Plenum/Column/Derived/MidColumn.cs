@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Plenum.Plenum;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -16,13 +18,13 @@ namespace Plenum
         {
             get
             {
-                return FanCount > 1 ? true : false;
+                return Fan_Count > 1 ? true : false;
             }
         }
 
 
         // Constructor
-        public MidColumn(CallerType callerType) : base(callerType) { }
+        public MidColumn(Design callerType) : base(callerType) { }
 
 
         // Children
@@ -37,19 +39,19 @@ namespace Plenum
             {
                 if (_position == null)
                 {
-                    double zTranslation = Length / 2;
-                    double yRotation = CallerType == CallerType.Standard ? 0 : 90;
-                    double flip = CallerType == CallerType.Standard ? 180 : 0;
+                    double zTranslation = Plenum_Length / 2;
+                    double yRotation = CallerType == Design.Standard ? 0 : 90;
+                    double flip = CallerType == Design.Standard ? 180 : 0;
 
                     List<PositionData> positions = new List<PositionData>();
 
-                    if (FanCount > 1 && MidColumns)
+                    if (Fan_Count > 1 && Mid_Columns)
                     {
-                        for (int i = 1; i < FanCount; i++)
+                        for (int i = 1; i < Fan_Count; i++)
                         {
-                            zTranslation -= Length / FanCount;
-                            PositionData midEast = PositionData.Create(tX: Width / 2, tZ: zTranslation, rY: -yRotation + flip);
-                            PositionData midWest = PositionData.Create(tX: -Width / 2, tZ: zTranslation, rY: yRotation);
+                            zTranslation -= Plenum_Length / Fan_Count;
+                            PositionData midEast = PositionData.Create(tX: Plenum_Width / 2, tZ: zTranslation, rY: -yRotation + flip);
+                            PositionData midWest = PositionData.Create(tX: -Plenum_Width / 2, tZ: zTranslation, rY: yRotation);
 
                             positions.Add(midEast);
                             positions.Add(midWest);

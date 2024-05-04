@@ -11,15 +11,19 @@ using static FileTools.FileTools;
 using static Plenum.Plenum;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.Floor
 {
     internal class FloorSplice : Part
     {
         public static bool Enabled { get; set; } = FloorPanel.SpliceRequired;
+        public static double LengthOverride => Default.FloorSplice_LengthOverride;
 
         // Constructor
-        public FloorSplice(CallerType callerType) : base(callerType) { }
+        public FloorSplice(Design callerType) : base(callerType) { }
 
 
         // Static Properties
@@ -27,7 +31,9 @@ namespace Plenum.Floor
         {
             get
             {
-                return FanDiameter <= 156 ? 30 : 72;
+                if (LengthOverride > 0 )
+                    return LengthOverride;
+                else return FanDiameter <= 156 ? 30 : 72;
             }
         }
 
@@ -46,9 +52,9 @@ namespace Plenum.Floor
                     if (FloorPanel.SpliceRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = Depth - Math.Max(EndPanel.THK, SidePanel.THK);
+                        double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
 
-                        for (int i = 0; i < FanCount; i++)
+                        for (int i = 0; i < Fan_Count; i++)
                         {
                             _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation));
                             _position.Add(PositionData.Create(tZ: zTranslation[i], tY: -yTranslation, rY: 180));
@@ -70,13 +76,13 @@ namespace Plenum.Floor
             mTools.EditDimension("Length", "sk:Plate", NominalLength - mTools.AssemblyClearance, modelDoc2);
             mTools.EditDimension("Diameter", "sk:Plate", FloorPanel.Diameter, modelDoc2);
 
-            mTools.EditDimension("SideGauge", "sk:FloorHole", SidePanel.Gauge - SidePanel.THK - SidePanel.R, modelDoc2);
+            mTools.EditDimension("SideGauge", "sk:FloorHole", SidePanel.Gauge - SidePanel_THK - SidePanel.R, modelDoc2);
 
             mTools.HolePattern(NominalLength - mTools.AssemblyClearance - 3 * 2, out double count, out double spacing);
             mTools.EditDimension("Spacing", "sk:FloorHole", spacing, modelDoc2);
             mTools.EditDimension("Count", "sk:FloorHole", count, modelDoc2);
 
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
             {
                 mTools.EditDimension("BoltCircleR", "sk:ShaftDownRadialHole", FanRing.Radius + 1.125, modelDoc2);
                 mTools.EditDimension("Count", "sk:ShaftDownRadialHole", FanRing.RadialCount.ShaftDown, modelDoc2);
@@ -96,7 +102,7 @@ namespace Plenum.Floor
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            if (MotorShaft.ToLower() == "down")
+            if (MotorShaft_Orientation.ToLower().Contains("down"))
             {
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");

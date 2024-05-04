@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Walkway;
 using Walkway.Tools;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static FileTools.Properties.Settings;
 
 namespace SolidWorks_Add_In
 {
@@ -104,7 +105,8 @@ namespace SolidWorks_Add_In
             Control control = sender as Control;
             if (control != null)
             {
-                string tooltipText = "v4.0.0" + "\n" + @"""Sub-Structure Automation Is Live""";
+
+                string tooltipText = TaskpaneIntegration.VersionNumber + "\n" + TaskpaneIntegration.SpeechBubble;
 
                 // Estimate the size of the tooltip text.
                 SizeF textSize;
@@ -150,6 +152,7 @@ namespace SolidWorks_Add_In
                 plenumUI = new PlenumUI();
             }
 
+            Default.Reload();
             plenumUI.Show();
             plenumUI.BringToFront();
         }
@@ -162,8 +165,23 @@ namespace SolidWorks_Add_In
                 structureUI = new StructureUI();
             }
 
+            Default.Reload();
             structureUI.Show();
             structureUI.BringToFront();
+        }
+
+        private DevUI devUI = null;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop).ToLower();
+            if (desktopPath.Contains("acmurr"))
+            {
+                if (devUI == null || devUI.IsDisposed)
+                    devUI = new DevUI();
+
+                devUI.Show();
+                devUI.BringToFront();
+            }
         }
     }
 }

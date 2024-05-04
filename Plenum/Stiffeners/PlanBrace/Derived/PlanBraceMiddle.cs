@@ -11,6 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum
 {
@@ -26,14 +29,14 @@ namespace Plenum
         }
 
         // Constructor
-        public PlanBraceMiddle(CallerType callerType) : base(callerType) { }
+        public PlanBraceMiddle(Design callerType) : base(callerType) { }
 
 
         // Method overrides
         protected override void EditDimensions(ModelDoc2 modelDoc2)
         {
             double length = GetNominalLength();
-            AdjustLengthZ(-EndPanel.THK / 2, ref length);
+            AdjustLengthZ(-EndPanel_THK / 2, ref length);
 
             mTools.EditDimension("Length", "L", length, modelDoc2);
         }
@@ -49,30 +52,31 @@ namespace Plenum
 
                 if (Enabled)
                 {
-                    double adjust = EndPanel.THK / 4;
+                    double adjust = EndPanel_THK / 4;
 
                     GetPositionAtNominalLength(out double xTranslation, out double yTranslation, out double angle);
                     AdjustPositionZ(adjust, ref xTranslation);
+                    xTranslation += PlenumDesign == Design.Standard ? Default.SidePanel_THK : 0;
 
                     var zTranslations = FanCenter.ZTranslation(CallerType);
 
-                    double sectionThird = (Length / FanCount + (CallerType == CallerType.Johnson ? Johnson.ExtraLength : 0)) / 3;
+                    double sectionThird = (Plenum_Length / Fan_Count + (CallerType == Design.Johnson ? Default.Johnson_ExtraLength : 0)) / 3;
                     double positionAdjust = adjust;
 
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
-                        if (i != 0 && i != FanCount - 1 && CallerType == CallerType.Johnson)
+                        if (i != 0 && i != Fan_Count - 1 && CallerType == Design.Johnson)
                             continue;
 
-                        if (i != FanCount - 1 // This block will run for every iteration except the last one,
-                            || CallerType == CallerType.Legacy) // unless CallerType is Legacy, in which case it runs for all iterations including the last one.
+                        if (i != Fan_Count - 1 // This block will run for every iteration except the last one,
+                            || CallerType == Design.Legacy) // unless CallerType is Legacy, in which case it runs for all iterations including the last one.
                         {
                             _position.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslations[i] - sectionThird + positionAdjust, rY: -angle));
                             _position.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslations[i] - sectionThird + positionAdjust, rY: -angle - 90));
                         }
 
                         if (i != 0 // This block will run for every iteration except the first one,
-                            || CallerType == CallerType.Legacy) // unless CallerType is Legacy, in which case it runs for all iterations including the first one.)
+                            || CallerType == Design.Legacy) // unless CallerType is Legacy, in which case it runs for all iterations including the first one.)
                         {
                             _position.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: zTranslations[i] + sectionThird - positionAdjust, rY: -angle - 180));
                             _position.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslations[i] + sectionThird - positionAdjust, rY: -angle - 270));

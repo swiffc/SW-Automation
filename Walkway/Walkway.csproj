@@ -103,9 +103,14 @@
   <ItemGroup>
     <EmbeddedResource Include="WalkwayUI.resx">
       <DependentUpon>WalkwayUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileTools\FileTools.csproj">
+      <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
+      <Name>FileTools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Universal Drawing Tool\Universal Drawing Tool.csproj">
       <Project>{586fad54-bf99-4a06-8dfa-c3ed13c1b410}</Project>
       <Name>Universal Drawing Tool</Name>

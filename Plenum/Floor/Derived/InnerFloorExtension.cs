@@ -10,6 +10,8 @@ using static Plenum.Plenum;
 using mTools = Tools.ModelTools;
 using bTools = ModelTools.BendTable;
 using Plenum.Floor.Derived.Derived;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum.Floor.Derived
 {
@@ -20,7 +22,7 @@ namespace Plenum.Floor.Derived
         {
             get
             {
-                return FanCount > 1 && FloorPanel.ExtensionRequired ? true : false;
+                return Fan_Count > 1 && FloorPanel.ExtensionRequired ? true : false;
             }
         }
         internal static double NominalLength
@@ -38,7 +40,7 @@ namespace Plenum.Floor.Derived
 
 
         // Constructor
-        public InnerFloorExtension(CallerType callerType) : base(callerType) { }
+        public InnerFloorExtension(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -47,7 +49,6 @@ namespace Plenum.Floor.Derived
             base.EditDimensions(modelDoc2);
 
             mTools.EditDimension("Length", "sk:Plate", NominalLength - mTools.AssemblyClearance / 2, modelDoc2);
-            mTools.EditDimension("Rotate", "sk:ColumnCut", CallerType == CallerType.Johnson ? 90 : 0, modelDoc2);
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
@@ -69,18 +70,18 @@ namespace Plenum.Floor.Derived
                     if (FloorPanel.ExtensionRequired)
                     {
                         var zTranslation = FanCenter.ZTranslation(CallerType);
-                        double yTranslation = Depth - Math.Max(EndPanel.THK, SidePanel.THK);
+                        double yTranslation = Plenum_Depth - Math.Max(EndPanel_THK, SidePanel_THK);
                         double zOffset = InnerFloorPanel.GetLength() + FloorSplice.NominalLength / 2 + mTools.AssemblyClearance;
 
-                        for (int i = 0; i < FanCount; i++)
+                        for (int i = 0; i < Fan_Count; i++)
                         {
-                            bool isNotLastForNonLegacy = CallerType != CallerType.Legacy && i != FanCount - 1;
-                            bool isNotFirstForNonLegacy = CallerType != CallerType.Legacy && i != 0;
+                            bool isNotLastForNonLegacy = CallerType != Design.Legacy && i != Fan_Count - 1;
+                            bool isNotFirstForNonLegacy = CallerType != Design.Legacy && i != 0;
 
-                            if (CallerType == CallerType.Legacy || isNotLastForNonLegacy)
+                            if (CallerType == Design.Legacy || isNotLastForNonLegacy)
                                 _position.Add(PositionData.Create(tZ: zTranslation[i] - zOffset, tY: -yTranslation));
 
-                            if (CallerType == CallerType.Legacy || isNotFirstForNonLegacy)
+                            if (CallerType == Design.Legacy || isNotFirstForNonLegacy)
                                 _position.Add(PositionData.Create(tZ: zTranslation[i] + zOffset, tY: -yTranslation, rY: 180));
                         }
                     }

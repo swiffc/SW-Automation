@@ -2,25 +2,13 @@
 using ModelTools;
 using SolidWorks.Interop.sldworks;
 using System.Collections.Generic;
+using static FileTools.CommonData.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Structure.Columns.Derived.Children
 {
     internal class BasePlate : Part
     {
-        // Static properties
-        internal static double THK { get; set; } = 0.5;
-<<<<<<< HEAD
-        internal static double Width { get; set; } = 8;
-        internal static double Length { get; set; } = 6;
-=======
-        internal static double LocalWidth { get; set; } = 12;
-        internal static double LocalLength { get; set; } = 8;
->>>>>>> releases/v4.0.0
-        internal static double WidthHoleSpacing { get; set; } = 5.5;
-        internal static double LengthHoleSpacing { get; set; } = 3.5;
-        internal static double HoleDiameter { get; set; } = 0.8125;
-
-
         // Constructor
         public BasePlate(SubAssembly parentAssembly) : base(parentAssembly) { }
 
@@ -28,18 +16,13 @@ namespace Structure.Columns.Derived.Children
         // Method overrides
         protected override void Dimensions()
         {
-<<<<<<< HEAD
-            EditDimension("Width", "sk:Plate", Width);
-            EditDimension("Length", "sk:Plate", Length);
-=======
-            EditDimension("Width", "sk:Plate", LocalWidth);
-            EditDimension("Length", "sk:Plate", LocalLength);
->>>>>>> releases/v4.0.0
-            EditDimension("THK", "Plate", THK);
+            EditDimension("Width", "sk:Plate", Default.BasePlate_Width);
+            EditDimension("Length", "sk:Plate", Default.BasePlate_Length);
+            EditDimension("THK", "Plate", BasePlate_THK);
 
-            EditDimension("Diameter", "sk:Hole", HoleDiameter);
-            EditDimension("WidthSpacing", "sk:Hole", WidthHoleSpacing);
-            EditDimension("LengthSpacing", "sk:Hole", LengthHoleSpacing);
+            EditDimension("Diameter", "sk:Hole", Default.BasePlate_HoleDiameter);
+            EditDimension("WidthSpacing", "sk:Hole", Default.BasePlate_WidthHoleSpacing);
+            EditDimension("LengthSpacing", "sk:Hole", Default.BasePlate_LengthHoleSpacing);
         }
 
 
@@ -47,7 +30,7 @@ namespace Structure.Columns.Derived.Children
         public override bool Enabled => true;
         public override string StaticPartNo => "102";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => THK.ToString();
+        public override string SizeOrThickness => BasePlate_THK.ToString();
         public override List<PositionData> Position
         {
             get

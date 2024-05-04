@@ -1,5 +1,6 @@
 ﻿namespace ModelTools
 {
+    //  Rotation is described in degrees in reference to the PART coordinate system
     public struct PositionData
     {
         public double TranslationX { get; set; }

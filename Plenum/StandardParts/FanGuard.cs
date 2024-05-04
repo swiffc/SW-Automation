@@ -16,6 +16,9 @@ using cTools = ModelTools.ReleaseCOM;
 using Plenum.Floor;
 using Plenum.Helpers.Static;
 using ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
+using static FileTools.Properties.Settings;
 
 namespace Plenum.StandardParts
 {
@@ -66,7 +69,7 @@ namespace Plenum.StandardParts
 
 
         // Properties
-        private CallerType CallerType { get; set; }
+        private Design CallerType { get; set; }
         public string PartNo
         {
             get
@@ -126,12 +129,12 @@ namespace Plenum.StandardParts
             {
                 _position = new List<PositionData>();
 
-                if (MotorShaft.ToLower() == "down")
+                if (MotorShaft_Orientation.ToLower().Contains("down"))
                 {
-                    double yTranslation = Depth - Math.Max(SidePanel.THK, EndPanel.THK) + FanRing.Depth;
+                    double yTranslation = Plenum_Depth - Math.Max(SidePanel_THK, EndPanel_THK) + Default.FanRing_Depth;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
 
-                    for (int i = 0; i < FanCount; i++)
+                    for (int i = 0; i < Fan_Count; i++)
                     {
                         double check = zTranslation[i];
                         _position.Add(PositionData.Create(tY: -yTranslation, tZ: zTranslation[i]));
@@ -152,7 +155,7 @@ namespace Plenum.StandardParts
 
 
         // Constructor
-        public FanGuard(CallerType callerType)
+        public FanGuard(Design callerType)
         {
             CallerType = callerType;
 

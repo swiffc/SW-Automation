@@ -3,6 +3,8 @@ using SolidWorks.Interop.sldworks;
 using System.Collections.Generic;
 using static Plenum.Plenum;
 using mTools = Tools.ModelTools;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -10,7 +12,7 @@ namespace Plenum
     {
         public static bool Enabled { get; set; } = true;
         internal static AssemblyDoc CallerDoc { get; set; }
-        public MidBeam(CallerType callerType) : base(callerType)
+        public MidBeam(Design callerType) : base(callerType)
         {
             ChildInstances.Add(this);
         }
@@ -25,7 +27,7 @@ namespace Plenum
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            if (CallerType == CallerType.Legacy || CallerType == CallerType.Johnson)
+            if (CallerType == Design.Legacy || CallerType == Design.Johnson)
             {
                 bool[] check1 = mTools.SuppressFeatures(true, modelDoc2, "WebHole", "WebHoles");
                 bool[] check2 = mTools.SuppressFeatures(false, modelDoc2, "YZmirror");

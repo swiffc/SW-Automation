@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using static Plenum.Plenum;
 using aTools = ModelTools.AssemblyTools;
 using cTools = ModelTools.ReleaseCOM;
+using static FileTools.CommonData.CommonData;
+using FileTools.CommonData;
 
 namespace Plenum
 {
@@ -13,11 +15,10 @@ namespace Plenum
         public static bool Enabled { get; set; } = true;
         // Static properties
         internal static string Size { get; set; } = "W6x15";
-        private static double? _height; // user input
 
 
         // Constructor
-        protected PlenumColumn(CallerType callerType) : base(callerType) { }
+        protected PlenumColumn(Design callerType) : base(callerType) { }
 
 
         // Method overrides
@@ -48,22 +49,5 @@ namespace Plenum
         // Children
         internal CapPlate Plate { get; set; }
         internal JohnsonTopPlate JohnsonTopPlate { get; set; }
-
-
-        // Internal properties
-        internal static double Height
-        {
-            get
-            {
-                double minimumHeight = Depth + 6;
-                if (!_height.HasValue || _height <= minimumHeight)
-                    _height = minimumHeight;
-                return (double)_height;
-            }
-            set
-            {
-                _height = value;
-            }
-        }
     }
 }
