@@ -1,7 +1,0 @@
-C:\Users\acmurr\Desktop\Repo\Bounty\bin\Release\Bounty.exe.config
-C:\Users\acmurr\Desktop\Repo\Bounty\bin\Release\Bounty.exe
-C:\Users\acmurr\Desktop\Repo\Bounty\bin\Release\Bounty.pdb
-C:\Users\acmurr\Desktop\Repo\Bounty\obj\Release\Bounty.csproj.AssemblyReference.cache
-C:\Users\acmurr\Desktop\Repo\Bounty\obj\Release\Bounty.csproj.CoreCompileInputs.cache
-C:\Users\acmurr\Desktop\Repo\Bounty\obj\Release\Bounty.exe
-C:\Users\acmurr\Desktop\Repo\Bounty\obj\Release\Bounty.pdb

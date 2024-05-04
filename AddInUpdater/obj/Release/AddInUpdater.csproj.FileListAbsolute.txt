@@ -1,6 +1,0 @@
-C:\Users\acmurr\Desktop\Repo\AddInUpdater\bin\Release\AddInUpdater.exe
-C:\Users\acmurr\Desktop\Repo\AddInUpdater\bin\Release\AddInUpdater.pdb
-C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Release\AddInUpdater.csproj.AssemblyReference.cache
-C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Release\AddInUpdater.csproj.CoreCompileInputs.cache
-C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Release\AddInUpdater.exe
-C:\Users\acmurr\Desktop\Repo\AddInUpdater\obj\Release\AddInUpdater.pdb

@@ -1,7 +1,0 @@
-C:\Solidworks Automation\Libraries\Installation Tools\bin\Debug\InstallationTools.dll.config
-C:\Solidworks Automation\Libraries\Installation Tools\bin\Debug\InstallationTools.dll
-C:\Solidworks Automation\Libraries\Installation Tools\bin\Debug\InstallationTools.pdb
-C:\Solidworks Automation\Libraries\Installation Tools\obj\Debug\Intallation Tools.csproj.AssemblyReference.cache
-C:\Solidworks Automation\Libraries\Installation Tools\obj\Debug\Intallation Tools.csproj.CoreCompileInputs.cache
-C:\Solidworks Automation\Libraries\Installation Tools\obj\Debug\InstallationTools.dll
-C:\Solidworks Automation\Libraries\Installation Tools\obj\Debug\InstallationTools.pdb
