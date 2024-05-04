@@ -3,18 +3,125 @@
 ################################################################################
 
 /.vs/Solidworks Automation
-/Addin Installer/obj/Debug
-/AddInDllVersionControl/obj/Debug
-/AddInUpdater/obj/Debug
-/Bounty/obj/Debug
+/Plenum/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+*.cache
+/FileTools/bin/Debug
 /FileTools/obj/Debug
-/Hood/obj/Debug
-/MachineryMount/obj/Debug
-/ModelTools/obj/Debug
-/Plenum/obj/Debug
-/Solidworks Add-In/obj/Debug
-/Structure/obj/Debug
-/Testing/obj/Debug
-/Universal Drawing Tool/obj/Debug
-/UserInterface/obj/Debug
-/Walkway/obj/Debug
+/ModelTools/bin/Debug
+/ModelTools/obj/Debug/ModelTools.csproj.FileListAbsolute.txt
+/ModelTools/obj/Debug/ModelTools.csproj.Up2Date
+/ModelTools/obj/Debug/Tools.dll
+/ModelTools/obj/Debug/Tools.pdb
+/Plenum/bin/Debug
+/Plenum/obj/Debug/Plenum.csproj.FileListAbsolute.txt
+/Plenum/obj/Debug/Plenum.csproj.Up2Date
+/Plenum/obj/Debug/Plenum.exe
+/Plenum/obj/Debug/Plenum.pdb
+/Plenum/obj/Debug/Plenum.PlenumUI.resources
+/Plenum/obj/Debug/Plenum.Properties.Resources.resources
+/Structure/bin/Debug
+/Structure/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/Structure/obj/Debug/Structure.csproj.FileListAbsolute.txt
+/Structure/obj/Debug/Structure.csproj.Up2Date
+/Structure/obj/Debug/Structure.exe
+/Structure/obj/Debug/Structure.pdb
+/Structure/obj/Debug/Structure.StructureUI.resources
+/Universal Drawing Tool/bin/Debug/DrawingToolz.exe
+/Universal Drawing Tool/bin/Debug/DrawingToolz.pdb
+/Universal Drawing Tool/bin/Debug/System.Numerics.Vectors.dll
+/Universal Drawing Tool/bin/Debug/System.Numerics.Vectors.xml
+/Universal Drawing Tool/obj/Debug/DrawingToolz.exe
+/Universal Drawing Tool/obj/Debug/DrawingToolz.pdb
+/Universal Drawing Tool/obj/Debug/Universa.72E81272.Up2Date
+/Universal Drawing Tool/obj/Debug/Universal Drawing Tool.csproj.FileListAbsolute.txt
+/Addin Installer/bin/Debug
+/Addin Installer/obj/Debug/AddinIns.8F90AB1F.Up2Date
+/Addin Installer/obj/Debug/AddinInstaller.csproj.FileListAbsolute.txt
+/Addin Installer/obj/Debug/App.g.cs
+/Addin Installer/obj/Debug/GeneratedInternalTypeHelper.g.cs
+/Addin Installer/obj/Debug/MainWindow.baml
+/Addin Installer/obj/Debug/MainWindow.g.cs
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller.exe
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller.g.resources
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller.pdb
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller.Properties.Resources.resources
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller_MarkupCompile.lref
+/AddInDllVersionControl/bin/Debug
+/AddInDllVersionControl/obj/Debug/AddInDllVersionControl.csproj.FileListAbsolute.txt
+/AddInDllVersionControl/obj/Debug/AddInDllVersionControl.exe
+/AddInDllVersionControl/obj/Debug/AddInDllVersionControl.pdb
+/AddInUpdater/bin/Debug
+/Bounty/bin/Debug
+/Bounty/obj/Debug/Bounty.csproj.FileListAbsolute.txt
+/Bounty/obj/Debug/Bounty.exe
+/Bounty/obj/Debug/Bounty.pdb
+/Hood/bin/Debug
+/MachineryMount/bin/Debug
+/MachineryMount/obj/Debug/Machiner.B12C727E.Up2Date
+/MachineryMount/obj/Debug/MachineryMount.csproj.FileListAbsolute.txt
+/MachineryMount/obj/Debug/MachineryMount.dll
+/MachineryMount/obj/Debug/MachineryMount.pdb
+/Solidworks Add-In/bin/Debug
+/Solidworks Add-In/obj/Debug/Automation Guy.dll
+/Solidworks Add-In/obj/Debug/Automation Guy.pdb
+/Solidworks Add-In/obj/Debug/SolidWor.7A1D9E7A.Up2Date
+/Solidworks Add-In/obj/Debug/SolidWorks Add-In.csproj.FileListAbsolute.txt
+/Solidworks Add-In/obj/Debug/SolidWorks_Add_In.Properties.Resources.resources
+/Solidworks Add-In/obj/Debug/SolidWorks_Add_In.TaskpaneHostUI.resources
+/Testing/bin/Debug
+/Testing/obj/Debug/Testing.csproj.FileListAbsolute.txt
+/Testing/obj/Debug/Testing.csproj.Up2Date
+/Testing/obj/Debug/Testing.exe
+/Testing/obj/Debug/Testing.pdb
+/UserInterface/bin/Debug
+/UserInterface/obj/Debug/App.baml
+/UserInterface/obj/Debug/App.g.cs
+/UserInterface/obj/Debug/GeneratedInternalTypeHelper.g.cs
+/UserInterface/obj/Debug/MainWindow.baml
+/UserInterface/obj/Debug/MainWindow.g.cs
+/UserInterface/obj/Debug/UserInterface.csproj.FileListAbsolute.txt
+/UserInterface/obj/Debug/UserInterface.exe
+/UserInterface/obj/Debug/UserInterface.g.resources
+/UserInterface/obj/Debug/UserInterface.pdb
+/UserInterface/obj/Debug/UserInterface.Properties.Resources.resources
+/UserInterface/obj/Debug/UserInterface_MarkupCompile.lref
+/UserInterface/obj/Debug/MVVM/View/DiscoveryView.baml
+/UserInterface/obj/Debug/MVVM/View/DiscoveryView.g.cs
+/UserInterface/obj/Debug/MVVM/View/HomeView.baml
+/UserInterface/obj/Debug/MVVM/View/HomeView.g.cs
+/UserInterface/obj/Debug/Theme/MenuButtonTheme.baml
+/UserInterface/obj/Debug/Theme/TextBoxTheme.baml
+/Walkway/bin/Debug
+/Walkway/obj/Debug/Walkway.csproj.FileListAbsolute.txt
+/Walkway/obj/Debug/Walkway.csproj.Up2Date
+/Walkway/obj/Debug/Walkway.exe
+/Walkway/obj/Debug/Walkway.pdb
+/Walkway/obj/Debug/Walkway.WalkwayUI.resources
+/Hood/obj/Debug/Hood.csproj.FileListAbsolute.txt
+/Hood/obj/Debug/Hood.csproj.Up2Date
+/Hood/obj/Debug/Hood.exe
+/Hood/obj/Debug/Hood.HoodUI.resources
+/Hood/obj/Debug/Hood.pdb
+/AddInUpdater/obj/Debug/AddInUpdater.csproj.FileListAbsolute.txt
+/AddInUpdater/obj/Debug/AddInUpdater.exe
+/AddInUpdater/obj/Debug/AddInUpdater.pdb
+/Walkway/obj/Debug/build.force
+/Walkway/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Testing/obj/Debug/build.force
+/Structure/obj/Debug/build.force
+/Structure/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Solidworks Add-In/obj/Debug/build.force
+/Solidworks Add-In/obj/Debug/SolidWorks_Add_In.DevUI.resources
+/Solidworks Add-In/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
+/Plenum/obj/Debug/build.force
+/Plenum/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/MachineryMount/obj/Debug/build.force
+/Hood/obj/Debug/build.force
+/Addin Installer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller_MarkupCompile.i.cache
+/Addin Installer/obj/Debug/SolidWorksAddinInstaller_MarkupCompile.i.lref
+/AddInDllVersionControl/obj/Debug/build.force
+/AddInDllVersionControl/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/AddInDllVersionControl/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/AddInDllVersionControl/obj/Debug/AddInDll.62A5A2CF.Up2Date
+/Testing/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

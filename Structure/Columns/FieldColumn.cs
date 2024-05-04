@@ -1,0 +1,18 @@
+﻿using FileTools.Base;
+using ModelTools;
+using Structure.Columns.Derived.Children;
+using System;
+using static FileTools.CommonData.CommonData;
+
+namespace Structure.Columns
+{
+    internal abstract class FieldColumn : SubAssembly
+    {
+        // Static properties
+        static internal double Height => FieldColumnn_Height;
+
+
+        // Constructor
+        protected FieldColumn(SW_Assembly swAssembly) : base(swAssembly) { }
+    }
+}

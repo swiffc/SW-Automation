@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B98B809C-BE32-417B-AEC4-4917A12B722E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Structure</RootNamespace>
+    <AssemblyName>Structure</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SolidWorks.Interop.sldworks">
+      <HintPath>..\Libraries\Solidworks Interop\SolidWorks.Interop.sldworks.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Braces\AngleBrace.cs" />
+    <Compile Include="Braces\Derived\BraceL.cs" />
+    <Compile Include="Braces\BraceT.cs" />
+    <Compile Include="Braces\Derived\BraceX.cs" />
+    <Compile Include="Braces\Spacer.cs" />
+    <Compile Include="Columns\Derived\Children\BasePlate.cs" />
+    <Compile Include="Columns\FieldColumn.cs" />
+    <Compile Include="Columns\Derived\Children\Beam.cs" />
+    <Compile Include="Columns\Derived\Children\Clip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\TeeClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\XClip.cs" />
+    <Compile Include="Columns\Derived\Children\EndPlate.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\FlangeClip.cs" />
+    <Compile Include="Columns\Derived\Children\Derived\WebClip.cs" />
+    <Compile Include="Columns\Derived\ColumnLeft.cs" />
+    <Compile Include="Columns\Derived\ColumnMid.cs" />
+    <Compile Include="Columns\Derived\ColumnRight.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structure.cs" />
+    <Compile Include="StructureUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StructureUI.Designer.cs">
+      <DependentUpon>StructureUI.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileTools\FileTools.csproj">
+      <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
+      <Name>FileTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelTools\ModelTools.csproj">
+      <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
+      <Name>ModelTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plenum\Plenum.csproj">
+      <Project>{d5899a85-9656-431e-9836-2849aeeefef7}</Project>
+      <Name>Plenum</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StructureUI.resx">
+      <DependentUpon>StructureUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
