@@ -2,19 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/Solidworks Automation/v17
 /.vs/Solidworks Automation/FileContentIndex
-/Solidworks Add-In/obj/Debug
-/Structure/obj/Debug
-/.vs/Solidworks Automation/v17/.suo
-/.vs/Solidworks Automation/v17/DocumentLayout.json
-/Structure/obj/Debug/Structure.csproj.AssemblyReference.cache
+/Addin Installer/obj/Debug
 /AddInDllVersionControl/obj/Debug
-/AddInDllVersionControl/obj/Debug/AddInDllVersionControl.csproj.AssemblyReference.cache
 /Bounty/obj/Debug
-/Bounty/obj/Debug/Bounty.csproj.AssemblyReference.cache
 /FileTools/obj/Debug
-/FileTools/obj/Debug/FileTools.csproj.AssemblyReference.cache
 /Hood/obj/Debug
 /Hood/obj/Debug/Hood.csproj.AssemblyReference.cache
 /MachineryMount/obj/Debug
@@ -23,8 +15,9 @@
 /ModelTools/obj/Debug/ModelTools.csproj.AssemblyReference.cache
 /Plenum/obj/Debug
 /Plenum/obj/Debug/Plenum.csproj.AssemblyReference.cache
+/Structure/obj/Debug
+/Structure/obj/Debug/Structure.csproj.AssemblyReference.cache
 /Testing/obj/Debug
 /Testing/obj/Debug/Testing.csproj.AssemblyReference.cache
 /Walkway/obj/Debug
-/Walkway/obj/Debug/Walkway.csproj.AssemblyReference.cache
-/Addin Installer/obj/Debug
+/.vs/Solidworks Automation/v17
