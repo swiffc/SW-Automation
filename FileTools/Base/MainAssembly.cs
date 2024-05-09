@@ -6,13 +6,18 @@ using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using static FileTools.Properties.Settings;
 using SolidWorks.Interop.sldworks;
+using System;
 
 namespace FileTools.Base
 {
     public class MainAssembly : SW_Assembly
     {
-        public MainAssembly(int assemblyNumber, string assemblyDescription)
+        internal static List<Type> ToBeInstantiated = new List<Type>();
+        public MainAssembly(int assemblyNumber, string assemblyDescription, params Type[] classesToIsolate)
         {
+            foreach (var type in classesToIsolate)
+                ToBeInstantiated.Add(type);
+
             AssemblyNumber = assemblyNumber;
             AssemblyDesc = assemblyDescription;
 
@@ -34,7 +39,7 @@ namespace FileTools.Base
                     {
                         OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                         SaveEverything();
-                    } 
+                    }
 
                     if (Default.Toggle_DeleteFiles)
                     {

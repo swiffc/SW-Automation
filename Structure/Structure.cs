@@ -6,13 +6,16 @@ using System.Windows.Forms;
 using static FileTools.StaticFileTools;
 using System.Runtime.InteropServices;
 using static Plenum.Plenum;
+using Structure.Braces.Derived;
 
 
 namespace Structure
 {
     internal class Structure : MainAssembly
     {
-        public Structure(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription) { }
+        public Structure(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
+            //,typeof(BraceL)
+            ) { }
 
         public static void Main()
         {

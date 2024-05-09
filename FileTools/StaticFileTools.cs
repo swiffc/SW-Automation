@@ -14,6 +14,7 @@ using static ModelTools.ReleaseCOM;
 using static System.Net.WebRequestMethods;
 using static Tools.ModelTools;
 using static FileTools.Properties.Settings;
+using static FileTools.Base.MainAssembly;
 
 namespace FileTools
 {
@@ -256,7 +257,8 @@ namespace FileTools
         }
         public static void LocateComponents(List<IComponentInfo2> components, SW_Assembly swAssembly)
         {
-            RemoveUnneededSubComponents(swAssembly);
+            if (ToBeInstantiated.Count == 0)
+                RemoveUnneededSubComponents(swAssembly);
             Component2[] userLocatedComponents = UnfixedComponentsArray(swAssembly.ComponentArray);
             foreach (var component in components)
                 PlaceComponent(component, swAssembly);
@@ -429,22 +431,26 @@ namespace FileTools
 
             foreach (Type type in typesList)
             {
-                Console.WriteLine($"   [{type.Name}]");
-                // Check if the type's namespace starts with the target namespace and is assignable to SubAssembly
-                if (type.Namespace != null && type.Namespace.StartsWith(targetNamespace) && typeof(IComponentInfo2).IsAssignableFrom(type))
-                {
-                    // Ensure the type has a constructor that accepts a MainAssembly instance
-                    ConstructorInfo constructor = type.GetConstructor(new Type[] { typeof(MainAssembly) });
-                    if (constructor != null)
-                    {
-                        // Instantiate the type using the provided MainAssembly instance
-                        IComponentInfo2 component = (IComponentInfo2)Activator.CreateInstance(type, swAssembly);
-                        ComponentRegistry.RegisterComponent(component);
 
-                        // Check if the component is enabled before adding it to the list
-                        if (component != null && component.Enabled)
+                if (!ToBeInstantiated.Any() || ToBeInstantiated.Contains(type))
+                {
+                    Console.WriteLine($"   [{type.Name}]");
+                    // Check if the type's namespace starts with the target namespace and is assignable to SubAssembly
+                    if (type.Namespace != null && type.Namespace.StartsWith(targetNamespace) && typeof(IComponentInfo2).IsAssignableFrom(type))
+                    {
+                        // Ensure the type has a constructor that accepts a MainAssembly instance
+                        ConstructorInfo constructor = type.GetConstructor(new Type[] { typeof(MainAssembly) });
+                        if (constructor != null)
                         {
-                            componentsToBeAdded.Add(component);
+                            // Instantiate the type using the provided MainAssembly instance
+                            IComponentInfo2 component = (IComponentInfo2)Activator.CreateInstance(type, swAssembly);
+                            ComponentRegistry.RegisterComponent(component);
+
+                            // Check if the component is enabled before adding it to the list
+                            if (component != null && component.Enabled)
+                            {
+                                componentsToBeAdded.Add(component);
+                            }
                         }
                     }
                 }
