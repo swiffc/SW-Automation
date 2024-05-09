@@ -113,17 +113,16 @@ namespace FileTools.CommonData
                 Default.Fan_Diameter_Feet = value;
             }
         }
-        private static double _ringDepth => Default.FanRing_Depth;
         public static double Ring_Depth
         {
             get
             {
-                var roundedUp = Math.Ceiling(_ringDepth);
-                return roundedUp % 2 == 0 ? roundedUp : roundedUp + 1;
+                return Default.FanRing_Depth;
             }
             set
             {
-                Default.FanRing_Depth = value;
+                var roundedUp = Math.Ceiling(value);
+                Default.FanRing_Depth = roundedUp < 8 ? 8 : (roundedUp % 2 == 0 ? roundedUp : roundedUp + 1);
             }
         }
         public static int EndStiffenerCount => Default.EndStiffenerCount;

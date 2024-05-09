@@ -218,6 +218,10 @@ namespace Tools
                 SW.IActiveDoc2.ViewZoomtofit2();
             }
         }
+        public static void ForceRebuild()
+        {
+            SW.IActiveDoc2.ForceRebuild3(false);
+        }
         public static void ShowTopView()
         {
             SW.IActiveDoc2.EditRebuild3();
@@ -816,40 +820,53 @@ namespace Tools
 
         public static bool[] SuppressFeatures(bool suppress, ModelDoc2 modelDoc2, params string[] features)
         {
-            bool[] results = new bool[features.Length];
+            string[] configNames = modelDoc2.GetConfigurationNames();
+            return SuppressFeatures(suppress, configNames, modelDoc2, features);
 
-            for (int i = 0; i < features.Length; i++)
+        }
+        public static bool[] SuppressFeatures(bool suppress, string[] configNames, ModelDoc2 modelDoc2, params string[] features)
+        {
+            bool[] results = new bool[features.Length * configNames.Length];
+
+            for (int j = 0; j < configNames.Length; j++)
             {
-                string featureName = features[i];
-                bool isSelected = modelDoc2.Extension.SelectByID2(featureName, "BODYFEATURE", 0, 0, 0, false, 0, null, 0);
-
-                if (!isSelected)
+                modelDoc2.ShowConfiguration2(configNames[j]);
+                for (int i = 0; i < features.Length; i++)
                 {
-                    results[i] = false;
-                    continue;
-                }
+                    string featureName = features[i];
+                    bool isSelected = modelDoc2.Extension.SelectByID2(featureName, "BODYFEATURE", 0, 0, 0, false, 0, null, 0);
 
-                var feature = modelDoc2.ISelectionManager.GetSelectedObject6(1, -1);
-                bool isCurrentlySuppressed = ((Feature)feature).IsSuppressed();
+                    if (!isSelected)
+                    {
+                        results[j * features.Length + i] = false;
+                        continue;
+                    }
 
-                if (suppress && !isCurrentlySuppressed)
-                {
-                    results[i] = modelDoc2.EditSuppress2();
-                }
-                else if (!suppress && isCurrentlySuppressed)
-                {
-                    results[i] = modelDoc2.EditUnsuppress2();
-                }
-                else
-                {
-                    results[i] = true;
-                }
+                    var feature = modelDoc2.ISelectionManager.GetSelectedObject6(1, -1);
+                    bool isCurrentlySuppressed = ((Feature)feature).IsSuppressed();
 
-                modelDoc2.ClearSelection2(true);
+                    if (suppress && !isCurrentlySuppressed)
+                    {
+                        results[j * features.Length + i] = modelDoc2.EditSuppress2();
+                    }
+                    else if (!suppress && isCurrentlySuppressed)
+                    {
+                        results[j * features.Length + i] = modelDoc2.EditUnsuppress2();
+                    }
+                    else
+                    {
+                        results[j * features.Length + i] = true;
+                    }
+
+                    modelDoc2.ClearSelection2(true);
+                }
             }
+
+            modelDoc2.ShowConfiguration2(configNames[0]);
 
             return results;
         }
+
 
 
         public static void HolePattern(double span, out double count, out double spacing, double maxSpacing = 24)

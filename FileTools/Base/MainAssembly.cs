@@ -46,7 +46,7 @@ namespace FileTools.Base
 
                     OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                     Rebuild(true);
-                    TurnOffBendLines(AssemblyDoc as ModelDoc2);
+                    TurnOffBendLines();
                 }
                 else
                 {

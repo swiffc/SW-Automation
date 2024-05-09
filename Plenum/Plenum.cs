@@ -73,7 +73,7 @@ namespace Plenum
 
                     AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     mTools.Rebuild(true);
-                    TurnOffBendLines(AssemblyDoc as ModelDoc2);
+                    TurnOffBendLines();
                 }
                 else
                 {

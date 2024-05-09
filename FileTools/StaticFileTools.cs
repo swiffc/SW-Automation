@@ -579,9 +579,29 @@ namespace FileTools
 
             return components;
         }
-        public static void TurnOffBendLines(ModelDoc2 modelDoc2)
+        public static void TurnOffBendLines()
         {
-            modelDoc2.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swDisplayBendLines, false);
+            SW.IActiveDoc2.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swDisplayBendLines, false);
+        }
+        public static void FoldModel()
+        {
+            SW.IActiveDoc2.SetBendState((int)swSMBendState_e.swSMBendStateFolded);
+        }
+        public static void UnFoldModel()
+        {
+            SW.IActiveDoc2.SetBendState((int)swSMBendState_e.swSMBendStateFlattened);
+        }
+        public static void ActivateModelDoc(ModelDoc2 modelDoc2)
+        {
+            SW.ActivateDoc3(modelDoc2.GetPathName(), false, 0, 0);
+        }
+        public static void ChangeStructureMemberSize(string newSize)
+        {
+            Feature feature = SW.IActiveDoc2.SelectionManager.GetSelectedObject6(1, -1) as Feature;
+            IStructuralMemberFeatureData member = feature.GetDefinition() as IStructuralMemberFeatureData;
+            member.AccessSelections(SW.IActiveDoc2, null);
+            member.ConfigurationName = newSize;
+            feature.ModifyDefinition(member, SW.IActiveDoc2, null);
         }
 
 

@@ -15,6 +15,7 @@ using static FileTools.FileTools;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using static FileTools.Properties.Settings;
+using static FileTools.StaticFileTools;
 
 namespace Plenum.Floor
 {
@@ -63,6 +64,8 @@ namespace Plenum.Floor
         }
         public override RawMaterial Shape => RawMaterial.Plate;
         public override string Size => "0.1344";
+        static public bool IsRibbed => Default.FanRing_Depth > 18 ? true : false;
+
 
         // Constructor
         public FanRing(Design callerType) : base(callerType) { }
@@ -73,52 +76,108 @@ namespace Plenum.Floor
         {
             double angle1 = FindGapAngle(mTools.InterferenceClearance / 2, Radius);
             double angle2 = SectionCount == 2 ? angle1 : angle1 + 90;
+            bool shaftUp = MotorShaft_Orientation.ToLower().Contains("up");
 
-            mTools.EditDimension("Angle1", "sk:Web", angle1, modelDoc2);
-            mTools.EditDimension("Angle2", "sk:Web", angle2, modelDoc2);
-            mTools.EditDimension("Diameter", "sk:Web", Radius * 2, modelDoc2);
-            mTools.EditDimension("Depth", "Web", Default.FanRing_Depth, modelDoc2);
+            // Ring
+            mTools.EditDimension("Depth", "sk:Profile", Default.FanRing_Depth, modelDoc2);
+            mTools.EditDimension("Rib", "sk:Profile", IsRibbed ? 1 : 2, modelDoc2);
+            mTools.EditDimension("Angle1", "sk:Path", angle1, modelDoc2);
+            mTools.EditDimension("Angle2", "sk:Path", angle2, modelDoc2);
+            mTools.EditDimension("Diameter", "sk:Path", Radius * 2, modelDoc2);
 
+
+            // Web
+            double topToFirstSquare = 2;
+            double bottomtoLastSquare = shaftUp ? 2.75 : 2;
+            double span = Ring_Depth - topToFirstSquare - bottomtoLastSquare;
+            mTools.HolePattern(span, out double count, out double spacing, 5);
+            mTools.EditDimension("Count", "sk:RolledSquarePunch", IsRibbed ? 2 : count, modelDoc2);
+            mTools.EditDimension("Spacing", "sk:RolledSquarePunch", IsRibbed ? span : spacing, modelDoc2);
+
+
+            // Flange
+            int radialCount;
+            double angle11;
+            double angle22;
+            double slotAngle;
+            double arc;
             if (MotorShaft_Orientation.ToLower().Contains("down"))
-            {
-                mTools.EditDimension("Count", "sk:ShaftDownRadialSlot", FanRing.RadialCount.ShaftDown, modelDoc2);
-                mTools.EditDimension("Count", "ShaftDownRadialSlots", FanRing.RadialCount.ShaftDown, modelDoc2);
+            {// shaft down
+                radialCount = RadialCount.ShaftDown;
+                angle11 = 0.001;
+                slotAngle = 180 / radialCount;
+                angle22 = 360 - slotAngle;
+                arc = 0.001;
             }
             else
-            {
-                mTools.EditDimension("Count", "ShaftUpRadialSlots", FanRing.RadialCount.ShaftUp, modelDoc2);
+            {// shaft up
+                radialCount = RadialCount.ShaftUp;
+                angle11 = angle1;
+                angle22 = SectionCount == 2 ? 180 - angle1 : 180 - angle2;
+                slotAngle = ShaftUp_SlotAngle();
+                arc = 3;
             }
+            mTools.EditDimension("Count", "Slots", radialCount, modelDoc2);
+            mTools.EditDimension("Angle11", "sk:Slot", angle11, modelDoc2);
+            mTools.EditDimension("Angle22", "sk:Slot", angle22, modelDoc2);
+            mTools.EditDimension("SlotAngle", "sk:Slot", slotAngle, modelDoc2);
+            mTools.EditDimension("Arc", "sk:Slot", arc, modelDoc2);
 
-            mTools.HolePattern(Default.FanRing_Depth - 4, out double count, out double spacing, 4);
-            mTools.EditDimension("Count", "sk:Cuts", count, modelDoc2);
-            mTools.EditDimension("Spacing", "sk:Cuts", spacing, modelDoc2);
+
+            // Flat 
+            mTools.EditDimension("Count", "sk:SpliceCarriageSlot", IsRibbed ? 2 : count, modelDoc2);
+            mTools.EditDimension("Spacing", "sk:SpliceCarriageSlot", IsRibbed ? span + 1.37609108 : spacing, modelDoc2);
+            mTools.EditDimension("RibOffset", "sk:SpliceCarriageSlot", IsRibbed ? 0.56397915 : Ring_Depth, modelDoc2);
+            mTools.EditDimension("Count", "sk:Perforation", IsRibbed ? 2 : count, modelDoc2);
+            mTools.EditDimension("Spacing", "sk:Perforation", IsRibbed ? span + 1.37609108 : spacing, modelDoc2);
+            mTools.EditDimension("SlotOffset", "sk:SpliceStrutSlots", IsRibbed ? 1.37609108 : 0.001, modelDoc2);
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
+            if (IsRibbed)
+                mTools.SuppressFeatures(false, modelDoc2,
+                    "RibSquarePunch",
+                    "RibSquarePunchMirrorHorz",
+                    "RibSquarePunchMirrorVertical");
+            else // straight
+                mTools.SuppressFeatures(true, modelDoc2,
+                    "RibSquarePunch",
+                    "RibSquarePunchMirrorHorz",
+                    "RibSquarePunchMirrorVertical");
+
+            string[] configsToExclude = { StaticPartNo };
+            mTools.SuppressFeatures(false, configsToExclude, modelDoc2,  "FlatPattern");
             if (MotorShaft_Orientation.ToLower().Contains("down"))
-            {
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialSlot");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialSlots");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftUpRadialSlot");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftUpRadialSlots");
-            }
+                mTools.SuppressFeatures(true, modelDoc2, // shaft down
+                    "StrutSlot",
+                    "StrutSlotMirror",
+                    "SpliceStrutSlots");
             else
-            {
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftDownRadialSlot");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftDownRadialSlots");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftUpRadialSlot");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftUpRadialSlots");
-            }
+                mTools.SuppressFeatures(false, modelDoc2, // shaft up
+                    "StrutSlot",
+                    "StrutSlotMirror",
+                    "SpliceStrutSlots");
+            mTools.SuppressFeatures(true, configsToExclude, modelDoc2,  "FlatPattern");
         }
 
 
         // Private methods
-        private double FindGapAngle(double gapFromCenter, double ringRadius)
+        private static double FindGapAngle(double gapFromCenter, double ringRadius)
         {
             double cosine = gapFromCenter / ringRadius;
             double angleRadians = Math.Acos(cosine);
             double angleDegrees = angleRadians * (180.0 / Math.PI);
             return 90 - angleDegrees;
+        }
+        private static double ShaftUp_SlotAngle()
+        {
+            double arcLength = 3.0 + 0.125;
+            double boltCircleRadius = Radius + 1.125;
+
+            double angleInRadians = arcLength / boltCircleRadius;
+            double angleInDegrees = angleInRadians * (180.0 / Math.PI);
+
+            return angleInDegrees;
         }
 
 
@@ -154,6 +213,6 @@ namespace Plenum.Floor
 
 
         // Private properties
-        private int SectionCount => FanDiameter <= 60 ? 2 : 4;
+        private static int SectionCount => FanDiameter <= 60 ? 2 : 4;
     }
 }

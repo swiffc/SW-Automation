@@ -32,6 +32,10 @@ namespace AddInDllVersionControl
                         object swInstance = Marshal.GetActiveObject("SldWorks.Application");
                         SldWorks swApp = (SldWorks)swInstance;
 
+                        MessageBox.Show("SolidWorks is about to close. " + "\n" +
+                                        "Please ensure all work is saved before pressing OK to continue.",
+                                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         // Close all documents without saving
                         swApp.CloseAllDocuments(false);
 
@@ -74,12 +78,12 @@ namespace AddInDllVersionControl
                 Console.WriteLine($"Could not update {dllPath} to the current version");
             }
 
+            // Update updater
+            IEdmFile5 updaterFile = vault.GetFileFromPath(updaterPath, out IEdmFolder5 updaterFolder);
+            updaterFile.GetFileCopy(0);
+
             // Update add-in dependencies
             GetAllFilesInFolder(dllFolder, false);
-
-            // Update updater
-            IEdmFile5 updaterFile = vault.GetFileFromPath(updaterPath, out IEdmFolder5 updaterFolder); 
-            updaterFile.GetFileCopy(0);
 
             // Register the DLL
             RunRegasm(regasmPath, dllPath, false);

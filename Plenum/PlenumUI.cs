@@ -299,7 +299,13 @@ namespace Plenum
 
         private void txt_RingDepth_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(txt_RingDepth.Text, x => Default.FanRing_Depth = x);
+            double.TryParse(txt_RingDepth.Text, out double value);
+
+            if (txt_RingDepth.Text.Length >= 2 ||
+                value < 10 && value > 3)
+            {
+                UI_DoubleChanged(txt_RingDepth.Text, x => Ring_Depth = x);
+            }
         }
 
         private void button1_save_Click(object sender, EventArgs e)

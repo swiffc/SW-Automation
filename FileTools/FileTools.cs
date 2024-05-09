@@ -234,9 +234,9 @@ namespace FileTools
 
         private ModelDoc2 OpenDocument(string filePath, string configurationName)
         {
-            mTools.DisablePartUI();
+            //mTools.DisablePartUI();
             ModelDoc2 modelDoc2 = mTools.Open(filePath, configurationName);
-            mTools.EnablePartUI();
+            //mTools.EnablePartUI();
 
             if (modelDoc2 != null)
             {
