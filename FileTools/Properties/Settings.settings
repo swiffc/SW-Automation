@@ -197,5 +197,11 @@
     <Setting Name="DividerStiffenerCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
+    <Setting Name="Bundle_Width" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="SideFrame_THK" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.1344</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

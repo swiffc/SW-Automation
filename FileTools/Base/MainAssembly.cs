@@ -7,16 +7,17 @@ using FileTools.CommonData;
 using static FileTools.Properties.Settings;
 using SolidWorks.Interop.sldworks;
 using System;
+using System.Diagnostics;
 
 namespace FileTools.Base
 {
     public class MainAssembly : SW_Assembly
     {
-        internal static List<Type> ToBeInstantiated = new List<Type>();
+        internal static List<Type> ClassesToIsolate = new List<Type>();
         public MainAssembly(int assemblyNumber, string assemblyDescription, params Type[] classesToIsolate)
         {
             foreach (var type in classesToIsolate)
-                ToBeInstantiated.Add(type);
+                ClassesToIsolate.Add(type);
 
             AssemblyNumber = assemblyNumber;
             AssemblyDesc = assemblyDescription;
@@ -30,6 +31,7 @@ namespace FileTools.Base
                     AssemblyDoc = OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
 
                     var componentList = InstantiateComponents(this);
+
                     LocateComponents(componentList, this);
 
                     if (Default.Toggle_CreateDrawing)

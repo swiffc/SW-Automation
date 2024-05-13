@@ -156,7 +156,7 @@ namespace Tools
                 (int)swAddComponentConfigOptions_e.swAddComponentConfigOptions_CurrentSelectedConfig, null,
                 false, null,
                 0, 0, 0);
-            Debug.WriteLine($"      Inserted new component:    {component2.Name2}");
+            Debug.WriteLine($"{component2.ReferencedConfiguration}");
             return component2;
         }
         public static void Close(string filePath)
@@ -295,7 +295,7 @@ namespace Tools
                 1,0,0,0
              };
 
-            Debug.WriteLine($"Position set: {component.Name2}");
+            Debug.WriteLine($"      Position set for [{component.ReferencedConfiguration}]");
 
             cTools.Release(ref mathTransform);
         }

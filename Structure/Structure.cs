@@ -13,8 +13,8 @@ namespace Structure
 {
     internal class Structure : MainAssembly
     {
-        public Structure(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
-            //,typeof(BraceL)
+        public Structure(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription 
+            ,typeof(BraceL)
             ) { }
 
         public static void Main()
@@ -23,6 +23,8 @@ namespace Structure
             Application.SetCompatibleTextRenderingDefault(false);
             StructureUI structureUI = new StructureUI();
             Application.Run(structureUI);
+
+            Type[] test = new Type[] { typeof(StructureUI), typeof(Structure) };
         }
     }
 }

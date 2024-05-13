@@ -1,5 +1,6 @@
 ﻿using ModelTools;
 using System.Collections.Generic;
+using System.Diagnostics;
 using static FileTools.StaticFileTools;
 using static ModelTools.ReleaseCOM;
 using static Tools.ModelTools;
@@ -63,6 +64,10 @@ namespace FileTools.Base
                 return _filePath;
             }
         }
+
+
+        // Protected properties
+        protected List<PositionData> _position { get; set; }
 
 
         // Private properties

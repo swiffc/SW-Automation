@@ -802,5 +802,29 @@ namespace FileTools.Properties {
                 this["DividerStiffenerCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public double Bundle_Width {
+            get {
+                return ((double)(this["Bundle_Width"]));
+            }
+            set {
+                this["Bundle_Width"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.1344")]
+        public double SideFrame_THK {
+            get {
+                return ((double)(this["SideFrame_THK"]));
+            }
+            set {
+                this["SideFrame_THK"] = value;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33214.272
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walkway", "Walkway\Walkway.csproj", "{E7F20CF6-1A9D-42CD-AB57-E4A9D3CE85C3}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bounty", "Bounty\Bounty.csproj", "{1CDD1082-52A6-48A3-A5C0-0132999502D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineryMount", "MachineryMount\MachineryMount.csproj", "{575E1C1C-0295-4C0D-ABA2-ACE4B985FB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bundle", "Bundle\Bundle.csproj", "{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +163,14 @@ Global
 		{575E1C1C-0295-4C0D-ABA2-ACE4B985FB8E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{575E1C1C-0295-4C0D-ABA2-ACE4B985FB8E}.Release|x64.ActiveCfg = Release|Any CPU
 		{575E1C1C-0295-4C0D-ABA2-ACE4B985FB8E}.Release|x64.Build.0 = Release|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

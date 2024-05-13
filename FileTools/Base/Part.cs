@@ -178,7 +178,7 @@ namespace FileTools.Base
                             _partNo = GetPartNoFromDirectory(StaticPartNo, _parentAssembly);
                             if (_partNo == null)
                             {
-                                _partNo = CreateNew_SubComponentFile(StaticPartNo);
+                                _partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly);
                             }
                         }
                     }
@@ -216,6 +216,10 @@ namespace FileTools.Base
             A1011_33,
             A992
         };
+
+
+        // Protected properties
+        protected List<PositionData> _position { get; set; }
 
 
         // Private properties

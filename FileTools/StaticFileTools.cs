@@ -51,7 +51,7 @@ namespace FileTools
 
             // Create bank assembly
             CopyAsReadWrite(assemblyTemplateFile, assemblyDesktopPath);
-            Debug.WriteLine($"Created {assemblyFileName}");
+            Debug.WriteLine($"Created new [{AssemblyNumber}] as <{Path.GetFileNameWithoutExtension(assemblyFileName)}>");
 
             // Open bank assembly
             Open(assemblyDesktopPath);
@@ -78,7 +78,7 @@ namespace FileTools
         {
             string assemblyDocPath = (swAssembly.AssemblyDoc as ModelDoc2).GetPathName();
             string assemblyName = Path.GetFileNameWithoutExtension(assemblyDocPath);
-            Debug.WriteLine($"   Looking for part {staticPartNo} in {assemblyName}...");
+            Debug.WriteLine($"      Looking for [{staticPartNo}] in assembly ({swAssembly.Config})...");
 
             if (swAssembly.ComponentArray != null)
             {
@@ -107,7 +107,8 @@ namespace FileTools
                         {
                             string partName = Path.GetFileNameWithoutExtension(componentPath);
                             string partNo = ExtractPartNo(component);
-                            Debug.WriteLine($"   Found part {partName} in assembly {assemblyName}");
+                            Debug.WriteLine($"   Found ({partName}) in [{assemblyName}]");
+                            Debug.WriteLine("");
                             return partNo;
                         }
                     }
@@ -139,11 +140,11 @@ namespace FileTools
 
             if (extension == ".SLDASM")
             {
-                return HandleAssemblyFile(template).ToString();
+                return HandleAssemblyFile(template, staticPartNo).ToString();
             }
             else if (extension == ".SLDPRT")
             {
-                return HandlePartFile(template).ToString();
+                return HandlePartFile(template, staticPartNo).ToString();
             }
             else
             {
@@ -151,9 +152,8 @@ namespace FileTools
                 return "-1";
             }
         }
-        public static string CreateNew_SubComponentFile(string staticPartNo)
+        public static string CreateNew_SubComponentFile(string staticPartNo, SW_Assembly swAssembly)
         {
-            Debug.WriteLine($"Creating new {staticPartNo} from {TemplateFolderPath}");
             string templateFile = $@"{TemplateFolderPath}\JOBNO-{staticPartNo}.SLDPRT";
 
             char partNo1 = 'A';
@@ -170,7 +170,8 @@ namespace FileTools
                 if (!System.IO.File.Exists(desktopFile))
                 {
                     CopyAsReadWrite(templateFile, desktopFile);
-                    //Debug.WriteLine($"Created {desktopFile} from template file {templateFile}");
+                    Debug.WriteLine($"            Created new [{staticPartNo}] as <{Path.GetFileNameWithoutExtension(desktopFile)}>");
+                    Debug.WriteLine($"");
                     return $"{partNo1}{(partNo2 != ' ' ? partNo2.ToString() : "")}";
                 }
 
@@ -182,7 +183,7 @@ namespace FileTools
             ModelDoc2 modelDoc = swAssembly.AssemblyDoc as ModelDoc2;
             string parentPath = modelDoc.GetPathName();
             string parentName = Path.GetFileNameWithoutExtension(parentPath);
-            Debug.WriteLine($"   Looking for part {staticPartNo} in {parentName}'s directory...");
+            Debug.WriteLine($"         Looking for [{staticPartNo}] in directory of ({swAssembly.Config})...");
 
             // Components in directory
             List<string> directoryComponentPaths = new List<string>();
@@ -209,14 +210,21 @@ namespace FileTools
                 parentPath
             };
 
+            // Add explicitly open components
+            if (SW.GetDocuments() != null)
+            {
+                foreach (ModelDoc2 doc in SW.GetDocuments())
+                {
+                    loadedComponentPaths.Add(doc.GetPathName());
+                }
+            }
+
+            // Add components loaded via the assembly
             if (swAssembly.ComponentArray != null)
             {
                 foreach (var component in swAssembly.ComponentArray)
                 {
                     loadedComponentPaths.Add(component.GetPathName());
-                    //Console.WriteLine("  " + component.GetPathName());
-
-                    //Release(component);
                 }
             }
 
@@ -245,7 +253,6 @@ namespace FileTools
                     {
                         Debug.WriteLine("Found existing!");
                         partNo = ExtractPartNoFromPath(unloadedComponentPath);
-                        //mTools.Close(unloadedComponentPath);
                         break;
                     }
                 }
@@ -253,19 +260,28 @@ namespace FileTools
             }
             EnablePartUI();
 
+            if (partNo != null)
+                Debug.WriteLine("");
+
             return partNo;
         }
         public static void LocateComponents(List<IComponentInfo2> components, SW_Assembly swAssembly)
         {
-            if (ToBeInstantiated.Count == 0)
+            Debug.WriteLine($"------------Locating components in ({swAssembly.Config})-------------" + "\n");
+
+            if (ClassesToIsolate.Count == 0)
                 RemoveUnneededSubComponents(swAssembly);
+
             Component2[] userLocatedComponents = UnfixedComponentsArray(swAssembly.ComponentArray);
+
             foreach (var component in components)
                 PlaceComponent(component, swAssembly);
+
             swAssembly.ClearComponentArray();
             FixComponentLocations(userLocatedComponents, swAssembly.AssemblyDoc, swAssembly.ComponentArray);
 
             //Release(swAssembly.AssemblyDoc);
+            Debug.WriteLine($"---------------------------------------------------" + "\n");
         }
         public static void PlaceComponent(IComponentInfo2 component, SW_Assembly sW_Assembly)
         {
@@ -286,6 +302,7 @@ namespace FileTools
                                 SW.ActivateDoc3(modelDoc2.GetPathName(), false, (int)swRebuildOnActivation_e.swDontRebuildActiveDoc, 0);
                                 bool check = modelDoc2.Extension.SelectByID2(assemblyComp.Name2 + $"@{Path.GetFileNameWithoutExtension(modelDoc2.GetPathName())}", "COMPONENT", 0, 0, 0, false, 0, null, 0);
                                 bool check2 = sW_Assembly.AssemblyDoc.ReplaceComponents2(component.FilePath, component.StaticPartNo, true, 1, false);
+                                Debug.WriteLine($"   Replaced template file <{Path.GetFileNameWithoutExtension(assemblyCompPath.ToUpper())}> with [{component.StaticPartNo}] in ({sW_Assembly.Config})");
                                 modelDoc2.Visible = false;
                             }
                         }
@@ -326,9 +343,11 @@ namespace FileTools
             // Insert or get existing components
             for (int i = 0; i < component.Position.Count; i++)
             {
-                componentList[i] = insertNew || componentList[i] == null
-                    ? InsertComponent(component.FilePath, sW_Assembly.AssemblyDoc)
-                    : GetInstance(componentList, i);
+                string internalID = component.StaticPartNo;
+                if (insertNew || componentList[i] == null)
+                    componentList[i] = InsertComponent2(component.FilePath, i, sW_Assembly);
+                else
+                    componentList[i] = GetInstance(componentList, i, sW_Assembly);
             }
 
             // Locate components
@@ -344,7 +363,7 @@ namespace FileTools
                         component.Position[i].RotationY,
                         component.Position[i].RotationZ
                     );
-                    SetPosition(componentList[i]);
+                    SetPosition2(componentList[i], i, sW_Assembly);
                 }
             }
 
@@ -354,7 +373,7 @@ namespace FileTools
                 //Release(item);
             }
             componentList.Clear();
-            Close(component.FilePath);
+            Close2(component);
         }
         public static ModelDoc2 OpenSilent(Part part)
         {
@@ -399,6 +418,7 @@ namespace FileTools
         }
         public static List<IComponentInfo2> InstantiateComponents(SW_Assembly swAssembly)
         {
+            Debug.WriteLine($"\n" + $"----------Instantiating components in ({swAssembly.Config})----------" + "\n");
             string targetNamespace = swAssembly.GetType().Namespace;
 
             // Get the assembly containing the type of mainAssembly
@@ -429,12 +449,12 @@ namespace FileTools
 
             var componentsToBeAdded = new List<IComponentInfo2>();
 
-            foreach (Type type in typesList)
+            for (int i = 0; i < typesList.Count; i++)
             {
+                Type type = typesList[i];
 
-                if (!ToBeInstantiated.Any() || ToBeInstantiated.Contains(type))
+                if (!ClassesToIsolate.Any() || ClassesToIsolate.Contains(type))
                 {
-                    Console.WriteLine($"   [{type.Name}]");
                     // Check if the type's namespace starts with the target namespace and is assignable to SubAssembly
                     if (type.Namespace != null && type.Namespace.StartsWith(targetNamespace) && typeof(IComponentInfo2).IsAssignableFrom(type))
                     {
@@ -442,6 +462,7 @@ namespace FileTools
                         ConstructorInfo constructor = type.GetConstructor(new Type[] { typeof(MainAssembly) });
                         if (constructor != null)
                         {
+                            Debug.WriteLine($"   [#]{type.Name}.cs was reflected in ({swAssembly.Config})");
                             // Instantiate the type using the provided MainAssembly instance
                             IComponentInfo2 component = (IComponentInfo2)Activator.CreateInstance(type, swAssembly);
                             ComponentRegistry.RegisterComponent(component);
@@ -450,11 +471,13 @@ namespace FileTools
                             if (component != null && component.Enabled)
                             {
                                 componentsToBeAdded.Add(component);
+                                //Debug.WriteLine($"   ({component.StaticPartNo}){type.Name}.cs was reflected in ({swAssembly.Config})");
                             }
                         }
                     }
                 }
             }
+            Debug.WriteLine($"---------------------------------------------------");
             return componentsToBeAdded;
         }
         public static void CreateDrawing(List<IComponentInfo2> components, SW_Assembly swAssembly)
@@ -567,13 +590,15 @@ namespace FileTools
                             && !t.IsAbstract
                             && t.IsSubclassOf(typeof(Part)));
 
-            foreach (var type in componentTypes)
+            List<Type> componentTypesList = componentTypes.ToList();
+            for (int i = 0; i < componentTypesList.Count; i++)
             {
-                Console.WriteLine(type.Name);
+                var type = componentTypesList[i];
                 // Attempt to find a constructor that takes a SubAssembly as a parameter
                 var constructor = type.GetConstructor(new Type[] { typeof(SubAssembly) });
                 if (constructor != null)
                 {
+                    Debug.WriteLine($"   [#]{type.Name}.cs was reflected in ({parentSubAssembly.Config})");
                     // Instantiate the component
                     var componentInstance = constructor.Invoke(new object[] { parentSubAssembly }) as IComponentInfo2;
                     if (componentInstance != null)
@@ -609,6 +634,46 @@ namespace FileTools
             member.ConfigurationName = newSize;
             feature.ModifyDefinition(member, SW.IActiveDoc2, null);
         }
+        public static string GetConfigurationTitle(ModelDoc2 modelDoc2)
+        {
+            Configuration config = modelDoc2.ConfigurationManager.ActiveConfiguration;
+            return config.GetDisplayStates()[0];
+        }
+        public static void SetPosition2(Component2 component, int instance, SW_Assembly sW_Assembly)
+        {
+            InchesToMeters(PositionMaxtrix);
+            MathTransform mathTransform = SW.GetMathUtility().CreateTransform(PositionMaxtrix);
+            component.Transform2 = mathTransform;
+
+            PositionMaxtrix = new double[16]
+            {
+                1,0,0,0,
+                1,0,0,0,
+                1,0,0,0,
+                1,0,0,0
+             };
+
+            Debug.WriteLine($"         [{component.ReferencedConfiguration}:{instance + 1}] position set in ({sW_Assembly.Config})");
+
+            Release(ref mathTransform);
+        }
+        public static void Close2(IComponentInfo2 component)
+        {
+            SW.CloseDoc(component.FilePath);
+            string fileName = Path.GetFileNameWithoutExtension(component.FilePath);
+            Debug.WriteLine($"            Closed [{component.StaticPartNo}]");
+            Debug.WriteLine($"");
+        }
+        public static Component2 InsertComponent2(string filePath, int instance, SW_Assembly sWAssembly)
+        {
+            Component2 component2 = sWAssembly.AssemblyDoc.AddComponent5
+                (filePath,
+                (int)swAddComponentConfigOptions_e.swAddComponentConfigOptions_CurrentSelectedConfig, null,
+                false, null,
+                0, 0, 0);
+            Debug.WriteLine($"   New [{component2.ReferencedConfiguration}:{instance + 1}] inserted into ({sWAssembly.Config})");
+            return component2;
+        }
 
 
 
@@ -629,7 +694,7 @@ namespace FileTools
             if (modelDoc2 != null)
             {
                 Configuration config = modelDoc2.ConfigurationManager.ActiveConfiguration;
-                Debug.WriteLine($"{config.Name} - {GetConfigurationTitle(modelDoc2)}");
+                Debug.WriteLine($"Opened ({config.Name}){GetConfigurationTitle(modelDoc2)}");
 
                 // Job info
                 SetProperty("Project", Default.Project, modelDoc2);
@@ -648,11 +713,6 @@ namespace FileTools
                 return null;
             }
 
-        }
-        private static string GetConfigurationTitle(ModelDoc2 modelDoc2)
-        {
-            Configuration config = modelDoc2.ConfigurationManager.ActiveConfiguration;
-            return config.GetDisplayStates()[0];
         }
         private static void SetProperty_ConfigSpecific(string property, string value, string configuration, ModelDoc2 modelDoc2)
         {
@@ -733,7 +793,7 @@ namespace FileTools
                 return ((char)(partNo1 + 1), ' ');
             }
         }
-        private static int HandlePartFile(string templateFile)
+        private static int HandlePartFile(string templateFile, string staticPartNo)
         {
             string DesktopFolderPath =
                 System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) +
@@ -744,18 +804,20 @@ namespace FileTools
             {
                 string destinationFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.SLDPRT";
                 CopyAsReadWrite(templateFile, destinationFile);
-                Debug.WriteLine($"   Created new {destinationFile} as {Path.GetFileNameWithoutExtension(destinationFile)}");
+                Debug.WriteLine($"            Created new [{staticPartNo}] as <{Path.GetFileNameWithoutExtension(destinationFile)}>");
+                Debug.WriteLine("");
             }
             return partNo;
         }
-        private static int HandleAssemblyFile(string templateFile)
+        private static int HandleAssemblyFile(string templateFile, string staticPartNo)
         {
             int partNo = GetUniquePartNo();
             if (partNo != -1)
             {
                 string destinationFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{partNo}.SLDASM";
                 CopyAsReadWrite(templateFile, destinationFile);
-                Debug.WriteLine($"   Created new {destinationFile} as {Path.GetFileNameWithoutExtension(destinationFile)}");
+                Debug.WriteLine($"            Created new [{staticPartNo}] as <{Path.GetFileNameWithoutExtension(destinationFile)}>");
+                Debug.WriteLine("");
             }
             return partNo;
         }
@@ -805,10 +867,10 @@ namespace FileTools
 
             return matchingComponents;
         }
-        private static Component2 GetInstance(List<Component2> componentList, int instance)
+        private static Component2 GetInstance(List<Component2> componentList, int instance, SW_Assembly sW_Assembly)
         {
             Component2 swComponent = componentList[instance];
-            Debug.WriteLine($"Existing component found: {swComponent.Name2} at instance {instance}");
+            Debug.WriteLine($"      [{swComponent.ReferencedConfiguration}:{instance + 1}] found in ({sW_Assembly.Config})");
             return swComponent;
         }
         private static string ExtractPartNo(Component2 component2)

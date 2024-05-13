@@ -1,9 +1,11 @@
 ﻿using SolidWorks.Interop.sldworks;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FileTools.StaticFileTools;
 
 namespace FileTools.Base
 {
@@ -39,6 +41,20 @@ namespace FileTools.Base
             }
         }
         public List<IComponentInfo2> GrandChildren = new List<IComponentInfo2>();
+        public string Name
+        {
+            get
+            {
+                return GetConfigurationTitle(AssemblyDoc as ModelDoc2);
+            }
+        }
+        public string Config
+        {
+            get
+            {
+                return (AssemblyDoc as ModelDoc2).ConfigurationManager.ActiveConfiguration.Name;
+            }
+        }
 
 
         // Private properties
