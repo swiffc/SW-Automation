@@ -272,6 +272,7 @@ namespace FileTools
 
             }
 
+
             EnablePartUI();
 
             if (partNo != null)
@@ -478,7 +479,6 @@ namespace FileTools
                         ConstructorInfo constructor = type.GetConstructor(new Type[] { typeof(MainAssembly) });
                         if (constructor != null)
                         {
-                            //Debug.WriteLine($"   [#] {type.Name}.cs was reflected in ({swAssembly.Config})");
                             // Instantiate the type using the provided MainAssembly instance
                             IComponentInfo2 component = (IComponentInfo2)Activator.CreateInstance(type, swAssembly);
                             ComponentRegistry.RegisterComponent(component);
@@ -694,18 +694,6 @@ namespace FileTools
                 0, 0, 0);
             Debug.WriteLine($"   New [{component2.ReferencedConfiguration}:{instance + 1}] inserted into ({sWAssembly.Config})");
             return component2;
-        }
-        public static void LogOpenDocuments()
-        {
-            object[] documentsObj = SW.GetDocuments();
-            if (documentsObj != null)
-            {
-                foreach (object docObj in documentsObj)
-                {
-                    ModelDoc2 doc = docObj as ModelDoc2;
-                    Debug.WriteLine($"{doc.GetPathName()}");
-                }
-            }
         }
         public static void ForceRebuild(AssemblyDoc assemblyDoc)
         {

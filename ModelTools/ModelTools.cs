@@ -221,6 +221,7 @@ namespace Tools
                 SW.IActiveDoc2.ViewZoomtofit2();
             }
         }
+
         public static void ShowTopView()
         {
             SW.IActiveDoc2.EditRebuild3();
