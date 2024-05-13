@@ -1,6 +1,6 @@
 ﻿namespace Bundle
 {
-    partial class fBundle
+    partial class BundleUI
     {
         /// <summary>
         /// Required designer variable.

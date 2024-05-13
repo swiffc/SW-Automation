@@ -20,7 +20,7 @@ namespace Bundle.SideFrame.Derived.RIGHT
                 {
                     _position = new List<PositionData>
                     {
-                        PositionData.Create(tX: Bundle.Width/2, tY: 180)
+                        PositionData.Create(tX: Bundle.Width/2)
                     };
                 }
                 return _position;

@@ -13,7 +13,7 @@ namespace FileTools.Base
 {
     public class MainAssembly : SW_Assembly
     {
-        internal static List<Type> ClassesToIsolate = new List<Type>();
+        // Constructor
         public MainAssembly(int assemblyNumber, string assemblyDescription, params Type[] classesToIsolate)
         {
             foreach (var type in classesToIsolate)
@@ -51,7 +51,7 @@ namespace FileTools.Base
                         ClearList_ToBeDeleted();
                     }
 
-                    OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
+                    //OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                     Rebuild(true);
                     TurnOffBendLines();
                 }
@@ -61,5 +61,14 @@ namespace FileTools.Base
                 }
             } while (!bankExists);
         }
+
+
+        // Instance properties
+        internal static List<string> AssignedComponentPaths = new List<string>();
+
+
+        // Static properties
+        internal static readonly List<Type> ClassesToIsolate = new List<Type>();
+
     }
 }

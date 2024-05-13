@@ -107,7 +107,7 @@ namespace FileTools
                         {
                             string partName = Path.GetFileNameWithoutExtension(componentPath);
                             string partNo = ExtractPartNo(component);
-                            Debug.WriteLine($"   Found ({partName}) in [{assemblyName}]");
+                            Debug.WriteLine($"         Found [{staticPartNo}] in ({swAssembly.Config})");
                             Debug.WriteLine("");
                             return partNo;
                         }
@@ -182,7 +182,6 @@ namespace FileTools
         {
             ModelDoc2 modelDoc = swAssembly.AssemblyDoc as ModelDoc2;
             string parentPath = modelDoc.GetPathName();
-            string parentName = Path.GetFileNameWithoutExtension(parentPath);
             Debug.WriteLine($"         Looking for [{staticPartNo}] in directory of ({swAssembly.Config})...");
 
             // Components in directory
@@ -210,15 +209,6 @@ namespace FileTools
                 parentPath
             };
 
-            // Add explicitly open components
-            if (SW.GetDocuments() != null)
-            {
-                foreach (ModelDoc2 doc in SW.GetDocuments())
-                {
-                    loadedComponentPaths.Add(doc.GetPathName());
-                }
-            }
-
             // Add components loaded via the assembly
             if (swAssembly.ComponentArray != null)
             {
@@ -226,6 +216,12 @@ namespace FileTools
                 {
                     loadedComponentPaths.Add(component.GetPathName());
                 }
+            }
+
+            // Add components previously assigned in this method
+            foreach (var assignedComponentPath in AssignedComponentPaths)
+            {
+                loadedComponentPaths.Add(assignedComponentPath);
             }
 
             // Components not loaded into memory
@@ -241,23 +237,38 @@ namespace FileTools
             // Load unloaded components
             DisablePartUI();
             string partNo = null;
+            bool exitOuterLoop = false;
+
             foreach (string unloadedComponentPath in unloadedComponentPaths)
             {
                 ModelDoc2 temp = Open(unloadedComponentPath);
                 object[] configsArray = temp.GetConfigurationNames();
+
                 foreach (var configObj in configsArray)
                 {
                     string configName = configObj as string;
-                    Debug.WriteLine("   " + configName);
+                    if (configName == "FP")
+                        continue;
+
                     if (configName == staticPartNo)
                     {
-                        Debug.WriteLine("Found existing!");
+                        Debug.WriteLine($"            [{configName}] found");
                         partNo = ExtractPartNoFromPath(unloadedComponentPath);
+                        exitOuterLoop = true;
                         break;
                     }
+
+                    Debug.WriteLine($"            ...loaded {configName} from directory");
                 }
                 Release(ref temp);
+                if (exitOuterLoop)
+                {
+                    AssignedComponentPaths.Add(unloadedComponentPath);
+                    break;
+                }
+
             }
+
             EnablePartUI();
 
             if (partNo != null)
@@ -462,7 +473,7 @@ namespace FileTools
                         ConstructorInfo constructor = type.GetConstructor(new Type[] { typeof(MainAssembly) });
                         if (constructor != null)
                         {
-                            Debug.WriteLine($"   [#]{type.Name}.cs was reflected in ({swAssembly.Config})");
+                            Debug.WriteLine($"   [#] {type.Name}.cs was reflected in ({swAssembly.Config})");
                             // Instantiate the type using the provided MainAssembly instance
                             IComponentInfo2 component = (IComponentInfo2)Activator.CreateInstance(type, swAssembly);
                             ComponentRegistry.RegisterComponent(component);
@@ -598,7 +609,7 @@ namespace FileTools
                 var constructor = type.GetConstructor(new Type[] { typeof(SubAssembly) });
                 if (constructor != null)
                 {
-                    Debug.WriteLine($"   [#]{type.Name}.cs was reflected in ({parentSubAssembly.Config})");
+                    Debug.WriteLine($"   [#] {type.Name}.cs was reflected in ({parentSubAssembly.Config})");
                     // Instantiate the component
                     var componentInstance = constructor.Invoke(new object[] { parentSubAssembly }) as IComponentInfo2;
                     if (componentInstance != null)
@@ -661,7 +672,7 @@ namespace FileTools
         {
             SW.CloseDoc(component.FilePath);
             string fileName = Path.GetFileNameWithoutExtension(component.FilePath);
-            Debug.WriteLine($"            Closed [{component.StaticPartNo}]");
+            Debug.WriteLine($"            [{component.StaticPartNo}] closed");
             Debug.WriteLine($"");
         }
         public static Component2 InsertComponent2(string filePath, int instance, SW_Assembly sWAssembly)
@@ -673,6 +684,18 @@ namespace FileTools
                 0, 0, 0);
             Debug.WriteLine($"   New [{component2.ReferencedConfiguration}:{instance + 1}] inserted into ({sWAssembly.Config})");
             return component2;
+        }
+        public static void LogOpenDocuments()
+        {
+            object[] documentsObj = SW.GetDocuments();
+            if (documentsObj != null)
+            {
+                foreach (object docObj in documentsObj)
+                {
+                    ModelDoc2 doc = docObj as ModelDoc2;
+                    Debug.WriteLine($"{doc.GetPathName()}");
+                }
+            }
         }
 
 
@@ -694,7 +717,7 @@ namespace FileTools
             if (modelDoc2 != null)
             {
                 Configuration config = modelDoc2.ConfigurationManager.ActiveConfiguration;
-                Debug.WriteLine($"Opened ({config.Name}){GetConfigurationTitle(modelDoc2)}");
+                Debug.WriteLine($"({config.Name}) {GetConfigurationTitle(modelDoc2)} opened");
 
                 // Job info
                 SetProperty("Project", Default.Project, modelDoc2);
