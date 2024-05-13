@@ -83,21 +83,24 @@ namespace Tools
             object[] componentObj = (SW.IActiveDoc2 as AssemblyDoc).GetComponents(false);
 
             var componentFileNamePairs = new List<KeyValuePair<Component2, string>>();
-            foreach (var obj in componentObj)
+            if (componentObj != null)
             {
-                Component2 component2 = obj as Component2;
-                if (component2 != null)
+                foreach (var obj in componentObj)
                 {
-                    ModelDoc2 modelDoc2 = component2.GetModelDoc2();
-                    if (modelDoc2 != null)
+                    Component2 component2 = obj as Component2;
+                    if (component2 != null)
                     {
-                        string pathName = modelDoc2.GetPathName();
-                        if (!string.IsNullOrEmpty(pathName))
+                        ModelDoc2 modelDoc2 = component2.GetModelDoc2();
+                        if (modelDoc2 != null)
                         {
-                            string fileName = Path.GetFileNameWithoutExtension(pathName);
-                            // Create the pair and add to the list
-                            var pair = new KeyValuePair<Component2, string>(component2, fileName);
-                            componentFileNamePairs.Add(pair);
+                            string pathName = modelDoc2.GetPathName();
+                            if (!string.IsNullOrEmpty(pathName))
+                            {
+                                string fileName = Path.GetFileNameWithoutExtension(pathName);
+                                // Create the pair and add to the list
+                                var pair = new KeyValuePair<Component2, string>(component2, fileName);
+                                componentFileNamePairs.Add(pair);
+                            }
                         }
                     }
                 }
@@ -217,10 +220,6 @@ namespace Tools
                 SW.IActiveDoc2.ShowNamedView2("*Isometric", -1);
                 SW.IActiveDoc2.ViewZoomtofit2();
             }
-        }
-        public static void ForceRebuild()
-        {
-            SW.IActiveDoc2.ForceRebuild3(false);
         }
         public static void ShowTopView()
         {
@@ -879,25 +878,38 @@ namespace Tools
         public static void RemoveComponent(Component2 component2, AssemblyDoc assemblyDoc)
         {
             ModelDoc2 modelDoc2 = assemblyDoc as ModelDoc2;
-            string assemblyName = Path.GetFileNameWithoutExtension(modelDoc2.GetPathName());
+            string filePath = component2.GetPathName();
+            string assemblyName = Path.GetFileNameWithoutExtension(filePath);
             string componentName = component2.Name2;
+            string staticPartNo = component2.ReferencedConfiguration;
 
             bool selected = modelDoc2.Extension.SelectByID2($"{componentName}@{assemblyName}", "COMPONENT", 0, 0, 0, true, 0, null, 0);
 
             bool deleted = modelDoc2.Extension.DeleteSelection2(0);
             if (deleted)
             {
-                Debug.WriteLine($"Deleted component instance: {componentName}");
+                int lastHyphen = componentName.LastIndexOf('-');
+                Debug.WriteLine($"      [{staticPartNo}:{componentName.Substring(lastHyphen + 1)}] removed from Solidworks" + "\n");
+                if (!FilesToBeDeleted.Contains(filePath))
+                    FilesToBeDeleted.Add(filePath);
             }
             else throw new Exception();
         }
 
 
-        public static List<string> ToBeDeleted = new List<string>();
+        public static List<string> FilesToBeDeleted = new List<string>();
 
-        public static void ClearList_ToBeDeleted()
+        public static void DeleteUnusedFiles()
         {
-            foreach (var filePath in ToBeDeleted)
+
+            if (SW.GetDocuments() != null)
+            {
+                foreach (ModelDoc2 doc in SW.GetDocuments())
+                {
+                    Console.WriteLine(doc.GetPathName());
+                }
+            }
+            foreach (var filePath in FilesToBeDeleted)
             {
                 if (filePath.Contains("JOBNO"))
                     continue;
@@ -905,7 +917,7 @@ namespace Tools
                 File.Delete(filePath);
                 Debug.WriteLine($"Deleted file: {filePath}");
             }
-            ToBeDeleted.Clear();
+            FilesToBeDeleted.Clear();
         }
 
         public static void CloseEverything()

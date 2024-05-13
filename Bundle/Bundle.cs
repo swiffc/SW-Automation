@@ -27,7 +27,7 @@ namespace Bundle
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fBundle());
+            Application.Run(new BundleUI());
         }
     }
 }

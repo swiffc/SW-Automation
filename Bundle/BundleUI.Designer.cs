@@ -1,6 +1,6 @@
 ﻿namespace Bundle
 {
-    partial class fBundle
+    partial class BundleUI
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,6 @@
             this.tSideFrameTHK.Size = new System.Drawing.Size(100, 20);
             this.tSideFrameTHK.TabIndex = 2;
             this.tSideFrameTHK.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tSideFrameTHK.TextChanged += new System.EventHandler(this.tSideFrameTHK_TextChanged);
             this.tSideFrameTHK.Leave += new System.EventHandler(this.tSideFrameTHK_Leave);
             // 
             // bBundle

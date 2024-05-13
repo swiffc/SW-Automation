@@ -1,14 +1,13 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 using static FileTools.CommonData.CommonData;
 using static FileTools.Properties.Settings;
 
 namespace Bundle
 {
-    public partial class fBundle : Form
+    public partial class BundleUI : Form
     {
-        public fBundle()
+        public BundleUI()
         {
             InitializeComponent();
         }
@@ -20,26 +19,6 @@ namespace Bundle
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
             save_Toggle.Checked = Default.Toggle_Save;
             delete_Toggle.Checked = Default.Toggle_DeleteFiles;
-
-            // temp
-            Tools.ModelTools.CloseEverything();
-            string path = @"C:\Users\acmurr\Desktop\M000-7A";
-            if (Directory.Exists(path))
-            {
-                // Get all files in the directory and delete them
-                string[] files = Directory.GetFiles(path);
-                foreach (string file in files)
-                {
-                    File.Delete(file);
-                }
-
-                // Get all directories in the directory and delete them
-                string[] dirs = Directory.GetDirectories(path);
-                foreach (string dir in dirs)
-                {
-                    Directory.Delete(dir, true);
-                }
-            }
         }
 
         private void tWidth_TextChanged(object sender, EventArgs e)
@@ -71,11 +50,6 @@ namespace Bundle
         private void delete_Toggle_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
-        }
-
-        private void tSideFrameTHK_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

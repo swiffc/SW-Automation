@@ -13,7 +13,7 @@ namespace FileTools.Base
 {
     public class MainAssembly : SW_Assembly
     {
-        internal static List<Type> ClassesToIsolate = new List<Type>();
+        // Constructor
         public MainAssembly(int assemblyNumber, string assemblyDescription, params Type[] classesToIsolate)
         {
             foreach (var type in classesToIsolate)
@@ -31,28 +31,23 @@ namespace FileTools.Base
                     AssemblyDoc = OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
 
                     var componentList = InstantiateComponents(this);
-
                     LocateComponents(componentList, this);
 
                     if (Default.Toggle_CreateDrawing)
                         CreateDrawing(componentList, this);
 
                     if (Default.Toggle_Save && !Default.Toggle_DeleteFiles)
-                    {
-                        OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                         SaveEverything();
-                    }
 
                     if (Default.Toggle_DeleteFiles)
                     {
-                        OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                         SaveEverything();
-                        CloseEverything();
-                        ClearList_ToBeDeleted();
+                        Close(AssemblyPath);
+                        DeleteUnusedFiles();
+                        AssemblyDoc = OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
                     }
 
-                    OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
-                    Rebuild(true);
+                    ForceRebuild(AssemblyDoc);
                     TurnOffBendLines();
                 }
                 else

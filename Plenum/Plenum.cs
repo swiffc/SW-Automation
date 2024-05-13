@@ -67,7 +67,7 @@ namespace Plenum
                     if (Default.Toggle_DeleteFiles)
                     {
                         mTools.CloseEverything();
-                        mTools.ClearList_ToBeDeleted();
+                        mTools.DeleteUnusedFiles();
                         AssemblyDoc = FTools.OpenAssembly(FilePath, StaticPartNo, false);
                     }
 

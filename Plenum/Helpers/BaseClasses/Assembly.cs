@@ -140,8 +140,8 @@ namespace Plenum
                 mTools.RemoveComponent(component, assemblyDoc);
                 cTools.Release(component);
 
-                if (!mTools.ToBeDeleted.Contains(filePath))
-                    mTools.ToBeDeleted.Add(filePath);
+                if (!mTools.FilesToBeDeleted.Contains(filePath))
+                    mTools.FilesToBeDeleted.Add(filePath);
             }
         }
         private static double? FindKeyByValue(Dictionary<double, string> dictionary, string value)
