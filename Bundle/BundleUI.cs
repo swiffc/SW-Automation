@@ -15,6 +15,7 @@ namespace Bundle
         {
             tWidth.Text = Bundle_Width.ToString();
             tSideFrameTHK.Text = SideFrame_THK.ToString();
+            tDepth.Text = SideFrame_Depth.ToString();
 
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
             save_Toggle.Checked = Default.Toggle_Save;
@@ -50,6 +51,11 @@ namespace Bundle
         private void delete_Toggle_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
+        }
+
+        private void tDepth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tDepth.Text, x => SideFrame_Depth = x);
         }
     }
 }

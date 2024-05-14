@@ -5,9 +5,15 @@ using static FileTools.Properties.Settings;
 
 namespace FileTools.CommonData
 {
-    public partial class CommonData
+    public static partial class CommonData
     {
         // Bundle
+        static public bool HeadersAreOutsideTheFrame { get; set; } = true;
+        static public bool HasHeaderPads { get; set; } = true;
+        static public bool IsToedOut { get; set; } = false;
+
+
+        // Wired to UI
         public static double Bundle_Width
         {
             get { return Default.Bundle_Width; }
@@ -33,6 +39,11 @@ namespace FileTools.CommonData
                     Default.SideFrame_THK = Default.SideFrame_THK;
                 }
             }
+        }
+        public static double SideFrame_Depth
+        {
+            get { return Default.SideFrame_Depth; }
+            set { Default.SideFrame_Depth = value; }
         }
     }
 }

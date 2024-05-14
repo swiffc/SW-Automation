@@ -826,5 +826,17 @@ namespace FileTools.Properties {
                 this["SideFrame_THK"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public double SideFrame_Depth {
+            get {
+                return ((double)(this["SideFrame_Depth"]));
+            }
+            set {
+                this["SideFrame_Depth"] = value;
+            }
+        }
     }
 }

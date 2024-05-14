@@ -203,5 +203,8 @@
     <Setting Name="SideFrame_THK" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.1344</Value>
     </Setting>
+    <Setting Name="SideFrame_Depth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
