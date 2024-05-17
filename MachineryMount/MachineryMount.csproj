@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{575E1C1C-0295-4C0D-ABA2-ACE4B985FB8E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MachineryMount</RootNamespace>
     <AssemblyName>MachineryMount</AssemblyName>
@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPDM.Interop.epdm">
       <HintPath>..\..\..\..\..\Program Files (x86)\SOLIDWORKS PDM\EPDM.Interop.epdm.dll</HintPath>
@@ -41,6 +44,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,23 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Belt Guard\Plate\Edging.cs" />
-    <Compile Include="Drive Mount\Angle\AdjustmentAngle.cs" />
-    <Compile Include="Drive Mount\Channels\BearingMount.cs" />
-    <Compile Include="Drive Mount\Channels\VibeMountChannel.cs" />
-    <Compile Include="Drive Mount\Channels\Stiffener.cs" />
-    <Compile Include="Drive Mount\Channels\SideChannel.cs" />
-    <Compile Include="Drive Mount\DriveMount.cs" />
-    <Compile Include="Drive Mount\Pipe\ShaftSleeve.cs" />
-    <Compile Include="Drive Mount\Plate\MountingPanel.cs" />
-    <Compile Include="Drive Mount\Plate\EndStiffener.cs" />
-    <Compile Include="Drive Mount\Plate\ShaftPanel.cs" />
-    <Compile Include="Drive Mount\Plate\VibeMountPlate.cs" />
-    <Compile Include="Motor Mount\MotorMount.cs" />
+    <Compile Include="DriveFrame\Children\Derived\StringerL.cs" />
+    <Compile Include="DriveFrame\Children\Derived\StringerR.cs" />
+    <Compile Include="DriveFrame\Children\HangerPRC.cs" />
+    <Compile Include="DriveFrame\Children\Stringer.cs" />
+    <Compile Include="DriveFrame\DriveFrame.cs" />
     <Compile Include="MachineryMount.cs" />
-    <Compile Include="Motor Mount\Plate\Gusset.cs" />
-    <Compile Include="Motor Mount\Plate\MountPanel.cs" />
-    <Compile Include="Motor Mount\Plate\Stiffener.cs" />
+    <Compile Include="MachineryMountUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineryMountUI.Designer.cs">
+      <DependentUpon>MachineryMountUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Belt Guard\Expanded Metal\" />
+    <EmbeddedResource Include="MachineryMountUI.resx">
+      <DependentUpon>MachineryMountUI.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

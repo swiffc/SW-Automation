@@ -44,6 +44,10 @@
       <HintPath>..\Libraries\Solidworks Interop\SolidWorks.Interop.sldworks.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="SolidWorks.Interop.swconst">
+      <HintPath>..\Libraries\Solidworks Interop\SolidWorks.Interop.swconst.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />

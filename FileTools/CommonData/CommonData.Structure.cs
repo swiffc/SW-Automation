@@ -8,10 +8,14 @@ namespace FileTools.CommonData
     public static partial class CommonData
     {
         // Footprint
-        static public double Plenum_Width => Default.Plenum_Width;
+        static public double Plenum_Width
+        {
+            get => Default.Plenum_Width;
+            set => Default.Plenum_Width = value;
+        }
         static public double Plenum_Length => Default.Plenum_Length;
         static public double TotalColumnHeight => Default.TotalColumnHeight;
-        static public double FieldColumnn_Height
+        static public double FieldColumn_Height
         {
             get
             {

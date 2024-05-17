@@ -31,9 +31,9 @@ namespace Plenum.Floor
         {
             get
             {
-                (double minTipClearance, double maxTipClearance) = mTools.GetTipClearance(FanDiameter);
+                (double minTipClearance, double maxTipClearance) = mTools.GetTipClearance(FanDiameter_Inches);
                 double averageTipClearance = (minTipClearance + maxTipClearance) / 2;
-                return FanDiameter + averageTipClearance * 2 + mTools.InterferenceClearance;
+                return FanDiameter_Inches + averageTipClearance * 2 + mTools.InterferenceClearance;
             }
         }
         internal static double HoleToEdge1 => 1;
@@ -109,7 +109,7 @@ namespace Plenum.Floor
             }
 
 
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
             {
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");
@@ -196,7 +196,7 @@ namespace Plenum.Floor
         }
         private void EditDimensions_MotorShaft(ModelDoc2 modelDoc2)
         {
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
             {
                 mTools.EditDimension("Count", "sk:ShaftDownRadialHole", FanRing.RadialCount.ShaftDown, modelDoc2);
                 mTools.EditDimension("BoltCircleR", "sk:ShaftDownRadialHole", FanRing.Radius + 1.125, modelDoc2);
@@ -205,7 +205,7 @@ namespace Plenum.Floor
             else
             {
                 mTools.EditDimension("Count", "ShaftUpRadialHoles", FanRing.RadialCount.ShaftUp, modelDoc2);
-                mTools.EditDimension("BoltCircleR", "sk:RadialCurve", FanDiameter / 2 + 0.375 + 1.125, modelDoc2);
+                mTools.EditDimension("BoltCircleR", "sk:RadialCurve", FanDiameter_Inches / 2 + 0.375 + 1.125, modelDoc2);
             }
         }
         private void EditDimensions_ExtensionRequired(ModelDoc2 modelDoc2)
@@ -270,7 +270,7 @@ namespace Plenum.Floor
                 if (panelLength > widthLimit)
                 {
                     ExtensionRequired = true;
-                    panelLength = FanDiameter / 2 + FlangeToOpening + FlangeHeight - FloorSplice.NominalLength / 2;
+                    panelLength = FanDiameter_Inches / 2 + FlangeToOpening + FlangeHeight - FloorSplice.NominalLength / 2;
                 }
 
                 // If all options are exhausted, force length into nesting limitations.

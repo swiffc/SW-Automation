@@ -31,11 +31,11 @@ namespace Plenum.Floor
             {
                 get
                 {
-                    if (FanDiameter > 144)
+                    if (FanDiameter_Inches > 144)
                         return 32;
-                    else if (FanDiameter > 96)
+                    else if (FanDiameter_Inches > 96)
                         return 24;
-                    else if (FanDiameter > 72)
+                    else if (FanDiameter_Inches > 72)
                         return 16;
                     else
                         return 12;
@@ -76,7 +76,6 @@ namespace Plenum.Floor
         {
             double angle1 = FindGapAngle(mTools.InterferenceClearance / 2, Radius);
             double angle2 = SectionCount == 2 ? angle1 : angle1 + 90;
-            bool shaftUp = MotorShaft_Orientation.ToLower().Contains("up");
 
             // Ring
             mTools.EditDimension("Depth", "sk:Profile", Default.FanRing_Depth, modelDoc2);
@@ -88,7 +87,7 @@ namespace Plenum.Floor
 
             // Web
             double topToFirstSquare = 2;
-            double bottomtoLastSquare = shaftUp ? 2.75 : 2;
+            double bottomtoLastSquare = MotorShaftUp ? 2.75 : 2;
             double span = Ring_Depth - topToFirstSquare - bottomtoLastSquare;
             mTools.HolePattern(span, out double count, out double spacing, 5);
             mTools.EditDimension("Count", "sk:RolledSquarePunch", IsRibbed ? 2 : count, modelDoc2);
@@ -101,7 +100,7 @@ namespace Plenum.Floor
             double angle22;
             double slotAngle;
             double arc;
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
             {// shaft down
                 radialCount = RadialCount.ShaftDown;
                 angle11 = 0.001;
@@ -147,7 +146,7 @@ namespace Plenum.Floor
 
             string[] configsToExclude = { StaticPartNo };
             mTools.SuppressFeatures(false, configsToExclude, modelDoc2,  "FlatPattern");
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
                 mTools.SuppressFeatures(true, modelDoc2, // shaft down
                     "StrutSlot",
                     "StrutSlotMirror",
@@ -213,6 +212,6 @@ namespace Plenum.Floor
 
 
         // Private properties
-        private static int SectionCount => FanDiameter <= 60 ? 2 : 4;
+        private static int SectionCount => FanDiameter_Inches <= 60 ? 2 : 4;
     }
 }

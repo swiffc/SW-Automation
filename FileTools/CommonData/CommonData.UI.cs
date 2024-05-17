@@ -1,6 +1,7 @@
 ﻿using FileTools.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,8 +69,15 @@ namespace FileTools.CommonData
         }
         public static void UI_CharChanged(string textBoxText, Action<char> setProperty)
         {
-            setProperty(textBoxText[0]);
-            SaveSettings();
-        }
+            try
+            {
+                setProperty(textBoxText[0]);
+                SaveSettings();
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        } 
     }
 }

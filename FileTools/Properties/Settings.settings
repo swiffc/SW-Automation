@@ -206,5 +206,32 @@
     <Setting Name="SideFrame_Depth" Type="System.Double" Scope="User">
       <Value Profile="(Default)">24</Value>
     </Setting>
+    <Setting Name="IsBeltDrive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IsGearDrive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsDirectDrive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsForced" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IsInduced" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsMotorShaftUp" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsMotorShaftDown" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MotorFrameSize" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">286</Value>
+    </Setting>
+    <Setting Name="TotalUnitWeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -838,5 +838,113 @@ namespace FileTools.Properties {
                 this["SideFrame_Depth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsBeltDrive {
+            get {
+                return ((bool)(this["IsBeltDrive"]));
+            }
+            set {
+                this["IsBeltDrive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsGearDrive {
+            get {
+                return ((bool)(this["IsGearDrive"]));
+            }
+            set {
+                this["IsGearDrive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDirectDrive {
+            get {
+                return ((bool)(this["IsDirectDrive"]));
+            }
+            set {
+                this["IsDirectDrive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsForced {
+            get {
+                return ((bool)(this["IsForced"]));
+            }
+            set {
+                this["IsForced"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsInduced {
+            get {
+                return ((bool)(this["IsInduced"]));
+            }
+            set {
+                this["IsInduced"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsMotorShaftUp {
+            get {
+                return ((bool)(this["IsMotorShaftUp"]));
+            }
+            set {
+                this["IsMotorShaftUp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsMotorShaftDown {
+            get {
+                return ((bool)(this["IsMotorShaftDown"]));
+            }
+            set {
+                this["IsMotorShaftDown"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("286")]
+        public double MotorFrameSize {
+            get {
+                return ((double)(this["MotorFrameSize"]));
+            }
+            set {
+                this["MotorFrameSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50000")]
+        public int TotalUnitWeight {
+            get {
+                return ((int)(this["TotalUnitWeight"]));
+            }
+            set {
+                this["TotalUnitWeight"] = value;
+            }
+        }
     }
 }

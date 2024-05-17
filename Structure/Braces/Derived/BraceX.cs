@@ -23,7 +23,7 @@ namespace Structure.Braces
             {
                 // Viewing XY plane
                 // Triangle --> [work point to work point in Y direction] to [work point to work point in X direction]
-                AAS(out double _, Beam.LocalLength, Width, out double workPointToDiagonalWorkPoint);
+                AAS(out double _, Beam.LocalLength, Plenum_Width, out double workPointToDiagonalWorkPoint);
 
                 // Triangle --> [work point] to [nearest hole]
                 double xWorkPointToNearestHole = XClip.ColumnBoundToNearestHole + XClip.OffsetFromColumnCenter;

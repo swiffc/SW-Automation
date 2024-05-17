@@ -1,6 +1,7 @@
 ﻿using FileTools.Base;
 using ModelTools;
 using System.Collections.Generic;
+using static FileTools.CommonData.CommonData;
 
 namespace Structure.Columns.Derived
 {
@@ -11,20 +12,20 @@ namespace Structure.Columns.Derived
 
 
         // Property overrides
-        public override bool Enabled => MidColumns;
+        public override bool Enabled => Mid_Columns;
         public override string StaticPartNo => "111";
         public override List<PositionData> Position
         {
             get
             {
                 var pos = new List<PositionData>();
-                double zTranslation = Length / 2 - Length / FanCount;
+                double zTranslation = Plenum_Length / 2 - Plenum_Length / Fan_Count;
 
-                for (int i = 0; i < FanCount - 1; i++)
+                for (int i = 0; i < Fan_Count - 1; i++)
                 {
-                    pos.Add(PositionData.Create(tX: -Width / 2, tZ: zTranslation));
-                    pos.Add(PositionData.Create(tX: Width / 2, tZ: zTranslation, rY: 180));
-                    zTranslation -= Length / FanCount;
+                    pos.Add(PositionData.Create(tX: -Plenum_Width / 2, tZ: zTranslation));
+                    pos.Add(PositionData.Create(tX: Plenum_Width / 2, tZ: zTranslation, rY: 180));
+                    zTranslation -= Plenum_Length / Fan_Count;
                 }
 
                 return pos;

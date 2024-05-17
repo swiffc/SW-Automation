@@ -226,24 +226,5 @@ namespace FileTools.Base
         public readonly SW_Assembly _parentAssembly;
         private string _partNo = null;
         private bool _partNoCalculated = false;
-
-
-        #region Wrapper Properties
-
-        // Structure
-        protected static double Width => CommonData.CommonData.Plenum_Width;
-        protected static double Length => CommonData.CommonData.Plenum_Length;
-        protected static bool MidColumns => CommonData.CommonData.Mid_Columns;
-        protected static double ClipHeight => CommonData.CommonData.ClipHeight;
-        protected static double BraceAngle => CommonData.CommonData.BraceAngle;
-        protected static double TotalColumnHeight => CommonData.CommonData.TotalColumnHeight;
-        protected static string BraceType => CommonData.CommonData.BraceType;
-
-
-        // Plenum
-        protected static int FanCount => CommonData.CommonData.Fan_Count;
-        protected static double PlenumDepth => CommonData.CommonData.Plenum_Depth;
-
-        #endregion
     }
 }

@@ -261,7 +261,7 @@ namespace Plenum
             { "206", typeof(OuterFloorExtension) },
             { "207", typeof(InnerFloorExtension) },
             { "266", typeof(MotorBeamWld) },
-            { $"FG{FanDiameter}", typeof(FanGuard) },
+            { $"FG{FanDiameter_Inches}", typeof(FanGuard) },
         };
         internal static Dictionary<string, Type> StaticChildDictionary = new Dictionary<string, Type>
         {

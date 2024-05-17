@@ -9,7 +9,7 @@ namespace Structure.Columns
     internal abstract class FieldColumn : SubAssembly
     {
         // Static properties
-        static internal double Height => FieldColumnn_Height;
+        static internal double Height => FieldColumn_Height;
 
 
         // Constructor

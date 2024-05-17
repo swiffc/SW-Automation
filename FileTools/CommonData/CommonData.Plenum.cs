@@ -66,7 +66,7 @@ namespace FileTools.CommonData
         {
             get
             {
-                var value = TotalColumnHeight - FieldColumnn_Height;
+                var value = TotalColumnHeight - FieldColumn_Height;
                 return value;
             }
         }
@@ -102,7 +102,7 @@ namespace FileTools.CommonData
             Legacy
         }
         public static double _fanDiameterFeet => Default.Fan_Diameter_Feet;
-        public static double FanDiameter
+        public static double FanDiameter_Inches
         {
             get
             {
@@ -127,5 +127,16 @@ namespace FileTools.CommonData
         }
         public static int EndStiffenerCount => Default.EndStiffenerCount;
         public static int DividerStiffenerCount => Default.DividerStiffenerCount;
+        static public double FanRing_Depth
+        {
+            get
+            {
+                return Default.FanRing_Depth;
+            }
+            set
+            {
+                Default.FanRing_Depth = value;
+            }
+        }
     }
 }

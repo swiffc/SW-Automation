@@ -62,6 +62,7 @@
     <Compile Include="Base\Part.cs" />
     <Compile Include="Base\MainAssembly.cs" />
     <Compile Include="CommonData\CommonData.Bundle.cs" />
+    <Compile Include="CommonData\CommonData.Misc.cs" />
     <Compile Include="CommonData\CommonData.MachineryMount.cs" />
     <Compile Include="CommonData\CommonData.Plenum.cs" />
     <Compile Include="CommonData\CommonData.ShippingSteel.cs" />

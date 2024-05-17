@@ -83,7 +83,7 @@ namespace Structure.Braces.Derived
         }
         internal static List<PositionData> MidColumnElements(List<PositionData> sidePositions, List<PositionData> oppositeSide, List<PositionData> endPositions)
         {
-            double columnToColumn = Length / FanCount;
+            double columnToColumn = Plenum_Length / Fan_Count;
 
             var sidePattern = PositionPatternZ(sidePositions, columnToColumn);
             var oppositeSidePattern = PositionPatternZ(oppositeSide, -columnToColumn);
@@ -103,16 +103,16 @@ namespace Structure.Braces.Derived
         private List<PositionData> SidePositions(out double horz, out double yTranslation, out double xRotation)
         {
             // Viewing YZ plane
-            double xTranslation = -Width / 2 + (Beams_AreRotated ? Clip_THK / 2 : 0);
+            double xTranslation = -Plenum_Width / 2 + (Beams_AreRotated ? Clip_THK / 2 : 0);
             yTranslation = ClipHeight;
             double zTranslation;
             if (Beams_AreRotated)
             {
-                zTranslation = Length / 2 - Beam_FlangeWidth / 2 - ColumnBoundsToHole;
+                zTranslation = Plenum_Length / 2 - Beam_FlangeWidth / 2 - ColumnBoundsToHole;
             }
             else
             {
-                zTranslation = Length / 2 - FlangeClip.xzTranslation;
+                zTranslation = Plenum_Length / 2 - FlangeClip.xzTranslation;
             }
             xRotation = 180 - (90 - BraceAngle);
 
@@ -162,13 +162,13 @@ namespace Structure.Braces.Derived
             double zTranslation;
             if (!Default.Beams_AreRotated)
             {
-                xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
-                zTranslation = Length / 2 - Clip_THK / 2;
+                xTranslation = -Plenum_Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
+                zTranslation = Plenum_Length / 2 - Clip_THK / 2;
             }
             else
             {
-                xTranslation = -Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
-                zTranslation = Length / 2;
+                xTranslation = -Plenum_Width / 2 + Beam_FlangeWidth / 2 + ColumnBoundsToHole + horz;
+                zTranslation = Plenum_Length / 2;
             }
 
 
@@ -205,7 +205,7 @@ namespace Structure.Braces.Derived
         {
             var pos = new List<PositionData>();
 
-            for (int i = 1; i < FanCount; i++)
+            for (int i = 1; i < Fan_Count; i++)
             {
                 foreach (PositionData originalPos in referencePosition)
                 {
@@ -245,7 +245,7 @@ namespace Structure.Braces.Derived
                 pos.AddRange(oppositeSide);
                 pos.AddRange(oppositeEnd);
 
-                if (MidColumns)
+                if (Mid_Columns)
                 {
                     var mids = MidColumnElements(sidePositions, oppositeSide, endPositions);
                     pos.AddRange(mids);

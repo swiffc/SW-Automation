@@ -23,7 +23,7 @@ namespace Plenum
         {
             get
             {
-                bool value = MotorShaft_Orientation.ToLower().Contains("up") ? true : false;
+                bool value = MotorShaftUp ? true : false;
                 return value;
             }
         }

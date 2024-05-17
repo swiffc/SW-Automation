@@ -24,7 +24,7 @@ namespace Structure.Columns.Derived.Children.Derived
             {
                 // Viewing XY plane
                 // Triangle --> [work point to work point in Y direction] to [work point to work point in X direction]
-                AAS(out double angle, Beam.LocalLength, Width, out double _);
+                AAS(out double angle, Beam.LocalLength, Plenum_Width, out double _);
                 return angle;
             }
         }

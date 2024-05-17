@@ -24,7 +24,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                return SectionThird > 66 && MotorShaft_Orientation.ToLower().Contains("up") ? true : false;
+                return SectionThird > 66 && MotorShaftUp ? true : false;
             }
         }
         public override RawMaterial Shape => RawMaterial.Angle;

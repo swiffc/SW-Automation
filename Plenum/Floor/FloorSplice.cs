@@ -33,7 +33,7 @@ namespace Plenum.Floor
             {
                 if (LengthOverride > 0 )
                     return LengthOverride;
-                else return FanDiameter <= 156 ? 30 : 72;
+                else return FanDiameter_Inches <= 156 ? 30 : 72;
             }
         }
 
@@ -82,14 +82,14 @@ namespace Plenum.Floor
             mTools.EditDimension("Spacing", "sk:FloorHole", spacing, modelDoc2);
             mTools.EditDimension("Count", "sk:FloorHole", count, modelDoc2);
 
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
             {
                 mTools.EditDimension("BoltCircleR", "sk:ShaftDownRadialHole", FanRing.Radius + 1.125, modelDoc2);
                 mTools.EditDimension("Count", "sk:ShaftDownRadialHole", FanRing.RadialCount.ShaftDown, modelDoc2);
             }
             else
             {
-                mTools.EditDimension("BoltCircleR", "sk:ShaftUpRadialHoles", FanDiameter / 2 + 0.375 + 1.125, modelDoc2);
+                mTools.EditDimension("BoltCircleR", "sk:ShaftUpRadialHoles", FanDiameter_Inches / 2 + 0.375 + 1.125, modelDoc2);
                 mTools.EditDimension("Count", "sk:ShaftUpRadialHoles", FanRing.RadialCount.ShaftUp, modelDoc2);
 
             }
@@ -102,7 +102,7 @@ namespace Plenum.Floor
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
             {
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
                 mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");

@@ -26,7 +26,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                return MotorShaft_Orientation.ToLower().Contains("down") ? true : false;
+                return MotorShaftDown ? true : false;
             }
         }
         public override RawMaterial Shape => RawMaterial.Plate;

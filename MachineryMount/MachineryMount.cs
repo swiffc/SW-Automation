@@ -1,39 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FileTools.Base;
+﻿using FileTools.Base;
+using MachineryMount;
+using System;
+using System.Windows.Forms;
+using static FileTools.CommonData.CommonData;
 
 namespace MachineryMount
 {
-    public class MachineryMount : MainAssembly
-
+    internal class MachineryMount : MainAssembly
     {
-        /*
-        Brands
-         Smithco
-         Hudson
-         CCSC
-         Hammco
-
-        Types
-         forced
-         induced
-         gear
-         direct
-        */
+        // Constructor
+        public MachineryMount(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
+            //,typeof(Class)
+            )
+        { }
 
 
-        public MachineryMount(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription)
+        // Debugging
+        [STAThread]
+        static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MachineryMountUI());
         }
-
-        public static void Main()
-        {
-
-        }
-
-
     }
 }

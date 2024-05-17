@@ -54,7 +54,7 @@ namespace Plenum.JohnsonBeam.Children
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
             bool suppress = false;
-            if (MotorShaft_Orientation.ToLower().Contains("down"))
+            if (MotorShaftDown)
                 suppress = true;
             mTools.SuppressFeatures(suppress, modelDoc2, "Hole");
         }

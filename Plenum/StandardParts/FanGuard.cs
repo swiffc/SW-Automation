@@ -29,7 +29,7 @@ namespace Plenum.StandardParts
             get
             {
                 string guardFolderPath = @"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Fan Guards";
-                StaticFanGuardDictionary.TryGetValue(FanDiameter, out string partNo);
+                StaticFanGuardDictionary.TryGetValue(FanDiameter_Inches, out string partNo);
                 string guardFileName = partNo + ".SLDPRT";
                 string guardFilePath = Path.Combine(guardFolderPath, guardFileName);
 
@@ -74,7 +74,7 @@ namespace Plenum.StandardParts
         {
             get
             {
-                StaticFanGuardDictionary.TryGetValue(FanDiameter, out string partNo);
+                StaticFanGuardDictionary.TryGetValue(FanDiameter_Inches, out string partNo);
                 return partNo;
             }
         }
@@ -129,7 +129,7 @@ namespace Plenum.StandardParts
             {
                 _position = new List<PositionData>();
 
-                if (MotorShaft_Orientation.ToLower().Contains("down"))
+                if (MotorShaftDown)
                 {
                     double yTranslation = Plenum_Depth - Math.Max(SidePanel_THK, EndPanel_THK) + Default.FanRing_Depth;
                     var zTranslation = FanCenter.ZTranslation(CallerType);
@@ -148,7 +148,7 @@ namespace Plenum.StandardParts
         {
             get
             {
-                StaticFanGuardDictionary.TryGetValue(FanDiameter, out string partNo);
+                StaticFanGuardDictionary.TryGetValue(FanDiameter_Inches, out string partNo);
                 return partNo;
             }
         }

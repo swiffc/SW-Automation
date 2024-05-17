@@ -301,6 +301,7 @@ namespace FileTools
         public static void PlaceComponent(IComponentInfo2 component, SW_Assembly sW_Assembly)
         {
             // Remove or replace template files
+            var templateReplacements = new List<string>();
             ModelDoc2 modelDoc2 = sW_Assembly.AssemblyDoc as ModelDoc2;
             if (sW_Assembly.ComponentArray != null)
             {
@@ -318,6 +319,7 @@ namespace FileTools
                                 bool check = modelDoc2.Extension.SelectByID2(assemblyComp.Name2 + $"@{Path.GetFileNameWithoutExtension(modelDoc2.GetPathName())}", "COMPONENT", 0, 0, 0, false, 0, null, 0);
                                 bool check2 = sW_Assembly.AssemblyDoc.ReplaceComponents2(component.FilePath, component.StaticPartNo, true, 1, false);
                                 Debug.WriteLine($"   Replaced template file <{Path.GetFileNameWithoutExtension(assemblyCompPath.ToUpper())}> with [{component.StaticPartNo}] in ({sW_Assembly.Config})");
+                                templateReplacements.Add(component.FilePath);
                                 modelDoc2.Visible = false;
                             }
                         }
@@ -355,14 +357,31 @@ namespace FileTools
                 componentList.RemoveAt(componentList.Count - 1);
             }
 
+            var insertedComponents = new List<Component2>();
             // Insert or get existing components
             for (int i = 0; i < component.Position.Count; i++)
             {
                 string internalID = component.StaticPartNo;
                 if (insertNew || componentList[i] == null)
+                {
                     componentList[i] = InsertComponent2(component.FilePath, i, sW_Assembly);
+                    insertedComponents.Add(componentList[i]);
+                }
                 else
                     componentList[i] = GetInstance(componentList, i, sW_Assembly);
+            }
+
+            var componentsToFix = new List<Component2>(componentList);
+
+            // Delete all mates
+            for (int i = 0; i < componentList.Count; i++)
+            {
+                var comp = componentList[i];
+                if (templateReplacements.Contains(comp.GetPathName()))
+                    DeleteAllMatesAndFix(comp, sW_Assembly.AssemblyDoc);
+
+                if (!comp.IsFixed())
+                    componentsToFix.Remove(comp);
             }
 
             // Locate components
@@ -381,6 +400,31 @@ namespace FileTools
                     SetPosition2(componentList[i], i, sW_Assembly);
                 }
             }
+
+
+            if (componentList.Count > 0)
+            {
+                ModelDoc2 modelDoc_ParentAssembly = sW_Assembly.AssemblyDoc as ModelDoc2;
+                if (modelDoc_ParentAssembly != null)
+                {
+                    // Fix components
+                    modelDoc_ParentAssembly.ClearSelection2(true);
+                    componentsToFix.AddRange(insertedComponents);
+                    if (componentsToFix.Count > 0)
+                    {
+                        if (modelDoc_ParentAssembly != null)
+                        {
+                            foreach (var comp in componentsToFix)
+                            {
+                                comp.Select4(true, null, false);
+                            }
+                            sW_Assembly.AssemblyDoc.FixComponent();
+                            modelDoc_ParentAssembly.ClearSelection2(true);
+                        }
+                    }
+                }
+            }
+
 
             // Memory management
             foreach (var item in componentList)
@@ -647,13 +691,48 @@ namespace FileTools
         {
             SW.ActivateDoc3(modelDoc2.GetPathName(), false, 0, 0);
         }
-        public static void ChangeStructureMemberSize(string newSize)
+        public static bool ChangeStructuralMemberSize(string newSize, ModelDoc2 modelDoc2)
         {
-            Feature feature = SW.IActiveDoc2.SelectionManager.GetSelectedObject6(1, -1) as Feature;
-            IStructuralMemberFeatureData member = feature.GetDefinition() as IStructuralMemberFeatureData;
-            member.AccessSelections(SW.IActiveDoc2, null);
-            member.ConfigurationName = newSize;
-            feature.ModifyDefinition(member, SW.IActiveDoc2, null);
+            IStructuralMemberFeatureData member = null;
+
+            // Iterate through features to find the first structural member
+            Feature feature = modelDoc2.FirstFeature();
+            while (feature != null)
+            {
+                member = feature.GetDefinition() as IStructuralMemberFeatureData;
+
+                if (member != null) break;
+
+                feature = feature.GetNextFeature();
+            }
+
+            if (member != null)
+            {
+                string previousSize = member.ConfigurationName;
+                if (previousSize != newSize)
+                {
+                    bool selectionsAccessed = member.AccessSelections(modelDoc2, null);
+                    member.ConfigurationName = newSize;
+                    bool definitionModified = feature.ModifyDefinition(member, modelDoc2, null);
+
+                    // Turn off sketch
+                    double number = 0;
+                    string sketchName;
+                    bool isSelected = false;
+                    while (!isSelected)
+                    {
+                        number++;
+                        sketchName = "Sketch" + number;
+                        isSelected = modelDoc2.Extension.SelectByID2(sketchName, "SKETCH", 0, 0, 0, false, 0, null, 0);
+                    }
+                    modelDoc2.BlankSketch();
+
+                    return definitionModified;
+                }
+                return true;
+            }
+            else return false;
+
         }
         public static string GetConfigurationTitle(ModelDoc2 modelDoc2)
         {
@@ -702,6 +781,7 @@ namespace FileTools
             modelDoc2.ShowNamedView2("*Isometric", -1);
             modelDoc2.ViewZoomtofit2();
         }
+
 
 
 
@@ -1221,6 +1301,30 @@ namespace FileTools
                 components.Add(child);
 
             grandChildren.Clear();
+        }
+        private static void DeleteAllMatesAndFix(Component2 component, AssemblyDoc assemblyDoc)
+        {
+            ModelDoc2 modelDoc2 = assemblyDoc as ModelDoc2;
+            SW.ActivateDoc3(modelDoc2.GetPathName(), false, 0, 0);
+            string assemblyName = Path.GetFileNameWithoutExtension(modelDoc2.GetPathName());
+            string componentName = Path.GetFileNameWithoutExtension(component.GetPathName());
+
+            object[] matesObj = component.GetMates();
+            if (matesObj == null)
+                return;
+
+            Mate2[] mates = new Mate2[matesObj.Length];
+
+            for (int i = 0; i < mates.Length; i++)
+            {
+                mates[i] = matesObj[i] as Mate2;
+            }
+
+            modelDoc2.Extension.MultiSelect2(mates, false, null);
+            bool matesDeleted = modelDoc2.Extension.DeleteSelection2((int)swDeleteSelectionOptions_e.swDelete_Absorbed);
+
+            bool isSelected = modelDoc2.Extension.SelectByID2(component.Name2 + "@" + assemblyName, "COMPONENT", 0, 0, 0, false, 0, null, 0);
+            assemblyDoc.FixComponent();
         }
 
 

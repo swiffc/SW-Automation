@@ -35,18 +35,18 @@ namespace Structure.Braces
         internal static List<PositionData> X_BraceLocations()
         {
             double yTranslation = FieldColumn.Height / 2;
-            double zTranslation = Length / 2;
+            double zTranslation = Plenum_Length / 2;
             double zRotation = XClip.LocalAngle;
 
             var pos = new List<PositionData>();
-            for (int i = 0; i < FanCount + 1; i++)
+            for (int i = 0; i < Fan_Count + 1; i++)
             {
-                if (!MidColumns && (i != 0 && i != FanCount))
+                if (!Mid_Columns && (i != 0 && i != Fan_Count))
                     continue;
 
                 var positionData = Create(tY: yTranslation, tZ: zTranslation, rZ: zRotation);
                 pos.Add(positionData);
-                zTranslation -= MidColumns ? Length / FanCount : Length;
+                zTranslation -= Mid_Columns ? Plenum_Length / Fan_Count : Plenum_Length;
             }
 
             return pos;
@@ -58,9 +58,9 @@ namespace Structure.Braces
         {
             // Viewing XY plane 
             // Places spacer on hole nearest column bounds
-            double xTranslation = -Width / 2 + (Beams_AreRotated ? Beam_Depth / 2 : Beam_FlangeWidth / 2) + ColumnBoundsToHole;
+            double xTranslation = -Plenum_Width / 2 + (Beams_AreRotated ? Beam_Depth / 2 : Beam_FlangeWidth / 2) + ColumnBoundsToHole;
             double yTranslation = ClipHeight;
-            double zTranslation = Length / 2 + (Beams_AreRotated ? Clip_THK / 2 : 0);
+            double zTranslation = Plenum_Length / 2 + (Beams_AreRotated ? Clip_THK / 2 : 0);
             double zRotation = BraceAngle;
 
             // Triangle --> places spacer on the slot
@@ -92,9 +92,9 @@ namespace Structure.Braces
         {
             // Viewing YZ plane 
             // Places spacer on hole nearest column bounds
-            double xTranslation = -Width / 2;
+            double xTranslation = -Plenum_Width / 2;
             double yTranslation = ClipHeight;
-            double zTranslation = Length / 2 - (Beams_AreRotated ? Beam_FlangeWidth / 2 : Beam_Depth / 2) - ColumnBoundsToHole;
+            double zTranslation = Plenum_Length / 2 - (Beams_AreRotated ? Beam_FlangeWidth / 2 : Beam_Depth / 2) - ColumnBoundsToHole;
             double xRotation = 90;
             double zRotation = 90;
             double yRotation = BraceAngle;
@@ -193,7 +193,7 @@ namespace Structure.Braces
                     pos.AddRange(oppositeEndSpacers);
                     pos.AddRange(oppositeSideSpacers);
 
-                    if (MidColumns)
+                    if (Mid_Columns)
                     {
                         var mids = BraceL.MidColumnElements(sideSpacers, oppositeSideSpacers, endSpacers);
                         pos.AddRange(mids);
