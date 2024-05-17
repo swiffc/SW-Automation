@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineryMount", "Machinery
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bundle", "Bundle\Bundle.csproj", "{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fork", "Fork\Fork.csproj", "{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,14 @@ Global
 		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|x64.ActiveCfg = Release|Any CPU
 		{FC8146B0-053D-476A-9EF6-42AC3CCA38CE}.Release|x64.Build.0 = Release|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Debug|x64.Build.0 = Debug|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Release|x64.ActiveCfg = Release|Any CPU
+		{A43CDB26-00E6-4E2F-84A8-EB8A63CE7175}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
