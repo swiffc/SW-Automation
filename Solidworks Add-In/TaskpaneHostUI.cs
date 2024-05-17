@@ -183,5 +183,15 @@ namespace SolidWorks_Add_In
                 devUI.BringToFront();
             }
         }
+
+        private void button_ImportConfigFile_Click(object sender, EventArgs e)
+        {
+            Fork.ConfigFileManagement.ImportConfigFile();
+        }
+
+        private void button_ExportConfigFile_Click(object sender, EventArgs e)
+        {
+            Fork.ConfigFileManagement.ExportConfigFile();
+        }
     }
 }

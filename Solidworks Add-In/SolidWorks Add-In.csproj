@@ -103,6 +103,10 @@
       <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
       <Name>FileTools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Fork\Fork.csproj">
+      <Project>{a43cdb26-00e6-4e2f-84a8-eb8a63ce7175}</Project>
+      <Name>Fork</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hood\Hood.csproj">
       <Project>{7e6a3a9f-0348-4f9e-bc9a-dc929d613d31}</Project>
       <Name>Hood</Name>

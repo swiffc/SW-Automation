@@ -15,9 +15,10 @@ namespace SolidWorks_Add_In
     /// </summary>
     public class TaskpaneIntegration : SwAddin
     {
-        static public string VersionNumber => "4.2.0";
+        static public string VersionNumber => "4.3.0";
         static public string SpeechBubble =>
-            @"""" + "Fan ring updated to support ribs."
+            @"""" + "Importing and exporting of UI data now supported!" +"\n"
+                  + "(plenum and sub-structure only for now)"
           + @"""";
 
         #region Private Members
