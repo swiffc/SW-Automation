@@ -97,9 +97,9 @@ namespace Plenum.Floor.Derived.Derived
             double nominalLength = LocalLength + (SpliceRequired ? FloorSplice.NominalLength/2 : 0);
 
             if (CallerType == Design.Johnson && zColumnCut + Beam_FlangeWidth/2 < nominalLength)
-                mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "JohnsonCut");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ColumnCut", "JohnsonCut");
             else
-                mTools.SuppressFeatures(true, modelDoc2, "ColumnCut", "JohnsonCut");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ColumnCut", "JohnsonCut");
         }
 
 

@@ -110,7 +110,7 @@ namespace FileTools.CommonData
             }
         }
 
-        public static bool Forced
+        public static bool ForcedDraft
         {
             get { return Default.IsForced; }
             set
@@ -138,9 +138,9 @@ namespace FileTools.CommonData
                 if (value) // Induced is true
                 {
                     Default.IsInduced = value;
-                    Forced = false;
+                    ForcedDraft = false;
                 }
-                else if (!Forced) // Induced is false and Forced is also false
+                else if (!ForcedDraft) // Induced is false and Forced is also false
                 {
                     throw new InvalidOperationException("Forced and Induced cannot both be false");
                 }
@@ -204,6 +204,18 @@ namespace FileTools.CommonData
                     throw new NotImplementedException();
             }
         }
+        static public double FanShaft_Diameter
+        {
+            get { return Default.FanShaft_Diameter; }
+            set
+            {
+                if (!FanShaftData.ContainsKey(value))
+                {
+                    throw new InvalidOperationException($"Invalid value for FanShaft_Diameter. Supported values are: {string.Join(", ", FanShaftData.Keys)}");
+                }
+                Default.FanShaft_Diameter = value;
+            }
+        }
 
 
         // User interface overrides
@@ -217,7 +229,7 @@ namespace FileTools.CommonData
                     _totalUnitWeight != TotalUnitWeight ||
                     _fanCount != Fan_Count;
 
-                if (dependenciesHaveChanged && !Lock_StringerSize) 
+                if (dependenciesHaveChanged && !Lock_StringerSize)
                 {
                     _plenumWidth = Plenum_Width;
                     _totalUnitWeight = TotalUnitWeight;
@@ -273,7 +285,7 @@ namespace FileTools.CommonData
         private static string SetDefault_StringerSize()
         {
             double value = _totalUnitWeight / _fanCount;
-            if (_plenumWidth <= 108)
+            if (_plenumWidth <= 108 && FanShaft_Diameter <= 2.25)
             {
                 return "C8x11.5";
             }
@@ -345,6 +357,16 @@ namespace FileTools.CommonData
             "C10x15.3", "C10x20", "C10x25","C10x30",
             "C12x20.7", "C12x25", "C12x30",
             "C15x33.9.9", "C15x40", "C15x50"
+        };
+
+
+        // Dictionaries
+        public static Dictionary<double, (double GrooveDepth, double GrooveWidth, double KeyWidth)> FanShaftData = new Dictionary<double, (double, double, double)>
+        {
+        //  Diameter        GrooveDepth     GrooveWidth   KeyWidth
+            { 1.9375,   (   0.056,          0.068,        0.500      ) },
+            { 2.4375,   (   0.070,          0.086,        0.625      ) },
+            { 2.9375,   (   0.080,          0.103,        0.750      ) },
         };
 
     }

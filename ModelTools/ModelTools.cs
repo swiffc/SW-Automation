@@ -818,13 +818,13 @@ namespace Tools
         }
 
 
-        public static bool[] SuppressFeatures(bool suppress, ModelDoc2 modelDoc2, params string[] features)
+        public static bool[] SuppressFeatures_Legacy(bool suppress, ModelDoc2 modelDoc2, params string[] features)
         {
             string[] configNames = modelDoc2.GetConfigurationNames();
-            return SuppressFeatures(suppress, configNames, modelDoc2, features);
+            return SuppressFeatures_Legacy(suppress, configNames, modelDoc2, features);
 
         }
-        public static bool[] SuppressFeatures(bool suppress, string[] configNames, ModelDoc2 modelDoc2, params string[] features)
+        public static bool[] SuppressFeatures_Legacy(bool suppress, string[] configNames, ModelDoc2 modelDoc2, params string[] features)
         {
             bool[] results = new bool[features.Length * configNames.Length];
 

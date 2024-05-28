@@ -3,7 +3,7 @@ using ModelTools;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 
-namespace MachineryMount.DriveFrame
+namespace MachineryMount.DriveWeldment
 {
     internal class DriveFrame : SubAssembly
     {
@@ -17,6 +17,13 @@ namespace MachineryMount.DriveFrame
         {
             get { return MachineryMount_Height; }
             set { MachineryMount_Height = value; }
+        }
+        static public double TowerHeight
+        {
+            get
+            {
+                return Height - FanRing_Depth - 2.25;
+            }
         }
 
 

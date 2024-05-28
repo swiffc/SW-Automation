@@ -27,22 +27,22 @@ namespace Plenum
             switch (CallerType)
             {
                 case Design.Standard:
-                    mTools.SuppressFeatures(false, modelDoc2, "XYmirror");
-                    mTools.SuppressFeatures(true, modelDoc2, "YZmirror");
-                    mTools.SuppressFeatures(true, modelDoc2, "JohnsonHole");
-                    mTools.SuppressFeatures(true, modelDoc2, "JohnsonHoles");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "XYmirror");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "YZmirror");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "JohnsonHole");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "JohnsonHoles");
                     break;
                 case Design.Johnson:
-                    mTools.SuppressFeatures(false, modelDoc2, "YZmirror");
-                    mTools.SuppressFeatures(true, modelDoc2, "XYmirror");
-                    mTools.SuppressFeatures(false, modelDoc2, "JohnsonHole");
-                    mTools.SuppressFeatures(false, modelDoc2, "JohnsonHoles");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "YZmirror");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "XYmirror");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "JohnsonHole");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "JohnsonHoles");
                     break;
                 case Design.Legacy:
-                    mTools.SuppressFeatures(true, modelDoc2, "YZmirror");
-                    mTools.SuppressFeatures(false, modelDoc2, "XYmirror");
-                    mTools.SuppressFeatures(true, modelDoc2, "JohnsonHole");
-                    mTools.SuppressFeatures(true, modelDoc2, "JohnsonHoles");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "YZmirror");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "XYmirror");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "JohnsonHole");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "JohnsonHoles");
                     break;
             }
             

@@ -86,42 +86,42 @@ namespace Plenum.Floor
         {
             if (ExtensionRequired)
             {
-                mTools.SuppressFeatures(true, modelDoc2, "MidFlange");
-                mTools.SuppressFeatures(true, modelDoc2, "MidFlangeHole");
-                mTools.SuppressFeatures(true, modelDoc2, "MidFlangeHoles");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "MidFlange");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "MidFlangeHole");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "MidFlangeHoles");
                 if (CallerType != Design.Johnson)
-                    mTools.SuppressFeatures(true, modelDoc2, "ColumnCut");
-                mTools.SuppressFeatures(false, modelDoc2, "ExtensionFlange");
-                mTools.SuppressFeatures(false, modelDoc2, "ExtensionFlangeHole");
-                mTools.SuppressFeatures(false, modelDoc2, "ExtensionFlangeHoles");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "ColumnCut");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ExtensionFlange");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ExtensionFlangeHole");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ExtensionFlangeHoles");
             }
             else
             {
-                mTools.SuppressFeatures(false, modelDoc2, "MidFlange");
-                mTools.SuppressFeatures(false, modelDoc2, "MidFlangeHole");
-                mTools.SuppressFeatures(false, modelDoc2, "MidFlangeHoles");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "MidFlange");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "MidFlangeHole");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "MidFlangeHoles");
                 if (CallerType != Design.Johnson)
-                    mTools.SuppressFeatures(false, modelDoc2, "ColumnCut");
-                bool[] check1 = mTools.SuppressFeatures(true, modelDoc2, "ExtensionFlange");
-                bool[] check2 = mTools.SuppressFeatures(true, modelDoc2, "ExtensionFlangeHole");
-                bool[] check3 = mTools.SuppressFeatures(true, modelDoc2, "ExtensionFlangeHoles");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "ColumnCut");
+                bool[] check1 = mTools.SuppressFeatures_Legacy(true, modelDoc2, "ExtensionFlange");
+                bool[] check2 = mTools.SuppressFeatures_Legacy(true, modelDoc2, "ExtensionFlangeHole");
+                bool[] check3 = mTools.SuppressFeatures_Legacy(true, modelDoc2, "ExtensionFlangeHoles");
                 Console.WriteLine();
             }
 
 
             if (MotorShaftDown)
             {
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftUpRadialHole");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftUpRadialHoles");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftDownRadialHole");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftDownRadialHoles");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftUpRadialHole");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftUpRadialHoles");
             }
             else
             {
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftDownRadialHole");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftDownRadialHoles");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftUpRadialHole");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftUpRadialHoles");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftDownRadialHole");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftDownRadialHoles");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftUpRadialHole");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftUpRadialHoles");
             }
         }
 

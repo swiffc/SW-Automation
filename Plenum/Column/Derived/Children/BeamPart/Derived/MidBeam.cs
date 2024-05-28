@@ -29,13 +29,13 @@ namespace Plenum
         {
             if (CallerType == Design.Legacy || CallerType == Design.Johnson)
             {
-                bool[] check1 = mTools.SuppressFeatures(true, modelDoc2, "WebHole", "WebHoles");
-                bool[] check2 = mTools.SuppressFeatures(false, modelDoc2, "YZmirror");
+                bool[] check1 = mTools.SuppressFeatures_Legacy(true, modelDoc2, "WebHole", "WebHoles");
+                bool[] check2 = mTools.SuppressFeatures_Legacy(false, modelDoc2, "YZmirror");
             }
             else
             {
-                bool[] check1 = mTools.SuppressFeatures(false, modelDoc2, "WebHole", "WebHoles");
-                bool[] check2 = mTools.SuppressFeatures(true, modelDoc2, "YZmirror");
+                bool[] check1 = mTools.SuppressFeatures_Legacy(false, modelDoc2, "WebHole", "WebHoles");
+                bool[] check2 = mTools.SuppressFeatures_Legacy(true, modelDoc2, "YZmirror");
             }
         }
         protected override void AdjustWebHoles(ModelDoc2 modelDoc2)

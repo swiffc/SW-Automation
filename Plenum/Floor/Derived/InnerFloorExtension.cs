@@ -52,7 +52,7 @@ namespace Plenum.Floor.Derived
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "ColumnCutMirror");
+            mTools.SuppressFeatures_Legacy(false, modelDoc2, "ColumnCut", "ColumnCutMirror");
         }
 
 

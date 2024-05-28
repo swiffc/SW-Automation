@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static FileTools.CommonData.CommonData;
 
-namespace MachineryMount.DriveFrame.Children
+namespace MachineryMount.DriveWeldment.Children
 {
     internal class HangerPRC : Part
     {
@@ -21,6 +21,7 @@ namespace MachineryMount.DriveFrame.Children
             }
         }
         static private double Angle => DriveFrame.Width > 36 ? 30 : 20;
+        static public double THK => 0.25;
 
 
         // Constructor
@@ -42,15 +43,15 @@ namespace MachineryMount.DriveFrame.Children
         public override bool Enabled => true;
         public override string StaticPartNo => "241";
         public override Shape RawMaterialShape => Shape.Plate;
-        public override string SizeOrThickness => "0.25";
+        public override string SizeOrThickness => THK.ToString();
         public override List<PositionData> Position
         {
             get
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tZ: Plenum_Width / 2, rY: 180),
-                    PositionData.Create(tZ: -Plenum_Width / 2)
+                    PositionData.Create(tX: Plenum_Width / 2),
+                    PositionData.Create(tX: -Plenum_Width / 2, rY: 180)
                 };
             }
         }

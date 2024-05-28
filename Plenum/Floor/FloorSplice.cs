@@ -104,15 +104,15 @@ namespace Plenum.Floor
         {
             if (MotorShaftDown)
             {
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHole");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftDownRadialHoles");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftUpRadialHoles");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftDownRadialHole");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftDownRadialHoles");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftUpRadialHoles");
             }
             else
             {
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftDownRadialHole");
-                mTools.SuppressFeatures(true, modelDoc2, "ShaftDownRadialHoles");
-                mTools.SuppressFeatures(false, modelDoc2, "ShaftUpRadialHoles");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftDownRadialHole");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ShaftDownRadialHoles");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ShaftUpRadialHoles");
             }
         }
     }

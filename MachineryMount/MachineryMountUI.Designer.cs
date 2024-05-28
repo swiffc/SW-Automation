@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tFanRingDepth = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tWeight = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,7 +51,6 @@
             this.cDirect = new System.Windows.Forms.CheckBox();
             this.purchaseOrder_Box = new System.Windows.Forms.TextBox();
             this.cForced = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cInduced = new System.Windows.Forms.CheckBox();
             this.client_Box = new System.Windows.Forms.TextBox();
             this.cGear = new System.Windows.Forms.CheckBox();
@@ -57,12 +59,14 @@
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.label8 = new System.Windows.Forms.Label();
-            this.tWidth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dFrame = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lock_MMHeight = new System.Windows.Forms.CheckBox();
+            this.lock_StringerSize = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.cStringer = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -75,9 +79,8 @@
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.bCreateUpdate = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lock_StringerSize = new System.Windows.Forms.CheckBox();
-            this.lock_MMHeight = new System.Windows.Forms.CheckBox();
+            this.cFanShaftDiameter = new System.Windows.Forms.ComboBox();
+            this.cMMWidth = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -95,6 +98,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cMMWidth);
+            this.tabPage1.Controls.Add(this.cFanShaftDiameter);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.tFanRingDepth);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.tWeight);
             this.tabPage1.Controls.Add(this.label10);
@@ -113,7 +121,6 @@
             this.tabPage1.Controls.Add(this.cDirect);
             this.tabPage1.Controls.Add(this.purchaseOrder_Box);
             this.tabPage1.Controls.Add(this.cForced);
-            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.cInduced);
             this.tabPage1.Controls.Add(this.client_Box);
             this.tabPage1.Controls.Add(this.cGear);
@@ -122,7 +129,6 @@
             this.tabPage1.Controls.Add(this.splitter3);
             this.tabPage1.Controls.Add(this.splitter2);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.tWidth);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.dFrame);
             this.tabPage1.Controls.Add(this.label2);
@@ -135,10 +141,36 @@
             this.tabPage1.Text = "MachineryMount";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(117, 91);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 13);
+            this.label13.TabIndex = 96;
+            this.label13.Text = "Fan Shaft Dia.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(318, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "Fan Ring Depth";
+            // 
+            // tFanRingDepth
+            // 
+            this.tFanRingDepth.Location = new System.Drawing.Point(212, 207);
+            this.tFanRingDepth.Name = "tFanRingDepth";
+            this.tFanRingDepth.Size = new System.Drawing.Size(100, 20);
+            this.tFanRingDepth.TabIndex = 93;
+            this.tFanRingDepth.TextChanged += new System.EventHandler(this.tFanRingDepth_TextChanged);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(340, 181);
+            this.label11.Location = new System.Drawing.Point(318, 157);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 92;
@@ -146,7 +178,7 @@
             // 
             // tWeight
             // 
-            this.tWeight.Location = new System.Drawing.Point(234, 178);
+            this.tWeight.Location = new System.Drawing.Point(212, 154);
             this.tWeight.Name = "tWeight";
             this.tWeight.Size = new System.Drawing.Size(100, 20);
             this.tWeight.TabIndex = 91;
@@ -155,7 +187,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(340, 155);
+            this.label10.Location = new System.Drawing.Point(318, 131);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 13);
             this.label10.TabIndex = 90;
@@ -163,7 +195,7 @@
             // 
             // plenumWidth_TextBox
             // 
-            this.plenumWidth_TextBox.Location = new System.Drawing.Point(234, 152);
+            this.plenumWidth_TextBox.Location = new System.Drawing.Point(212, 128);
             this.plenumWidth_TextBox.Name = "plenumWidth_TextBox";
             this.plenumWidth_TextBox.Size = new System.Drawing.Size(100, 20);
             this.plenumWidth_TextBox.TabIndex = 89;
@@ -182,7 +214,7 @@
             // 
             // itemNumber_Box
             // 
-            this.itemNumber_Box.Location = new System.Drawing.Point(383, 447);
+            this.itemNumber_Box.Location = new System.Drawing.Point(410, 463);
             this.itemNumber_Box.Name = "itemNumber_Box";
             this.itemNumber_Box.Size = new System.Drawing.Size(100, 20);
             this.itemNumber_Box.TabIndex = 73;
@@ -191,7 +223,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(340, 230);
+            this.label47.Location = new System.Drawing.Point(318, 183);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(44, 13);
             this.label47.TabIndex = 78;
@@ -199,7 +231,7 @@
             // 
             // textBox_Bank
             // 
-            this.textBox_Bank.Location = new System.Drawing.Point(414, 291);
+            this.textBox_Bank.Location = new System.Drawing.Point(490, 333);
             this.textBox_Bank.Name = "textBox_Bank";
             this.textBox_Bank.Size = new System.Drawing.Size(20, 20);
             this.textBox_Bank.TabIndex = 75;
@@ -207,9 +239,9 @@
             // 
             // job_Box
             // 
-            this.job_Box.Location = new System.Drawing.Point(383, 317);
+            this.job_Box.Location = new System.Drawing.Point(410, 333);
             this.job_Box.Name = "job_Box";
-            this.job_Box.Size = new System.Drawing.Size(100, 20);
+            this.job_Box.Size = new System.Drawing.Size(74, 20);
             this.job_Box.TabIndex = 68;
             this.job_Box.TextChanged += new System.EventHandler(this.job_Box_TextChanged);
             // 
@@ -225,7 +257,7 @@
             // 
             // customer_Box
             // 
-            this.customer_Box.Location = new System.Drawing.Point(383, 343);
+            this.customer_Box.Location = new System.Drawing.Point(410, 359);
             this.customer_Box.Name = "customer_Box";
             this.customer_Box.Size = new System.Drawing.Size(100, 20);
             this.customer_Box.TabIndex = 69;
@@ -244,7 +276,7 @@
             // 
             // initials_Box
             // 
-            this.initials_Box.Location = new System.Drawing.Point(383, 476);
+            this.initials_Box.Location = new System.Drawing.Point(410, 492);
             this.initials_Box.Name = "initials_Box";
             this.initials_Box.Size = new System.Drawing.Size(100, 20);
             this.initials_Box.TabIndex = 74;
@@ -253,6 +285,7 @@
             // cUp
             // 
             this.cUp.AutoSize = true;
+            this.cUp.Enabled = false;
             this.cUp.Location = new System.Drawing.Point(391, 72);
             this.cUp.Name = "cUp";
             this.cUp.Size = new System.Drawing.Size(98, 17);
@@ -263,7 +296,7 @@
             // 
             // location_Box
             // 
-            this.location_Box.Location = new System.Drawing.Point(383, 395);
+            this.location_Box.Location = new System.Drawing.Point(410, 411);
             this.location_Box.Name = "location_Box";
             this.location_Box.Size = new System.Drawing.Size(100, 20);
             this.location_Box.TabIndex = 71;
@@ -272,6 +305,7 @@
             // cDirect
             // 
             this.cDirect.AutoSize = true;
+            this.cDirect.Enabled = false;
             this.cDirect.Location = new System.Drawing.Point(297, 84);
             this.cDirect.Name = "cDirect";
             this.cDirect.Size = new System.Drawing.Size(88, 17);
@@ -282,7 +316,7 @@
             // 
             // purchaseOrder_Box
             // 
-            this.purchaseOrder_Box.Location = new System.Drawing.Point(383, 421);
+            this.purchaseOrder_Box.Location = new System.Drawing.Point(410, 437);
             this.purchaseOrder_Box.Name = "purchaseOrder_Box";
             this.purchaseOrder_Box.Size = new System.Drawing.Size(100, 20);
             this.purchaseOrder_Box.TabIndex = 72;
@@ -299,18 +333,10 @@
             this.cForced.UseVisualStyleBackColor = true;
             this.cForced.CheckedChanged += new System.EventHandler(this.cForced_CheckedChanged);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(376, 294);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 76;
-            this.label6.Text = "Bank";
-            // 
             // cInduced
             // 
             this.cInduced.AutoSize = true;
+            this.cInduced.Enabled = false;
             this.cInduced.Location = new System.Drawing.Point(219, 72);
             this.cInduced.Name = "cInduced";
             this.cInduced.Size = new System.Drawing.Size(65, 17);
@@ -321,7 +347,7 @@
             // 
             // client_Box
             // 
-            this.client_Box.Location = new System.Drawing.Point(383, 369);
+            this.client_Box.Location = new System.Drawing.Point(410, 385);
             this.client_Box.Name = "client_Box";
             this.client_Box.Size = new System.Drawing.Size(100, 20);
             this.client_Box.TabIndex = 70;
@@ -330,6 +356,7 @@
             // cGear
             // 
             this.cGear.AutoSize = true;
+            this.cGear.Enabled = false;
             this.cGear.Location = new System.Drawing.Point(297, 61);
             this.cGear.Name = "cGear";
             this.cGear.Size = new System.Drawing.Size(83, 17);
@@ -356,7 +383,7 @@
             this.materialCombo.Items.AddRange(new object[] {
             "A36",
             "A572_50"});
-            this.materialCombo.Location = new System.Drawing.Point(234, 227);
+            this.materialCombo.Location = new System.Drawing.Point(212, 180);
             this.materialCombo.Name = "materialCombo";
             this.materialCombo.Size = new System.Drawing.Size(100, 21);
             this.materialCombo.TabIndex = 77;
@@ -392,14 +419,6 @@
             this.label8.Size = new System.Drawing.Size(85, 16);
             this.label8.TabIndex = 84;
             this.label8.Text = "Main Inputs";
-            // 
-            // tWidth
-            // 
-            this.tWidth.Location = new System.Drawing.Point(11, 36);
-            this.tWidth.Name = "tWidth";
-            this.tWidth.Size = new System.Drawing.Size(100, 20);
-            this.tWidth.TabIndex = 80;
-            this.tWidth.Leave += new System.EventHandler(this.tWidth_Leave);
             // 
             // label1
             // 
@@ -478,6 +497,38 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Advanced";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lock_MMHeight
+            // 
+            this.lock_MMHeight.AutoSize = true;
+            this.lock_MMHeight.Location = new System.Drawing.Point(207, 61);
+            this.lock_MMHeight.Name = "lock_MMHeight";
+            this.lock_MMHeight.Size = new System.Drawing.Size(15, 14);
+            this.lock_MMHeight.TabIndex = 43;
+            this.lock_MMHeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lock_MMHeight.UseVisualStyleBackColor = true;
+            this.lock_MMHeight.CheckedChanged += new System.EventHandler(this.lock_MMHeight_CheckedChanged);
+            // 
+            // lock_StringerSize
+            // 
+            this.lock_StringerSize.AutoSize = true;
+            this.lock_StringerSize.Location = new System.Drawing.Point(207, 36);
+            this.lock_StringerSize.Name = "lock_StringerSize";
+            this.lock_StringerSize.Size = new System.Drawing.Size(15, 14);
+            this.lock_StringerSize.TabIndex = 42;
+            this.lock_StringerSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lock_StringerSize.UseVisualStyleBackColor = true;
+            this.lock_StringerSize.CheckedChanged += new System.EventHandler(this.lock_StringerSize_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(200, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 13);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Lock";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cStringer
             // 
@@ -630,37 +681,37 @@
             this.bCreateUpdate.UseVisualStyleBackColor = false;
             this.bCreateUpdate.Click += new System.EventHandler(this.bCreateUpdate_Click);
             // 
-            // label12
+            // cFanShaftDiameter
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(200, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 13);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Lock";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cFanShaftDiameter.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cFanShaftDiameter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cFanShaftDiameter.FormattingEnabled = true;
+            this.cFanShaftDiameter.Items.AddRange(new object[] {
+            "1.9375",
+            "2.4375",
+            "2.9375"});
+            this.cFanShaftDiameter.Location = new System.Drawing.Point(11, 88);
+            this.cFanShaftDiameter.Name = "cFanShaftDiameter";
+            this.cFanShaftDiameter.Size = new System.Drawing.Size(100, 21);
+            this.cFanShaftDiameter.TabIndex = 97;
+            this.cFanShaftDiameter.SelectedIndexChanged += new System.EventHandler(this.cFanShaftDiameter_SelectedIndexChanged);
             // 
-            // lock_StringerSize
+            // cMMWidth
             // 
-            this.lock_StringerSize.AutoSize = true;
-            this.lock_StringerSize.Location = new System.Drawing.Point(207, 36);
-            this.lock_StringerSize.Name = "lock_StringerSize";
-            this.lock_StringerSize.Size = new System.Drawing.Size(15, 14);
-            this.lock_StringerSize.TabIndex = 42;
-            this.lock_StringerSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lock_StringerSize.UseVisualStyleBackColor = true;
-            this.lock_StringerSize.CheckedChanged += new System.EventHandler(this.lock_StringerSize_CheckedChanged);
-            // 
-            // lock_MMHeight
-            // 
-            this.lock_MMHeight.AutoSize = true;
-            this.lock_MMHeight.Location = new System.Drawing.Point(207, 61);
-            this.lock_MMHeight.Name = "lock_MMHeight";
-            this.lock_MMHeight.Size = new System.Drawing.Size(15, 14);
-            this.lock_MMHeight.TabIndex = 43;
-            this.lock_MMHeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lock_MMHeight.UseVisualStyleBackColor = true;
-            this.lock_MMHeight.CheckedChanged += new System.EventHandler(this.lock_MMHeight_CheckedChanged);
+            this.cMMWidth.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cMMWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cMMWidth.FormattingEnabled = true;
+            this.cMMWidth.Items.AddRange(new object[] {
+            "24",
+            "30",
+            "36",
+            "42",
+            "52"});
+            this.cMMWidth.Location = new System.Drawing.Point(11, 34);
+            this.cMMWidth.Name = "cMMWidth";
+            this.cMMWidth.Size = new System.Drawing.Size(100, 21);
+            this.cMMWidth.TabIndex = 98;
+            this.cMMWidth.Leave += new System.EventHandler(this.cMMWidth_Leave);
             // 
             // MachineryMountUI
             // 
@@ -698,7 +749,6 @@
         private System.Windows.Forms.CheckBox createDrawing_Toggle;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.ComboBox materialCombo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_Bank;
         private System.Windows.Forms.TextBox initials_Box;
         private System.Windows.Forms.TextBox itemNumber_Box;
@@ -715,7 +765,6 @@
         private System.Windows.Forms.CheckBox cGear;
         private System.Windows.Forms.CheckBox cBelt;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tWidth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox dFrame;
         private System.Windows.Forms.Label label2;
@@ -735,5 +784,10 @@
         private System.Windows.Forms.CheckBox lock_MMHeight;
         private System.Windows.Forms.CheckBox lock_StringerSize;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tFanRingDepth;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cFanShaftDiameter;
+        private System.Windows.Forms.ComboBox cMMWidth;
     }
 }

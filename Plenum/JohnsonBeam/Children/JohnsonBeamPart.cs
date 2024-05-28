@@ -56,7 +56,7 @@ namespace Plenum.JohnsonBeam.Children
             bool suppress = false;
             if (MotorShaftDown)
                 suppress = true;
-            mTools.SuppressFeatures(suppress, modelDoc2, "Hole");
+            mTools.SuppressFeatures_Legacy(suppress, modelDoc2, "Hole");
         }
 
 

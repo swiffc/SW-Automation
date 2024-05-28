@@ -107,13 +107,13 @@ namespace Plenum
             switch (CallerType)
             {
                 case Design.Standard:
-                    mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "1", "2", "3", "4");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "ColumnCut", "1", "2", "3", "4");
                     break;
                 case Design.Johnson:
-                    mTools.SuppressFeatures(false, modelDoc2, "ColumnCut", "1", "2", "3", "4");
+                    mTools.SuppressFeatures_Legacy(false, modelDoc2, "ColumnCut", "1", "2", "3", "4");
                     break;
                 case Design.Legacy:
-                    mTools.SuppressFeatures(true, modelDoc2, "ColumnCut", "1", "2", "3", "4");
+                    mTools.SuppressFeatures_Legacy(true, modelDoc2, "ColumnCut", "1", "2", "3", "4");
                     break;
             }
         }

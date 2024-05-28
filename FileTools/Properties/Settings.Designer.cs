@@ -946,5 +946,17 @@ namespace FileTools.Properties {
                 this["TotalUnitWeight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.9375")]
+        public double FanShaft_Diameter {
+            get {
+                return ((double)(this["FanShaft_Diameter"]));
+            }
+            set {
+                this["FanShaft_Diameter"] = value;
+            }
+        }
     }
 }

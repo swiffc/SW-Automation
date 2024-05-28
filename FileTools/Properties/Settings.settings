@@ -233,5 +233,8 @@
     <Setting Name="TotalUnitWeight" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50000</Value>
     </Setting>
+    <Setting Name="FanShaft_Diameter" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2.9375</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

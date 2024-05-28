@@ -54,11 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DriveFrame\Children\Derived\StringerL.cs" />
-    <Compile Include="DriveFrame\Children\Derived\StringerR.cs" />
-    <Compile Include="DriveFrame\Children\HangerPRC.cs" />
-    <Compile Include="DriveFrame\Children\Stringer.cs" />
-    <Compile Include="DriveFrame\DriveFrame.cs" />
+    <Compile Include="DriveWeldment\Children\CrossStiffenerC.cs" />
+    <Compile Include="DriveWeldment\Children\HangerStiffener.cs" />
+    <Compile Include="DriveWeldment\Children\TowerGusset.cs" />
+    <Compile Include="DriveWeldment\Children\TowerSideC.cs" />
+    <Compile Include="DriveWeldment\Children\TowerTopC.cs" />
+    <Compile Include="DriveWeldment\Children\Derived\StringerL.cs" />
+    <Compile Include="DriveWeldment\Children\Derived\StringerR.cs" />
+    <Compile Include="DriveWeldment\Children\HangerPRC.cs" />
+    <Compile Include="DriveWeldment\Children\ShaftSleeve.cs" />
+    <Compile Include="DriveWeldment\Children\Stringer.cs" />
+    <Compile Include="DriveWeldment\DriveFrame.cs" />
+    <Compile Include="DriveAssembly\FanShaft.cs" />
+    <Compile Include="DriveAssembly\MountingAngle.cs" />
     <Compile Include="MachineryMount.cs" />
     <Compile Include="MachineryMountUI.cs">
       <SubType>Form</SubType>
@@ -82,6 +90,9 @@
     <EmbeddedResource Include="MachineryMountUI.resx">
       <DependentUpon>MachineryMountUI.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mechanicals\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

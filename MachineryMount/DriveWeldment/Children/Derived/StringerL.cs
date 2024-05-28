@@ -2,7 +2,7 @@
 using ModelTools;
 using System.Collections.Generic;
 
-namespace MachineryMount.DriveFrame.Children.Derived
+namespace MachineryMount.DriveWeldment.Children.Derived
 {
     internal class StringerL : Stringer
     {
@@ -17,7 +17,7 @@ namespace MachineryMount.DriveFrame.Children.Derived
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tX: -DriveFrame.Width/2)
+                    PositionData.Create(tZ: -DriveFrame.Width/2)
                 };
             }
         }

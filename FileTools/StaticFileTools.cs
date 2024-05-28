@@ -691,49 +691,6 @@ namespace FileTools
         {
             SW.ActivateDoc3(modelDoc2.GetPathName(), false, 0, 0);
         }
-        public static bool ChangeStructuralMemberSize(string newSize, ModelDoc2 modelDoc2)
-        {
-            IStructuralMemberFeatureData member = null;
-
-            // Iterate through features to find the first structural member
-            Feature feature = modelDoc2.FirstFeature();
-            while (feature != null)
-            {
-                member = feature.GetDefinition() as IStructuralMemberFeatureData;
-
-                if (member != null) break;
-
-                feature = feature.GetNextFeature();
-            }
-
-            if (member != null)
-            {
-                string previousSize = member.ConfigurationName;
-                if (previousSize != newSize)
-                {
-                    bool selectionsAccessed = member.AccessSelections(modelDoc2, null);
-                    member.ConfigurationName = newSize;
-                    bool definitionModified = feature.ModifyDefinition(member, modelDoc2, null);
-
-                    // Turn off sketch
-                    double number = 0;
-                    string sketchName;
-                    bool isSelected = false;
-                    while (!isSelected)
-                    {
-                        number++;
-                        sketchName = "Sketch" + number;
-                        isSelected = modelDoc2.Extension.SelectByID2(sketchName, "SKETCH", 0, 0, 0, false, 0, null, 0);
-                    }
-                    modelDoc2.BlankSketch();
-
-                    return definitionModified;
-                }
-                return true;
-            }
-            else return false;
-
-        }
         public static string GetConfigurationTitle(ModelDoc2 modelDoc2)
         {
             Configuration config = modelDoc2.ConfigurationManager.ActiveConfiguration;

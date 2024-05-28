@@ -134,29 +134,29 @@ namespace Plenum.Floor
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
             if (IsRibbed)
-                mTools.SuppressFeatures(false, modelDoc2,
+                mTools.SuppressFeatures_Legacy(false, modelDoc2,
                     "RibSquarePunch",
                     "RibSquarePunchMirrorHorz",
                     "RibSquarePunchMirrorVertical");
             else // straight
-                mTools.SuppressFeatures(true, modelDoc2,
+                mTools.SuppressFeatures_Legacy(true, modelDoc2,
                     "RibSquarePunch",
                     "RibSquarePunchMirrorHorz",
                     "RibSquarePunchMirrorVertical");
 
             string[] configsToExclude = { StaticPartNo };
-            mTools.SuppressFeatures(false, configsToExclude, modelDoc2,  "FlatPattern");
+            mTools.SuppressFeatures_Legacy(false, configsToExclude, modelDoc2,  "FlatPattern");
             if (MotorShaftDown)
-                mTools.SuppressFeatures(true, modelDoc2, // shaft down
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, // shaft down
                     "StrutSlot",
                     "StrutSlotMirror",
                     "SpliceStrutSlots");
             else
-                mTools.SuppressFeatures(false, modelDoc2, // shaft up
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, // shaft up
                     "StrutSlot",
                     "StrutSlotMirror",
                     "SpliceStrutSlots");
-            mTools.SuppressFeatures(true, configsToExclude, modelDoc2,  "FlatPattern");
+            mTools.SuppressFeatures_Legacy(true, configsToExclude, modelDoc2,  "FlatPattern");
         }
 
 

@@ -137,12 +137,12 @@ namespace Plenum
                 if (Beam_FlangeWidth / 2 - 0.25 > Flange - THK / 2)
                 suppress = true;
 
-            mTools.SuppressFeatures(suppress, modelDoc2, "ColumnCut", "ColumnCutMirror");
+            mTools.SuppressFeatures_Legacy(suppress, modelDoc2, "ColumnCut", "ColumnCutMirror");
 
             if (Mid_Columns)
-                mTools.SuppressFeatures(true, modelDoc2, "SideCut");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "SideCut");
             else
-                mTools.SuppressFeatures(false, modelDoc2, "SideCut");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "SideCut");
         }
 
 

@@ -84,6 +84,51 @@ namespace FileTools.Base
 
             return editSuccessful;
         }
+        protected bool EditFeature_StructuralMemberSize(string newSize)
+        {
+            IStructuralMemberFeatureData member = null;
+
+            // Iterate through features to find the first structural member
+            Feature feature = ModelDoc2.FirstFeature();
+            while (feature != null)
+            {
+                member = feature.GetDefinition() as IStructuralMemberFeatureData;
+
+                if (member != null) break;
+
+                feature = feature.GetNextFeature();
+            }
+
+            if (member != null)
+            {
+                string previousSize = member.ConfigurationName;
+                if (previousSize != newSize)
+                {
+                    ActivateModelDoc(ModelDoc2);
+                    bool selectionsAccessed = member.AccessSelections(ModelDoc2, null);
+                    member.ConfigurationName = newSize;
+                    bool definitionModified = feature.ModifyDefinition(member, ModelDoc2, null);
+                    ModelDoc2.Visible = false;
+
+                    // Turn off sketch
+                    double number = 0;
+                    string sketchName;
+                    bool isSelected = false;
+                    while (!isSelected)
+                    {
+                        number++;
+                        sketchName = "Sketch" + number;
+                        isSelected = ModelDoc2.Extension.SelectByID2(sketchName, "SKETCH", 0, 0, 0, false, 0, null, 0);
+                    }
+                    ModelDoc2.BlankSketch();
+
+                    return definitionModified;
+                }
+                return true;
+            }
+            else return false;
+
+        }
         protected bool[] SuppressFeatures(params string[] features)
         {
             bool[] results = new bool[features.Length];
@@ -207,7 +252,9 @@ namespace FileTools.Base
             Beam,
             Angle,
             Channel,
-            Tee
+            Tee,
+            Pipe,
+            BarStock
         }
         public enum Spec
         {

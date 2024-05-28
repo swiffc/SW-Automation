@@ -34,11 +34,12 @@ namespace MachineryMount
         private void MachineryMountUI_Load(object sender, EventArgs e)
         {
             // Main inputs
-            tWidth.Text = MachineryMount_Width.ToString();
+            cMMWidth.Text = MachineryMount_Width.ToString();
             dFrame.Text = MotorFrameSize.ToString() + "T";
+            cFanShaftDiameter.Text = FanShaft_Diameter.ToString();
 
             // Design selection
-            cForced.Checked = Forced;
+            cForced.Checked = ForcedDraft;
             cInduced.Checked = Induced;
             cBelt.Checked = BeltDrive;
             cGear.Checked = GearDrive;
@@ -60,6 +61,7 @@ namespace MachineryMount
             materialCombo.Text = MaterialSpecSetting;
             plenumWidth_TextBox.Text = Plenum_Width.ToString();
             tWeight.Text = TotalUnitWeight.ToString();
+            tFanRingDepth.Text = FanRing_Depth.ToString();
 
             // Advanced
             cStringer.Text = Stringer_Size;
@@ -73,11 +75,10 @@ namespace MachineryMount
 
         #region Main inputs
 
-        private void tWidth_Leave(object sender, EventArgs e)
+        private void cMMWidth_Leave(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tWidth.Text, x => MachineryMount_Width = x);
-            tWidth.Text = MachineryMount_Width.ToString();
-
+            UI_DoubleChanged(cMMWidth.Text, x => MachineryMount_Width = x);
+            cMMWidth.Text = MachineryMount_Width.ToString();
         }
         private void dFrame_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -87,7 +88,10 @@ namespace MachineryMount
             // Update dependents
             tHeight.Text = MachineryMount_Height.ToString();
         }
-
+        private void cFanShaftDiameter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(cFanShaftDiameter.Text, x => FanShaft_Diameter = x);
+        }
 
         #endregion
         #region Design selection
@@ -96,7 +100,7 @@ namespace MachineryMount
         {
             try
             {
-                UI_BoolChanged(cForced.Checked, x => Forced = x);
+                UI_BoolChanged(cForced.Checked, x => ForcedDraft = x);
                 cInduced.Checked = Induced;
             }
             catch (InvalidOperationException ex)
@@ -110,7 +114,7 @@ namespace MachineryMount
             try
             {
                 UI_BoolChanged(cInduced.Checked, x => Induced = x);
-                cForced.Checked = Forced;
+                cForced.Checked = ForcedDraft;
             }
             catch (InvalidOperationException ex)
             {
@@ -214,6 +218,10 @@ namespace MachineryMount
             // Update dependents
             cStringer.Text = Stringer_Size;
         }
+        private void tFanRingDepth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tFanRingDepth.Text, x => FanRing_Depth = x);
+        }
 
         #endregion
         #region Job info
@@ -314,8 +322,11 @@ namespace MachineryMount
             tHeight.Enabled = !Lock_MachineryMountHeight;
         }
 
+
+
+
+
+
         #endregion
-
-
     }
 }

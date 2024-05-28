@@ -74,7 +74,7 @@ namespace Plenum.Walls
             else if (CallerType == Design.Johnson && Mid_Columns)
                 suppress = false;
 
-            mTools.SuppressFeatures(suppress, modelDoc2, "ColumnSeal", "1", "2", "3");
+            mTools.SuppressFeatures_Legacy(suppress, modelDoc2, "ColumnSeal", "1", "2", "3");
         }
 
 

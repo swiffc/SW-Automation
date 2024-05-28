@@ -55,7 +55,7 @@ namespace Plenum.Structure
         }
         protected override void FeatureSuppression(ModelDoc2 modelDoc2)
         {
-            SuppressFeatures(BraceType.Contains("L") ? false : true, modelDoc2, "Slot");
+            SuppressFeatures_Legacy(BraceType.Contains("L") ? false : true, modelDoc2, "Slot");
         }
 
 

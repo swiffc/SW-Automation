@@ -61,9 +61,9 @@ namespace Plenum.Floor.Derived
             base.FeatureSuppression(modelDoc2);
 
             if (!Mid_Columns && CallerType != Design.Legacy)
-                mTools.SuppressFeatures(true, modelDoc2, "ColumnCut");
+                mTools.SuppressFeatures_Legacy(true, modelDoc2, "ColumnCut");
             else if (CallerType == Design.Johnson && Mid_Columns && !ExtensionRequired)
-                mTools.SuppressFeatures(false, modelDoc2, "ColumnCut");
+                mTools.SuppressFeatures_Legacy(false, modelDoc2, "ColumnCut");
         }
 
         public override RawMaterial Shape => base.Shape;

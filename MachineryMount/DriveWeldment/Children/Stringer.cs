@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using static FileTools.CommonData.CommonData;
 using static FileTools.StaticFileTools;
 
-namespace MachineryMount.DriveFrame.Children
+namespace MachineryMount.DriveWeldment.Children
 {
     internal abstract class Stringer : Part
     {
@@ -28,8 +28,11 @@ namespace MachineryMount.DriveFrame.Children
         // Method overrides
         protected override void Dimensions()
         {
-            ChangeStructuralMemberSize(Size, ModelDoc2);
             EditDimension("Length", "sk:Path", Plenum_Width);
+        }
+        protected override void Features()
+        {
+            EditFeature_StructuralMemberSize(Size);
         }
 
 
