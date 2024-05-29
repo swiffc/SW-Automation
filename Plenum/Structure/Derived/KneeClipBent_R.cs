@@ -40,7 +40,7 @@ namespace Plenum.Structure.Derived
             {
                 if (Mid_Columns)
                 {
-                    double z = zTranslation; // git test
+                    double z = zTranslation;
                     for (int i = 0; i < Fan_Count - 1; i++)
                     {
                         
