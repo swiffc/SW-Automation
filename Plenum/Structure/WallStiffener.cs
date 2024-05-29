@@ -135,19 +135,19 @@ namespace Plenum.Structure
                 PositionData.Create(tX: -XTranslation_SidePanelBrace, tY: YTranslation_AllBraces, tZ: -zTranslation, rY: -90, rX: 180),
             };
             pos.AddRange(sideBraceStiffeners);
-            if (Mid_Columns && BraceType.Contains("L"))// cherry pick marker
+            if (Mid_Columns && BraceType.Contains("L"))
             {
+                double z = zTranslation;
                 for (int i = 0; i < Fan_Count - 1; i++)
                 {
-                    double z = zTranslation;
                     z -= Plenum_Length / Fan_Count;
                     pos.Add(PositionData.Create(tX: XTranslation_SidePanelBrace, tY: YTranslation_AllBraces, tZ: z, rY: 90, rX: 180));
                     pos.Add(PositionData.Create(tX: -XTranslation_SidePanelBrace, tY: YTranslation_AllBraces, tZ: z, rY: 90));
                 }
 
+                z = zTranslation;
                 for (int i = 0; i < Fan_Count - 1; i++)
                 {
-                    double z = zTranslation;
                     z -= Plenum_Length / Fan_Count;
 
                     pos.Add(PositionData.Create(tX: XTranslation_SidePanelBrace, tY: YTranslation_AllBraces, tZ: -z, rY: -90));

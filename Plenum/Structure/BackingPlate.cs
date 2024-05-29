@@ -85,17 +85,17 @@ namespace Plenum.Structure
             {
                 if (Mid_Columns)
                 {
+                    double z = zTranslation;
                     for (int i = 0; i < Fan_Count - 1; i++)
                     {
-                        double z = zTranslation;
                         z -= Plenum_Length / Fan_Count;
                         pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: z, rY: -90));
                         pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: -z, rY: -90));
                     }
 
+                    z = zTranslation;
                     for (int i = 0; i < Fan_Count - 1; i++)
                     {
-                        double z = zTranslation;
                         z -= Plenum_Length / Fan_Count;
                         pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: z, rY: 90));
                         pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -z, rY: 90));
