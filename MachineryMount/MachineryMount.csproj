@@ -74,6 +74,9 @@
     <Compile Include="MachineryMountUI.Designer.cs">
       <DependentUpon>MachineryMountUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mechanicals\Motor.cs" />
+    <Compile Include="MotorMount\Children\MotorMountPart.cs" />
+    <Compile Include="MotorMount\MotorMountWeldment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,8 +94,6 @@
       <DependentUpon>MachineryMountUI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mechanicals\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

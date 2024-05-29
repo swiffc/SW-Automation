@@ -173,7 +173,7 @@ namespace FileTools.CommonData
 
 
         // Bracing
-        static public double ClipHeight = Default.Clip_Height;
+        static public double ClipHeight => Default.Clip_Height;
         #region BraceType Rules
 
         public static string BraceType
@@ -267,10 +267,10 @@ namespace FileTools.CommonData
         public static void CalculateLengthAndPositionData(out double _length, out double yLowerBounds_TeeClip, out PositionData _position)
         {
             // Viewing the YZ plane
-            double zColumnCenterToHoleColsestToColumn = TeeClip_OffsetFromColumnCenter + TeeClip_ColumnBoundToNearestHole;
+            double zColumnCenterToHoleClosestToColumn = TeeClip_OffsetFromColumnCenter + TeeClip_ColumnBoundToNearestHole;
 
             // Triangle --> [top of base plate] to [work line below T-clip hole that's closest to the column bounds]
-            AAS(BraceAngle, zColumnCenterToHoleColsestToColumn, out double yTopOfBasePlateToWorkLine, out _);
+            AAS(BraceAngle, zColumnCenterToHoleClosestToColumn, out double yTopOfBasePlateToWorkLine, out _);
 
             // Triangle --> [work line below T-clip hole that's closest to the column bounds] to [T-clip hole that's closest to the column bounds]
             AAS(BraceAngle, WT_FlangeGage / 2, out _, out double yWorkLineToHoleClosestToColumnHole);
@@ -296,7 +296,7 @@ namespace FileTools.CommonData
             // Position
             double xTranslation = -Plenum_Width / 2 - Clip_THK / 2;
             double yTranslation = BasePlate_THK + yTopOfBasePlateToWorkLine + yWorkLineToHoleClosestToColumnHole + yTriangle / 2 - yHoleClosestToColumn_To_FlangeGageCenterPoint;
-            double zTranslation = Plenum_Length / 2 - zColumnCenterToHoleColsestToColumn - zTriangle / 2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
+            double zTranslation = Plenum_Length / 2 - zColumnCenterToHoleClosestToColumn - zTriangle / 2 - zHoleClosestToColumn_To_FlangeGageCenterPoint;
 
             _position = PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: BraceAngle);
 

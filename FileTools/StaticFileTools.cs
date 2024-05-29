@@ -154,7 +154,7 @@ namespace FileTools
                 return "-1";
             }
         }
-        public static string CreateNew_SubComponentFile(string staticPartNo, SW_Assembly swAssembly)
+        public static string CreateNew_SubComponentFile(string staticPartNo, SW_Assembly swAssembly, string over_ride = null)
         {
             string templateFile = $@"{TemplateFolderPath}\JOBNO-{staticPartNo}.SLDPRT";
 
@@ -166,8 +166,19 @@ namespace FileTools
                 partNo1 = SkipInvalidChars(partNo1);
                 partNo2 = SkipInvalidChars(partNo2);
 
-                string fileName = $"{partNo1}{(partNo2 != ' ' ? partNo2.ToString() : "")}.SLDPRT";
-                string desktopFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{fileName}";
+                string fileNameWithoutExtension;
+
+                if (over_ride != null)
+                {
+                    fileNameWithoutExtension = $"{over_ride}";
+
+                }
+                else
+                {
+                    fileNameWithoutExtension = $"{partNo1}{(partNo2 != ' ' ? partNo2.ToString() : "")}";
+                }
+
+                string desktopFile = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{fileNameWithoutExtension}.SLDPRT";
 
                 if (!System.IO.File.Exists(desktopFile))
                 {
@@ -175,7 +186,7 @@ namespace FileTools
                     Debug.WriteLine($"            Created new [{staticPartNo}] as <{Path.GetFileNameWithoutExtension(desktopFile)}>");
                     Debug.WriteLine($"");
                     AssignedComponentPaths.Add(desktopFile);
-                    return $"{partNo1}{(partNo2 != ' ' ? partNo2.ToString() : "")}";
+                    return fileNameWithoutExtension;
                 }
 
                 (partNo1, partNo2) = IncrementPartNo(partNo1, partNo2);

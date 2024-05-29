@@ -37,6 +37,7 @@ namespace MachineryMount
             cMMWidth.Text = MachineryMount_Width.ToString();
             dFrame.Text = MotorFrameSize.ToString() + "T";
             cFanShaftDiameter.Text = FanShaft_Diameter.ToString();
+            tCenterToCenter.Text = MotorCenter_To_FanCenter.ToString();
 
             // Design selection
             cForced.Checked = ForcedDraft;
@@ -82,7 +83,7 @@ namespace MachineryMount
         }
         private void dFrame_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(dFrame.Text.Substring(0, dFrame.Text.Length - 1), x => MotorFrameSize = x);
+            UI_IntChanged(dFrame.Text.Substring(0, dFrame.Text.Length - 1), x => MotorFrameSize = x);
             dFrame.Text = MotorFrameSize.ToString() + "T";
 
             // Update dependents
@@ -91,6 +92,10 @@ namespace MachineryMount
         private void cFanShaftDiameter_SelectedIndexChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(cFanShaftDiameter.Text, x => FanShaft_Diameter = x);
+        }
+        private void tCenterToCenter_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tCenterToCenter.Text, x => MotorCenter_To_FanCenter = x);
         }
 
         #endregion
@@ -328,5 +333,7 @@ namespace MachineryMount
 
 
         #endregion
+
+
     }
 }

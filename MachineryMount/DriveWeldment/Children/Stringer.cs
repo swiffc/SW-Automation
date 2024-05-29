@@ -32,7 +32,7 @@ namespace MachineryMount.DriveWeldment.Children
         }
         protected override void Features()
         {
-            EditFeature_StructuralMemberSize(Size);
+            EditFeature_StructuralMemberSize(Size, out double flangeWidth);
         }
 
 

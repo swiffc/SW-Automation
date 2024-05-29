@@ -926,9 +926,9 @@ namespace FileTools.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("286")]
-        public double MotorFrameSize {
+        public int MotorFrameSize {
             get {
-                return ((double)(this["MotorFrameSize"]));
+                return ((int)(this["MotorFrameSize"]));
             }
             set {
                 this["MotorFrameSize"] = value;
@@ -956,6 +956,18 @@ namespace FileTools.Properties {
             }
             set {
                 this["FanShaft_Diameter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public double Motor_CenterToCenter {
+            get {
+                return ((double)(this["Motor_CenterToCenter"]));
+            }
+            set {
+                this["Motor_CenterToCenter"] = value;
             }
         }
     }

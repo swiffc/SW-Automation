@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cMMWidth = new System.Windows.Forms.ComboBox();
+            this.cFanShaftDiameter = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tFanRingDepth = new System.Windows.Forms.TextBox();
@@ -79,8 +81,8 @@
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.bCreateUpdate = new System.Windows.Forms.Button();
-            this.cFanShaftDiameter = new System.Windows.Forms.ComboBox();
-            this.cMMWidth = new System.Windows.Forms.ComboBox();
+            this.tCenterToCenter = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -98,6 +100,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.tCenterToCenter);
             this.tabPage1.Controls.Add(this.cMMWidth);
             this.tabPage1.Controls.Add(this.cFanShaftDiameter);
             this.tabPage1.Controls.Add(this.label13);
@@ -140,6 +144,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "MachineryMount";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cMMWidth
+            // 
+            this.cMMWidth.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cMMWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cMMWidth.FormattingEnabled = true;
+            this.cMMWidth.Items.AddRange(new object[] {
+            "24",
+            "30",
+            "36",
+            "42",
+            "52"});
+            this.cMMWidth.Location = new System.Drawing.Point(11, 34);
+            this.cMMWidth.Name = "cMMWidth";
+            this.cMMWidth.Size = new System.Drawing.Size(100, 21);
+            this.cMMWidth.TabIndex = 98;
+            this.cMMWidth.Leave += new System.EventHandler(this.cMMWidth_Leave);
+            // 
+            // cFanShaftDiameter
+            // 
+            this.cFanShaftDiameter.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cFanShaftDiameter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cFanShaftDiameter.FormattingEnabled = true;
+            this.cFanShaftDiameter.Items.AddRange(new object[] {
+            "1.9375",
+            "2.4375",
+            "2.9375"});
+            this.cFanShaftDiameter.Location = new System.Drawing.Point(11, 88);
+            this.cFanShaftDiameter.Name = "cFanShaftDiameter";
+            this.cFanShaftDiameter.Size = new System.Drawing.Size(100, 21);
+            this.cFanShaftDiameter.TabIndex = 97;
+            this.cFanShaftDiameter.SelectedIndexChanged += new System.EventHandler(this.cFanShaftDiameter_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -681,37 +717,22 @@
             this.bCreateUpdate.UseVisualStyleBackColor = false;
             this.bCreateUpdate.Click += new System.EventHandler(this.bCreateUpdate_Click);
             // 
-            // cFanShaftDiameter
+            // tCenterToCenter
             // 
-            this.cFanShaftDiameter.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cFanShaftDiameter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cFanShaftDiameter.FormattingEnabled = true;
-            this.cFanShaftDiameter.Items.AddRange(new object[] {
-            "1.9375",
-            "2.4375",
-            "2.9375"});
-            this.cFanShaftDiameter.Location = new System.Drawing.Point(11, 88);
-            this.cFanShaftDiameter.Name = "cFanShaftDiameter";
-            this.cFanShaftDiameter.Size = new System.Drawing.Size(100, 21);
-            this.cFanShaftDiameter.TabIndex = 97;
-            this.cFanShaftDiameter.SelectedIndexChanged += new System.EventHandler(this.cFanShaftDiameter_SelectedIndexChanged);
+            this.tCenterToCenter.Location = new System.Drawing.Point(11, 115);
+            this.tCenterToCenter.Name = "tCenterToCenter";
+            this.tCenterToCenter.Size = new System.Drawing.Size(100, 20);
+            this.tCenterToCenter.TabIndex = 99;
+            this.tCenterToCenter.TextChanged += new System.EventHandler(this.tCenterToCenter_TextChanged);
             // 
-            // cMMWidth
+            // label14
             // 
-            this.cMMWidth.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cMMWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cMMWidth.FormattingEnabled = true;
-            this.cMMWidth.Items.AddRange(new object[] {
-            "24",
-            "30",
-            "36",
-            "42",
-            "52"});
-            this.cMMWidth.Location = new System.Drawing.Point(11, 34);
-            this.cMMWidth.Name = "cMMWidth";
-            this.cMMWidth.Size = new System.Drawing.Size(100, 21);
-            this.cMMWidth.TabIndex = 98;
-            this.cMMWidth.Leave += new System.EventHandler(this.cMMWidth_Leave);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(117, 118);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 13);
+            this.label14.TabIndex = 100;
+            this.label14.Text = "Center Dist.";
             // 
             // MachineryMountUI
             // 
@@ -789,5 +810,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cFanShaftDiameter;
         private System.Windows.Forms.ComboBox cMMWidth;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tCenterToCenter;
     }
 }

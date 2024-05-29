@@ -227,7 +227,7 @@
     <Setting Name="IsMotorShaftDown" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MotorFrameSize" Type="System.Double" Scope="User">
+    <Setting Name="MotorFrameSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">286</Value>
     </Setting>
     <Setting Name="TotalUnitWeight" Type="System.Int32" Scope="User">
@@ -235,6 +235,9 @@
     </Setting>
     <Setting Name="FanShaft_Diameter" Type="System.Double" Scope="User">
       <Value Profile="(Default)">2.9375</Value>
+    </Setting>
+    <Setting Name="Motor_CenterToCenter" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">30</Value>
     </Setting>
   </Settings>
 </SettingsFile>

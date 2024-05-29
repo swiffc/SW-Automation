@@ -192,7 +192,7 @@ namespace FileTools.CommonData
             }
         }
 
-        static public double MotorFrameSize
+        static public int MotorFrameSize
         {
             get { return Default.MotorFrameSize; }
             set
@@ -215,6 +215,11 @@ namespace FileTools.CommonData
                 }
                 Default.FanShaft_Diameter = value;
             }
+        }
+        static public double MotorCenter_To_FanCenter
+        {
+            get { return Default.Motor_CenterToCenter; }
+            set { Default.Motor_CenterToCenter = value; }
         }
 
 
