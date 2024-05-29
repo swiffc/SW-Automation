@@ -37,7 +37,7 @@ namespace Plenum.Structure.Derived
             pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rY: -90));
             pos.Add(PositionData.Create(tX: -xTranslation, tY: yTranslation, tZ: -zTranslation, rY: 90));
 
-            if (BraceType.Contains("L"))
+            if (BraceType.Contains("L"))// cherry pick marker
             {
                 if (Mid_Columns)
                 {

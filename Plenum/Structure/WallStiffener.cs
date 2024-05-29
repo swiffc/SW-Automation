@@ -135,7 +135,7 @@ namespace Plenum.Structure
                 PositionData.Create(tX: -XTranslation_SidePanelBrace, tY: YTranslation_AllBraces, tZ: -zTranslation, rY: -90, rX: 180),
             };
             pos.AddRange(sideBraceStiffeners);
-            if (Mid_Columns && BraceType.Contains("L"))
+            if (Mid_Columns && BraceType.Contains("L"))// cherry pick marker
             {
                 for (int i = 0; i < Fan_Count - 1; i++)
                 {
