@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static FileTools.CommonData.CommonData;
+using static Tools.ModelTools;
 
 namespace MachineryMount.DriveWeldment.Children
 {
@@ -22,6 +23,7 @@ namespace MachineryMount.DriveWeldment.Children
         }
         static private double Angle => DriveFrame.Width > 36 ? 30 : 20;
         static public double THK => 0.25;
+        static public double Width => DriveFrame.Width - WeldClearance * 2;
 
 
         // Constructor
@@ -31,11 +33,12 @@ namespace MachineryMount.DriveWeldment.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Width", "sk:PRC", DriveFrame.Width);
+            EditDimension("Width", "sk:PRC", Width);
             EditDimension("Depth", "sk:PRC", FlangeDepth);
             EditDimension("Height", "PRC", DriveFrame.Height + MountingExtension);
             EditDimension("Angle", "sk:Flange", Angle);
-            EditDimension("StringerDepth", "sk:Flange", Stringer.Depth);
+            EditDimension("StringerDepth", "sk:Flange", Stringer.Depth + 
+                (TensioningAngle.JackScrew == TensioningAngle.Config.ShiftedInside ? TensioningAngle.Leg : 0));
         }
 
 

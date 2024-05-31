@@ -16,6 +16,7 @@ using static Tools.ModelTools;
 using static FileTools.Properties.Settings;
 using static FileTools.Base.MainAssembly;
 using static FileTools.Base.SW_Assembly;
+using System.ComponentModel;
 
 namespace FileTools
 {
@@ -518,6 +519,13 @@ namespace FileTools
             // Filter the list to remove any types that don't have the required property
             typesList.RemoveAll(type => !hasStaticPartNo(type));
 
+            // Sort types by priority
+            typesList = typesList.OrderByDescending(type =>
+            {
+                var priorityProperty = type.GetProperty("Priority", BindingFlags.Public | BindingFlags.Static);
+                return priorityProperty != null ? (int)priorityProperty.GetValue(null) : 0;
+            }).ToList();
+
             var componentsToBeAdded = new List<IComponentInfo2>();
 
             for (int i = 0; i < typesList.Count; i++)
@@ -665,21 +673,33 @@ namespace FileTools
                             && t.IsSubclassOf(typeof(Part)));
 
             List<Type> componentTypesList = componentTypes.ToList();
+
+            // Sort types by priority
+            componentTypesList = componentTypesList.OrderByDescending(type =>
+            {
+                var priorityProperty = type.GetProperty("Priority", BindingFlags.Public | BindingFlags.Static);
+                return priorityProperty != null ? (int)priorityProperty.GetValue(null) : 0;
+            }).ToList();
+
             for (int i = 0; i < componentTypesList.Count; i++)
             {
                 var type = componentTypesList[i];
-                // Attempt to find a constructor that takes a SubAssembly as a parameter
-                var constructor = type.GetConstructor(new Type[] { typeof(SubAssembly) });
-                if (constructor != null)
-                {
-                    // Instantiate the component
-                    var componentInstance = constructor.Invoke(new object[] { parentSubAssembly }) as IComponentInfo2;
-                    if (componentInstance != null)
-                    {
-                        if (componentInstance.Enabled)
-                            Debug.WriteLine($"   [{componentInstance.StaticPartNo}] {type.Name}.cs was reflected in ({parentSubAssembly.Config})");
 
-                        instantiatedComponents.Add(componentInstance);
+                if (!ClassesToIsolate.Any() || ClassesToIsolate.Contains(type))
+                {
+                    // Attempt to find a constructor that takes a SubAssembly as a parameter
+                    var constructor = type.GetConstructor(new Type[] { typeof(SubAssembly) });
+                    if (constructor != null)
+                    {
+                        // Instantiate the component
+                        var componentInstance = constructor.Invoke(new object[] { parentSubAssembly }) as IComponentInfo2;
+                        if (componentInstance != null)
+                        {
+                            if (componentInstance.Enabled)
+                                Debug.WriteLine($"   [{componentInstance.StaticPartNo}] {type.Name}.cs was reflected in ({parentSubAssembly.Config})");
+
+                            instantiatedComponents.Add(componentInstance);
+                        }
                     }
                 }
             }
@@ -746,8 +766,33 @@ namespace FileTools
         {
             ModelDoc2 modelDoc2 = assemblyDoc as ModelDoc2;
             modelDoc2.ForceRebuild3(false);
-            modelDoc2.ShowNamedView2("*Isometric", -1);
-            modelDoc2.ViewZoomtofit2();
+            if (Developer)
+            {
+                Debug.WriteLine(@"
+DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN        NNNNNNNN EEEEEEEEEEEEEEEEEEEEEE
+D::::::::::::DDD         OO:::::::::OO    N:::::::N       N::::::N E::::::::::::::::::::E
+D:::::::::::::::DD     OO:::::::::::::OO  N::::::::N      N::::::N E::::::::::::::::::::E
+DDD:::::DDDDD:::::D   O:::::::OOO:::::::O N:::::::::N     N::::::N EE::::::EEEEEEEEE::::E
+  D:::::D    D:::::D  O::::::O   O::::::O N::::::::::N    N::::::N   E:::::E       EEEEEE
+  D:::::D     D:::::D O:::::O     O:::::O N:::::::::::N   N::::::N   E:::::E             
+  D:::::D     D:::::D O:::::O     O:::::O N:::::::N::::N  N::::::N   E::::::EEEEEEEEEE   
+  D:::::D     D:::::D O:::::O     O:::::O N::::::N N::::N N::::::N   E:::::::::::::::E   
+  D:::::D     D:::::D O:::::O     O:::::O N::::::N  N::::N:::::::N   E:::::::::::::::E   
+  D:::::D     D:::::D O:::::O     O:::::O N::::::N   N:::::::::::N   E::::::EEEEEEEEEE   
+  D:::::D     D:::::D O:::::O     O:::::O N::::::N    N::::::::::N   E:::::E             
+  D:::::D    D:::::D  O::::::O   O::::::O N::::::N     N:::::::::N   E:::::E       EEEEEE
+DDD:::::DDDDD:::::D   O:::::::OOO:::::::O N::::::N      N::::::::N EE::::::EEEEEEEE:::::E
+D:::::::::::::::DD     OO:::::::::::::OO  N::::::N       N:::::::N E::::::::::::::::::::E
+D::::::::::::DDD         OO:::::::::OO    N::::::N        N::::::N E::::::::::::::::::::E
+DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEEEEEEEEEEE
+                ");
+            }
+            else
+            {
+                modelDoc2.ShowNamedView2("*Isometric", -1);
+                modelDoc2.ViewZoomtofit2();
+                System.Windows.Forms.MessageBox.Show("Automation tool has finished executing", "Automation Guy", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
         }
 
 
@@ -1308,5 +1353,7 @@ namespace FileTools
         public static string AssemblyPath => $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
         public static List<string> AssignedComponentPaths = new List<string>();
         public static Type LastType { get; set; }
+        public static bool Developer => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") ? true : false;
+
     }
 }

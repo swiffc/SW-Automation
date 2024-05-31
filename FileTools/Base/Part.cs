@@ -46,8 +46,13 @@ namespace FileTools.Base
 
 
         // Protected methods
-        protected bool EditDimension(string dimensionName, string treeName, double newValue)
+        protected bool EditDimension(string dimensionName, string treeName, double? newValue)
         {
+            if (!newValue.HasValue)
+            {
+                throw new ArgumentNullException(nameof(newValue));
+            }
+
             bool editSuccessful = false;
             string equationName = $"{dimensionName}@{treeName}";
             Dimension dimension = null;
@@ -57,7 +62,7 @@ namespace FileTools.Base
 
                 if (dimension != null)
                 {
-                    int message = dimension.SetValue3(newValue, (int)swSetValueInConfiguration_e.swSetValue_UseCurrentSetting, null);
+                    int message = dimension.SetValue3(newValue.Value, (int)swSetValueInConfiguration_e.swSetValue_UseCurrentSetting, null);
 
                     if (message == (int)swSetValueReturnStatus_e.swSetValue_Successful)
                         editSuccessful = true;
@@ -130,9 +135,10 @@ namespace FileTools.Base
             else return false;
 
         }
-        protected void EditFeature_StructuralMemberSize(string newSize, out double flangeWidth)
+        protected void EditFeature_StructuralMemberSize(string newSize, out double flangeWidth, out double webTHK)
         {
             flangeWidth = 0;
+            webTHK = 0;
             IStructuralMemberFeatureData member = null;
 
             // Iterate through features to find the first structural member
@@ -157,30 +163,42 @@ namespace FileTools.Base
                     bool definitionModified = feature.ModifyDefinition(member, ModelDoc2, null);
                     //ModelDoc2.Visible = false;
 
-                    // Find sketch
-                    double number = 0;
-                    string sketchName;
-                    bool isSelected = false;
-
-
-                    while (!isSelected)
-                    {
-                        number++;
-                        sketchName = "Sketch" + number;
-                        string fileName = Path.GetFileName(ModelDoc2.GetPathName());
-                        string dimensionName = $"BF@{sketchName}@{fileName}";
-                        isSelected = ModelDoc2.Extension.SelectByID2(dimensionName, "DIMENSION", 0, 0, 0, false, 0, null, 0);
-
-                        ISelectionMgr swSelMgr = (ISelectionMgr)ModelDoc2.SelectionManager;
-                        IDimension swDimension = (IDimension)swSelMgr.GetSelectedObject6(1, -1);
-                        flangeWidth = swDimension.GetValue3((int)swInConfigurationOpts_e.swThisConfiguration, null);
-
-                        bool check = ModelDoc2.Extension.SelectByID2(sketchName, "SKETCH", 0, 0, 0, false, 0, null, 0);
-                    }
-
-                    ModelDoc2.BlankSketch();
 
                 }
+
+                // Find sketch
+                double number = 0;
+                string sketchName;
+                ISelectionMgr swSelMgr = (ISelectionMgr)ModelDoc2.SelectionManager;
+                IDimension flangeDimension = null;
+                IDimension webDimension = null;
+
+                while (flangeDimension == null)
+                {
+                    number++;
+                    sketchName = "Sketch" + number;
+                    string fileName = Path.GetFileName(ModelDoc2.GetPathName());
+                    string flangeDimensionName = $"BF@{sketchName}@{fileName}";
+                    flangeDimension = ModelDoc2.Parameter(flangeDimensionName) as IDimension;
+
+                    if (flangeDimension != null)
+                    {
+                        flangeWidth = flangeDimension.GetValue3((int)swInConfigurationOpts_e.swThisConfiguration, null)[0];
+                    }
+
+                    string webDimensionName = $"TW@{sketchName}@{fileName}";
+                    webDimension = ModelDoc2.Parameter(webDimensionName) as IDimension;
+
+                    if (webDimension != null)
+                    {
+                        webTHK = webDimension.GetValue3((int)swInConfigurationOpts_e.swThisConfiguration, null)[0];
+                    }
+
+                }
+
+                ModelDoc2.BlankSketch();
+
+
             }
 
             if (flangeWidth == 0)
@@ -292,7 +310,7 @@ namespace FileTools.Base
                                 {
                                     _partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly);
                                 }
-                                
+
                             }
                         }
 

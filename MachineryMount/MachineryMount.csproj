@@ -55,7 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DriveWeldment\Children\CrossStiffenerC.cs" />
+    <Compile Include="DriveWeldment\Children\Derived\DiagonalBraceLong.cs" />
+    <Compile Include="DriveWeldment\Children\Derived\DiagonalBraceShort.cs" />
+    <Compile Include="DriveWeldment\Children\DiagonalBrace.cs" />
+    <Compile Include="DriveWeldment\Children\GuardPlate.cs" />
     <Compile Include="DriveWeldment\Children\HangerStiffener.cs" />
+    <Compile Include="DriveWeldment\Children\TensioningAngle.cs" />
     <Compile Include="DriveWeldment\Children\TowerGusset.cs" />
     <Compile Include="DriveWeldment\Children\TowerSideC.cs" />
     <Compile Include="DriveWeldment\Children\TowerTopC.cs" />
@@ -75,7 +80,9 @@
       <DependentUpon>MachineryMountUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Mechanicals\Motor.cs" />
+    <Compile Include="MotorMount\Children\MotorMountGusset.cs" />
     <Compile Include="MotorMount\Children\MotorMountPart.cs" />
+    <Compile Include="MotorMount\Children\MotorMountStiffener.cs" />
     <Compile Include="MotorMount\MotorMountWeldment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

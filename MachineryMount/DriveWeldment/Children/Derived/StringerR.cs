@@ -6,6 +6,10 @@ namespace MachineryMount.DriveWeldment.Children.Derived
 {
     internal class StringerR : Stringer
     {
+        // Static properties
+        new static public int Priority => Stringer.Priority;
+
+
         // Constructor
         public StringerR(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 

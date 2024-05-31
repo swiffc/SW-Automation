@@ -1,4 +1,6 @@
 ﻿using FileTools.Base;
+using MachineryMount.Mechanicals;
+using MachineryMount.MotorMount.Children;
 using ModelTools;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,12 @@ namespace MachineryMount.DriveWeldment.Children
 {
     internal class CrossStiffenerC : Part
     {
+        // Static properties
+        static public double X_Translation => MotorMountPart.DriveCenterToBackingExterior + MotorMountPart.BeltTensioningAdjustment;
+        public static double FlangeWidth = Stringer.FlangeWidth;
+        public static double WebTHK = Stringer.WebTHK;
+
+
         // Constructor
         public CrossStiffenerC(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 
@@ -38,7 +46,8 @@ namespace MachineryMount.DriveWeldment.Children
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tX: DriveFrame.Width/2)
+                    PositionData.Create(tX: DriveFrame.Width/2),
+                    PositionData.Create(tX: -X_Translation, rY: 180)
                 };
             }
         }

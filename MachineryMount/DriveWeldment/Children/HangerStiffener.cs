@@ -19,7 +19,7 @@ namespace MachineryMount.DriveWeldment.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Plate", DriveFrame.Width - HangerPRC.THK * 2 - WeldClearance * 2);
+            EditDimension("Length", "sk:Plate", HangerPRC.Width - HangerPRC.THK * 2 - WeldClearance * 2);
         }
 
 

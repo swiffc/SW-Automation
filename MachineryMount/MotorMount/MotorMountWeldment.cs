@@ -27,7 +27,7 @@ namespace MachineryMount.MotorMount
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tX: -MachineryMount.CenterToCenter, tY: Stringer.Depth, rY: -90)
+                    PositionData.Create(tX: -MachineryMount.CenterToCenter, tY: Stringer.Depth)
                 };
             }
         }

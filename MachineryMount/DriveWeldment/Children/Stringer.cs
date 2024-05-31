@@ -13,12 +13,44 @@ namespace MachineryMount.DriveWeldment.Children
     internal abstract class Stringer : Part
     {
         // Static properties
+        static public int Priority => 1;
         public static string Size
         {
             get { return Stringer_Size; }
             set { Stringer_Size = value; }
         }
         public static double Depth => Stringer_Depth;
+        public static double FlangeWidth
+        {
+            get
+            {
+                if (!_flangeWidth.HasValue)
+                {
+                    throw new InvalidOperationException("FlangeWidth has not been set.");
+                }
+                return _flangeWidth.Value;
+            }
+            internal set
+            {
+                _flangeWidth = value;
+            }
+        }
+        public static double WebTHK
+        {
+            get
+            {
+                if (!_webTHK.HasValue)
+                {
+                    throw new InvalidOperationException("WebTHK has not been set.");
+                }
+                return _webTHK.Value;
+            }
+            internal set
+            {
+                _webTHK = value;
+            }
+        }
+        static public double Length => Plenum_Width; // temp
 
 
         // Constructor
@@ -32,7 +64,9 @@ namespace MachineryMount.DriveWeldment.Children
         }
         protected override void Features()
         {
-            EditFeature_StructuralMemberSize(Size, out double flangeWidth);
+            EditFeature_StructuralMemberSize(Size, out double flangeWidth, out double webTHK);
+            FlangeWidth = flangeWidth;
+            WebTHK = webTHK;
         }
 
 
@@ -40,5 +74,10 @@ namespace MachineryMount.DriveWeldment.Children
         public override bool Enabled => true;
         public override Shape RawMaterialShape => Shape.Channel;
         public override string SizeOrThickness => Size;
+
+
+        // Backing fields
+        internal static double? _flangeWidth;
+        internal static double? _webTHK;
     }
 }

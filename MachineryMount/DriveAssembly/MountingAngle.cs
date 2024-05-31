@@ -22,7 +22,7 @@ namespace MachineryMount.DriveAssembly
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Path", DriveFrame.Width - HangerPRC.THK * 2 - GetBendRadius(HangerPRC.THK) * 2);
+            EditDimension("Length", "sk:Path", HangerPRC.Width - HangerPRC.THK * 2 - GetBendRadius(HangerPRC.THK) * 2);
         }
 
 

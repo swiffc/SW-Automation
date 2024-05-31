@@ -1,7 +1,10 @@
 ﻿using FileTools.Base;
 using MachineryMount;
+using MachineryMount.DriveWeldment;
 using MachineryMount.DriveWeldment.Children;
 using MachineryMount.DriveWeldment.Children.Derived;
+using MachineryMount.MotorMount;
+using MachineryMount.MotorMount.Children;
 using System;
 using System.Windows.Forms;
 using static FileTools.CommonData.CommonData;
@@ -21,9 +24,13 @@ namespace MachineryMount
 
         // Constructor
         public MachineryMount(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
-            ,typeof(Stringer)
+            //, typeof(DriveFrame)
+            //, typeof(DiagonalBraceLong)
+            //, typeof(StringerL)
             )
-        { }
+        {
+            Stringer._flangeWidth = null;
+        }
 
 
         // Debugging

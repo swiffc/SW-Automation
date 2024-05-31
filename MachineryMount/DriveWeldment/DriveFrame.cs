@@ -8,6 +8,7 @@ namespace MachineryMount.DriveWeldment
     internal class DriveFrame : SubAssembly
     {
         // Static properties
+        static public int Priority => 1;
         public static double Width
         {
             get { return MachineryMount_Width; }
