@@ -53,14 +53,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button_ImportConfigFile = new System.Windows.Forms.Button();
             this.button_ExportConfigFile = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PreviousSheet
             // 
             this.PreviousSheet.BackColor = System.Drawing.SystemColors.Control;
             this.PreviousSheet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PreviousSheet.Location = new System.Drawing.Point(16, 74);
+            this.PreviousSheet.Location = new System.Drawing.Point(6, 16);
             this.PreviousSheet.Name = "PreviousSheet";
             this.PreviousSheet.Size = new System.Drawing.Size(97, 23);
             this.PreviousSheet.TabIndex = 0;
@@ -72,7 +74,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(16, 103);
+            this.button2.Location = new System.Drawing.Point(6, 45);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 23);
             this.button2.TabIndex = 1;
@@ -84,7 +86,7 @@
             // 
             this.PosScale.BackColor = System.Drawing.SystemColors.Control;
             this.PosScale.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PosScale.Location = new System.Drawing.Point(16, 173);
+            this.PosScale.Location = new System.Drawing.Point(6, 115);
             this.PosScale.Name = "PosScale";
             this.PosScale.Size = new System.Drawing.Size(97, 23);
             this.PosScale.TabIndex = 2;
@@ -96,7 +98,7 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Control;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(16, 144);
+            this.button4.Location = new System.Drawing.Point(6, 86);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 23);
             this.button4.TabIndex = 3;
@@ -108,7 +110,7 @@
             // 
             this.button5.BackColor = System.Drawing.SystemColors.Control;
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(16, 202);
+            this.button5.Location = new System.Drawing.Point(6, 144);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(97, 23);
             this.button5.TabIndex = 4;
@@ -120,7 +122,7 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.Control;
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(16, 231);
+            this.button6.Location = new System.Drawing.Point(6, 173);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(97, 23);
             this.button6.TabIndex = 5;
@@ -132,7 +134,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.Control;
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(119, 157);
+            this.button7.Location = new System.Drawing.Point(109, 99);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(97, 23);
             this.button7.TabIndex = 6;
@@ -144,7 +146,7 @@
             // 
             this.button8.BackColor = System.Drawing.SystemColors.Control;
             this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(119, 213);
+            this.button8.Location = new System.Drawing.Point(109, 155);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(97, 23);
             this.button8.TabIndex = 7;
@@ -154,7 +156,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(16, 385);
+            this.button9.Location = new System.Drawing.Point(6, 327);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(200, 23);
             this.button9.TabIndex = 10;
@@ -165,7 +167,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(16, 575);
+            this.button10.Location = new System.Drawing.Point(6, 517);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(200, 53);
             this.button10.TabIndex = 11;
@@ -177,7 +179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(13, 58);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 12;
@@ -187,7 +189,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(13, 369);
+            this.label2.Location = new System.Drawing.Point(3, 311);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 13;
@@ -197,7 +199,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(13, 559);
+            this.label3.Location = new System.Drawing.Point(3, 501);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 14;
@@ -218,7 +220,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 272);
+            this.button1.Location = new System.Drawing.Point(6, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 26);
             this.button1.TabIndex = 16;
@@ -228,7 +230,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(16, 304);
+            this.button3.Location = new System.Drawing.Point(6, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 23);
             this.button3.TabIndex = 17;
@@ -239,7 +241,7 @@
             // btn_HoodUI
             // 
             this.btn_HoodUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HoodUI.Location = new System.Drawing.Point(16, 634);
+            this.btn_HoodUI.Location = new System.Drawing.Point(6, 576);
             this.btn_HoodUI.Name = "btn_HoodUI";
             this.btn_HoodUI.Size = new System.Drawing.Size(200, 53);
             this.btn_HoodUI.TabIndex = 18;
@@ -250,7 +252,7 @@
             // plenum_button
             // 
             this.plenum_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plenum_button.Location = new System.Drawing.Point(16, 693);
+            this.plenum_button.Location = new System.Drawing.Point(6, 635);
             this.plenum_button.Name = "plenum_button";
             this.plenum_button.Size = new System.Drawing.Size(200, 53);
             this.plenum_button.TabIndex = 19;
@@ -261,7 +263,7 @@
             // launch25
             // 
             this.launch25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.launch25.Location = new System.Drawing.Point(16, 752);
+            this.launch25.Location = new System.Drawing.Point(6, 694);
             this.launch25.Name = "launch25";
             this.launch25.Size = new System.Drawing.Size(200, 53);
             this.launch25.TabIndex = 20;
@@ -273,7 +275,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(13, 447);
+            this.label4.Location = new System.Drawing.Point(3, 389);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 22;
@@ -281,7 +283,7 @@
             // 
             // button_ImportConfigFile
             // 
-            this.button_ImportConfigFile.Location = new System.Drawing.Point(16, 463);
+            this.button_ImportConfigFile.Location = new System.Drawing.Point(6, 405);
             this.button_ImportConfigFile.Name = "button_ImportConfigFile";
             this.button_ImportConfigFile.Size = new System.Drawing.Size(200, 23);
             this.button_ImportConfigFile.TabIndex = 21;
@@ -291,7 +293,7 @@
             // 
             // button_ExportConfigFile
             // 
-            this.button_ExportConfigFile.Location = new System.Drawing.Point(16, 492);
+            this.button_ExportConfigFile.Location = new System.Drawing.Point(6, 434);
             this.button_ExportConfigFile.Name = "button_ExportConfigFile";
             this.button_ExportConfigFile.Size = new System.Drawing.Size(200, 23);
             this.button_ExportConfigFile.TabIndex = 23;
@@ -299,39 +301,49 @@
             this.button_ExportConfigFile.UseVisualStyleBackColor = true;
             this.button_ExportConfigFile.Click += new System.EventHandler(this.button_ExportConfigFile_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button_ExportConfigFile);
+            this.panel1.Controls.Add(this.PreviousSheet);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button_ImportConfigFile);
+            this.panel1.Controls.Add(this.PosScale);
+            this.panel1.Controls.Add(this.launch25);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.plenum_button);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btn_HoodUI);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.button10);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(16, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(232, 576);
+            this.panel1.TabIndex = 24;
+            // 
             // TaskpaneHostUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.Controls.Add(this.button_ExportConfigFile);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button_ImportConfigFile);
-            this.Controls.Add(this.launch25);
-            this.Controls.Add(this.plenum_button);
-            this.Controls.Add(this.btn_HoodUI);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.PosScale);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.PreviousSheet);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaskpaneHostUI";
-            this.Size = new System.Drawing.Size(234, 833);
+            this.Size = new System.Drawing.Size(270, 652);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -360,5 +372,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_ImportConfigFile;
         private System.Windows.Forms.Button button_ExportConfigFile;
+        private System.Windows.Forms.Panel panel1;
     }
 }
