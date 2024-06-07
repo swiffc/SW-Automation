@@ -10,6 +10,7 @@ using static ModelTools.ReleaseCOM;
 using static FileTools.CommonData.CommonData;
 using FileTools.CommonData;
 using System.IO;
+using System.Reflection;
 
 namespace FileTools.Base
 {
@@ -38,6 +39,10 @@ namespace FileTools.Base
         // Private methods
         private void InitializePart()
         {
+            var load = PartNo;
+            if (_partNoCalculated == false)
+                Debug.WriteLine($"   [{StaticPartNo}] {LastType.Name}.cs was reflected in ({_parentAssembly.Config})" + "\n");
+
             ModelDoc2 = OpenSilent(this);
             Dimensions();
             Features();
@@ -168,7 +173,7 @@ namespace FileTools.Base
 
                 // Find sketch
                 double number = 0;
-                string sketchName;
+                string sketchName = null;
                 ISelectionMgr swSelMgr = (ISelectionMgr)ModelDoc2.SelectionManager;
                 IDimension flangeDimension = null;
                 IDimension webDimension = null;
@@ -196,6 +201,7 @@ namespace FileTools.Base
 
                 }
 
+                bool isSelected = ModelDoc2.Extension.SelectByID2(sketchName, "SKETCH", 0, 0, 0, false, 0, null, 0);
                 ModelDoc2.BlankSketch();
 
 
@@ -286,7 +292,7 @@ namespace FileTools.Base
 
 
         // Public properties
-        public string PartNo
+        public virtual string PartNo
         {
             get
             {
@@ -294,8 +300,6 @@ namespace FileTools.Base
                 {
                     if (Enabled)
                     {
-
-
                         _partNo = GetPartNoFromAssembly(StaticPartNo, _parentAssembly);
                         if (_partNo == null)
                         {
@@ -320,7 +324,7 @@ namespace FileTools.Base
                 return _partNo;
             }
         }
-        public string FilePath
+        public virtual string FilePath
         {
             get
             {
@@ -336,13 +340,15 @@ namespace FileTools.Base
         // Public Enums
         public enum Shape
         {
+            None,
             Plate,
             Beam,
             Angle,
             Channel,
             Tee,
             Pipe,
-            BarStock
+            BarStock,
+            ExpandedMetal
         }
         public enum Spec
         {

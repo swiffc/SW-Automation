@@ -239,5 +239,8 @@
     <Setting Name="Motor_CenterToCenter" Type="System.Double" Scope="User">
       <Value Profile="(Default)">30</Value>
     </Setting>
+    <Setting Name="Vibration_Sensor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Murphy VS-2-EX</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

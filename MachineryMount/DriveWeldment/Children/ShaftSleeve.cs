@@ -22,7 +22,7 @@ namespace MachineryMount.DriveWeldment.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "Pipe", DriveFrame.TowerHeight - Stringer.Depth - TowerTopC.WebTHK);
+            EditDimension("Length", "Pipe", DriveFrame.TowerHeight - Stringer.Depth - TowerSideC.WebTHK);
         }
 
 

@@ -15,7 +15,7 @@ namespace Plenum
             Default.Beams_AreRotated = true;
             JohnsonBeamWld.Enabled = true;
             JohnsonSidePanel.Enabled = true;
-            PlenumDesign = Design.Johnson;
+            Plenum_Design = Design.Johnson;
 
             InitializePlenum(Design.Johnson);
 
@@ -23,7 +23,7 @@ namespace Plenum
         }
         public Johnson(Design callerType)
         {
-            PlenumDesign = callerType;
+            Plenum_Design = callerType;
             UpdateFloor(callerType);
         }
     }

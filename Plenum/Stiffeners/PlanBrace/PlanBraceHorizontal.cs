@@ -52,7 +52,7 @@ namespace Plenum.Stiffeners
                 if (Enabled)
                 {
                     double xTranslation = 0;
-                    switch (PlenumDesign)
+                    switch (Plenum_Design)
                     {
                         case Design.Standard:
                             xTranslation = Plenum_Width / 2;
@@ -86,7 +86,7 @@ namespace Plenum.Stiffeners
         {
             get
             {
-                double length = Plenum_Length + (PlenumDesign == Design.Johnson ? Default.Johnson_ExtraLength : 0) * 2;
+                double length = Plenum_Length + (Plenum_Design == Design.Johnson ? Default.Johnson_ExtraLength : 0) * 2;
                 return length / Fan_Count / 3;
             }
         }

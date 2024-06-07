@@ -1,5 +1,5 @@
 ﻿using FileTools.Base;
-using MachineryMount.Mechanicals;
+using MachineryMount.DriveAssembly;
 using MachineryMount.MotorMount.Children;
 using ModelTools;
 using System;
@@ -94,6 +94,17 @@ namespace MachineryMount.DriveWeldment.Children
         protected override void Dimensions()
         {
             EditDimension("Length", "sk:Path", Length);
+        }
+        protected override void Features()
+        {
+            if (JackScrew == Config.Outside || JackScrew == Config.ShiftedOutside)
+            {
+                UnsuppressFeatures("RoundCorners");
+            }
+            else
+            {
+                SuppressFeatures("RoundCorners");
+            }
         }
 
 

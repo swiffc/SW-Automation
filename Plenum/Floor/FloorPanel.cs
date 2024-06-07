@@ -46,13 +46,13 @@ namespace Plenum.Floor
         {
             var value = Plenum_Width / 2 - bTools.GetBendRadius(SidePanel_THK) - mTools.AssemblyClearance / 2;
 
-            if (PlenumDesign == Design.Standard)
+            if (Plenum_Design == Design.Standard)
                 value -= SidePanel_THK;
 
-            else if (PlenumDesign == Design.Johnson)
+            else if (Plenum_Design == Design.Johnson)
                 value += Beam_Depth / 2;
 
-            else if (PlenumDesign == Design.Legacy)
+            else if (Plenum_Design == Design.Legacy)
                 value += Beam_Depth / 2 - Beam_FlangeTHK - SidePanel_THK;
 
             return value;
@@ -251,9 +251,9 @@ namespace Plenum.Floor
             SpliceRequired = false;
             ExtensionRequired = false;
 
-            double check = _fanDiameterFeet;
+            double check = FanDiameter_Feet;
 
-            if (_fanDiameterFeet > 6 && Plenum_Width / 2 - FanRing.Radius < 12)
+            if (FanDiameter_Feet > 6 && Plenum_Width / 2 - FanRing.Radius < 12)
             {
                 SpliceRequired = true;
                 panelLength -= FloorSplice.NominalLength / 2;

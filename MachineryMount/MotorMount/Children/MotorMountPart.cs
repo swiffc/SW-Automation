@@ -1,7 +1,7 @@
 ﻿using FileTools.Base;
 using MachineryMount.DriveWeldment;
 using MachineryMount.DriveWeldment.Children;
-using MachineryMount.Mechanicals;
+using MachineryMount.DriveAssembly;
 using ModelTools;
 using System;
 using System.Collections.Generic;
@@ -16,10 +16,11 @@ namespace MachineryMount.MotorMount.Children
     {
         // Static properties
         static public double Base => Motor.Dim.O + 4.625;
-        static public double Back => Motor.Dim.C - Motor.Dim.BA - Motor.Dim.NW + Motor.Y_Location;
+        static public double Back => Motor.Dim.C - Motor.Dim.BA - Motor.Dim.NW + MotorRise;
         static public double THK => 0.25;
         static public double BeltTensioningAdjustment => 1.5;
         static public double DriveCenterToBackingExterior => MachineryMount.CenterToCenter + Motor.Dim.D + THK;
+        static public double SlotInset => 1.5;
 
 
         // Constructor
@@ -33,6 +34,14 @@ namespace MachineryMount.MotorMount.Children
             EditDimension("Back", "sk:Plate", Back);
             EditDimension("D", "sk:Plate", Motor.Dim.D);
             EditDimension("Width", "Plate", DriveFrame.Width + Stringer.FlangeWidth * 2);
+
+            EditDimension("D", "sk:MotorCope", Motor.Dim.D);
+            EditDimension("O", "sk:MotorCope", Motor.Dim.O);
+
+            EditDimension("H", "sk:MotorHoles", Motor.Dim.H);
+            EditDimension("F", "sk:MotorHoles", Motor.Dim.F);
+            EditDimension("E", "sk:MotorHoles", Motor.Dim.E);
+            EditDimension("Rise", "sk:MotorHoles", MotorRise);
         }
 
 

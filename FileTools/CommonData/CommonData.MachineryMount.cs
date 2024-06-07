@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using static Tools.ModelTools;
 using static FileTools.Properties.Settings;
 using ModelTools;
-using static ModelTools.MotorFrame;
 
 namespace FileTools.CommonData
 {
@@ -221,6 +220,31 @@ namespace FileTools.CommonData
             get { return Default.Motor_CenterToCenter; }
             set { Default.Motor_CenterToCenter = value; }
         }
+        private static double _defaultMotorRise = 1.5;
+        public static double MotorRise
+        {
+            get
+            {
+                double Y_Location = _defaultMotorRise;
+                var motor = MotorFrame[MotorFrameSize];
+
+                double motorSpanInsideStringers = motor.BA + motor.NW - Y_Location;
+
+                if (motorSpanInsideStringers > Stringer_Depth - MinimumShaftDistanceToDriveBottom)
+                {
+                    Y_Location += motorSpanInsideStringers - (Stringer_Depth - MinimumShaftDistanceToDriveBottom);
+                }
+
+                return Y_Location;
+            }
+        }
+        public static double MinimumShaftDistanceToDriveBottom => 1.5;
+        public static string Vibration_Sensor
+        {
+            get { return Default.Vibration_Sensor; }
+            set { Default.Vibration_Sensor = value; }
+        }
+
 
 
         // User interface overrides
@@ -326,13 +350,15 @@ namespace FileTools.CommonData
         }
         private static double SetDefault_MachineryMountHeight()
         {
-            var motor = Motor[MotorFrameSize];
+            var motor = MotorFrame[MotorFrameSize];
             double height = motor.C - motor.NW - motor.BA + 6 + FanRing_Depth + Stringer_Depth;
 
             if (height - FanRing_Depth < 22)
                 height = FanRing_Depth + 22;
 
             height = Math.Ceiling(height / 0.125) * 0.125;
+
+            height += MotorRise - _defaultMotorRise;
 
             return height;
         }
@@ -373,6 +399,25 @@ namespace FileTools.CommonData
             { 2.4375,   (   0.070,          0.086,        0.625      ) },
             { 2.9375,   (   0.080,          0.103,        0.750      ) },
         };
+        public static Dictionary<double, (double O, double D, double BA, double C, double NW, double E, double F, double U, double AB, double H)> MotorFrame =
+            new Dictionary<double, (double O, double D, double BA, double C, double NW, double E, double F, double U, double AB, double H)>
+            {
+            //    Size       O,          D,          BA,         C,         NW,         E,           F,         U,           AB         H
+                { 182,      (8.8750,     4.5000,     2.7500,     14.8125,   2.7500,     3.7500,      4.5000,    1.1250,      7.3750,    0.4375) },
+                { 184,      (8.8750,     4.5000,     2.7500,     16.2500,   2.7500,     3.7500,      5.5000,    1.1250,      7.3750,    0.4375) },
+                { 213,      (10.6250,    5.2500,     5.2500,     20.3125,   3.3750,     4.2500,      5.5000,    1.3750,      9.0625,    0.4375) },
+                { 215,      (10.6250,    5.2500,     5.2500,     20.3125,   3.3750,     4.2500,      7.0000,    1.3750,      9.0625,    0.4375) },
+                { 254,      (12.6250,    6.2500,     4.2500,     25.8125,   4.0000,     5.0000,      8.2500,    1.6250,      9.9375,    0.5625) },
+                { 256,      (12.6250,    6.2500,     4.2500,     25.8125,   4.0000,     5.0000,     10.0000,    1.6250,      9.9375,    0.5625) },
+                { 284,      (14.1875,    7.0000,     4.7500,     29.4375,   4.6250,     5.5000,      9.5000,    1.8750,     13.4375,    0.5625) },
+                { 286,      (14.1817,    7.0000,     4.7500,     29.4375,   4.6250,     5.5000,     11.0000,    1.8750,     13.4375,    0.5625) },
+                { 324,      (15.9375,    8.0000,     5.2500,     32.1250,   5.2500,     6.2500,     10.5000,    2.1250,     15.7500,    0.6875) },
+                { 326,      (15.9375,    8.0000,     5.2500,     32.1250,   5.2500,     6.2500,     12.0000,    2.1250,     15.7500,    0.6875) },
+                { 364,      (17.8125,    9.0000,     5.8750,     35.6250,   5.8750,     7.0000,     11.2500,    2.3750,     17.6875,    0.6875) },
+                { 365,      (17.8125,    9.0000,     5.8750,     35.6250,   5.8750,     7.0000,     12.2500,    2.3750,     17.6875,    0.6875) },
+                { 404,      (19.9375,   10.0000,     6.2500,     39.5000,   7.2500,     8.0000,     12.2500,    2.8750,     17.5000,    0.8125) },
+                { 405,      (19.9375,   10.0000,     6.2500,     39.5000,   7.2500,     8.0000,     13.7500,    2.8750,     17.5000,    0.8125) },
+            };
 
     }
 }

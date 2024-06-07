@@ -20,11 +20,11 @@ namespace Plenum.Structure
         {
             get
             {
-                if (PlenumDesign == Design.Standard)
+                if (Plenum_Design == Design.Standard)
                 {
                     return EndPanel_THK + Beam_Depth / 2 + Clip_THK / 2;
                 }
-                else if (PlenumDesign == Design.Legacy)
+                else if (Plenum_Design == Design.Legacy)
                 {
                     return Beam_Depth / 2 - Beam_FlangeTHK + Clip_THK / 2;
                 }
@@ -40,7 +40,7 @@ namespace Plenum.Structure
             get
             {
                 return BraceType.Contains("L") ||
-                    (BraceType.Contains("T") && PlenumDesign != Design.Standard) ? true : false;
+                    (BraceType.Contains("T") && Plenum_Design != Design.Standard) ? true : false;
             }
         }
 
@@ -84,7 +84,7 @@ namespace Plenum.Structure
         // Private methods
         private static double FlangeModifier()
         {
-            double panelTHK = PlenumDesign == Design.Standard ? EndPanel_THK : SidePanel_THK;
+            double panelTHK = Plenum_Design == Design.Standard ? EndPanel_THK : SidePanel_THK;
 
             switch (panelTHK)
             {

@@ -1,4 +1,5 @@
-﻿using EPDM.Interop.epdm;
+﻿using AXC_Vault;
+using EPDM.Interop.epdm;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swpublished;
 using System;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FileTools.StaticFileTools;
 
 namespace SolidWorks_Add_In
 {
@@ -74,8 +76,7 @@ namespace SolidWorks_Add_In
             var ok = mSolidWorksApplication.SetAddinCallbackInfo2(0, this, mSwCookie);
 
             // Version control
-            string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-            if (!desktopPath.Contains("acmurr"))
+            if (!Developer)
                 CheckVersions();
 
             // Create our UI
@@ -90,28 +91,16 @@ namespace SolidWorks_Add_In
             string updater = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInUpdater.exe";
             string versionControl = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInDllVersionControl.exe";
 
-            // Login
-            EdmVault5 vault = new EdmVault5();
-            try
-            {
-                vault.LoginAuto("AXC_VAULT", 0);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to connect to the vault: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             // Update updater
-            IEdmFile5 updaterFile = vault.GetFileFromPath(updater, out _);
+            IEdmFile5 updaterFile = Vault.Vault5.GetFileFromPath(updater, out _);
             updaterFile.GetFileCopy(0);
 
             // Update version control
-            IEdmFile5 versionControlFile = vault.GetFileFromPath(versionControl, out _);
+            IEdmFile5 versionControlFile = AXC_Vault.Vault.Vault5.GetFileFromPath(versionControl, out _);
             versionControlFile.GetFileCopy(0);
 
             // Check DLL version
-            IEdmFile5 addinFile = vault.GetFileFromPath(dLL, out IEdmFolder5 dllFolder);
+            IEdmFile5 addinFile = AXC_Vault.Vault.Vault5.GetFileFromPath(dLL, out IEdmFolder5 dllFolder);
             IEdmFile12 addinFile12 = addinFile as IEdmFile12;
 
             bool localVersionObsolete;

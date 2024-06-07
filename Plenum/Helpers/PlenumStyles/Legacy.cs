@@ -12,7 +12,7 @@ namespace Plenum
         {
             Default.Beams_AreRotated = true;
             FlatSeal.Enabled = true;
-            PlenumDesign = Design.Legacy;
+            Plenum_Design = Design.Legacy;
 
             InitializePlenum(Design.Legacy);
 
@@ -20,7 +20,7 @@ namespace Plenum
         }
         public Legacy(Design callerType)
         {
-            PlenumDesign = callerType;
+            Plenum_Design = callerType;
             UpdateFloor(callerType);
         }
     }

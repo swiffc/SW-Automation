@@ -1,5 +1,5 @@
 ﻿using FileTools.Base;
-using MachineryMount.Mechanicals;
+using MachineryMount.DriveAssembly;
 using MachineryMount.MotorMount.Children;
 using ModelTools;
 using System.Collections.Generic;
@@ -22,6 +22,9 @@ namespace MachineryMount.DriveWeldment.Children
         {
             EditDimension("DriveWidth", "sk:Plate", DriveFrame.Width);
             EditDimension("ToMotorMount", "sk:Plate", MachineryMount.CenterToCenter + Motor.Dim.D - MotorMountPart.Base + MotorMountPart.BeltTensioningAdjustment);
+
+            EditDimension("Diameter", "sk:BearingHoles", Bearing.Bottom.HoleDiameter);
+            EditDimension("Spacing", "sk:BearingHoles", Bearing.Bottom.HoleToHoleSpacing);
         }
 
 

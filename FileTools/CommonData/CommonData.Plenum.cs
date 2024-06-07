@@ -32,7 +32,7 @@ namespace FileTools.CommonData
         static public double BottomOfPlenumToClipHole { get; set; } = 2.5;
         static public double EndPanel_THK => Default.EndPanel_THK;
         static public double SidePanel_THK => Default.SidePanel_THK;
-        public static Design PlenumDesign
+        public static Design Plenum_Design
         {
             get
             {
@@ -40,7 +40,7 @@ namespace FileTools.CommonData
                 {
                     return design;
                 }
-                return Design.Standard;
+                throw new NotImplementedException();
             }
             set
             {
@@ -101,12 +101,12 @@ namespace FileTools.CommonData
             Johnson,
             Legacy
         }
-        public static double _fanDiameterFeet => Default.Fan_Diameter_Feet;
+        public static double FanDiameter_Feet => Default.Fan_Diameter_Feet;
         public static double FanDiameter_Inches
         {
             get
             {
-                return _fanDiameterFeet * 12;
+                return FanDiameter_Feet * 12;
             }
             set
             {

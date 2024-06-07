@@ -89,7 +89,7 @@ namespace Plenum.Structure
             double xTranslation = -Plenum_Width / 2 + Plenum_Width / (stiffenerCount + 1) - Gage;
             bool isFirstStiffenerToBeFlipped = false;
             double z = 0;
-            switch (PlenumDesign)
+            switch (Plenum_Design)
             {
                 case Design.Standard:
                     z = ZTranslation_EndPanelBrace + DividerPanel.THK * 0.5 - Beam_Depth / 2;
@@ -157,7 +157,7 @@ namespace Plenum.Structure
         }
         private void AddSideStiffenersAtMachineryMount(ref List<PositionData> pos)
         {
-            var zTranslations = FanCenter.ZTranslation(PlenumDesign);
+            var zTranslations = FanCenter.ZTranslation(Plenum_Design);
             double mmHoleToHole = MachineryMount_Width / 2 - HoleClosestToEdge_To_WidthBoundary + Gage;
 
             for (int i = 0; i < Fan_Count; i++)
@@ -193,7 +193,7 @@ namespace Plenum.Structure
         {
             get
             {
-                switch (PlenumDesign)
+                switch (Plenum_Design)
                 {
                     case Design.Standard:
                         return Plenum_Length / 2 + Beam_Depth / 2;

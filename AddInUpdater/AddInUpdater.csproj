@@ -60,5 +60,11 @@
     <Compile Include="AddInUpdater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vault\AXC_Vault.csproj">
+      <Project>{2521c1cb-33c8-4247-ba36-8ae3b5a505f4}</Project>
+      <Name>AXC_Vault</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

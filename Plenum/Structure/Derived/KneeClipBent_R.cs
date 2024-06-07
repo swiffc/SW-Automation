@@ -86,7 +86,7 @@ namespace Plenum.Structure.Derived
                 if (BraceType.Contains("L"))
                     CenterPanelClips(ref pos);
 
-                if (PlenumDesign == Design.Standard)
+                if (Plenum_Design == Design.Standard)
                     StandardClips(ref pos);
 
                 else

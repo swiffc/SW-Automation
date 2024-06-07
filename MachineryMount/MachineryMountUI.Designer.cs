@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cPlenumStyle = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tCenterToCenter = new System.Windows.Forms.TextBox();
             this.cMMWidth = new System.Windows.Forms.ComboBox();
             this.cFanShaftDiameter = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -81,8 +85,8 @@
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.bCreateUpdate = new System.Windows.Forms.Button();
-            this.tCenterToCenter = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cVibrationSensor = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -95,11 +99,15 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(524, 545);
+            this.tabControl1.Size = new System.Drawing.Size(524, 348);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.cVibrationSensor);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.cPlenumStyle);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.tCenterToCenter);
             this.tabPage1.Controls.Add(this.cMMWidth);
@@ -140,10 +148,50 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(516, 519);
+            this.tabPage1.Size = new System.Drawing.Size(516, 322);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "MachineryMount";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(117, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 13);
+            this.label15.TabIndex = 102;
+            this.label15.Text = "Plenum Style";
+            // 
+            // cPlenumStyle
+            // 
+            this.cPlenumStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cPlenumStyle.FormattingEnabled = true;
+            this.cPlenumStyle.Items.AddRange(new object[] {
+            "Standard",
+            "Johnson",
+            "Legacy"});
+            this.cPlenumStyle.Location = new System.Drawing.Point(11, 179);
+            this.cPlenumStyle.Name = "cPlenumStyle";
+            this.cPlenumStyle.Size = new System.Drawing.Size(100, 21);
+            this.cPlenumStyle.TabIndex = 101;
+            this.cPlenumStyle.SelectedIndexChanged += new System.EventHandler(this.cPlenumStyle_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(117, 118);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 13);
+            this.label14.TabIndex = 100;
+            this.label14.Text = "Center Dist.";
+            // 
+            // tCenterToCenter
+            // 
+            this.tCenterToCenter.Location = new System.Drawing.Point(11, 115);
+            this.tCenterToCenter.Name = "tCenterToCenter";
+            this.tCenterToCenter.Size = new System.Drawing.Size(100, 20);
+            this.tCenterToCenter.TabIndex = 99;
+            this.tCenterToCenter.TextChanged += new System.EventHandler(this.tCenterToCenter_TextChanged);
             // 
             // cMMWidth
             // 
@@ -189,15 +237,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(318, 210);
+            this.label6.Location = new System.Drawing.Point(117, 288);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 94;
-            this.label6.Text = "Fan Ring Depth";
+            this.label6.Text = "Ring Depth";
             // 
             // tFanRingDepth
             // 
-            this.tFanRingDepth.Location = new System.Drawing.Point(212, 207);
+            this.tFanRingDepth.Location = new System.Drawing.Point(11, 285);
             this.tFanRingDepth.Name = "tFanRingDepth";
             this.tFanRingDepth.Size = new System.Drawing.Size(100, 20);
             this.tFanRingDepth.TabIndex = 93;
@@ -206,7 +254,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(318, 157);
+            this.label11.Location = new System.Drawing.Point(117, 235);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 92;
@@ -214,7 +262,7 @@
             // 
             // tWeight
             // 
-            this.tWeight.Location = new System.Drawing.Point(212, 154);
+            this.tWeight.Location = new System.Drawing.Point(11, 232);
             this.tWeight.Name = "tWeight";
             this.tWeight.Size = new System.Drawing.Size(100, 20);
             this.tWeight.TabIndex = 91;
@@ -223,7 +271,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(318, 131);
+            this.label10.Location = new System.Drawing.Point(117, 209);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 13);
             this.label10.TabIndex = 90;
@@ -231,7 +279,7 @@
             // 
             // plenumWidth_TextBox
             // 
-            this.plenumWidth_TextBox.Location = new System.Drawing.Point(212, 128);
+            this.plenumWidth_TextBox.Location = new System.Drawing.Point(11, 206);
             this.plenumWidth_TextBox.Name = "plenumWidth_TextBox";
             this.plenumWidth_TextBox.Size = new System.Drawing.Size(100, 20);
             this.plenumWidth_TextBox.TabIndex = 89;
@@ -250,7 +298,7 @@
             // 
             // itemNumber_Box
             // 
-            this.itemNumber_Box.Location = new System.Drawing.Point(410, 463);
+            this.itemNumber_Box.Location = new System.Drawing.Point(306, 258);
             this.itemNumber_Box.Name = "itemNumber_Box";
             this.itemNumber_Box.Size = new System.Drawing.Size(100, 20);
             this.itemNumber_Box.TabIndex = 73;
@@ -259,7 +307,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(318, 183);
+            this.label47.Location = new System.Drawing.Point(117, 261);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(44, 13);
             this.label47.TabIndex = 78;
@@ -267,7 +315,7 @@
             // 
             // textBox_Bank
             // 
-            this.textBox_Bank.Location = new System.Drawing.Point(490, 333);
+            this.textBox_Bank.Location = new System.Drawing.Point(386, 128);
             this.textBox_Bank.Name = "textBox_Bank";
             this.textBox_Bank.Size = new System.Drawing.Size(20, 20);
             this.textBox_Bank.TabIndex = 75;
@@ -275,7 +323,7 @@
             // 
             // job_Box
             // 
-            this.job_Box.Location = new System.Drawing.Point(410, 333);
+            this.job_Box.Location = new System.Drawing.Point(306, 128);
             this.job_Box.Name = "job_Box";
             this.job_Box.Size = new System.Drawing.Size(74, 20);
             this.job_Box.TabIndex = 68;
@@ -293,7 +341,7 @@
             // 
             // customer_Box
             // 
-            this.customer_Box.Location = new System.Drawing.Point(410, 359);
+            this.customer_Box.Location = new System.Drawing.Point(306, 154);
             this.customer_Box.Name = "customer_Box";
             this.customer_Box.Size = new System.Drawing.Size(100, 20);
             this.customer_Box.TabIndex = 69;
@@ -312,7 +360,7 @@
             // 
             // initials_Box
             // 
-            this.initials_Box.Location = new System.Drawing.Point(410, 492);
+            this.initials_Box.Location = new System.Drawing.Point(306, 287);
             this.initials_Box.Name = "initials_Box";
             this.initials_Box.Size = new System.Drawing.Size(100, 20);
             this.initials_Box.TabIndex = 74;
@@ -332,7 +380,7 @@
             // 
             // location_Box
             // 
-            this.location_Box.Location = new System.Drawing.Point(410, 411);
+            this.location_Box.Location = new System.Drawing.Point(306, 206);
             this.location_Box.Name = "location_Box";
             this.location_Box.Size = new System.Drawing.Size(100, 20);
             this.location_Box.TabIndex = 71;
@@ -352,7 +400,7 @@
             // 
             // purchaseOrder_Box
             // 
-            this.purchaseOrder_Box.Location = new System.Drawing.Point(410, 437);
+            this.purchaseOrder_Box.Location = new System.Drawing.Point(306, 232);
             this.purchaseOrder_Box.Name = "purchaseOrder_Box";
             this.purchaseOrder_Box.Size = new System.Drawing.Size(100, 20);
             this.purchaseOrder_Box.TabIndex = 72;
@@ -383,7 +431,7 @@
             // 
             // client_Box
             // 
-            this.client_Box.Location = new System.Drawing.Point(410, 385);
+            this.client_Box.Location = new System.Drawing.Point(306, 180);
             this.client_Box.Name = "client_Box";
             this.client_Box.Size = new System.Drawing.Size(100, 20);
             this.client_Box.TabIndex = 70;
@@ -419,7 +467,7 @@
             this.materialCombo.Items.AddRange(new object[] {
             "A36",
             "A572_50"});
-            this.materialCombo.Location = new System.Drawing.Point(212, 180);
+            this.materialCombo.Location = new System.Drawing.Point(11, 258);
             this.materialCombo.Name = "materialCombo";
             this.materialCombo.Size = new System.Drawing.Size(100, 21);
             this.materialCombo.TabIndex = 77;
@@ -442,7 +490,7 @@
             this.splitter2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter2.Location = new System.Drawing.Point(196, 3);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(10, 513);
+            this.splitter2.Size = new System.Drawing.Size(10, 316);
             this.splitter2.TabIndex = 85;
             this.splitter2.TabStop = false;
             // 
@@ -452,9 +500,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(54, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 16);
+            this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 84;
-            this.label8.Text = "Main Inputs";
+            this.label8.Text = "Inputs";
             // 
             // label1
             // 
@@ -471,8 +519,6 @@
             this.dFrame.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dFrame.FormattingEnabled = true;
             this.dFrame.Items.AddRange(new object[] {
-            "182T",
-            "184T",
             "213T",
             "215T",
             "254T",
@@ -506,7 +552,7 @@
             this.splitter1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter1.Location = new System.Drawing.Point(3, 3);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(193, 513);
+            this.splitter1.Size = new System.Drawing.Size(193, 316);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -529,7 +575,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(516, 519);
+            this.tabPage2.Size = new System.Drawing.Size(516, 322);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Advanced";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -691,7 +737,7 @@
             this.splitter6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter6.Location = new System.Drawing.Point(241, 3);
             this.splitter6.Name = "splitter6";
-            this.splitter6.Size = new System.Drawing.Size(10, 513);
+            this.splitter6.Size = new System.Drawing.Size(10, 316);
             this.splitter6.TabIndex = 1;
             this.splitter6.TabStop = false;
             // 
@@ -701,7 +747,7 @@
             this.splitter5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter5.Location = new System.Drawing.Point(3, 3);
             this.splitter5.Name = "splitter5";
-            this.splitter5.Size = new System.Drawing.Size(238, 513);
+            this.splitter5.Size = new System.Drawing.Size(238, 316);
             this.splitter5.TabIndex = 0;
             this.splitter5.TabStop = false;
             // 
@@ -709,7 +755,7 @@
             // 
             this.bCreateUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bCreateUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreateUpdate.Location = new System.Drawing.Point(189, 563);
+            this.bCreateUpdate.Location = new System.Drawing.Point(182, 366);
             this.bCreateUpdate.Name = "bCreateUpdate";
             this.bCreateUpdate.Size = new System.Drawing.Size(161, 33);
             this.bCreateUpdate.TabIndex = 1;
@@ -717,29 +763,35 @@
             this.bCreateUpdate.UseVisualStyleBackColor = false;
             this.bCreateUpdate.Click += new System.EventHandler(this.bCreateUpdate_Click);
             // 
-            // tCenterToCenter
+            // label16
             // 
-            this.tCenterToCenter.Location = new System.Drawing.Point(11, 115);
-            this.tCenterToCenter.Name = "tCenterToCenter";
-            this.tCenterToCenter.Size = new System.Drawing.Size(100, 20);
-            this.tCenterToCenter.TabIndex = 99;
-            this.tCenterToCenter.TextChanged += new System.EventHandler(this.tCenterToCenter_TextChanged);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(117, 144);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 13);
+            this.label16.TabIndex = 104;
+            this.label16.Text = "Vib. Sensor";
             // 
-            // label14
+            // cVibrationSensor
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(117, 118);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 13);
-            this.label14.TabIndex = 100;
-            this.label14.Text = "Center Dist.";
+            this.cVibrationSensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cVibrationSensor.FormattingEnabled = true;
+            this.cVibrationSensor.Items.AddRange(new object[] {
+            "Murphy VS-2-EX",
+            "Metrix",
+            "None"});
+            this.cVibrationSensor.Location = new System.Drawing.Point(11, 141);
+            this.cVibrationSensor.Name = "cVibrationSensor";
+            this.cVibrationSensor.Size = new System.Drawing.Size(100, 21);
+            this.cVibrationSensor.TabIndex = 103;
+            this.cVibrationSensor.SelectedIndexChanged += new System.EventHandler(this.cVibrationSensor_SelectedIndexChanged);
             // 
             // MachineryMountUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(552, 602);
+            this.ClientSize = new System.Drawing.Size(552, 407);
             this.Controls.Add(this.bCreateUpdate);
             this.Controls.Add(this.tabControl1);
             this.Name = "MachineryMountUI";
@@ -812,5 +864,9 @@
         private System.Windows.Forms.ComboBox cMMWidth;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tCenterToCenter;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cPlenumStyle;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cVibrationSensor;
     }
 }

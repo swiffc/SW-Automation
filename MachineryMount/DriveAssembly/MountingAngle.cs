@@ -10,6 +10,7 @@ using static FileTools.CommonData.CommonData;
 using static Tools.ModelTools;
 using static ModelTools.BendTable;
 using MachineryMount.DriveWeldment;
+using SolidWorks.Interop.sldworks;
 
 namespace MachineryMount.DriveAssembly
 {
@@ -23,6 +24,15 @@ namespace MachineryMount.DriveAssembly
         protected override void Dimensions()
         {
             EditDimension("Length", "sk:Path", HangerPRC.Width - HangerPRC.THK * 2 - GetBendRadius(HangerPRC.THK) * 2);
+
+            HangerPRC.Holes_247(out double span, out double count, out double spacing);
+            EditDimension("Offset", "sk:DriveHole", span / 2);
+            EditDimension("Count", "sk:DriveHole", count);
+            EditDimension("Spacing", "sk:DriveHole", spacing);
+
+            EditDimension("Offset", "sk:PlenumHole", span / 2 + spacing / 4 );
+            EditDimension("Count", "sk:PlenumHole", Math.Ceiling(count/2));
+            EditDimension("Spacing", "sk:PlenumHole", spacing);
         }
 
 

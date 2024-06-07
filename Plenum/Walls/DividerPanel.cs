@@ -33,7 +33,7 @@ namespace Plenum
         {
             get
             {
-                switch (PlenumDesign)
+                switch (Plenum_Design)
                 {
                     case Design.Standard:
                         if (Mid_Columns)
@@ -150,7 +150,7 @@ namespace Plenum
         private double GetPlanBraceHole()
         {
             mTools.AAS(45, PlanBraceHorizontal.SectionThird - EndPanel_THK / 2, out double adjacentSide, out _);
-            adjacentSide += PlenumDesign == Design.Standard ? Default.SidePanel_THK : 0;
+            adjacentSide += Plenum_Design == Design.Standard ? Default.SidePanel_THK : 0;
             double value = Plenum_Width - adjacentSide * 2 + (CallerType == Design.Johnson ? Beam_Depth : 0);
             double filteredValue = value;
             if (value < 6 && PlanBraceHorizontal.Enabled)

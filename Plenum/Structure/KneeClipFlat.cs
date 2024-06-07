@@ -14,7 +14,7 @@ namespace Plenum.Structure
         {
             get
             {
-                if (PlenumDesign != Design.Johnson)
+                if (Plenum_Design != Design.Johnson)
                 {
                     if (BraceType.Contains("L") || BraceType.Contains("T"))
                     {
@@ -83,7 +83,7 @@ namespace Plenum.Structure
             {
                 var pos = new List<PositionData>();
 
-                if (PlenumDesign == Design.Standard)
+                if (Plenum_Design == Design.Standard)
                 {
                     double xTranslation = SidePanel.CalculateXTranslation() + SidePanel_THK;
                     double yTranslation = -Plenum_Depth - BottomOfPlenumToClipHole;

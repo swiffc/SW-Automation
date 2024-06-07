@@ -1,8 +1,11 @@
 ﻿using FileTools.Base;
+using MachineryMount.DriveAssembly;
 using ModelTools;
+using SolidWorks.Interop.sldworks;
 using System;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
+using static MachineryMount.DriveAssembly.VibrationSensor;
 
 namespace MachineryMount.DriveWeldment.Children
 {
@@ -16,6 +19,8 @@ namespace MachineryMount.DriveWeldment.Children
                 return FanShaft_Diameter <= 2.25 ? "C8x11.5" : "C10x15.3";
             }
         }
+        static public double WebTHK => 0.25; // approx
+        static public double Length => DriveFrame.TowerHeight - Stringer.Depth;
 
 
         // Constructor
@@ -25,11 +30,26 @@ namespace MachineryMount.DriveWeldment.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Path", DriveFrame.TowerHeight - Stringer.Depth);
+            EditDimension("Length", "sk:Path", Length);
+
+            if (VibrationSensor.IsEnabled())
+            {
+                EditDimension("Diameter", "sk:VibrationSensorHole", isMetrix ? 0.25 : 0.375);
+                EditDimension("Y_Upper", "sk:VibrationSensorHole", isMetrix ? Length / 2 + 0.75 : Length / 2 + 2.625);
+                EditDimension("Y_Lower", "sk:VibrationSensorHole", isMetrix ? Length / 2 - 0.375 : Length / 2 - 2.625);
+                EditDimension("X_Upper", "sk:VibrationSensorHole", isMetrix ? 0.001 : 3);
+                EditDimension("X_Lower", "sk:VibrationSensorHole", isMetrix ? 1.299038106 : 3);
+            }
         }
         protected override void Features()
         {
             EditFeature_StructuralMemberSize(Size);
+
+            var features = new string[] { "VibrationSensorHole", "VibrationSensorHoles" };
+            if (VibrationSensor.IsEnabled())
+                UnsuppressFeatures(features);
+            else
+                SuppressFeatures(features);
         }
 
 

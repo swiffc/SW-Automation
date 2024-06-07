@@ -1,5 +1,6 @@
 ﻿using SolidWorks.Interop.sldworks;
-using SolidWorks.Interop.swconst;
+using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 
@@ -10,20 +11,18 @@ namespace Testing
         private static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
         static void Main()
         {
-            Component2 component = SW.IActiveDoc2.SelectionManager.GetSelectedObject6(1, -1) as Component2;
-            SW.IActiveDoc2.ClearSelection2(true);
+            SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+            string destinationFolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), "Template Export");
+            Directory.CreateDirectory(destinationFolderPath);
 
-            object[] matesObj = component.GetMates();
-            Mate2[] mates = new Mate2[matesObj.Length];
-
-            for (int i = 0; i < mates.Length; i++)
+            foreach (Component2 component in (SW.IActiveDoc2 as AssemblyDoc).GetComponents(false))
             {
-                mates[i] = matesObj[i] as Mate2;
+                string sourceFilePath = component.GetPathName();
+                if (Path.GetExtension(sourceFilePath).ToLower() == ".sldprt")
+                {
+                    File.Copy(sourceFilePath, Path.Combine(destinationFolderPath, $"JOBNO-{component.ReferencedConfiguration}.sldprt"), true);
+                }
             }
-
-            SW.IActiveDoc2.Extension.MultiSelect2(mates, false, null);
-            SW.IActiveDoc2.Extension.DeleteSelection2((int)swDeleteSelectionOptions_e.swDelete_Absorbed);
         }
-
     }
 }

@@ -22,7 +22,7 @@ namespace Plenum.Structure
         {
             get
             {
-                if (PlenumDesign == Design.Standard)
+                if (Plenum_Design == Design.Standard)
                 {
                     return EndPanel.Gauge - EndPanel_THK;
                 }
@@ -131,7 +131,7 @@ namespace Plenum.Structure
             {
                 List<PositionData> pos = new List<PositionData>();
 
-                if (PlenumDesign == Design.Standard)
+                if (Plenum_Design == Design.Standard)
                     pos = StandardClips();
                 else
                     pos = LegacyAndJohnsonClips();

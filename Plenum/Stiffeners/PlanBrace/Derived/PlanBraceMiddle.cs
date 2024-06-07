@@ -56,7 +56,7 @@ namespace Plenum
 
                     GetPositionAtNominalLength(out double xTranslation, out double yTranslation, out double angle);
                     AdjustPositionZ(adjust, ref xTranslation);
-                    xTranslation += PlenumDesign == Design.Standard ? Default.SidePanel_THK : 0;
+                    xTranslation += Plenum_Design == Design.Standard ? Default.SidePanel_THK : 0;
 
                     var zTranslations = FanCenter.ZTranslation(CallerType);
 

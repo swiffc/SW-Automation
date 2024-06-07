@@ -1,5 +1,5 @@
 ﻿using FileTools.Base;
-using MachineryMount.Mechanicals;
+using MachineryMount.DriveAssembly;
 using MachineryMount.MotorMount.Children;
 using ModelTools;
 using System;
@@ -16,8 +16,8 @@ namespace MachineryMount.DriveWeldment.Children
     {
         // Static properties
         static public double X_Translation => MotorMountPart.DriveCenterToBackingExterior + MotorMountPart.BeltTensioningAdjustment;
-        public static double FlangeWidth = Stringer.FlangeWidth;
-        public static double WebTHK = Stringer.WebTHK;
+        public static double FlangeWidth => Stringer.FlangeWidth;
+        public static double WebTHK => Stringer.WebTHK;
 
 
         // Constructor

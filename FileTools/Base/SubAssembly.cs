@@ -16,7 +16,8 @@ namespace FileTools.Base
             {
                 _parentAssembly = parentAssembly;
                 AssemblyDoc = OpenAssembly(FilePath, StaticPartNo, false);
-                var subComponents = InstantiateSubComponents(GetType(), this);
+                var subComponents = InstantiateSubComponents(GetType(), this, out var subComponentsToRemove);
+                RemoveDisabledSubComponents(subComponentsToRemove, this);
                 PlaceSubComponents(subComponents, this);
                 if (parentAssembly is MainAssembly)
                     foreach (var subComponent in subComponents)

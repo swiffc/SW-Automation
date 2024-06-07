@@ -128,8 +128,8 @@ namespace Plenum
             mTools.EditDimension("Hole9", "sk:Hole6", HolePositions[9], modelDoc2);
             mTools.EditDimension("Hole10", "sk:Hole6", HolePositions[10], modelDoc2);
 
-            mTools.EditDimension("Gage0", "sk:Hole0", PlenumDesign == Design.Standard ? Gauge - SidePanel_THK : Gauge, modelDoc2);
-            mTools.EditDimension("Gage6", "sk:Hole6", PlenumDesign == Design.Legacy ? Gauge - EndPanel_THK : Gauge, modelDoc2);
+            mTools.EditDimension("Gage0", "sk:Hole0", Plenum_Design == Design.Standard ? Gauge - SidePanel_THK : Gauge, modelDoc2);
+            mTools.EditDimension("Gage6", "sk:Hole6", Plenum_Design == Design.Legacy ? Gauge - EndPanel_THK : Gauge, modelDoc2);
         }
 
 

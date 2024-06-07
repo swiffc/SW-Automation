@@ -12,7 +12,7 @@ namespace Plenum
         public Standard()
         {
             Default.Beams_AreRotated = false;
-            PlenumDesign = Design.Standard;
+            Plenum_Design = Design.Standard;
 
             InitializePlenum(Design.Standard);
 
@@ -20,7 +20,7 @@ namespace Plenum
         }
         public Standard(Design callerType)
         {
-            PlenumDesign = callerType;
+            Plenum_Design = callerType;
             UpdateFloor(callerType);
         }
     }

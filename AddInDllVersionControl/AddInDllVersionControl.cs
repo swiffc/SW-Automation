@@ -11,6 +11,8 @@ using System.Windows;
 using EPDM.Interop.epdm;
 using System.Threading;
 using static AddInUpdater.AddInUpdater;
+using AXC_Vault;
+using static AXC_Vault.Vault;
 
 namespace AddInDllVersionControl
 {
@@ -50,24 +52,13 @@ namespace AddInDllVersionControl
             }
 
             // Login
-            EdmVault5 vault = new EdmVault5();
-            try
-            {
-                vault.LoginAuto("AXC_VAULT", 0);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to connect to the vault: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             Console.WriteLine("Updating Automation Guy add-in...");
 
             // Unregister the DLL
             RunRegasm(regasmPath, dllPath, true);
 
             // Update DLL
-            IEdmFile5 file = vault.GetFileFromPath(dllPath, out IEdmFolder5 dllFolder);
+            IEdmFile5 file = AXC_Vault.Vault.Vault5.GetFileFromPath(dllPath, out IEdmFolder5 dllFolder);
             file.GetFileCopy(0);
             if (file != null)
             {
@@ -79,7 +70,7 @@ namespace AddInDllVersionControl
             }
 
             // Update updater
-            IEdmFile5 updaterFile = vault.GetFileFromPath(updaterPath, out IEdmFolder5 updaterFolder);
+            IEdmFile5 updaterFile = AXC_Vault.Vault.Vault5.GetFileFromPath(updaterPath, out IEdmFolder5 updaterFolder);
             updaterFile.GetFileCopy(0);
 
             // Update add-in dependencies

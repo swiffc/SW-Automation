@@ -174,3 +174,7 @@
 /Bundle/.vs
 /Fork/bin
 /Fork/obj
+/Solidworks Add-In/.vs/SolidWorks Add-In.csproj.dtbcache.json
+/Vault/bin/Debug
+/Vault/obj/Debug
+/AXC_Vault/obj/Debug

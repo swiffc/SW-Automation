@@ -17,6 +17,8 @@ using static FileTools.Properties.Settings;
 using static FileTools.Base.MainAssembly;
 using static FileTools.Base.SW_Assembly;
 using System.ComponentModel;
+using ModelTools;
+using System.Security.AccessControl;
 
 namespace FileTools
 {
@@ -297,7 +299,7 @@ namespace FileTools
             Debug.WriteLine($"------------Locating components in ({swAssembly.Config})-------------" + "\n");
 
             if (ClassesToIsolate.Count == 0)
-                RemoveUnneededSubComponents(swAssembly);
+                RemoveUnneededComponents(swAssembly);
 
             Component2[] userLocatedComponents = UnfixedComponentsArray(swAssembly.ComponentArray);
 
@@ -658,8 +660,10 @@ namespace FileTools
             }
 
         }
-        public static List<IComponentInfo2> InstantiateSubComponents(Type baseType, SubAssembly parentSubAssembly)
+        public static List<IComponentInfo2> InstantiateSubComponents(Type baseType, SubAssembly parentSubAssembly, out List<IComponentInfo2> subComponentsToRemove)
         {
+            subComponentsToRemove = new List<IComponentInfo2>();
+
             var instantiatedComponents = new List<IComponentInfo2>();
             var baseNamespace = baseType.Namespace;
             var assembly = Assembly.GetAssembly(baseType);
@@ -681,6 +685,8 @@ namespace FileTools
                 return priorityProperty != null ? (int)priorityProperty.GetValue(null) : 0;
             }).ToList();
 
+
+
             for (int i = 0; i < componentTypesList.Count; i++)
             {
                 var type = componentTypesList[i];
@@ -696,9 +702,9 @@ namespace FileTools
                         if (componentInstance != null)
                         {
                             if (componentInstance.Enabled)
-                                Debug.WriteLine($"   [{componentInstance.StaticPartNo}] {type.Name}.cs was reflected in ({parentSubAssembly.Config})");
-
-                            instantiatedComponents.Add(componentInstance);
+                                instantiatedComponents.Add(componentInstance);
+                            else
+                                subComponentsToRemove.Add(componentInstance);
                         }
                     }
                 }
@@ -794,19 +800,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                 System.Windows.Forms.MessageBox.Show("Automation tool has finished executing", "Automation Guy", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             }
         }
-
-
-
-
-        // Private methods
-        private static void CopyAsReadWrite(string sourceFile, string destinationFile)
-        {
-            System.IO.File.Copy(sourceFile, destinationFile);
-            FileAttributes attributes = System.IO.File.GetAttributes(destinationFile);
-            attributes &= ~FileAttributes.ReadOnly;
-            System.IO.File.SetAttributes(destinationFile, attributes);
-        }
-        private static ModelDoc2 OpenDocument(string filePath, string configurationName)
+        public static ModelDoc2 OpenDocument(string filePath, string configurationName)
         {
             DisablePartUI();
             ModelDoc2 modelDoc2 = Open(filePath, configurationName);
@@ -834,6 +828,62 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                 return null;
             }
 
+        }
+        public static void RemoveUnneededComponents(SW_Assembly swAssembly)
+        {
+            if (swAssembly.ComponentArray != null)
+            {
+                var subComponentStaticNumbers = AssignConfigToComponent(swAssembly.ComponentArray);
+                var subComponentTypes = DetermineComponentTypes(subComponentStaticNumbers, swAssembly);
+                var componentsToDelete = IdentifyComponentsToDelete(subComponentTypes, swAssembly.ComponentArray);
+
+                RemoveComponents(componentsToDelete, swAssembly.AssemblyDoc);
+            }
+        }
+        public static void RemoveDisabledSubComponents(List<IComponentInfo2> subComponentsToRemove, SW_Assembly parentAssembly)
+        {
+            {
+                foreach (var comp in subComponentsToRemove)
+                {
+                    if (!comp.Enabled)
+                    {
+                        if (parentAssembly.ComponentArray != null)
+                        {
+                            var componentsToDelete = new List<Component2>();
+                            foreach (var foundComponent in parentAssembly.ComponentArray)
+                            {
+                                if (foundComponent.ReferencedConfiguration == comp.StaticPartNo)
+                                {
+                                    componentsToDelete.Add(foundComponent);
+                                }
+                            }
+                            if (componentsToDelete.Count > 0)
+                            {
+                                foreach (var component in componentsToDelete)
+                                {
+
+                                    RemoveComponent(component, parentAssembly.AssemblyDoc);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+
+
+
+
+        // Private methods
+        private static void CopyAsReadWrite(string sourceFile, string destinationFile)
+        {
+            System.IO.File.Copy(sourceFile, destinationFile);
+            FileAttributes attributes = System.IO.File.GetAttributes(destinationFile);
+            attributes &= ~FileAttributes.ReadOnly;
+            System.IO.File.SetAttributes(destinationFile, attributes);
         }
         private static void SetProperty_ConfigSpecific(string property, string value, string configuration, ModelDoc2 modelDoc2)
         {
@@ -1001,17 +1051,6 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
             string pathName = component2.GetPathName();
             return ExtractPartNoFromPath(pathName);
         }
-        private static void RemoveUnneededSubComponents(SW_Assembly swAssembly)
-        {
-            if (swAssembly.ComponentArray != null)
-            {
-                var subComponentStaticNumbers = AssignConfigToComponent(swAssembly.ComponentArray);
-                var subComponentTypes = DetermineComponentTypes(subComponentStaticNumbers, swAssembly);
-                var componentsToDelete = IdentifyComponentsToDelete(subComponentTypes, swAssembly.ComponentArray);
-
-                RemoveComponents(componentsToDelete, swAssembly.AssemblyDoc);
-            }
-        }
         private static Dictionary<Component2, string> AssignConfigToComponent(Component2[] componentArray)
         {
             var dictionary = new Dictionary<Component2, string>();
@@ -1039,6 +1078,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
 
                 // First, try to find an existing component by its StaticPartNo
                 var existingComponent = ComponentRegistry.GetComponentByPartNo(staticNumber);
+
                 if (existingComponent != null)
                 {
                     // If found, use the existing component's type
@@ -1046,35 +1086,47 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                     continue; // Skip to the next kvp in staticNumbers
                 }
 
-                // If not found, proceed to potentially instantiate a new component
-                var matchingType = assembly.GetTypes()
-                    .Where(type => type.IsClass && !type.IsAbstract)
-                    .FirstOrDefault(type =>
-                    {
-                        var propInfo = type.GetProperty("StaticPartNo", BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-                        if (propInfo != null && propInfo.GetMethod != null && propInfo.GetMethod.IsVirtual)
-                        {
-                            // Since no existing instance was found, instantiate a new one for comparison
-                            object instance = null;
-                            var constructorInfo = type.GetConstructor(new Type[] { typeof(MainAssembly) });
-                            if (constructorInfo != null)
-                            {
-                                instance = constructorInfo.Invoke(new object[] { swAssembly });
-                            }
-
-                            if (instance != null)
-                            {
-                                var value = propInfo.GetValue(instance)?.ToString();
-                                return value == staticNumber;
-                            }
-                        }
-                        return false;
-                    });
-
-                if (matchingType != null)
+                if (componentKey.GetPathName().Contains("Hudson Library"))
                 {
-                    dictionary.Add(componentKey, matchingType);
+                    dictionary.Add(componentKey, null);
+                    continue;
                 }
+
+
+
+
+
+
+
+                //// If not found, proceed to potentially instantiate a new component
+                //var matchingType = assembly.GetTypes()
+                //    .Where(type => type.IsClass && !type.IsAbstract)
+                //    .FirstOrDefault(type =>
+                //    {
+                //        var propInfo = type.GetProperty("StaticPartNo", BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                //        if (propInfo != null && propInfo.GetMethod != null && propInfo.GetMethod.IsVirtual)
+                //        {
+                //            // Since no existing instance was found, instantiate a new one for comparison
+                //            object instance = null;
+                //            var constructorInfo = type.GetConstructor(new Type[] { typeof(MainAssembly) });
+                //            if (constructorInfo != null)
+                //            {
+                //                instance = constructorInfo.Invoke(new object[] { swAssembly });
+                //            }
+
+                //            if (instance != null)
+                //            {
+                //                var value = propInfo.GetValue(instance)?.ToString();
+                //                return value == staticNumber;
+                //            }
+                //        }
+                //        return false;
+                //    });
+
+                //if (matchingType != null)
+                //{
+                //    dictionary.Add(componentKey, matchingType);
+                //}
             }
 
             return dictionary;
@@ -1095,14 +1147,22 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                 {
                     // If the type matches and you need to check if it's enabled, retrieve the instance
                     var instance = ComponentRegistry.GetComponentByPartNo(component.ReferencedConfiguration);
+
+                    // Handles local part instances
                     if (instance != null && !instance.Enabled)
+                    {
+                        componentsToDelete.Add(component);
+                    }
+
+                    // Handles standard parts in the vault
+                    if (instance != null && component.ReferencedConfiguration != instance.StaticPartNo)
                     {
                         componentsToDelete.Add(component);
                     }
                 }
                 else
                 {
-                    Debug.WriteLine($"Type {componentType.Name} does not match the registered component's type or no component registered.");
+                    componentsToDelete.Add(component);
                 }
             }
 

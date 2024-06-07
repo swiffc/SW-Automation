@@ -38,6 +38,7 @@ namespace MachineryMount
             dFrame.Text = MotorFrameSize.ToString() + "T";
             cFanShaftDiameter.Text = FanShaft_Diameter.ToString();
             tCenterToCenter.Text = MotorCenter_To_FanCenter.ToString();
+            cVibrationSensor.Text = Vibration_Sensor;
 
             // Design selection
             cForced.Checked = ForcedDraft;
@@ -63,6 +64,7 @@ namespace MachineryMount
             plenumWidth_TextBox.Text = Plenum_Width.ToString();
             tWeight.Text = TotalUnitWeight.ToString();
             tFanRingDepth.Text = FanRing_Depth.ToString();
+            cPlenumStyle.Text = Plenum_Design.ToString();
 
             // Advanced
             cStringer.Text = Stringer_Size;
@@ -96,6 +98,10 @@ namespace MachineryMount
         private void tCenterToCenter_TextChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(tCenterToCenter.Text, x => MotorCenter_To_FanCenter = x);
+        }
+        private void cVibrationSensor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(cVibrationSensor.Text, x => Vibration_Sensor = x);
         }
 
         #endregion
@@ -227,6 +233,15 @@ namespace MachineryMount
         {
             UI_DoubleChanged(tFanRingDepth.Text, x => FanRing_Depth = x);
         }
+        private void cPlenumStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.TryParse(cPlenumStyle.Text, out Design design))
+            {
+                Plenum_Design = design;
+            }
+            else throw new NotImplementedException();
+            SaveSettings();
+        }
 
         #endregion
         #region Job info
@@ -332,8 +347,8 @@ namespace MachineryMount
 
 
 
+
+
         #endregion
-
-
     }
 }

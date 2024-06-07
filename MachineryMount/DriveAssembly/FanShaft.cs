@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static FileTools.CommonData.CommonData;
 using MachineryMount.DriveWeldment;
+using MachineryMount.DriveWeldment.Children;
 
 namespace MachineryMount.DriveAssembly
 {
@@ -18,7 +19,7 @@ namespace MachineryMount.DriveAssembly
             get { return FanShaft_Diameter; }
             set { FanShaft_Diameter = value; }
         }
-        static public double Length => DriveFrame.Height;
+        static public double Length => DriveFrame.Height - BottomReduction;
 
 
         // Constructor
@@ -33,11 +34,15 @@ namespace MachineryMount.DriveAssembly
 
             EditDimension("Depth", "sk:SnapRingGrooves", FanShaftData[Diameter].GrooveDepth);
             EditDimension("Width", "sk:SnapRingGrooves", FanShaftData[Diameter].GrooveWidth);
-            EditDimension("TopOfTower", "sk:SnapRingGrooves", DriveFrame.TowerHeight);
+            EditDimension("TopOfTower", "sk:SnapRingGrooves", DriveFrame.TowerHeight + Bearing.Top.Height - BottomReduction);
 
             EditDimension("Depth", "sk:Keyways", FanShaftData[Diameter].KeyWidth / 2);
             EditDimension("Width", "Keyways", FanShaftData[Diameter].KeyWidth);
         }
+
+
+        // Private properties
+        private static double BottomReduction => Stringer.Depth - (Motor.Dim.BA + Motor.Dim.NW - MotorRise);
 
 
         // Property overrides
@@ -51,7 +56,7 @@ namespace MachineryMount.DriveAssembly
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create()
+                    PositionData.Create(tY: BottomReduction)
                 };
             }
         }

@@ -1,4 +1,5 @@
 ﻿using FileTools.Base;
+using MachineryMount.DriveAssembly;
 using ModelTools;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,6 @@ namespace MachineryMount.DriveWeldment.Children
 {
     internal class TowerTopC : Part
     {
-        // Static properties
-        static public double WebTHK => 0.25; // approx
-
-
         // Constructor
         public TowerTopC(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 
@@ -24,6 +21,9 @@ namespace MachineryMount.DriveWeldment.Children
         protected override void Dimensions()
         {
             EditDimension("Length", "sk:Path", DriveFrame.Width);
+
+            EditDimension("Diameter", "sk:BearingHoles", Bearing.Top.HoleDiameter);
+            EditDimension("Spacing", "sk:BearingHoles", Bearing.Top.HoleToHoleSpacing);
         }
         protected override void Features()
         {

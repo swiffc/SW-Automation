@@ -69,6 +69,10 @@
       <Project>{1b9a2b05-e9b3-42e2-923a-474dafa42d70}</Project>
       <Name>AddInUpdater</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Vault\AXC_Vault.csproj">
+      <Project>{2521c1cb-33c8-4247-ba36-8ae3b5a505f4}</Project>
+      <Name>AXC_Vault</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

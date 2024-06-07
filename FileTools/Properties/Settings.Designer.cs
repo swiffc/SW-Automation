@@ -970,5 +970,17 @@ namespace FileTools.Properties {
                 this["Motor_CenterToCenter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Murphy VS-2-EX")]
+        public string Vibration_Sensor {
+            get {
+                return ((string)(this["Vibration_Sensor"]));
+            }
+            set {
+                this["Vibration_Sensor"] = value;
+            }
+        }
     }
 }

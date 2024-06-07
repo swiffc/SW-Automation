@@ -37,8 +37,44 @@ namespace MachineryMount.DriveWeldment.Children
             EditDimension("Depth", "sk:PRC", FlangeDepth);
             EditDimension("Height", "PRC", DriveFrame.Height + MountingExtension);
             EditDimension("Angle", "sk:Flange", Angle);
-            EditDimension("StringerDepth", "sk:Flange", Stringer.Depth + 
+            EditDimension("StringerDepth", "sk:Flange", Stringer.Depth +
                 (TensioningAngle.JackScrew == TensioningAngle.Config.ShiftedInside ? TensioningAngle.Leg : 0));
+
+            Holes_181(out double span, out double count, out double spacing);
+            EditDimension("Offset", "sk:Hole", span / 2);
+            EditDimension("Count", "sk:Hole", count);
+            EditDimension("Spacing", "sk:Hole", spacing);
+
+            Holes_247(out double span2, out double count2, out double spacing2);
+            EditDimension("Offset2", "sk:Hole", span2 / 2);
+            EditDimension("Count2", "sk:Hole", count2);
+            EditDimension("Spacing2", "sk:Hole", spacing2);
+
+            if (TensioningAngle.JackScrew == TensioningAngle.Config.None)
+                EditDimension("Location", "sk:JackScrewHoles", Stringer.Depth + 1.375);
+
+        }
+        protected override void Features()
+        {
+            if (TensioningAngle.JackScrew == TensioningAngle.Config.None)
+                UnsuppressFeatures("JackScrewHoles");
+            else
+                SuppressFeatures("JackScrewHoles");
+        }
+
+
+        // Static methods
+        public static void Holes_181(out double span, out double count, out double spacing)
+        {
+            double inset = 3;
+            span = DriveFrame.Width - inset * 2;
+            HolePattern(span, out count, out spacing, 12);
+        }
+        public static void Holes_247(out double span, out double count, out double spacing)
+        {
+            Holes_181(out span, out count, out spacing);
+            span -= spacing;
+            count -= 1;
         }
 
 

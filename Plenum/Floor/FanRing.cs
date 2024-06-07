@@ -45,17 +45,17 @@ namespace Plenum.Floor
             {
                 get
                 {
-                    if (_fanDiameterFeet > 14)
+                    if (FanDiameter_Feet > 14)
                         return 10;
-                    if (_fanDiameterFeet > 13)
+                    if (FanDiameter_Feet > 13)
                         return 9;
-                    if (_fanDiameterFeet > 11)
+                    if (FanDiameter_Feet > 11)
                         return 8;
-                    if (_fanDiameterFeet > 9)
+                    if (FanDiameter_Feet > 9)
                         return 7;
-                    if (_fanDiameterFeet > 7)
+                    if (FanDiameter_Feet > 7)
                         return 6;
-                    if (_fanDiameterFeet > 5)
+                    if (FanDiameter_Feet > 5)
                         return 5;
                     else
                         return 4;

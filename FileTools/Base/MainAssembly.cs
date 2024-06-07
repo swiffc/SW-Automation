@@ -13,6 +13,11 @@ namespace FileTools.Base
 {
     public class MainAssembly : SW_Assembly
     {
+        // Static properties
+        static public bool LibraryFilesDownloaded { get; set; } = false;
+        static public bool TemplatesDownloaded { get; set; } = false;
+
+
         // Constructor
         public MainAssembly(int assemblyNumber, string assemblyDescription, params Type[] classesToIsolate)
         {
@@ -21,6 +26,8 @@ namespace FileTools.Base
 
             AssemblyNumber = assemblyNumber;
             AssemblyDesc = assemblyDescription;
+
+            Setup();
 
             bool bankExists;
             do
@@ -56,5 +63,9 @@ namespace FileTools.Base
                 }
             } while (!bankExists);
         }
+
+
+        // Virtual methods
+        protected virtual void Setup() { }
     }
 }

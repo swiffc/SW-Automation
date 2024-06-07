@@ -54,6 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeltGuard\BeltGuardWld.cs" />
+    <Compile Include="BeltGuard\Children\ExpandedMetal.cs" />
+    <Compile Include="BeltGuard\Children\Framing.cs" />
+    <Compile Include="DriveAssembly\Bearing.cs" />
+    <Compile Include="DriveAssembly\Derived\BallBearing.cs" />
+    <Compile Include="DriveAssembly\Derived\RollerBearing.cs" />
+    <Compile Include="DriveAssembly\VibrationSensor.cs" />
     <Compile Include="DriveWeldment\Children\CrossStiffenerC.cs" />
     <Compile Include="DriveWeldment\Children\Derived\DiagonalBraceLong.cs" />
     <Compile Include="DriveWeldment\Children\Derived\DiagonalBraceShort.cs" />
@@ -79,7 +86,7 @@
     <Compile Include="MachineryMountUI.Designer.cs">
       <DependentUpon>MachineryMountUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mechanicals\Motor.cs" />
+    <Compile Include="DriveAssembly\Motor.cs" />
     <Compile Include="MotorMount\Children\MotorMountGusset.cs" />
     <Compile Include="MotorMount\Children\MotorMountPart.cs" />
     <Compile Include="MotorMount\Children\MotorMountStiffener.cs" />
@@ -94,6 +101,10 @@
     <ProjectReference Include="..\ModelTools\ModelTools.csproj">
       <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
       <Name>ModelTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vault\AXC_Vault.csproj">
+      <Project>{2521c1cb-33c8-4247-ba36-8ae3b5a505f4}</Project>
+      <Name>AXC_Vault</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
