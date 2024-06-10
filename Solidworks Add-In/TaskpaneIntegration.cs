@@ -17,7 +17,7 @@ namespace SolidWorks_Add_In
     {
         static public string VersionNumber => "5.0.0";
         static public string SpeechBubble =>
-            @"""" + "Machinery mount automation is now live!"
+            @"""" + "Machinery mount automation is now live!" +"\n"
           + @"""";
 
         #region Private Members
