@@ -982,5 +982,29 @@ namespace FileTools.Properties {
                 this["Vibration_Sensor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("180")]
+        public double MachineryMount_Length {
+            get {
+                return ((double)(this["MachineryMount_Length"]));
+            }
+            set {
+                this["MachineryMount_Length"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MotorShift {
+            get {
+                return ((double)(this["MotorShift"]));
+            }
+            set {
+                this["MotorShift"] = value;
+            }
+        }
     }
 }

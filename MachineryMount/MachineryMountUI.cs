@@ -39,6 +39,7 @@ namespace MachineryMount
             cFanShaftDiameter.Text = FanShaft_Diameter.ToString();
             tCenterToCenter.Text = MotorCenter_To_FanCenter.ToString();
             cVibrationSensor.Text = Vibration_Sensor;
+            tLength.Text = MachineryMount_Length.ToString();
 
             // Design selection
             cForced.Checked = ForcedDraft;
@@ -61,10 +62,8 @@ namespace MachineryMount
 
             // External
             materialCombo.Text = MaterialSpecSetting;
-            plenumWidth_TextBox.Text = Plenum_Width.ToString();
             tWeight.Text = TotalUnitWeight.ToString();
             tFanRingDepth.Text = FanRing_Depth.ToString();
-            cPlenumStyle.Text = Plenum_Design.ToString();
 
             // Advanced
             cStringer.Text = Stringer_Size;
@@ -74,6 +73,7 @@ namespace MachineryMount
             delete_Toggle.Checked = Toggle_DeleteFiles;
             lock_StringerSize.Checked = Lock_StringerSize;
             lock_MMHeight.Checked = Lock_MachineryMountHeight;
+            tMotorShift.Text = MotorShift.ToString();
         }
 
         #region Main inputs
@@ -102,6 +102,10 @@ namespace MachineryMount
         private void cVibrationSensor_SelectedIndexChanged(object sender, EventArgs e)
         {
             UI_StringChanged(cVibrationSensor.Text, x => Vibration_Sensor = x);
+        }
+        private void tLength_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tLength.Text, x => MachineryMount_Length = x);
         }
 
         #endregion
@@ -211,13 +215,6 @@ namespace MachineryMount
         #endregion
         #region External
 
-        private void plenumWidth_TextBox_Leave(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(plenumWidth_TextBox.Text, x => Plenum_Width = x);
-
-            // Update dependents
-            cStringer.Text = Stringer_Size;
-        }
         private void materialCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             UI_StringChanged(materialCombo.Text, x => MaterialSpecSetting = x);
@@ -233,15 +230,6 @@ namespace MachineryMount
         {
             UI_DoubleChanged(tFanRingDepth.Text, x => FanRing_Depth = x);
         }
-        private void cPlenumStyle_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Enum.TryParse(cPlenumStyle.Text, out Design design))
-            {
-                Plenum_Design = design;
-            }
-            else throw new NotImplementedException();
-            SaveSettings();
-        }
 
         #endregion
         #region Job info
@@ -255,6 +243,7 @@ namespace MachineryMount
             lock_StringerSize.Checked = Lock_StringerSize;
             Lock_MachineryMountHeight = false;
             lock_MMHeight.Checked = Lock_MachineryMountHeight;
+            MotorShift = 0; tMotorShift.Text = MotorShift.ToString();
         }
         private void job_Box_TextChanged(object sender, EventArgs e)
         {
@@ -265,6 +254,7 @@ namespace MachineryMount
             lock_StringerSize.Checked = Lock_StringerSize;
             Lock_MachineryMountHeight = false;
             lock_MMHeight.Checked = Lock_MachineryMountHeight;
+            MotorShift = 0; tMotorShift.Text = MotorShift.ToString();
         }
 
         private void customer_Box_TextChanged(object sender, EventArgs e)
@@ -342,7 +332,10 @@ namespace MachineryMount
             tHeight.Enabled = !Lock_MachineryMountHeight;
         }
 
-
+        private void tMotorShift_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tMotorShift.Text, x => MotorShift = x);
+        }
 
 
 

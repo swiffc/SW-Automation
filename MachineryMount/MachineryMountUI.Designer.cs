@@ -31,7 +31,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
-            this.cPlenumStyle = new System.Windows.Forms.ComboBox();
+            this.tLength = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cVibrationSensor = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tCenterToCenter = new System.Windows.Forms.TextBox();
             this.cMMWidth = new System.Windows.Forms.ComboBox();
@@ -42,7 +44,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tWeight = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.plenumWidth_TextBox = new System.Windows.Forms.TextBox();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.itemNumber_Box = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
@@ -85,8 +86,8 @@
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.bCreateUpdate = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cVibrationSensor = new System.Windows.Forms.ComboBox();
+            this.tMotorShift = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,10 +105,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.tLength);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.cVibrationSensor);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.cPlenumStyle);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.tCenterToCenter);
             this.tabPage1.Controls.Add(this.cMMWidth);
@@ -118,7 +119,6 @@
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.tWeight);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.plenumWidth_TextBox);
             this.tabPage1.Controls.Add(this.splitter4);
             this.tabPage1.Controls.Add(this.itemNumber_Box);
             this.tabPage1.Controls.Add(this.label47);
@@ -156,25 +156,42 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(117, 182);
+            this.label15.Location = new System.Drawing.Point(11, 188);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 13);
-            this.label15.TabIndex = 102;
-            this.label15.Text = "Plenum Style";
+            this.label15.Size = new System.Drawing.Size(162, 13);
+            this.label15.TabIndex = 106;
+            this.label15.Text = "(Plenum SidePanel to SidePanel)";
             // 
-            // cPlenumStyle
+            // tLength
             // 
-            this.cPlenumStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cPlenumStyle.FormattingEnabled = true;
-            this.cPlenumStyle.Items.AddRange(new object[] {
-            "Standard",
-            "Johnson",
-            "Legacy"});
-            this.cPlenumStyle.Location = new System.Drawing.Point(11, 179);
-            this.cPlenumStyle.Name = "cPlenumStyle";
-            this.cPlenumStyle.Size = new System.Drawing.Size(100, 21);
-            this.cPlenumStyle.TabIndex = 101;
-            this.cPlenumStyle.SelectedIndexChanged += new System.EventHandler(this.cPlenumStyle_SelectedIndexChanged);
+            this.tLength.Location = new System.Drawing.Point(11, 168);
+            this.tLength.Name = "tLength";
+            this.tLength.Size = new System.Drawing.Size(100, 20);
+            this.tLength.TabIndex = 105;
+            this.tLength.TextChanged += new System.EventHandler(this.tLength_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(117, 144);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 13);
+            this.label16.TabIndex = 104;
+            this.label16.Text = "Vib. Sensor";
+            // 
+            // cVibrationSensor
+            // 
+            this.cVibrationSensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cVibrationSensor.FormattingEnabled = true;
+            this.cVibrationSensor.Items.AddRange(new object[] {
+            "Murphy VS-2-EX",
+            "Metrix",
+            "None"});
+            this.cVibrationSensor.Location = new System.Drawing.Point(11, 141);
+            this.cVibrationSensor.Name = "cVibrationSensor";
+            this.cVibrationSensor.Size = new System.Drawing.Size(100, 21);
+            this.cVibrationSensor.TabIndex = 103;
+            this.cVibrationSensor.SelectedIndexChanged += new System.EventHandler(this.cVibrationSensor_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -271,19 +288,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(117, 209);
+            this.label10.Location = new System.Drawing.Point(117, 171);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 90;
-            this.label10.Text = "Plenum Width";
-            // 
-            // plenumWidth_TextBox
-            // 
-            this.plenumWidth_TextBox.Location = new System.Drawing.Point(11, 206);
-            this.plenumWidth_TextBox.Name = "plenumWidth_TextBox";
-            this.plenumWidth_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.plenumWidth_TextBox.TabIndex = 89;
-            this.plenumWidth_TextBox.Leave += new System.EventHandler(this.plenumWidth_TextBox_Leave);
+            this.label10.Text = "Length";
             // 
             // splitter4
             // 
@@ -558,6 +567,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.tMotorShift);
             this.tabPage2.Controls.Add(this.lock_MMHeight);
             this.tabPage2.Controls.Add(this.lock_StringerSize);
             this.tabPage2.Controls.Add(this.label12);
@@ -763,28 +774,22 @@
             this.bCreateUpdate.UseVisualStyleBackColor = false;
             this.bCreateUpdate.Click += new System.EventHandler(this.bCreateUpdate_Click);
             // 
-            // label16
+            // tMotorShift
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(117, 144);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 13);
-            this.label16.TabIndex = 104;
-            this.label16.Text = "Vib. Sensor";
+            this.tMotorShift.Location = new System.Drawing.Point(9, 85);
+            this.tMotorShift.Name = "tMotorShift";
+            this.tMotorShift.Size = new System.Drawing.Size(100, 20);
+            this.tMotorShift.TabIndex = 106;
+            this.tMotorShift.TextChanged += new System.EventHandler(this.tMotorShift_TextChanged);
             // 
-            // cVibrationSensor
+            // label17
             // 
-            this.cVibrationSensor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cVibrationSensor.FormattingEnabled = true;
-            this.cVibrationSensor.Items.AddRange(new object[] {
-            "Murphy VS-2-EX",
-            "Metrix",
-            "None"});
-            this.cVibrationSensor.Location = new System.Drawing.Point(11, 141);
-            this.cVibrationSensor.Name = "cVibrationSensor";
-            this.cVibrationSensor.Size = new System.Drawing.Size(100, 21);
-            this.cVibrationSensor.TabIndex = 103;
-            this.cVibrationSensor.SelectedIndexChanged += new System.EventHandler(this.cVibrationSensor_SelectedIndexChanged);
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(115, 88);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 13);
+            this.label17.TabIndex = 107;
+            this.label17.Text = "Motor Shift";
             // 
             // MachineryMountUI
             // 
@@ -850,7 +855,6 @@
         private System.Windows.Forms.Splitter splitter5;
         private System.Windows.Forms.Button bCreateUpdate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox plenumWidth_TextBox;
         private System.Windows.Forms.ComboBox cStringer;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tWeight;
@@ -864,9 +868,11 @@
         private System.Windows.Forms.ComboBox cMMWidth;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tCenterToCenter;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cPlenumStyle;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cVibrationSensor;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tLength;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox tMotorShift;
     }
 }

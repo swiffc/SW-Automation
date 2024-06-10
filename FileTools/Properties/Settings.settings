@@ -242,5 +242,11 @@
     <Setting Name="Vibration_Sensor" Type="System.String" Scope="User">
       <Value Profile="(Default)">Murphy VS-2-EX</Value>
     </Setting>
+    <Setting Name="MachineryMount_Length" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">180</Value>
+    </Setting>
+    <Setting Name="MotorShift" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -22,6 +22,12 @@ namespace MachineryMount.DriveAssembly
         public static (double O, double D, double BA, double C, double NW, double E, double F, double U, double AB, double H) Dim => MotorFrame[Frame];
         static public double HP { get; set; }
         static public int RPM { get; set; }
+        public static double Shift
+        {
+            get { return MotorShift; }
+            set { MotorShift = value; }
+        }
+
 
 
         // Constructor
@@ -55,7 +61,7 @@ namespace MachineryMount.DriveAssembly
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tX: -MachineryMount.CenterToCenter, tY: Stringer.Depth + MotorRise, rY: -90)
+                    PositionData.Create(tX: -MachineryMount.CenterToCenter, tY: Stringer.Depth + MotorRise, tZ: -MotorShift, rY: -90)
                 };
             }
         }

@@ -45,7 +45,7 @@ namespace MachineryMount.DriveAssembly
         {
             get
             {
-                double xTranslation = Plenum_Width / 2 - HangerPRC.THK;
+                double xTranslation = Stringer.Length / 2 - HangerPRC.THK;
                 double yTranslation = DriveFrame.Height;
 
                 return new List<PositionData>

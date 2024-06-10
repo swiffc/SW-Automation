@@ -89,8 +89,8 @@ namespace MachineryMount.DriveWeldment.Children
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tX: Plenum_Width / 2),
-                    PositionData.Create(tX: -Plenum_Width / 2, rY: 180)
+                    PositionData.Create(tX: Stringer.Length / 2),
+                    PositionData.Create(tX: -Stringer.Length / 2, rY: 180)
                 };
             }
         }

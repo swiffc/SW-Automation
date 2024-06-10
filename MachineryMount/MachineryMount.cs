@@ -30,9 +30,7 @@ namespace MachineryMount
 
         // Constructor
         public MachineryMount(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
-            //, typeof(TowerSideC)
-            //, typeof(DriveFrame)
-            //, typeof(VibrationSensor)
+            //, typeof(MotorMountWeldment)
             )
         {
             Stringer._flangeWidth = null;

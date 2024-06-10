@@ -36,7 +36,7 @@ namespace MachineryMount.MotorMount.Children
             {
                 return new List<PositionData>
                 {
-                    PositionData.Create(tX: -Motor.Dim.D - MotorMountPart.THK, tY: AssemblyClearance)
+                    PositionData.Create(tX: -Motor.Dim.D - MotorMountPart.THK, tY: AssemblyClearance, tZ: -Motor.Shift)
                 };
             }
         }

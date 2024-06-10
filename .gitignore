@@ -178,3 +178,5 @@
 /Vault/bin/Debug
 /Vault/obj/Debug
 /AXC_Vault/obj/Debug
+/Vault/obj/Release
+/Vault/bin/Release

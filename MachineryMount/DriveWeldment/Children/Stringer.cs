@@ -58,22 +58,7 @@ namespace MachineryMount.DriveWeldment.Children
         {
             get
             {
-                double value = Plenum_Width;
-                switch (Plenum_Design)
-                {
-                    case Design.Johnson:
-                        value += Beam_Depth;
-                        break;
-                    case Design.Legacy:
-                        value += Beam_Depth - SidePanel_THK * 2 - Beam_FlangeTHK * 2;
-                        break;
-                    case Design.Standard:
-                        value -= SidePanel_THK * 2;
-                        break;
-                    default:
-                        throw new NotImplementedException();
-                }
-                return value;
+                return MachineryMount_Length + HangerPRC.THK * 2;
             }
         }
 
@@ -85,7 +70,7 @@ namespace MachineryMount.DriveWeldment.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Path", Plenum_Width);
+            EditDimension("Length", "sk:Path", Stringer.Length);
 
             EditDimension("Hole1", "sk:MountingHoles", MachineryMount.CenterToCenter + Motor.Dim.D - MotorMountPart.SlotInset - MotorMountPart.BeltTensioningAdjustment);
             EditDimension("Hole2", "sk:MountingHoles", MachineryMount.CenterToCenter + Motor.Dim.D - MotorMountPart.Base + MotorMountPart.THK + MotorMountPart.SlotInset + MotorMountPart.BeltTensioningAdjustment);

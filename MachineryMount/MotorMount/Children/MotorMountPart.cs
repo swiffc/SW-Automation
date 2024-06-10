@@ -42,6 +42,8 @@ namespace MachineryMount.MotorMount.Children
             EditDimension("F", "sk:MotorHoles", Motor.Dim.F);
             EditDimension("E", "sk:MotorHoles", Motor.Dim.E);
             EditDimension("Rise", "sk:MotorHoles", MotorRise);
+
+            EditDimension("D1", "MotorCenter", Motor.Shift);
         }
 
 

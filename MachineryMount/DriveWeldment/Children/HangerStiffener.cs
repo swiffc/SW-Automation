@@ -32,7 +32,7 @@ namespace MachineryMount.DriveWeldment.Children
         {
             get
             {
-                double xTranslation = Plenum_Width / 2 - HangerPRC.THK;
+                double xTranslation = Stringer.Length / 2 - HangerPRC.THK;
                 double yTranslation = HangerPRC.THK * 1.5;
 
                 return new List<PositionData>

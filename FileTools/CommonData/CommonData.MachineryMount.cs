@@ -244,6 +244,18 @@ namespace FileTools.CommonData
             get { return Default.Vibration_Sensor; }
             set { Default.Vibration_Sensor = value; }
         }
+        public static double MachineryMount_Length
+        {
+            get { return Default.MachineryMount_Length; }
+            set { Default.MachineryMount_Length = value; }
+        }
+        public static double MotorShift
+        {
+            get { return Default.MotorShift; }
+            set { Default.MotorShift = value; }
+        }
+
+
 
 
 

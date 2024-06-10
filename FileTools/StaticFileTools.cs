@@ -1278,7 +1278,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
             {
                 newReferenceASM = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{dynamicPartNo}.SLDASM";
             }
-            string newReferencePRT = $@"{DesktopFolderPath}\{Default.Project} - {AssemblyNumber} {Default.Bank}-{dynamicPartNo}.SLDPRT";
+            string newReferencePRT = $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}-{dynamicPartNo}.SLDPRT";
             string newReference = System.IO.File.Exists(newReferenceASM) ? newReferenceASM : newReferencePRT;
 
             bool check = false;
