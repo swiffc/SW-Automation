@@ -54,6 +54,7 @@
             this.button_ImportConfigFile = new System.Windows.Forms.Button();
             this.button_ExportConfigFile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.launchMM = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -304,6 +305,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.launchMM);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_ExportConfigFile);
             this.panel1.Controls.Add(this.PreviousSheet);
@@ -329,6 +331,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 576);
             this.panel1.TabIndex = 24;
+            // 
+            // launchMM
+            // 
+            this.launchMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.launchMM.Location = new System.Drawing.Point(6, 753);
+            this.launchMM.Name = "launchMM";
+            this.launchMM.Size = new System.Drawing.Size(200, 53);
+            this.launchMM.TabIndex = 24;
+            this.launchMM.Text = "4 (Machinery Mount)";
+            this.launchMM.UseVisualStyleBackColor = true;
+            this.launchMM.Click += new System.EventHandler(this.launchMM_Click);
             // 
             // TaskpaneHostUI
             // 
@@ -373,5 +386,6 @@
         private System.Windows.Forms.Button button_ImportConfigFile;
         private System.Windows.Forms.Button button_ExportConfigFile;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button launchMM;
     }
 }

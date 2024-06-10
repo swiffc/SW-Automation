@@ -111,6 +111,10 @@
       <Project>{7e6a3a9f-0348-4f9e-bc9a-dc929d613d31}</Project>
       <Name>Hood</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MachineryMount\MachineryMount.csproj">
+      <Project>{575E1C1C-0295-4C0D-ABA2-ACE4B985FB8E}</Project>
+      <Name>MachineryMount</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plenum\Plenum.csproj">
       <Project>{D5899A85-9656-431E-9836-2849AEEEFEF7}</Project>
       <Name>Plenum</Name>

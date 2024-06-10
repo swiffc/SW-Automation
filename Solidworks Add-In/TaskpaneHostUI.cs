@@ -9,6 +9,7 @@ using Walkway;
 using Walkway.Tools;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static FileTools.Properties.Settings;
+using MachineryMount;
 
 namespace SolidWorks_Add_In
 {
@@ -192,6 +193,19 @@ namespace SolidWorks_Add_In
         private void button_ExportConfigFile_Click(object sender, EventArgs e)
         {
             Fork.ConfigFileManagement.ExportConfigFile();
+        }
+
+        private MachineryMountUI mmUI = null;
+        private void launchMM_Click(object sender, EventArgs e)
+        {
+            if (mmUI == null || mmUI.IsDisposed)
+            {
+                mmUI = new MachineryMountUI();
+            }
+
+            Default.Reload();
+            mmUI.Show();
+            mmUI.BringToFront();
         }
     }
 }
