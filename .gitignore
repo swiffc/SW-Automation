@@ -181,3 +181,7 @@
 /Vault/obj/Release
 /Vault/bin/Release
 /Bundle/obj/Release
+/Excel/bin
+/Excel/obj
+/SplashScreen/bin/Debug
+/SplashScreen/obj/Debug

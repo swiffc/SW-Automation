@@ -14,7 +14,7 @@ namespace Structure
     internal class Structure : MainAssembly
     {
         public Structure(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription 
-            ,typeof(BraceL)
+            //,typeof(BraceL)
             ) { }
 
         public static void Main()

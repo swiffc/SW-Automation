@@ -112,5 +112,15 @@ namespace AXC_Vault
             GetAllFilesInFolder(dllFolder, false);
         }
         private static List<string> FoldersToSkip = null;
+        public static bool FileExists(string filePath, out IEdmFile5 file)
+        {
+            file = Vault5.GetFileFromPath(filePath, out _);
+            return file != null ?  true : false;
+        }
+        public static void DownloadFile(IEdmFile5 file)
+        {
+            file.GetFileCopy(0);
+        }
     }
+    
 }

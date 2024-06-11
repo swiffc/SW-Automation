@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using static FileTools.Properties.Settings;
@@ -13,12 +15,20 @@ namespace FileTools.CommonData
         static public string Project
         {
             get { return Default.Project; }
-            set { Default.Project = value; }
+            set
+            {
+                Default.Project = value;
+                OnPropertyChanged();
+            }
         }
         static public char Bank
         {
             get { return Default.Bank; }
-            set { Default.Bank = value; }
+            set
+            {
+                Default.Bank = value;
+                OnPropertyChanged();
+            }
         }
         static public string Customer
         {
@@ -80,6 +90,14 @@ namespace FileTools.CommonData
         {
             get { return Default.Toggle_DeleteFiles; }
             set { Default.Toggle_DeleteFiles = value; }
+        }
+
+
+        // Events
+        public static event PropertyChangedEventHandler PropertyChanged;
+        private static void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(null, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
