@@ -14,6 +14,7 @@ using SplashScreen;
 using FileTools.CommonData;
 using System.ComponentModel;
 using EPDM.Interop.epdm;
+using System.Runtime.InteropServices;
 
 namespace Excel
 {
@@ -33,7 +34,14 @@ namespace Excel
             {
                 if (_excel == null)
                 {
-                    _excel = new Application();
+                    try
+                    {
+                        _excel = (Application)Marshal.GetActiveObject("Excel.Application");
+                    }
+                    catch (Exception)
+                    {
+                        _excel = new Application();
+                    }
                 }
                 return _excel;
             }

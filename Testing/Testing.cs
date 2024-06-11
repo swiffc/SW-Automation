@@ -11,18 +11,10 @@ namespace Testing
         private static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
         static void Main()
         {
-            SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
-            string destinationFolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), "Template Export");
-            Directory.CreateDirectory(destinationFolderPath);
-
-            foreach (Component2 component in (SW.IActiveDoc2 as AssemblyDoc).GetComponents(false))
-            {
-                string sourceFilePath = component.GetPathName();
-                if (Path.GetExtension(sourceFilePath).ToLower() == ".sldprt")
-                {
-                    File.Copy(sourceFilePath, Path.Combine(destinationFolderPath, $"JOBNO-{component.ReferencedConfiguration}.sldprt"), true);
-                }
-            }
+            string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            string username = new DirectoryInfo(desktopPath).Parent.Name;
+            string initials = username.Substring(0, 3).ToUpper();
+            Console.WriteLine(initials);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -90,6 +91,16 @@ namespace FileTools.CommonData
         {
             get { return Default.Toggle_DeleteFiles; }
             set { Default.Toggle_DeleteFiles = value; }
+        }
+
+
+        // Static methods
+        public static void SignInitials()
+        {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string username = new DirectoryInfo(desktopPath).Parent.Name;
+            string initials = username.Substring(0, 3).ToUpper();
+            Initials = initials;
         }
 
 

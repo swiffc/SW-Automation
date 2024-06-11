@@ -32,6 +32,8 @@ namespace Bundle.SideFrame.Derived.Children
 
             EditDimension("Depth", "sk:Plate", Depth);
             EditDimension("Flange", "sk:Plate", Depth + (IsToedOut ? - Flange : + Flange));
+
+
         }
 
 

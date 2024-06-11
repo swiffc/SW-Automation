@@ -7,6 +7,9 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FileTools.StaticFileTools;
+using static FileTools.CommonData.CommonData;
+
 
 namespace SolidWorks_Add_In
 {
@@ -72,9 +75,11 @@ namespace SolidWorks_Add_In
             var ok = mSolidWorksApplication.SetAddinCallbackInfo2(0, this, mSwCookie);
 
             // Version control
-            string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-            if (!desktopPath.Contains("acmurr"))
-                CheckVersions();
+            if (!Developer)
+            {
+                VersionControl();
+                SignInitials();
+            }
 
             // Create our UI
             LoadUI();
@@ -82,7 +87,7 @@ namespace SolidWorks_Add_In
             // Return ok
             return true;
         }
-        public static void CheckVersions()
+        public static void VersionControl()
         {
             string dLL = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In\Automation Guy.dll";
             string updater = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInUpdater.exe";

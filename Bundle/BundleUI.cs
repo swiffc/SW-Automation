@@ -8,6 +8,7 @@ using TextBox = System.Windows.Forms.TextBox;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using SplashScreen;
 using Excel;
+using static FileTools.StaticFileTools;
 
 namespace Bundle
 {
@@ -21,15 +22,19 @@ namespace Bundle
         }
         private void bBundle_Click(object sender, EventArgs e)
         {
+            if (!Developer)
+            {
+                SignInitials();
+            }
             new Bundle(7, "Bundle");
         }
-        double LoadPregoDouble(TextBox textBox, Worksheet worksheet, params string[] cellNames)
+        static double LoadPregoDouble(TextBox textBox, Worksheet worksheet, params string[] cellNames)
         {
             double value = CellDouble(worksheet, cellNames);
             textBox.Text = value.ToString();
             return value;
         }
-        string LoadPregoString(TextBox textBox, Worksheet worksheet, params string[] cellNames)
+        static string LoadPregoString(TextBox textBox, Worksheet worksheet, params string[] cellNames)
         {
             string value = CellString(worksheet, cellNames);
             textBox.Text = value;
@@ -44,6 +49,8 @@ namespace Bundle
             tBundleWidth.Text = Bundle_Width.ToString();
             tSideFrameTHK.Text = SideFrame_THK.ToString();
             tDepth.Text = SideFrame_Depth.ToString();
+            tBoxWidth61.Text= Header61.BoxWidth.ToString();
+            tBoxWidth62.Text = Header62.BoxWidth.ToString();
 
             // Advanced
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
@@ -60,6 +67,56 @@ namespace Bundle
             itemNumber_Box.Text = ItemNumber;
             initials_Box.Text = Initials;
         }
+
+        private void bImportPrego_Click(object sender, EventArgs e)
+        {
+            if (InputSheet != null)
+            {
+                // Job info
+                Customer = LoadPregoString(customer_Box, InputSheet,
+                    "B" + 2); // Customer:
+                Client = LoadPregoString(client_Box, InputSheet,
+                    "B" + 2); // Customer:
+                PlantLocation = LoadPregoString(location_Box, InputSheet,
+                    "B" + 4); // Plant:
+                PurchaseOrder = LoadPregoString(purchaseOrder_Box, InputSheet,
+                    "B" + 5); // PO No:
+                ItemNumber = LoadPregoString(itemNumber_Box, InputSheet,
+                    "H" + 3); // Item:
+
+
+                // Bundle
+                Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
+                    "BQ" + 45); // Bdl Wd/Toed:
+
+
+                // SideFrame
+                SideFrame_Depth = LoadPregoDouble(tDepth, InputSheet,
+                    "CG" + 30, // override
+                    "CF" + 30);// Frame Depth (in)
+                SideFrame_THK = LoadPregoDouble(tSideFrameTHK, InputSheet,
+                    "CG" + 32, // override
+                    "CF" + 32);// Frame Thk (in)
+
+
+                // 61Header
+                Header61.BoxWidth = LoadPregoDouble(tBoxWidth61, InputSheet,
+                                       "AE" + 42, // Override
+                                       "AD" + 42);// Box Width
+                // 62Header
+                Header62.BoxWidth = LoadPregoDouble(tBoxWidth62, InputSheet,
+                                       "AM" + 42, // Override
+                                       "AL" + 42);// Box Width
+
+
+                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         #region Prego Imports
 
@@ -118,6 +175,15 @@ namespace Bundle
         {
             UI_StringChanged(initials_Box.Text, x => Initials = x);
         }
+        private void tBoxWidth61_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tBoxWidth61.Text, x => Header61.BoxWidth = x);
+        }
+
+        private void tBoxWidth62_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tBoxWidth62.Text, x => Header62.BoxWidth = x);
+        }
 
         #endregion
         #region Advanced
@@ -153,34 +219,6 @@ namespace Bundle
 
         #endregion
 
-        private void bImportPrego_Click(object sender, EventArgs e)
-        {
-            if (InputSheet != null)
-            {
-                Customer = LoadPregoString(customer_Box, InputSheet, 
-                    "B" + 2); // Customer:
-                PlantLocation = LoadPregoString(location_Box, InputSheet,
-                    "B" + 4); // Plant:
-                PurchaseOrder = LoadPregoString(purchaseOrder_Box, InputSheet,
-                    "B" + 5); // PO No:
-                ItemNumber = LoadPregoString(itemNumber_Box, InputSheet,
-                    "H" + 3); // Item:
 
-                Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
-                    "BQ" + 45); // Bdl Wd/Toed:
-                SideFrame_Depth = LoadPregoDouble(tDepth, InputSheet,
-                    "CG" + 30, // override
-                    "CF" + 30);// Frame Depth (in)
-                SideFrame_THK = LoadPregoDouble(tSideFrameTHK, InputSheet,
-                    "CG" + 32, // override
-                    "CF" + 32);// Frame Thk (in)
-
-                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }

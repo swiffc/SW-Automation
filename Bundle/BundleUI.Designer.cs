@@ -40,7 +40,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.client_Box = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.splitter3 = new System.Windows.Forms.Splitter();
@@ -49,7 +48,17 @@
             this.textBox_Bank = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tBoxWidth62 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth61 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.client_Box = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,26 +66,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tDepth = new System.Windows.Forms.TextBox();
             this.location_Box = new System.Windows.Forms.TextBox();
-            this.initials_Box = new System.Windows.Forms.TextBox();
             this.customer_Box = new System.Windows.Forms.TextBox();
             this.purchaseOrder_Box = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.initials_Box = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tBundleWidth
             // 
-            this.tBundleWidth.Location = new System.Drawing.Point(11, 104);
+            this.tBundleWidth.Location = new System.Drawing.Point(14, 192);
             this.tBundleWidth.Name = "tBundleWidth";
             this.tBundleWidth.Size = new System.Drawing.Size(100, 20);
             this.tBundleWidth.TabIndex = 0;
@@ -87,7 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(117, 107);
+            this.label1.Location = new System.Drawing.Point(120, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 1;
@@ -97,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(117, 159);
+            this.label2.Location = new System.Drawing.Point(120, 289);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 3;
@@ -105,7 +113,7 @@
             // 
             // tSideFrameTHK
             // 
-            this.tSideFrameTHK.Location = new System.Drawing.Point(11, 156);
+            this.tSideFrameTHK.Location = new System.Drawing.Point(14, 286);
             this.tSideFrameTHK.Name = "tSideFrameTHK";
             this.tSideFrameTHK.Size = new System.Drawing.Size(100, 20);
             this.tSideFrameTHK.TabIndex = 2;
@@ -114,11 +122,12 @@
             // 
             // bBundle
             // 
-            this.bBundle.Location = new System.Drawing.Point(189, 565);
+            this.bBundle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBundle.Location = new System.Drawing.Point(202, 567);
             this.bBundle.Name = "bBundle";
-            this.bBundle.Size = new System.Drawing.Size(75, 23);
+            this.bBundle.Size = new System.Drawing.Size(155, 28);
             this.bBundle.TabIndex = 4;
-            this.bBundle.Text = "Bundle";
+            this.bBundle.Text = "Create / Update";
             this.bBundle.UseVisualStyleBackColor = true;
             this.bBundle.Click += new System.EventHandler(this.bBundle_Click);
             // 
@@ -162,7 +171,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(426, 547);
+            this.tabControl1.Size = new System.Drawing.Size(564, 547);
             this.tabControl1.TabIndex = 39;
             // 
             // tabPage1
@@ -172,7 +181,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(418, 521);
+            this.tabPage1.Size = new System.Drawing.Size(556, 521);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bundle";
             // 
@@ -199,35 +208,25 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.label8);
             this.splitContainer1.Panel2.Controls.Add(this.splitter2);
-            this.splitContainer1.Size = new System.Drawing.Size(412, 515);
-            this.splitContainer1.SplitterDistance = 145;
+            this.splitContainer1.Size = new System.Drawing.Size(550, 515);
+            this.splitContainer1.SplitterDistance = 232;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.client_Box);
-            this.panel2.Controls.Add(this.initials_Box);
             this.panel2.Location = new System.Drawing.Point(3, 114);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(134, 398);
+            this.panel2.Size = new System.Drawing.Size(226, 398);
             this.panel2.TabIndex = 88;
-            // 
-            // client_Box
-            // 
-            this.client_Box.Location = new System.Drawing.Point(9, 0);
-            this.client_Box.Name = "client_Box";
-            this.client_Box.Size = new System.Drawing.Size(100, 20);
-            this.client_Box.TabIndex = 78;
-            this.client_Box.TextChanged += new System.EventHandler(this.client_Box_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 88);
+            this.label4.Location = new System.Drawing.Point(83, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 87;
@@ -236,25 +235,27 @@
             // splitter4
             // 
             this.splitter4.BackColor = System.Drawing.Color.White;
+            this.splitter4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter4.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter4.Location = new System.Drawing.Point(0, 75);
             this.splitter4.Name = "splitter4";
-            this.splitter4.Size = new System.Drawing.Size(145, 440);
+            this.splitter4.Size = new System.Drawing.Size(232, 440);
             this.splitter4.TabIndex = 86;
             this.splitter4.TabStop = false;
             // 
             // splitter3
             // 
+            this.splitter3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 72);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(145, 3);
+            this.splitter3.Size = new System.Drawing.Size(232, 3);
             this.splitter3.TabIndex = 85;
             this.splitter3.TabStop = false;
             // 
             // job_Box
             // 
-            this.job_Box.Location = new System.Drawing.Point(12, 10);
+            this.job_Box.Location = new System.Drawing.Point(66, 10);
             this.job_Box.Name = "job_Box";
             this.job_Box.Size = new System.Drawing.Size(74, 20);
             this.job_Box.TabIndex = 76;
@@ -263,7 +264,7 @@
             // 
             // bImportPrego
             // 
-            this.bImportPrego.Location = new System.Drawing.Point(12, 36);
+            this.bImportPrego.Location = new System.Drawing.Point(66, 36);
             this.bImportPrego.Name = "bImportPrego";
             this.bImportPrego.Size = new System.Drawing.Size(99, 23);
             this.bImportPrego.TabIndex = 84;
@@ -273,7 +274,7 @@
             // 
             // textBox_Bank
             // 
-            this.textBox_Bank.Location = new System.Drawing.Point(92, 10);
+            this.textBox_Bank.Location = new System.Drawing.Point(146, 10);
             this.textBox_Bank.Name = "textBox_Bank";
             this.textBox_Bank.Size = new System.Drawing.Size(20, 20);
             this.textBox_Bank.TabIndex = 83;
@@ -282,10 +283,11 @@
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.White;
+            this.splitter1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(145, 72);
+            this.splitter1.Size = new System.Drawing.Size(232, 72);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -293,7 +295,17 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.tBoxWidth62);
+            this.panel1.Controls.Add(this.tBoxWidth61);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.client_Box);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -309,24 +321,125 @@
             this.panel1.Controls.Add(this.purchaseOrder_Box);
             this.panel1.Location = new System.Drawing.Point(3, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 476);
+            this.panel1.Size = new System.Drawing.Size(308, 476);
             this.panel1.TabIndex = 86;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(130, 355);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 13);
+            this.label16.TabIndex = 96;
+            this.label16.Text = "BoxWidth";
+            // 
+            // tBoxWidth62
+            // 
+            this.tBoxWidth62.Location = new System.Drawing.Point(198, 352);
+            this.tBoxWidth62.Name = "tBoxWidth62";
+            this.tBoxWidth62.Size = new System.Drawing.Size(100, 20);
+            this.tBoxWidth62.TabIndex = 95;
+            this.tBoxWidth62.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tBoxWidth62.TextChanged += new System.EventHandler(this.tBoxWidth62_TextChanged);
+            // 
+            // tBoxWidth61
+            // 
+            this.tBoxWidth61.Location = new System.Drawing.Point(14, 352);
+            this.tBoxWidth61.Name = "tBoxWidth61";
+            this.tBoxWidth61.Size = new System.Drawing.Size(100, 20);
+            this.tBoxWidth61.TabIndex = 94;
+            this.tBoxWidth61.TextChanged += new System.EventHandler(this.tBoxWidth61_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(231, 333);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 16);
+            this.label15.TabIndex = 93;
+            this.label15.Text = "62Header";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(11, 333);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 16);
+            this.label14.TabIndex = 92;
+            this.label14.Text = "61Header";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(11, 241);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 16);
+            this.label13.TabIndex = 91;
+            this.label13.Text = "SideFrames";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(11, 173);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 16);
+            this.label12.TabIndex = 90;
+            this.label12.Text = "Bundle";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(11, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 16);
+            this.label11.TabIndex = 89;
+            this.label11.Text = "Job Info";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(195, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 88;
+            this.label5.Text = "Client";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(117, 5);
+            this.label10.Location = new System.Drawing.Point(195, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 13);
             this.label10.TabIndex = 87;
             this.label10.Text = "Customer";
             // 
+            // client_Box
+            // 
+            this.client_Box.Location = new System.Drawing.Point(14, 52);
+            this.client_Box.Name = "client_Box";
+            this.client_Box.Size = new System.Drawing.Size(175, 20);
+            this.client_Box.TabIndex = 78;
+            this.client_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.client_Box.TextChanged += new System.EventHandler(this.client_Box_TextChanged);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(117, 29);
+            this.label9.Location = new System.Drawing.Point(195, 79);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 86;
@@ -336,7 +449,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(117, 55);
+            this.label7.Location = new System.Drawing.Point(195, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 85;
@@ -346,7 +459,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(117, 81);
+            this.label6.Location = new System.Drawing.Point(195, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 84;
@@ -354,17 +467,18 @@
             // 
             // itemNumber_Box
             // 
-            this.itemNumber_Box.Location = new System.Drawing.Point(11, 78);
+            this.itemNumber_Box.Location = new System.Drawing.Point(14, 130);
             this.itemNumber_Box.Name = "itemNumber_Box";
-            this.itemNumber_Box.Size = new System.Drawing.Size(100, 20);
+            this.itemNumber_Box.Size = new System.Drawing.Size(175, 20);
             this.itemNumber_Box.TabIndex = 81;
+            this.itemNumber_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.itemNumber_Box.TextChanged += new System.EventHandler(this.itemNumber_Box_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(117, 133);
+            this.label3.Location = new System.Drawing.Point(120, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 5;
@@ -372,7 +486,7 @@
             // 
             // tDepth
             // 
-            this.tDepth.Location = new System.Drawing.Point(11, 130);
+            this.tDepth.Location = new System.Drawing.Point(14, 260);
             this.tDepth.Name = "tDepth";
             this.tDepth.Size = new System.Drawing.Size(100, 20);
             this.tDepth.TabIndex = 4;
@@ -381,34 +495,29 @@
             // 
             // location_Box
             // 
-            this.location_Box.Location = new System.Drawing.Point(11, 26);
+            this.location_Box.Location = new System.Drawing.Point(14, 78);
             this.location_Box.Name = "location_Box";
-            this.location_Box.Size = new System.Drawing.Size(100, 20);
+            this.location_Box.Size = new System.Drawing.Size(175, 20);
             this.location_Box.TabIndex = 79;
+            this.location_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.location_Box.TextChanged += new System.EventHandler(this.location_Box_TextChanged);
-            // 
-            // initials_Box
-            // 
-            this.initials_Box.Location = new System.Drawing.Point(9, 26);
-            this.initials_Box.Name = "initials_Box";
-            this.initials_Box.Size = new System.Drawing.Size(100, 20);
-            this.initials_Box.TabIndex = 82;
-            this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
             // customer_Box
             // 
-            this.customer_Box.Location = new System.Drawing.Point(11, 0);
+            this.customer_Box.Location = new System.Drawing.Point(14, 26);
             this.customer_Box.Name = "customer_Box";
-            this.customer_Box.Size = new System.Drawing.Size(100, 20);
+            this.customer_Box.Size = new System.Drawing.Size(175, 20);
             this.customer_Box.TabIndex = 77;
+            this.customer_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.customer_Box.TextChanged += new System.EventHandler(this.customer_Box_TextChanged);
             // 
             // purchaseOrder_Box
             // 
-            this.purchaseOrder_Box.Location = new System.Drawing.Point(11, 52);
+            this.purchaseOrder_Box.Location = new System.Drawing.Point(14, 104);
             this.purchaseOrder_Box.Name = "purchaseOrder_Box";
-            this.purchaseOrder_Box.Size = new System.Drawing.Size(100, 20);
+            this.purchaseOrder_Box.Size = new System.Drawing.Size(175, 20);
             this.purchaseOrder_Box.TabIndex = 80;
+            this.purchaseOrder_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.purchaseOrder_Box.TextChanged += new System.EventHandler(this.purchaseOrder_Box_TextChanged);
             // 
             // label8
@@ -416,7 +525,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(87, 11);
+            this.label8.Location = new System.Drawing.Point(100, 10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 16);
             this.label8.TabIndex = 85;
@@ -425,10 +534,11 @@
             // splitter2
             // 
             this.splitter2.BackColor = System.Drawing.Color.White;
+            this.splitter2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(0, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(263, 515);
+            this.splitter2.Size = new System.Drawing.Size(314, 515);
             this.splitter2.TabIndex = 0;
             this.splitter2.TabStop = false;
             // 
@@ -436,20 +546,31 @@
             // 
             this.tabPage2.Controls.Add(this.createDrawing_Toggle);
             this.tabPage2.Controls.Add(this.delete_Toggle);
+            this.tabPage2.Controls.Add(this.initials_Box);
             this.tabPage2.Controls.Add(this.save_Toggle);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(418, 521);
+            this.tabPage2.Size = new System.Drawing.Size(556, 521);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Advanced";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // initials_Box
+            // 
+            this.initials_Box.BackColor = System.Drawing.SystemColors.Window;
+            this.initials_Box.Location = new System.Drawing.Point(6, 75);
+            this.initials_Box.Name = "initials_Box";
+            this.initials_Box.Size = new System.Drawing.Size(41, 20);
+            this.initials_Box.TabIndex = 82;
+            this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
             // BundleUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 598);
+            this.ClientSize = new System.Drawing.Size(588, 608);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.bBundle);
             this.Name = "BundleUI";
@@ -463,8 +584,6 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -510,6 +629,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tBoxWidth62;
+        private System.Windows.Forms.TextBox tBoxWidth61;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
 

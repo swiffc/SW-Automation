@@ -1,19 +1,43 @@
 ﻿using FileTools.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static FileTools.Properties.Settings;
 
 namespace FileTools.CommonData
 {
-    public static partial class CommonData
-    {
-        // 61 Header
-        public static Header61Extensions Header61 { get; set; } = new Header61Extensions();
-        public class Header61Extensions : IHeaderExtensions
+    public static partial class CommonData 
+    {// 61 Header
+        public static Header_61 Header61 = new Header_61();
+        public class Header_61 : IHeaderExtensions
         {
-            public bool Enabled { get; set; } = true;
+            public double BoxWidth 
+            { 
+                get => Default.BoxWidth61; 
+                set => Default.BoxWidth61 = value; 
+            }
+            public double TubesheetTHK 
+            { 
+                get => Default.TubesheetTHK_61; 
+                set => Default.TubesheetTHK_61 = value; 
+            }
+            public double PlugsheetTHK
+            {
+                get => Default.PlugsheetTHK_61;
+                set => Default.PlugsheetTHK_61 = value;
+            }
+            public double TubeLength
+            {
+                get => Default.TubeLength;
+                set => Default.TubeLength = value;
+            }
+            public double TubeStickThru
+            {
+                get => Default.TubeStickThru;
+                set => Default.TubeStickThru = value;
+            }
+            public bool HeadersOutsideFrames
+            {
+                get => Default.HeadersOutsideFrames;
+                set => Default.HeadersOutsideFrames = value;
+            }
         }
     }
 }
