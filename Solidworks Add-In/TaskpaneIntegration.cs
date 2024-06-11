@@ -17,8 +17,7 @@ namespace SolidWorks_Add_In
     {
         static public string VersionNumber => "5.0.1";
         static public string SpeechBubble =>
-            @"""" + "Minor bugfixes" +"\n"
-          + @"""";
+            @"""" + "Minor bugfixes" + @"""";
 
         #region Private Members
 
