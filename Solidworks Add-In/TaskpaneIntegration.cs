@@ -15,9 +15,9 @@ namespace SolidWorks_Add_In
     /// </summary>
     public class TaskpaneIntegration : SwAddin
     {
-        static public string VersionNumber => "5.0.0";
+        static public string VersionNumber => "5.0.1";
         static public string SpeechBubble =>
-            @"""" + "Machinery mount automation is now live!" +"\n"
+            @"""" + "Minor bugfixes" +"\n"
           + @"""";
 
         #region Private Members

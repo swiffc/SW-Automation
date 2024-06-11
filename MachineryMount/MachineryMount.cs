@@ -53,12 +53,12 @@ namespace MachineryMount
 
                 if (!TemplatesDownloaded)
                 {
-                    Vault.GetAllFilesInFolder(@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\MachineryMount");
+                    Vault.GetAllFilesInFolder(@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\MachineryMount\");
                     TemplatesDownloaded = true;
                 }
                 if (!LibraryFilesDownloaded)
                 {
-                    Vault.GetAllFilesInFolder(@"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Bearings");
+                    Vault.GetAllFilesInFolder(@"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Bearings\");
                     LibraryFilesDownloaded = true;
                 }
 

@@ -108,8 +108,8 @@ namespace AXC_Vault
         }
         public static void GetAllFilesInFolder(string folderPath)
         {
-            Vault5.GetFileFromPath(folderPath, out IEdmFolder5 dllFolder);
-            GetAllFilesInFolder(dllFolder, false);
+            IEdmFolder5 folder = Vault5.GetFolderFromPath(folderPath);   
+            GetAllFilesInFolder(folder, false);
         }
         private static List<string> FoldersToSkip = null;
         public static bool FileExists(string filePath, out IEdmFile5 file)
