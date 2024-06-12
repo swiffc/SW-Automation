@@ -58,7 +58,7 @@ namespace Excel
 
                     // Guess the desired file
 
-                    PleaseWait.Start("Connecting to AXC_Vault");
+                    PleaseWait.Start("Connecting to AXC_VAULT");
                     if (Vault.FileExists(expectedFilePath, out IEdmFile5 file))
                     {
                         if (!File.Exists(expectedFilePath))
@@ -127,7 +127,7 @@ namespace Excel
                 Range cell = (Range)sheet.Cells[row, column];
                 string cellValue = cell.Value2;
 
-                if (cellValue != null)
+                if (cellValue != null && cellValue != "")
                     return cellValue;
             }
 

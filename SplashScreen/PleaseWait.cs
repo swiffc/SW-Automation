@@ -43,12 +43,17 @@ namespace SplashScreen
                     _messageBoxForm.Show();
                 }));
             }
+            else
+            {
+                Start(newMessage);
+            }
         }
 
 
         public static void Stop()
         {
-            _messageBoxForm.Invoke(new Action(() => _messageBoxForm.Close()));
+            if (_messageBoxForm != null)
+                _messageBoxForm.Invoke(new Action(() => _messageBoxForm.Close()));
         }
 
 

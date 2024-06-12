@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static FileTools.Properties.Settings;
 
 namespace FileTools.CommonData
@@ -20,36 +21,9 @@ namespace FileTools.CommonData
 
         public static void UI_DoubleChanged(string textBoxText, Action<double> setProperty)
         {
-            bool saveIsEnabled = true;
-            if (
-                (textBoxText.StartsWith("-0") && textBoxText.EndsWith(".0")) || // -0.0
-                (textBoxText.StartsWith("-0") && textBoxText.EndsWith(".")) ||  // -0.
-                (textBoxText.StartsWith("-") && textBoxText.EndsWith("0")) ||   // -0
-                (textBoxText.StartsWith("-") && textBoxText.EndsWith("-")) ||   // -
-                (textBoxText.StartsWith("-") && textBoxText.EndsWith(".")) ||   // - .
-                (textBoxText.StartsWith("-") && textBoxText.EndsWith(".0")) ||  // - .0
-                (textBoxText.StartsWith("0") && textBoxText.EndsWith(".0")) ||  //  0.0
-                (textBoxText.StartsWith("0") && textBoxText.EndsWith(".")) ||   //  0.
-                (textBoxText.StartsWith(".") && textBoxText.EndsWith(".")) ||   //   .
-                (textBoxText.StartsWith(".") && textBoxText.EndsWith(".0")))    //   .0
-            {
-                saveIsEnabled = false;
-            }
-            else if (double.TryParse(textBoxText, out double value))
-            {
+            if (double.TryParse(textBoxText, out double value))
                 setProperty(value);
-            }
-            else
-            {
-                setProperty(0.001);
-            }
-
-            if (saveIsEnabled)
-            {
-                SaveSettings();
-            }
-                
-                
+            SaveSettings();
         }
         public static void UI_IntChanged(string textBoxText, Action<int> setProperty)
         {
@@ -78,6 +52,6 @@ namespace FileTools.CommonData
             {
                 Debug.WriteLine(ex.Message);
             }
-        } 
+        }
     }
 }

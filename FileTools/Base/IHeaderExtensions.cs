@@ -9,14 +9,9 @@ namespace FileTools.Base
 {
     public interface IHeaderExtensions
     {
-        // Box
+        bool IsRequired { get; set; }
         double BoxWidth { get; set; }
         double TubesheetTHK { get; set; }
         double PlugsheetTHK { get; set; }
-
-        // Bundle
-        double TubeLength { get; set; }
-        double TubeStickThru { get; set; }
-        bool HeadersOutsideFrames { get; set; }
     }
 }

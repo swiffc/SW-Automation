@@ -23,20 +23,10 @@ namespace FileTools.CommonData
                 get => Default.PlugsheetTHK_61;
                 set => Default.PlugsheetTHK_61 = value;
             }
-            public double TubeLength
+            public bool IsRequired
             {
-                get => Default.TubeLength;
-                set => Default.TubeLength = value;
-            }
-            public double TubeStickThru
-            {
-                get => Default.TubeStickThru;
-                set => Default.TubeStickThru = value;
-            }
-            public bool HeadersOutsideFrames
-            {
-                get => Default.HeadersOutsideFrames;
-                set => Default.HeadersOutsideFrames = value;
+                get => Default.IsRequired_61;
+                set => Default.IsRequired_61 = value;
             }
         }
     }

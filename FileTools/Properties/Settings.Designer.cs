@@ -1258,5 +1258,77 @@ namespace FileTools.Properties {
                 this["HeadersOutsideFrames"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsRequired_61 {
+            get {
+                return ((bool)(this["IsRequired_61"]));
+            }
+            set {
+                this["IsRequired_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsRequired_62 {
+            get {
+                return ((bool)(this["IsRequired_62"]));
+            }
+            set {
+                this["IsRequired_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsRequired_63 {
+            get {
+                return ((bool)(this["IsRequired_63"]));
+            }
+            set {
+                this["IsRequired_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsRequired_64 {
+            get {
+                return ((bool)(this["IsRequired_64"]));
+            }
+            set {
+                this["IsRequired_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsRequired_65 {
+            get {
+                return ((bool)(this["IsRequired_65"]));
+            }
+            set {
+                this["IsRequired_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsRequired_66 {
+            get {
+                return ((bool)(this["IsRequired_66"]));
+            }
+            set {
+                this["IsRequired_66"] = value;
+            }
+        }
     }
 }

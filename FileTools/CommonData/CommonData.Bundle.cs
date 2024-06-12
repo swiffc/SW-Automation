@@ -45,5 +45,22 @@ namespace FileTools.CommonData
             get { return Default.SideFrame_Depth; }
             set { Default.SideFrame_Depth = value; }
         }
+
+
+        public static double TubeLength
+        {
+            get => Default.TubeLength;
+            set => Default.TubeLength = value;
+        }
+        public static double TubeStickThru
+        {
+            get => Default.TubeStickThru;
+            set => Default.TubeStickThru = value;
+        }
+        public static bool HeadersOutsideFrames
+        {
+            get => Default.HeadersOutsideFrames;
+            set => Default.HeadersOutsideFrames = value;
+        }
     }
 }
