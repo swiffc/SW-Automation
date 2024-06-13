@@ -1330,5 +1330,221 @@ namespace FileTools.Properties {
                 this["IsRequired_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalSpan61 {
+            get {
+                return ((double)(this["VerticalSpan61"]));
+            }
+            set {
+                this["VerticalSpan61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalSpan62 {
+            get {
+                return ((double)(this["VerticalSpan62"]));
+            }
+            set {
+                this["VerticalSpan62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalSpan63 {
+            get {
+                return ((double)(this["VerticalSpan63"]));
+            }
+            set {
+                this["VerticalSpan63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalSpan64 {
+            get {
+                return ((double)(this["VerticalSpan64"]));
+            }
+            set {
+                this["VerticalSpan64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalSpan65 {
+            get {
+                return ((double)(this["VerticalSpan65"]));
+            }
+            set {
+                this["VerticalSpan65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalSpan66 {
+            get {
+                return ((double)(this["VerticalSpan66"]));
+            }
+            set {
+                this["VerticalSpan66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BoxLength61 {
+            get {
+                return ((double)(this["BoxLength61"]));
+            }
+            set {
+                this["BoxLength61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BoxLength62 {
+            get {
+                return ((double)(this["BoxLength62"]));
+            }
+            set {
+                this["BoxLength62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BoxLength63 {
+            get {
+                return ((double)(this["BoxLength63"]));
+            }
+            set {
+                this["BoxLength63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BoxLength64 {
+            get {
+                return ((double)(this["BoxLength64"]));
+            }
+            set {
+                this["BoxLength64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BoxLength65 {
+            get {
+                return ((double)(this["BoxLength65"]));
+            }
+            set {
+                this["BoxLength65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BoxLength66 {
+            get {
+                return ((double)(this["BoxLength66"]));
+            }
+            set {
+                this["BoxLength66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TopBottomTHK_61 {
+            get {
+                return ((double)(this["TopBottomTHK_61"]));
+            }
+            set {
+                this["TopBottomTHK_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TopBottomTHK_62 {
+            get {
+                return ((double)(this["TopBottomTHK_62"]));
+            }
+            set {
+                this["TopBottomTHK_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TopBottomTHK_63 {
+            get {
+                return ((double)(this["TopBottomTHK_63"]));
+            }
+            set {
+                this["TopBottomTHK_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TopBottomTHK_64 {
+            get {
+                return ((double)(this["TopBottomTHK_64"]));
+            }
+            set {
+                this["TopBottomTHK_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TopBottomTHK_65 {
+            get {
+                return ((double)(this["TopBottomTHK_65"]));
+            }
+            set {
+                this["TopBottomTHK_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TopBottomTHK_66 {
+            get {
+                return ((double)(this["TopBottomTHK_66"]));
+            }
+            set {
+                this["TopBottomTHK_66"] = value;
+            }
+        }
     }
 }

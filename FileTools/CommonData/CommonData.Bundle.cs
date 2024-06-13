@@ -52,7 +52,7 @@ namespace FileTools.CommonData
             get => Default.TubeLength;
             set => Default.TubeLength = value;
         }
-        public static double TubeStickThru
+        public static double TubeProjection
         {
             get => Default.TubeStickThru;
             set => Default.TubeStickThru = value;

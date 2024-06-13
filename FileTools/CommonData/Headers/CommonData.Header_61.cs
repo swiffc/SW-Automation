@@ -28,6 +28,21 @@ namespace FileTools.CommonData
                 get => Default.IsRequired_61;
                 set => Default.IsRequired_61 = value;
             }
+            public double VerticalSpan 
+            {
+                get => Default.VerticalSpan61; 
+                set => Default.VerticalSpan61 = value;
+            }
+            public double BoxLength 
+            { 
+                get => Default.BoxLength61; 
+                set => Default.BoxLength61 = value; 
+            }
+            public double TopAndBottomPlateTHK 
+            { 
+                get => Default.TopBottomTHK_61; 
+                set => Default.TopBottomTHK_61 = value; 
+            }
         }
     }
 }

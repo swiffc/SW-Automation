@@ -65,7 +65,10 @@
       <DependentUpon>BundleUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Bundle.cs" />
-    <Compile Include="BundleUI\BundleUI_AppData.cs">
+    <Compile Include="BundleUI\BundleUI_AppData_Header.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BundleUI\BundleUI_PregoData_Header.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

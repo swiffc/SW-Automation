@@ -31,7 +31,6 @@
             this.tBundleWidth = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tSideFrameTHK = new System.Windows.Forms.TextBox();
             this.bBundle = new System.Windows.Forms.Button();
             this.delete_Toggle = new System.Windows.Forms.CheckBox();
             this.save_Toggle = new System.Windows.Forms.CheckBox();
@@ -48,6 +47,14 @@
             this.textBox_Bank = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cSideFrameTHK = new System.Windows.Forms.ComboBox();
+            this.tTubeProjection = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tTubeLength = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cHeadersOutsideFrame = new System.Windows.Forms.CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -74,6 +81,20 @@
             this.cEnabled62 = new System.Windows.Forms.CheckBox();
             this.cEnabled61 = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tPlugsheetTHK_66 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetTHK_62 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetTHK_61 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetTHK_63 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tPlugsheetTHK_64 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetTHK_65 = new System.Windows.Forms.TextBox();
+            this.tTubesheetTHK_66 = new System.Windows.Forms.TextBox();
+            this.tTubesheetTHK_62 = new System.Windows.Forms.TextBox();
+            this.tTubesheetTHK_61 = new System.Windows.Forms.TextBox();
+            this.tTubesheetTHK_63 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tTubesheetTHK_64 = new System.Windows.Forms.TextBox();
+            this.tTubesheetTHK_65 = new System.Windows.Forms.TextBox();
             this.tBoxWidth66 = new System.Windows.Forms.TextBox();
             this.tBoxWidth62 = new System.Windows.Forms.TextBox();
             this.tBoxWidth61 = new System.Windows.Forms.TextBox();
@@ -90,23 +111,27 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.initials_Box = new System.Windows.Forms.TextBox();
-            this.tTubesheetTHK_66 = new System.Windows.Forms.TextBox();
-            this.tTubesheetTHK_62 = new System.Windows.Forms.TextBox();
-            this.tTubesheetTHK_61 = new System.Windows.Forms.TextBox();
-            this.tTubesheetTHK_63 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tTubesheetTHK_64 = new System.Windows.Forms.TextBox();
-            this.tTubesheetTHK_65 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetTHK_66 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetTHK_62 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetTHK_61 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetTHK_63 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tPlugsheetTHK_64 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetTHK_65 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.cHeadersOutsideFrame = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.tVerticalSpan_66 = new System.Windows.Forms.TextBox();
+            this.tVerticalSpan_62 = new System.Windows.Forms.TextBox();
+            this.tVerticalSpan_61 = new System.Windows.Forms.TextBox();
+            this.tVerticalSpan_63 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tVerticalSpan_64 = new System.Windows.Forms.TextBox();
+            this.tVerticalSpan_65 = new System.Windows.Forms.TextBox();
+            this.tBoxLength_66 = new System.Windows.Forms.TextBox();
+            this.tBoxLength_62 = new System.Windows.Forms.TextBox();
+            this.tBoxLength_61 = new System.Windows.Forms.TextBox();
+            this.tBoxLength_63 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tBoxLength_64 = new System.Windows.Forms.TextBox();
+            this.tBoxLength_65 = new System.Windows.Forms.TextBox();
+            this.tTopBottomTHK_66 = new System.Windows.Forms.TextBox();
+            this.tTopBottomTHK_62 = new System.Windows.Forms.TextBox();
+            this.tTopBottomTHK_61 = new System.Windows.Forms.TextBox();
+            this.tTopBottomTHK_63 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tTopBottomTHK_64 = new System.Windows.Forms.TextBox();
+            this.tTopBottomTHK_65 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -142,20 +167,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(120, 334);
+            this.label2.Location = new System.Drawing.Point(120, 377);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "SideFrame THK";
-            // 
-            // tSideFrameTHK
-            // 
-            this.tSideFrameTHK.Location = new System.Drawing.Point(14, 331);
-            this.tSideFrameTHK.Name = "tSideFrameTHK";
-            this.tSideFrameTHK.Size = new System.Drawing.Size(100, 20);
-            this.tSideFrameTHK.TabIndex = 2;
-            this.tSideFrameTHK.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tSideFrameTHK.Leave += new System.EventHandler(this.tSideFrameTHK_Leave);
             // 
             // bBundle
             // 
@@ -333,6 +349,11 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cSideFrameTHK);
+            this.panel1.Controls.Add(this.tTubeProjection);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.tTubeLength);
+            this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.cHeadersOutsideFrame);
             this.panel1.Controls.Add(this.label25);
@@ -350,7 +371,6 @@
             this.panel1.Controls.Add(this.itemNumber_Box);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tDepth);
-            this.panel1.Controls.Add(this.tSideFrameTHK);
             this.panel1.Controls.Add(this.location_Box);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.customer_Box);
@@ -360,12 +380,96 @@
             this.panel1.Size = new System.Drawing.Size(308, 476);
             this.panel1.TabIndex = 86;
             // 
+            // cSideFrameTHK
+            // 
+            this.cSideFrameTHK.FormattingEnabled = true;
+            this.cSideFrameTHK.Items.AddRange(new object[] {
+            "0.1344",
+            "0.1875",
+            "0.2500",
+            "0.3125",
+            "0.3750"});
+            this.cSideFrameTHK.Location = new System.Drawing.Point(14, 374);
+            this.cSideFrameTHK.Name = "cSideFrameTHK";
+            this.cSideFrameTHK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cSideFrameTHK.Size = new System.Drawing.Size(100, 21);
+            this.cSideFrameTHK.TabIndex = 113;
+            // 
+            // tTubeProjection
+            // 
+            this.tTubeProjection.Location = new System.Drawing.Point(14, 272);
+            this.tTubeProjection.Name = "tTubeProjection";
+            this.tTubeProjection.Size = new System.Drawing.Size(100, 20);
+            this.tTubeProjection.TabIndex = 111;
+            this.tTubeProjection.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tTubeProjection.TextChanged += new System.EventHandler(this.tTubeProjection_TextChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(120, 275);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(82, 13);
+            this.label28.TabIndex = 112;
+            this.label28.Text = "Tube Projection";
+            // 
+            // tTubeLength
+            // 
+            this.tTubeLength.Location = new System.Drawing.Point(14, 246);
+            this.tTubeLength.Name = "tTubeLength";
+            this.tTubeLength.Size = new System.Drawing.Size(100, 20);
+            this.tTubeLength.TabIndex = 109;
+            this.tTubeLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tTubeLength.TextChanged += new System.EventHandler(this.tTubeLength_TextChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(120, 249);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(68, 13);
+            this.label27.TabIndex = 110;
+            this.label27.Text = "Tube Length";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(120, 227);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(119, 13);
+            this.label26.TabIndex = 108;
+            this.label26.Text = "Headers outside frame?";
+            // 
+            // cHeadersOutsideFrame
+            // 
+            this.cHeadersOutsideFrame.AutoSize = true;
+            this.cHeadersOutsideFrame.Location = new System.Drawing.Point(99, 226);
+            this.cHeadersOutsideFrame.Name = "cHeadersOutsideFrame";
+            this.cHeadersOutsideFrame.Size = new System.Drawing.Size(15, 14);
+            this.cHeadersOutsideFrame.TabIndex = 107;
+            this.cHeadersOutsideFrame.UseVisualStyleBackColor = true;
+            this.cHeadersOutsideFrame.CheckedChanged += new System.EventHandler(this.cHeadersOutsideFrame_CheckedChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.White;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(63, 730);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(165, 16);
+            this.label25.TabIndex = 106;
+            this.label25.Text = "Continued on Header tab...";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(11, 286);
+            this.label13.Location = new System.Drawing.Point(11, 329);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 16);
             this.label13.TabIndex = 91;
@@ -465,7 +569,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(120, 308);
+            this.label3.Location = new System.Drawing.Point(120, 351);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 5;
@@ -473,7 +577,7 @@
             // 
             // tDepth
             // 
-            this.tDepth.Location = new System.Drawing.Point(14, 305);
+            this.tDepth.Location = new System.Drawing.Point(14, 348);
             this.tDepth.Name = "tDepth";
             this.tDepth.Size = new System.Drawing.Size(100, 20);
             this.tDepth.TabIndex = 4;
@@ -625,6 +729,27 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tTopBottomTHK_66);
+            this.panel3.Controls.Add(this.tTopBottomTHK_62);
+            this.panel3.Controls.Add(this.tTopBottomTHK_61);
+            this.panel3.Controls.Add(this.tTopBottomTHK_63);
+            this.panel3.Controls.Add(this.label31);
+            this.panel3.Controls.Add(this.tTopBottomTHK_64);
+            this.panel3.Controls.Add(this.tTopBottomTHK_65);
+            this.panel3.Controls.Add(this.tBoxLength_66);
+            this.panel3.Controls.Add(this.tBoxLength_62);
+            this.panel3.Controls.Add(this.tBoxLength_61);
+            this.panel3.Controls.Add(this.tBoxLength_63);
+            this.panel3.Controls.Add(this.label30);
+            this.panel3.Controls.Add(this.tBoxLength_64);
+            this.panel3.Controls.Add(this.tBoxLength_65);
+            this.panel3.Controls.Add(this.tVerticalSpan_66);
+            this.panel3.Controls.Add(this.tVerticalSpan_62);
+            this.panel3.Controls.Add(this.tVerticalSpan_61);
+            this.panel3.Controls.Add(this.tVerticalSpan_63);
+            this.panel3.Controls.Add(this.label29);
+            this.panel3.Controls.Add(this.tVerticalSpan_64);
+            this.panel3.Controls.Add(this.tVerticalSpan_65);
             this.panel3.Controls.Add(this.tPlugsheetTHK_66);
             this.panel3.Controls.Add(this.tPlugsheetTHK_62);
             this.panel3.Controls.Add(this.tPlugsheetTHK_61);
@@ -650,6 +775,134 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(550, 472);
             this.panel3.TabIndex = 103;
+            // 
+            // tPlugsheetTHK_66
+            // 
+            this.tPlugsheetTHK_66.Location = new System.Drawing.Point(3, 107);
+            this.tPlugsheetTHK_66.Name = "tPlugsheetTHK_66";
+            this.tPlugsheetTHK_66.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetTHK_66.TabIndex = 118;
+            this.tPlugsheetTHK_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tPlugsheetTHK_66.TextChanged += new System.EventHandler(this.tPlugsheetTHK_66_TextChanged);
+            // 
+            // tPlugsheetTHK_62
+            // 
+            this.tPlugsheetTHK_62.Location = new System.Drawing.Point(289, 107);
+            this.tPlugsheetTHK_62.Name = "tPlugsheetTHK_62";
+            this.tPlugsheetTHK_62.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetTHK_62.TabIndex = 113;
+            this.tPlugsheetTHK_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tPlugsheetTHK_62.TextChanged += new System.EventHandler(this.tPlugsheetTHK_62_TextChanged);
+            // 
+            // tPlugsheetTHK_61
+            // 
+            this.tPlugsheetTHK_61.Location = new System.Drawing.Point(362, 107);
+            this.tPlugsheetTHK_61.Name = "tPlugsheetTHK_61";
+            this.tPlugsheetTHK_61.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetTHK_61.TabIndex = 112;
+            this.tPlugsheetTHK_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tPlugsheetTHK_61.TextChanged += new System.EventHandler(this.tPlugsheetTHK_61_TextChanged);
+            // 
+            // tPlugsheetTHK_63
+            // 
+            this.tPlugsheetTHK_63.Location = new System.Drawing.Point(219, 107);
+            this.tPlugsheetTHK_63.Name = "tPlugsheetTHK_63";
+            this.tPlugsheetTHK_63.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetTHK_63.TabIndex = 115;
+            this.tPlugsheetTHK_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tPlugsheetTHK_63.TextChanged += new System.EventHandler(this.tPlugsheetTHK_63_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(432, 110);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(79, 13);
+            this.label24.TabIndex = 114;
+            this.label24.Text = "Plugsheet THK";
+            // 
+            // tPlugsheetTHK_64
+            // 
+            this.tPlugsheetTHK_64.Location = new System.Drawing.Point(146, 107);
+            this.tPlugsheetTHK_64.Name = "tPlugsheetTHK_64";
+            this.tPlugsheetTHK_64.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetTHK_64.TabIndex = 116;
+            this.tPlugsheetTHK_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tPlugsheetTHK_64.TextChanged += new System.EventHandler(this.tPlugsheetTHK_64_TextChanged);
+            // 
+            // tPlugsheetTHK_65
+            // 
+            this.tPlugsheetTHK_65.Location = new System.Drawing.Point(76, 107);
+            this.tPlugsheetTHK_65.Name = "tPlugsheetTHK_65";
+            this.tPlugsheetTHK_65.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetTHK_65.TabIndex = 117;
+            this.tPlugsheetTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tPlugsheetTHK_65.TextChanged += new System.EventHandler(this.tPlugsheetTHK_65_TextChanged);
+            // 
+            // tTubesheetTHK_66
+            // 
+            this.tTubesheetTHK_66.Location = new System.Drawing.Point(3, 81);
+            this.tTubesheetTHK_66.Name = "tTubesheetTHK_66";
+            this.tTubesheetTHK_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetTHK_66.TabIndex = 111;
+            this.tTubesheetTHK_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubesheetTHK_66.TextChanged += new System.EventHandler(this.tTubesheetTHK_66_TextChanged);
+            // 
+            // tTubesheetTHK_62
+            // 
+            this.tTubesheetTHK_62.Location = new System.Drawing.Point(289, 81);
+            this.tTubesheetTHK_62.Name = "tTubesheetTHK_62";
+            this.tTubesheetTHK_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetTHK_62.TabIndex = 106;
+            this.tTubesheetTHK_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubesheetTHK_62.TextChanged += new System.EventHandler(this.tTubesheetTHK_62_TextChanged);
+            // 
+            // tTubesheetTHK_61
+            // 
+            this.tTubesheetTHK_61.Location = new System.Drawing.Point(362, 81);
+            this.tTubesheetTHK_61.Name = "tTubesheetTHK_61";
+            this.tTubesheetTHK_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetTHK_61.TabIndex = 105;
+            this.tTubesheetTHK_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubesheetTHK_61.TextChanged += new System.EventHandler(this.tTubesheetTHK_61_TextChanged);
+            // 
+            // tTubesheetTHK_63
+            // 
+            this.tTubesheetTHK_63.Location = new System.Drawing.Point(219, 81);
+            this.tTubesheetTHK_63.Name = "tTubesheetTHK_63";
+            this.tTubesheetTHK_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetTHK_63.TabIndex = 108;
+            this.tTubesheetTHK_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubesheetTHK_63.TextChanged += new System.EventHandler(this.tTubesheetTHK_63_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(432, 84);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(83, 13);
+            this.label23.TabIndex = 107;
+            this.label23.Text = "Tubesheet THK";
+            // 
+            // tTubesheetTHK_64
+            // 
+            this.tTubesheetTHK_64.Location = new System.Drawing.Point(146, 81);
+            this.tTubesheetTHK_64.Name = "tTubesheetTHK_64";
+            this.tTubesheetTHK_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetTHK_64.TabIndex = 109;
+            this.tTubesheetTHK_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubesheetTHK_64.TextChanged += new System.EventHandler(this.tTubesheetTHK_64_TextChanged);
+            // 
+            // tTubesheetTHK_65
+            // 
+            this.tTubesheetTHK_65.Location = new System.Drawing.Point(76, 81);
+            this.tTubesheetTHK_65.Name = "tTubesheetTHK_65";
+            this.tTubesheetTHK_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetTHK_65.TabIndex = 110;
+            this.tTubesheetTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubesheetTHK_65.TextChanged += new System.EventHandler(this.tTubesheetTHK_65_TextChanged);
             // 
             // tBoxWidth66
             // 
@@ -816,164 +1069,197 @@
             this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
-            // tTubesheetTHK_66
+            // tVerticalSpan_66
             // 
-            this.tTubesheetTHK_66.Location = new System.Drawing.Point(3, 29);
-            this.tTubesheetTHK_66.Name = "tTubesheetTHK_66";
-            this.tTubesheetTHK_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetTHK_66.TabIndex = 111;
-            this.tTubesheetTHK_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tTubesheetTHK_66.TextChanged += new System.EventHandler(this.tTubesheetTHK_66_TextChanged);
+            this.tVerticalSpan_66.Location = new System.Drawing.Point(3, 29);
+            this.tVerticalSpan_66.Name = "tVerticalSpan_66";
+            this.tVerticalSpan_66.Size = new System.Drawing.Size(67, 20);
+            this.tVerticalSpan_66.TabIndex = 125;
+            this.tVerticalSpan_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tVerticalSpan_66.TextChanged += new System.EventHandler(this.tVerticalSpan_66_TextChanged);
             // 
-            // tTubesheetTHK_62
+            // tVerticalSpan_62
             // 
-            this.tTubesheetTHK_62.Location = new System.Drawing.Point(289, 29);
-            this.tTubesheetTHK_62.Name = "tTubesheetTHK_62";
-            this.tTubesheetTHK_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetTHK_62.TabIndex = 106;
-            this.tTubesheetTHK_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tTubesheetTHK_62.TextChanged += new System.EventHandler(this.tTubesheetTHK_62_TextChanged);
+            this.tVerticalSpan_62.Location = new System.Drawing.Point(289, 29);
+            this.tVerticalSpan_62.Name = "tVerticalSpan_62";
+            this.tVerticalSpan_62.Size = new System.Drawing.Size(67, 20);
+            this.tVerticalSpan_62.TabIndex = 120;
+            this.tVerticalSpan_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tVerticalSpan_62.TextChanged += new System.EventHandler(this.tVerticalSpan_62_TextChanged);
             // 
-            // tTubesheetTHK_61
+            // tVerticalSpan_61
             // 
-            this.tTubesheetTHK_61.Location = new System.Drawing.Point(362, 29);
-            this.tTubesheetTHK_61.Name = "tTubesheetTHK_61";
-            this.tTubesheetTHK_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetTHK_61.TabIndex = 105;
-            this.tTubesheetTHK_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tTubesheetTHK_61.TextChanged += new System.EventHandler(this.tTubesheetTHK_61_TextChanged);
+            this.tVerticalSpan_61.Location = new System.Drawing.Point(362, 29);
+            this.tVerticalSpan_61.Name = "tVerticalSpan_61";
+            this.tVerticalSpan_61.Size = new System.Drawing.Size(64, 20);
+            this.tVerticalSpan_61.TabIndex = 119;
+            this.tVerticalSpan_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tVerticalSpan_61.TextChanged += new System.EventHandler(this.tVerticalSpan_61_TextChanged);
             // 
-            // tTubesheetTHK_63
+            // tVerticalSpan_63
             // 
-            this.tTubesheetTHK_63.Location = new System.Drawing.Point(219, 29);
-            this.tTubesheetTHK_63.Name = "tTubesheetTHK_63";
-            this.tTubesheetTHK_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetTHK_63.TabIndex = 108;
-            this.tTubesheetTHK_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tTubesheetTHK_63.TextChanged += new System.EventHandler(this.tTubesheetTHK_63_TextChanged);
+            this.tVerticalSpan_63.Location = new System.Drawing.Point(219, 29);
+            this.tVerticalSpan_63.Name = "tVerticalSpan_63";
+            this.tVerticalSpan_63.Size = new System.Drawing.Size(64, 20);
+            this.tVerticalSpan_63.TabIndex = 122;
+            this.tVerticalSpan_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tVerticalSpan_63.TextChanged += new System.EventHandler(this.tVerticalSpan_63_TextChanged);
             // 
-            // label23
+            // label29
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(432, 32);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(83, 13);
-            this.label23.TabIndex = 107;
-            this.label23.Text = "Tubesheet THK";
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(432, 32);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(70, 13);
+            this.label29.TabIndex = 121;
+            this.label29.Text = "Vertical Span";
             // 
-            // tTubesheetTHK_64
+            // tVerticalSpan_64
             // 
-            this.tTubesheetTHK_64.Location = new System.Drawing.Point(146, 29);
-            this.tTubesheetTHK_64.Name = "tTubesheetTHK_64";
-            this.tTubesheetTHK_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetTHK_64.TabIndex = 109;
-            this.tTubesheetTHK_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tTubesheetTHK_64.TextChanged += new System.EventHandler(this.tTubesheetTHK_64_TextChanged);
+            this.tVerticalSpan_64.Location = new System.Drawing.Point(146, 29);
+            this.tVerticalSpan_64.Name = "tVerticalSpan_64";
+            this.tVerticalSpan_64.Size = new System.Drawing.Size(67, 20);
+            this.tVerticalSpan_64.TabIndex = 123;
+            this.tVerticalSpan_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tVerticalSpan_64.TextChanged += new System.EventHandler(this.tVerticalSpan_64_TextChanged);
             // 
-            // tTubesheetTHK_65
+            // tVerticalSpan_65
             // 
-            this.tTubesheetTHK_65.Location = new System.Drawing.Point(76, 29);
-            this.tTubesheetTHK_65.Name = "tTubesheetTHK_65";
-            this.tTubesheetTHK_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetTHK_65.TabIndex = 110;
-            this.tTubesheetTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tTubesheetTHK_65.TextChanged += new System.EventHandler(this.tTubesheetTHK_65_TextChanged);
+            this.tVerticalSpan_65.Location = new System.Drawing.Point(76, 29);
+            this.tVerticalSpan_65.Name = "tVerticalSpan_65";
+            this.tVerticalSpan_65.Size = new System.Drawing.Size(64, 20);
+            this.tVerticalSpan_65.TabIndex = 124;
+            this.tVerticalSpan_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tVerticalSpan_65.TextChanged += new System.EventHandler(this.tVerticalSpan_65_TextChanged);
             // 
-            // tPlugsheetTHK_66
+            // tBoxLength_66
             // 
-            this.tPlugsheetTHK_66.Location = new System.Drawing.Point(3, 55);
-            this.tPlugsheetTHK_66.Name = "tPlugsheetTHK_66";
-            this.tPlugsheetTHK_66.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetTHK_66.TabIndex = 118;
-            this.tPlugsheetTHK_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tPlugsheetTHK_66.TextChanged += new System.EventHandler(this.tPlugsheetTHK_66_TextChanged);
+            this.tBoxLength_66.Location = new System.Drawing.Point(3, 55);
+            this.tBoxLength_66.Name = "tBoxLength_66";
+            this.tBoxLength_66.Size = new System.Drawing.Size(67, 20);
+            this.tBoxLength_66.TabIndex = 132;
+            this.tBoxLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxLength_66.TextChanged += new System.EventHandler(this.tBoxLength_66_TextChanged);
             // 
-            // tPlugsheetTHK_62
+            // tBoxLength_62
             // 
-            this.tPlugsheetTHK_62.Location = new System.Drawing.Point(289, 55);
-            this.tPlugsheetTHK_62.Name = "tPlugsheetTHK_62";
-            this.tPlugsheetTHK_62.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetTHK_62.TabIndex = 113;
-            this.tPlugsheetTHK_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tPlugsheetTHK_62.TextChanged += new System.EventHandler(this.tPlugsheetTHK_62_TextChanged);
+            this.tBoxLength_62.Location = new System.Drawing.Point(289, 55);
+            this.tBoxLength_62.Name = "tBoxLength_62";
+            this.tBoxLength_62.Size = new System.Drawing.Size(67, 20);
+            this.tBoxLength_62.TabIndex = 127;
+            this.tBoxLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxLength_62.TextChanged += new System.EventHandler(this.tBoxLength_62_TextChanged);
             // 
-            // tPlugsheetTHK_61
+            // tBoxLength_61
             // 
-            this.tPlugsheetTHK_61.Location = new System.Drawing.Point(362, 55);
-            this.tPlugsheetTHK_61.Name = "tPlugsheetTHK_61";
-            this.tPlugsheetTHK_61.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetTHK_61.TabIndex = 112;
-            this.tPlugsheetTHK_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tPlugsheetTHK_61.TextChanged += new System.EventHandler(this.tPlugsheetTHK_61_TextChanged);
+            this.tBoxLength_61.Location = new System.Drawing.Point(362, 55);
+            this.tBoxLength_61.Name = "tBoxLength_61";
+            this.tBoxLength_61.Size = new System.Drawing.Size(64, 20);
+            this.tBoxLength_61.TabIndex = 126;
+            this.tBoxLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxLength_61.TextChanged += new System.EventHandler(this.tBoxLength_61_TextChanged);
             // 
-            // tPlugsheetTHK_63
+            // tBoxLength_63
             // 
-            this.tPlugsheetTHK_63.Location = new System.Drawing.Point(219, 55);
-            this.tPlugsheetTHK_63.Name = "tPlugsheetTHK_63";
-            this.tPlugsheetTHK_63.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetTHK_63.TabIndex = 115;
-            this.tPlugsheetTHK_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tPlugsheetTHK_63.TextChanged += new System.EventHandler(this.tPlugsheetTHK_63_TextChanged);
+            this.tBoxLength_63.Location = new System.Drawing.Point(219, 55);
+            this.tBoxLength_63.Name = "tBoxLength_63";
+            this.tBoxLength_63.Size = new System.Drawing.Size(64, 20);
+            this.tBoxLength_63.TabIndex = 129;
+            this.tBoxLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxLength_63.TextChanged += new System.EventHandler(this.tBoxLength_63_TextChanged);
             // 
-            // label24
+            // label30
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(432, 58);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 13);
-            this.label24.TabIndex = 114;
-            this.label24.Text = "Plugsheet THK";
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(432, 58);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(61, 13);
+            this.label30.TabIndex = 128;
+            this.label30.Text = "Box Length";
             // 
-            // tPlugsheetTHK_64
+            // tBoxLength_64
             // 
-            this.tPlugsheetTHK_64.Location = new System.Drawing.Point(146, 55);
-            this.tPlugsheetTHK_64.Name = "tPlugsheetTHK_64";
-            this.tPlugsheetTHK_64.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetTHK_64.TabIndex = 116;
-            this.tPlugsheetTHK_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tPlugsheetTHK_64.TextChanged += new System.EventHandler(this.tPlugsheetTHK_64_TextChanged);
+            this.tBoxLength_64.Location = new System.Drawing.Point(146, 55);
+            this.tBoxLength_64.Name = "tBoxLength_64";
+            this.tBoxLength_64.Size = new System.Drawing.Size(67, 20);
+            this.tBoxLength_64.TabIndex = 130;
+            this.tBoxLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxLength_64.TextChanged += new System.EventHandler(this.tBoxLength_64_TextChanged);
             // 
-            // tPlugsheetTHK_65
+            // tBoxLength_65
             // 
-            this.tPlugsheetTHK_65.Location = new System.Drawing.Point(76, 55);
-            this.tPlugsheetTHK_65.Name = "tPlugsheetTHK_65";
-            this.tPlugsheetTHK_65.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetTHK_65.TabIndex = 117;
-            this.tPlugsheetTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tPlugsheetTHK_65.TextChanged += new System.EventHandler(this.tPlugsheetTHK_65_TextChanged);
+            this.tBoxLength_65.Location = new System.Drawing.Point(76, 55);
+            this.tBoxLength_65.Name = "tBoxLength_65";
+            this.tBoxLength_65.Size = new System.Drawing.Size(64, 20);
+            this.tBoxLength_65.TabIndex = 131;
+            this.tBoxLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxLength_65.TextChanged += new System.EventHandler(this.tBoxLength_65_TextChanged);
             // 
-            // label25
+            // tTopBottomTHK_66
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.White;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(63, 730);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(165, 16);
-            this.label25.TabIndex = 106;
-            this.label25.Text = "Continued on Header tab...";
+            this.tTopBottomTHK_66.Location = new System.Drawing.Point(3, 133);
+            this.tTopBottomTHK_66.Name = "tTopBottomTHK_66";
+            this.tTopBottomTHK_66.Size = new System.Drawing.Size(67, 20);
+            this.tTopBottomTHK_66.TabIndex = 139;
+            this.tTopBottomTHK_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTopBottomTHK_66.TextChanged += new System.EventHandler(this.tTopBottomTHK_66_TextChanged);
             // 
-            // cHeadersOutsideFrame
+            // tTopBottomTHK_62
             // 
-            this.cHeadersOutsideFrame.AutoSize = true;
-            this.cHeadersOutsideFrame.Location = new System.Drawing.Point(99, 226);
-            this.cHeadersOutsideFrame.Name = "cHeadersOutsideFrame";
-            this.cHeadersOutsideFrame.Size = new System.Drawing.Size(15, 14);
-            this.cHeadersOutsideFrame.TabIndex = 107;
-            this.cHeadersOutsideFrame.UseVisualStyleBackColor = true;
-            this.cHeadersOutsideFrame.CheckedChanged += new System.EventHandler(this.cHeadersOutsideFrame_CheckedChanged);
+            this.tTopBottomTHK_62.Location = new System.Drawing.Point(289, 133);
+            this.tTopBottomTHK_62.Name = "tTopBottomTHK_62";
+            this.tTopBottomTHK_62.Size = new System.Drawing.Size(67, 20);
+            this.tTopBottomTHK_62.TabIndex = 134;
+            this.tTopBottomTHK_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTopBottomTHK_62.TextChanged += new System.EventHandler(this.tTopBottomTHK_62_TextChanged);
             // 
-            // label26
+            // tTopBottomTHK_61
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(120, 227);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(119, 13);
-            this.label26.TabIndex = 108;
-            this.label26.Text = "Headers outside frame?";
+            this.tTopBottomTHK_61.Location = new System.Drawing.Point(362, 133);
+            this.tTopBottomTHK_61.Name = "tTopBottomTHK_61";
+            this.tTopBottomTHK_61.Size = new System.Drawing.Size(64, 20);
+            this.tTopBottomTHK_61.TabIndex = 133;
+            this.tTopBottomTHK_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTopBottomTHK_61.TextChanged += new System.EventHandler(this.tTopBottomTHK_61_TextChanged);
+            // 
+            // tTopBottomTHK_63
+            // 
+            this.tTopBottomTHK_63.Location = new System.Drawing.Point(219, 133);
+            this.tTopBottomTHK_63.Name = "tTopBottomTHK_63";
+            this.tTopBottomTHK_63.Size = new System.Drawing.Size(64, 20);
+            this.tTopBottomTHK_63.TabIndex = 136;
+            this.tTopBottomTHK_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTopBottomTHK_63.TextChanged += new System.EventHandler(this.tTopBottomTHK_63_TextChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(432, 136);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(116, 13);
+            this.label31.TabIndex = 135;
+            this.label31.Text = "Top/Bottom Plate THK";
+            // 
+            // tTopBottomTHK_64
+            // 
+            this.tTopBottomTHK_64.Location = new System.Drawing.Point(146, 133);
+            this.tTopBottomTHK_64.Name = "tTopBottomTHK_64";
+            this.tTopBottomTHK_64.Size = new System.Drawing.Size(67, 20);
+            this.tTopBottomTHK_64.TabIndex = 137;
+            this.tTopBottomTHK_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTopBottomTHK_64.TextChanged += new System.EventHandler(this.tTopBottomTHK_64_TextChanged);
+            // 
+            // tTopBottomTHK_65
+            // 
+            this.tTopBottomTHK_65.Location = new System.Drawing.Point(76, 133);
+            this.tTopBottomTHK_65.Name = "tTopBottomTHK_65";
+            this.tTopBottomTHK_65.Size = new System.Drawing.Size(64, 20);
+            this.tTopBottomTHK_65.TabIndex = 138;
+            this.tTopBottomTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTopBottomTHK_65.TextChanged += new System.EventHandler(this.tTopBottomTHK_65_TextChanged);
             // 
             // BundleUI
             // 
@@ -1011,7 +1297,6 @@
         private System.Windows.Forms.TextBox tBundleWidth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tSideFrameTHK;
         private System.Windows.Forms.Button bBundle;
         private System.Windows.Forms.CheckBox delete_Toggle;
         private System.Windows.Forms.CheckBox save_Toggle;
@@ -1087,6 +1372,32 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckBox cHeadersOutsideFrame;
+        private System.Windows.Forms.TextBox tTubeProjection;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox tTubeLength;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox cSideFrameTHK;
+        private System.Windows.Forms.TextBox tVerticalSpan_66;
+        private System.Windows.Forms.TextBox tVerticalSpan_62;
+        private System.Windows.Forms.TextBox tVerticalSpan_61;
+        private System.Windows.Forms.TextBox tVerticalSpan_63;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox tVerticalSpan_64;
+        private System.Windows.Forms.TextBox tVerticalSpan_65;
+        private System.Windows.Forms.TextBox tBoxLength_66;
+        private System.Windows.Forms.TextBox tBoxLength_62;
+        private System.Windows.Forms.TextBox tBoxLength_61;
+        private System.Windows.Forms.TextBox tBoxLength_63;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox tBoxLength_64;
+        private System.Windows.Forms.TextBox tBoxLength_65;
+        private System.Windows.Forms.TextBox tTopBottomTHK_66;
+        private System.Windows.Forms.TextBox tTopBottomTHK_62;
+        private System.Windows.Forms.TextBox tTopBottomTHK_61;
+        private System.Windows.Forms.TextBox tTopBottomTHK_63;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox tTopBottomTHK_64;
+        private System.Windows.Forms.TextBox tTopBottomTHK_65;
     }
 }
 

@@ -37,6 +37,9 @@ namespace FileTools.Base
                 {
                     AssemblyDoc = OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
 
+                    Dimensions();
+                    Sketches();
+
                     var componentList = InstantiateComponents(this);
                     LocateComponents(componentList, this);
 
@@ -63,9 +66,5 @@ namespace FileTools.Base
                 }
             } while (!bankExists);
         }
-
-
-        // Virtual methods
-        protected virtual void Setup() { }
     }
 }

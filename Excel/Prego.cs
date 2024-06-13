@@ -125,10 +125,13 @@ namespace Excel
                 int row = int.Parse(Regex.Match(cellNames[i], @"\d+").Value);
 
                 Range cell = (Range)sheet.Cells[row, column];
-                string cellValue = cell.Value2;
+                var cellValue = cell.Value2;
 
-                if (cellValue != null && cellValue != "")
-                    return cellValue;
+                if (cellValue is string)
+                {
+                    if (cellValue != null && cellValue != "")
+                        return cellValue;
+                } 
             }
 
             return null;

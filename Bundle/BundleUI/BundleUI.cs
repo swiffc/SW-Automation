@@ -5,6 +5,7 @@ using static FileTools.CommonData.CommonData;
 using static FileTools.Properties.Settings;
 using Microsoft.Office.Interop.Excel;
 using TextBox = System.Windows.Forms.TextBox;
+using ComboBox = System.Windows.Forms.ComboBox;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using SplashScreen;
 using Excel;
@@ -14,145 +15,27 @@ using CheckBox = System.Windows.Forms.CheckBox;
 using System.Collections.Generic;
 using FileTools.Base;
 using static Bundle.BundleUI;
+using SolidWorks.Interop.sldworks;
 
 namespace Bundle
 {
     public partial class BundleUI : Form
     {
-        #region Header Data Structure
-
-        
-        Dictionary<string, Header_PregoData> _headerPregoData;
         public BundleUI()
         {
             InitializeComponent();
-
-            _headerPregoData = new Dictionary<string, Header_PregoData>
-            {
-                ["61"] = new Header_PregoData
-                {
-                    IsRequiredCells = new string[] 
-                    { 
-                        "AD36", 
-                        "AD35" 
-                    },
-                    BoxWidthCells = new string[] 
-                    { 
-                        "AE42", 
-                        "AD42" 
-                    },
-                    TubesheetTHKCells = new string[] 
-                    { 
-                        "AE49",
-                        "AD49" 
-                    },
-                    PlugsheetTHKCells = new string[] 
-                    { 
-                        "AE50", 
-                        "AD50" 
-                    }
-                },
-                ["62"] = new Header_PregoData
-                {
-                    IsRequiredCells = new string[] 
-                    {
-                        "AL36",
-                        "AL35" 
-                    },
-                    BoxWidthCells = new string[] 
-                    {
-                        "AM42", 
-                        "AL42" 
-                    },
-                    TubesheetTHKCells = new string[] 
-                    {
-                        "AM49", 
-                        "AL49" 
-                    },
-                    PlugsheetTHKCells = new string[] 
-                    {
-                        "AM50", 
-                        "AL50" 
-                    }
-                },
-                ["63"] = new Header_PregoData
-                {
-                    IsRequiredCells = new string[] { "AG36", "AG35" },
-                    BoxWidthCells = new string[] { "AI42", "AG42" },
-                    TubesheetTHKCells = new string[] { "AI49", "AG49" },
-                    PlugsheetTHKCells = new string[] { "AI50", "AG50" }
-                },
-                ["64"] = new Header_PregoData
-                {
-                    IsRequiredCells = new string[] { "AO36", "AO35" },
-                    BoxWidthCells = new string[] { "AQ42", "AO42" },
-                    TubesheetTHKCells = new string[] { "AQ49", "AO49" },
-                    PlugsheetTHKCells = new string[] { "AQ50", "AO50" }
-                },
-                ["65"] = new Header_PregoData
-                {
-                    IsRequiredCells = new string[] { "AJ36", "AJ35" },
-                    BoxWidthCells = new string[] { "AK42", "AJ42" },
-                    TubesheetTHKCells = new string[] { "AK49", "AJ49" },
-                    PlugsheetTHKCells = new string[] { "AK50", "AJ50" }
-                },
-                ["66"] = new Header_PregoData
-                {
-                    IsRequiredCells = new string[] { "AR36", "AR35" },
-                    BoxWidthCells = new string[] { "AS42", "AR42" },
-                    TubesheetTHKCells = new string[] { "AS49", "AR49" },
-                    PlugsheetTHKCells = new string[] { "AS50", "AR50" }
-                }
-            };
         }
-        public class Header_PregoData
-        {
-            public string[] IsRequiredCells { get; set; }
-            public string[] BoxWidthCells { get; set; }
-            public string[] TubesheetTHKCells { get; set; }
-            public string[] PlugsheetTHKCells { get; set; }
-        }
-        private void LoadHeaderData_FromPrego(IHeaderExtensions header, CheckBox checkBox, TextBox boxWidthTextBox, TextBox tubesheetTHKTextBox, TextBox plugsheetTHKTextBox, Worksheet inputSheet, Header_PregoData cellReferences)
-        {
-            header.IsRequired = LoadPregoBool_NullOrEmpty(checkBox, inputSheet, cellReferences.IsRequiredCells);
-            if (header.IsRequired)
-            {
-                header.BoxWidth = LoadPregoDouble(boxWidthTextBox, inputSheet, cellReferences.BoxWidthCells);
-                header.TubesheetTHK = LoadPregoDouble(tubesheetTHKTextBox, inputSheet, cellReferences.TubesheetTHKCells);
-                header.PlugsheetTHK = LoadPregoDouble(plugsheetTHKTextBox, inputSheet, cellReferences.PlugsheetTHKCells);
-            }
-        }
-        private void ImportHeaderData_FromPrego()
-        {
-            var headerNumbers = new[] { "61", "62", "63", "64", "65", "66" };
-            foreach (var headerNumber in headerNumbers)
-            {
-                var headerAppData = _headerAppData[headerNumber];
-                var headerCellReferences = _headerPregoData[headerNumber];
-                LoadHeaderData_FromPrego
-                (
-                    headerAppData.Header, 
-                    headerAppData.CheckBox, 
-                    headerAppData.BoxWidthTextBox, 
-                    headerAppData.TubesheetTHKTextBox, 
-                    headerAppData.PlugsheetTHKTextBox, 
-                    InputSheet, 
-                    headerCellReferences
-                );
-            }
-        }
-
-        #endregion
-
-        #region Buttons, Events, Private Methods
+        #region Events
 
         private void BundleUI_Load(object sender, EventArgs e)
         {
             // Prego imports
             tBundleWidth.Text = Bundle_Width.ToString();
-            tSideFrameTHK.Text = SideFrame_THK.ToString();
+            cSideFrameTHK.Text = SideFrame_THK.ToString();
             tDepth.Text = SideFrame_Depth.ToString();
             cHeadersOutsideFrame.Checked = HeadersOutsideFrames;
+            tTubeLength.Text = TubeLength.ToString();
+            tTubeProjection.Text = TubeProjection.ToString();
 
             // Advanced
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
@@ -177,7 +60,64 @@ namespace Bundle
             LoadHeaderData_FromApp("65");
             LoadHeaderData_FromApp("66");
         }
+        private void BundleUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PleaseWait.Stop();
+        }
 
+        #endregion
+        #region Buttons
+
+        private void bImportPrego_Click(object sender, EventArgs e)
+        {
+            if (InputSheet != null)
+            {
+                // Job info
+                Customer = LoadPregoValue<string>(customer_Box, InputSheet,
+                    "B" + 2); // Customer:
+                Client = LoadPregoValue<string>(client_Box, InputSheet,
+                    "B" + 2); // Customer:
+                PlantLocation = LoadPregoValue<string>(location_Box, InputSheet,
+                    "B" + 4); // Plant:
+                PurchaseOrder = LoadPregoValue<string>(purchaseOrder_Box, InputSheet,
+                    "B" + 5); // PO No:
+                ItemNumber = LoadPregoValue<string>(itemNumber_Box, InputSheet,
+                    "H" + 3); // Item:
+
+
+                // Bundle
+                Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
+                    "BQ" + 45); // Bdl Wd/Toed:
+                HeadersAreOutsideTheFrame = LoadPregoBool(cHeadersOutsideFrame, InputSheet,
+                    "G" + 15, // Override
+                    "F" + 15);// Hdrs outside Fr?
+                TubeLength = LoadPregoDouble_FeetToInches(tTubeLength, InputSheet,
+                    "L" + 15, // Override
+                    "N" + 15);// Tube Length (ft)
+                TubeProjection = LoadPregoDouble(tTubeProjection, InputSheet,
+                    0.25,  // SE
+                    0.125);// HPC
+
+
+                // SideFrame
+                SideFrame_Depth = LoadPregoDouble(tDepth, InputSheet,
+                    "CG" + 30, // Override
+                    "CF" + 30);// Frame Depth (in)
+                SideFrame_THK = LoadPregoValue<double>(cSideFrameTHK, InputSheet,
+                    "CG" + 32, // Override
+                    "CF" + 32);// Frame Thk (in)
+
+
+                ImportHeaderData_FromPrego();
+
+                SaveSettings();
+                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void bBundle_Click(object sender, EventArgs e)
         {
             if (!Developer)
@@ -186,17 +126,70 @@ namespace Bundle
             }
             new Bundle(7, "Bundle");
         }
+
+        #endregion
+        #region Static Helpers
+
+        static double LoadPregoDouble(TextBox textBox, Worksheet worksheet, double valueIfSmithco, double ValueIfHPC)
+        {
+            string[] cellNames = new string[]
+            {
+                "G" + 27, // Override
+                "F" + 27 // Titleblock Manuf
+            };
+
+            string titleblockManuf = CellString(worksheet, cellNames);
+
+            if (titleblockManuf == "Smithco")
+            {
+                textBox.Text = valueIfSmithco.ToString();
+                return valueIfSmithco;
+            }
+            else
+            {
+                textBox.Text = ValueIfHPC.ToString();
+                return ValueIfHPC;
+            }
+        }
+        static double LoadPregoDouble_FeetToInches(TextBox textBox, Worksheet worksheet, params string[] cellNames)
+        {
+            string tubeLength_ArchitecturalFeet = CellString(worksheet, cellNames[0]);
+            double tubeLength_DecimalFeet = CellDouble(worksheet, cellNames[1]);
+
+            if (tubeLength_ArchitecturalFeet != null)
+            {
+                // #'-#" --> decimal inches
+                var parts = tubeLength_ArchitecturalFeet.Split('\'', '\"');
+                double feet = double.Parse(parts[0]);
+                double inches = double.Parse(parts[1]);
+                double decimalInches = feet * 12 + inches;
+
+                textBox.Text = decimalInches.ToString();
+                return decimalInches;
+            }
+            else // Decimal feet --> decimal inches
+            {
+                double decimalInches = tubeLength_DecimalFeet * 12;
+                textBox.Text = decimalInches.ToString();
+                return decimalInches;
+            }
+        }
         static double LoadPregoDouble(TextBox textBox, Worksheet worksheet, params string[] cellNames)
         {
             double value = CellDouble(worksheet, cellNames);
             textBox.Text = value.ToString();
             return value;
         }
-        static string LoadPregoString(TextBox textBox, Worksheet worksheet, params string[] cellNames)
+        static T LoadPregoValue<T>(Control control, Worksheet worksheet, params string[] cellNames)
+            where T : IConvertible
         {
-            string value = CellString(worksheet, cellNames);
-            textBox.Text = value;
-            return value;
+            var value = CellString(worksheet, cellNames);
+            if (value == null)
+            {
+                value = CellDouble(worksheet, cellNames).ToString();
+            }
+            control.Text = value;
+            return (T)Convert.ChangeType(value, typeof(T));
         }
         static bool LoadPregoBool_NullOrEmpty(CheckBox checkBox, Worksheet worksheet, params string[] cellNames)
         {
@@ -224,143 +217,98 @@ namespace Bundle
             checkBox.Checked = enabled;
             return enabled;
         }
-        private void BundleUI_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            PleaseWait.Stop();
-        }
 
         #endregion
+        #region UpdateUI
 
-        #region Prego_Imports
-
-        private void bImportPrego_Click(object sender, EventArgs e)
+        #region UpdateUI_Headers
+        private void tTopBottomTHK_61_TextChanged(object sender, EventArgs e)
         {
-            if (InputSheet != null)
-            {
-                // Job info
-                Customer = LoadPregoString(customer_Box, InputSheet,
-                    "B" + 2); // Customer:
-                Client = LoadPregoString(client_Box, InputSheet,
-                    "B" + 2); // Customer:
-                PlantLocation = LoadPregoString(location_Box, InputSheet,
-                    "B" + 4); // Plant:
-                PurchaseOrder = LoadPregoString(purchaseOrder_Box, InputSheet,
-                    "B" + 5); // PO No:
-                ItemNumber = LoadPregoString(itemNumber_Box, InputSheet,
-                    "H" + 3); // Item:
-
-
-                // Bundle
-                Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
-                    "BQ" + 45); // Bdl Wd/Toed:
-                HeadersAreOutsideTheFrame = LoadPregoBool(cHeadersOutsideFrame, InputSheet,
-                    "G" + 15, // Override
-                    "F" + 15);// Hdrs outside Fr?
-
-
-                // SideFrame
-                SideFrame_Depth = LoadPregoDouble(tDepth, InputSheet,
-                    "CG" + 30, // Override
-                    "CF" + 30);// Frame Depth (in)
-                SideFrame_THK = LoadPregoDouble(tSideFrameTHK, InputSheet,
-                    "CG" + 32, // Override
-                    "CF" + 32);// Frame Thk (in)
-
-
-                ImportHeaderData_FromPrego();
-
-                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            UI_DoubleChanged(tTopBottomTHK_61.Text, x => Header61.TopAndBottomPlateTHK = x);
         }
 
-        #endregion
-
-        #region BDL_UserInputs
-
-        private void cHeadersOutsideFrame_CheckedChanged(object sender, EventArgs e)
+        private void tTopBottomTHK_62_TextChanged(object sender, EventArgs e)
         {
-            UI_BoolChanged(cHeadersOutsideFrame.Checked, x => HeadersOutsideFrames = x);
-        }
-        private void tWidth_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tBundleWidth.Text, x => Bundle_Width = x);
+            UI_DoubleChanged(tTopBottomTHK_62.Text, x => Header62.TopAndBottomPlateTHK = x);
         }
 
-        private void tSideFrameTHK_Leave(object sender, EventArgs e)
+        private void tTopBottomTHK_63_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tSideFrameTHK.Text, x => SideFrame_THK = x);
-            tSideFrameTHK.Text = SideFrame_THK.ToString();
-        }
-        private void tDepth_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tDepth.Text, x => SideFrame_Depth = x);
+            UI_DoubleChanged(tTopBottomTHK_63.Text, x => Header63.TopAndBottomPlateTHK = x);
         }
 
-        private void textBox_Bank_TextChanged(object sender, EventArgs e)
+        private void tTopBottomTHK_64_TextChanged(object sender, EventArgs e)
         {
-            string text = textBox_Bank.Text.ToUpper();
-            textBox_Bank.Text = text;
-            UI_CharChanged(text, x => Bank = x);
-        }
-        private void job_Box_TextChanged(object sender, EventArgs e)
-        {
-            UI_StringChanged(job_Box.Text, x => Project = x);
+            UI_DoubleChanged(tTopBottomTHK_64.Text, x => Header64.TopAndBottomPlateTHK = x);
         }
 
-        private void customer_Box_TextChanged(object sender, EventArgs e)
+        private void tTopBottomTHK_65_TextChanged(object sender, EventArgs e)
         {
-            UI_StringChanged(customer_Box.Text, x => Customer = x);
+            UI_DoubleChanged(tTopBottomTHK_65.Text, x => Header65.TopAndBottomPlateTHK = x);
         }
 
-        private void client_Box_TextChanged(object sender, EventArgs e)
+        private void tTopBottomTHK_66_TextChanged(object sender, EventArgs e)
         {
-            UI_StringChanged(client_Box.Text, x => Client = x);
+            UI_DoubleChanged(tTopBottomTHK_66.Text, x => Header66.TopAndBottomPlateTHK = x);
+        }
+        private void tBoxLength_61_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tBoxLength_61.Text, x => Header61.BoxLength = x);
         }
 
-        private void location_Box_TextChanged(object sender, EventArgs e)
+        private void tBoxLength_62_TextChanged(object sender, EventArgs e)
         {
-            UI_StringChanged(location_Box.Text, x => PlantLocation = x);
+            UI_DoubleChanged(tBoxLength_62.Text, x => Header62.BoxLength = x);
         }
 
-        private void purchaseOrder_Box_TextChanged(object sender, EventArgs e)
+        private void tBoxLength_63_TextChanged(object sender, EventArgs e)
         {
-            UI_StringChanged(purchaseOrder_Box.Text, x => PurchaseOrder = x);
+            UI_DoubleChanged(tBoxLength_63.Text, x => Header63.BoxLength = x);
         }
 
-        private void itemNumber_Box_TextChanged(object sender, EventArgs e)
+        private void tBoxLength_64_TextChanged(object sender, EventArgs e)
         {
-            UI_StringChanged(itemNumber_Box.Text, x => ItemNumber = x);
+            UI_DoubleChanged(tBoxLength_64.Text, x => Header64.BoxLength = x);
         }
 
-        private void initials_Box_TextChanged(object sender, EventArgs e)
+        private void tBoxLength_65_TextChanged(object sender, EventArgs e)
         {
-            UI_StringChanged(initials_Box.Text, x => Initials = x);
+            UI_DoubleChanged(tBoxLength_65.Text, x => Header65.BoxLength = x);
         }
 
-        #endregion
-        #region Adv_UserInput
-
-        private void createDrawing_Toggle_CheckedChanged(object sender, EventArgs e)
+        private void tBoxLength_66_TextChanged(object sender, EventArgs e)
         {
-            UI_BoolChanged(createDrawing_Toggle.Checked, x => Default.Toggle_CreateDrawing = x);
+            UI_DoubleChanged(tBoxLength_66.Text, x => Header66.BoxLength = x);
+        }
+        private void tVerticalSpan_61_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalSpan_61.Text, x => Header61.VerticalSpan = x);
         }
 
-        private void save_Toggle_CheckedChanged(object sender, EventArgs e)
+        private void tVerticalSpan_62_TextChanged(object sender, EventArgs e)
         {
-            UI_BoolChanged(save_Toggle.Checked, x => Default.Toggle_Save = x);
+            UI_DoubleChanged(tVerticalSpan_62.Text, x => Header62.VerticalSpan = x);
         }
 
-        private void delete_Toggle_CheckedChanged(object sender, EventArgs e)
+        private void tVerticalSpan_63_TextChanged(object sender, EventArgs e)
         {
-            UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
+            UI_DoubleChanged(tVerticalSpan_63.Text, x => Header63.VerticalSpan = x);
         }
 
-        #endregion
-        #region HDRs_UserInput
+        private void tVerticalSpan_64_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalSpan_64.Text, x => Header64.VerticalSpan = x);
+        }
+
+        private void tVerticalSpan_65_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalSpan_65.Text, x => Header65.VerticalSpan = x);
+        }
+
+        private void tVerticalSpan_66_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalSpan_66.Text, x => Header66.VerticalSpan = x);
+        }
         private void cEnabled61_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled61.Checked, x => Header61.IsRequired = x);
@@ -483,6 +431,101 @@ namespace Bundle
         {
             UI_DoubleChanged(tPlugsheetTHK_66.Text, x => Header66.PlugsheetTHK = x);
         }
+
+        #endregion
+        #region UpdateUI_Bundle
+
+        private void tTubeLength_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeLength.Text, x => TubeLength = x);
+        }
+
+        private void tTubeProjection_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeProjection.Text, x => TubeProjection = x);
+        }
+        private void cHeadersOutsideFrame_CheckedChanged(object sender, EventArgs e)
+        {
+            UI_BoolChanged(cHeadersOutsideFrame.Checked, x => HeadersOutsideFrames = x);
+        }
+        private void tWidth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tBundleWidth.Text, x => Bundle_Width = x);
+        }
+
+        private void cSideFrameTHK_Leave(object sender, EventArgs e)
+        {
+            cSideFrameTHK.Text = SideFrame_THK.ToString();
+        }
+        private void tDepth_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tDepth.Text, x => SideFrame_Depth = x);
+        }
+
+        private void textBox_Bank_TextChanged(object sender, EventArgs e)
+        {
+            string text = textBox_Bank.Text.ToUpper();
+            textBox_Bank.Text = text;
+            UI_CharChanged(text, x => Bank = x);
+        }
+        private void job_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(job_Box.Text, x => Project = x);
+        }
+
+        private void customer_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(customer_Box.Text, x => Customer = x);
+        }
+
+        private void client_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(client_Box.Text, x => Client = x);
+        }
+
+        private void location_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(location_Box.Text, x => PlantLocation = x);
+        }
+
+        private void purchaseOrder_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(purchaseOrder_Box.Text, x => PurchaseOrder = x);
+        }
+
+        private void itemNumber_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(itemNumber_Box.Text, x => ItemNumber = x);
+        }
+
+        private void initials_Box_TextChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(initials_Box.Text, x => Initials = x);
+        }
+
+        #endregion
+        #region UpdateUI_AdvancedTab
+
+        private void createDrawing_Toggle_CheckedChanged(object sender, EventArgs e)
+        {
+            UI_BoolChanged(createDrawing_Toggle.Checked, x => Default.Toggle_CreateDrawing = x);
+        }
+
+        private void save_Toggle_CheckedChanged(object sender, EventArgs e)
+        {
+            UI_BoolChanged(save_Toggle.Checked, x => Default.Toggle_Save = x);
+        }
+
+        private void delete_Toggle_CheckedChanged(object sender, EventArgs e)
+        {
+            UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
+        }
+
+
+
+
+
+        #endregion
 
         #endregion
 

@@ -1,6 +1,10 @@
 ﻿using ModelTools;
+using SolidWorks.Interop.sldworks;
+using SolidWorks.Interop.swconst;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using static FileTools.StaticFileTools;
 using static ModelTools.ReleaseCOM;
 using static Tools.ModelTools;
@@ -14,14 +18,23 @@ namespace FileTools.Base
         {
             if (Enabled)
             {
+                Setup();
+
                 _parentAssembly = parentAssembly;
                 AssemblyDoc = OpenAssembly(FilePath, StaticPartNo, false);
+
+                Dimensions();
+                Sketches();
+
                 var subComponents = InstantiateSubComponents(GetType(), this, out var subComponentsToRemove);
+
                 RemoveDisabledSubComponents(subComponentsToRemove, this);
                 PlaceSubComponents(subComponents, this);
+
                 if (parentAssembly is MainAssembly)
                     foreach (var subComponent in subComponents)
                         parentAssembly.GrandChildren.Add(subComponent);
+
                 Release(AssemblyDoc);
             }
         }
