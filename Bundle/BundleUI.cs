@@ -1,21 +1,15 @@
-﻿using static Excel.Prego;
+﻿using FileTools.Base;
+using SplashScreen;
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 using System.Windows.Forms;
+using static Excel.Header_DataManager;
+using static Excel.Prego;
+using static Excel.StaticHelpers;
 using static FileTools.CommonData.CommonData;
 using static FileTools.Properties.Settings;
-using Microsoft.Office.Interop.Excel;
-using TextBox = System.Windows.Forms.TextBox;
-using ComboBox = System.Windows.Forms.ComboBox;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using SplashScreen;
-using Excel;
 using static FileTools.StaticFileTools;
-using System.Runtime.Remoting.Messaging;
-using CheckBox = System.Windows.Forms.CheckBox;
-using System.Collections.Generic;
-using FileTools.Base;
-using static Bundle.BundleUI;
-using SolidWorks.Interop.sldworks;
 
 namespace Bundle
 {
@@ -36,6 +30,34 @@ namespace Bundle
             cHeadersOutsideFrame.Checked = HeadersOutsideFrames;
             tTubeLength.Text = TubeLength.ToString();
             tTubeProjection.Text = TubeProjection.ToString();
+            tFrontFinStripBack.Text = FinStripBack_Front.ToString();
+            tRearFinStripBack.Text = FinStripBack_Rear.ToString();
+            tTubeOD.Text = TubeOD.ToString();
+            tTubeWallTHK.Text = TubeWallTHK.ToString();
+            tFinOD.Text = FinOD.ToString();
+            tTubes_Row_1L.Text = Tube_Row_1L.ToString();
+            tTubes_Row_2L.Text = Tube_Row_2L.ToString();
+            tTubeHorizPitch.Text = TubeHorizPitch.ToString();
+            tTubeQuantity.Text = TubeQuantity.ToString();
+            tSlopePerFoot_Row1.Text = Default.SlopePerFoot_Row1.ToString();
+            tSlopePerFoot_Row2.Text = Default.SlopePerFoot_Row2.ToString();
+            tSlopePerFoot_Row3.Text = Default.SlopePerFoot_Row3.ToString();
+            tSlopePerFoot_Row4.Text = Default.SlopePerFoot_Row4.ToString();
+            tSlopePerFoot_Row5.Text = Default.SlopePerFoot_Row5.ToString();
+            tSlopePerFoot_Row6.Text = Default.SlopePerFoot_Row6.ToString();
+            tSlopePerFoot_Row7.Text = Default.SlopePerFoot_Row7.ToString();
+            tSlopeAngle_Row8.Text = Default.SlopePerFoot_Row8.ToString();
+            tSlopePerFoot_Row9.Text = Default.SlopePerFoot_Row9.ToString();
+            tSlopePerFoot_Row10.Text = Default.SlopePerFoot_Row10.ToString();
+            tVerticalPitch_1_2.Text = VerticalPitch._1_2.ToString();
+            tVerticalPitch_2_3.Text = VerticalPitch._2_3.ToString();
+            tVerticalPitch_3_4.Text = VerticalPitch._3_4.ToString();
+            tVerticalPitch_4_5.Text = VerticalPitch._4_5.ToString();
+            tVerticalPitch_5_6.Text = VerticalPitch._5_6.ToString();
+            tVerticalPitch_6_7.Text = VerticalPitch._6_7.ToString();
+            tVerticalPitch_7_8.Text = VerticalPitch._7_8.ToString();
+            tVerticalPitch_8_9.Text = VerticalPitch._8_9.ToString();
+            tVerticalPitch_9_10.Text = VerticalPitch._9_10.ToString();
 
             // Advanced
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
@@ -53,6 +75,7 @@ namespace Bundle
             initials_Box.Text = Initials;
 
             // Headers
+            MapLocal_UI_To_DTO();
             LoadHeaderData_FromApp("61");
             LoadHeaderData_FromApp("62");
             LoadHeaderData_FromApp("63");
@@ -66,6 +89,29 @@ namespace Bundle
         }
 
         #endregion
+        private void MapLocal_UI_To_DTO()
+        {
+            HeaderAppData = new Dictionary<string, UI_DTO>();
+
+            for (int i = 61; i <= 66; i++)
+            {
+                var uiDto = new UI_DTO
+                {
+                    Header = GetHeader(i),
+                    Enabled = GetControl<CheckBox>("cEnabled", i),
+                    BoxWidthTextBox = GetControl<TextBox>("tBoxWidth", i),
+                    TubesheetTHKTextBox = GetControl<TextBox>("tTubesheetTHK_", i),
+                    PlugsheetTHKTextBox = GetControl<TextBox>("tPlugsheetTHK_", i),
+                    TopAndBottomPlateTHKTextBox = GetControl<TextBox>("tTopBottomTHK_", i),
+                    BoxLengthTextBox = GetControl<TextBox>("tBoxLength_", i),
+                    VerticalSpanTextBox = GetControl<TextBox>("tVerticalSpan_", i),
+                    Y_LocationTextBox = GetControl<TextBox>("tY_Location_", i),
+                    XtopTextBox = GetControl<TextBox>("Xtop_", i)
+                };
+
+                HeaderAppData.Add(i.ToString(), uiDto);
+            }
+        }
         #region Buttons
 
         private void bImportPrego_Click(object sender, EventArgs e)
@@ -88,7 +134,7 @@ namespace Bundle
                 // Bundle
                 Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
                     "BQ" + 45); // Bdl Wd/Toed:
-                HeadersAreOutsideTheFrame = LoadPregoBool(cHeadersOutsideFrame, InputSheet,
+                HeadersOutsideFrames = LoadPregoBool(cHeadersOutsideFrame, InputSheet,
                     "G" + 15, // Override
                     "F" + 15);// Hdrs outside Fr?
                 TubeLength = LoadPregoDouble_FeetToInches(tTubeLength, InputSheet,
@@ -97,6 +143,70 @@ namespace Bundle
                 TubeProjection = LoadPregoDouble(tTubeProjection, InputSheet,
                     0.25,  // SE
                     0.125);// HPC
+                FinStripBack_Front = LoadPregoDouble(tFrontFinStripBack, InputSheet,
+                    "CP26",
+                    "CO26");
+                FinStripBack_Rear = LoadPregoDouble(tRearFinStripBack, InputSheet,
+                    "CP27",
+                    "CO27");
+                TubeOD = LoadPregoDouble(tTubeOD, InputSheet,
+                    "L10");
+                TubeWallTHK = LoadPregoDouble(tTubeWallTHK, InputSheet,
+                    "N14",
+                    "L14");
+                FinOD = LoadPregoDouble(tFinOD, InputSheet,
+                    "N19",
+                    "L19");
+                Tube_Row_1L = LoadPregoInt(tTubes_Row_1L, InputSheet,
+                    "AW39",
+                    "AU39");
+                Tube_Row_2L = LoadPregoInt(tTubes_Row_2L, InputSheet,
+                    "AW42",
+                    "AU42");
+                TubeHorizPitch = LoadPregoDouble(tTubeHorizPitch, InputSheet,
+                    "BO47");
+                TubeQuantity = LoadPregoInt(tTubeQuantity, InputSheet,
+                    "N20",
+                    "L20");
+                SlopePerFoot.Row1 = LoadPregoDouble(tSlopePerFoot_Row1, SketchCalcsSheet,
+                    "CS82");
+                SlopePerFoot.Row2 = LoadPregoDouble(tSlopePerFoot_Row2, SketchCalcsSheet,
+                    "CS83");
+                SlopePerFoot.Row3 = LoadPregoDouble(tSlopePerFoot_Row3, SketchCalcsSheet,
+                    "CS84");
+                SlopePerFoot.Row4 = LoadPregoDouble(tSlopePerFoot_Row4, SketchCalcsSheet,
+                    "CS85");
+                SlopePerFoot.Row5 = LoadPregoDouble(tSlopePerFoot_Row5, SketchCalcsSheet,
+                    "CS86");
+                SlopePerFoot.Row6 = LoadPregoDouble(tSlopePerFoot_Row6, SketchCalcsSheet,
+                    "CS87");
+                SlopePerFoot.Row7 = LoadPregoDouble(tSlopePerFoot_Row7, SketchCalcsSheet,
+                    "CS88");
+                SlopePerFoot.Row8 = LoadPregoDouble(tSlopeAngle_Row8, SketchCalcsSheet,
+                    "CS89");
+                SlopePerFoot.Row9 = LoadPregoDouble(tSlopePerFoot_Row9, SketchCalcsSheet,
+                    "CS90");
+                SlopePerFoot.Row10 = LoadPregoDouble(tSlopePerFoot_Row10, SketchCalcsSheet,
+                    "CS91");
+                VerticalPitch._1_2 = LoadPregoDouble(tVerticalPitch_1_2, SketchCalcsSheet,
+                    "DF58");
+                VerticalPitch._2_3 = LoadPregoDouble(tVerticalPitch_2_3, SketchCalcsSheet,
+                    "DF59");
+                VerticalPitch._3_4 = LoadPregoDouble(tVerticalPitch_3_4, SketchCalcsSheet,
+                    "DF60");
+                VerticalPitch._4_5 = LoadPregoDouble(tVerticalPitch_4_5, SketchCalcsSheet,
+                    "DF61");
+                VerticalPitch._5_6 = LoadPregoDouble(tVerticalPitch_5_6, SketchCalcsSheet,
+                    "DF62");
+                VerticalPitch._6_7 = LoadPregoDouble(tVerticalPitch_6_7, SketchCalcsSheet,
+                    "DF63");
+                VerticalPitch._7_8 = LoadPregoDouble(tVerticalPitch_7_8, SketchCalcsSheet,
+                    "DF64");
+                VerticalPitch._8_9 = LoadPregoDouble(tVerticalPitch_8_9, SketchCalcsSheet,
+                    "DF65");
+                VerticalPitch._9_10 = LoadPregoDouble(tVerticalPitch_9_10, SketchCalcsSheet,
+                    "DF66");
+
 
 
                 // SideFrame
@@ -106,7 +216,6 @@ namespace Bundle
                 SideFrame_THK = LoadPregoValue<double>(cSideFrameTHK, InputSheet,
                     "CG" + 32, // Override
                     "CF" + 32);// Frame Thk (in)
-
 
                 ImportHeaderData_FromPrego();
 
@@ -128,100 +237,77 @@ namespace Bundle
         }
 
         #endregion
-        #region Static Helpers
+        #region Helpers
 
-        static double LoadPregoDouble(TextBox textBox, Worksheet worksheet, double valueIfSmithco, double ValueIfHPC)
+        private IHeaderExtensions GetHeader(int index)
         {
-            string[] cellNames = new string[]
+            switch (index)
             {
-                "G" + 27, // Override
-                "F" + 27 // Titleblock Manuf
-            };
-
-            string titleblockManuf = CellString(worksheet, cellNames);
-
-            if (titleblockManuf == "Smithco")
-            {
-                textBox.Text = valueIfSmithco.ToString();
-                return valueIfSmithco;
-            }
-            else
-            {
-                textBox.Text = ValueIfHPC.ToString();
-                return ValueIfHPC;
+                case 61:
+                    return Header61;
+                case 62:
+                    return Header62;
+                case 63:
+                    return Header63;
+                case 64:
+                    return Header64;
+                case 65:
+                    return Header65;
+                case 66:
+                    return Header66;
+                default:
+                    throw new ArgumentException($"Invalid index: {index}");
             }
         }
-        static double LoadPregoDouble_FeetToInches(TextBox textBox, Worksheet worksheet, params string[] cellNames)
+        private T GetControl<T>(string baseName, int index) where T : class
         {
-            string tubeLength_ArchitecturalFeet = CellString(worksheet, cellNames[0]);
-            double tubeLength_DecimalFeet = CellDouble(worksheet, cellNames[1]);
-
-            if (tubeLength_ArchitecturalFeet != null)
-            {
-                // #'-#" --> decimal inches
-                var parts = tubeLength_ArchitecturalFeet.Split('\'', '\"');
-                double feet = double.Parse(parts[0]);
-                double inches = double.Parse(parts[1]);
-                double decimalInches = feet * 12 + inches;
-
-                textBox.Text = decimalInches.ToString();
-                return decimalInches;
-            }
-            else // Decimal feet --> decimal inches
-            {
-                double decimalInches = tubeLength_DecimalFeet * 12;
-                textBox.Text = decimalInches.ToString();
-                return decimalInches;
-            }
-        }
-        static double LoadPregoDouble(TextBox textBox, Worksheet worksheet, params string[] cellNames)
-        {
-            double value = CellDouble(worksheet, cellNames);
-            textBox.Text = value.ToString();
-            return value;
-        }
-        static T LoadPregoValue<T>(Control control, Worksheet worksheet, params string[] cellNames)
-            where T : IConvertible
-        {
-            var value = CellString(worksheet, cellNames);
-            if (value == null)
-            {
-                value = CellDouble(worksheet, cellNames).ToString();
-            }
-            control.Text = value;
-            return (T)Convert.ChangeType(value, typeof(T));
-        }
-        static bool LoadPregoBool_NullOrEmpty(CheckBox checkBox, Worksheet worksheet, params string[] cellNames)
-        {
-            string value = CellString(worksheet, cellNames);
-            bool enabled = value == null ? false : true;
-            checkBox.Checked = enabled;
-            return enabled;
-        }
-        static bool LoadPregoBool(CheckBox checkBox, Worksheet worksheet, params string[] cellNames)
-        {
-            string value = CellString(worksheet, cellNames).ToLower();
-            bool enabled;
-            if (value == "yes" || value == "true")
-            {
-                enabled = true;
-            }
-            else if (value == "no" || value == "false")
-            {
-                enabled = false;
-            }
-            else
-            {
-                throw new FormatException("The cell does not contain a recognized boolean value.");
-            }
-            checkBox.Checked = enabled;
-            return enabled;
+            var controlName = $"{baseName}{index}";
+            return this.GetType().GetField(controlName, BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(this) as T;
         }
 
         #endregion
+
         #region UpdateUI
 
         #region UpdateUI_Headers
+        private void Xtop_61_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(Xtop_61.Text, x => Header61.Xtop = x);
+        }
+
+        private void Xtop_62_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(Xtop_62.Text, x => Header62.Xtop = x);
+        }
+        private void tY_Location_61_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tY_Location_61.Text, x => Header61.Y_Location = x);
+        }
+
+        private void tY_Location_62_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tY_Location_62.Text, x => Header62.Y_Location = x);
+        }
+
+        private void tY_Location_63_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tY_Location_63.Text, x => Header63.Y_Location = x);
+        }
+
+        private void tY_Location_64_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tY_Location_64.Text, x => Header64.Y_Location = x);
+        }
+
+        private void tY_Location_65_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tY_Location_65.Text, x => Header65.Y_Location = x);
+        }
+
+        private void tY_Location_66_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tY_Location_66.Text, x => Header66.Y_Location = x);
+        }
         private void tTopBottomTHK_61_TextChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(tTopBottomTHK_61.Text, x => Header61.TopAndBottomPlateTHK = x);
@@ -434,7 +520,134 @@ namespace Bundle
 
         #endregion
         #region UpdateUI_Bundle
+        private void tVerticalPitch_1_2_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_1_2.Text, x => VerticalPitch._1_2 = x);
+        }
 
+        private void tVerticalPitch_2_3_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_2_3.Text, x => VerticalPitch._2_3 = x);
+        }
+
+        private void tVerticalPitch_3_4_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_3_4.Text, x => VerticalPitch._3_4 = x);
+        }
+
+        private void tVerticalPitch_4_5_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_4_5.Text, x => VerticalPitch._4_5 = x);
+        }
+
+        private void tVerticalPitch_5_6_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_5_6.Text, x => VerticalPitch._5_6 = x);
+        }
+
+        private void tVerticalPitch_6_7_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_6_7.Text, x => VerticalPitch._6_7 = x);
+        }
+
+        private void tVerticalPitch_7_8_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_7_8.Text, x => VerticalPitch._7_8 = x);
+        }
+
+        private void tVerticalPitch_8_9_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_8_9.Text, x => VerticalPitch._8_9 = x);
+        }
+
+        private void tVerticalPitch_9_10_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tVerticalPitch_9_10.Text, x => VerticalPitch._9_10 = x);
+        }
+        private void tSlopeAngle_Row1_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row1.Text, x => SlopePerFoot.Row1 = x);
+        }
+
+        private void tSlopeAngle_Row2_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row2.Text, x => SlopePerFoot.Row2 = x);
+        }
+
+        private void tSlopeAngle_Row3_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row3.Text, x => SlopePerFoot.Row3 = x);
+        }
+
+        private void tSlopeAngle_Row4_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row4.Text, x => SlopePerFoot.Row4 = x);
+        }
+
+        private void tSlopeAngle_Row5_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row5.Text, x => SlopePerFoot.Row5 = x);
+        }
+
+        private void tSlopeAngle_Row6_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row6.Text, x => SlopePerFoot.Row6 = x);
+        }
+
+        private void tSlopeAngle_Row7_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row7.Text, x => SlopePerFoot.Row7 = x);
+        }
+
+        private void tSlopeAngle_Row9_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row9.Text, x => SlopePerFoot.Row9 = x);
+        }
+
+        private void tSlopeAngle_Row10_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tSlopePerFoot_Row10.Text, x => SlopePerFoot.Row10 = x);
+        }
+        private void tTubeQuantity_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(tTubeQuantity.Text, x => TubeQuantity = x);
+        }
+        private void tHorizPitch_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeHorizPitch.Text, x => TubeHorizPitch = x);
+        }
+        private void tTubes_Row_1L_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(tTubes_Row_1L.Text, x => Tube_Row_1L = x);
+        }
+
+        private void tTubes_Row_2L_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(tTubes_Row_2L.Text, x => Tube_Row_2L = x);
+        }
+        private void tTubeOD_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeOD.Text, x => TubeOD = x);
+        }
+
+        private void tTubeWallTHK_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeWallTHK.Text, x => TubeWallTHK = x);
+        }
+
+        private void tFinOD_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tFinOD.Text, x => FinOD = x);
+        }
+        private void tFrontFinStripBack_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tFrontFinStripBack.Text, x => FinStripBack_Front = x);
+        }
+
+        private void tRearFinStripBack_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearFinStripBack.Text, x => FinStripBack_Rear = x);
+        }
         private void tTubeLength_TextChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(tTubeLength.Text, x => TubeLength = x);
@@ -520,6 +733,9 @@ namespace Bundle
         {
             UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
         }
+
+
+
 
 
 

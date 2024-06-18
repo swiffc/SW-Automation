@@ -1546,5 +1546,449 @@ namespace FileTools.Properties {
                 this["TopBottomTHK_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y_Location61 {
+            get {
+                return ((double)(this["Y_Location61"]));
+            }
+            set {
+                this["Y_Location61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y_Location62 {
+            get {
+                return ((double)(this["Y_Location62"]));
+            }
+            set {
+                this["Y_Location62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y_Location63 {
+            get {
+                return ((double)(this["Y_Location63"]));
+            }
+            set {
+                this["Y_Location63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y_Location64 {
+            get {
+                return ((double)(this["Y_Location64"]));
+            }
+            set {
+                this["Y_Location64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y_Location65 {
+            get {
+                return ((double)(this["Y_Location65"]));
+            }
+            set {
+                this["Y_Location65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y_Location66 {
+            get {
+                return ((double)(this["Y_Location66"]));
+            }
+            set {
+                this["Y_Location66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FinStripBack_Front {
+            get {
+                return ((double)(this["FinStripBack_Front"]));
+            }
+            set {
+                this["FinStripBack_Front"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FinStripBack_Rear {
+            get {
+                return ((double)(this["FinStripBack_Rear"]));
+            }
+            set {
+                this["FinStripBack_Rear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeOD {
+            get {
+                return ((double)(this["TubeOD"]));
+            }
+            set {
+                this["TubeOD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeWallTHK {
+            get {
+                return ((double)(this["TubeWallTHK"]));
+            }
+            set {
+                this["TubeWallTHK"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FinOD {
+            get {
+                return ((double)(this["FinOD"]));
+            }
+            set {
+                this["FinOD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FinTHK {
+            get {
+                return ((double)(this["FinTHK"]));
+            }
+            set {
+                this["FinTHK"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Xtop_61 {
+            get {
+                return ((double)(this["Xtop_61"]));
+            }
+            set {
+                this["Xtop_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int TubeQuantity {
+            get {
+                return ((int)(this["TubeQuantity"]));
+            }
+            set {
+                this["TubeQuantity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Tubes_Row_1L {
+            get {
+                return ((int)(this["Tubes_Row_1L"]));
+            }
+            set {
+                this["Tubes_Row_1L"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Tubes_Row_2L {
+            get {
+                return ((int)(this["Tubes_Row_2L"]));
+            }
+            set {
+                this["Tubes_Row_2L"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeHorizPitch {
+            get {
+                return ((double)(this["TubeHorizPitch"]));
+            }
+            set {
+                this["TubeHorizPitch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Xtop_62 {
+            get {
+                return ((double)(this["Xtop_62"]));
+            }
+            set {
+                this["Xtop_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row1 {
+            get {
+                return ((double)(this["SlopePerFoot_Row1"]));
+            }
+            set {
+                this["SlopePerFoot_Row1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row2 {
+            get {
+                return ((double)(this["SlopePerFoot_Row2"]));
+            }
+            set {
+                this["SlopePerFoot_Row2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row3 {
+            get {
+                return ((double)(this["SlopePerFoot_Row3"]));
+            }
+            set {
+                this["SlopePerFoot_Row3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row4 {
+            get {
+                return ((double)(this["SlopePerFoot_Row4"]));
+            }
+            set {
+                this["SlopePerFoot_Row4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row5 {
+            get {
+                return ((double)(this["SlopePerFoot_Row5"]));
+            }
+            set {
+                this["SlopePerFoot_Row5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row6 {
+            get {
+                return ((double)(this["SlopePerFoot_Row6"]));
+            }
+            set {
+                this["SlopePerFoot_Row6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row7 {
+            get {
+                return ((double)(this["SlopePerFoot_Row7"]));
+            }
+            set {
+                this["SlopePerFoot_Row7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row8 {
+            get {
+                return ((double)(this["SlopePerFoot_Row8"]));
+            }
+            set {
+                this["SlopePerFoot_Row8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row9 {
+            get {
+                return ((double)(this["SlopePerFoot_Row9"]));
+            }
+            set {
+                this["SlopePerFoot_Row9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SlopePerFoot_Row10 {
+            get {
+                return ((double)(this["SlopePerFoot_Row10"]));
+            }
+            set {
+                this["SlopePerFoot_Row10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_1_2 {
+            get {
+                return ((double)(this["VerticalPitch_1_2"]));
+            }
+            set {
+                this["VerticalPitch_1_2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_2_3 {
+            get {
+                return ((double)(this["VerticalPitch_2_3"]));
+            }
+            set {
+                this["VerticalPitch_2_3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_3_4 {
+            get {
+                return ((double)(this["VerticalPitch_3_4"]));
+            }
+            set {
+                this["VerticalPitch_3_4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_4_5 {
+            get {
+                return ((double)(this["VerticalPitch_4_5"]));
+            }
+            set {
+                this["VerticalPitch_4_5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_5_6 {
+            get {
+                return ((double)(this["VerticalPitch_5_6"]));
+            }
+            set {
+                this["VerticalPitch_5_6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_6_7 {
+            get {
+                return ((double)(this["VerticalPitch_6_7"]));
+            }
+            set {
+                this["VerticalPitch_6_7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_7_8 {
+            get {
+                return ((double)(this["VerticalPitch_7_8"]));
+            }
+            set {
+                this["VerticalPitch_7_8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_8_9 {
+            get {
+                return ((double)(this["VerticalPitch_8_9"]));
+            }
+            set {
+                this["VerticalPitch_8_9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double VerticalPitch_9_10 {
+            get {
+                return ((double)(this["VerticalPitch_9_10"]));
+            }
+            set {
+                this["VerticalPitch_9_10"] = value;
+            }
+        }
     }
 }

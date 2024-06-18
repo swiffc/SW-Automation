@@ -15,6 +15,7 @@ using FileTools.CommonData;
 using System.ComponentModel;
 using EPDM.Interop.epdm;
 using System.Runtime.InteropServices;
+using static FileTools.StaticFileTools;
 
 namespace Excel
 {
@@ -59,28 +60,38 @@ namespace Excel
                     // Guess the desired file
 
                     PleaseWait.Start("Connecting to AXC_VAULT");
-                    if (Vault.FileExists(expectedFilePath, out IEdmFile5 file))
+                    if (Developer)
+                    {
+
+                    }
+                    else if (Vault.FileExists(expectedFilePath, out IEdmFile5 file))
                     {
                         if (!File.Exists(expectedFilePath))
                             Vault.DownloadFile(file);
+                    }
 
-                        // User to confirm
-                        PleaseWait.Hide();
-                        DialogResult result = MessageBox.Show(
-                            "Would you like to import data from Prego found at:" + "\n" + expectedFilePath,
-                            "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    // User to confirm
+                    PleaseWait.Hide();
+                    DialogResult result = MessageBox.Show(
+                        "Would you like to import data from Prego found at:" + "\n" + expectedFilePath,
+                        "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        if (result == DialogResult.Yes)
-                        {
-                            PleaseWait.Show($"Loading {expectedFileName}");
-                            _pregoDoc = ExcelApp.Workbooks.Open(expectedFilePath);
-                        }
+                    if (result == DialogResult.Yes)
+                    {
+                        PleaseWait.Show($"Loading {expectedFileName}");
+                        _pregoDoc = ExcelApp.Workbooks.Open(expectedFilePath);
                     }
 
                     // User to manually select
                     if (_pregoDoc == null)
                     {
                         PleaseWait.Show($"Loading...");
+
+                        if (Developer)
+                        {
+                            expectedFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                        }
+
                         OpenFileDialog openFileDialog = new OpenFileDialog
                         {
                             Title = "Select Prego file",
@@ -95,7 +106,7 @@ namespace Excel
                             PleaseWait.Show($"Loading {openFileDialog.FileName}");
                             _pregoDoc = ExcelApp.Workbooks.Open(openFileDialog.FileName);
                         }
-                            
+
                     }
 
                     PleaseWait.Hide();
@@ -114,6 +125,28 @@ namespace Excel
                 return _inputSheet;
             }
         }
+        public static Worksheet SketchCalcsSheet
+        {
+            get
+            {
+                if (_sketchCalcsSheet == null && PregoDoc != null)
+                {
+                    _sketchCalcsSheet = (Worksheet)PregoDoc.Sheets["Sketch_Calcs"];
+                }
+                return _sketchCalcsSheet;
+            }
+        }
+        public static Worksheet InputsCalcsSheet
+        {
+            get
+            {
+                if (_inputsCalcsSheet == null && PregoDoc != null)
+                {
+                    _inputsCalcsSheet = (Worksheet)PregoDoc.Sheets["Inputs_Calcs"];
+                }
+                return _inputsCalcsSheet;
+            }
+        }
 
 
         // Public methods
@@ -121,17 +154,13 @@ namespace Excel
         {
             for (int i = 0; i < cellNames.Length; i++)
             {
-                string column = Regex.Match(cellNames[i], @"[A-Za-z]+").Value;
-                int row = int.Parse(Regex.Match(cellNames[i], @"\d+").Value);
-
-                Range cell = (Range)sheet.Cells[row, column];
-                var cellValue = cell.Value2;
+                var cellValue = CellValue(i, sheet, cellNames);
 
                 if (cellValue is string)
                 {
                     if (cellValue != null && cellValue != "")
                         return cellValue;
-                } 
+                }
             }
 
             return null;
@@ -140,16 +169,20 @@ namespace Excel
         {
             for (int i = 0; i < cellNames.Length; i++)
             {
-                string column = Regex.Match(cellNames[i], @"[A-Za-z]+").Value;
-                int row = int.Parse(Regex.Match(cellNames[i], @"\d+").Value);
-
-                Range cell = (Range)sheet.Cells[row, column];
-                var cellValue = cell.Value2;
+                var cellValue = CellValue(i, sheet, cellNames);
 
                 if (cellValue != null)
                 {
                     if (cellValue is double != true)
+                    {
+                        //string cellValueString = CellValue(i, sheet, cellNames).ToString();
+                        //double cellValueDouble = ParseCellValue(cellValueString);
+                        //return cellValueDouble;
+                        if (cellValue == "")
+                            return 0;
+
                         return ParseCellValue(cellValue);
+                    }
                     else
                         return cellValue;
                 }
@@ -199,6 +232,14 @@ namespace Excel
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+        static dynamic CellValue(int i, Worksheet sheet, params string[] cellNames)
+        {
+            string column = Regex.Match(cellNames[i], @"[A-Za-z]+").Value;
+            int row = int.Parse(Regex.Match(cellNames[i], @"\d+").Value);
+
+            Range cell = (Range)sheet.Cells[row, column];
+            return cell.Value2;
+        }
 
 
         // Event handlers
@@ -216,16 +257,7 @@ namespace Excel
         static Application _excel;
         static Workbook _pregoDoc;
         static Worksheet _inputSheet;
-
+        static Worksheet _sketchCalcsSheet;
+        static Worksheet _inputsCalcsSheet;
     }
 }
-
-
-
-
-
-
-
-
-
-

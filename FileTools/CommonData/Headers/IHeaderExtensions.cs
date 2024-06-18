@@ -18,5 +18,7 @@ namespace FileTools.Base
         double TubesheetTHK { get; set; }
         double PlugsheetTHK { get; set; }
         double TopAndBottomPlateTHK { get; set; }
-}
+
+        double Y_Location { get; set; }
+    }
 }

@@ -23,7 +23,7 @@ namespace Bundle.SideFrame.Derived.Children
         {
             get
             {
-                if (HeadersAreOutsideTheFrame)
+                if (HeadersOutsideFrames)
                 {
                     double thickestTubesheet = Math.Max(Math.Max
                     (
@@ -51,7 +51,7 @@ namespace Bundle.SideFrame.Derived.Children
         {
             get
             {
-                if (HeadersAreOutsideTheFrame)
+                if (HeadersOutsideFrames)
                 {
                     double thickestTubesheet = Math.Max(Math.Max
                     (

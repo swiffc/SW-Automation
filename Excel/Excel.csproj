@@ -55,8 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Header_DataManager.cs" />
     <Compile Include="Prego.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

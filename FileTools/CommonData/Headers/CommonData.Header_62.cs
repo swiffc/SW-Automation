@@ -43,6 +43,16 @@ namespace FileTools.CommonData
                 get => Default.TopBottomTHK_62;
                 set => Default.TopBottomTHK_62 = value;
             }
+            public double Y_Location
+            {
+                get => Default.Y_Location62;
+                set => Default.Y_Location62 = value;
+            }
+            public double Xtop
+            {
+                get => Default.Xtop_62;
+                set => Default.Xtop_62 = value;
+            }
         }
     }
 }
