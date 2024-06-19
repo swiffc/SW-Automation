@@ -23,6 +23,7 @@ namespace FileTools.Base
                 _parentAssembly = parentAssembly;
                 AssemblyDoc = OpenAssembly(FilePath, StaticPartNo, false);
 
+                Configurations();
                 Dimensions();
                 Sketches();
 

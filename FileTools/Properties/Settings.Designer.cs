@@ -1990,5 +1990,65 @@ namespace FileTools.Properties {
                 this["VerticalPitch_9_10"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeSupportSpacingFeet {
+            get {
+                return ((double)(this["TubeSupportSpacingFeet"]));
+            }
+            set {
+                this["TubeSupportSpacingFeet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeSupportQuantity {
+            get {
+                return ((double)(this["TubeSupportQuantity"]));
+            }
+            set {
+                this["TubeSupportQuantity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C3x4.1")]
+        public string TubeSupportSize {
+            get {
+                return ((string)(this["TubeSupportSize"]));
+            }
+            set {
+                this["TubeSupportSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Camber {
+            get {
+                return ((bool)(this["Camber"]));
+            }
+            set {
+                this["Camber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TitleblockManuf {
+            get {
+                return ((string)(this["TitleblockManuf"]));
+            }
+            set {
+                this["TitleblockManuf"] = value;
+            }
+        }
     }
 }

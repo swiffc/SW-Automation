@@ -1,4 +1,6 @@
-﻿using FileTools.Base;
+﻿using Excel;
+using FileTools.Base;
+using Microsoft.Office.Interop.Excel;
 using SplashScreen;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,9 @@ using static Excel.StaticHelpers;
 using static FileTools.CommonData.CommonData;
 using static FileTools.Properties.Settings;
 using static FileTools.StaticFileTools;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CheckBox = System.Windows.Forms.CheckBox;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace Bundle
 {
@@ -58,6 +63,11 @@ namespace Bundle
             tVerticalPitch_7_8.Text = VerticalPitch._7_8.ToString();
             tVerticalPitch_8_9.Text = VerticalPitch._8_9.ToString();
             tVerticalPitch_9_10.Text = VerticalPitch._9_10.ToString();
+            tTubeSupportSpacing_Feet.Text = TubeSupportSpacing_Feet.ToString();
+            tTubeSupportQuantity.Text = TubeSupportQuantity.ToString();
+            cTubeSupportSize.Text = TubeSupportSize;
+            bCamber.Checked = Cambered;
+            cTileblockManuf.Text = TitleblockManuf;
 
             // Advanced
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
@@ -116,8 +126,20 @@ namespace Bundle
 
         private void bImportPrego_Click(object sender, EventArgs e)
         {
-            if (InputSheet != null)
+            if (PregoDoc != null)
             {
+                TitleblockManuf = LoadPregoValue<string>(cTileblockManuf, InputSheet,
+                    "G27",
+                    "F27");
+                if (IsSmithco)
+                {
+                    bCamber.Checked = Cambered = false;
+                }
+                else
+                {
+                    bCamber.Checked = Cambered = true;
+                }
+
                 // Job info
                 Customer = LoadPregoValue<string>(customer_Box, InputSheet,
                     "B" + 2); // Customer:
@@ -206,6 +228,16 @@ namespace Bundle
                     "DF65");
                 VerticalPitch._9_10 = LoadPregoDouble(tVerticalPitch_9_10, SketchCalcsSheet,
                     "DF66");
+                TubeSupportSpacing_Feet = LoadPregoDouble(tTubeSupportSpacing_Feet, InputSheet,
+                    "CG26",
+                    "CF26");
+                TubeSupportQuantity = LoadPregoInt(tTubeSupportQuantity, InputSheet,
+                    "CG27",
+                    "CF27");
+                TubeSupportSize = LoadPregoValue<string>(cTubeSupportSize, InputSheet,
+                    "CG28",
+                    "CF28");
+
 
 
 
@@ -221,6 +253,7 @@ namespace Bundle
 
                 SaveSettings();
                 MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
@@ -520,6 +553,28 @@ namespace Bundle
 
         #endregion
         #region UpdateUI_Bundle
+        private void tTileblockManuf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(cTileblockManuf.Text, x => TitleblockManuf = x);
+        }
+        private void bCamber_CheckedChanged(object sender, EventArgs e)
+        {
+            UI_BoolChanged(bCamber.Checked, x => Cambered = x);
+        }
+        private void tTubeSupportSpacing_Feet_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeSupportSpacing_Feet.Text, x => TubeSupportSpacing_Feet = x);
+        }
+
+        private void tTubeSupportQuantity_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tTubeSupportQuantity.Text, x => TubeSupportQuantity = x);
+        }
+
+        private void cTubeSupportSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(cTubeSupportSize.Text, x => TubeSupportSize = x);
+        }
         private void tVerticalPitch_1_2_TextChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(tVerticalPitch_1_2.Text, x => VerticalPitch._1_2 = x);
@@ -733,6 +788,10 @@ namespace Bundle
         {
             UI_BoolChanged(delete_Toggle.Checked, x => Default.Toggle_DeleteFiles = x);
         }
+
+
+
+
 
 
 

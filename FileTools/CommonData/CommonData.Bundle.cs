@@ -165,9 +165,8 @@ namespace FileTools.CommonData
                 set => Default.SlopePerFoot_Row10 = value; 
             }
         }
-
-        static public VerticalPitchs VerticalPitch => new VerticalPitchs();
-        public class VerticalPitchs
+        static public VerticalPitches VerticalPitch => new VerticalPitches();
+        public class VerticalPitches
         {
             public double _1_2
             {
@@ -214,6 +213,26 @@ namespace FileTools.CommonData
                 get => Default.VerticalPitch_9_10;
                 set => Default.VerticalPitch_9_10 = value;
             }
+        }
+        public static double TubeSupportSpacing_Feet
+        {
+            get => Default.TubeSupportSpacingFeet;
+            set => Default.TubeSupportSpacingFeet = value;
+        }
+        public static double TubeSupportQuantity
+        {
+            get => Default.TubeSupportQuantity;
+            set => Default.TubeSupportQuantity = value;
+        }
+        public static string TubeSupportSize
+        {
+            get => Default.TubeSupportSize;
+            set => Default.TubeSupportSize = value;
+        }
+        public static bool Cambered
+        {
+            get => Default.Camber;
+            set => Default.Camber = value;
         }
     }
 }

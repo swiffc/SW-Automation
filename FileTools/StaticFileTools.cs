@@ -1405,7 +1405,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         public static string DesktopFolderPath => $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)}\\{Default.Project}-{AssemblyNumber}{Default.Bank}";
         public static int AssemblyNumber { get; set; }
         public static string AssemblyDesc { get; set; }
-        private static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+        public static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
         public static Spec StaticMaterialSpec { get; set; } = Spec.A36;
         public static string TemplateFolderPath =>
                 $@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\{AssemblyDesc}";

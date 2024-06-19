@@ -47,7 +47,7 @@ namespace Excel
                 return _excel;
             }
         }
-        static Workbook PregoDoc
+        public static Workbook PregoDoc
         {
             get
             {

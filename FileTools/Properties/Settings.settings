@@ -494,5 +494,20 @@
     <Setting Name="VerticalPitch_9_10" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="TubeSupportSpacingFeet" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TubeSupportQuantity" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TubeSupportSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C3x4.1</Value>
+    </Setting>
+    <Setting Name="Camber" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TitleblockManuf" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

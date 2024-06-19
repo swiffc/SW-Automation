@@ -135,12 +135,14 @@ namespace FileTools.Base
 
         // Virtual methods
         protected virtual void Setup() { }
+        protected virtual void Configurations() { }
         protected virtual void Dimensions() { }
         protected virtual void Sketches() { }
 
 
         // Public properties
         public AssemblyDoc AssemblyDoc { get; set; }
+        public ModelDoc2 ModelDoc2 => AssemblyDoc as ModelDoc2;
         public Component2[] ComponentArray
         {
             get

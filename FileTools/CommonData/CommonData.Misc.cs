@@ -62,6 +62,12 @@ namespace FileTools.CommonData
             get { return Default.Initials; }
             set { Default.Initials = value; }
         }
+        static public string TitleblockManuf
+        {
+            get { return Default.TitleblockManuf; }
+            set { Default.TitleblockManuf = value; }
+        }
+        static public bool IsSmithco => TitleblockManuf.ToLower() == "smithco" ? true : false;
 
         // Misc
         static public string MaterialSpecSetting

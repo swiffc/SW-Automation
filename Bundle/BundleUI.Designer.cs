@@ -47,6 +47,34 @@
             this.textBox_Bank = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cTileblockManuf = new System.Windows.Forms.ComboBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.bCamber = new System.Windows.Forms.CheckBox();
+            this.tTubeSupportQuantity = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.tTubeSupportSpacing_Feet = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.cTubeSupportSize = new System.Windows.Forms.ComboBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_9_10 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_8_9 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_7_8 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_6_7 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_5_6 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_4_5 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_3_4 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_2_3 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.tVerticalPitch_1_2 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.tSlopePerFoot_Row10 = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.tSlopePerFoot_Row9 = new System.Windows.Forms.TextBox();
@@ -183,24 +211,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.initials_Box = new System.Windows.Forms.TextBox();
-            this.tVerticalPitch_9_10 = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_8_9 = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_7_8 = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_6_7 = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_5_6 = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_4_5 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_3_4 = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_2_3 = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.tVerticalPitch_1_2 = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -215,7 +225,7 @@
             // 
             // tBundleWidth
             // 
-            this.tBundleWidth.Location = new System.Drawing.Point(14, 200);
+            this.tBundleWidth.Location = new System.Drawing.Point(14, 226);
             this.tBundleWidth.Name = "tBundleWidth";
             this.tBundleWidth.Size = new System.Drawing.Size(100, 20);
             this.tBundleWidth.TabIndex = 0;
@@ -226,7 +236,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(120, 203);
+            this.label1.Location = new System.Drawing.Point(120, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 1;
@@ -236,7 +246,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(120, 1342);
+            this.label2.Location = new System.Drawing.Point(120, 1374);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 3;
@@ -418,6 +428,16 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cTileblockManuf);
+            this.panel1.Controls.Add(this.label67);
+            this.panel1.Controls.Add(this.label66);
+            this.panel1.Controls.Add(this.bCamber);
+            this.panel1.Controls.Add(this.tTubeSupportQuantity);
+            this.panel1.Controls.Add(this.label65);
+            this.panel1.Controls.Add(this.tTubeSupportSpacing_Feet);
+            this.panel1.Controls.Add(this.label64);
+            this.panel1.Controls.Add(this.cTubeSupportSize);
+            this.panel1.Controls.Add(this.label63);
             this.panel1.Controls.Add(this.tVerticalPitch_9_10);
             this.panel1.Controls.Add(this.label54);
             this.panel1.Controls.Add(this.tVerticalPitch_8_9);
@@ -505,6 +525,295 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 476);
             this.panel1.TabIndex = 86;
+            // 
+            // cTileblockManuf
+            // 
+            this.cTileblockManuf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cTileblockManuf.FormattingEnabled = true;
+            this.cTileblockManuf.Items.AddRange(new object[] {
+            "HPC",
+            "Smithco",
+            "Coolr Svc",
+            "Hammco"});
+            this.cTileblockManuf.Location = new System.Drawing.Point(67, 156);
+            this.cTileblockManuf.Name = "cTileblockManuf";
+            this.cTileblockManuf.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cTileblockManuf.Size = new System.Drawing.Size(121, 21);
+            this.cTileblockManuf.TabIndex = 182;
+            this.cTileblockManuf.SelectedIndexChanged += new System.EventHandler(this.tTileblockManuf_SelectedIndexChanged);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.BackColor = System.Drawing.Color.White;
+            this.label67.Location = new System.Drawing.Point(195, 159);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(35, 13);
+            this.label67.TabIndex = 181;
+            this.label67.Text = "Brand";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.BackColor = System.Drawing.Color.White;
+            this.label66.Location = new System.Drawing.Point(120, 1269);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(55, 13);
+            this.label66.TabIndex = 179;
+            this.label66.Text = "Cambered";
+            // 
+            // bCamber
+            // 
+            this.bCamber.AutoSize = true;
+            this.bCamber.Location = new System.Drawing.Point(99, 1268);
+            this.bCamber.Name = "bCamber";
+            this.bCamber.Size = new System.Drawing.Size(15, 14);
+            this.bCamber.TabIndex = 178;
+            this.bCamber.UseVisualStyleBackColor = true;
+            this.bCamber.CheckedChanged += new System.EventHandler(this.bCamber_CheckedChanged);
+            // 
+            // tTubeSupportQuantity
+            // 
+            this.tTubeSupportQuantity.Location = new System.Drawing.Point(14, 298);
+            this.tTubeSupportQuantity.Name = "tTubeSupportQuantity";
+            this.tTubeSupportQuantity.Size = new System.Drawing.Size(100, 20);
+            this.tTubeSupportQuantity.TabIndex = 176;
+            this.tTubeSupportQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tTubeSupportQuantity.TextChanged += new System.EventHandler(this.tTubeSupportQuantity_TextChanged);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.Color.White;
+            this.label65.Location = new System.Drawing.Point(120, 301);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(114, 13);
+            this.label65.TabIndex = 177;
+            this.label65.Text = "Tube Support Quantity";
+            // 
+            // tTubeSupportSpacing_Feet
+            // 
+            this.tTubeSupportSpacing_Feet.Location = new System.Drawing.Point(14, 272);
+            this.tTubeSupportSpacing_Feet.Name = "tTubeSupportSpacing_Feet";
+            this.tTubeSupportSpacing_Feet.Size = new System.Drawing.Size(100, 20);
+            this.tTubeSupportSpacing_Feet.TabIndex = 174;
+            this.tTubeSupportSpacing_Feet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tTubeSupportSpacing_Feet.TextChanged += new System.EventHandler(this.tTubeSupportSpacing_Feet_TextChanged);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.White;
+            this.label64.Location = new System.Drawing.Point(120, 275);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(129, 13);
+            this.label64.TabIndex = 175;
+            this.label64.Text = "Tube Support Spacing (ft)";
+            // 
+            // cTubeSupportSize
+            // 
+            this.cTubeSupportSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cTubeSupportSize.FormattingEnabled = true;
+            this.cTubeSupportSize.Items.AddRange(new object[] {
+            "C2x2.57",
+            "C3x4.1",
+            "S3x5.7",
+            "S4x7.7",
+            "S5x10",
+            "S6x12.5",
+            "W4x13",
+            "W6x12",
+            "W6x16",
+            "W8x15",
+            "W8x18",
+            "W10x26"});
+            this.cTubeSupportSize.Location = new System.Drawing.Point(14, 324);
+            this.cTubeSupportSize.Name = "cTubeSupportSize";
+            this.cTubeSupportSize.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cTubeSupportSize.Size = new System.Drawing.Size(100, 21);
+            this.cTubeSupportSize.TabIndex = 173;
+            this.cTubeSupportSize.SelectedIndexChanged += new System.EventHandler(this.cTubeSupportSize_SelectedIndexChanged);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.BackColor = System.Drawing.Color.White;
+            this.label63.Location = new System.Drawing.Point(120, 326);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(95, 13);
+            this.label63.TabIndex = 172;
+            this.label63.Text = "Tube Support Size";
+            // 
+            // tVerticalPitch_9_10
+            // 
+            this.tVerticalPitch_9_10.Location = new System.Drawing.Point(14, 1242);
+            this.tVerticalPitch_9_10.Name = "tVerticalPitch_9_10";
+            this.tVerticalPitch_9_10.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_9_10.TabIndex = 169;
+            this.tVerticalPitch_9_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_9_10.TextChanged += new System.EventHandler(this.tVerticalPitch_9_10_TextChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.White;
+            this.label54.Location = new System.Drawing.Point(120, 1245);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(150, 13);
+            this.label54.TabIndex = 170;
+            this.label54.Text = "Vertical Pitch (Rows 9 and 10)";
+            // 
+            // tVerticalPitch_8_9
+            // 
+            this.tVerticalPitch_8_9.Location = new System.Drawing.Point(14, 1216);
+            this.tVerticalPitch_8_9.Name = "tVerticalPitch_8_9";
+            this.tVerticalPitch_8_9.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_8_9.TabIndex = 167;
+            this.tVerticalPitch_8_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_8_9.TextChanged += new System.EventHandler(this.tVerticalPitch_8_9_TextChanged);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.BackColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(120, 1219);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(144, 13);
+            this.label55.TabIndex = 168;
+            this.label55.Text = "Vertical Pitch (Rows 8 and 9)";
+            // 
+            // tVerticalPitch_7_8
+            // 
+            this.tVerticalPitch_7_8.Location = new System.Drawing.Point(14, 1190);
+            this.tVerticalPitch_7_8.Name = "tVerticalPitch_7_8";
+            this.tVerticalPitch_7_8.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_7_8.TabIndex = 165;
+            this.tVerticalPitch_7_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_7_8.TextChanged += new System.EventHandler(this.tVerticalPitch_7_8_TextChanged);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.BackColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(120, 1193);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(144, 13);
+            this.label56.TabIndex = 166;
+            this.label56.Text = "Vertical Pitch (Rows 7 and 8)";
+            // 
+            // tVerticalPitch_6_7
+            // 
+            this.tVerticalPitch_6_7.Location = new System.Drawing.Point(14, 1164);
+            this.tVerticalPitch_6_7.Name = "tVerticalPitch_6_7";
+            this.tVerticalPitch_6_7.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_6_7.TabIndex = 163;
+            this.tVerticalPitch_6_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_6_7.TextChanged += new System.EventHandler(this.tVerticalPitch_6_7_TextChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.BackColor = System.Drawing.Color.White;
+            this.label57.Location = new System.Drawing.Point(120, 1167);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(144, 13);
+            this.label57.TabIndex = 164;
+            this.label57.Text = "Vertical Pitch (Rows 6 and 7)";
+            // 
+            // tVerticalPitch_5_6
+            // 
+            this.tVerticalPitch_5_6.Location = new System.Drawing.Point(14, 1138);
+            this.tVerticalPitch_5_6.Name = "tVerticalPitch_5_6";
+            this.tVerticalPitch_5_6.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_5_6.TabIndex = 161;
+            this.tVerticalPitch_5_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_5_6.TextChanged += new System.EventHandler(this.tVerticalPitch_5_6_TextChanged);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.BackColor = System.Drawing.Color.White;
+            this.label58.Location = new System.Drawing.Point(120, 1141);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(144, 13);
+            this.label58.TabIndex = 162;
+            this.label58.Text = "Vertical Pitch (Rows 5 and 6)";
+            // 
+            // tVerticalPitch_4_5
+            // 
+            this.tVerticalPitch_4_5.Location = new System.Drawing.Point(14, 1112);
+            this.tVerticalPitch_4_5.Name = "tVerticalPitch_4_5";
+            this.tVerticalPitch_4_5.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_4_5.TabIndex = 159;
+            this.tVerticalPitch_4_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_4_5.TextChanged += new System.EventHandler(this.tVerticalPitch_4_5_TextChanged);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.BackColor = System.Drawing.Color.White;
+            this.label59.Location = new System.Drawing.Point(120, 1115);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(144, 13);
+            this.label59.TabIndex = 160;
+            this.label59.Text = "Vertical Pitch (Rows 4 and 5)";
+            // 
+            // tVerticalPitch_3_4
+            // 
+            this.tVerticalPitch_3_4.Location = new System.Drawing.Point(14, 1086);
+            this.tVerticalPitch_3_4.Name = "tVerticalPitch_3_4";
+            this.tVerticalPitch_3_4.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_3_4.TabIndex = 157;
+            this.tVerticalPitch_3_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_3_4.TextChanged += new System.EventHandler(this.tVerticalPitch_3_4_TextChanged);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.BackColor = System.Drawing.Color.White;
+            this.label60.Location = new System.Drawing.Point(120, 1089);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(144, 13);
+            this.label60.TabIndex = 158;
+            this.label60.Text = "Vertical Pitch (Rows 3 and 4)";
+            // 
+            // tVerticalPitch_2_3
+            // 
+            this.tVerticalPitch_2_3.Location = new System.Drawing.Point(14, 1060);
+            this.tVerticalPitch_2_3.Name = "tVerticalPitch_2_3";
+            this.tVerticalPitch_2_3.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_2_3.TabIndex = 155;
+            this.tVerticalPitch_2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_2_3.TextChanged += new System.EventHandler(this.tVerticalPitch_2_3_TextChanged);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.BackColor = System.Drawing.Color.White;
+            this.label61.Location = new System.Drawing.Point(120, 1063);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(144, 13);
+            this.label61.TabIndex = 156;
+            this.label61.Text = "Vertical Pitch (Rows 2 and 3)";
+            // 
+            // tVerticalPitch_1_2
+            // 
+            this.tVerticalPitch_1_2.Location = new System.Drawing.Point(14, 1034);
+            this.tVerticalPitch_1_2.Name = "tVerticalPitch_1_2";
+            this.tVerticalPitch_1_2.Size = new System.Drawing.Size(100, 20);
+            this.tVerticalPitch_1_2.TabIndex = 153;
+            this.tVerticalPitch_1_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tVerticalPitch_1_2.TextChanged += new System.EventHandler(this.tVerticalPitch_1_2_TextChanged);
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.BackColor = System.Drawing.Color.White;
+            this.label62.Location = new System.Drawing.Point(120, 1037);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(144, 13);
+            this.label62.TabIndex = 154;
+            this.label62.Text = "Vertical Pitch (Rows 1 and 2)";
             // 
             // tSlopePerFoot_Row10
             // 
@@ -886,7 +1195,7 @@
             "0.2500",
             "0.3125",
             "0.3750"});
-            this.cSideFrameTHK.Location = new System.Drawing.Point(14, 1339);
+            this.cSideFrameTHK.Location = new System.Drawing.Point(14, 1371);
             this.cSideFrameTHK.Name = "cSideFrameTHK";
             this.cSideFrameTHK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cSideFrameTHK.Size = new System.Drawing.Size(100, 21);
@@ -934,16 +1243,16 @@
             // 
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(120, 227);
+            this.label26.Location = new System.Drawing.Point(120, 253);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(119, 13);
+            this.label26.Size = new System.Drawing.Size(113, 13);
             this.label26.TabIndex = 108;
-            this.label26.Text = "Headers outside frame?";
+            this.label26.Text = "Headers outside frame";
             // 
             // cHeadersOutsideFrame
             // 
             this.cHeadersOutsideFrame.AutoSize = true;
-            this.cHeadersOutsideFrame.Location = new System.Drawing.Point(99, 226);
+            this.cHeadersOutsideFrame.Location = new System.Drawing.Point(99, 252);
             this.cHeadersOutsideFrame.Name = "cHeadersOutsideFrame";
             this.cHeadersOutsideFrame.Size = new System.Drawing.Size(15, 14);
             this.cHeadersOutsideFrame.TabIndex = 107;
@@ -967,7 +1276,7 @@
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(11, 1294);
+            this.label13.Location = new System.Drawing.Point(11, 1326);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 16);
             this.label13.TabIndex = 91;
@@ -979,7 +1288,7 @@
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(11, 181);
+            this.label12.Location = new System.Drawing.Point(11, 207);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 16);
             this.label12.TabIndex = 90;
@@ -1069,7 +1378,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(120, 1316);
+            this.label3.Location = new System.Drawing.Point(120, 1348);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 5;
@@ -1077,7 +1386,7 @@
             // 
             // tDepth
             // 
-            this.tDepth.Location = new System.Drawing.Point(14, 1313);
+            this.tDepth.Location = new System.Drawing.Point(14, 1345);
             this.tDepth.Name = "tDepth";
             this.tDepth.Size = new System.Drawing.Size(100, 20);
             this.tDepth.TabIndex = 4;
@@ -1892,177 +2201,6 @@
             this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
-            // tVerticalPitch_9_10
-            // 
-            this.tVerticalPitch_9_10.Location = new System.Drawing.Point(14, 1242);
-            this.tVerticalPitch_9_10.Name = "tVerticalPitch_9_10";
-            this.tVerticalPitch_9_10.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_9_10.TabIndex = 169;
-            this.tVerticalPitch_9_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_9_10.TextChanged += new System.EventHandler(this.tVerticalPitch_9_10_TextChanged);
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.BackColor = System.Drawing.Color.White;
-            this.label54.Location = new System.Drawing.Point(120, 1245);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(150, 13);
-            this.label54.TabIndex = 170;
-            this.label54.Text = "Vertical Pitch (Rows 9 and 10)";
-            // 
-            // tVerticalPitch_8_9
-            // 
-            this.tVerticalPitch_8_9.Location = new System.Drawing.Point(14, 1216);
-            this.tVerticalPitch_8_9.Name = "tVerticalPitch_8_9";
-            this.tVerticalPitch_8_9.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_8_9.TabIndex = 167;
-            this.tVerticalPitch_8_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_8_9.TextChanged += new System.EventHandler(this.tVerticalPitch_8_9_TextChanged);
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.BackColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(120, 1219);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(144, 13);
-            this.label55.TabIndex = 168;
-            this.label55.Text = "Vertical Pitch (Rows 8 and 9)";
-            // 
-            // tVerticalPitch_7_8
-            // 
-            this.tVerticalPitch_7_8.Location = new System.Drawing.Point(14, 1190);
-            this.tVerticalPitch_7_8.Name = "tVerticalPitch_7_8";
-            this.tVerticalPitch_7_8.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_7_8.TabIndex = 165;
-            this.tVerticalPitch_7_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_7_8.TextChanged += new System.EventHandler(this.tVerticalPitch_7_8_TextChanged);
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.BackColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(120, 1193);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(144, 13);
-            this.label56.TabIndex = 166;
-            this.label56.Text = "Vertical Pitch (Rows 7 and 8)";
-            // 
-            // tVerticalPitch_6_7
-            // 
-            this.tVerticalPitch_6_7.Location = new System.Drawing.Point(14, 1164);
-            this.tVerticalPitch_6_7.Name = "tVerticalPitch_6_7";
-            this.tVerticalPitch_6_7.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_6_7.TabIndex = 163;
-            this.tVerticalPitch_6_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_6_7.TextChanged += new System.EventHandler(this.tVerticalPitch_6_7_TextChanged);
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.BackColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(120, 1167);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(144, 13);
-            this.label57.TabIndex = 164;
-            this.label57.Text = "Vertical Pitch (Rows 6 and 7)";
-            // 
-            // tVerticalPitch_5_6
-            // 
-            this.tVerticalPitch_5_6.Location = new System.Drawing.Point(14, 1138);
-            this.tVerticalPitch_5_6.Name = "tVerticalPitch_5_6";
-            this.tVerticalPitch_5_6.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_5_6.TabIndex = 161;
-            this.tVerticalPitch_5_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_5_6.TextChanged += new System.EventHandler(this.tVerticalPitch_5_6_TextChanged);
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.BackColor = System.Drawing.Color.White;
-            this.label58.Location = new System.Drawing.Point(120, 1141);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(144, 13);
-            this.label58.TabIndex = 162;
-            this.label58.Text = "Vertical Pitch (Rows 5 and 6)";
-            // 
-            // tVerticalPitch_4_5
-            // 
-            this.tVerticalPitch_4_5.Location = new System.Drawing.Point(14, 1112);
-            this.tVerticalPitch_4_5.Name = "tVerticalPitch_4_5";
-            this.tVerticalPitch_4_5.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_4_5.TabIndex = 159;
-            this.tVerticalPitch_4_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_4_5.TextChanged += new System.EventHandler(this.tVerticalPitch_4_5_TextChanged);
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.Color.White;
-            this.label59.Location = new System.Drawing.Point(120, 1115);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(144, 13);
-            this.label59.TabIndex = 160;
-            this.label59.Text = "Vertical Pitch (Rows 4 and 5)";
-            // 
-            // tVerticalPitch_3_4
-            // 
-            this.tVerticalPitch_3_4.Location = new System.Drawing.Point(14, 1086);
-            this.tVerticalPitch_3_4.Name = "tVerticalPitch_3_4";
-            this.tVerticalPitch_3_4.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_3_4.TabIndex = 157;
-            this.tVerticalPitch_3_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_3_4.TextChanged += new System.EventHandler(this.tVerticalPitch_3_4_TextChanged);
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(120, 1089);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(144, 13);
-            this.label60.TabIndex = 158;
-            this.label60.Text = "Vertical Pitch (Rows 3 and 4)";
-            // 
-            // tVerticalPitch_2_3
-            // 
-            this.tVerticalPitch_2_3.Location = new System.Drawing.Point(14, 1060);
-            this.tVerticalPitch_2_3.Name = "tVerticalPitch_2_3";
-            this.tVerticalPitch_2_3.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_2_3.TabIndex = 155;
-            this.tVerticalPitch_2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_2_3.TextChanged += new System.EventHandler(this.tVerticalPitch_2_3_TextChanged);
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.BackColor = System.Drawing.Color.White;
-            this.label61.Location = new System.Drawing.Point(120, 1063);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(144, 13);
-            this.label61.TabIndex = 156;
-            this.label61.Text = "Vertical Pitch (Rows 2 and 3)";
-            // 
-            // tVerticalPitch_1_2
-            // 
-            this.tVerticalPitch_1_2.Location = new System.Drawing.Point(14, 1034);
-            this.tVerticalPitch_1_2.Name = "tVerticalPitch_1_2";
-            this.tVerticalPitch_1_2.Size = new System.Drawing.Size(100, 20);
-            this.tVerticalPitch_1_2.TabIndex = 153;
-            this.tVerticalPitch_1_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tVerticalPitch_1_2.TextChanged += new System.EventHandler(this.tVerticalPitch_1_2_TextChanged);
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.BackColor = System.Drawing.Color.White;
-            this.label62.Location = new System.Drawing.Point(120, 1037);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(144, 13);
-            this.label62.TabIndex = 154;
-            this.label62.Text = "Vertical Pitch (Rows 1 and 2)";
-            // 
             // BundleUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2269,6 +2407,16 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.TextBox tVerticalPitch_1_2;
         private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.ComboBox cTubeSupportSize;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox tTubeSupportQuantity;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox tTubeSupportSpacing_Feet;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.CheckBox bCamber;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.ComboBox cTileblockManuf;
     }
 }
 

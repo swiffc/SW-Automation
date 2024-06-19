@@ -73,6 +73,10 @@
     <Compile Include="SideFrame\Derived\FrameWeldmentRight.cs" />
     <Compile Include="SideFrame\Derived\SideFrameWeldmentLeft.cs" />
     <Compile Include="SideFrame\SideFrameWeldment.cs" />
+    <Compile Include="TubeSupports\Children\EndPlate.cs" />
+    <Compile Include="TubeSupports\Children\TubeSupportPart.cs" />
+    <Compile Include="TubeSupports\MountingAngle.cs" />
+    <Compile Include="TubeSupports\TubeSupport.cs" />
     <EmbeddedResource Include="BundleUI.resx">
       <DependentUpon>BundleUI.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -118,5 +122,6 @@
       <Name>SplashScreen</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
