@@ -1,4 +1,5 @@
-﻿using FileTools.Base;
+﻿using Bundle.AirSeals.Derived;
+using FileTools.Base;
 using System;
 using System.Windows.Forms;
 using static FileTools.CommonData.CommonData;
@@ -13,11 +14,27 @@ namespace Bundle
             get { return Bundle_Width; }
             set { Bundle_Width = value; }
         }
+        static public IHeaderExtensions LowestHeader
+        {
+            get
+            {
+                IHeaderExtensions lowestHeader;
+                if (Header65.IsRequired)
+                    lowestHeader = Header65;
+                else if (Header63.IsRequired)
+                    lowestHeader = Header63;
+                else lowestHeader = Header61;
+                return lowestHeader;
+            }
+        }
 
 
         // Constructor
         public Bundle(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
-            //,typeof(Class)
+            //, typeof(Bottom_Front_AirSeal)
+            //, typeof(Bottom_Rear_AirSeal)
+            //, typeof(Top_Front_AirSeal)
+            //, typeof(Top_Rear_AirSeal)
             )
         { }
 

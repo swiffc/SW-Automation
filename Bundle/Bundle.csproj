@@ -58,6 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirSeals\AirSeal.cs" />
+    <Compile Include="AirSeals\Derived\Bottom_Front_AirSeal.cs" />
+    <Compile Include="AirSeals\Derived\Bottom_Rear_AirSeal.cs" />
+    <Compile Include="AirSeals\Derived\Top_Front_AirSeal.cs" />
+    <Compile Include="AirSeals\Derived\Top_Rear_AirSeal.cs" />
     <Compile Include="Misc\Tube.cs" />
     <Compile Include="BundleUI.cs">
       <SubType>Form</SubType>
@@ -73,7 +78,11 @@
     <Compile Include="SideFrame\Derived\FrameWeldmentRight.cs" />
     <Compile Include="SideFrame\Derived\SideFrameWeldmentLeft.cs" />
     <Compile Include="SideFrame\SideFrameWeldment.cs" />
-    <Compile Include="TubeSupports\Children\EndPlate.cs" />
+    <Compile Include="TubeKeepers\Children\TubeKeeperPipe.cs" />
+    <Compile Include="TubeKeepers\Children\TubeKeeper_EndPlate.cs" />
+    <Compile Include="TubeKeepers\TubeKeeperBent.cs" />
+    <Compile Include="TubeKeepers\TubeKeeperWeldment.cs" />
+    <Compile Include="TubeSupports\Children\TubeSupport_EndPlate.cs" />
     <Compile Include="TubeSupports\Children\TubeSupportPart.cs" />
     <Compile Include="TubeSupports\MountingAngle.cs" />
     <Compile Include="TubeSupports\TubeSupport.cs" />

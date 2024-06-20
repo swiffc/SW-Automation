@@ -4,7 +4,7 @@
         <Header>
             <Title>PositionDataListProperty</Title>
             <Shortcut>poslistprop</Shortcut>
-            <Description>Code snippet for a property that returns a List of PositionData with a getter</Description>
+            <Description>Code snippet for a property that returns a List of PositionData with a getter, including translation variables</Description>
             <Author>Your Name</Author>
             <SnippetTypes>
                 <SnippetType>Expansion</SnippetType>
@@ -27,9 +27,13 @@
         {
             get
             {
+                double xTranslation = 0;
+                double yTranslation = 0;
+                double zTranslation = 0;
+
                 return new $type$
                 {
-                    PositionData.Create(),
+                    PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation),
                 };
             }
         }

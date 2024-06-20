@@ -15,6 +15,22 @@ namespace Bundle.Misc
     internal class Tube : Part
     {
         static public double Camber => Math.Ceiling(TubeSupport.Quantity / 2) * 0.125;
+        static public double AllVerticalPitches
+        {
+            get
+            {
+                return 
+                + VerticalPitch._1_2
+                + VerticalPitch._2_3
+                + VerticalPitch._3_4
+                + VerticalPitch._4_5
+                + VerticalPitch._5_6
+                + VerticalPitch._6_7
+                + VerticalPitch._7_8
+                + VerticalPitch._8_9
+                + VerticalPitch._9_10;
+            }
+        }
 
 
         // Constructor
@@ -90,7 +106,8 @@ namespace Bundle.Misc
                     VerticalPitch._6_7, 
                     VerticalPitch._7_8, 
                     VerticalPitch._8_9, 
-                    VerticalPitch._9_10, 0 
+                    VerticalPitch._9_10, 
+                    0 
                 };
 
                 for (int i = 0; i < 10; i++)

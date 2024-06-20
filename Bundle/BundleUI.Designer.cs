@@ -255,7 +255,7 @@
             // bBundle
             // 
             this.bBundle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBundle.Location = new System.Drawing.Point(202, 567);
+            this.bBundle.Location = new System.Drawing.Point(244, 565);
             this.bBundle.Name = "bBundle";
             this.bBundle.Size = new System.Drawing.Size(155, 28);
             this.bBundle.TabIndex = 4;

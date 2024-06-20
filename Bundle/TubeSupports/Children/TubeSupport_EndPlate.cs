@@ -9,21 +9,21 @@ using static FileTools.CommonData.CommonData;
 
 namespace Bundle.TubeSupports.Children
 {
-    internal class EndPlate : Part
+    internal class TubeSupport_EndPlate : Part
     {
         // Static properties
-        static public double THK => 0.375;
+        static public double THK => 0.25;
 
 
         // Constructor
-        public EndPlate(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
+        public TubeSupport_EndPlate(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 
 
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Height", "sk:Plate", TubeSupportPart.ShapeHeight >= 8 ? 6.5 : 3);
-            EditDimension("Offset", "sk:Plate", TubeSupportPart.ShapeHeight >= 8 ? 2.25 : 1.75);
+            EditDimension("Height", "sk:Plate", TubeSupportPart.Height >= 8 ? 6.5 : 3);
+            EditDimension("Offset", "sk:Plate", TubeSupportPart.Height >= 8 ? 2.25 : 1.75);
         }
 
 

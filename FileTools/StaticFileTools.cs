@@ -552,7 +552,6 @@ namespace FileTools
                             if (component != null && component.Enabled)
                             {
                                 componentsToBeAdded.Add(component);
-                                //Debug.WriteLine($"   ({component.StaticPartNo}){type.Name}.cs was reflected in ({swAssembly.Config})");
                             }
                         }
                     }

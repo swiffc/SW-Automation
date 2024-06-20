@@ -15,8 +15,27 @@ namespace Bundle.TubeSupports
 {
     internal class TubeSupport : SubAssembly
     {
+        // Static properties
+        public static List<PositionData> PositionDataList
+        {
+            get
+            {
+                var pos = new List<PositionData>();
+
+                var yTranslations = Y_Translations();
+                var zTranslation = Spacing_Feet * 12 * (Quantity - 1) / 2;
+
+                for (int i = 0; i < yTranslations.Count; i++)
+                {
+                    pos.Add(PositionData.Create(tY: yTranslations[i], tZ: zTranslation - Spacing_Feet * 12 * i));
+                }
+
+                return pos;
+            }
+        }
+
         // Constructor
-        public TubeSupport(SW_Assembly parentAssembly) : base(parentAssembly) { }
+        public TubeSupport(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
 
         // Method overrides
@@ -24,10 +43,31 @@ namespace Bundle.TubeSupports
         {
             Configuration configuration = ModelDoc2.GetConfigurationByName(StaticPartNo);
 
-            if (IsSmithco)      
+            if (IsSmithco)
                 configuration.ChildComponentDisplayInBOM = (int)swChildComponentInBOMOption_e.swChildComponent_Promote;
             else
                 configuration.ChildComponentDisplayInBOM = (int)swChildComponentInBOMOption_e.swChildComponent_Show;
+        }
+
+
+        // Public methods
+        public static List<PositionData> CalculateKeeperPositionFrom(List<PositionData> tubeSupportPositionData)
+        {
+            var pos = new List<PositionData>();
+
+            for (int i = 0; i < tubeSupportPositionData.Count; i++)
+            {
+                double newY = tubeSupportPositionData[i].TranslationY + Tube.AllVerticalPitches + Tube.FinOD;
+
+                PositionData positionData = PositionData.Create
+                (
+                    tY: newY,
+                    tZ: tubeSupportPositionData[i].TranslationZ
+                );
+                pos.Add(positionData);
+            }
+
+            return pos;
         }
 
 
@@ -37,24 +77,7 @@ namespace Bundle.TubeSupports
             var yTranslations = new List<double>();
 
             // Find Y translation if no slope last pass
-            double yTranslation =
-
-                // center of top tube row at 61header
-                Header61.Y_Location - Header61.Xtop
-
-                // all vertical pitches
-                - VerticalPitch._1_2
-                - VerticalPitch._2_3
-                - VerticalPitch._3_4
-                - VerticalPitch._4_5
-                - VerticalPitch._5_6
-                - VerticalPitch._6_7
-                - VerticalPitch._7_8
-                - VerticalPitch._8_9
-                - VerticalPitch._9_10
-
-                // half of fin OD
-                - Tube.FinOD / 2;
+            double yTranslation = Header61.Y_Location - Header61.Xtop - Tube.AllVerticalPitches - Tube.FinOD / 2;
 
             // Find the slope of last tube row
             double lastRowSlope = 0;
@@ -124,17 +147,7 @@ namespace Bundle.TubeSupports
         {
             get
             {
-                var yTranslations = Y_Translations();
-                var zTranslation = Spacing_Feet * 12 * (Quantity - 1) / 2;
-
-                var pos = new List<PositionData>();
-
-                for (int i = 0; i < yTranslations.Count; i++)
-                {
-                    pos.Add(PositionData.Create(tY: yTranslations[i], tZ: zTranslation - Spacing_Feet * 12 * i));
-                }
-
-                return pos;
+                return PositionDataList;
             }
         }
 

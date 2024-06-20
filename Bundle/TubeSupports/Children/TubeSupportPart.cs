@@ -16,19 +16,8 @@ namespace Bundle.TubeSupports.Children
     internal class TubeSupportPart : Part
     {
         // Static properties
-        static public double ShapeHeight
-        {
-            get
-            {
-                int startIndex = 1;
-                int endIndex = Size.IndexOf('x');
-
-                string heightStr = Size.Substring(startIndex, endIndex - startIndex);
-                double height = double.Parse(heightStr);
-
-                return height;
-            }
-        }
+        static public double Height => Dims[Size].Height;
+        static public double THK => Dims[Size].THK;
         static public double Length
         {
             get
@@ -37,9 +26,28 @@ namespace Bundle.TubeSupports.Children
                 if (IsSmithco)
                     return length -= GetBendRadius(SideFramePart.THK) * 2;
                 else
-                    return length -= EndPlate.THK * 2;
+                    return length -= TubeSupport_EndPlate.THK * 2;
             }
         }
+
+
+        // Dictionaries
+        static public Dictionary<string, (double Height, double THK)> Dims = new Dictionary<string, (double Height, double THK)> 
+        {
+            //  shape       height      THK
+            {   "C2x2.57", ( 2     ,   _(0.1875)   )   },
+            {   "C3x4.1",  ( 3     ,   _(0.17  )   )   },
+            {   "S3x5.7",  ( 3     ,   _(0.17  )   )   },
+            {   "S4x7.7",  ( 4     ,   _(0.193 )   )   },
+            {   "S5x10",   ( 5     ,   _(0.21  )   )   },
+            {   "S6x12.5", ( 6     ,   _(0.232 )   )   },
+            {   "W4x13",   ( 4.16  ,   _(0.28  )   )   },
+            {   "W6x12",   ( 6.03  ,   _(0.23  )   )   },
+            {   "W6x16",   ( 6.28  ,   _(0.26  )   )   },
+            {   "W8x15",   ( 8.11  ,   _(0.245 )   )   },
+            {   "W8x18",   ( 8.14  ,   _(0.23  )   )   },
+            {   "W10x26",  (10.33  ,   _(0.26  )   )   },
+        };
 
 
         // Constructor
@@ -122,6 +130,10 @@ namespace Bundle.TubeSupports.Children
             else
                 SuppressFeatures(featureName);
         }
+        private static double _(double originalValue)
+        {
+            return Math.Ceiling(originalValue * 16) / 16;
+        }
 
 
         // Property overrides
@@ -132,9 +144,9 @@ namespace Bundle.TubeSupports.Children
             get
             {
                 if (Size.StartsWith("C"))
-                    return Shape.Channel;
+                    return Part.Shape.Channel;
                 else if (Size.StartsWith("S") || Size.StartsWith("W"))
-                    return Shape.Beam;
+                    return Part.Shape.Beam;
                 else throw new NotImplementedException();
             }
         }
@@ -143,11 +155,12 @@ namespace Bundle.TubeSupports.Children
         {
             get
             {
-                double yTranslation = Size.StartsWith("C") ? -ShapeHeight : -ShapeHeight / 2;
+                double yTranslation = Size.StartsWith("C") ? -Height : -Height / 2;
+                double zTranslation = Size.StartsWith("C") ? THK / 2 : 0;
 
                 return new List<PositionData>
                 {
-                    PositionData.Create(tY: yTranslation),
+                    PositionData.Create(tY: yTranslation, tZ: zTranslation),
                 };
             }
         }
