@@ -12,8 +12,14 @@ namespace Bundle.AirSeals
 {
     internal abstract class AirSeal : Part
     {
-        // Constructor
+        // Static properties
+        static public double THK => 0.1344;
+        static public double Length => Bundle.Width - SideFramePart.THK * 2 - AssemblyClearance - THK * 2 - GetBendRadius(THK) * 2;
+
+
+        // Constructors
         protected AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        protected AirSeal() { }
 
 
         // Abstract properties
@@ -27,6 +33,7 @@ namespace Bundle.AirSeals
         // Method overrides
         protected override void Dimensions()
         {
+            EditDimension("Length", "Plate", Length);
             EditDimension("GapToSeal", "sk:Plate", GapToSeal);
             EditDimension("Width", "sk:Plate", Width);
             EditDimension("Horizontal", "sk:Cope", SideFramePart.Flange + AssemblyClearance - (SideFramePart.THK + AssemblyClearance / 2));

@@ -21,7 +21,7 @@ namespace FileTools.Base
                 Setup();
 
                 _parentAssembly = parentAssembly;
-                AssemblyDoc = OpenAssembly(FilePath, StaticPartNo, false);
+                AssemblyDoc = OpenAssembly(FilePath, StaticPartNo, true);
 
                 Configurations();
                 Dimensions();
@@ -30,7 +30,10 @@ namespace FileTools.Base
                 var subComponents = InstantiateSubComponents(GetType(), this, out var subComponentsToRemove);
 
                 RemoveDisabledSubComponents(subComponentsToRemove, this);
+
+                ModelDoc2.Visible = true;
                 PlaceSubComponents(subComponents, this);
+                ModelDoc2.Visible = false;
 
                 if (parentAssembly is MainAssembly)
                     foreach (var subComponent in subComponents)
@@ -38,6 +41,10 @@ namespace FileTools.Base
 
                 Release(AssemblyDoc);
             }
+        }
+        protected SubAssembly()
+        {
+            
         }
 
 
@@ -89,5 +96,6 @@ namespace FileTools.Base
         private readonly SW_Assembly _parentAssembly;
         private string _partNo = null;
         private bool _partNoCalculated = false;
+        protected List<PositionData> _pos;
     }
 }

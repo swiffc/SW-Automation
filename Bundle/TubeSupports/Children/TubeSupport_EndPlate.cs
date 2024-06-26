@@ -13,6 +13,9 @@ namespace Bundle.TubeSupports.Children
     {
         // Static properties
         static public double THK => 0.25;
+        static public double HoleToHoleWidth => 4.25;
+        static public double HoleToHoleHeight => FourHoles ? 3 : 0.001;
+        static public bool FourHoles => TubeSupportPart.Height >= 8;
 
 
         // Constructor
@@ -22,8 +25,8 @@ namespace Bundle.TubeSupports.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Height", "sk:Plate", TubeSupportPart.Height >= 8 ? 6.5 : 3);
-            EditDimension("Offset", "sk:Plate", TubeSupportPart.Height >= 8 ? 2.25 : 1.75);
+            EditDimension("Height", "sk:Plate", FourHoles ? 6.5 : 3);
+            EditDimension("Offset", "sk:Plate", FourHoles ? 2.25 : 1.75);
         }
 
 

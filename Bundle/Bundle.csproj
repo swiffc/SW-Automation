@@ -63,6 +63,7 @@
     <Compile Include="AirSeals\Derived\Bottom_Rear_AirSeal.cs" />
     <Compile Include="AirSeals\Derived\Top_Front_AirSeal.cs" />
     <Compile Include="AirSeals\Derived\Top_Rear_AirSeal.cs" />
+    <Compile Include="Misc\Pstrip.cs" />
     <Compile Include="Misc\Tube.cs" />
     <Compile Include="BundleUI.cs">
       <SubType>Form</SubType>
@@ -74,6 +75,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SideFrame\Derived\Children\Derived\SideFramePartLeft.cs" />
     <Compile Include="SideFrame\Derived\Children\Derived\SideFramePartRight.cs" />
+    <Compile Include="SideFrame\Derived\Children\Lug_HPC.cs" />
     <Compile Include="SideFrame\Derived\Children\SideFramePart.cs" />
     <Compile Include="SideFrame\Derived\FrameWeldmentRight.cs" />
     <Compile Include="SideFrame\Derived\SideFrameWeldmentLeft.cs" />

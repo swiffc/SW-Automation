@@ -157,11 +157,13 @@ namespace Excel
                         {
                             var textBox = (TextBox)uiDtoProperty.GetValue(uiDto);
                             var cellsAndSheet = (ValueTuple<string[], Worksheet>)pregoDtoProperty.GetValue(prego);
-
-                            Type headerType = header.GetType();
-                            PropertyInfo headerProperty = headerType.GetProperty(propertyName);
-                            double loadedValue = LoadPregoDouble(textBox, cellsAndSheet.Item2, cellsAndSheet.Item1);
-                            headerProperty.SetValue(header, loadedValue);
+                            if (textBox != null && cellsAndSheet.Item1 != null && cellsAndSheet.Item2 != null)
+                            {
+                                Type headerType = header.GetType();
+                                PropertyInfo headerProperty = headerType.GetProperty(propertyName);
+                                double loadedValue = LoadPregoDouble(textBox, cellsAndSheet.Item2, cellsAndSheet.Item1);
+                                headerProperty.SetValue(header, loadedValue);
+                            }
                         }
                     }
                 }

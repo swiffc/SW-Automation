@@ -3,8 +3,7 @@ using FileTools.Base;
 using ModelTools;
 using System.Collections.Generic;
 
-// Namespace has been overridden
-namespace Bundle.SideFrame.Derived.RIGHT
+namespace Bundle.SideFrame.Derived.Children.Derived
 {
     internal class SideFramePartRight : SideFramePart
     {
@@ -23,7 +22,7 @@ namespace Bundle.SideFrame.Derived.RIGHT
                     _position = new List<PositionData>();
 
                     if (ParentSubAssembly is SideFrameWeldmentRight)
-                        _position.Add(PositionData.Create());
+                        _position.Add(PositionData.Create(rY: 180));
                 }
                 return _position;
             }

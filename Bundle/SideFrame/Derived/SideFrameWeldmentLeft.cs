@@ -3,12 +3,17 @@ using ModelTools;
 using System.Collections.Generic;
 
 // Namespace has been overridden
-namespace Bundle.SideFrame.Derived.LEFT
+namespace Bundle.SideFrame.Derived
 {
     internal class SideFrameWeldmentLeft : SideFrameWeldment
     {
+        // Static properties
+        static public int Priority => 1;
+
+
         // Constructor
         public SideFrameWeldmentLeft(SW_Assembly parentAssembly) : base(parentAssembly) { }
+
 
         // Property overrides
         public override string StaticPartNo => "1011W";

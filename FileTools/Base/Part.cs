@@ -34,6 +34,7 @@ namespace FileTools.Base
                 InitializePart();
             }
         }
+        protected Part() { }
 
 
         // Private methods
@@ -67,7 +68,7 @@ namespace FileTools.Base
 
                 if (dimension != null)
                 {
-                    int message = dimension.SetValue3(newValue.Value, (int)swSetValueInConfiguration_e.swSetValue_UseCurrentSetting, null);
+                    int message = dimension.SetValue3(Math.Abs(newValue.Value), (int)swSetValueInConfiguration_e.swSetValue_UseCurrentSetting, null);
 
                     if (message == (int)swSetValueReturnStatus_e.swSetValue_Successful)
                         editSuccessful = true;
@@ -367,5 +368,6 @@ namespace FileTools.Base
         public readonly SW_Assembly _parentAssembly;
         private string _partNo = null;
         private bool _partNoCalculated = false;
+        protected List<PositionData> _pos;
     }
 }

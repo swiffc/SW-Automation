@@ -467,31 +467,31 @@
     <Setting Name="SlopePerFoot_Row10" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_1_2" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_1_2" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_2_3" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_2_3" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_3_4" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_3_4" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_4_5" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_4_5" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_5_6" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_5_6" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_6_7" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_6_7" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_7_8" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_7_8" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_8_9" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_8_9" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="VerticalPitch_9_10" Type="System.Double" Scope="User">
+    <Setting Name="FrontVerticalPitch_9_10" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="TubeSupportSpacingFeet" Type="System.Double" Scope="User">
@@ -508,6 +508,36 @@
     </Setting>
     <Setting Name="TitleblockManuf" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RearVerticalPitch_1_2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_2_3" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_3_4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_4_5" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_5_6" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_6_7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_7_8" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_8_9" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RearVerticalPitch_9_10" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BundleOffsetFromCenter" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

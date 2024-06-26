@@ -22,6 +22,10 @@ namespace Bundle.AirSeals.Derived
 
         // Constructor
         public Top_Front_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        public Top_Front_AirSeal()
+        {
+                
+        }
 
 
         // Property overrides
@@ -30,7 +34,7 @@ namespace Bundle.AirSeals.Derived
         {
             get
             {
-                double zTranslation = TubeLength / 2 - TubeProjection - Bundle.LowestHeader.TubesheetTHK - Width;
+                double zTranslation = TubeLength / 2 - TubeProjection - Bundle.LowestFrontHeader.TubesheetTHK - Width;
                 double yTranslation = SideFramePart.Depth;
 
                 return new List<PositionData>

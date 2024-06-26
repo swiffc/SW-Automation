@@ -3,11 +3,14 @@ using FileTools.Base;
 using ModelTools;
 using System.Collections.Generic;
 
-// Namespace has been overridden
-namespace Bundle.SideFrame.Derived.LEFT
+namespace Bundle.SideFrame.Derived.Children.Derived
 {
     internal class SideFramePartLeft : SideFramePart
     {
+        // Static properties
+        static public int Priority => 1;
+
+
         // Constructor
         public SideFramePartLeft(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 

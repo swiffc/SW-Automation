@@ -59,6 +59,8 @@ namespace Excel
 
                     // Guess the desired file
 
+                    bool localFileExists = File.Exists(expectedFilePath);
+
                     PleaseWait.Start("Connecting to AXC_VAULT");
                     if (Developer)
                     {
@@ -66,20 +68,23 @@ namespace Excel
                     }
                     else if (Vault.FileExists(expectedFilePath, out IEdmFile5 file))
                     {
-                        if (!File.Exists(expectedFilePath))
+                        if (!localFileExists)
                             Vault.DownloadFile(file);
                     }
 
-                    // User to confirm
-                    PleaseWait.Hide();
-                    DialogResult result = MessageBox.Show(
-                        "Would you like to import data from Prego found at:" + "\n" + expectedFilePath,
-                        "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
+                    if (localFileExists)
                     {
-                        PleaseWait.Show($"Loading {expectedFileName}");
-                        _pregoDoc = ExcelApp.Workbooks.Open(expectedFilePath);
+                        // User to confirm
+                        PleaseWait.Hide();
+                        DialogResult result = MessageBox.Show(
+                            "Would you like to import data from Prego found at:" + "\n" + expectedFilePath,
+                            "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            PleaseWait.Show($"Loading {expectedFileName}");
+                            _pregoDoc = ExcelApp.Workbooks.Open(expectedFilePath);
+                        }
                     }
 
                     // User to manually select
@@ -90,6 +95,7 @@ namespace Excel
                         if (Developer)
                         {
                             expectedFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                            PleaseWait.Hide();
                         }
 
                         OpenFileDialog openFileDialog = new OpenFileDialog
@@ -147,6 +153,41 @@ namespace Excel
                 return _inputsCalcsSheet;
             }
         }
+        public static Worksheet PregoToMikeySheet
+        {
+            get
+            {
+                if (_pregoToMikeySheet == null && PregoDoc != null)
+                {
+                    _pregoToMikeySheet = (Worksheet)PregoDoc.Sheets["Prego_to_Mikey"];
+                }
+                return _pregoToMikeySheet;
+            }
+        }
+        public static int Version
+        {
+            get
+            {
+                string versionString = CellString(InputSheet, "J2");
+                if (!string.IsNullOrEmpty(versionString))
+                {
+                    // Remove the 'V' prefix and all '.' characters
+                    string numericVersion = versionString.TrimStart('V').Replace(".", "");
+
+                    // Ensure the numeric version is four digits by appending '0's if necessary
+                    while (numericVersion.Length < 4)
+                    {
+                        numericVersion += "0";
+                    }
+
+                    if (int.TryParse(numericVersion, out int versionInt))
+                    {
+                        return versionInt;
+                    }
+                }
+                throw new FormatException("The version string is not in the expected format.");
+            }
+        }
 
 
         // Public methods
@@ -175,13 +216,12 @@ namespace Excel
                 {
                     if (cellValue is double != true)
                     {
-                        //string cellValueString = CellValue(i, sheet, cellNames).ToString();
-                        //double cellValueDouble = ParseCellValue(cellValueString);
-                        //return cellValueDouble;
                         if (cellValue == "")
                             return 0;
 
-                        return ParseCellValue(cellValue);
+                        bool success = TryParseCellValue(cellValue, out double? result);
+                        if (success)
+                            return result.Value;
                     }
                     else
                         return cellValue;
@@ -192,19 +232,20 @@ namespace Excel
 
 
         // Private methods
-        static double ParseCellValue(string cellValue)
+        static bool TryParseCellValue(string cellValue, out double? result)
         {
             // Use regular expression to match any number, including decimal and negative
             Match match = Regex.Match(cellValue, @"-?\d+\.?\d*");
             if (match.Success)
             {
                 // If a match was found, parse it to double
-                return double.Parse(match.Value);
+                result = double.Parse(match.Value);
+                return true;
             }
             else
             {
-                // If no match was found, throw an exception or return a default value
-                throw new FormatException("The cell value does not contain a valid number.");
+                result = null;
+                return false;
             }
         }
         static void CleanUp()
@@ -247,10 +288,17 @@ namespace Excel
         {
             if (e.PropertyName == nameof(CommonData.Bank) || e.PropertyName == nameof(CommonData.Project))
             {
-                _pregoDoc = null;
-                _inputSheet = null;
+                if (ClearPregoOnJobChanged)
+                {
+                    _pregoDoc = null;
+                    _inputSheet = null;
+                    _sketchCalcsSheet = null;
+                    _inputsCalcsSheet = null;
+                    _pregoToMikeySheet = null;
+                }
             }
         }
+        public static bool ClearPregoOnJobChanged { get; set; } = true;
 
 
         // Backing fields
@@ -259,5 +307,6 @@ namespace Excel
         static Worksheet _inputSheet;
         static Worksheet _sketchCalcsSheet;
         static Worksheet _inputsCalcsSheet;
+        static Worksheet _pregoToMikeySheet;
     }
 }

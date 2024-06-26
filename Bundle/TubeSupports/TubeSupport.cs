@@ -1,4 +1,5 @@
 ﻿using Bundle.Misc;
+using Bundle.TubeSupports.Children;
 using FileTools.Base;
 using ModelTools;
 using SolidWorks.Interop.sldworks;
@@ -16,6 +17,7 @@ namespace Bundle.TubeSupports
     internal class TubeSupport : SubAssembly
     {
         // Static properties
+        static public int Priority => 1;
         public static List<PositionData> PositionDataList
         {
             get
@@ -33,6 +35,49 @@ namespace Bundle.TubeSupports
                 return pos;
             }
         }
+        static public double TopOfSupportToFirstHole
+        {
+            get
+            {
+                if (IsSmithco)
+                {
+                    return FourHoles ? TubeSupportPart.Height / 2 - MountingAngle.HoleToHole / 2 : TubeSupportPart.Height / 2;
+                }
+                else
+                {
+                    return FourHoles ? 2.5 : 2;
+                }
+            }
+        }
+        static public bool FourHoles
+        {
+            get
+            {
+                if (IsSmithco)
+                {
+                    return TubeSupportPart.Height > 4 ? true : false;
+                }
+                else
+                {
+                    return TubeSupport_EndPlate.FourHoles;
+                }
+            }
+        }
+        static public double MountingHoleWidth
+        {
+            get
+            {
+                if (IsSmithco)
+                {
+                    return TubeSupportPart.THK + MountingAngle.Gage * 2;
+                }
+                else
+                {
+                    return TubeSupport_EndPlate.HoleToHoleWidth;
+                }
+            }
+        }
+
 
         // Constructor
         public TubeSupport(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
@@ -55,9 +100,14 @@ namespace Bundle.TubeSupports
         {
             var pos = new List<PositionData>();
 
+            // Front tube end to first support
+            double toFirstSupport_Feet = (Tube.Length / 12 - TubeSupportSpacing_Feet * (TubeSupportQuantity - 1)) / 2;
+
             for (int i = 0; i < tubeSupportPositionData.Count; i++)
             {
-                double newY = tubeSupportPositionData[i].TranslationY + Tube.AllVerticalPitches + Tube.FinOD;
+                double adjustment = VerticalTubeSpan(toFirstSupport_Feet + TubeSupportSpacing_Feet * i) + FinOD;
+
+                double newY = tubeSupportPositionData[i].TranslationY + adjustment;
 
                 PositionData positionData = PositionData.Create
                 (
@@ -69,6 +119,35 @@ namespace Bundle.TubeSupports
 
             return pos;
         }
+        public static double VerticalTubeSpan(double distanceFromFrontTubeEnd_Feet)
+        {
+            double verticalPitch = Tube.AllFrontVerticalPitches,
+                upperTubeSlope, lowerTubeSlope, frontVerticalPitch, rearVerticalPitch, percentOfTubeLength;
+
+            for (int i = 0; i < Tube.RowCount; i++)
+            {
+                upperTubeSlope = Tube.SlopesPerFootList[i];
+                lowerTubeSlope = Tube.SlopesPerFootList[i + 1];
+                frontVerticalPitch = Tube.FrontVerticalPitchesList[i];
+                rearVerticalPitch = Tube.RearVerticalPitchesList[i];
+                percentOfTubeLength = distanceFromFrontTubeEnd_Feet / (Tube.Length / 12);
+
+                if (upperTubeSlope > lowerTubeSlope)
+                {
+                    // Gap is narrowing
+                    double totalNarrowing = frontVerticalPitch - rearVerticalPitch;
+                    verticalPitch -= totalNarrowing * percentOfTubeLength;
+                }
+                else if (upperTubeSlope < lowerTubeSlope)
+                {
+                    // Gap is widening
+                    double totalWidening = rearVerticalPitch - frontVerticalPitch;
+                    verticalPitch += totalWidening * percentOfTubeLength;
+                }
+            }
+
+            return verticalPitch;
+        }
 
 
         // Private methods
@@ -77,7 +156,7 @@ namespace Bundle.TubeSupports
             var yTranslations = new List<double>();
 
             // Find Y translation if no slope last pass
-            double yTranslation = Header61.Y_Location - Header61.Xtop - Tube.AllVerticalPitches - Tube.FinOD / 2;
+            double yTranslation = Header61.Y_Location - Header61.Xtop - Tube.AllFrontVerticalPitches - Tube.FinOD / 2;
 
             // Find the slope of last tube row
             double lastRowSlope = 0;
@@ -90,15 +169,15 @@ namespace Bundle.TubeSupports
             {
                 double[] verticalPitches = new double[]
                 {
-                    VerticalPitch._1_2,
-                    VerticalPitch._2_3,
-                    VerticalPitch._3_4,
-                    VerticalPitch._4_5,
-                    VerticalPitch._5_6,
-                    VerticalPitch._6_7,
-                    VerticalPitch._7_8,
-                    VerticalPitch._8_9,
-                    VerticalPitch._9_10
+                    FrontVerticalPitch._1_2,
+                    FrontVerticalPitch._2_3,
+                    FrontVerticalPitch._3_4,
+                    FrontVerticalPitch._4_5,
+                    FrontVerticalPitch._5_6,
+                    FrontVerticalPitch._6_7,
+                    FrontVerticalPitch._7_8,
+                    FrontVerticalPitch._8_9,
+                    FrontVerticalPitch._9_10
                 };
                 for (int i = 0; i < verticalPitches.Length; i++)
                 {
@@ -143,13 +222,20 @@ namespace Bundle.TubeSupports
         // Property overrides
         public override bool Enabled => true;
         public override string StaticPartNo => "1560";
+
         public override List<PositionData> Position
         {
             get
             {
-                return PositionDataList;
+                if (_pos == null)
+                {
+                    _pos = PositionDataList;
+                }
+                return _pos;
             }
         }
+
+
 
 
         // Wrapper properties

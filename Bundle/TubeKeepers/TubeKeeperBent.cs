@@ -1,4 +1,5 @@
-﻿using Bundle.SideFrame.Derived.Children;
+﻿using Bundle.AirSeals;
+using Bundle.SideFrame.Derived.Children;
 using Bundle.TubeSupports;
 using Bundle.TubeSupports.Children;
 using FileTools.Base;
@@ -15,14 +16,22 @@ namespace Bundle.TubeKeepers
 {
     internal class TubeKeeperBent : Part
     {
+        // Static properties
+        static public double BottomToSlotCenter => 1.5;
+
+
         // Constructor
         public TubeKeeperBent(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        public TubeKeeperBent()
+        {
+            
+        }
 
 
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Backing", Bundle.Width - SideFramePart.THK * 2 - AssemblyClearance);
+            EditDimension("Length", "sk:Backing", AirSeal.Length);
         }
 
 
@@ -35,9 +44,15 @@ namespace Bundle.TubeKeepers
         {
             get
             {
-                return TubeSupport.CalculateKeeperPositionFrom(TubeSupport.PositionDataList);
+                if (_pos == null)
+                {
+                    _pos = TubeSupport.CalculateKeeperPositionFrom(TubeSupport.PositionDataList);
+                }
+                return _pos;
             }
         }
+
+
 
     }
 }

@@ -13,7 +13,11 @@ namespace FileTools.CommonData
             get => Default.Plenum_Width;
             set => Default.Plenum_Width = value;
         }
-        static public double Plenum_Length => Default.Plenum_Length;
+        static public double Plenum_Length
+        { 
+            get => Default.Plenum_Length; 
+            set => Default.Plenum_Length = value; 
+        }
         static public double TotalColumnHeight => Default.TotalColumnHeight;
         static public double FieldColumn_Height
         {
@@ -40,7 +44,11 @@ namespace FileTools.CommonData
         static public double BasePlate_THK => Default.BasePlate_THK;
 
         // Beams
-        public static string Beam_Size => Default.Beam_Size;
+        public static string Beam_Size 
+        { 
+            get => Default.Beam_Size;
+            set => Default.Beam_Size = value;
+        }
         static public bool Beams_AreRotated => Default.Beams_AreRotated;
         public static double Beam_Depth
         {

@@ -14,23 +14,61 @@ namespace Bundle.Misc
 {
     internal class Tube : Part
     {
-        static public double Camber => Math.Ceiling(TubeSupport.Quantity / 2) * 0.125;
-        static public double AllVerticalPitches
+        static public double Camber => Cambered ? Math.Ceiling(TubeSupport.Quantity / 2) * 0.125 : 0.001;
+        static public double AllFrontVerticalPitches
         {
             get
             {
-                return 
-                + VerticalPitch._1_2
-                + VerticalPitch._2_3
-                + VerticalPitch._3_4
-                + VerticalPitch._4_5
-                + VerticalPitch._5_6
-                + VerticalPitch._6_7
-                + VerticalPitch._7_8
-                + VerticalPitch._8_9
-                + VerticalPitch._9_10;
+                return
+                +FrontVerticalPitch._1_2
+                + FrontVerticalPitch._2_3
+                + FrontVerticalPitch._3_4
+                + FrontVerticalPitch._4_5
+                + FrontVerticalPitch._5_6
+                + FrontVerticalPitch._6_7
+                + FrontVerticalPitch._7_8
+                + FrontVerticalPitch._8_9
+                + FrontVerticalPitch._9_10;
             }
         }
+        static public List<double> SlopesPerFootList => new List<double>
+        {
+            SlopePerFoot.Row1,
+            SlopePerFoot.Row2,
+            SlopePerFoot.Row3,
+            SlopePerFoot.Row4,
+            SlopePerFoot.Row5,
+            SlopePerFoot.Row6,
+            SlopePerFoot.Row7,
+            SlopePerFoot.Row8,
+            SlopePerFoot.Row9,
+            SlopePerFoot.Row10
+        };
+        static public List<double> FrontVerticalPitchesList => new List<double>
+        {
+            FrontVerticalPitch._1_2,
+            FrontVerticalPitch._2_3,
+            FrontVerticalPitch._3_4,
+            FrontVerticalPitch._4_5,
+            FrontVerticalPitch._5_6,
+            FrontVerticalPitch._6_7,
+            FrontVerticalPitch._7_8,
+            FrontVerticalPitch._8_9,
+            FrontVerticalPitch._9_10
+        };
+        static public List<double> RearVerticalPitchesList => new List<double>
+        {
+            RearVerticalPitch._1_2,
+            RearVerticalPitch._2_3,
+            RearVerticalPitch._3_4,
+            RearVerticalPitch._4_5,
+            RearVerticalPitch._5_6,
+            RearVerticalPitch._6_7,
+            RearVerticalPitch._7_8,
+            RearVerticalPitch._8_9,
+            RearVerticalPitch._9_10
+        };
+        static public int RowCount => FrontVerticalPitchesList.Count(pitch => pitch != 0);
 
 
         // Constructor
@@ -55,17 +93,46 @@ namespace Bundle.Misc
         {
             return Math.Atan(slopePerFoot * (Length / 12) / Length) * (180.0 / Math.PI);
         }
-
-
-        // Private methods
-        public static double CamberAtLocation(double x)
+        public static double CamberAtLocation(double inchesFromFrontTubeEnd)
         {
             double[] xCurve = { 0, Length / 2, Length };
             double[] yCurve = { 0, Camber, 0 };
 
-            double y = TubeCamberInterpolator.InterpolateAtPoint(xCurve, yCurve, x);
+            double y = TubeCamberInterpolator.InterpolateAtPoint(xCurve, yCurve, inchesFromFrontTubeEnd);
 
             return y;
+        }
+        public static List<double> VerticalPitchListAt(double distanceFromFrontTubeEnd_Feet)
+        {
+            var list = new List<double>();
+
+            double upperTubeSlope, lowerTubeSlope, frontVerticalPitch, rearVerticalPitch, percentOfTubeLength;
+
+            for (int i = 0; i < RowCount; i++)
+            {
+                upperTubeSlope = SlopesPerFootList[i];
+                lowerTubeSlope = SlopesPerFootList[i + 1];
+                frontVerticalPitch = FrontVerticalPitchesList[i];
+                rearVerticalPitch = RearVerticalPitchesList[i];
+                percentOfTubeLength = distanceFromFrontTubeEnd_Feet / (Length / 12);
+
+                if (upperTubeSlope > lowerTubeSlope)
+                {
+                    // Gap is narrowing
+                    double totalNarrowing = frontVerticalPitch - rearVerticalPitch;
+                    frontVerticalPitch -= totalNarrowing * percentOfTubeLength;
+                }
+                else if (upperTubeSlope < lowerTubeSlope)
+                {
+                    // Gap is widening
+                    double totalWidening = rearVerticalPitch - frontVerticalPitch;
+                    frontVerticalPitch += totalWidening * percentOfTubeLength;
+                }
+
+                list.Add(frontVerticalPitch);
+            }
+
+            return list;
         }
 
 
@@ -83,38 +150,25 @@ namespace Bundle.Misc
                 double yTranslation = Header61.Y_Location - Header61.Xtop;
                 double zTranslation = Length / 2;
 
-                double[] slopesPerFoot = new double[] 
-                { 
-                    SlopePerFoot.Row1, 
-                    SlopePerFoot.Row2, 
-                    SlopePerFoot.Row3, 
-                    SlopePerFoot.Row4, 
-                    SlopePerFoot.Row5, 
-                    SlopePerFoot.Row6, 
-                    SlopePerFoot.Row7, 
-                    SlopePerFoot.Row8, 
-                    SlopePerFoot.Row9, 
-                    SlopePerFoot.Row10 
-                };
-                double[] verticalPitches = new double[] 
-                { 
-                    VerticalPitch._1_2, 
-                    VerticalPitch._2_3, 
-                    VerticalPitch._3_4, 
-                    VerticalPitch._4_5, 
-                    VerticalPitch._5_6, 
-                    VerticalPitch._6_7, 
-                    VerticalPitch._7_8, 
-                    VerticalPitch._8_9, 
-                    VerticalPitch._9_10, 
-                    0 
+                double[] verticalPitches = new double[]
+                {
+                    FrontVerticalPitch._1_2,
+                    FrontVerticalPitch._2_3,
+                    FrontVerticalPitch._3_4,
+                    FrontVerticalPitch._4_5,
+                    FrontVerticalPitch._5_6,
+                    FrontVerticalPitch._6_7,
+                    FrontVerticalPitch._7_8,
+                    FrontVerticalPitch._8_9,
+                    FrontVerticalPitch._9_10,
+                    0
                 };
 
                 for (int i = 0; i < 10; i++)
                 {
                     double tubesPerRow = i % 2 == 0 ? Tube_Row_1L : Tube_Row_2L;
                     double xFirstTube = (Math.Ceiling(tubesPerRow) - 1) * HorizPitch / 2;
-                    double slopeAngleDegrees = GetSlopeAngleDegrees(slopesPerFoot[i]);
+                    double slopeAngleDegrees = GetSlopeAngleDegrees(SlopesPerFootList[i]);
 
                     pos.Add(PositionData.Create(tX: -xFirstTube, tY: yTranslation, tZ: zTranslation, rX: slopeAngleDegrees));
 

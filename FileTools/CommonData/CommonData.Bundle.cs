@@ -114,104 +114,344 @@ namespace FileTools.CommonData
         static public SlopeAngles SlopePerFoot => new SlopeAngles();
         public class SlopeAngles
         {
-            public double Row1 
-            { 
-                get => Default.SlopePerFoot_Row1; 
-                set => Default.SlopePerFoot_Row1 = value; 
+            public double Row1
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row2 
-            { 
-                get => Default.SlopePerFoot_Row2; 
-                set => Default.SlopePerFoot_Row2 = value; 
+            public double Row2
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row3 
-            { 
-                get => Default.SlopePerFoot_Row3; 
-                set => Default.SlopePerFoot_Row3 = value; 
+            public double Row3
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row4 
-            { 
-                get => Default.SlopePerFoot_Row4; 
-                set => Default.SlopePerFoot_Row4 = value; 
+            public double Row4
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row5 
-            { 
-                get => Default.SlopePerFoot_Row5; 
-                set => Default.SlopePerFoot_Row5 = value; 
+            public double Row5
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4 -
+                        FrontVerticalPitch._4_5;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4 -
+                        RearVerticalPitch._4_5;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row6 
-            { 
-                get => Default.SlopePerFoot_Row6; 
-                set => Default.SlopePerFoot_Row6 = value; 
+            public double Row6
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4 -
+                        FrontVerticalPitch._4_5 -
+                        FrontVerticalPitch._5_6;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4 -
+                        RearVerticalPitch._4_5 -
+                        RearVerticalPitch._5_6;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row7 
-            { 
-                get => Default.SlopePerFoot_Row7; 
-                set => Default.SlopePerFoot_Row7 = value; 
+            public double Row7
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4 -
+                        FrontVerticalPitch._4_5 -
+                        FrontVerticalPitch._5_6 -
+                        FrontVerticalPitch._6_7;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4 -
+                        RearVerticalPitch._4_5 -
+                        RearVerticalPitch._5_6 -
+                        RearVerticalPitch._6_7;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row8 
-            { 
-                get => Default.SlopePerFoot_Row8; 
-                set => Default.SlopePerFoot_Row8 = value; 
+            public double Row8
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4 -
+                        FrontVerticalPitch._4_5 -
+                        FrontVerticalPitch._5_6 -
+                        FrontVerticalPitch._6_7 -
+                        FrontVerticalPitch._7_8;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4 -
+                        RearVerticalPitch._4_5 -
+                        RearVerticalPitch._5_6 -
+                        RearVerticalPitch._6_7 -
+                        RearVerticalPitch._7_8;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row9 
-            { 
-                get => Default.SlopePerFoot_Row9; 
-                set => Default.SlopePerFoot_Row9 = value; 
+            public double Row9
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4 -
+                        FrontVerticalPitch._4_5 -
+                        FrontVerticalPitch._5_6 -
+                        FrontVerticalPitch._6_7 -
+                        FrontVerticalPitch._7_8 -
+                        FrontVerticalPitch._8_9;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4 -
+                        RearVerticalPitch._4_5 -
+                        RearVerticalPitch._5_6 -
+                        RearVerticalPitch._6_7 -
+                        RearVerticalPitch._7_8 -
+                        RearVerticalPitch._8_9;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
-            public double Row10 
-            { 
-                get => Default.SlopePerFoot_Row10;
-                set => Default.SlopePerFoot_Row10 = value; 
+            public double Row10
+            {
+                get
+                {
+                    double frontPitch =
+                        Header61.Y_Location -
+                        Header61.Xtop -
+                        FrontVerticalPitch._1_2 -
+                        FrontVerticalPitch._2_3 -
+                        FrontVerticalPitch._3_4 -
+                        FrontVerticalPitch._4_5 -
+                        FrontVerticalPitch._5_6 -
+                        FrontVerticalPitch._6_7 -
+                        FrontVerticalPitch._7_8 -
+                        FrontVerticalPitch._8_9 -
+                        FrontVerticalPitch._9_10;
+
+                    double rearPitch =
+                        Header62.Y_Location -
+                        Header62.Xtop -
+                        RearVerticalPitch._1_2 -
+                        RearVerticalPitch._2_3 -
+                        RearVerticalPitch._3_4 -
+                        RearVerticalPitch._4_5 -
+                        RearVerticalPitch._5_6 -
+                        RearVerticalPitch._6_7 -
+                        RearVerticalPitch._7_8 -
+                        RearVerticalPitch._8_9 -
+                        RearVerticalPitch._9_10;
+
+                    return (frontPitch - rearPitch) / (TubeLength / 12);
+                }
             }
+
         }
-        static public VerticalPitches VerticalPitch => new VerticalPitches();
-        public class VerticalPitches
+        static public FrontVerticalPitches FrontVerticalPitch => new FrontVerticalPitches();
+        public class FrontVerticalPitches
         {
             public double _1_2
             {
-                get => Default.VerticalPitch_1_2;
-                set => Default.VerticalPitch_1_2 = value;
+                get => Default.FrontVerticalPitch_1_2;
+                set => Default.FrontVerticalPitch_1_2 = value;
             }
             public double _2_3
             {
-                get => Default.VerticalPitch_2_3;
-                set => Default.VerticalPitch_2_3 = value;
+                get => Default.FrontVerticalPitch_2_3;
+                set => Default.FrontVerticalPitch_2_3 = value;
             }
             public double _3_4
             {
-                get => Default.VerticalPitch_3_4;
-                set => Default.VerticalPitch_3_4 = value;
+                get => Default.FrontVerticalPitch_3_4;
+                set => Default.FrontVerticalPitch_3_4 = value;
             }
             public double _4_5
             {
-                get => Default.VerticalPitch_4_5;
-                set => Default.VerticalPitch_4_5 = value;
+                get => Default.FrontVerticalPitch_4_5;
+                set => Default.FrontVerticalPitch_4_5 = value;
             }
             public double _5_6
             {
-                get => Default.VerticalPitch_5_6;
-                set => Default.VerticalPitch_5_6 = value;
+                get => Default.FrontVerticalPitch_5_6;
+                set => Default.FrontVerticalPitch_5_6 = value;
             }
             public double _6_7
             {
-                get => Default.VerticalPitch_6_7;
-                set => Default.VerticalPitch_6_7 = value;
+                get => Default.FrontVerticalPitch_6_7;
+                set => Default.FrontVerticalPitch_6_7 = value;
             }
             public double _7_8
             {
-                get => Default.VerticalPitch_7_8;
-                set => Default.VerticalPitch_7_8 = value;
+                get => Default.FrontVerticalPitch_7_8;
+                set => Default.FrontVerticalPitch_7_8 = value;
             }
             public double _8_9
             {
-                get => Default.VerticalPitch_8_9;
-                set => Default.VerticalPitch_8_9 = value;
+                get => Default.FrontVerticalPitch_8_9;
+                set => Default.FrontVerticalPitch_8_9 = value;
             }
             public double _9_10
             {
-                get => Default.VerticalPitch_9_10;
-                set => Default.VerticalPitch_9_10 = value;
+                get => Default.FrontVerticalPitch_9_10;
+                set => Default.FrontVerticalPitch_9_10 = value;
+            }
+        }
+        static public RearVerticalPitches RearVerticalPitch => new RearVerticalPitches();
+        public class RearVerticalPitches
+        {
+            public double _1_2
+            {
+                get => Default.RearVerticalPitch_1_2;
+                set => Default.RearVerticalPitch_1_2 = value;
+            }
+            public double _2_3
+            {
+                get => Default.RearVerticalPitch_2_3;
+                set => Default.RearVerticalPitch_2_3 = value;
+            }
+            public double _3_4
+            {
+                get => Default.RearVerticalPitch_3_4;
+                set => Default.RearVerticalPitch_3_4 = value;
+            }
+            public double _4_5
+            {
+                get => Default.RearVerticalPitch_4_5;
+                set => Default.RearVerticalPitch_4_5 = value;
+            }
+            public double _5_6
+            {
+                get => Default.RearVerticalPitch_5_6;
+                set => Default.RearVerticalPitch_5_6 = value;
+            }
+            public double _6_7
+            {
+                get => Default.RearVerticalPitch_6_7;
+                set => Default.RearVerticalPitch_6_7 = value;
+            }
+            public double _7_8
+            {
+                get => Default.RearVerticalPitch_7_8;
+                set => Default.RearVerticalPitch_7_8 = value;
+            }
+            public double _8_9
+            {
+                get => Default.RearVerticalPitch_8_9;
+                set => Default.RearVerticalPitch_8_9 = value;
+            }
+            public double _9_10
+            {
+                get => Default.RearVerticalPitch_9_10;
+                set => Default.RearVerticalPitch_9_10 = value;
             }
         }
         public static double TubeSupportSpacing_Feet
@@ -234,5 +474,11 @@ namespace FileTools.CommonData
             get => Default.Camber;
             set => Default.Camber = value;
         }
+        public static double OffsetFromCenter
+        {
+            get => Default.BundleOffsetFromCenter;
+            set => Default.BundleOffsetFromCenter = value;
+        }
+
     }
 }

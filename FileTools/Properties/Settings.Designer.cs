@@ -1886,108 +1886,108 @@ namespace FileTools.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_1_2 {
+        public double FrontVerticalPitch_1_2 {
             get {
-                return ((double)(this["VerticalPitch_1_2"]));
+                return ((double)(this["FrontVerticalPitch_1_2"]));
             }
             set {
-                this["VerticalPitch_1_2"] = value;
+                this["FrontVerticalPitch_1_2"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_2_3 {
+        public double FrontVerticalPitch_2_3 {
             get {
-                return ((double)(this["VerticalPitch_2_3"]));
+                return ((double)(this["FrontVerticalPitch_2_3"]));
             }
             set {
-                this["VerticalPitch_2_3"] = value;
+                this["FrontVerticalPitch_2_3"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_3_4 {
+        public double FrontVerticalPitch_3_4 {
             get {
-                return ((double)(this["VerticalPitch_3_4"]));
+                return ((double)(this["FrontVerticalPitch_3_4"]));
             }
             set {
-                this["VerticalPitch_3_4"] = value;
+                this["FrontVerticalPitch_3_4"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_4_5 {
+        public double FrontVerticalPitch_4_5 {
             get {
-                return ((double)(this["VerticalPitch_4_5"]));
+                return ((double)(this["FrontVerticalPitch_4_5"]));
             }
             set {
-                this["VerticalPitch_4_5"] = value;
+                this["FrontVerticalPitch_4_5"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_5_6 {
+        public double FrontVerticalPitch_5_6 {
             get {
-                return ((double)(this["VerticalPitch_5_6"]));
+                return ((double)(this["FrontVerticalPitch_5_6"]));
             }
             set {
-                this["VerticalPitch_5_6"] = value;
+                this["FrontVerticalPitch_5_6"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_6_7 {
+        public double FrontVerticalPitch_6_7 {
             get {
-                return ((double)(this["VerticalPitch_6_7"]));
+                return ((double)(this["FrontVerticalPitch_6_7"]));
             }
             set {
-                this["VerticalPitch_6_7"] = value;
+                this["FrontVerticalPitch_6_7"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_7_8 {
+        public double FrontVerticalPitch_7_8 {
             get {
-                return ((double)(this["VerticalPitch_7_8"]));
+                return ((double)(this["FrontVerticalPitch_7_8"]));
             }
             set {
-                this["VerticalPitch_7_8"] = value;
+                this["FrontVerticalPitch_7_8"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_8_9 {
+        public double FrontVerticalPitch_8_9 {
             get {
-                return ((double)(this["VerticalPitch_8_9"]));
+                return ((double)(this["FrontVerticalPitch_8_9"]));
             }
             set {
-                this["VerticalPitch_8_9"] = value;
+                this["FrontVerticalPitch_8_9"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double VerticalPitch_9_10 {
+        public double FrontVerticalPitch_9_10 {
             get {
-                return ((double)(this["VerticalPitch_9_10"]));
+                return ((double)(this["FrontVerticalPitch_9_10"]));
             }
             set {
-                this["VerticalPitch_9_10"] = value;
+                this["FrontVerticalPitch_9_10"] = value;
             }
         }
         
@@ -2048,6 +2048,126 @@ namespace FileTools.Properties {
             }
             set {
                 this["TitleblockManuf"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_1_2 {
+            get {
+                return ((double)(this["RearVerticalPitch_1_2"]));
+            }
+            set {
+                this["RearVerticalPitch_1_2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_2_3 {
+            get {
+                return ((double)(this["RearVerticalPitch_2_3"]));
+            }
+            set {
+                this["RearVerticalPitch_2_3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_3_4 {
+            get {
+                return ((double)(this["RearVerticalPitch_3_4"]));
+            }
+            set {
+                this["RearVerticalPitch_3_4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_4_5 {
+            get {
+                return ((double)(this["RearVerticalPitch_4_5"]));
+            }
+            set {
+                this["RearVerticalPitch_4_5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_5_6 {
+            get {
+                return ((double)(this["RearVerticalPitch_5_6"]));
+            }
+            set {
+                this["RearVerticalPitch_5_6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_6_7 {
+            get {
+                return ((double)(this["RearVerticalPitch_6_7"]));
+            }
+            set {
+                this["RearVerticalPitch_6_7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_7_8 {
+            get {
+                return ((double)(this["RearVerticalPitch_7_8"]));
+            }
+            set {
+                this["RearVerticalPitch_7_8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_8_9 {
+            get {
+                return ((double)(this["RearVerticalPitch_8_9"]));
+            }
+            set {
+                this["RearVerticalPitch_8_9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearVerticalPitch_9_10 {
+            get {
+                return ((double)(this["RearVerticalPitch_9_10"]));
+            }
+            set {
+                this["RearVerticalPitch_9_10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BundleOffsetFromCenter {
+            get {
+                return ((double)(this["BundleOffsetFromCenter"]));
+            }
+            set {
+                this["BundleOffsetFromCenter"] = value;
             }
         }
     }

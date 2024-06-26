@@ -3,7 +3,7 @@ using ModelTools;
 using System.Collections.Generic;
 
 // Namespace has been overridden
-namespace Bundle.SideFrame.Derived.RIGHT
+namespace Bundle.SideFrame.Derived
 {
     internal class SideFrameWeldmentRight : SideFrameWeldment
     {
@@ -20,7 +20,7 @@ namespace Bundle.SideFrame.Derived.RIGHT
                 {
                     _position = new List<PositionData>
                     {
-                        PositionData.Create(tX: Bundle.Width/2)
+                        PositionData.Create(tX: Bundle.Width/2, rY: 180)
                     };
                 }
                 return _position;

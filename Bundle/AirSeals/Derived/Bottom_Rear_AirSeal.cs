@@ -1,6 +1,7 @@
 ﻿using Bundle.Misc;
 using FileTools.Base;
 using ModelTools;
+using System;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 using static Tools.ModelTools;
@@ -9,66 +10,66 @@ namespace Bundle.AirSeals.Derived
 {
     internal class Bottom_Rear_AirSeal : AirSeal
     {
-        // Static properties
+        // Constructor
+        public Bottom_Rear_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        public Bottom_Rear_AirSeal()
+        {
+                
+        }
+
+
+        // Property overrides
         protected override double GapToSeal
         {
             get
             {
-                // Bottom tube location on inlet side
-                double yBottomTubeAtFrontHeader = Header61.Y_Location - Header61.Xtop - Tube.AllVerticalPitches - Tube.OD / 2 - InterferenceClearance;
-
-                // 
-                double[] verticalPitches = new double[]
-                {                       // 1
-                    VerticalPitch._1_2, // 2
-                    VerticalPitch._2_3, // 3
-                    VerticalPitch._3_4, // 4
-                    VerticalPitch._4_5, // 5
-                    VerticalPitch._5_6, // 6
-                    VerticalPitch._6_7, // 7
-                    VerticalPitch._7_8, // 8
-                    VerticalPitch._8_9, // 9
-                    VerticalPitch._9_10,// 10
-                };
-                double[] slopesPerFoot = new double[]
-                {
-                    SlopePerFoot.Row1, // 1
-                    SlopePerFoot.Row2, // 2
-                    SlopePerFoot.Row3, // 3
-                    SlopePerFoot.Row4, // 4
-                    SlopePerFoot.Row5, // 5
-                    SlopePerFoot.Row6, // 6
-                    SlopePerFoot.Row7, // 7
-                    SlopePerFoot.Row8, // 8
-                    SlopePerFoot.Row9, // 9
-                    SlopePerFoot.Row10 // 10
-                };
-                double slopeOfLastPass = 0;
-
-                for (int i = 0; i < verticalPitches.Length; i++)
-                {
-                    if (verticalPitches[i] == 0)
-                    {
-                        slopeOfLastPass = slopesPerFoot[i];
-                    }
-                }
-
-                return yBottomTubeAtFrontHeader - slopeOfLastPass * Tube.Length / 12;
+                return
+                Header62.Y_Location -
+                Header62.Xtop -
+                RearVerticalPitch._1_2 -
+                RearVerticalPitch._2_3 -
+                RearVerticalPitch._3_4 -
+                RearVerticalPitch._4_5 -
+                RearVerticalPitch._5_6 -
+                RearVerticalPitch._6_7 -
+                RearVerticalPitch._7_8 -
+                RearVerticalPitch._8_9 -
+                RearVerticalPitch._9_10 -
+                Tube.OD / 2 -
+                InterferenceClearance;
             }
         }
+        protected override double Width
+        {
+            get
+            {
+                double unitCenterToTubeSheet = Tube.Length / 2 - TubeProjection - Bundle.LowestFrontHeader.TubesheetTHK - OffsetFromCenter;
+                double unitCenterToAirSeal = 0;
+                switch (Plenum_Design)
+                {
+                    case Design.Standard:
+                        unitCenterToAirSeal = Plenum_Length / 2 + Beam_Depth / 2;
+                        break;
+                    case Design.Johnson:
+                        unitCenterToAirSeal = Plenum_Length / 2 + Johnson_ExtraLength + Beam_FlangeWidth / 2;
+                        break;
+                    case Design.Legacy:
+                        unitCenterToAirSeal = Plenum_Length / 2 + Beam_FlangeWidth / 2;
+                        break;
+                        throw new Exception("Invalid Plenum Design");
+                }
 
-
-        // Constructor
-        public Bottom_Rear_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
-
-
-        // Property overrides
+                if (unitCenterToTubeSheet - unitCenterToAirSeal < 2)
+                    return HeadersOutsideFrames ? 3 : 2;
+                else return unitCenterToTubeSheet - unitCenterToAirSeal;
+            }
+        }
         public override string StaticPartNo => "1014";
         public override List<PositionData> Position
         {
             get
             {
-                double zTranslation = TubeLength / 2 - TubeProjection - Bundle.LowestHeader.TubesheetTHK - Width;
+                double zTranslation = TubeLength / 2 - TubeProjection - Bundle.LowestRearHeader.TubesheetTHK - Width;
 
                 return new List<PositionData>
                 {

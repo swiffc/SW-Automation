@@ -938,7 +938,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         }
         private static char SkipInvalidChars(char partNo)
         {
-            while (partNo == 'I' || partNo == 'O')
+            while (partNo == 'I' || partNo == 'O' || partNo == 'Q')
             {
                 partNo++;
             }

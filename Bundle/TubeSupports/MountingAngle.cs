@@ -13,6 +13,13 @@ namespace Bundle.TubeSupports
 {
     internal class MountingAngle : Part
     {
+        // Static properties
+        static public bool IsSmall => TubeSupportPart.Height <= 4;
+        static public bool IsExtraSmall => TubeSupportPart.Height <= 2;
+        static public double HoleToHole => IsSmall ? 0.001 : 2;
+        static public double Gage => IsSmall ? 2 : 1.75;
+
+
         // Constructor
         public MountingAngle(SubAssembly parentSubAssembly) : base(parentSubAssembly) { }
 
@@ -20,20 +27,18 @@ namespace Bundle.TubeSupports
         // Method overrides
         protected override void Dimensions()
         {
-            bool isSmall = TubeSupportPart.Height <= 4;
-            bool isExtraSmall = TubeSupportPart.Height <= 2;
-            double length = isExtraSmall ? 1.5 : isSmall ? 1.75 : 3.75;
-            double offset = isSmall ? length / 2 : 0.875;
+            double length = IsExtraSmall ? 1.5 : IsSmall ? 1.75 : 3.75;
+            double offset = IsSmall ? length / 2 : 0.875;
 
             EditDimension("Leg1", "sk:L", 3);
-            EditDimension("Leg2", "sk:L", isSmall ? 5 : 3);
+            EditDimension("Leg2", "sk:L", IsSmall ? 5 : 3);
             EditDimension("Length", "L", length);
-            EditDimension("OffsetFromEdge", "sk:Leg1Hole", isSmall ? length / 2 : 0.875);
+            EditDimension("OffsetFromEdge", "sk:Leg1Hole", IsSmall ? length / 2 : 0.875);
             EditDimension("Gage", "sk:Leg1Hole", 2);
-            EditDimension("HoleToHole", "sk:Leg1Hole", isSmall ? 0.001 : 2);
-            EditDimension("Diameter", "sk:Leg1Hole", isExtraSmall ? 0.625 : 0.6875);
+            EditDimension("HoleToHole", "sk:Leg1Hole", HoleToHole);
+            EditDimension("Diameter", "sk:Leg1Hole", IsExtraSmall ? 0.625 : 0.6875);
             EditDimension("OffsetFromEdge", "sk:Leg2Hole", offset);
-            EditDimension("Gage1", "sk:Leg2Hole", isSmall ? 2 : 1.75);
+            EditDimension("Gage1", "sk:Leg2Hole", Gage);
         }
 
 

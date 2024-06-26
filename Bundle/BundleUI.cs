@@ -1,4 +1,6 @@
-﻿using Excel;
+﻿using Bundle.Misc;
+using Bundle.SideFrame.Derived.Children;
+using Excel;
 using FileTools.Base;
 using Microsoft.Office.Interop.Excel;
 using SplashScreen;
@@ -44,30 +46,50 @@ namespace Bundle
             tTubes_Row_2L.Text = Tube_Row_2L.ToString();
             tTubeHorizPitch.Text = TubeHorizPitch.ToString();
             tTubeQuantity.Text = TubeQuantity.ToString();
-            tSlopePerFoot_Row1.Text = Default.SlopePerFoot_Row1.ToString();
-            tSlopePerFoot_Row2.Text = Default.SlopePerFoot_Row2.ToString();
-            tSlopePerFoot_Row3.Text = Default.SlopePerFoot_Row3.ToString();
-            tSlopePerFoot_Row4.Text = Default.SlopePerFoot_Row4.ToString();
-            tSlopePerFoot_Row5.Text = Default.SlopePerFoot_Row5.ToString();
-            tSlopePerFoot_Row6.Text = Default.SlopePerFoot_Row6.ToString();
-            tSlopePerFoot_Row7.Text = Default.SlopePerFoot_Row7.ToString();
-            tSlopeAngle_Row8.Text = Default.SlopePerFoot_Row8.ToString();
-            tSlopePerFoot_Row9.Text = Default.SlopePerFoot_Row9.ToString();
-            tSlopePerFoot_Row10.Text = Default.SlopePerFoot_Row10.ToString();
-            tVerticalPitch_1_2.Text = VerticalPitch._1_2.ToString();
-            tVerticalPitch_2_3.Text = VerticalPitch._2_3.ToString();
-            tVerticalPitch_3_4.Text = VerticalPitch._3_4.ToString();
-            tVerticalPitch_4_5.Text = VerticalPitch._4_5.ToString();
-            tVerticalPitch_5_6.Text = VerticalPitch._5_6.ToString();
-            tVerticalPitch_6_7.Text = VerticalPitch._6_7.ToString();
-            tVerticalPitch_7_8.Text = VerticalPitch._7_8.ToString();
-            tVerticalPitch_8_9.Text = VerticalPitch._8_9.ToString();
-            tVerticalPitch_9_10.Text = VerticalPitch._9_10.ToString();
+            tFrontVerticalPitch_1_2.Text = FrontVerticalPitch._1_2.ToString();
+            tFrontVerticalPitch_2_3.Text = FrontVerticalPitch._2_3.ToString();
+            tFrontVerticalPitch_3_4.Text = FrontVerticalPitch._3_4.ToString();
+            tFrontVerticalPitch_4_5.Text = FrontVerticalPitch._4_5.ToString();
+            tFrontVerticalPitch_5_6.Text = FrontVerticalPitch._5_6.ToString();
+            tFrontVerticalPitch_6_7.Text = FrontVerticalPitch._6_7.ToString();
+            tFrontVerticalPitch_7_8.Text = FrontVerticalPitch._7_8.ToString();
+            tFrontVerticalPitch_8_9.Text = FrontVerticalPitch._8_9.ToString();
+            tFrontVerticalPitch_9_10.Text = FrontVerticalPitch._9_10.ToString();
             tTubeSupportSpacing_Feet.Text = TubeSupportSpacing_Feet.ToString();
+            tRearVerticalPitch_1_2.Text = RearVerticalPitch._1_2.ToString();
+            tRearVerticalPitch_2_3.Text = RearVerticalPitch._2_3.ToString();
+            tRearVerticalPitch_3_4.Text = RearVerticalPitch._3_4.ToString();
+            tRearVerticalPitch_4_5.Text = RearVerticalPitch._4_5.ToString();
+            tRearVerticalPitch_5_6.Text = RearVerticalPitch._5_6.ToString();
+            tRearVerticalPitch_6_7.Text = RearVerticalPitch._6_7.ToString();
+            tRearVerticalPitch_7_8.Text = RearVerticalPitch._7_8.ToString();
+            tRearVerticalPitch_8_9.Text = RearVerticalPitch._8_9.ToString();
+            tRearVerticalPitch_9_10.Text = RearVerticalPitch._9_10.ToString();
             tTubeSupportQuantity.Text = TubeSupportQuantity.ToString();
             cTubeSupportSize.Text = TubeSupportSize;
             bCamber.Checked = Cambered;
             cTileblockManuf.Text = TitleblockManuf;
+            tPlenumLength.Text = Plenum_Length.ToString();
+            tOffsetFromPlenumCenter.Text = OffsetFromCenter.ToString();
+            cPlenumStyle.Text = Plenum_Design.ToString();
+            cColumnSize.Text = Beam_Size.ToString();
+            if (Plenum_Design == Design.Johnson)
+            {
+                tExtraLength.Enabled = true;
+                tExtraLength.Text = Johnson_ExtraLength.ToString();
+            }
+            else
+            {
+                tExtraLength.Enabled = false;
+                tExtraLength.Text = "";
+            }
+            tWeight.Text = TotalUnitWeight.ToString();
+            if (Developer)
+            {
+                Lug_HPC.Spacing = Tube.Length * 0.6;
+                tLiftingLugSpacing.Text = Lug_HPC.Spacing.ToString();
+            }
+                
 
             // Advanced
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
@@ -128,16 +150,27 @@ namespace Bundle
         {
             if (PregoDoc != null)
             {
+                if (!Developer)
+                {
+                    ClearPregoOnJobChanged = false;
+                    Project = LoadPregoValue<string>(job_Box, InputSheet,
+                        "H2");
+                    Bank = (char)(CellDouble(InputSheet,
+                        "C7") + 64);
+                    textBox_Bank.Text = Bank.ToString();
+                    ClearPregoOnJobChanged = true;
+                }
                 TitleblockManuf = LoadPregoValue<string>(cTileblockManuf, InputSheet,
                     "G27",
                     "F27");
-                if (IsSmithco)
+
+                if (!IsSmithco && Tube.SlopesPerFootList[Tube.RowCount-1] == 0)
                 {
-                    bCamber.Checked = Cambered = false;
+                    bCamber.Checked = Cambered = true;
                 }
                 else
                 {
-                    bCamber.Checked = Cambered = true;
+                    bCamber.Checked = Cambered = false;
                 }
 
                 // Job info
@@ -155,7 +188,13 @@ namespace Bundle
 
                 // Bundle
                 Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
-                    "BQ" + 45); // Bdl Wd/Toed:
+                    "BQ" + 45,
+                    "F12"); // Bdl Wd/Toed:
+                if (Bundle_Width < 16)
+                {
+                    Bundle_Width *= 12;
+                    tBundleWidth.Text = Bundle_Width.ToString();
+                }
                 HeadersOutsideFrames = LoadPregoBool(cHeadersOutsideFrame, InputSheet,
                     "G" + 15, // Override
                     "F" + 15);// Hdrs outside Fr?
@@ -165,12 +204,10 @@ namespace Bundle
                 TubeProjection = LoadPregoDouble(tTubeProjection, InputSheet,
                     0.25,  // SE
                     0.125);// HPC
-                FinStripBack_Front = LoadPregoDouble(tFrontFinStripBack, InputSheet,
-                    "CP26",
-                    "CO26");
-                FinStripBack_Rear = LoadPregoDouble(tRearFinStripBack, InputSheet,
-                    "CP27",
-                    "CO27");
+                FinStripBack_Front = LoadPregoDouble(tFrontFinStripBack, PregoToMikeySheet,
+                    "X39");
+                FinStripBack_Rear = LoadPregoDouble(tRearFinStripBack, PregoToMikeySheet,
+                    "Y39");
                 TubeOD = LoadPregoDouble(tTubeOD, InputSheet,
                     "L10");
                 TubeWallTHK = LoadPregoDouble(tTubeWallTHK, InputSheet,
@@ -190,64 +227,66 @@ namespace Bundle
                 TubeQuantity = LoadPregoInt(tTubeQuantity, InputSheet,
                     "N20",
                     "L20");
-                SlopePerFoot.Row1 = LoadPregoDouble(tSlopePerFoot_Row1, SketchCalcsSheet,
-                    "CS82");
-                SlopePerFoot.Row2 = LoadPregoDouble(tSlopePerFoot_Row2, SketchCalcsSheet,
-                    "CS83");
-                SlopePerFoot.Row3 = LoadPregoDouble(tSlopePerFoot_Row3, SketchCalcsSheet,
-                    "CS84");
-                SlopePerFoot.Row4 = LoadPregoDouble(tSlopePerFoot_Row4, SketchCalcsSheet,
-                    "CS85");
-                SlopePerFoot.Row5 = LoadPregoDouble(tSlopePerFoot_Row5, SketchCalcsSheet,
-                    "CS86");
-                SlopePerFoot.Row6 = LoadPregoDouble(tSlopePerFoot_Row6, SketchCalcsSheet,
-                    "CS87");
-                SlopePerFoot.Row7 = LoadPregoDouble(tSlopePerFoot_Row7, SketchCalcsSheet,
-                    "CS88");
-                SlopePerFoot.Row8 = LoadPregoDouble(tSlopeAngle_Row8, SketchCalcsSheet,
-                    "CS89");
-                SlopePerFoot.Row9 = LoadPregoDouble(tSlopePerFoot_Row9, SketchCalcsSheet,
-                    "CS90");
-                SlopePerFoot.Row10 = LoadPregoDouble(tSlopePerFoot_Row10, SketchCalcsSheet,
-                    "CS91");
-                VerticalPitch._1_2 = LoadPregoDouble(tVerticalPitch_1_2, SketchCalcsSheet,
+                FrontVerticalPitch._1_2 = LoadPregoDouble(tFrontVerticalPitch_1_2, SketchCalcsSheet,
                     "DF58");
-                VerticalPitch._2_3 = LoadPregoDouble(tVerticalPitch_2_3, SketchCalcsSheet,
+                FrontVerticalPitch._2_3 = LoadPregoDouble(tFrontVerticalPitch_2_3, SketchCalcsSheet,
                     "DF59");
-                VerticalPitch._3_4 = LoadPregoDouble(tVerticalPitch_3_4, SketchCalcsSheet,
+                FrontVerticalPitch._3_4 = LoadPregoDouble(tFrontVerticalPitch_3_4, SketchCalcsSheet,
                     "DF60");
-                VerticalPitch._4_5 = LoadPregoDouble(tVerticalPitch_4_5, SketchCalcsSheet,
+                FrontVerticalPitch._4_5 = LoadPregoDouble(tFrontVerticalPitch_4_5, SketchCalcsSheet,
                     "DF61");
-                VerticalPitch._5_6 = LoadPregoDouble(tVerticalPitch_5_6, SketchCalcsSheet,
+                FrontVerticalPitch._5_6 = LoadPregoDouble(tFrontVerticalPitch_5_6, SketchCalcsSheet,
                     "DF62");
-                VerticalPitch._6_7 = LoadPregoDouble(tVerticalPitch_6_7, SketchCalcsSheet,
+                FrontVerticalPitch._6_7 = LoadPregoDouble(tFrontVerticalPitch_6_7, SketchCalcsSheet,
                     "DF63");
-                VerticalPitch._7_8 = LoadPregoDouble(tVerticalPitch_7_8, SketchCalcsSheet,
+                FrontVerticalPitch._7_8 = LoadPregoDouble(tFrontVerticalPitch_7_8, SketchCalcsSheet,
                     "DF64");
-                VerticalPitch._8_9 = LoadPregoDouble(tVerticalPitch_8_9, SketchCalcsSheet,
+                FrontVerticalPitch._8_9 = LoadPregoDouble(tFrontVerticalPitch_8_9, SketchCalcsSheet,
                     "DF65");
-                VerticalPitch._9_10 = LoadPregoDouble(tVerticalPitch_9_10, SketchCalcsSheet,
+                FrontVerticalPitch._9_10 = LoadPregoDouble(tFrontVerticalPitch_9_10, SketchCalcsSheet,
                     "DF66");
-                TubeSupportSpacing_Feet = LoadPregoDouble(tTubeSupportSpacing_Feet, InputSheet,
-                    "CG26",
-                    "CF26");
-                TubeSupportQuantity = LoadPregoInt(tTubeSupportQuantity, InputSheet,
-                    "CG27",
-                    "CF27");
+
+                RearVerticalPitch._1_2 = LoadPregoDouble(tRearVerticalPitch_1_2, SketchCalcsSheet,
+                    "DF70");
+                RearVerticalPitch._2_3 = LoadPregoDouble(tRearVerticalPitch_2_3, SketchCalcsSheet,
+                    "DF71");
+                RearVerticalPitch._3_4 = LoadPregoDouble(tRearVerticalPitch_3_4, SketchCalcsSheet,
+                    "DF72");
+                RearVerticalPitch._4_5 = LoadPregoDouble(tRearVerticalPitch_4_5, SketchCalcsSheet,
+                    "DF73");
+                RearVerticalPitch._5_6 = LoadPregoDouble(tRearVerticalPitch_5_6, SketchCalcsSheet,
+                    "DF74");
+                RearVerticalPitch._6_7 = LoadPregoDouble(tRearVerticalPitch_6_7, SketchCalcsSheet,
+                    "DF75");
+                RearVerticalPitch._7_8 = LoadPregoDouble(tRearVerticalPitch_7_8, SketchCalcsSheet,
+                    "DF76");
+                RearVerticalPitch._8_9 = LoadPregoDouble(tRearVerticalPitch_8_9, SketchCalcsSheet,
+                    "DF77");
+                RearVerticalPitch._9_10 = LoadPregoDouble(tRearVerticalPitch_9_10, SketchCalcsSheet,
+                    "DF78");
+
+                TubeSupportSpacing_Feet = LoadPregoDouble(tTubeSupportSpacing_Feet, InputsCalcsSheet,
+                    "BGF12");
+                TubeSupportQuantity = LoadPregoInt(tTubeSupportQuantity, InputsCalcsSheet,
+                    "BGF20");
                 TubeSupportSize = LoadPregoValue<string>(cTubeSupportSize, InputSheet,
                     "CG28",
-                    "CF28");
+                    "CF28",
+                    "CG26",
+                    "CF26")
+                    .Split(' ')[0];
 
 
 
 
                 // SideFrame
-                SideFrame_Depth = LoadPregoDouble(tDepth, InputSheet,
-                    "CG" + 30, // Override
-                    "CF" + 30);// Frame Depth (in)
+                SideFrame_Depth = LoadPregoDouble(tDepth, InputsCalcsSheet,
+                    "BGM26");
                 SideFrame_THK = LoadPregoValue<double>(cSideFrameTHK, InputSheet,
                     "CG" + 32, // Override
-                    "CF" + 32);// Frame Thk (in)
+                    "CF" + 32,
+                    "CG30",
+                    "CF30");// Frame Thk (in)
 
                 ImportHeaderData_FromPrego();
 
@@ -266,7 +305,15 @@ namespace Bundle
             {
                 SignInitials();
             }
-            new Bundle(7, "Bundle");
+            if (Lug_HPC.Spacing.HasValue)
+            {
+                new Bundle(7, "Bundle");
+            }
+            else
+            {
+                MessageBox.Show("You must enter a lifting lug spacing to run the bundle automation.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         #endregion
@@ -553,6 +600,50 @@ namespace Bundle
 
         #endregion
         #region UpdateUI_Bundle
+        private void tRearVerticalPitch_1_2_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_1_2.Text, x => RearVerticalPitch._1_2 = x);
+        }
+
+        private void tRearVerticalPitch_2_3_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_2_3.Text, x => RearVerticalPitch._2_3 = x);
+        }
+
+        private void tRearVerticalPitch_3_4_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_3_4.Text, x => RearVerticalPitch._3_4 = x);
+        }
+
+        private void tRearVerticalPitch_4_5_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_4_5.Text, x => RearVerticalPitch._4_5 = x);
+        }
+
+        private void tRearVerticalPitch_5_6_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_5_6.Text, x => RearVerticalPitch._5_6 = x);
+        }
+
+        private void tRearVerticalPitch_6_7_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_6_7.Text, x => RearVerticalPitch._6_7 = x);
+        }
+
+        private void tRearVerticalPitch_7_8_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_7_8.Text, x => RearVerticalPitch._7_8 = x);
+        }
+
+        private void tRearVerticalPitch_8_9_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_8_9.Text, x => RearVerticalPitch._8_9 = x);
+        }
+
+        private void tRearVerticalPitch_9_10_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tRearVerticalPitch_9_10.Text, x => RearVerticalPitch._9_10 = x);
+        }
         private void tTileblockManuf_SelectedIndexChanged(object sender, EventArgs e)
         {
             UI_StringChanged(cTileblockManuf.Text, x => TitleblockManuf = x);
@@ -577,91 +668,47 @@ namespace Bundle
         }
         private void tVerticalPitch_1_2_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_1_2.Text, x => VerticalPitch._1_2 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_1_2.Text, x => FrontVerticalPitch._1_2 = x);
         }
 
         private void tVerticalPitch_2_3_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_2_3.Text, x => VerticalPitch._2_3 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_2_3.Text, x => FrontVerticalPitch._2_3 = x);
         }
 
         private void tVerticalPitch_3_4_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_3_4.Text, x => VerticalPitch._3_4 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_3_4.Text, x => FrontVerticalPitch._3_4 = x);
         }
 
         private void tVerticalPitch_4_5_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_4_5.Text, x => VerticalPitch._4_5 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_4_5.Text, x => FrontVerticalPitch._4_5 = x);
         }
 
         private void tVerticalPitch_5_6_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_5_6.Text, x => VerticalPitch._5_6 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_5_6.Text, x => FrontVerticalPitch._5_6 = x);
         }
 
         private void tVerticalPitch_6_7_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_6_7.Text, x => VerticalPitch._6_7 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_6_7.Text, x => FrontVerticalPitch._6_7 = x);
         }
 
         private void tVerticalPitch_7_8_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_7_8.Text, x => VerticalPitch._7_8 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_7_8.Text, x => FrontVerticalPitch._7_8 = x);
         }
 
         private void tVerticalPitch_8_9_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_8_9.Text, x => VerticalPitch._8_9 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_8_9.Text, x => FrontVerticalPitch._8_9 = x);
         }
 
         private void tVerticalPitch_9_10_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalPitch_9_10.Text, x => VerticalPitch._9_10 = x);
-        }
-        private void tSlopeAngle_Row1_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row1.Text, x => SlopePerFoot.Row1 = x);
-        }
-
-        private void tSlopeAngle_Row2_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row2.Text, x => SlopePerFoot.Row2 = x);
-        }
-
-        private void tSlopeAngle_Row3_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row3.Text, x => SlopePerFoot.Row3 = x);
-        }
-
-        private void tSlopeAngle_Row4_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row4.Text, x => SlopePerFoot.Row4 = x);
-        }
-
-        private void tSlopeAngle_Row5_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row5.Text, x => SlopePerFoot.Row5 = x);
-        }
-
-        private void tSlopeAngle_Row6_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row6.Text, x => SlopePerFoot.Row6 = x);
-        }
-
-        private void tSlopeAngle_Row7_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row7.Text, x => SlopePerFoot.Row7 = x);
-        }
-
-        private void tSlopeAngle_Row9_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row9.Text, x => SlopePerFoot.Row9 = x);
-        }
-
-        private void tSlopeAngle_Row10_TextChanged(object sender, EventArgs e)
-        {
-            UI_DoubleChanged(tSlopePerFoot_Row10.Text, x => SlopePerFoot.Row10 = x);
+            UI_DoubleChanged(tFrontVerticalPitch_9_10.Text, x => FrontVerticalPitch._9_10 = x);
         }
         private void tTubeQuantity_TextChanged(object sender, EventArgs e)
         {
@@ -735,10 +782,22 @@ namespace Bundle
             string text = textBox_Bank.Text.ToUpper();
             textBox_Bank.Text = text;
             UI_CharChanged(text, x => Bank = x);
+
+            if (!Developer)
+            {
+                Lug_HPC.Spacing = null;
+                tLiftingLugSpacing.Text = "";
+            }
         }
         private void job_Box_TextChanged(object sender, EventArgs e)
         {
             UI_StringChanged(job_Box.Text, x => Project = x);
+
+            if (!Developer)
+            {
+                Lug_HPC.Spacing = null;
+                tLiftingLugSpacing.Text = "";
+            }
         }
 
         private void customer_Box_TextChanged(object sender, EventArgs e)
@@ -798,6 +857,61 @@ namespace Bundle
 
 
 
+
+
+
+
+        #endregion
+        #region UpdateUI_Manual
+        private void tLiftingLugSpacing_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tLiftingLugSpacing.Text, x => Lug_HPC.Spacing = x);
+        }
+        private void tWeight_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(tWeight.Text, x => TotalUnitWeight = x);
+        }
+        private void tPlenumLength_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tPlenumLength.Text, x => Plenum_Length = x);
+        }
+
+        private void tOffsetFromPlenumCenter_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tOffsetFromPlenumCenter.Text, x => OffsetFromCenter = x);
+        }
+
+        private void cPlenumStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.TryParse(cPlenumStyle.Text, out Design design))
+            {
+                Plenum_Design = design;
+                cPlenumStyle.Text = design.ToString();
+                SaveSettings();
+            }
+            else throw new ArgumentException("Invalid design");
+
+            if (Plenum_Design == Design.Johnson)
+            {
+                tExtraLength.Enabled = true;
+                tExtraLength.Text = Johnson_ExtraLength.ToString();
+            }
+            else
+            {
+                tExtraLength.Enabled = false;
+                tExtraLength.Text = "";
+            }
+        }
+
+        private void cColumnSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(cColumnSize.Text, x => Beam_Size = x);
+        }
+
+        private void tExtraLength_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tExtraLength.Text, x => Johnson_ExtraLength = x);
+        }
 
 
         #endregion

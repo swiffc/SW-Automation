@@ -13,6 +13,8 @@ namespace Bundle.TubeKeepers.Children
     {
         // Static properties
         static public double THK => 0.25;
+        static public double OffsetFromBottom => TubeKeeperWeldment.IsLarge ? 1.5 : 1;
+        static public double SlotToSlot => 4.25;
 
 
         // Constructor
@@ -22,7 +24,7 @@ namespace Bundle.TubeKeepers.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("OffsetFromBottom", "sk:Plate", TubeKeeperWeldment.IsLarge ? 1.5 : 1);
+            EditDimension("OffsetFromBottom", "sk:Plate", OffsetFromBottom);
         }
 
 
