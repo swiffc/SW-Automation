@@ -186,3 +186,6 @@
 /SplashScreen/bin/Debug
 /SplashScreen/obj/Debug
 /Testing/Testing.cs
+/Bundle/bin/Release
+/SplashScreen/bin/Release
+/SplashScreen/obj/Release

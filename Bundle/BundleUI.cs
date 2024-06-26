@@ -73,6 +73,8 @@ namespace Bundle
             tOffsetFromPlenumCenter.Text = OffsetFromCenter.ToString();
             cPlenumStyle.Text = Plenum_Design.ToString();
             cColumnSize.Text = Beam_Size.ToString();
+            tFanCount.Text = Fan_Count.ToString();
+            tLugStagger.Text = Lug_HPC.Stagger.ToString();
             if (Plenum_Design == Design.Johnson)
             {
                 tExtraLength.Enabled = true;
@@ -164,7 +166,7 @@ namespace Bundle
                     "G27",
                     "F27");
 
-                if (!IsSmithco && Tube.SlopesPerFootList[Tube.RowCount-1] == 0)
+                if (!IsSmithco && Tube.SlopesPerFootList[Tube.RowCount] == 0)
                 {
                     bCamber.Checked = Cambered = true;
                 }
@@ -863,6 +865,14 @@ namespace Bundle
 
         #endregion
         #region UpdateUI_Manual
+        private void tLugStagger_TextChanged(object sender, EventArgs e)
+        {
+            UI_DoubleChanged(tLugStagger.Text, x => Lug_HPC.Stagger = x);
+        }
+        private void tFanCount_TextChanged(object sender, EventArgs e)
+        {
+            UI_IntChanged(tFanCount.Text, x => Fan_Count = x);
+        }
         private void tLiftingLugSpacing_TextChanged(object sender, EventArgs e)
         {
             UI_DoubleChanged(tLiftingLugSpacing.Text, x => Lug_HPC.Spacing = x);
@@ -912,6 +922,8 @@ namespace Bundle
         {
             UI_DoubleChanged(tExtraLength.Text, x => Johnson_ExtraLength = x);
         }
+
+
 
 
         #endregion

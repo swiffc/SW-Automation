@@ -90,7 +90,8 @@ namespace Excel
                     // User to manually select
                     if (_pregoDoc == null)
                     {
-                        PleaseWait.Show($"Loading...");
+                        if (!Developer)
+                            PleaseWait.Show($"Loading...");
 
                         if (Developer)
                         {

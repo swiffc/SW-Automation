@@ -24,7 +24,7 @@ namespace Bundle.AirSeals.Derived
         public Top_Front_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
         public Top_Front_AirSeal()
         {
-                
+
         }
 
 
@@ -34,15 +34,21 @@ namespace Bundle.AirSeals.Derived
         {
             get
             {
-                double zTranslation = TubeLength / 2 - TubeProjection - Bundle.LowestFrontHeader.TubesheetTHK - Width;
-                double yTranslation = SideFramePart.Depth;
-
-                return new List<PositionData>
+                if (_pos == null)
                 {
-                    PositionData.Create(tZ: zTranslation, tY:yTranslation)
-                };
+                    double zTranslation = TubeLength / 2 - TubeProjection - Header61.TubesheetTHK - Width;
+                    double yTranslation = SideFramePart.Depth;
+
+                    _pos = new List<PositionData>
+                    {
+                        PositionData.Create(tZ: zTranslation, tY:yTranslation)
+                    };
+                }
+                return _pos;
             }
         }
+
+
 
     }
 }

@@ -164,6 +164,26 @@ namespace FileTools.CommonData
                 Default.Beam_K1 = value;
             }
         }
+        public static double Beam_FlangeGage
+        {
+            get
+            {
+                if (SteelBook.W_Shape.TryGetValue(Beam_Size, out var wShape))
+                {
+                    Default.Beam_FlangeGage = wShape.FlangeGage;
+                }
+                else
+                {
+                    Default.Beam_FlangeGage = 0.25;
+                }
+                return Default.Beam_FlangeGage;
+            }
+            set
+            {
+                Default.Beam_FlangeGage = value;
+            }
+        }
+
 
 
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static FileTools.Base.Part;
 using static FileTools.Properties.Settings;
+using static Tools.ModelTools;
 
 namespace FileTools.CommonData
 {
@@ -137,6 +138,52 @@ namespace FileTools.CommonData
             {
                 Default.FanRing_Depth = value;
             }
+        }
+        static public double SidePanelLength
+        {
+            get
+            {
+                double denominator = Mid_Columns ? Fan_Count : 1;
+                double baseLength = Plenum_Length / denominator;
+
+                switch (Plenum_Design)
+                {
+                    case Design.Standard:
+                        return CalculateStandardLength(baseLength);
+
+                    case Design.Johnson:
+                        return CalculateJohnsonLength(baseLength);
+
+                    case Design.Legacy:
+                        return CalculateLegacyLength(baseLength);
+
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
+        private static double CalculateStandardLength(double baseLength)
+        {
+            return baseLength - Beam_Depth - AssemblyClearance * 4;
+        }
+        private static double CalculateJohnsonLength(double baseLength)
+        {
+            double length = baseLength - AssemblyClearance * 2;
+
+            if (Fan_Count > 1 && Mid_Columns)
+            {
+                length -= AssemblyClearance * 2;
+            }
+            else
+            {
+                length += Default.Johnson_ExtraLength * 2 - AssemblyClearance * 2;
+            }
+
+            return length;
+        }
+        private static double CalculateLegacyLength(double baseLength)
+        {
+            return baseLength - Beam_K1 * 2 - AssemblyClearance * 2;
         }
     }
 }

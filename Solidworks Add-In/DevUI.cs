@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FileTools.Properties.Settings;
+using static FileTools.CommonData.CommonData;
+using static FileTools.StaticFileTools;
 
 namespace SolidWorks_Add_In
 {
@@ -40,6 +42,16 @@ namespace SolidWorks_Add_In
                     File.Copy(sourceFilePath, Path.Combine(destinationFolderPath, $"JOBNO-{component.ReferencedConfiguration}.sldprt"), true);
                 }
             }
+        }
+
+        private void cDevMode_CheckedChanged(object sender, EventArgs e)
+        {
+            UI_BoolChanged(cDevMode.Checked, x => DevMode = x);
+        }
+
+        private void DevUI_Load(object sender, EventArgs e)
+        {
+            cDevMode.Checked = DevMode;
         }
     }
 }

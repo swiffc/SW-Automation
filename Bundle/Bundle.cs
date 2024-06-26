@@ -51,11 +51,7 @@ namespace Bundle
 
         // Constructor
         public Bundle(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
-            //, typeof(SideFrameWeldmentLeft)
-            //, typeof(SideFramePartLeft)
-            //, typeof(TubeKeeperWeldment)
-            //, typeof(TubeKeeperBent)
-            //, typeof(Pstrip)
+            //, typeof(Top_Front_AirSeal)
             )
         { }
 

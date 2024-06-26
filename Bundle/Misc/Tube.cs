@@ -68,7 +68,7 @@ namespace Bundle.Misc
             RearVerticalPitch._8_9,
             RearVerticalPitch._9_10
         };
-        static public int RowCount => FrontVerticalPitchesList.Count(pitch => pitch != 0);
+        static public int RowCount => FrontVerticalPitchesList.Count(pitch => pitch != 0); // zero based counting
 
 
         // Constructor
@@ -166,8 +166,12 @@ namespace Bundle.Misc
 
                 for (int i = 0; i < 10; i++)
                 {
+                    double modulator = Tube_Row_1L == Tube_Row_2L ?
+                        HorizPitch / 2 * (i % 2 == 0 ? 0 : 1) :
+                        0;
+
                     double tubesPerRow = i % 2 == 0 ? Tube_Row_1L : Tube_Row_2L;
-                    double xFirstTube = (Math.Ceiling(tubesPerRow) - 1) * HorizPitch / 2;
+                    double xFirstTube = (Math.Ceiling(tubesPerRow) - 1) * HorizPitch / 2 + modulator;
                     double slopeAngleDegrees = GetSlopeAngleDegrees(SlopesPerFootList[i]);
 
                     pos.Add(PositionData.Create(tX: -xFirstTube, tY: yTranslation, tZ: zTranslation, rX: slopeAngleDegrees));

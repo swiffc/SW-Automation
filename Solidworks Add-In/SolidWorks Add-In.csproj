@@ -99,6 +99,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bundle\Bundle.csproj">
+      <Project>{fc8146b0-053d-476a-9ef6-42ac3cca38ce}</Project>
+      <Name>Bundle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileTools\FileTools.csproj">
       <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
       <Name>FileTools</Name>

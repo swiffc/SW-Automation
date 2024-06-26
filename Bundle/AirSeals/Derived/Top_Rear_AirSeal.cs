@@ -34,7 +34,7 @@ namespace Bundle.AirSeals.Derived
         {
             get
             {
-                double zTranslation = TubeLength / 2 - TubeProjection - Bundle.LowestRearHeader.TubesheetTHK - Width;
+                double zTranslation = TubeLength / 2 - TubeProjection - Header62.TubesheetTHK - Width;
                 double yTranslation = SideFramePart.Depth;
 
                 return new List<PositionData>

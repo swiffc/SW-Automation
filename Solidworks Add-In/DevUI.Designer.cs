@@ -30,6 +30,7 @@
         {
             this.button_ResetDefaults = new System.Windows.Forms.Button();
             this.bExportTemplates = new System.Windows.Forms.Button();
+            this.cDevMode = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button_ResetDefaults
@@ -52,16 +53,30 @@
             this.bExportTemplates.UseVisualStyleBackColor = true;
             this.bExportTemplates.Click += new System.EventHandler(this.bExportTemplates_Click);
             // 
+            // cDevMode
+            // 
+            this.cDevMode.AutoSize = true;
+            this.cDevMode.Location = new System.Drawing.Point(78, 44);
+            this.cDevMode.Name = "cDevMode";
+            this.cDevMode.Size = new System.Drawing.Size(73, 17);
+            this.cDevMode.TabIndex = 2;
+            this.cDevMode.Text = "DevMode";
+            this.cDevMode.UseVisualStyleBackColor = true;
+            this.cDevMode.CheckedChanged += new System.EventHandler(this.cDevMode_CheckedChanged);
+            // 
             // DevUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 43);
+            this.ClientSize = new System.Drawing.Size(244, 73);
+            this.Controls.Add(this.cDevMode);
             this.Controls.Add(this.bExportTemplates);
             this.Controls.Add(this.button_ResetDefaults);
             this.Name = "DevUI";
             this.Text = "DevUI";
+            this.Load += new System.EventHandler(this.DevUI_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,5 +84,6 @@
 
         private System.Windows.Forms.Button button_ResetDefaults;
         private System.Windows.Forms.Button bExportTemplates;
+        private System.Windows.Forms.CheckBox cDevMode;
     }
 }

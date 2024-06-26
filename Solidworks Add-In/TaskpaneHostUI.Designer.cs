@@ -55,6 +55,7 @@
             this.button_ExportConfigFile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.launchMM = new System.Windows.Forms.Button();
+            this.bBundle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -305,6 +306,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.bBundle);
             this.panel1.Controls.Add(this.launchMM);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_ExportConfigFile);
@@ -342,6 +344,17 @@
             this.launchMM.Text = "4 (Machinery Mount)";
             this.launchMM.UseVisualStyleBackColor = true;
             this.launchMM.Click += new System.EventHandler(this.launchMM_Click);
+            // 
+            // bBundle
+            // 
+            this.bBundle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBundle.Location = new System.Drawing.Point(6, 812);
+            this.bBundle.Name = "bBundle";
+            this.bBundle.Size = new System.Drawing.Size(200, 53);
+            this.bBundle.TabIndex = 25;
+            this.bBundle.Text = "7 (Bundle)";
+            this.bBundle.UseVisualStyleBackColor = true;
+            this.bBundle.Click += new System.EventHandler(this.bBundle_Click);
             // 
             // TaskpaneHostUI
             // 
@@ -387,5 +400,6 @@
         private System.Windows.Forms.Button button_ExportConfigFile;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button launchMM;
+        private System.Windows.Forms.Button bBundle;
     }
 }

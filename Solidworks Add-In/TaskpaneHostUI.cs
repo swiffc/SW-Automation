@@ -10,6 +10,7 @@ using Walkway.Tools;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static FileTools.Properties.Settings;
 using MachineryMount;
+using Bundle;
 
 namespace SolidWorks_Add_In
 {
@@ -206,6 +207,18 @@ namespace SolidWorks_Add_In
             Default.Reload();
             mmUI.Show();
             mmUI.BringToFront();
+        }
+        private BundleUI bundleUI = null;
+        private void bBundle_Click(object sender, EventArgs e)
+        {
+            if (bundleUI == null || bundleUI.IsDisposed)
+            {
+                bundleUI = new BundleUI();
+            }
+
+            Default.Reload();
+            bundleUI.Show();
+            bundleUI.BringToFront();
         }
     }
 }

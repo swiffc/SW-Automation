@@ -18,7 +18,7 @@ namespace Bundle.Misc
             get
             {
                 double largestTubeRow = Math.Max(Tube_Row_1L, Tube_Row_2L);
-                return (largestTubeRow - 1) / 2 * Tube.HorizPitch;
+                return (largestTubeRow - 1) / 2 * Tube.HorizPitch + (Tube_Row_1L == Tube_Row_2L ? Tube.HorizPitch : 0);
             }
         }
 
@@ -35,7 +35,14 @@ namespace Bundle.Misc
             EditDimension("FinOD", "sk:Strip", FinOD);
             EditDimension("Offset", "sk:Strip", Offset);
             EditDimension("Hpitch", "StripPattern", Tube.HorizPitch);
-            EditDimension("Count", "StripPattern", Math.Max(Tube_Row_1L, Tube_Row_2L) - 1);
+            EditDimension("Count", "StripPattern", Math.Max(Tube_Row_1L, Tube_Row_2L) + (Tube_Row_1L == Tube_Row_2L ? 1 : -1));
+        }
+        protected override void Features()
+        {
+            if (Tube_Row_1L == Tube_Row_2L)
+                SuppressFeatures("Extension", "ExtensionMirror");
+            else
+                UnsuppressFeatures("Extension", "ExtensionMirror");
         }
 
 
