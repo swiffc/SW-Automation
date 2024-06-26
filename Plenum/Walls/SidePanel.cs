@@ -90,29 +90,6 @@ namespace Plenum
             }
             return xTranslation;
         }
-        private static double CalculateStandardLength(double baseLength)
-        {
-            return baseLength - Beam_Depth - mTools.AssemblyClearance * 4;
-        }
-        private static double CalculateJohnsonLength(double baseLength)
-        {
-            double length = baseLength - mTools.AssemblyClearance * 2;
-
-            if (Fan_Count > 1 && Mid_Columns)
-            {
-                length -= mTools.AssemblyClearance * 2;
-            }
-            else
-            {
-                length += Default.Johnson_ExtraLength * 2 - mTools.AssemblyClearance * 2;
-            }
-
-            return length;
-        }
-        private static double CalculateLegacyLength(double baseLength)
-        {
-            return baseLength - Beam_K1 * 2 - mTools.AssemblyClearance * 2;
-        }
         private double CalculateZTranslation()
         {
             if (Mid_Columns)
@@ -276,29 +253,7 @@ namespace Plenum
 
 
         // Internal properties
-        internal static double LocalLength
-        {
-            get
-            {
-                double denominator = Mid_Columns ? Fan_Count : 1;
-                double baseLength = Plenum_Length / denominator;
-
-                switch (CallerType)
-                {
-                    case Design.Standard:
-                        return CalculateStandardLength(baseLength);
-
-                    case Design.Johnson:
-                        return CalculateJohnsonLength(baseLength);
-
-                    case Design.Legacy:
-                        return CalculateLegacyLength(baseLength);
-
-                    default:
-                        throw new NotImplementedException();
-                }
-            }
-        }
+        internal static double LocalLength => SidePanelLength;
 
 
 

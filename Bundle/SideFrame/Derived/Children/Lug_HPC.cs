@@ -54,7 +54,7 @@ namespace Bundle.SideFrame.Derived.Children
             }
         }
         static public double? Spacing { get; set; }
-        static public int Stagger => 16;
+        static public double Stagger { get; set; } = 16;
 
 
         // Constructor

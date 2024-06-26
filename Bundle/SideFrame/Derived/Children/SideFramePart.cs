@@ -107,6 +107,7 @@ namespace Bundle.SideFrame.Derived.Children
             AirSealHoles();
             KeeperHolesAndFeatureControl();
             SupportHolesAndFeatureControl();
+            PlenumHolesAndFeatureControl();
         }
 
 
@@ -198,6 +199,34 @@ namespace Bundle.SideFrame.Derived.Children
                 EditDimension("Spacing", "SupportHolesLinear", TubeSupport.Spacing_Feet * 12);
                 EditDimension("Count", "SupportHolesLinear", TubeSupport.Quantity);
             }
+        }
+        void PlenumHolesAndFeatureControl()
+        {
+            // Base Holes
+            if (FrontLength > Plenum_Length / 2)
+            {
+                UnsuppressFeatures("PlenumHole", "PlenumHoles");
+
+                EditDimension("HalfUnitLength", "sk:PlenumHole", Plenum_Length / 2);
+                EditDimension("ColumnToPanelEdge", "sk:PlenumHole",
+                    Plenum_Design == Design.Standard ? Beam_Depth / 2 + InterferenceClearance :
+                    Plenum_Design == Design.Legacy ? Beam_FlangeGage / 2 - 1.25 : 0.001);
+
+                HolePattern(SidePanelLength - 6, out double count, out double spacing);
+                EditDimension("Count", "sk:PlenumHole", count);
+                EditDimension("Spacing", "sk:PlenumHole", spacing);
+
+                // Patterned holes
+                if (Fan_Count > 1)
+                {
+                    UnsuppressFeatures("PlenumHolesPattern");
+
+                    EditDimension("Spacing", "PlenumHolesPattern", Plenum_Length / Fan_Count);
+                    EditDimension("Count", "PlenumHolesPattern", Fan_Count);
+                }
+                else SuppressFeatures("PlenumHolesPattern");
+            }
+            else SuppressFeatures("PlenumHole", "PlenumHoles");
         }
 
 

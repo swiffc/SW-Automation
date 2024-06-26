@@ -39,6 +39,22 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tLiftingLugSpacing = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.tWeight = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.tExtraLength = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.cColumnSize = new System.Windows.Forms.ComboBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.cPlenumStyle = new System.Windows.Forms.ComboBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tOffsetFromPlenumCenter = new System.Windows.Forms.TextBox();
+            this.tPlenumLength = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.splitter3 = new System.Windows.Forms.Splitter();
@@ -139,6 +155,7 @@
             this.cEnabled62 = new System.Windows.Forms.CheckBox();
             this.cEnabled61 = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label47 = new System.Windows.Forms.Label();
             this.Xtop_62 = new System.Windows.Forms.TextBox();
             this.Xtop_61 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
@@ -202,23 +219,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.initials_Box = new System.Windows.Forms.TextBox();
-            this.tPlenumLength = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.tOffsetFromPlenumCenter = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.cPlenumStyle = new System.Windows.Forms.ComboBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.cColumnSize = new System.Windows.Forms.ComboBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.tExtraLength = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.tWeight = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.tLiftingLugSpacing = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.tFanCount = new System.Windows.Forms.TextBox();
+            this.tLugStagger = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -358,6 +362,10 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.tLugStagger);
+            this.panel2.Controls.Add(this.label71);
+            this.panel2.Controls.Add(this.label70);
+            this.panel2.Controls.Add(this.tFanCount);
             this.panel2.Controls.Add(this.tLiftingLugSpacing);
             this.panel2.Controls.Add(this.label53);
             this.panel2.Controls.Add(this.tWeight);
@@ -378,6 +386,176 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(244, 398);
             this.panel2.TabIndex = 88;
+            // 
+            // tLiftingLugSpacing
+            // 
+            this.tLiftingLugSpacing.Location = new System.Drawing.Point(3, 242);
+            this.tLiftingLugSpacing.Name = "tLiftingLugSpacing";
+            this.tLiftingLugSpacing.Size = new System.Drawing.Size(100, 20);
+            this.tLiftingLugSpacing.TabIndex = 182;
+            this.tLiftingLugSpacing.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tLiftingLugSpacing.TextChanged += new System.EventHandler(this.tLiftingLugSpacing_TextChanged);
+            // 
+            // label53
+            // 
+            this.label53.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(109, 245);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(98, 13);
+            this.label53.TabIndex = 183;
+            this.label53.Text = "Lifting Lug Spacing";
+            // 
+            // tWeight
+            // 
+            this.tWeight.Location = new System.Drawing.Point(3, 216);
+            this.tWeight.Name = "tWeight";
+            this.tWeight.Size = new System.Drawing.Size(100, 20);
+            this.tWeight.TabIndex = 180;
+            this.tWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tWeight.TextChanged += new System.EventHandler(this.tWeight_TextChanged);
+            // 
+            // label52
+            // 
+            this.label52.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(109, 219);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(73, 13);
+            this.label52.TabIndex = 181;
+            this.label52.Text = "ACHE Weight";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.Color.White;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(3, 197);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(77, 16);
+            this.label51.TabIndex = 179;
+            this.label51.Text = "Lifting Info";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.Color.White;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(3, 7);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(87, 16);
+            this.label50.TabIndex = 178;
+            this.label50.Text = "Plenum Info";
+            // 
+            // tExtraLength
+            // 
+            this.tExtraLength.Location = new System.Drawing.Point(3, 154);
+            this.tExtraLength.Name = "tExtraLength";
+            this.tExtraLength.Size = new System.Drawing.Size(100, 20);
+            this.tExtraLength.TabIndex = 176;
+            this.tExtraLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tExtraLength.TextChanged += new System.EventHandler(this.tExtraLength_TextChanged);
+            // 
+            // label49
+            // 
+            this.label49.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(109, 157);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(110, 13);
+            this.label49.TabIndex = 177;
+            this.label49.Text = "Johnson Extra Length";
+            // 
+            // cColumnSize
+            // 
+            this.cColumnSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cColumnSize.FormattingEnabled = true;
+            this.cColumnSize.Items.AddRange(new object[] {
+            "W6x15",
+            "W6x20",
+            "W6x25",
+            "W8x31"});
+            this.cColumnSize.Location = new System.Drawing.Point(3, 127);
+            this.cColumnSize.Name = "cColumnSize";
+            this.cColumnSize.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cColumnSize.Size = new System.Drawing.Size(100, 21);
+            this.cColumnSize.TabIndex = 41;
+            this.cColumnSize.SelectedIndexChanged += new System.EventHandler(this.cColumnSize_SelectedIndexChanged);
+            // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(109, 130);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(65, 13);
+            this.label48.TabIndex = 40;
+            this.label48.Text = "Column Size";
+            // 
+            // cPlenumStyle
+            // 
+            this.cPlenumStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cPlenumStyle.FormattingEnabled = true;
+            this.cPlenumStyle.Items.AddRange(new object[] {
+            "Standard",
+            "Johnson",
+            "Legacy"});
+            this.cPlenumStyle.Location = new System.Drawing.Point(3, 100);
+            this.cPlenumStyle.Name = "cPlenumStyle";
+            this.cPlenumStyle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cPlenumStyle.Size = new System.Drawing.Size(100, 21);
+            this.cPlenumStyle.TabIndex = 175;
+            this.cPlenumStyle.SelectedIndexChanged += new System.EventHandler(this.cPlenumStyle_SelectedIndexChanged);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(109, 102);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(68, 13);
+            this.label46.TabIndex = 174;
+            this.label46.Text = "Plenum Style";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.BackColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(109, 77);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(133, 13);
+            this.label45.TabIndex = 114;
+            this.label45.Text = "Offset From Plenum Center";
+            // 
+            // tOffsetFromPlenumCenter
+            // 
+            this.tOffsetFromPlenumCenter.Location = new System.Drawing.Point(3, 74);
+            this.tOffsetFromPlenumCenter.Name = "tOffsetFromPlenumCenter";
+            this.tOffsetFromPlenumCenter.Size = new System.Drawing.Size(100, 20);
+            this.tOffsetFromPlenumCenter.TabIndex = 113;
+            this.tOffsetFromPlenumCenter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tOffsetFromPlenumCenter.TextChanged += new System.EventHandler(this.tOffsetFromPlenumCenter_TextChanged);
+            // 
+            // tPlenumLength
+            // 
+            this.tPlenumLength.Location = new System.Drawing.Point(3, 26);
+            this.tPlenumLength.Name = "tPlenumLength";
+            this.tPlenumLength.Size = new System.Drawing.Size(100, 20);
+            this.tPlenumLength.TabIndex = 111;
+            this.tPlenumLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tPlenumLength.TextChanged += new System.EventHandler(this.tPlenumLength_TextChanged);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(109, 29);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(78, 13);
+            this.label44.TabIndex = 112;
+            this.label44.Text = "Plenum Length";
             // 
             // label4
             // 
@@ -1527,6 +1705,19 @@
             this.panel3.Size = new System.Drawing.Size(596, 472);
             this.panel3.TabIndex = 103;
             // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.Color.White;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(164, 228);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(107, 16);
+            this.label47.TabIndex = 152;
+            this.label47.Text = "Miscellaneous";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Xtop_62
             // 
             this.Xtop_62.Location = new System.Drawing.Point(289, 273);
@@ -2130,188 +2321,43 @@
             this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
-            // tPlenumLength
+            // label70
             // 
-            this.tPlenumLength.Location = new System.Drawing.Point(3, 26);
-            this.tPlenumLength.Name = "tPlenumLength";
-            this.tPlenumLength.Size = new System.Drawing.Size(100, 20);
-            this.tPlenumLength.TabIndex = 111;
-            this.tPlenumLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tPlenumLength.TextChanged += new System.EventHandler(this.tPlenumLength_TextChanged);
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.Color.White;
+            this.label70.Location = new System.Drawing.Point(109, 53);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(56, 13);
+            this.label70.TabIndex = 185;
+            this.label70.Text = "Fan Count";
             // 
-            // label44
+            // tFanCount
             // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(109, 29);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(78, 13);
-            this.label44.TabIndex = 112;
-            this.label44.Text = "Plenum Length";
+            this.tFanCount.Location = new System.Drawing.Point(3, 50);
+            this.tFanCount.Name = "tFanCount";
+            this.tFanCount.Size = new System.Drawing.Size(100, 20);
+            this.tFanCount.TabIndex = 184;
+            this.tFanCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tFanCount.TextChanged += new System.EventHandler(this.tFanCount_TextChanged);
             // 
-            // tOffsetFromPlenumCenter
+            // tLugStagger
             // 
-            this.tOffsetFromPlenumCenter.Location = new System.Drawing.Point(3, 52);
-            this.tOffsetFromPlenumCenter.Name = "tOffsetFromPlenumCenter";
-            this.tOffsetFromPlenumCenter.Size = new System.Drawing.Size(100, 20);
-            this.tOffsetFromPlenumCenter.TabIndex = 113;
-            this.tOffsetFromPlenumCenter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tOffsetFromPlenumCenter.TextChanged += new System.EventHandler(this.tOffsetFromPlenumCenter_TextChanged);
+            this.tLugStagger.Location = new System.Drawing.Point(3, 269);
+            this.tLugStagger.Name = "tLugStagger";
+            this.tLugStagger.Size = new System.Drawing.Size(100, 20);
+            this.tLugStagger.TabIndex = 186;
+            this.tLugStagger.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tLugStagger.TextChanged += new System.EventHandler(this.tLugStagger_TextChanged);
             // 
-            // label45
+            // label71
             // 
-            this.label45.AutoSize = true;
-            this.label45.BackColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(109, 55);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(133, 13);
-            this.label45.TabIndex = 114;
-            this.label45.Text = "Offset From Plenum Center";
-            // 
-            // cPlenumStyle
-            // 
-            this.cPlenumStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cPlenumStyle.FormattingEnabled = true;
-            this.cPlenumStyle.Items.AddRange(new object[] {
-            "Standard",
-            "Johnson",
-            "Legacy"});
-            this.cPlenumStyle.Location = new System.Drawing.Point(3, 78);
-            this.cPlenumStyle.Name = "cPlenumStyle";
-            this.cPlenumStyle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cPlenumStyle.Size = new System.Drawing.Size(100, 21);
-            this.cPlenumStyle.TabIndex = 175;
-            this.cPlenumStyle.SelectedIndexChanged += new System.EventHandler(this.cPlenumStyle_SelectedIndexChanged);
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(109, 80);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(68, 13);
-            this.label46.TabIndex = 174;
-            this.label46.Text = "Plenum Style";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.Color.White;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(164, 228);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(107, 16);
-            this.label47.TabIndex = 152;
-            this.label47.Text = "Miscellaneous";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cColumnSize
-            // 
-            this.cColumnSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cColumnSize.FormattingEnabled = true;
-            this.cColumnSize.Items.AddRange(new object[] {
-            "W6x15",
-            "W6x20",
-            "W6x25",
-            "W8x31"});
-            this.cColumnSize.Location = new System.Drawing.Point(3, 105);
-            this.cColumnSize.Name = "cColumnSize";
-            this.cColumnSize.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cColumnSize.Size = new System.Drawing.Size(100, 21);
-            this.cColumnSize.TabIndex = 41;
-            this.cColumnSize.SelectedIndexChanged += new System.EventHandler(this.cColumnSize_SelectedIndexChanged);
-            // 
-            // label48
-            // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(109, 108);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(65, 13);
-            this.label48.TabIndex = 40;
-            this.label48.Text = "Column Size";
-            // 
-            // tExtraLength
-            // 
-            this.tExtraLength.Location = new System.Drawing.Point(3, 132);
-            this.tExtraLength.Name = "tExtraLength";
-            this.tExtraLength.Size = new System.Drawing.Size(100, 20);
-            this.tExtraLength.TabIndex = 176;
-            this.tExtraLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tExtraLength.TextChanged += new System.EventHandler(this.tExtraLength_TextChanged);
-            // 
-            // label49
-            // 
-            this.label49.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(109, 135);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(110, 13);
-            this.label49.TabIndex = 177;
-            this.label49.Text = "Johnson Extra Length";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.Color.White;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(3, 7);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(87, 16);
-            this.label50.TabIndex = 178;
-            this.label50.Text = "Plenum Info";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.Color.White;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(3, 175);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(77, 16);
-            this.label51.TabIndex = 179;
-            this.label51.Text = "Lifting Info";
-            // 
-            // tWeight
-            // 
-            this.tWeight.Location = new System.Drawing.Point(3, 194);
-            this.tWeight.Name = "tWeight";
-            this.tWeight.Size = new System.Drawing.Size(100, 20);
-            this.tWeight.TabIndex = 180;
-            this.tWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tWeight.TextChanged += new System.EventHandler(this.tWeight_TextChanged);
-            // 
-            // label52
-            // 
-            this.label52.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(109, 197);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(73, 13);
-            this.label52.TabIndex = 181;
-            this.label52.Text = "ACHE Weight";
-            // 
-            // tLiftingLugSpacing
-            // 
-            this.tLiftingLugSpacing.Location = new System.Drawing.Point(3, 220);
-            this.tLiftingLugSpacing.Name = "tLiftingLugSpacing";
-            this.tLiftingLugSpacing.Size = new System.Drawing.Size(100, 20);
-            this.tLiftingLugSpacing.TabIndex = 182;
-            this.tLiftingLugSpacing.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tLiftingLugSpacing.TextChanged += new System.EventHandler(this.tLiftingLugSpacing_TextChanged);
-            // 
-            // label53
-            // 
-            this.label53.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(109, 223);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(98, 13);
-            this.label53.TabIndex = 183;
-            this.label53.Text = "Lifting Lug Spacing";
+            this.label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(109, 272);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(96, 13);
+            this.label71.TabIndex = 187;
+            this.label71.Text = "Lifting Lug Stagger";
             // 
             // BundleUI
             // 
@@ -2539,6 +2585,10 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TextBox tLiftingLugSpacing;
         private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TextBox tFanCount;
+        private System.Windows.Forms.TextBox tLugStagger;
+        private System.Windows.Forms.Label label71;
     }
 }
 

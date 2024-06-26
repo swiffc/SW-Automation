@@ -1412,7 +1412,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         public static string AssemblyPath => $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
         public static List<string> AssignedComponentPaths = new List<string>();
         public static Type LastType { get; set; }
-        public static bool Developer => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") ? true : false;
-
+        public static bool Developer => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") && DevMode ? true : false;
+        public static bool DevMode { get; set; } = true;
     }
 }
