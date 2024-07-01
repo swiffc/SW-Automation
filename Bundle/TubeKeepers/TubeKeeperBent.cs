@@ -28,7 +28,7 @@ namespace Bundle.TubeKeepers
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Backing", AirSeal.Length);
+            EditDimension("Length", "sk:Backing", Bundle.Width - SideFramePart.THK * 2 - AssemblyClearance);
         }
 
 
