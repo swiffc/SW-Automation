@@ -22,10 +22,7 @@ namespace Bundle.TubeKeepers
 
         // Constructor
         public TubeKeeperBent(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
-        public TubeKeeperBent()
-        {
-            
-        }
+        public TubeKeeperBent(int parentNone) : base(parentNone) { }
 
 
         // Method overrides

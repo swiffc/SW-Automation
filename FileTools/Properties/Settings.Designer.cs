@@ -2170,5 +2170,149 @@ namespace FileTools.Properties {
                 this["BundleOffsetFromCenter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetLength_61 {
+            get {
+                return ((double)(this["TubesheetLength_61"]));
+            }
+            set {
+                this["TubesheetLength_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetLength_62 {
+            get {
+                return ((double)(this["TubesheetLength_62"]));
+            }
+            set {
+                this["TubesheetLength_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetLength_63 {
+            get {
+                return ((double)(this["TubesheetLength_63"]));
+            }
+            set {
+                this["TubesheetLength_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetLength_64 {
+            get {
+                return ((double)(this["TubesheetLength_64"]));
+            }
+            set {
+                this["TubesheetLength_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetLength_65 {
+            get {
+                return ((double)(this["TubesheetLength_65"]));
+            }
+            set {
+                this["TubesheetLength_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetLength_66 {
+            get {
+                return ((double)(this["TubesheetLength_66"]));
+            }
+            set {
+                this["TubesheetLength_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetWidth_61 {
+            get {
+                return ((double)(this["TubesheetWidth_61"]));
+            }
+            set {
+                this["TubesheetWidth_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetWidth_62 {
+            get {
+                return ((double)(this["TubesheetWidth_62"]));
+            }
+            set {
+                this["TubesheetWidth_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetWidth_63 {
+            get {
+                return ((double)(this["TubesheetWidth_63"]));
+            }
+            set {
+                this["TubesheetWidth_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetWidth_64 {
+            get {
+                return ((double)(this["TubesheetWidth_64"]));
+            }
+            set {
+                this["TubesheetWidth_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetWidth_65 {
+            get {
+                return ((double)(this["TubesheetWidth_65"]));
+            }
+            set {
+                this["TubesheetWidth_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubesheetWidth_66 {
+            get {
+                return ((double)(this["TubesheetWidth_66"]));
+            }
+            set {
+                this["TubesheetWidth_66"] = value;
+            }
+        }
     }
 }

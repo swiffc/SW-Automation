@@ -17,7 +17,7 @@ namespace Bundle.AirSeals.Derived
     {
         // Constructors
         public Bottom_Front_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
-        public Bottom_Front_AirSeal() { }
+        public Bottom_Front_AirSeal(int parentNone) : base(parentNone) { }
 
 
         // Property overrides

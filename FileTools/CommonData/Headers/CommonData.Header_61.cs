@@ -53,6 +53,16 @@ namespace FileTools.CommonData
                 get => Default.Xtop_61; 
                 set => Default.Xtop_61 = value; 
             }
+            public double TubesheetLength
+            {
+                get => Default.TubesheetLength_61;
+                set => Default.TubesheetLength_61 = value;
+            }
+            public double TubesheetWidth
+            {
+                get => Default.TubesheetWidth_61;
+                set => Default.TubesheetWidth_61 = value;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using Bundle.SideFrame.Derived.Children;
 using FileTools.Base;
 using ModelTools;
+using System;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 using static Tools.ModelTools;
@@ -22,10 +23,7 @@ namespace Bundle.AirSeals.Derived
 
         // Constructor
         public Top_Rear_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
-        public Top_Rear_AirSeal()
-        {
-            
-        }
+        public Top_Rear_AirSeal(int parentNone) : base(parentNone) { }
 
 
         // Property overrides

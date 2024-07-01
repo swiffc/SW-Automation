@@ -42,9 +42,9 @@ namespace FileTools.Base
                 Release(AssemblyDoc);
             }
         }
-        protected SubAssembly()
+        protected SubAssembly(int parentNone)
         {
-            
+            // Used to access instance properties
         }
 
 

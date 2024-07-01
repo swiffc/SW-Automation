@@ -34,7 +34,10 @@ namespace FileTools.Base
                 InitializePart();
             }
         }
-        protected Part() { }
+        protected Part(int NoParent) 
+        {
+            // Used to access instance properties
+        }
 
 
         // Private methods

@@ -189,3 +189,5 @@
 /Bundle/bin/Release
 /SplashScreen/bin/Release
 /SplashScreen/obj/Release
+/Header/bin
+/Header/obj

@@ -12,10 +12,7 @@ namespace Bundle.AirSeals.Derived
     {
         // Constructor
         public Bottom_Rear_AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
-        public Bottom_Rear_AirSeal()
-        {
-                
-        }
+        public Bottom_Rear_AirSeal(int parentNone) : base(parentNone) { }
 
 
         // Property overrides

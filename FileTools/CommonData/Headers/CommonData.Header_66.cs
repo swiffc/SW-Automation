@@ -48,6 +48,16 @@ namespace FileTools.CommonData
                 get => Default.Y_Location66;
                 set => Default.Y_Location66 = value;
             }
+            public double TubesheetLength
+            {
+                get => Default.TubesheetLength_66;
+                set => Default.TubesheetLength_66 = value;
+            }
+            public double TubesheetWidth
+            {
+                get => Default.TubesheetWidth_66;
+                set => Default.TubesheetWidth_66 = value;
+            }
         }
     }
 }

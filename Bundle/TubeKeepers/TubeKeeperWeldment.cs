@@ -19,10 +19,7 @@ namespace Bundle.TubeKeepers
 
         // Constructor
         public TubeKeeperWeldment(SW_Assembly parentAssembly) : base(parentAssembly) { }
-        public TubeKeeperWeldment()
-        {
-            
-        }
+        public TubeKeeperWeldment(int parentNone) : base(parentNone) { }
 
 
         // Property overrides

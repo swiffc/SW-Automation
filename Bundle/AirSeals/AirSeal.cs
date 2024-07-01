@@ -19,7 +19,7 @@ namespace Bundle.AirSeals
 
         // Constructors
         protected AirSeal(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
-        protected AirSeal() { }
+        protected AirSeal(int noParent) : base(noParent) { }
 
 
         // Abstract properties

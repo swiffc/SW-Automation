@@ -16,6 +16,8 @@ namespace FileTools.Base
         double BoxLength { get; set; }
 
         double TubesheetTHK { get; set; }
+        double TubesheetLength { get; set; }
+        double TubesheetWidth { get; set; }
         double PlugsheetTHK { get; set; }
         double TopAndBottomPlateTHK { get; set; }
 

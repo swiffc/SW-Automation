@@ -116,19 +116,19 @@ namespace Bundle.SideFrame.Derived.Children
         {
             double y = THK + GetBendRadius(THK) + 1.15625;
 
-            var _1013 = new Bottom_Front_AirSeal();
+            var _1013 = new Bottom_Front_AirSeal(0);
             EditDimension("y1013", "sk:WebHole", y);
             EditDimension("z1013", "sk:WebHole", _1013.Position[0].TranslationZ);
 
-            var _1014 = new Bottom_Rear_AirSeal();
+            var _1014 = new Bottom_Rear_AirSeal(0);
             EditDimension("y1014", "sk:WebHole", y);
             EditDimension("z1014", "sk:WebHole", _1014.Position[0].TranslationZ);
 
-            var _1015 = new Top_Front_AirSeal();
+            var _1015 = new Top_Front_AirSeal(0);
             EditDimension("y1015", "sk:WebHole", y);
             EditDimension("z1015", "sk:WebHole", _1015.Position[0].TranslationZ);
 
-            var _1016 = new Top_Rear_AirSeal();
+            var _1016 = new Top_Rear_AirSeal(0);
             EditDimension("y1016", "sk:WebHole", y);
             EditDimension("z1016", "sk:WebHole", _1016.Position[0].TranslationZ);
         }
@@ -138,14 +138,14 @@ namespace Bundle.SideFrame.Derived.Children
             List<PositionData> pos;
             if (IsSmithco)
             {
-                var keeper = new TubeKeeperBent();
+                var keeper = new TubeKeeperBent(0);
                 pos = keeper.Position;
                 EditDimension("KeeperHeight", "sk:WebHole", TubeKeeperBent.BottomToSlotCenter);
                 EditDimension("KeeperWidth", "sk:WebHole", 0.001);
             }
             else
             {
-                var keeper = new TubeKeeperWeldment();
+                var keeper = new TubeKeeperWeldment(0);
                 pos = keeper.Position;
                 EditDimension("KeeperHeight", "sk:WebHole", TubeKeeper_EndPlate.OffsetFromBottom);
                 EditDimension("KeeperWidth", "sk:WebHole", TubeKeeper_EndPlate.SlotToSlot);
