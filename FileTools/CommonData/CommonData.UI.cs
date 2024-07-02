@@ -1,8 +1,10 @@
-﻿using FileTools.Properties;
+﻿using FileTools.Base;
+using FileTools.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,9 +45,10 @@ namespace FileTools.CommonData
         }
         public static void UI_CharChanged(string textBoxText, Action<char> setProperty)
         {
+            string text = textBoxText.ToUpper();
             try
             {
-                setProperty(textBoxText[0]);
+                setProperty(text[0]);
                 SaveSettings();
             }
             catch (IndexOutOfRangeException ex)
@@ -53,5 +56,7 @@ namespace FileTools.CommonData
                 Debug.WriteLine(ex.Message);
             }
         }
+
+
     }
 }

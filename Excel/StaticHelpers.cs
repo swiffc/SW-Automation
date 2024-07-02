@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using static Excel.Prego;
 using TextBox = System.Windows.Forms.TextBox;
 using CheckBox = System.Windows.Forms.CheckBox;
+using FileTools.Base;
+using static FileTools.CommonData.CommonData;
 
 namespace Excel
 {
@@ -132,10 +134,12 @@ namespace Excel
                     string propertyName = property.Name + "TextBox";
                     PropertyInfo propertyInfo = headerControlsType.GetProperty(propertyName);
 
-                    object propertyValue = propertyInfo.GetValue(headerControls);
-                    TextBox textBox = (TextBox)propertyValue;
-
-                    textBox.Text = value.ToString();
+                    if (propertyInfo != null)
+                    {
+                        TextBox textBox = (TextBox)propertyInfo.GetValue(headerControls);
+                        if (textBox != null)
+                            textBox.Text = value.ToString();
+                    }
                 }
             }
         }
@@ -151,5 +155,108 @@ namespace Excel
                 }
             }
         }
+        public static IHeaderExtensions GetHeader(int index)
+        {
+            switch (index)
+            {
+                case 61:
+                    return Header61;
+                case 62:
+                    return Header62;
+                case 63:
+                    return Header63;
+                case 64:
+                    return Header64;
+                case 65:
+                    return Header65;
+                case 66:
+                    return Header66;
+                default:
+                    throw new ArgumentException($"Invalid index: {index}");
+            }
+        }
+        public static T GetControl<T>(Form formInstance, string baseName, int index) where T : class
+        {
+            var controlName = $"{baseName}{index}";
+            return formInstance.GetType().GetField(controlName, BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(formInstance) as T;
+        }
+        public static void HeaderTextBoxDoubleChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                var parts = textBox.Tag.ToString().Split(':');
+                if (parts.Length == 2)
+                {
+                    int headerId = int.Parse(parts[0]);
+                    string propertyName = parts[1];
+                    if (textBox.Text != "")
+                    {
+                        double value = double.TryParse(textBox.Text, out double parsedValue) ? parsedValue : 0;
+
+                        var header = GetHeader(headerId);
+                        if (header != null)
+                        {
+                            var property = header.GetType().GetProperty(propertyName);
+                            if (property != null && property.PropertyType == typeof(double))
+                            {
+                                property.SetValue(header, value);
+                                SaveSettings();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public static void Header_TextChanged(Form formInstance, string propertyName)
+        {
+            foreach (Control foundTabControl in formInstance.Controls)
+            {
+                if (foundTabControl is TabControl tabControl)
+                {
+                    foreach (Control foundTabPage in tabControl.Controls)
+                    {
+                        if (foundTabPage is TabPage tabPage)
+                        {
+                            foreach (Control foundPanel in tabPage.Controls)
+                            {
+                                if (foundPanel is Panel panel)
+                                {
+                                    foreach (Control control in panel.Controls)
+                                    {
+                                        if (control is TextBox textBox && textBox.Name.StartsWith("t" + propertyName))
+                                        {
+                                            // Extract the suffix from the TextBox name by removing the prefix that matches the propertyName
+                                            string suffix = textBox.Name.Substring(("t" + propertyName).Length);
+
+                                            // Split the suffix into parts based on the '_' delimiter
+                                            string[] parts = suffix.Split('_');
+
+                                            // Ensure that the suffix correctly splits into exactly two parts: propertyType and id
+                                            if (parts.Length == 2)
+                                            {
+                                                // The first part represents the property type (e.g., "THK" for thickness)
+                                                string propertyType = parts[0];
+                                                // The second part represents the unique identifier (e.g., "61")
+                                                string id = parts[1];
+
+                                                // Construct the Tag property for the TextBox using the id and propertyType
+                                                // This Tag is later used to identify the TextBox and map it to a specific property of a Header object
+                                                textBox.Tag = $"{id}:{propertyName}{propertyType}";
+
+                                                // Attach the HeaderTextBoxDoubleChanged event handler to the TextBox
+                                                // This event handler will be triggered whenever the text in the TextBox changes
+                                                textBox.TextChanged += HeaderTextBoxDoubleChanged;
+                                            }
+                                            else throw new ArgumentException("Invalid TextBox name format");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

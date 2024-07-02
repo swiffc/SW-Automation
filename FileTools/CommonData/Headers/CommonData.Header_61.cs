@@ -28,7 +28,7 @@ namespace FileTools.CommonData
                 get => Default.IsRequired_61;
                 set => Default.IsRequired_61 = value;
             }
-            public double VerticalSpan 
+            public double BoxHeight 
             {
                 get => Default.VerticalSpan61; 
                 set => Default.VerticalSpan61 = value;
@@ -43,12 +43,12 @@ namespace FileTools.CommonData
                 get => Default.TopBottomTHK_61; 
                 set => Default.TopBottomTHK_61 = value; 
             }
-            public double Y_Location
+            public double TubeY
             {
                 get => Default.Y_Location61;
                 set => Default.Y_Location61 = value;
             }
-            public double Xtop 
+            public double TubeOddX 
             { 
                 get => Default.Xtop_61; 
                 set => Default.Xtop_61 = value; 
@@ -63,6 +63,123 @@ namespace FileTools.CommonData
                 get => Default.TubesheetWidth_61;
                 set => Default.TubesheetWidth_61 = value;
             }
+            public double EndPlateTHK
+            {
+                get => Default.EndPlateTHK_61;
+                set => Default.EndPlateTHK_61 = value;
+            }
+            public double TopBtmTHK
+            {
+                get => Default.TopBtmTHK_61;
+                set => Default.TopBtmTHK_61 = value;
+            }
+            public double PlugsheetWidth
+            {
+                get => Default.PlugSheetWidth_61;
+                set => Default.PlugSheetWidth_61 = value;
+            }
+            public double PlugsheetLength
+            {
+                get => Default.PlugSheetLength_61;
+                set => Default.PlugSheetLength_61 = value;
+            }
+            public double EndPlateWidth
+            {
+                get => Default.EndPlateWidth_61;
+                set => Default.EndPlateWidth_61 = value;
+            }
+            public double EndPlateLength
+            {
+                get => Default.EndPlateLength_61;
+                set => Default.EndPlateLength_61 = value;
+            }
+            public double TopBtmWidth
+            {
+                get => Default.TopBtmWidth_61;
+                set => Default.TopBtmWidth_61 = value;
+            }
+            public double TopBtmLength
+            {
+                get => Default.TopBtmLength_61;
+                set => Default.TopBtmLength_61 = value;
+            }
+            public double TubeHoleDiameter 
+            { 
+                get => Default.TubeHoleDiameter_61;
+                set => Default.TubeHoleDiameter_61 = value; 
+            }
+            public double TubeEvenX
+            {
+                get => Default.TubeEvenX_61;
+                set => Default.TubeEvenX_61 = value;
+            }
+            public double TubeRow1Count
+            {
+                get => Default.TubeRow1Count_61;
+                set => Default.TubeRow1Count_61 = value;
+            }
+            public double TubeRow2Count
+            {
+                get => Default.TubeRow2Count_61;
+                set => Default.TubeRow2Count_61 = value;
+            }
+            public double TubeRow3Count
+            {
+                get => Default.TubeRow3Count_61;
+                set => Default.TubeRow3Count_61 = value;
+            }
+            public double TubeRow4Count
+            {
+                get => Default.TubeRow4Count_61;
+                set => Default.TubeRow4Count_61 = value;
+            }
+            public double TubeRow5Count
+            {
+                get => Default.TubeRow5Count_61;
+                set => Default.TubeRow5Count_61 = value;
+            }
+            public double TubeRow6Count
+            {
+                get => Default.TubeRow6Count_61;
+                set => Default.TubeRow6Count_61 = value;
+            }
+            public double TubeRow7Count
+            {
+                get => Default.TubeRow7Count_61;
+                set => Default.TubeRow7Count_61 = value;
+            }
+            public double TubeRow8Count
+            {
+                get => Default.TubeRow8Count_61;
+                set => Default.TubeRow8Count_61 = value;
+            }
+            public double TubeRow9Count
+            {
+                get => Default.TubeRow9Count_61;
+                set => Default.TubeRow9Count_61 = value;
+            }
+            public double TubeRow10Count
+            {
+                get => Default.TubeRow10Count_61;
+                set => Default.TubeRow10Count_61 = value;
+            }
+            public double TubeHPitchOdd
+            {
+                get => Default.TubeHPitchOdd_61;
+                set => Default.TubeHPitchOdd_61 = value;
+            }
+            public double TubeHPitchEven
+            {
+                get => Default.TubeHPitchEven_61;
+                set => Default.TubeHPitchEven_61 = value;
+            }
+
+            public double TubeVPitchOneTwo
+            {
+                get => Default.TubeVPitchOneTwo_61;
+                set => Default.TubeVPitchOneTwo_61 = value;
+            }
+
         }
     }
 }

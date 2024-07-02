@@ -43,20 +43,22 @@ namespace FileTools.Base
                     var componentList = InstantiateComponents(this);
                     LocateComponents(componentList, this);
 
-                    if (Default.Toggle_CreateDrawing)
-                        CreateDrawing(componentList, this);
-
-                    if (Default.Toggle_Save && !Default.Toggle_DeleteFiles)
-                        SaveEverything();
-
-                    if (Default.Toggle_DeleteFiles)
+                    if (!Developer)
                     {
-                        SaveEverything();
-                        Close(AssemblyPath);
-                        DeleteUnusedFiles();
-                        AssemblyDoc = OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
-                    }
+                        if (Toggle_CreateDrawing)
+                            CreateDrawing(componentList, this);
 
+                        if (Toggle_Save && !Toggle_DeleteFiles)
+                            SaveEverything();
+
+                        if (Toggle_DeleteFiles)
+                        {
+                            SaveEverything();
+                            Close(AssemblyPath);
+                            DeleteUnusedFiles();
+                            AssemblyDoc = OpenAssembly(AssemblyPath, AssemblyNumber.ToString(), false);
+                        }
+                    }
                     ForceRebuild(AssemblyDoc);
                     TurnOffBendLines();
                 }

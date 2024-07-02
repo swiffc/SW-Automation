@@ -55,7 +55,7 @@ namespace FileTools.Base
 
 
         // Protected methods
-        protected bool EditDimension(string dimensionName, string treeName, double? newValue)
+        protected bool EditDimension(string dimensionName, string treeName, double? newValue, int valueSafety = 1)
         {
             if (!newValue.HasValue)
             {
@@ -71,6 +71,20 @@ namespace FileTools.Base
 
                 if (dimension != null)
                 {
+                    if (valueSafety == 0 && newValue.Value == 0)
+                    {
+                        newValue = 0.001;
+                    }
+                    else if (valueSafety == 2 && newValue.Value < 2)
+                    {
+                        newValue = 2;
+                    }
+                    else if (valueSafety >= 0 && valueSafety <= 2)
+                    {
+                        // do nothing
+                    }
+                    else throw new Exception("Invalid valueSafety parameter.");
+
                     int message = dimension.SetValue3(Math.Abs(newValue.Value), (int)swSetValueInConfiguration_e.swSetValue_UseCurrentSetting, null);
 
                     if (message == (int)swSetValueReturnStatus_e.swSetValue_Successful)

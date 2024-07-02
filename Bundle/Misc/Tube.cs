@@ -147,7 +147,7 @@ namespace Bundle.Misc
             {
                 var pos = new List<PositionData>();
 
-                double yTranslation = Header61.Y_Location - Header61.Xtop;
+                double yTranslation = Header61.TubeY - Header61.TubeOddX;
                 double zTranslation = Length / 2;
 
                 double[] verticalPitches = new double[]

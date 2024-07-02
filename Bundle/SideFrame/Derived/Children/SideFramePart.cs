@@ -162,7 +162,7 @@ namespace Bundle.SideFrame.Derived.Children
 
                 EditDimension("TubeLength", "sk:KeeperHole", Tube.Length);
                 EditDimension("Camber", "sk:KeeperHole", Tube.Camber);
-                EditDimension("yTube", "sk:KeeperHole", Header61.Y_Location - Header61.Xtop);
+                EditDimension("yTube", "sk:KeeperHole", Header61.TubeY - Header61.TubeOddX);
                 EditDimension("zTube", "sk:KeeperHole", Tube.Length / 2);
                 EditDimension("Count", "KeeperHolesCambered", TubeSupport.Quantity);
             }

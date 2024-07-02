@@ -119,7 +119,11 @@ namespace Bundle
         }
         private void BundleUI_FormClosing(object sender, FormClosingEventArgs e)
         {
-            PleaseWait.Stop();
+            try
+            {
+                PleaseWait.Stop();
+            }
+            catch (Exception) { }
         }
 
         #endregion
@@ -138,9 +142,9 @@ namespace Bundle
                     PlugsheetTHKTextBox = GetControl<TextBox>("tPlugsheetTHK_", i),
                     TopAndBottomPlateTHKTextBox = GetControl<TextBox>("tTopBottomTHK_", i),
                     BoxLengthTextBox = GetControl<TextBox>("tBoxLength_", i),
-                    VerticalSpanTextBox = GetControl<TextBox>("tVerticalSpan_", i),
-                    Y_LocationTextBox = GetControl<TextBox>("tY_Location_", i),
-                    XtopTextBox = GetControl<TextBox>("Xtop_", i)
+                    BoxHeightTextBox = GetControl<TextBox>("tVerticalSpan_", i),
+                    TubeYTextBox = GetControl<TextBox>("tY_Location_", i),
+                    TubeOddXTextBox = GetControl<TextBox>("Xtop_", i)
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -292,14 +296,8 @@ namespace Bundle
 
                 ImportHeaderData_FromPrego();
 
-                SaveSettings();
-                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            }
-            else
-            {
-                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void bBundle_Click(object sender, EventArgs e)
         {
@@ -354,41 +352,41 @@ namespace Bundle
         #region UpdateUI_Headers
         private void Xtop_61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(Xtop_61.Text, x => Header61.Xtop = x);
+            UI_DoubleChanged(Xtop_61.Text, x => Header61.TubeOddX = x);
         }
 
         private void Xtop_62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(Xtop_62.Text, x => Header62.Xtop = x);
+            UI_DoubleChanged(Xtop_62.Text, x => Header62.TubeOddX = x);
         }
         private void tY_Location_61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_61.Text, x => Header61.Y_Location = x);
+            UI_DoubleChanged(tY_Location_61.Text, x => Header61.TubeY = x);
         }
 
         private void tY_Location_62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_62.Text, x => Header62.Y_Location = x);
+            UI_DoubleChanged(tY_Location_62.Text, x => Header62.TubeY = x);
         }
 
         private void tY_Location_63_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_63.Text, x => Header63.Y_Location = x);
+            UI_DoubleChanged(tY_Location_63.Text, x => Header63.TubeY = x);
         }
 
         private void tY_Location_64_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_64.Text, x => Header64.Y_Location = x);
+            UI_DoubleChanged(tY_Location_64.Text, x => Header64.TubeY = x);
         }
 
         private void tY_Location_65_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_65.Text, x => Header65.Y_Location = x);
+            UI_DoubleChanged(tY_Location_65.Text, x => Header65.TubeY = x);
         }
 
         private void tY_Location_66_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_66.Text, x => Header66.Y_Location = x);
+            UI_DoubleChanged(tY_Location_66.Text, x => Header66.TubeY = x);
         }
         private void tTopBottomTHK_61_TextChanged(object sender, EventArgs e)
         {
@@ -450,32 +448,32 @@ namespace Bundle
         }
         private void tVerticalSpan_61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_61.Text, x => Header61.VerticalSpan = x);
+            UI_DoubleChanged(tVerticalSpan_61.Text, x => Header61.BoxHeight = x);
         }
 
         private void tVerticalSpan_62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_62.Text, x => Header62.VerticalSpan = x);
+            UI_DoubleChanged(tVerticalSpan_62.Text, x => Header62.BoxHeight = x);
         }
 
         private void tVerticalSpan_63_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_63.Text, x => Header63.VerticalSpan = x);
+            UI_DoubleChanged(tVerticalSpan_63.Text, x => Header63.BoxHeight = x);
         }
 
         private void tVerticalSpan_64_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_64.Text, x => Header64.VerticalSpan = x);
+            UI_DoubleChanged(tVerticalSpan_64.Text, x => Header64.BoxHeight = x);
         }
 
         private void tVerticalSpan_65_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_65.Text, x => Header65.VerticalSpan = x);
+            UI_DoubleChanged(tVerticalSpan_65.Text, x => Header65.BoxHeight = x);
         }
 
         private void tVerticalSpan_66_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_66.Text, x => Header66.VerticalSpan = x);
+            UI_DoubleChanged(tVerticalSpan_66.Text, x => Header66.BoxHeight = x);
         }
         private void cEnabled61_CheckedChanged(object sender, EventArgs e)
         {

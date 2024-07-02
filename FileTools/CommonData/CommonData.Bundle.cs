@@ -119,12 +119,12 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop;
+                        Header61.TubeY -
+                        Header61.TubeOddX;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop;
+                        Header62.TubeY -
+                        Header62.TubeOddX;
 
                     return (frontPitch - rearPitch) / (TubeLength / 12);
                 }
@@ -134,13 +134,13 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2;
 
                     return (frontPitch - rearPitch) / (TubeLength / 12);
@@ -151,14 +151,14 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3;
 
@@ -170,15 +170,15 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4;
@@ -191,16 +191,16 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4 -
                         FrontVerticalPitch._4_5;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4 -
@@ -214,8 +214,8 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4 -
@@ -223,8 +223,8 @@ namespace FileTools.CommonData
                         FrontVerticalPitch._5_6;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4 -
@@ -239,8 +239,8 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4 -
@@ -249,8 +249,8 @@ namespace FileTools.CommonData
                         FrontVerticalPitch._6_7;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4 -
@@ -266,8 +266,8 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4 -
@@ -277,8 +277,8 @@ namespace FileTools.CommonData
                         FrontVerticalPitch._7_8;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4 -
@@ -295,8 +295,8 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4 -
@@ -307,8 +307,8 @@ namespace FileTools.CommonData
                         FrontVerticalPitch._8_9;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4 -
@@ -326,8 +326,8 @@ namespace FileTools.CommonData
                 get
                 {
                     double frontPitch =
-                        Header61.Y_Location -
-                        Header61.Xtop -
+                        Header61.TubeY -
+                        Header61.TubeOddX -
                         FrontVerticalPitch._1_2 -
                         FrontVerticalPitch._2_3 -
                         FrontVerticalPitch._3_4 -
@@ -339,8 +339,8 @@ namespace FileTools.CommonData
                         FrontVerticalPitch._9_10;
 
                     double rearPitch =
-                        Header62.Y_Location -
-                        Header62.Xtop -
+                        Header62.TubeY -
+                        Header62.TubeOddX -
                         RearVerticalPitch._1_2 -
                         RearVerticalPitch._2_3 -
                         RearVerticalPitch._3_4 -

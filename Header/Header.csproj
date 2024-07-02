@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Box\EndPlate.cs" />
+    <Compile Include="Box\PlugSheet.cs" />
+    <Compile Include="Box\TopBtmPlate.cs" />
     <Compile Include="Box\TubeSheet.cs" />
     <Compile Include="HeaderBase.cs" />
     <Compile Include="HeaderUI.cs">
@@ -56,12 +60,19 @@
     <Compile Include="HeaderUI.Designer.cs">
       <DependentUpon>HeaderUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartialUI\HeaderUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Excel\Excel.csproj">
+      <Project>{e32aa136-9c49-477b-b9a8-5599844656a1}</Project>
+      <Name>Excel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileTools\FileTools.csproj">
       <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
       <Name>FileTools</Name>
@@ -69,6 +80,10 @@
     <ProjectReference Include="..\ModelTools\ModelTools.csproj">
       <Project>{77f3a3a8-8977-4256-9601-46a60473ccc9}</Project>
       <Name>ModelTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SplashScreen\SplashScreen.csproj">
+      <Project>{ee46edef-bd8d-4a71-a075-302d3ae74020}</Project>
+      <Name>SplashScreen</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

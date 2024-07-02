@@ -21,8 +21,8 @@ namespace Bundle.AirSeals.Derived
             get
             {
                 return
-                Header62.Y_Location -
-                Header62.Xtop -
+                Header62.TubeY -
+                Header62.TubeOddX -
                 RearVerticalPitch._1_2 -
                 RearVerticalPitch._2_3 -
                 RearVerticalPitch._3_4 -

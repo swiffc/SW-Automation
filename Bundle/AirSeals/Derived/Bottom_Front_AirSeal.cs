@@ -50,7 +50,7 @@ namespace Bundle.AirSeals.Derived
         {
             get
             {
-                return Header61.Y_Location - Header61.Xtop - Tube.AllFrontVerticalPitches - Tube.OD / 2 - InterferenceClearance;
+                return Header61.TubeY - Header61.TubeOddX - Tube.AllFrontVerticalPitches - Tube.OD / 2 - InterferenceClearance;
             }
         }
         public override string StaticPartNo => "1013";

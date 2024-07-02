@@ -65,48 +65,48 @@ namespace Bundle
                 {
                     EditDimension("Length", "61", Header61.BoxLength);
                     EditDimension("Coverspan", "61", Header61.BoxWidth + Header61.TubesheetTHK + Header61.PlugsheetTHK);
-                    EditDimension("Height", "61", Header61.VerticalSpan + Header61.TopAndBottomPlateTHK * 2);
-                    EditDimension("Y", "61", Header61.Y_Location - Header61.TopAndBottomPlateTHK - Header61.VerticalSpan);
+                    EditDimension("Height", "61", Header61.BoxHeight + Header61.TopAndBottomPlateTHK * 2);
+                    EditDimension("Y", "61", Header61.TubeY - Header61.TopAndBottomPlateTHK - Header61.BoxHeight);
                     EditDimension("Z", "61", TubeLength / 2 - TubeProjection - Header61.TubesheetTHK);
                 }
                 if (Header62.IsRequired)
                 {
                     EditDimension("Length", "62", Header62.BoxLength);
                     EditDimension("Coverspan", "62", Header62.BoxWidth + Header62.TubesheetTHK + Header62.PlugsheetTHK);
-                    EditDimension("Height", "62", Header62.VerticalSpan + Header62.TopAndBottomPlateTHK * 2);
-                    EditDimension("Y", "62", Header62.Y_Location - Header62.TopAndBottomPlateTHK - Header62.VerticalSpan);
+                    EditDimension("Height", "62", Header62.BoxHeight + Header62.TopAndBottomPlateTHK * 2);
+                    EditDimension("Y", "62", Header62.TubeY - Header62.TopAndBottomPlateTHK - Header62.BoxHeight);
                     EditDimension("Z", "62", TubeLength / 2 - TubeProjection - Header62.TubesheetTHK);
                 }
                 if (Header63.IsRequired)
                 {
                     EditDimension("Length", "63", Header63.BoxLength);
                     EditDimension("Coverspan", "63", Header63.BoxWidth + Header63.TubesheetTHK + Header63.PlugsheetTHK);
-                    EditDimension("Height", "63", Header63.VerticalSpan + Header63.TopAndBottomPlateTHK * 2);
-                    EditDimension("Y", "63", Header63.Y_Location - Header63.TopAndBottomPlateTHK - Header63.VerticalSpan);
+                    EditDimension("Height", "63", Header63.BoxHeight + Header63.TopAndBottomPlateTHK * 2);
+                    EditDimension("Y", "63", Header63.TubeY - Header63.TopAndBottomPlateTHK - Header63.BoxHeight);
                     EditDimension("Z", "63", TubeLength / 2 - TubeProjection - Header63.TubesheetTHK);
                 }
                 if (Header64.IsRequired)
                 {
                     EditDimension("Length", "64", Header64.BoxLength);
                     EditDimension("Coverspan", "64", Header64.BoxWidth + Header64.TubesheetTHK + Header64.PlugsheetTHK);
-                    EditDimension("Height", "64", Header64.VerticalSpan + Header64.TopAndBottomPlateTHK * 2);
-                    EditDimension("Y", "64", Header64.Y_Location - Header64.TopAndBottomPlateTHK - Header64.VerticalSpan);
+                    EditDimension("Height", "64", Header64.BoxHeight + Header64.TopAndBottomPlateTHK * 2);
+                    EditDimension("Y", "64", Header64.TubeY - Header64.TopAndBottomPlateTHK - Header64.BoxHeight);
                     EditDimension("Z", "64", TubeLength / 2 - TubeProjection - Header64.TubesheetTHK);
                 }
                 if (Header65.IsRequired)
                 {
                     EditDimension("Length", "65", Header65.BoxLength);
                     EditDimension("Coverspan", "65", Header65.BoxWidth + Header65.TubesheetTHK + Header65.PlugsheetTHK);
-                    EditDimension("Height", "65", Header65.VerticalSpan + Header65.TopAndBottomPlateTHK * 2);
-                    EditDimension("Y", "65", Header65.Y_Location - Header65.TopAndBottomPlateTHK - Header65.VerticalSpan);
+                    EditDimension("Height", "65", Header65.BoxHeight + Header65.TopAndBottomPlateTHK * 2);
+                    EditDimension("Y", "65", Header65.TubeY - Header65.TopAndBottomPlateTHK - Header65.BoxHeight);
                     EditDimension("Z", "65", TubeLength / 2 - TubeProjection - Header65.TubesheetTHK);
                 }
                 if (Header66.IsRequired)
                 {
                     EditDimension("Length", "66", Header66.BoxLength);
                     EditDimension("Coverspan", "66", Header66.BoxWidth + Header66.TubesheetTHK + Header66.PlugsheetTHK);
-                    EditDimension("Height", "66", Header66.VerticalSpan + Header66.TopAndBottomPlateTHK * 2);
-                    EditDimension("Y", "66", Header66.Y_Location - Header66.TopAndBottomPlateTHK - Header66.VerticalSpan);
+                    EditDimension("Height", "66", Header66.BoxHeight + Header66.TopAndBottomPlateTHK * 2);
+                    EditDimension("Y", "66", Header66.TubeY - Header66.TopAndBottomPlateTHK - Header66.BoxHeight);
                     EditDimension("Z", "66", TubeLength / 2 - TubeProjection - Header66.TubesheetTHK);
                 }
             }

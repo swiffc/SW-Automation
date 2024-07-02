@@ -9,43 +9,25 @@ using static HDR.HeaderBase;
 
 namespace HDR.Box
 {
-    internal class TubeSheet : Part
+    internal class PlugSheet : Part
     {
         // Constructor
-        public TubeSheet(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        public PlugSheet(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
 
         // Method overrides
         protected override void Dimensions()
         {
-            // Plate
             EditDimension("Length", "sk:Plate", Length);
             EditDimension("Width", "sk:Plate", Width);
             EditDimension("TopTHK", "sk:Plate", TopBtmPlate.THK);
-            EditDimension("EndTHK", "sk:Plate", EndPlate.THK);
             EditDimension("THK", "Plate", THK);
-
-            // Hole
-            EditDimension("Diameter", "sk:TubeHole", Header.TubeHoleDiameter);
-            EditDimension("OddY", "sk:TubeHole", Header.TubeY);
-            EditDimension("OddX", "sk:TubeHole", Header.TubeOddX);
-            EditDimension("EvenX", "sk:TubeHole", Header.TubeEvenX, 0);
-
-            // Row1
-            EditDimension("OddCount1", "sk:TubeHole", Header.TubeRow1Count);
-            EditDimension("OddSpacing1", "sk:TubeHole", Header.TubeHPitchOdd);
-
-            EditDimension("VerticalPitch_1_2", "sk:TubeHole", Header.TubeVPitchOneTwo, 0);
-
-            // Row2
-            EditDimension("EvenCount2", "sk:TubeHole", Header.TubeRow2Count, 2);
-            EditDimension("EvenSpacing2", "sk:TubeHole", Header.TubeHPitchEven, 0);
         }
 
 
         // Property overrides
         public override bool Enabled => true;
-        public override string StaticPartNo => "TubeSheet";
+        public override string StaticPartNo => "PlugSheet";
         public override Shape RawMaterialShape => Shape.Plate;
         public override string SizeOrThickness => THK.ToString();
         public override List<PositionData> Position
@@ -56,7 +38,7 @@ namespace HDR.Box
                 {
                     double xTranslation = 0;
                     double yTranslation = 0;
-                    double zTranslation = -Header.BoxWidth / 2;
+                    double zTranslation = Header.BoxWidth / 2;
 
                     return new List<PositionData>
                     {
@@ -71,15 +53,15 @@ namespace HDR.Box
         // Wrapper properties
         static public double THK
         {
-            get => Header.TubesheetTHK;
+            get => Header.PlugsheetTHK;
         }
         static public double Length
         {
-            get => Header.TubesheetLength - ModelLengthReduction;
+            get => Header.PlugsheetLength - ModelLengthReduction;
         }
         static public double Width
         {
-            get => Header.TubesheetWidth;
+            get => Header.PlugsheetWidth;
         }
     }
 }

@@ -97,7 +97,7 @@ namespace Bundle.Misc
                     {
                         // For each tube support
                         double distanceFromFrontTubeEnd_Feet = toFirstSupport_Feet + TubeSupportSpacing_Feet * i;
-                        double yRow1 = (Header61.Y_Location - Header61.Xtop) - (SlopePerFoot.Row1 * toFirstSupport_Feet) - (i * SlopePerFoot.Row1 * TubeSupport.Spacing_Feet);
+                        double yRow1 = (Header61.TubeY - Header61.TubeOddX) - (SlopePerFoot.Row1 * toFirstSupport_Feet) - (i * SlopePerFoot.Row1 * TubeSupport.Spacing_Feet);
 
                         for (int j = 0; j < Tube.RowCount; j++)
                         {

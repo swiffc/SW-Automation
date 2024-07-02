@@ -165,6 +165,18 @@ namespace Excel
                 return _pregoToMikeySheet;
             }
         }
+        public static Worksheet InventorSheet
+        {
+            get
+            {
+                if (_inventor == null && PregoDoc != null)
+                {
+                    _inventor = (Worksheet)PregoDoc.Sheets["Prego_to_Inv"];
+                }
+                return _inventor;
+            }
+        }
+
         public static int Version
         {
             get
@@ -309,5 +321,6 @@ namespace Excel
         static Worksheet _sketchCalcsSheet;
         static Worksheet _inputsCalcsSheet;
         static Worksheet _pregoToMikeySheet;
+        static Worksheet _inventor;
     }
 }

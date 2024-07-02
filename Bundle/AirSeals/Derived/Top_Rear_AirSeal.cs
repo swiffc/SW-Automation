@@ -16,7 +16,7 @@ namespace Bundle.AirSeals.Derived
         {
             get
             {
-                return SideFramePart.Depth - (Header62.Y_Location - Header62.Xtop + Tube.OD / 2 + InterferenceClearance);
+                return SideFramePart.Depth - (Header62.TubeY - Header62.TubeOddX + Tube.OD / 2 + InterferenceClearance);
             }
         }
 

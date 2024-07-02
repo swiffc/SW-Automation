@@ -156,7 +156,7 @@ namespace Bundle.TubeSupports
             var yTranslations = new List<double>();
 
             // Find Y translation if no slope last pass
-            double yTranslation = Header61.Y_Location - Header61.Xtop - Tube.AllFrontVerticalPitches - Tube.FinOD / 2;
+            double yTranslation = Header61.TubeY - Header61.TubeOddX - Tube.AllFrontVerticalPitches - Tube.FinOD / 2;
 
             // Find the slope of last tube row
             double lastRowSlope = 0;
