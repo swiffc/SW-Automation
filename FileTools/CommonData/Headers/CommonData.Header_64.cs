@@ -228,6 +228,11 @@ namespace FileTools.CommonData
                 get => Default.TubeVPitchElevenTwelve_64;
                 set => Default.TubeVPitchElevenTwelve_64 = value;
             }
+            public bool IsBusted
+            {
+                get => Default.IsBusted_64;
+                set => Default.IsBusted_64 = value;
+            }
         }
     }
 }

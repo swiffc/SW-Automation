@@ -4738,5 +4738,77 @@ namespace FileTools.Properties {
                 this["TubeVPitchElevenTwelve_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBusted_61 {
+            get {
+                return ((bool)(this["IsBusted_61"]));
+            }
+            set {
+                this["IsBusted_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBusted_62 {
+            get {
+                return ((bool)(this["IsBusted_62"]));
+            }
+            set {
+                this["IsBusted_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBusted_63 {
+            get {
+                return ((bool)(this["IsBusted_63"]));
+            }
+            set {
+                this["IsBusted_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBusted_64 {
+            get {
+                return ((bool)(this["IsBusted_64"]));
+            }
+            set {
+                this["IsBusted_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBusted_65 {
+            get {
+                return ((bool)(this["IsBusted_65"]));
+            }
+            set {
+                this["IsBusted_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBusted_66 {
+            get {
+                return ((bool)(this["IsBusted_66"]));
+            }
+            set {
+                this["IsBusted_66"] = value;
+            }
+        }
     }
 }

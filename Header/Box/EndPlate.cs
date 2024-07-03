@@ -62,5 +62,6 @@ namespace HDR.Box
         {
             get => Header.EndPlateWidth > Header.BoxWidth ? Header.BoxWidth : Header.EndPlateWidth;
         }
+        static public bool IsBusted => Header.IsBusted;
     }
 }

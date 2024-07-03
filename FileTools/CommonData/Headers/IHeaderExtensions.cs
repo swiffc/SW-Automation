@@ -63,5 +63,7 @@ namespace FileTools.Base
         double TubeVPitchNineTen { get; set; }
         double TubeVPitchTenEleven { get; set; }
         double TubeVPitchElevenTwelve { get; set; }
+
+        bool IsBusted { get; set; }
     }
 }

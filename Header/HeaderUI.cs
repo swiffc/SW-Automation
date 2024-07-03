@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using static Excel.StaticHelpers;
 using static FileTools.CommonData.CommonData;
+using static HDR.HeaderBase;
 
 namespace HDR
 {
@@ -10,7 +11,7 @@ namespace HDR
         public HeaderUI()
         {
             InitializeComponent();
-
+            var v = Bust_63;
             #region HeaderData Event Handlers Description
             // HeaderData event handlers
             //    To use:
@@ -33,16 +34,5 @@ namespace HDR
             Header_TextChanged(this, "Tube");
 
         }
-
-        private void HeaderUI_Load(object sender, EventArgs e)
-        {
-            job_Box.Text = Project;
-            textBox_Bank.Text = Bank.ToString();
-
-            LoadAllHeaderData();
-        }
-
-
-
     }
 }

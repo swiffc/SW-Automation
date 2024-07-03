@@ -1,7 +1,9 @@
 ﻿using FileTools.Base;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using static FileTools.CommonData.CommonData;
+using static Excel.Prego;
 namespace HDR
 {
     internal class HeaderBase : MainAssembly
@@ -16,6 +18,18 @@ namespace HDR
             //, typeof(Type)
             )
         { }
+
+
+        // ???
+        internal static List<double> Bust_63
+        {
+            get
+            {
+                var bustedSpans_63 = CellNameColumnArray("AAJ5", "AAJ43");
+                var list_63 = CellDoubleList(InputsCalcsSheet, bustedSpans_63);
+                return list_63;
+            }
+        }
 
 
         // Debugging

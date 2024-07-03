@@ -204,6 +204,49 @@ namespace Excel
 
 
         // Public methods
+        public static List<double> CellDoubleList(Worksheet sheet, params string[] cellNames)
+        {
+            var list = new List<double>();
+
+            foreach (var cellName in cellNames)
+            {
+                double cellValue = CellDouble(sheet, cellName);
+                if (cellValue != 0)
+                    list.Add(cellValue);
+            }
+
+            return list;
+        }
+        public static string[] CellNameColumnArray(string firstCell, string lastCell)
+        {
+            // Extract the column letters and row numbers from the cell names
+            var columnMatch = Regex.Match(firstCell, @"[A-Za-z]+");
+            var firstRowMatch = Regex.Match(firstCell, @"\d+");
+            var lastRowMatch = Regex.Match(lastCell, @"\d+");
+
+            if (!columnMatch.Success || !firstRowMatch.Success || !lastRowMatch.Success)
+            {
+                throw new ArgumentException("Invalid cell name format.");
+            }
+
+            string column = columnMatch.Value;
+            int firstRow = int.Parse(firstRowMatch.Value);
+            int lastRow = int.Parse(lastRowMatch.Value);
+
+            if (lastRow < firstRow)
+            {
+                throw new ArgumentException("The last cell must be after the first cell in the sequence.");
+            }
+
+            // Generate the array of cell names
+            var cellNames = new List<string>();
+            for (int row = firstRow; row <= lastRow; row++)
+            {
+                cellNames.Add($"{column}{row}");
+            }
+
+            return cellNames.ToArray();
+        }
         public static string CellString(Worksheet sheet, params string[] cellNames)
         {
             for (int i = 0; i < cellNames.Length; i++)
