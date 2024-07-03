@@ -229,7 +229,7 @@ namespace Excel
                 {
                     if (cellValue is double != true)
                     {
-                        if (cellValue == "")
+                        if (cellValue == "" && i == cellNames.Length)
                             return 0;
 
                         bool success = TryParseCellValue(cellValue, out double? result);
@@ -240,8 +240,58 @@ namespace Excel
                         return cellValue;
                 }
             }
-            throw new FormatException("The cell value does not contain a valid number.");
+            return 0;
         }
+        public static void CleanUp()
+        {
+            if (_inputSheet != null)
+            {
+                Marshal.ReleaseComObject(_inputSheet);
+                _inputSheet = null;
+            }
+
+            if (_sketchCalcsSheet != null)
+            {
+                Marshal.ReleaseComObject(_sketchCalcsSheet);
+                _sketchCalcsSheet = null;
+            }
+
+            if (_inputsCalcsSheet != null)
+            {
+                Marshal.ReleaseComObject(_inputsCalcsSheet);
+                _inputsCalcsSheet = null;
+            }
+
+            if (_pregoToMikeySheet != null)
+            {
+                Marshal.ReleaseComObject(_pregoToMikeySheet);
+                _pregoToMikeySheet = null;
+            }
+
+            if (_inventor != null)
+            {
+                Marshal.ReleaseComObject(_inventor);
+                _inventor = null;
+            }
+
+            if (_pregoDoc != null)
+            {
+                _pregoDoc.Close(false);
+                Marshal.ReleaseComObject(_pregoDoc);
+                _pregoDoc = null;
+            }
+
+            //if (_excel != null)
+            //{
+            //    _excel.Quit();
+            //    Marshal.ReleaseComObject(_excel);
+            //    _excel = null;
+            //}
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
 
 
         // Private methods
@@ -260,31 +310,6 @@ namespace Excel
                 result = null;
                 return false;
             }
-        }
-        static void CleanUp()
-        {
-            if (_inputSheet != null)
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(_inputSheet);
-                _inputSheet = null;
-            }
-
-            if (_pregoDoc != null)
-            {
-                _pregoDoc.Close(false);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(_pregoDoc);
-                _pregoDoc = null;
-            }
-
-            if (_excel != null)
-            {
-                //_excel.Quit();
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(_excel);
-                _excel = null;
-            }
-
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
         }
         static dynamic CellValue(int i, Worksheet sheet, params string[] cellNames)
         {
@@ -316,7 +341,7 @@ namespace Excel
 
         // Backing fields
         static Application _excel;
-        static Workbook _pregoDoc;
+        static public Workbook _pregoDoc;
         static Worksheet _inputSheet;
         static Worksheet _sketchCalcsSheet;
         static Worksheet _inputsCalcsSheet;

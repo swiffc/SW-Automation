@@ -13,6 +13,10 @@ using FileTools.Base;
 using System.Reflection;
 using SplashScreen;
 using static Excel.StaticHelpers;
+using Excel;
+using static FileTools.StaticFileTools;
+using static Excel.Prego;
+using System.Runtime.InteropServices;
 
 namespace HDR
 {
@@ -35,14 +39,17 @@ namespace HDR
                 PleaseWait.Stop();
             }
             catch (Exception) { }
+            Prego.CleanUp();
         }
         private void job_Box_TextChanged(object sender, EventArgs e)
         {
             UI_StringChanged(job_Box.Text, x => Project = x);
+            Prego.CleanUp();
         }
         private void textBox_Bank_TextChanged(object sender, EventArgs e)
         {
             UI_CharChanged(textBox_Bank.Text, x => Bank = x);
+            Prego.CleanUp();
         }
         private void cEnabled61_CheckedChanged(object sender, EventArgs e)
         {
@@ -77,6 +84,8 @@ namespace HDR
         private void bImportPrego_Click(object sender, EventArgs e)
         {
             ImportHeaderData_FromPrego();
+
+            CleanUp();
         }
         private void bCreateUpdate_Click(object sender, EventArgs e)
         {
@@ -84,8 +93,51 @@ namespace HDR
             {
                 HeaderBase.Header = Header61;
                 new HeaderBase(61, "Header");
+            }    
+        }
+        private void test62_Click(object sender, EventArgs e)
+        {
+            if (Header62.IsRequired)
+            {
+                HeaderBase.Header = Header62;
+                new HeaderBase(61, "Header");
             }
-                
+        }
+
+        private void test63_Click(object sender, EventArgs e)
+        {
+            if (Header63.IsRequired)
+            {
+                HeaderBase.Header = Header63;
+                new HeaderBase(61, "Header");
+            }
+        }
+
+        private void test64_Click(object sender, EventArgs e)
+        {
+            if (Header64.IsRequired)
+            {
+                HeaderBase.Header = Header64;
+                new HeaderBase(61, "Header");
+            }
+        }
+
+        private void test65_Click(object sender, EventArgs e)
+        {
+            if (Header65.IsRequired)
+            {
+                HeaderBase.Header = Header65;
+                new HeaderBase(61, "Header");
+            }
+        }
+
+        private void test66_Click(object sender, EventArgs e)
+        {
+            if (Header66.IsRequired)
+            {
+                HeaderBase.Header = Header66;
+                new HeaderBase(61, "Header");
+            }
         }
     }
 }

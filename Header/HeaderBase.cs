@@ -8,7 +8,7 @@ namespace HDR
     {
         // Static properties
         public static IHeaderExtensions Header { get; set; }
-        static public double ModelLengthReduction => 4;
+        static public double ModelLengthReduction => 6;
 
 
         // Constructor

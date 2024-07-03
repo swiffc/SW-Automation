@@ -179,6 +179,56 @@ namespace FileTools.CommonData
                 get => Default.TubeVPitchOneTwo_61;
                 set => Default.TubeVPitchOneTwo_61 = value;
             }
+            public double TubeVPitchTwoThree
+            {
+                get => Default.TubeVPitchTwoThree_61;
+                set => Default.TubeVPitchTwoThree_61 = value;
+            }
+            public double TubeVPitchThreeFour
+            {
+                get => Default.TubeVPitchThreeFour_61;
+                set => Default.TubeVPitchThreeFour_61 = value;
+            }
+            public double TubeVPitchFourFive
+            {
+                get => Default.TubeVPitchFourFive_61;
+                set => Default.TubeVPitchFourFive_61 = value;
+            }
+            public double TubeVPitchFiveSix
+            {
+                get => Default.TubeVPitchFiveSix_61;
+                set => Default.TubeVPitchFiveSix_61 = value;
+            }
+            public double TubeVPitchSixSeven
+            {
+                get => Default.TubeVPitchSixSeven_61;
+                set => Default.TubeVPitchSixSeven_61 = value;
+            }
+            public double TubeVPitchSevenEight
+            {
+                get => Default.TubeVPitchSevenEight_61;
+                set => Default.TubeVPitchSevenEight_61 = value;
+            }
+            public double TubeVPitchEightNine
+            {
+                get => Default.TubeVPitchEightNine_61;
+                set => Default.TubeVPitchEightNine_61 = value;
+            }
+            public double TubeVPitchNineTen
+            {
+                get => Default.TubeVPitchNineTen_61;
+                set => Default.TubeVPitchNineTen_61 = value;
+            }
+            public double TubeVPitchTenEleven
+            {
+                get => Default.TubeVPitchTenEleven_61;
+                set => Default.TubeVPitchTenEleven_61 = value;
+            }
+            public double TubeVPitchElevenTwelve
+            {
+                get => Default.TubeVPitchElevenTwelve_61;
+                set => Default.TubeVPitchElevenTwelve_61 = value;
+            }
 
         }
     }

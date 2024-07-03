@@ -31,34 +31,195 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.tTubeVPitchElevenTwelve_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchElevenTwelve_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchElevenTwelve_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchElevenTwelve_63 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.tTubeVPitchElevenTwelve_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchElevenTwelve_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTenEleven_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTenEleven_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTenEleven_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTenEleven_63 = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.tTubeVPitchTenEleven_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTenEleven_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchNineTen_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchNineTen_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchNineTen_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchNineTen_63 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tTubeVPitchNineTen_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchNineTen_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchEightNine_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchEightNine_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchEightNine_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchEightNine_63 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tTubeVPitchEightNine_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchEightNine_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSevenEight_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSevenEight_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSevenEight_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSevenEight_63 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.tTubeVPitchSevenEight_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSevenEight_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSixSeven_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSixSeven_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSixSeven_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSixSeven_63 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.tTubeVPitchSixSeven_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchSixSeven_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFiveSix_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFiveSix_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFiveSix_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFiveSix_63 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tTubeVPitchFiveSix_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFiveSix_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFourFive_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFourFive_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFourFive_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFourFive_63 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tTubeVPitchFourFive_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchFourFive_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchThreeFour_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchThreeFour_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchThreeFour_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchThreeFour_63 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tTubeVPitchThreeFour_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchThreeFour_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTwoThree_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTwoThree_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTwoThree_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTwoThree_63 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tTubeVPitchTwoThree_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchTwoThree_65 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchOneTwo_66 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchOneTwo_62 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchOneTwo_61 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchOneTwo_63 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.tTubeVPitchOneTwo_64 = new System.Windows.Forms.TextBox();
+            this.tTubeVPitchOneTwo_65 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchEven_66 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchEven_62 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchEven_61 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchEven_63 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.tTubeHPitchEven_64 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchEven_65 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchOdd_66 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchOdd_62 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchOdd_61 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchOdd_63 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tTubeHPitchOdd_64 = new System.Windows.Forms.TextBox();
+            this.tTubeHPitchOdd_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow2Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow2Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow2Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow2Count_63 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tTubeRow2Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow2Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow1Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow1Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow1Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow1Count_63 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tTubeRow1Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow1Count_65 = new System.Windows.Forms.TextBox();
             this.tTubeHoleDiameter_66 = new System.Windows.Forms.TextBox();
             this.tTubeHoleDiameter_62 = new System.Windows.Forms.TextBox();
+            this.tTubesheetLength_66 = new System.Windows.Forms.TextBox();
+            this.tTubesheetLength_65 = new System.Windows.Forms.TextBox();
+            this.tTubesheetWidth_66 = new System.Windows.Forms.TextBox();
+            this.tTubesheetLength_64 = new System.Windows.Forms.TextBox();
+            this.tTubesheetWidth_65 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tTubeHoleDiameter_61 = new System.Windows.Forms.TextBox();
+            this.tTubesheetLength_63 = new System.Windows.Forms.TextBox();
+            this.tTubesheetWidth_64 = new System.Windows.Forms.TextBox();
+            this.tTubesheetLength_61 = new System.Windows.Forms.TextBox();
             this.tTubeHoleDiameter_63 = new System.Windows.Forms.TextBox();
+            this.tEndPlateLength_66 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tTubesheetLength_62 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.tEndPlateLength_62 = new System.Windows.Forms.TextBox();
+            this.tTubesheetWidth_63 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetLength_65 = new System.Windows.Forms.TextBox();
             this.tTubeHoleDiameter_64 = new System.Windows.Forms.TextBox();
+            this.tEndPlateLength_61 = new System.Windows.Forms.TextBox();
+            this.tTubesheetWidth_61 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetLength_64 = new System.Windows.Forms.TextBox();
             this.tTubeHoleDiameter_65 = new System.Windows.Forms.TextBox();
+            this.tEndPlateLength_63 = new System.Windows.Forms.TextBox();
+            this.tTubesheetWidth_62 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tTubeY_66 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tPlugsheetWidth_65 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetLength_63 = new System.Windows.Forms.TextBox();
             this.tTubeY_62 = new System.Windows.Forms.TextBox();
+            this.tEndPlateLength_64 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetWidth_64 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetLength_61 = new System.Windows.Forms.TextBox();
             this.tTubeY_61 = new System.Windows.Forms.TextBox();
+            this.tEndPlateLength_65 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tPlugsheetLength_62 = new System.Windows.Forms.TextBox();
             this.tTubeY_63 = new System.Windows.Forms.TextBox();
+            this.tTopBtmLength_66 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetWidth_63 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetLength_66 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.tTopBtmLength_62 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetWidth_61 = new System.Windows.Forms.TextBox();
+            this.tTopBtmLength_65 = new System.Windows.Forms.TextBox();
             this.tTubeY_64 = new System.Windows.Forms.TextBox();
+            this.tTopBtmLength_61 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetWidth_62 = new System.Windows.Forms.TextBox();
+            this.tTopBtmLength_64 = new System.Windows.Forms.TextBox();
             this.tTubeY_65 = new System.Windows.Forms.TextBox();
+            this.tTopBtmLength_63 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetWidth_66 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tTubeEvenX_66 = new System.Windows.Forms.TextBox();
+            this.tTopBtmWidth_65 = new System.Windows.Forms.TextBox();
             this.tTubeEvenX_62 = new System.Windows.Forms.TextBox();
+            this.tTopBtmWidth_64 = new System.Windows.Forms.TextBox();
             this.tTubeEvenX_61 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tTubeEvenX_63 = new System.Windows.Forms.TextBox();
+            this.tTopBtmWidth_63 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.tTopBtmWidth_61 = new System.Windows.Forms.TextBox();
             this.tTubeEvenX_64 = new System.Windows.Forms.TextBox();
+            this.tTopBtmWidth_62 = new System.Windows.Forms.TextBox();
             this.tTubeEvenX_65 = new System.Windows.Forms.TextBox();
+            this.tTopBtmWidth_66 = new System.Windows.Forms.TextBox();
             this.tTubeOddX_66 = new System.Windows.Forms.TextBox();
+            this.tEndPlateWidth_65 = new System.Windows.Forms.TextBox();
             this.tTubeOddX_62 = new System.Windows.Forms.TextBox();
+            this.tEndPlateWidth_64 = new System.Windows.Forms.TextBox();
             this.tTubeOddX_61 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tTubeOddX_63 = new System.Windows.Forms.TextBox();
+            this.tEndPlateWidth_63 = new System.Windows.Forms.TextBox();
             this.text1112 = new System.Windows.Forms.Label();
+            this.tEndPlateWidth_61 = new System.Windows.Forms.TextBox();
             this.tTubeOddX_64 = new System.Windows.Forms.TextBox();
+            this.tEndPlateWidth_62 = new System.Windows.Forms.TextBox();
             this.tTubeOddX_65 = new System.Windows.Forms.TextBox();
+            this.tEndPlateWidth_66 = new System.Windows.Forms.TextBox();
             this.tBoxHeight_66 = new System.Windows.Forms.TextBox();
             this.tBoxHeight_62 = new System.Windows.Forms.TextBox();
             this.tBoxHeight_61 = new System.Windows.Forms.TextBox();
@@ -67,48 +228,6 @@
             this.tBoxHeight_64 = new System.Windows.Forms.TextBox();
             this.tBoxHeight_65 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.tEndPlateLength_66 = new System.Windows.Forms.TextBox();
-            this.tEndPlateLength_62 = new System.Windows.Forms.TextBox();
-            this.tEndPlateLength_61 = new System.Windows.Forms.TextBox();
-            this.tEndPlateLength_63 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tEndPlateLength_64 = new System.Windows.Forms.TextBox();
-            this.tEndPlateLength_65 = new System.Windows.Forms.TextBox();
-            this.tTopBtmLength_66 = new System.Windows.Forms.TextBox();
-            this.tTopBtmLength_62 = new System.Windows.Forms.TextBox();
-            this.tTopBtmLength_61 = new System.Windows.Forms.TextBox();
-            this.tTopBtmLength_63 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tTopBtmLength_64 = new System.Windows.Forms.TextBox();
-            this.tTopBtmLength_65 = new System.Windows.Forms.TextBox();
-            this.tEndPlateWidth_66 = new System.Windows.Forms.TextBox();
-            this.tEndPlateWidth_62 = new System.Windows.Forms.TextBox();
-            this.tEndPlateWidth_61 = new System.Windows.Forms.TextBox();
-            this.tEndPlateWidth_63 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tEndPlateWidth_64 = new System.Windows.Forms.TextBox();
-            this.tEndPlateWidth_65 = new System.Windows.Forms.TextBox();
-            this.tTopBtmWidth_66 = new System.Windows.Forms.TextBox();
-            this.tTopBtmWidth_62 = new System.Windows.Forms.TextBox();
-            this.tTopBtmWidth_61 = new System.Windows.Forms.TextBox();
-            this.tTopBtmWidth_63 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tTopBtmWidth_64 = new System.Windows.Forms.TextBox();
-            this.tTopBtmWidth_65 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetWidth_66 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetWidth_62 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetWidth_61 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetWidth_63 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tPlugsheetWidth_64 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetWidth_65 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetLength_66 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetLength_62 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetLength_61 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetLength_63 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tPlugsheetLength_64 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetLength_65 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_66 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_62 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_61 = new System.Windows.Forms.TextBox();
@@ -137,20 +256,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tEndPlateTHK_64 = new System.Windows.Forms.TextBox();
             this.tEndPlateTHK_65 = new System.Windows.Forms.TextBox();
-            this.tTubesheetWidth_66 = new System.Windows.Forms.TextBox();
-            this.tTubesheetWidth_62 = new System.Windows.Forms.TextBox();
-            this.tTubesheetWidth_61 = new System.Windows.Forms.TextBox();
-            this.tTubesheetWidth_63 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tTubesheetWidth_64 = new System.Windows.Forms.TextBox();
-            this.tTubesheetWidth_65 = new System.Windows.Forms.TextBox();
-            this.tTubesheetLength_66 = new System.Windows.Forms.TextBox();
-            this.tTubesheetLength_62 = new System.Windows.Forms.TextBox();
-            this.tTubesheetLength_61 = new System.Windows.Forms.TextBox();
-            this.tTubesheetLength_63 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tTubesheetLength_64 = new System.Windows.Forms.TextBox();
-            this.tTubesheetLength_65 = new System.Windows.Forms.TextBox();
             this.tTubesheetTHK_66 = new System.Windows.Forms.TextBox();
             this.tTubesheetTHK_62 = new System.Windows.Forms.TextBox();
             this.tTubesheetTHK_61 = new System.Windows.Forms.TextBox();
@@ -179,97 +284,11 @@
             this.textBox_Bank = new System.Windows.Forms.TextBox();
             this.bImportPrego = new System.Windows.Forms.Button();
             this.bCreateUpdate = new System.Windows.Forms.Button();
-            this.tTubeRow1Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow1Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow1Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow1Count_63 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tTubeRow1Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow1Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow2Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow2Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow2Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow2Count_63 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tTubeRow2Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow2Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchOdd_66 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchOdd_62 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchOdd_61 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchOdd_63 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.tTubeHPitchOdd_64 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchOdd_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_63 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.tTubeRow10Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_63 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.tTubeRow9Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_63 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.tTubeRow8Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_63 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.tTubeRow7Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_63 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.tTubeRow6Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_63 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.tTubeRow5Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_63 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tTubeRow4Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_63 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.tTubeRow3Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchEven_66 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchEven_62 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchEven_61 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchEven_63 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.tTubeHPitchEven_64 = new System.Windows.Forms.TextBox();
-            this.tTubeHPitchEven_65 = new System.Windows.Forms.TextBox();
-            this.tTubeVPitchOneTwo_66 = new System.Windows.Forms.TextBox();
-            this.tTubeVPitchOneTwo_62 = new System.Windows.Forms.TextBox();
-            this.tTubeVPitchOneTwo_61 = new System.Windows.Forms.TextBox();
-            this.tTubeVPitchOneTwo_63 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.tTubeVPitchOneTwo_64 = new System.Windows.Forms.TextBox();
-            this.tTubeVPitchOneTwo_65 = new System.Windows.Forms.TextBox();
+            this.test62 = new System.Windows.Forms.Button();
+            this.test63 = new System.Windows.Forms.Button();
+            this.test64 = new System.Windows.Forms.Button();
+            this.test65 = new System.Windows.Forms.Button();
+            this.test66 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -302,6 +321,76 @@
             // HeaderPanel
             // 
             this.HeaderPanel.AutoScroll = true;
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchElevenTwelve_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchElevenTwelve_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchElevenTwelve_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchElevenTwelve_63);
+            this.HeaderPanel.Controls.Add(this.label40);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchElevenTwelve_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchElevenTwelve_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTenEleven_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTenEleven_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTenEleven_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTenEleven_63);
+            this.HeaderPanel.Controls.Add(this.label39);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTenEleven_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTenEleven_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchNineTen_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchNineTen_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchNineTen_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchNineTen_63);
+            this.HeaderPanel.Controls.Add(this.label35);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchNineTen_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchNineTen_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchEightNine_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchEightNine_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchEightNine_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchEightNine_63);
+            this.HeaderPanel.Controls.Add(this.label34);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchEightNine_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchEightNine_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSevenEight_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSevenEight_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSevenEight_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSevenEight_63);
+            this.HeaderPanel.Controls.Add(this.label33);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSevenEight_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSevenEight_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSixSeven_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSixSeven_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSixSeven_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSixSeven_63);
+            this.HeaderPanel.Controls.Add(this.label32);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSixSeven_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchSixSeven_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFiveSix_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFiveSix_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFiveSix_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFiveSix_63);
+            this.HeaderPanel.Controls.Add(this.label31);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFiveSix_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFiveSix_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFourFive_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFourFive_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFourFive_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFourFive_63);
+            this.HeaderPanel.Controls.Add(this.label30);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFourFive_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchFourFive_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchThreeFour_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchThreeFour_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchThreeFour_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchThreeFour_63);
+            this.HeaderPanel.Controls.Add(this.label29);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchThreeFour_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchThreeFour_65);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTwoThree_66);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTwoThree_62);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTwoThree_61);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTwoThree_63);
+            this.HeaderPanel.Controls.Add(this.label28);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTwoThree_64);
+            this.HeaderPanel.Controls.Add(this.tTubeVPitchTwoThree_65);
             this.HeaderPanel.Controls.Add(this.tTubeVPitchOneTwo_66);
             this.HeaderPanel.Controls.Add(this.tTubeVPitchOneTwo_62);
             this.HeaderPanel.Controls.Add(this.tTubeVPitchOneTwo_61);
@@ -469,6 +558,876 @@
             this.HeaderPanel.Size = new System.Drawing.Size(614, 395);
             this.HeaderPanel.TabIndex = 125;
             // 
+            // tTubeVPitchElevenTwelve_66
+            // 
+            this.tTubeVPitchElevenTwelve_66.Location = new System.Drawing.Point(3, 871);
+            this.tTubeVPitchElevenTwelve_66.Name = "tTubeVPitchElevenTwelve_66";
+            this.tTubeVPitchElevenTwelve_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchElevenTwelve_66.TabIndex = 422;
+            this.tTubeVPitchElevenTwelve_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchElevenTwelve_62
+            // 
+            this.tTubeVPitchElevenTwelve_62.Location = new System.Drawing.Point(289, 871);
+            this.tTubeVPitchElevenTwelve_62.Name = "tTubeVPitchElevenTwelve_62";
+            this.tTubeVPitchElevenTwelve_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchElevenTwelve_62.TabIndex = 417;
+            this.tTubeVPitchElevenTwelve_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchElevenTwelve_61
+            // 
+            this.tTubeVPitchElevenTwelve_61.Location = new System.Drawing.Point(362, 871);
+            this.tTubeVPitchElevenTwelve_61.Name = "tTubeVPitchElevenTwelve_61";
+            this.tTubeVPitchElevenTwelve_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchElevenTwelve_61.TabIndex = 416;
+            this.tTubeVPitchElevenTwelve_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchElevenTwelve_63
+            // 
+            this.tTubeVPitchElevenTwelve_63.Location = new System.Drawing.Point(219, 871);
+            this.tTubeVPitchElevenTwelve_63.Name = "tTubeVPitchElevenTwelve_63";
+            this.tTubeVPitchElevenTwelve_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchElevenTwelve_63.TabIndex = 419;
+            this.tTubeVPitchElevenTwelve_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.White;
+            this.label40.Location = new System.Drawing.Point(432, 874);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(133, 13);
+            this.label40.TabIndex = 418;
+            this.label40.Text = "V-PITCH  Rows 11 and 12";
+            // 
+            // tTubeVPitchElevenTwelve_64
+            // 
+            this.tTubeVPitchElevenTwelve_64.Location = new System.Drawing.Point(146, 871);
+            this.tTubeVPitchElevenTwelve_64.Name = "tTubeVPitchElevenTwelve_64";
+            this.tTubeVPitchElevenTwelve_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchElevenTwelve_64.TabIndex = 420;
+            this.tTubeVPitchElevenTwelve_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchElevenTwelve_65
+            // 
+            this.tTubeVPitchElevenTwelve_65.Location = new System.Drawing.Point(76, 871);
+            this.tTubeVPitchElevenTwelve_65.Name = "tTubeVPitchElevenTwelve_65";
+            this.tTubeVPitchElevenTwelve_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchElevenTwelve_65.TabIndex = 421;
+            this.tTubeVPitchElevenTwelve_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTenEleven_66
+            // 
+            this.tTubeVPitchTenEleven_66.Location = new System.Drawing.Point(3, 845);
+            this.tTubeVPitchTenEleven_66.Name = "tTubeVPitchTenEleven_66";
+            this.tTubeVPitchTenEleven_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchTenEleven_66.TabIndex = 415;
+            this.tTubeVPitchTenEleven_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTenEleven_62
+            // 
+            this.tTubeVPitchTenEleven_62.Location = new System.Drawing.Point(289, 845);
+            this.tTubeVPitchTenEleven_62.Name = "tTubeVPitchTenEleven_62";
+            this.tTubeVPitchTenEleven_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchTenEleven_62.TabIndex = 410;
+            this.tTubeVPitchTenEleven_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTenEleven_61
+            // 
+            this.tTubeVPitchTenEleven_61.Location = new System.Drawing.Point(362, 845);
+            this.tTubeVPitchTenEleven_61.Name = "tTubeVPitchTenEleven_61";
+            this.tTubeVPitchTenEleven_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchTenEleven_61.TabIndex = 409;
+            this.tTubeVPitchTenEleven_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTenEleven_63
+            // 
+            this.tTubeVPitchTenEleven_63.Location = new System.Drawing.Point(219, 845);
+            this.tTubeVPitchTenEleven_63.Name = "tTubeVPitchTenEleven_63";
+            this.tTubeVPitchTenEleven_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchTenEleven_63.TabIndex = 412;
+            this.tTubeVPitchTenEleven_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(432, 848);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(133, 13);
+            this.label39.TabIndex = 411;
+            this.label39.Text = "V-PITCH  Rows 10 and 11";
+            // 
+            // tTubeVPitchTenEleven_64
+            // 
+            this.tTubeVPitchTenEleven_64.Location = new System.Drawing.Point(146, 845);
+            this.tTubeVPitchTenEleven_64.Name = "tTubeVPitchTenEleven_64";
+            this.tTubeVPitchTenEleven_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchTenEleven_64.TabIndex = 413;
+            this.tTubeVPitchTenEleven_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTenEleven_65
+            // 
+            this.tTubeVPitchTenEleven_65.Location = new System.Drawing.Point(76, 845);
+            this.tTubeVPitchTenEleven_65.Name = "tTubeVPitchTenEleven_65";
+            this.tTubeVPitchTenEleven_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchTenEleven_65.TabIndex = 414;
+            this.tTubeVPitchTenEleven_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchNineTen_66
+            // 
+            this.tTubeVPitchNineTen_66.Location = new System.Drawing.Point(3, 819);
+            this.tTubeVPitchNineTen_66.Name = "tTubeVPitchNineTen_66";
+            this.tTubeVPitchNineTen_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchNineTen_66.TabIndex = 408;
+            this.tTubeVPitchNineTen_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchNineTen_62
+            // 
+            this.tTubeVPitchNineTen_62.Location = new System.Drawing.Point(289, 819);
+            this.tTubeVPitchNineTen_62.Name = "tTubeVPitchNineTen_62";
+            this.tTubeVPitchNineTen_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchNineTen_62.TabIndex = 403;
+            this.tTubeVPitchNineTen_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchNineTen_61
+            // 
+            this.tTubeVPitchNineTen_61.Location = new System.Drawing.Point(362, 819);
+            this.tTubeVPitchNineTen_61.Name = "tTubeVPitchNineTen_61";
+            this.tTubeVPitchNineTen_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchNineTen_61.TabIndex = 402;
+            this.tTubeVPitchNineTen_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchNineTen_63
+            // 
+            this.tTubeVPitchNineTen_63.Location = new System.Drawing.Point(219, 819);
+            this.tTubeVPitchNineTen_63.Name = "tTubeVPitchNineTen_63";
+            this.tTubeVPitchNineTen_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchNineTen_63.TabIndex = 405;
+            this.tTubeVPitchNineTen_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(432, 822);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(127, 13);
+            this.label35.TabIndex = 404;
+            this.label35.Text = "V-PITCH  Rows 9 and 10";
+            // 
+            // tTubeVPitchNineTen_64
+            // 
+            this.tTubeVPitchNineTen_64.Location = new System.Drawing.Point(146, 819);
+            this.tTubeVPitchNineTen_64.Name = "tTubeVPitchNineTen_64";
+            this.tTubeVPitchNineTen_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchNineTen_64.TabIndex = 406;
+            this.tTubeVPitchNineTen_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchNineTen_65
+            // 
+            this.tTubeVPitchNineTen_65.Location = new System.Drawing.Point(76, 819);
+            this.tTubeVPitchNineTen_65.Name = "tTubeVPitchNineTen_65";
+            this.tTubeVPitchNineTen_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchNineTen_65.TabIndex = 407;
+            this.tTubeVPitchNineTen_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchEightNine_66
+            // 
+            this.tTubeVPitchEightNine_66.Location = new System.Drawing.Point(3, 793);
+            this.tTubeVPitchEightNine_66.Name = "tTubeVPitchEightNine_66";
+            this.tTubeVPitchEightNine_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchEightNine_66.TabIndex = 401;
+            this.tTubeVPitchEightNine_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchEightNine_62
+            // 
+            this.tTubeVPitchEightNine_62.Location = new System.Drawing.Point(289, 793);
+            this.tTubeVPitchEightNine_62.Name = "tTubeVPitchEightNine_62";
+            this.tTubeVPitchEightNine_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchEightNine_62.TabIndex = 396;
+            this.tTubeVPitchEightNine_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchEightNine_61
+            // 
+            this.tTubeVPitchEightNine_61.Location = new System.Drawing.Point(362, 793);
+            this.tTubeVPitchEightNine_61.Name = "tTubeVPitchEightNine_61";
+            this.tTubeVPitchEightNine_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchEightNine_61.TabIndex = 395;
+            this.tTubeVPitchEightNine_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchEightNine_63
+            // 
+            this.tTubeVPitchEightNine_63.Location = new System.Drawing.Point(219, 793);
+            this.tTubeVPitchEightNine_63.Name = "tTubeVPitchEightNine_63";
+            this.tTubeVPitchEightNine_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchEightNine_63.TabIndex = 398;
+            this.tTubeVPitchEightNine_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(432, 796);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(121, 13);
+            this.label34.TabIndex = 397;
+            this.label34.Text = "V-PITCH  Rows 8 and 9";
+            // 
+            // tTubeVPitchEightNine_64
+            // 
+            this.tTubeVPitchEightNine_64.Location = new System.Drawing.Point(146, 793);
+            this.tTubeVPitchEightNine_64.Name = "tTubeVPitchEightNine_64";
+            this.tTubeVPitchEightNine_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchEightNine_64.TabIndex = 399;
+            this.tTubeVPitchEightNine_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchEightNine_65
+            // 
+            this.tTubeVPitchEightNine_65.Location = new System.Drawing.Point(76, 793);
+            this.tTubeVPitchEightNine_65.Name = "tTubeVPitchEightNine_65";
+            this.tTubeVPitchEightNine_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchEightNine_65.TabIndex = 400;
+            this.tTubeVPitchEightNine_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSevenEight_66
+            // 
+            this.tTubeVPitchSevenEight_66.Location = new System.Drawing.Point(3, 767);
+            this.tTubeVPitchSevenEight_66.Name = "tTubeVPitchSevenEight_66";
+            this.tTubeVPitchSevenEight_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchSevenEight_66.TabIndex = 394;
+            this.tTubeVPitchSevenEight_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSevenEight_62
+            // 
+            this.tTubeVPitchSevenEight_62.Location = new System.Drawing.Point(289, 767);
+            this.tTubeVPitchSevenEight_62.Name = "tTubeVPitchSevenEight_62";
+            this.tTubeVPitchSevenEight_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchSevenEight_62.TabIndex = 389;
+            this.tTubeVPitchSevenEight_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSevenEight_61
+            // 
+            this.tTubeVPitchSevenEight_61.Location = new System.Drawing.Point(362, 767);
+            this.tTubeVPitchSevenEight_61.Name = "tTubeVPitchSevenEight_61";
+            this.tTubeVPitchSevenEight_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchSevenEight_61.TabIndex = 388;
+            this.tTubeVPitchSevenEight_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSevenEight_63
+            // 
+            this.tTubeVPitchSevenEight_63.Location = new System.Drawing.Point(219, 767);
+            this.tTubeVPitchSevenEight_63.Name = "tTubeVPitchSevenEight_63";
+            this.tTubeVPitchSevenEight_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchSevenEight_63.TabIndex = 391;
+            this.tTubeVPitchSevenEight_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(432, 770);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(121, 13);
+            this.label33.TabIndex = 390;
+            this.label33.Text = "V-PITCH  Rows 7 and 8";
+            // 
+            // tTubeVPitchSevenEight_64
+            // 
+            this.tTubeVPitchSevenEight_64.Location = new System.Drawing.Point(146, 767);
+            this.tTubeVPitchSevenEight_64.Name = "tTubeVPitchSevenEight_64";
+            this.tTubeVPitchSevenEight_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchSevenEight_64.TabIndex = 392;
+            this.tTubeVPitchSevenEight_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSevenEight_65
+            // 
+            this.tTubeVPitchSevenEight_65.Location = new System.Drawing.Point(76, 767);
+            this.tTubeVPitchSevenEight_65.Name = "tTubeVPitchSevenEight_65";
+            this.tTubeVPitchSevenEight_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchSevenEight_65.TabIndex = 393;
+            this.tTubeVPitchSevenEight_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSixSeven_66
+            // 
+            this.tTubeVPitchSixSeven_66.Location = new System.Drawing.Point(3, 741);
+            this.tTubeVPitchSixSeven_66.Name = "tTubeVPitchSixSeven_66";
+            this.tTubeVPitchSixSeven_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchSixSeven_66.TabIndex = 387;
+            this.tTubeVPitchSixSeven_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSixSeven_62
+            // 
+            this.tTubeVPitchSixSeven_62.Location = new System.Drawing.Point(289, 741);
+            this.tTubeVPitchSixSeven_62.Name = "tTubeVPitchSixSeven_62";
+            this.tTubeVPitchSixSeven_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchSixSeven_62.TabIndex = 382;
+            this.tTubeVPitchSixSeven_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSixSeven_61
+            // 
+            this.tTubeVPitchSixSeven_61.Location = new System.Drawing.Point(362, 741);
+            this.tTubeVPitchSixSeven_61.Name = "tTubeVPitchSixSeven_61";
+            this.tTubeVPitchSixSeven_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchSixSeven_61.TabIndex = 381;
+            this.tTubeVPitchSixSeven_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSixSeven_63
+            // 
+            this.tTubeVPitchSixSeven_63.Location = new System.Drawing.Point(219, 741);
+            this.tTubeVPitchSixSeven_63.Name = "tTubeVPitchSixSeven_63";
+            this.tTubeVPitchSixSeven_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchSixSeven_63.TabIndex = 384;
+            this.tTubeVPitchSixSeven_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(432, 744);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(121, 13);
+            this.label32.TabIndex = 383;
+            this.label32.Text = "V-PITCH  Rows 6 and 7";
+            // 
+            // tTubeVPitchSixSeven_64
+            // 
+            this.tTubeVPitchSixSeven_64.Location = new System.Drawing.Point(146, 741);
+            this.tTubeVPitchSixSeven_64.Name = "tTubeVPitchSixSeven_64";
+            this.tTubeVPitchSixSeven_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchSixSeven_64.TabIndex = 385;
+            this.tTubeVPitchSixSeven_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchSixSeven_65
+            // 
+            this.tTubeVPitchSixSeven_65.Location = new System.Drawing.Point(76, 741);
+            this.tTubeVPitchSixSeven_65.Name = "tTubeVPitchSixSeven_65";
+            this.tTubeVPitchSixSeven_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchSixSeven_65.TabIndex = 386;
+            this.tTubeVPitchSixSeven_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFiveSix_66
+            // 
+            this.tTubeVPitchFiveSix_66.Location = new System.Drawing.Point(3, 715);
+            this.tTubeVPitchFiveSix_66.Name = "tTubeVPitchFiveSix_66";
+            this.tTubeVPitchFiveSix_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchFiveSix_66.TabIndex = 380;
+            this.tTubeVPitchFiveSix_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFiveSix_62
+            // 
+            this.tTubeVPitchFiveSix_62.Location = new System.Drawing.Point(289, 715);
+            this.tTubeVPitchFiveSix_62.Name = "tTubeVPitchFiveSix_62";
+            this.tTubeVPitchFiveSix_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchFiveSix_62.TabIndex = 375;
+            this.tTubeVPitchFiveSix_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFiveSix_61
+            // 
+            this.tTubeVPitchFiveSix_61.Location = new System.Drawing.Point(362, 715);
+            this.tTubeVPitchFiveSix_61.Name = "tTubeVPitchFiveSix_61";
+            this.tTubeVPitchFiveSix_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchFiveSix_61.TabIndex = 374;
+            this.tTubeVPitchFiveSix_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFiveSix_63
+            // 
+            this.tTubeVPitchFiveSix_63.Location = new System.Drawing.Point(219, 715);
+            this.tTubeVPitchFiveSix_63.Name = "tTubeVPitchFiveSix_63";
+            this.tTubeVPitchFiveSix_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchFiveSix_63.TabIndex = 377;
+            this.tTubeVPitchFiveSix_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(432, 718);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(121, 13);
+            this.label31.TabIndex = 376;
+            this.label31.Text = "V-PITCH  Rows 5 and 6";
+            // 
+            // tTubeVPitchFiveSix_64
+            // 
+            this.tTubeVPitchFiveSix_64.Location = new System.Drawing.Point(146, 715);
+            this.tTubeVPitchFiveSix_64.Name = "tTubeVPitchFiveSix_64";
+            this.tTubeVPitchFiveSix_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchFiveSix_64.TabIndex = 378;
+            this.tTubeVPitchFiveSix_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFiveSix_65
+            // 
+            this.tTubeVPitchFiveSix_65.Location = new System.Drawing.Point(76, 715);
+            this.tTubeVPitchFiveSix_65.Name = "tTubeVPitchFiveSix_65";
+            this.tTubeVPitchFiveSix_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchFiveSix_65.TabIndex = 379;
+            this.tTubeVPitchFiveSix_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFourFive_66
+            // 
+            this.tTubeVPitchFourFive_66.Location = new System.Drawing.Point(3, 689);
+            this.tTubeVPitchFourFive_66.Name = "tTubeVPitchFourFive_66";
+            this.tTubeVPitchFourFive_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchFourFive_66.TabIndex = 373;
+            this.tTubeVPitchFourFive_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFourFive_62
+            // 
+            this.tTubeVPitchFourFive_62.Location = new System.Drawing.Point(289, 689);
+            this.tTubeVPitchFourFive_62.Name = "tTubeVPitchFourFive_62";
+            this.tTubeVPitchFourFive_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchFourFive_62.TabIndex = 368;
+            this.tTubeVPitchFourFive_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFourFive_61
+            // 
+            this.tTubeVPitchFourFive_61.Location = new System.Drawing.Point(362, 689);
+            this.tTubeVPitchFourFive_61.Name = "tTubeVPitchFourFive_61";
+            this.tTubeVPitchFourFive_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchFourFive_61.TabIndex = 367;
+            this.tTubeVPitchFourFive_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFourFive_63
+            // 
+            this.tTubeVPitchFourFive_63.Location = new System.Drawing.Point(219, 689);
+            this.tTubeVPitchFourFive_63.Name = "tTubeVPitchFourFive_63";
+            this.tTubeVPitchFourFive_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchFourFive_63.TabIndex = 370;
+            this.tTubeVPitchFourFive_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(432, 692);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(121, 13);
+            this.label30.TabIndex = 369;
+            this.label30.Text = "V-PITCH  Rows 4 and 5";
+            // 
+            // tTubeVPitchFourFive_64
+            // 
+            this.tTubeVPitchFourFive_64.Location = new System.Drawing.Point(146, 689);
+            this.tTubeVPitchFourFive_64.Name = "tTubeVPitchFourFive_64";
+            this.tTubeVPitchFourFive_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchFourFive_64.TabIndex = 371;
+            this.tTubeVPitchFourFive_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchFourFive_65
+            // 
+            this.tTubeVPitchFourFive_65.Location = new System.Drawing.Point(76, 689);
+            this.tTubeVPitchFourFive_65.Name = "tTubeVPitchFourFive_65";
+            this.tTubeVPitchFourFive_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchFourFive_65.TabIndex = 372;
+            this.tTubeVPitchFourFive_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchThreeFour_66
+            // 
+            this.tTubeVPitchThreeFour_66.Location = new System.Drawing.Point(3, 663);
+            this.tTubeVPitchThreeFour_66.Name = "tTubeVPitchThreeFour_66";
+            this.tTubeVPitchThreeFour_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchThreeFour_66.TabIndex = 366;
+            this.tTubeVPitchThreeFour_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchThreeFour_62
+            // 
+            this.tTubeVPitchThreeFour_62.Location = new System.Drawing.Point(289, 663);
+            this.tTubeVPitchThreeFour_62.Name = "tTubeVPitchThreeFour_62";
+            this.tTubeVPitchThreeFour_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchThreeFour_62.TabIndex = 361;
+            this.tTubeVPitchThreeFour_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchThreeFour_61
+            // 
+            this.tTubeVPitchThreeFour_61.Location = new System.Drawing.Point(362, 663);
+            this.tTubeVPitchThreeFour_61.Name = "tTubeVPitchThreeFour_61";
+            this.tTubeVPitchThreeFour_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchThreeFour_61.TabIndex = 360;
+            this.tTubeVPitchThreeFour_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchThreeFour_63
+            // 
+            this.tTubeVPitchThreeFour_63.Location = new System.Drawing.Point(219, 663);
+            this.tTubeVPitchThreeFour_63.Name = "tTubeVPitchThreeFour_63";
+            this.tTubeVPitchThreeFour_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchThreeFour_63.TabIndex = 363;
+            this.tTubeVPitchThreeFour_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(432, 666);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(121, 13);
+            this.label29.TabIndex = 362;
+            this.label29.Text = "V-PITCH  Rows 3 and 4";
+            // 
+            // tTubeVPitchThreeFour_64
+            // 
+            this.tTubeVPitchThreeFour_64.Location = new System.Drawing.Point(146, 663);
+            this.tTubeVPitchThreeFour_64.Name = "tTubeVPitchThreeFour_64";
+            this.tTubeVPitchThreeFour_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchThreeFour_64.TabIndex = 364;
+            this.tTubeVPitchThreeFour_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchThreeFour_65
+            // 
+            this.tTubeVPitchThreeFour_65.Location = new System.Drawing.Point(76, 663);
+            this.tTubeVPitchThreeFour_65.Name = "tTubeVPitchThreeFour_65";
+            this.tTubeVPitchThreeFour_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchThreeFour_65.TabIndex = 365;
+            this.tTubeVPitchThreeFour_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTwoThree_66
+            // 
+            this.tTubeVPitchTwoThree_66.Location = new System.Drawing.Point(3, 637);
+            this.tTubeVPitchTwoThree_66.Name = "tTubeVPitchTwoThree_66";
+            this.tTubeVPitchTwoThree_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchTwoThree_66.TabIndex = 359;
+            this.tTubeVPitchTwoThree_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTwoThree_62
+            // 
+            this.tTubeVPitchTwoThree_62.Location = new System.Drawing.Point(289, 637);
+            this.tTubeVPitchTwoThree_62.Name = "tTubeVPitchTwoThree_62";
+            this.tTubeVPitchTwoThree_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchTwoThree_62.TabIndex = 354;
+            this.tTubeVPitchTwoThree_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTwoThree_61
+            // 
+            this.tTubeVPitchTwoThree_61.Location = new System.Drawing.Point(362, 637);
+            this.tTubeVPitchTwoThree_61.Name = "tTubeVPitchTwoThree_61";
+            this.tTubeVPitchTwoThree_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchTwoThree_61.TabIndex = 353;
+            this.tTubeVPitchTwoThree_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTwoThree_63
+            // 
+            this.tTubeVPitchTwoThree_63.Location = new System.Drawing.Point(219, 637);
+            this.tTubeVPitchTwoThree_63.Name = "tTubeVPitchTwoThree_63";
+            this.tTubeVPitchTwoThree_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchTwoThree_63.TabIndex = 356;
+            this.tTubeVPitchTwoThree_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(432, 640);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(121, 13);
+            this.label28.TabIndex = 355;
+            this.label28.Text = "V-PITCH  Rows 2 and 3";
+            // 
+            // tTubeVPitchTwoThree_64
+            // 
+            this.tTubeVPitchTwoThree_64.Location = new System.Drawing.Point(146, 637);
+            this.tTubeVPitchTwoThree_64.Name = "tTubeVPitchTwoThree_64";
+            this.tTubeVPitchTwoThree_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchTwoThree_64.TabIndex = 357;
+            this.tTubeVPitchTwoThree_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchTwoThree_65
+            // 
+            this.tTubeVPitchTwoThree_65.Location = new System.Drawing.Point(76, 637);
+            this.tTubeVPitchTwoThree_65.Name = "tTubeVPitchTwoThree_65";
+            this.tTubeVPitchTwoThree_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchTwoThree_65.TabIndex = 358;
+            this.tTubeVPitchTwoThree_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchOneTwo_66
+            // 
+            this.tTubeVPitchOneTwo_66.Location = new System.Drawing.Point(3, 611);
+            this.tTubeVPitchOneTwo_66.Name = "tTubeVPitchOneTwo_66";
+            this.tTubeVPitchOneTwo_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchOneTwo_66.TabIndex = 352;
+            this.tTubeVPitchOneTwo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchOneTwo_62
+            // 
+            this.tTubeVPitchOneTwo_62.Location = new System.Drawing.Point(289, 611);
+            this.tTubeVPitchOneTwo_62.Name = "tTubeVPitchOneTwo_62";
+            this.tTubeVPitchOneTwo_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchOneTwo_62.TabIndex = 347;
+            this.tTubeVPitchOneTwo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchOneTwo_61
+            // 
+            this.tTubeVPitchOneTwo_61.Location = new System.Drawing.Point(362, 611);
+            this.tTubeVPitchOneTwo_61.Name = "tTubeVPitchOneTwo_61";
+            this.tTubeVPitchOneTwo_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchOneTwo_61.TabIndex = 346;
+            this.tTubeVPitchOneTwo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchOneTwo_63
+            // 
+            this.tTubeVPitchOneTwo_63.Location = new System.Drawing.Point(219, 611);
+            this.tTubeVPitchOneTwo_63.Name = "tTubeVPitchOneTwo_63";
+            this.tTubeVPitchOneTwo_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchOneTwo_63.TabIndex = 349;
+            this.tTubeVPitchOneTwo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(432, 614);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(121, 13);
+            this.label38.TabIndex = 348;
+            this.label38.Text = "V-PITCH  Rows 1 and 2";
+            // 
+            // tTubeVPitchOneTwo_64
+            // 
+            this.tTubeVPitchOneTwo_64.Location = new System.Drawing.Point(146, 611);
+            this.tTubeVPitchOneTwo_64.Name = "tTubeVPitchOneTwo_64";
+            this.tTubeVPitchOneTwo_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeVPitchOneTwo_64.TabIndex = 350;
+            this.tTubeVPitchOneTwo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeVPitchOneTwo_65
+            // 
+            this.tTubeVPitchOneTwo_65.Location = new System.Drawing.Point(76, 611);
+            this.tTubeVPitchOneTwo_65.Name = "tTubeVPitchOneTwo_65";
+            this.tTubeVPitchOneTwo_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeVPitchOneTwo_65.TabIndex = 351;
+            this.tTubeVPitchOneTwo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchEven_66
+            // 
+            this.tTubeHPitchEven_66.Location = new System.Drawing.Point(3, 585);
+            this.tTubeHPitchEven_66.Name = "tTubeHPitchEven_66";
+            this.tTubeHPitchEven_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeHPitchEven_66.TabIndex = 345;
+            this.tTubeHPitchEven_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchEven_62
+            // 
+            this.tTubeHPitchEven_62.Location = new System.Drawing.Point(289, 585);
+            this.tTubeHPitchEven_62.Name = "tTubeHPitchEven_62";
+            this.tTubeHPitchEven_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeHPitchEven_62.TabIndex = 340;
+            this.tTubeHPitchEven_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchEven_61
+            // 
+            this.tTubeHPitchEven_61.Location = new System.Drawing.Point(362, 585);
+            this.tTubeHPitchEven_61.Name = "tTubeHPitchEven_61";
+            this.tTubeHPitchEven_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeHPitchEven_61.TabIndex = 339;
+            this.tTubeHPitchEven_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchEven_63
+            // 
+            this.tTubeHPitchEven_63.Location = new System.Drawing.Point(219, 585);
+            this.tTubeHPitchEven_63.Name = "tTubeHPitchEven_63";
+            this.tTubeHPitchEven_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeHPitchEven_63.TabIndex = 342;
+            this.tTubeHPitchEven_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(432, 588);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(106, 13);
+            this.label37.TabIndex = 341;
+            this.label37.Text = "H-PITCH  Row Even";
+            // 
+            // tTubeHPitchEven_64
+            // 
+            this.tTubeHPitchEven_64.Location = new System.Drawing.Point(146, 585);
+            this.tTubeHPitchEven_64.Name = "tTubeHPitchEven_64";
+            this.tTubeHPitchEven_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeHPitchEven_64.TabIndex = 343;
+            this.tTubeHPitchEven_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchEven_65
+            // 
+            this.tTubeHPitchEven_65.Location = new System.Drawing.Point(76, 585);
+            this.tTubeHPitchEven_65.Name = "tTubeHPitchEven_65";
+            this.tTubeHPitchEven_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeHPitchEven_65.TabIndex = 344;
+            this.tTubeHPitchEven_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchOdd_66
+            // 
+            this.tTubeHPitchOdd_66.Location = new System.Drawing.Point(3, 559);
+            this.tTubeHPitchOdd_66.Name = "tTubeHPitchOdd_66";
+            this.tTubeHPitchOdd_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeHPitchOdd_66.TabIndex = 338;
+            this.tTubeHPitchOdd_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchOdd_62
+            // 
+            this.tTubeHPitchOdd_62.Location = new System.Drawing.Point(289, 559);
+            this.tTubeHPitchOdd_62.Name = "tTubeHPitchOdd_62";
+            this.tTubeHPitchOdd_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeHPitchOdd_62.TabIndex = 333;
+            this.tTubeHPitchOdd_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchOdd_61
+            // 
+            this.tTubeHPitchOdd_61.Location = new System.Drawing.Point(362, 559);
+            this.tTubeHPitchOdd_61.Name = "tTubeHPitchOdd_61";
+            this.tTubeHPitchOdd_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeHPitchOdd_61.TabIndex = 332;
+            this.tTubeHPitchOdd_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchOdd_63
+            // 
+            this.tTubeHPitchOdd_63.Location = new System.Drawing.Point(219, 559);
+            this.tTubeHPitchOdd_63.Name = "tTubeHPitchOdd_63";
+            this.tTubeHPitchOdd_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeHPitchOdd_63.TabIndex = 335;
+            this.tTubeHPitchOdd_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(432, 562);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(101, 13);
+            this.label36.TabIndex = 334;
+            this.label36.Text = "H-PITCH  Row Odd";
+            // 
+            // tTubeHPitchOdd_64
+            // 
+            this.tTubeHPitchOdd_64.Location = new System.Drawing.Point(146, 559);
+            this.tTubeHPitchOdd_64.Name = "tTubeHPitchOdd_64";
+            this.tTubeHPitchOdd_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeHPitchOdd_64.TabIndex = 336;
+            this.tTubeHPitchOdd_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeHPitchOdd_65
+            // 
+            this.tTubeHPitchOdd_65.Location = new System.Drawing.Point(76, 559);
+            this.tTubeHPitchOdd_65.Name = "tTubeHPitchOdd_65";
+            this.tTubeHPitchOdd_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeHPitchOdd_65.TabIndex = 337;
+            this.tTubeHPitchOdd_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow2Count_66
+            // 
+            this.tTubeRow2Count_66.Location = new System.Drawing.Point(3, 533);
+            this.tTubeRow2Count_66.Name = "tTubeRow2Count_66";
+            this.tTubeRow2Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow2Count_66.TabIndex = 275;
+            this.tTubeRow2Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow2Count_62
+            // 
+            this.tTubeRow2Count_62.Location = new System.Drawing.Point(289, 533);
+            this.tTubeRow2Count_62.Name = "tTubeRow2Count_62";
+            this.tTubeRow2Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow2Count_62.TabIndex = 270;
+            this.tTubeRow2Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow2Count_61
+            // 
+            this.tTubeRow2Count_61.Location = new System.Drawing.Point(362, 533);
+            this.tTubeRow2Count_61.Name = "tTubeRow2Count_61";
+            this.tTubeRow2Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow2Count_61.TabIndex = 269;
+            this.tTubeRow2Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow2Count_63
+            // 
+            this.tTubeRow2Count_63.Location = new System.Drawing.Point(219, 533);
+            this.tTubeRow2Count_63.Name = "tTubeRow2Count_63";
+            this.tTubeRow2Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow2Count_63.TabIndex = 272;
+            this.tTubeRow2Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(432, 536);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(106, 13);
+            this.label27.TabIndex = 271;
+            this.label27.Text = "COUNT  Even Rows";
+            // 
+            // tTubeRow2Count_64
+            // 
+            this.tTubeRow2Count_64.Location = new System.Drawing.Point(146, 533);
+            this.tTubeRow2Count_64.Name = "tTubeRow2Count_64";
+            this.tTubeRow2Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow2Count_64.TabIndex = 273;
+            this.tTubeRow2Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow2Count_65
+            // 
+            this.tTubeRow2Count_65.Location = new System.Drawing.Point(76, 533);
+            this.tTubeRow2Count_65.Name = "tTubeRow2Count_65";
+            this.tTubeRow2Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow2Count_65.TabIndex = 274;
+            this.tTubeRow2Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow1Count_66
+            // 
+            this.tTubeRow1Count_66.Location = new System.Drawing.Point(3, 507);
+            this.tTubeRow1Count_66.Name = "tTubeRow1Count_66";
+            this.tTubeRow1Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow1Count_66.TabIndex = 268;
+            this.tTubeRow1Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow1Count_62
+            // 
+            this.tTubeRow1Count_62.Location = new System.Drawing.Point(289, 507);
+            this.tTubeRow1Count_62.Name = "tTubeRow1Count_62";
+            this.tTubeRow1Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow1Count_62.TabIndex = 263;
+            this.tTubeRow1Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow1Count_61
+            // 
+            this.tTubeRow1Count_61.Location = new System.Drawing.Point(362, 507);
+            this.tTubeRow1Count_61.Name = "tTubeRow1Count_61";
+            this.tTubeRow1Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow1Count_61.TabIndex = 262;
+            this.tTubeRow1Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow1Count_63
+            // 
+            this.tTubeRow1Count_63.Location = new System.Drawing.Point(219, 507);
+            this.tTubeRow1Count_63.Name = "tTubeRow1Count_63";
+            this.tTubeRow1Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow1Count_63.TabIndex = 265;
+            this.tTubeRow1Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(432, 510);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(101, 13);
+            this.label26.TabIndex = 264;
+            this.label26.Text = "COUNT  Odd Rows";
+            // 
+            // tTubeRow1Count_64
+            // 
+            this.tTubeRow1Count_64.Location = new System.Drawing.Point(146, 507);
+            this.tTubeRow1Count_64.Name = "tTubeRow1Count_64";
+            this.tTubeRow1Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow1Count_64.TabIndex = 266;
+            this.tTubeRow1Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow1Count_65
+            // 
+            this.tTubeRow1Count_65.Location = new System.Drawing.Point(76, 507);
+            this.tTubeRow1Count_65.Name = "tTubeRow1Count_65";
+            this.tTubeRow1Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow1Count_65.TabIndex = 267;
+            this.tTubeRow1Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeHoleDiameter_66
             // 
             this.tTubeHoleDiameter_66.Location = new System.Drawing.Point(3, 403);
@@ -485,6 +1444,56 @@
             this.tTubeHoleDiameter_62.TabIndex = 256;
             this.tTubeHoleDiameter_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tTubesheetLength_66
+            // 
+            this.tTubesheetLength_66.Location = new System.Drawing.Point(3, 290);
+            this.tTubesheetLength_66.Name = "tTubesheetLength_66";
+            this.tTubesheetLength_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetLength_66.TabIndex = 148;
+            this.tTubesheetLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetLength_65
+            // 
+            this.tTubesheetLength_65.Location = new System.Drawing.Point(76, 290);
+            this.tTubesheetLength_65.Name = "tTubesheetLength_65";
+            this.tTubesheetLength_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetLength_65.TabIndex = 147;
+            this.tTubesheetLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetWidth_66
+            // 
+            this.tTubesheetWidth_66.Location = new System.Drawing.Point(3, 177);
+            this.tTubesheetWidth_66.Name = "tTubesheetWidth_66";
+            this.tTubesheetWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetWidth_66.TabIndex = 155;
+            this.tTubesheetWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetLength_64
+            // 
+            this.tTubesheetLength_64.Location = new System.Drawing.Point(146, 290);
+            this.tTubesheetLength_64.Name = "tTubesheetLength_64";
+            this.tTubesheetLength_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetLength_64.TabIndex = 146;
+            this.tTubesheetLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetWidth_65
+            // 
+            this.tTubesheetWidth_65.Location = new System.Drawing.Point(76, 177);
+            this.tTubesheetWidth_65.Name = "tTubesheetWidth_65";
+            this.tTubesheetWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetWidth_65.TabIndex = 154;
+            this.tTubesheetWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(432, 293);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 144;
+            this.label1.Text = "LENGTH  Tubesheet";
+            // 
             // tTubeHoleDiameter_61
             // 
             this.tTubeHoleDiameter_61.Location = new System.Drawing.Point(362, 403);
@@ -493,6 +1502,30 @@
             this.tTubeHoleDiameter_61.TabIndex = 255;
             this.tTubeHoleDiameter_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tTubesheetLength_63
+            // 
+            this.tTubesheetLength_63.Location = new System.Drawing.Point(219, 290);
+            this.tTubesheetLength_63.Name = "tTubesheetLength_63";
+            this.tTubesheetLength_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetLength_63.TabIndex = 145;
+            this.tTubesheetLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetWidth_64
+            // 
+            this.tTubesheetWidth_64.Location = new System.Drawing.Point(146, 177);
+            this.tTubesheetWidth_64.Name = "tTubesheetWidth_64";
+            this.tTubesheetWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetWidth_64.TabIndex = 153;
+            this.tTubesheetWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetLength_61
+            // 
+            this.tTubesheetLength_61.Location = new System.Drawing.Point(362, 290);
+            this.tTubesheetLength_61.Name = "tTubesheetLength_61";
+            this.tTubesheetLength_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetLength_61.TabIndex = 142;
+            this.tTubesheetLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeHoleDiameter_63
             // 
             this.tTubeHoleDiameter_63.Location = new System.Drawing.Point(219, 403);
@@ -500,6 +1533,32 @@
             this.tTubeHoleDiameter_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeHoleDiameter_63.TabIndex = 258;
             this.tTubeHoleDiameter_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateLength_66
+            // 
+            this.tEndPlateLength_66.Location = new System.Drawing.Point(3, 368);
+            this.tEndPlateLength_66.Name = "tEndPlateLength_66";
+            this.tEndPlateLength_66.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateLength_66.TabIndex = 225;
+            this.tEndPlateLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(432, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 151;
+            this.label2.Text = "WIDTH  Tubesheet";
+            // 
+            // tTubesheetLength_62
+            // 
+            this.tTubesheetLength_62.Location = new System.Drawing.Point(289, 290);
+            this.tTubesheetLength_62.Name = "tTubesheetLength_62";
+            this.tTubesheetLength_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetLength_62.TabIndex = 143;
+            this.tTubesheetLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label25
             // 
@@ -511,6 +1570,30 @@
             this.label25.TabIndex = 257;
             this.label25.Text = "DIAMETER  Tube Holes";
             // 
+            // tEndPlateLength_62
+            // 
+            this.tEndPlateLength_62.Location = new System.Drawing.Point(289, 368);
+            this.tEndPlateLength_62.Name = "tEndPlateLength_62";
+            this.tEndPlateLength_62.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateLength_62.TabIndex = 220;
+            this.tEndPlateLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetWidth_63
+            // 
+            this.tTubesheetWidth_63.Location = new System.Drawing.Point(219, 177);
+            this.tTubesheetWidth_63.Name = "tTubesheetWidth_63";
+            this.tTubesheetWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetWidth_63.TabIndex = 152;
+            this.tTubesheetWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetLength_65
+            // 
+            this.tPlugsheetLength_65.Location = new System.Drawing.Point(76, 316);
+            this.tPlugsheetLength_65.Name = "tPlugsheetLength_65";
+            this.tPlugsheetLength_65.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetLength_65.TabIndex = 189;
+            this.tPlugsheetLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeHoleDiameter_64
             // 
             this.tTubeHoleDiameter_64.Location = new System.Drawing.Point(146, 403);
@@ -518,6 +1601,30 @@
             this.tTubeHoleDiameter_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeHoleDiameter_64.TabIndex = 259;
             this.tTubeHoleDiameter_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateLength_61
+            // 
+            this.tEndPlateLength_61.Location = new System.Drawing.Point(362, 368);
+            this.tEndPlateLength_61.Name = "tEndPlateLength_61";
+            this.tEndPlateLength_61.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateLength_61.TabIndex = 219;
+            this.tEndPlateLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetWidth_61
+            // 
+            this.tTubesheetWidth_61.Location = new System.Drawing.Point(362, 177);
+            this.tTubesheetWidth_61.Name = "tTubesheetWidth_61";
+            this.tTubesheetWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetWidth_61.TabIndex = 149;
+            this.tTubesheetWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetLength_64
+            // 
+            this.tPlugsheetLength_64.Location = new System.Drawing.Point(146, 316);
+            this.tPlugsheetLength_64.Name = "tPlugsheetLength_64";
+            this.tPlugsheetLength_64.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetLength_64.TabIndex = 188;
+            this.tPlugsheetLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubeHoleDiameter_65
             // 
@@ -527,6 +1634,32 @@
             this.tTubeHoleDiameter_65.TabIndex = 260;
             this.tTubeHoleDiameter_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tEndPlateLength_63
+            // 
+            this.tEndPlateLength_63.Location = new System.Drawing.Point(219, 368);
+            this.tEndPlateLength_63.Name = "tEndPlateLength_63";
+            this.tEndPlateLength_63.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateLength_63.TabIndex = 222;
+            this.tEndPlateLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetWidth_62
+            // 
+            this.tTubesheetWidth_62.Location = new System.Drawing.Point(289, 177);
+            this.tTubesheetWidth_62.Name = "tTubesheetWidth_62";
+            this.tTubesheetWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetWidth_62.TabIndex = 150;
+            this.tTubesheetWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(432, 319);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.TabIndex = 186;
+            this.label7.Text = "LENGTH  Plugsheet";
+            // 
             // tTubeY_66
             // 
             this.tTubeY_66.Location = new System.Drawing.Point(3, 429);
@@ -534,6 +1667,32 @@
             this.tTubeY_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeY_66.TabIndex = 254;
             this.tTubeY_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(432, 371);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.TabIndex = 221;
+            this.label11.Text = "LENGTH  End Plate";
+            // 
+            // tPlugsheetWidth_65
+            // 
+            this.tPlugsheetWidth_65.Location = new System.Drawing.Point(76, 203);
+            this.tPlugsheetWidth_65.Name = "tPlugsheetWidth_65";
+            this.tPlugsheetWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetWidth_65.TabIndex = 196;
+            this.tPlugsheetWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetLength_63
+            // 
+            this.tPlugsheetLength_63.Location = new System.Drawing.Point(219, 316);
+            this.tPlugsheetLength_63.Name = "tPlugsheetLength_63";
+            this.tPlugsheetLength_63.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetLength_63.TabIndex = 187;
+            this.tPlugsheetLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubeY_62
             // 
@@ -543,6 +1702,30 @@
             this.tTubeY_62.TabIndex = 249;
             this.tTubeY_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tEndPlateLength_64
+            // 
+            this.tEndPlateLength_64.Location = new System.Drawing.Point(146, 368);
+            this.tEndPlateLength_64.Name = "tEndPlateLength_64";
+            this.tEndPlateLength_64.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateLength_64.TabIndex = 223;
+            this.tEndPlateLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetWidth_64
+            // 
+            this.tPlugsheetWidth_64.Location = new System.Drawing.Point(146, 203);
+            this.tPlugsheetWidth_64.Name = "tPlugsheetWidth_64";
+            this.tPlugsheetWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetWidth_64.TabIndex = 195;
+            this.tPlugsheetWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetLength_61
+            // 
+            this.tPlugsheetLength_61.Location = new System.Drawing.Point(362, 316);
+            this.tPlugsheetLength_61.Name = "tPlugsheetLength_61";
+            this.tPlugsheetLength_61.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetLength_61.TabIndex = 184;
+            this.tPlugsheetLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeY_61
             // 
             this.tTubeY_61.Location = new System.Drawing.Point(362, 429);
@@ -551,6 +1734,32 @@
             this.tTubeY_61.TabIndex = 248;
             this.tTubeY_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tEndPlateLength_65
+            // 
+            this.tEndPlateLength_65.Location = new System.Drawing.Point(76, 368);
+            this.tEndPlateLength_65.Name = "tEndPlateLength_65";
+            this.tEndPlateLength_65.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateLength_65.TabIndex = 224;
+            this.tEndPlateLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(432, 206);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 13);
+            this.label6.TabIndex = 193;
+            this.label6.Text = "WIDTH  Plugsheet";
+            // 
+            // tPlugsheetLength_62
+            // 
+            this.tPlugsheetLength_62.Location = new System.Drawing.Point(289, 316);
+            this.tPlugsheetLength_62.Name = "tPlugsheetLength_62";
+            this.tPlugsheetLength_62.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetLength_62.TabIndex = 185;
+            this.tPlugsheetLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeY_63
             // 
             this.tTubeY_63.Location = new System.Drawing.Point(219, 429);
@@ -558,6 +1767,30 @@
             this.tTubeY_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeY_63.TabIndex = 251;
             this.tTubeY_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmLength_66
+            // 
+            this.tTopBtmLength_66.Location = new System.Drawing.Point(3, 342);
+            this.tTopBtmLength_66.Name = "tTopBtmLength_66";
+            this.tTopBtmLength_66.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmLength_66.TabIndex = 218;
+            this.tTopBtmLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetWidth_63
+            // 
+            this.tPlugsheetWidth_63.Location = new System.Drawing.Point(219, 203);
+            this.tPlugsheetWidth_63.Name = "tPlugsheetWidth_63";
+            this.tPlugsheetWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetWidth_63.TabIndex = 194;
+            this.tPlugsheetWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetLength_66
+            // 
+            this.tPlugsheetLength_66.Location = new System.Drawing.Point(3, 316);
+            this.tPlugsheetLength_66.Name = "tPlugsheetLength_66";
+            this.tPlugsheetLength_66.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetLength_66.TabIndex = 190;
+            this.tPlugsheetLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label24
             // 
@@ -569,6 +1802,30 @@
             this.label24.TabIndex = 250;
             this.label24.Text = "Y-OFFSET  Tube Row1";
             // 
+            // tTopBtmLength_62
+            // 
+            this.tTopBtmLength_62.Location = new System.Drawing.Point(289, 342);
+            this.tTopBtmLength_62.Name = "tTopBtmLength_62";
+            this.tTopBtmLength_62.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmLength_62.TabIndex = 213;
+            this.tTopBtmLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetWidth_61
+            // 
+            this.tPlugsheetWidth_61.Location = new System.Drawing.Point(362, 203);
+            this.tPlugsheetWidth_61.Name = "tPlugsheetWidth_61";
+            this.tPlugsheetWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetWidth_61.TabIndex = 191;
+            this.tPlugsheetWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmLength_65
+            // 
+            this.tTopBtmLength_65.Location = new System.Drawing.Point(76, 342);
+            this.tTopBtmLength_65.Name = "tTopBtmLength_65";
+            this.tTopBtmLength_65.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmLength_65.TabIndex = 217;
+            this.tTopBtmLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeY_64
             // 
             this.tTubeY_64.Location = new System.Drawing.Point(146, 429);
@@ -576,6 +1833,30 @@
             this.tTubeY_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeY_64.TabIndex = 252;
             this.tTubeY_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmLength_61
+            // 
+            this.tTopBtmLength_61.Location = new System.Drawing.Point(362, 342);
+            this.tTopBtmLength_61.Name = "tTopBtmLength_61";
+            this.tTopBtmLength_61.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmLength_61.TabIndex = 212;
+            this.tTopBtmLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetWidth_62
+            // 
+            this.tPlugsheetWidth_62.Location = new System.Drawing.Point(289, 203);
+            this.tPlugsheetWidth_62.Name = "tPlugsheetWidth_62";
+            this.tPlugsheetWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetWidth_62.TabIndex = 192;
+            this.tPlugsheetWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmLength_64
+            // 
+            this.tTopBtmLength_64.Location = new System.Drawing.Point(146, 342);
+            this.tTopBtmLength_64.Name = "tTopBtmLength_64";
+            this.tTopBtmLength_64.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmLength_64.TabIndex = 216;
+            this.tTopBtmLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubeY_65
             // 
@@ -585,6 +1866,32 @@
             this.tTubeY_65.TabIndex = 253;
             this.tTubeY_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tTopBtmLength_63
+            // 
+            this.tTopBtmLength_63.Location = new System.Drawing.Point(219, 342);
+            this.tTopBtmLength_63.Name = "tTopBtmLength_63";
+            this.tTopBtmLength_63.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmLength_63.TabIndex = 215;
+            this.tTopBtmLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetWidth_66
+            // 
+            this.tPlugsheetWidth_66.Location = new System.Drawing.Point(3, 203);
+            this.tPlugsheetWidth_66.Name = "tPlugsheetWidth_66";
+            this.tPlugsheetWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetWidth_66.TabIndex = 197;
+            this.tPlugsheetWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(432, 345);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(141, 13);
+            this.label12.TabIndex = 214;
+            this.label12.Text = "LENGTH  Top/Bottom Plate";
+            // 
             // tTubeEvenX_66
             // 
             this.tTubeEvenX_66.Location = new System.Drawing.Point(3, 481);
@@ -592,6 +1899,14 @@
             this.tTubeEvenX_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeEvenX_66.TabIndex = 247;
             this.tTubeEvenX_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmWidth_65
+            // 
+            this.tTopBtmWidth_65.Location = new System.Drawing.Point(76, 229);
+            this.tTopBtmWidth_65.Name = "tTopBtmWidth_65";
+            this.tTopBtmWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmWidth_65.TabIndex = 203;
+            this.tTopBtmWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubeEvenX_62
             // 
@@ -601,6 +1916,14 @@
             this.tTubeEvenX_62.TabIndex = 242;
             this.tTubeEvenX_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tTopBtmWidth_64
+            // 
+            this.tTopBtmWidth_64.Location = new System.Drawing.Point(146, 229);
+            this.tTopBtmWidth_64.Name = "tTopBtmWidth_64";
+            this.tTopBtmWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmWidth_64.TabIndex = 202;
+            this.tTopBtmWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeEvenX_61
             // 
             this.tTubeEvenX_61.Location = new System.Drawing.Point(362, 481);
@@ -609,6 +1932,16 @@
             this.tTubeEvenX_61.TabIndex = 241;
             this.tTubeEvenX_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(432, 232);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 13);
+            this.label10.TabIndex = 200;
+            this.label10.Text = "WIDTH  Top/Bottom Plate";
+            // 
             // tTubeEvenX_63
             // 
             this.tTubeEvenX_63.Location = new System.Drawing.Point(219, 481);
@@ -616,6 +1949,14 @@
             this.tTubeEvenX_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeEvenX_63.TabIndex = 244;
             this.tTubeEvenX_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmWidth_63
+            // 
+            this.tTopBtmWidth_63.Location = new System.Drawing.Point(219, 229);
+            this.tTopBtmWidth_63.Name = "tTopBtmWidth_63";
+            this.tTopBtmWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmWidth_63.TabIndex = 201;
+            this.tTopBtmWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -627,6 +1968,14 @@
             this.label21.TabIndex = 243;
             this.label21.Text = "X-OFFSET  Tube Rows (Even)";
             // 
+            // tTopBtmWidth_61
+            // 
+            this.tTopBtmWidth_61.Location = new System.Drawing.Point(362, 229);
+            this.tTopBtmWidth_61.Name = "tTopBtmWidth_61";
+            this.tTopBtmWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmWidth_61.TabIndex = 198;
+            this.tTopBtmWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeEvenX_64
             // 
             this.tTubeEvenX_64.Location = new System.Drawing.Point(146, 481);
@@ -634,6 +1983,14 @@
             this.tTubeEvenX_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeEvenX_64.TabIndex = 245;
             this.tTubeEvenX_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmWidth_62
+            // 
+            this.tTopBtmWidth_62.Location = new System.Drawing.Point(289, 229);
+            this.tTopBtmWidth_62.Name = "tTopBtmWidth_62";
+            this.tTopBtmWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmWidth_62.TabIndex = 199;
+            this.tTopBtmWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubeEvenX_65
             // 
@@ -643,6 +2000,14 @@
             this.tTubeEvenX_65.TabIndex = 246;
             this.tTubeEvenX_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tTopBtmWidth_66
+            // 
+            this.tTopBtmWidth_66.Location = new System.Drawing.Point(3, 229);
+            this.tTopBtmWidth_66.Name = "tTopBtmWidth_66";
+            this.tTopBtmWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmWidth_66.TabIndex = 204;
+            this.tTopBtmWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeOddX_66
             // 
             this.tTubeOddX_66.Location = new System.Drawing.Point(3, 455);
@@ -650,6 +2015,14 @@
             this.tTubeOddX_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeOddX_66.TabIndex = 240;
             this.tTubeOddX_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateWidth_65
+            // 
+            this.tEndPlateWidth_65.Location = new System.Drawing.Point(76, 255);
+            this.tEndPlateWidth_65.Name = "tEndPlateWidth_65";
+            this.tEndPlateWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateWidth_65.TabIndex = 210;
+            this.tEndPlateWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubeOddX_62
             // 
@@ -659,6 +2032,14 @@
             this.tTubeOddX_62.TabIndex = 235;
             this.tTubeOddX_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tEndPlateWidth_64
+            // 
+            this.tEndPlateWidth_64.Location = new System.Drawing.Point(146, 255);
+            this.tEndPlateWidth_64.Name = "tEndPlateWidth_64";
+            this.tEndPlateWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateWidth_64.TabIndex = 209;
+            this.tEndPlateWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeOddX_61
             // 
             this.tTubeOddX_61.Location = new System.Drawing.Point(362, 455);
@@ -667,6 +2048,16 @@
             this.tTubeOddX_61.TabIndex = 234;
             this.tTubeOddX_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(432, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 13);
+            this.label9.TabIndex = 207;
+            this.label9.Text = "WIDTH  End Plate";
+            // 
             // tTubeOddX_63
             // 
             this.tTubeOddX_63.Location = new System.Drawing.Point(219, 455);
@@ -674,6 +2065,14 @@
             this.tTubeOddX_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeOddX_63.TabIndex = 237;
             this.tTubeOddX_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateWidth_63
+            // 
+            this.tEndPlateWidth_63.Location = new System.Drawing.Point(219, 255);
+            this.tEndPlateWidth_63.Name = "tEndPlateWidth_63";
+            this.tEndPlateWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateWidth_63.TabIndex = 208;
+            this.tEndPlateWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // text1112
             // 
@@ -685,6 +2084,14 @@
             this.text1112.TabIndex = 236;
             this.text1112.Text = "X-OFFSET  Tube Rows (Odd)";
             // 
+            // tEndPlateWidth_61
+            // 
+            this.tEndPlateWidth_61.Location = new System.Drawing.Point(362, 255);
+            this.tEndPlateWidth_61.Name = "tEndPlateWidth_61";
+            this.tEndPlateWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateWidth_61.TabIndex = 205;
+            this.tEndPlateWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeOddX_64
             // 
             this.tTubeOddX_64.Location = new System.Drawing.Point(146, 455);
@@ -693,6 +2100,14 @@
             this.tTubeOddX_64.TabIndex = 238;
             this.tTubeOddX_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tEndPlateWidth_62
+            // 
+            this.tEndPlateWidth_62.Location = new System.Drawing.Point(289, 255);
+            this.tEndPlateWidth_62.Name = "tEndPlateWidth_62";
+            this.tEndPlateWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateWidth_62.TabIndex = 206;
+            this.tEndPlateWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // tTubeOddX_65
             // 
             this.tTubeOddX_65.Location = new System.Drawing.Point(76, 455);
@@ -700,6 +2115,14 @@
             this.tTubeOddX_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeOddX_65.TabIndex = 239;
             this.tTubeOddX_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateWidth_66
+            // 
+            this.tEndPlateWidth_66.Location = new System.Drawing.Point(3, 255);
+            this.tEndPlateWidth_66.Name = "tEndPlateWidth_66";
+            this.tEndPlateWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateWidth_66.TabIndex = 211;
+            this.tEndPlateWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tBoxHeight_66
             // 
@@ -768,354 +2191,6 @@
             this.label13.Size = new System.Drawing.Size(30, 13);
             this.label13.TabIndex = 226;
             this.label13.Text = "temp";
-            // 
-            // tEndPlateLength_66
-            // 
-            this.tEndPlateLength_66.Location = new System.Drawing.Point(3, 368);
-            this.tEndPlateLength_66.Name = "tEndPlateLength_66";
-            this.tEndPlateLength_66.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlateLength_66.TabIndex = 225;
-            this.tEndPlateLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateLength_62
-            // 
-            this.tEndPlateLength_62.Location = new System.Drawing.Point(289, 368);
-            this.tEndPlateLength_62.Name = "tEndPlateLength_62";
-            this.tEndPlateLength_62.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlateLength_62.TabIndex = 220;
-            this.tEndPlateLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateLength_61
-            // 
-            this.tEndPlateLength_61.Location = new System.Drawing.Point(362, 368);
-            this.tEndPlateLength_61.Name = "tEndPlateLength_61";
-            this.tEndPlateLength_61.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlateLength_61.TabIndex = 219;
-            this.tEndPlateLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateLength_63
-            // 
-            this.tEndPlateLength_63.Location = new System.Drawing.Point(219, 368);
-            this.tEndPlateLength_63.Name = "tEndPlateLength_63";
-            this.tEndPlateLength_63.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlateLength_63.TabIndex = 222;
-            this.tEndPlateLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(432, 371);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 13);
-            this.label11.TabIndex = 221;
-            this.label11.Text = "LENGTH  End Plate";
-            // 
-            // tEndPlateLength_64
-            // 
-            this.tEndPlateLength_64.Location = new System.Drawing.Point(146, 368);
-            this.tEndPlateLength_64.Name = "tEndPlateLength_64";
-            this.tEndPlateLength_64.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlateLength_64.TabIndex = 223;
-            this.tEndPlateLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateLength_65
-            // 
-            this.tEndPlateLength_65.Location = new System.Drawing.Point(76, 368);
-            this.tEndPlateLength_65.Name = "tEndPlateLength_65";
-            this.tEndPlateLength_65.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlateLength_65.TabIndex = 224;
-            this.tEndPlateLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmLength_66
-            // 
-            this.tTopBtmLength_66.Location = new System.Drawing.Point(3, 342);
-            this.tTopBtmLength_66.Name = "tTopBtmLength_66";
-            this.tTopBtmLength_66.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmLength_66.TabIndex = 218;
-            this.tTopBtmLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmLength_62
-            // 
-            this.tTopBtmLength_62.Location = new System.Drawing.Point(289, 342);
-            this.tTopBtmLength_62.Name = "tTopBtmLength_62";
-            this.tTopBtmLength_62.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmLength_62.TabIndex = 213;
-            this.tTopBtmLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmLength_61
-            // 
-            this.tTopBtmLength_61.Location = new System.Drawing.Point(362, 342);
-            this.tTopBtmLength_61.Name = "tTopBtmLength_61";
-            this.tTopBtmLength_61.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmLength_61.TabIndex = 212;
-            this.tTopBtmLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmLength_63
-            // 
-            this.tTopBtmLength_63.Location = new System.Drawing.Point(219, 342);
-            this.tTopBtmLength_63.Name = "tTopBtmLength_63";
-            this.tTopBtmLength_63.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmLength_63.TabIndex = 215;
-            this.tTopBtmLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(432, 345);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(141, 13);
-            this.label12.TabIndex = 214;
-            this.label12.Text = "LENGTH  Top/Bottom Plate";
-            // 
-            // tTopBtmLength_64
-            // 
-            this.tTopBtmLength_64.Location = new System.Drawing.Point(146, 342);
-            this.tTopBtmLength_64.Name = "tTopBtmLength_64";
-            this.tTopBtmLength_64.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmLength_64.TabIndex = 216;
-            this.tTopBtmLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmLength_65
-            // 
-            this.tTopBtmLength_65.Location = new System.Drawing.Point(76, 342);
-            this.tTopBtmLength_65.Name = "tTopBtmLength_65";
-            this.tTopBtmLength_65.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmLength_65.TabIndex = 217;
-            this.tTopBtmLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateWidth_66
-            // 
-            this.tEndPlateWidth_66.Location = new System.Drawing.Point(3, 255);
-            this.tEndPlateWidth_66.Name = "tEndPlateWidth_66";
-            this.tEndPlateWidth_66.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlateWidth_66.TabIndex = 211;
-            this.tEndPlateWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateWidth_62
-            // 
-            this.tEndPlateWidth_62.Location = new System.Drawing.Point(289, 255);
-            this.tEndPlateWidth_62.Name = "tEndPlateWidth_62";
-            this.tEndPlateWidth_62.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlateWidth_62.TabIndex = 206;
-            this.tEndPlateWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateWidth_61
-            // 
-            this.tEndPlateWidth_61.Location = new System.Drawing.Point(362, 255);
-            this.tEndPlateWidth_61.Name = "tEndPlateWidth_61";
-            this.tEndPlateWidth_61.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlateWidth_61.TabIndex = 205;
-            this.tEndPlateWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateWidth_63
-            // 
-            this.tEndPlateWidth_63.Location = new System.Drawing.Point(219, 255);
-            this.tEndPlateWidth_63.Name = "tEndPlateWidth_63";
-            this.tEndPlateWidth_63.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlateWidth_63.TabIndex = 208;
-            this.tEndPlateWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(432, 258);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 13);
-            this.label9.TabIndex = 207;
-            this.label9.Text = "WIDTH  End Plate";
-            // 
-            // tEndPlateWidth_64
-            // 
-            this.tEndPlateWidth_64.Location = new System.Drawing.Point(146, 255);
-            this.tEndPlateWidth_64.Name = "tEndPlateWidth_64";
-            this.tEndPlateWidth_64.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlateWidth_64.TabIndex = 209;
-            this.tEndPlateWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlateWidth_65
-            // 
-            this.tEndPlateWidth_65.Location = new System.Drawing.Point(76, 255);
-            this.tEndPlateWidth_65.Name = "tEndPlateWidth_65";
-            this.tEndPlateWidth_65.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlateWidth_65.TabIndex = 210;
-            this.tEndPlateWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmWidth_66
-            // 
-            this.tTopBtmWidth_66.Location = new System.Drawing.Point(3, 229);
-            this.tTopBtmWidth_66.Name = "tTopBtmWidth_66";
-            this.tTopBtmWidth_66.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmWidth_66.TabIndex = 204;
-            this.tTopBtmWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmWidth_62
-            // 
-            this.tTopBtmWidth_62.Location = new System.Drawing.Point(289, 229);
-            this.tTopBtmWidth_62.Name = "tTopBtmWidth_62";
-            this.tTopBtmWidth_62.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmWidth_62.TabIndex = 199;
-            this.tTopBtmWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmWidth_61
-            // 
-            this.tTopBtmWidth_61.Location = new System.Drawing.Point(362, 229);
-            this.tTopBtmWidth_61.Name = "tTopBtmWidth_61";
-            this.tTopBtmWidth_61.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmWidth_61.TabIndex = 198;
-            this.tTopBtmWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmWidth_63
-            // 
-            this.tTopBtmWidth_63.Location = new System.Drawing.Point(219, 229);
-            this.tTopBtmWidth_63.Name = "tTopBtmWidth_63";
-            this.tTopBtmWidth_63.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmWidth_63.TabIndex = 201;
-            this.tTopBtmWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(432, 232);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 13);
-            this.label10.TabIndex = 200;
-            this.label10.Text = "WIDTH  Top/Bottom Plate";
-            // 
-            // tTopBtmWidth_64
-            // 
-            this.tTopBtmWidth_64.Location = new System.Drawing.Point(146, 229);
-            this.tTopBtmWidth_64.Name = "tTopBtmWidth_64";
-            this.tTopBtmWidth_64.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmWidth_64.TabIndex = 202;
-            this.tTopBtmWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmWidth_65
-            // 
-            this.tTopBtmWidth_65.Location = new System.Drawing.Point(76, 229);
-            this.tTopBtmWidth_65.Name = "tTopBtmWidth_65";
-            this.tTopBtmWidth_65.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmWidth_65.TabIndex = 203;
-            this.tTopBtmWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetWidth_66
-            // 
-            this.tPlugsheetWidth_66.Location = new System.Drawing.Point(3, 203);
-            this.tPlugsheetWidth_66.Name = "tPlugsheetWidth_66";
-            this.tPlugsheetWidth_66.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetWidth_66.TabIndex = 197;
-            this.tPlugsheetWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetWidth_62
-            // 
-            this.tPlugsheetWidth_62.Location = new System.Drawing.Point(289, 203);
-            this.tPlugsheetWidth_62.Name = "tPlugsheetWidth_62";
-            this.tPlugsheetWidth_62.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetWidth_62.TabIndex = 192;
-            this.tPlugsheetWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetWidth_61
-            // 
-            this.tPlugsheetWidth_61.Location = new System.Drawing.Point(362, 203);
-            this.tPlugsheetWidth_61.Name = "tPlugsheetWidth_61";
-            this.tPlugsheetWidth_61.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetWidth_61.TabIndex = 191;
-            this.tPlugsheetWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetWidth_63
-            // 
-            this.tPlugsheetWidth_63.Location = new System.Drawing.Point(219, 203);
-            this.tPlugsheetWidth_63.Name = "tPlugsheetWidth_63";
-            this.tPlugsheetWidth_63.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetWidth_63.TabIndex = 194;
-            this.tPlugsheetWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(432, 206);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 13);
-            this.label6.TabIndex = 193;
-            this.label6.Text = "WIDTH  Plugsheet";
-            // 
-            // tPlugsheetWidth_64
-            // 
-            this.tPlugsheetWidth_64.Location = new System.Drawing.Point(146, 203);
-            this.tPlugsheetWidth_64.Name = "tPlugsheetWidth_64";
-            this.tPlugsheetWidth_64.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetWidth_64.TabIndex = 195;
-            this.tPlugsheetWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetWidth_65
-            // 
-            this.tPlugsheetWidth_65.Location = new System.Drawing.Point(76, 203);
-            this.tPlugsheetWidth_65.Name = "tPlugsheetWidth_65";
-            this.tPlugsheetWidth_65.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetWidth_65.TabIndex = 196;
-            this.tPlugsheetWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetLength_66
-            // 
-            this.tPlugsheetLength_66.Location = new System.Drawing.Point(3, 316);
-            this.tPlugsheetLength_66.Name = "tPlugsheetLength_66";
-            this.tPlugsheetLength_66.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetLength_66.TabIndex = 190;
-            this.tPlugsheetLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetLength_62
-            // 
-            this.tPlugsheetLength_62.Location = new System.Drawing.Point(289, 316);
-            this.tPlugsheetLength_62.Name = "tPlugsheetLength_62";
-            this.tPlugsheetLength_62.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetLength_62.TabIndex = 185;
-            this.tPlugsheetLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetLength_61
-            // 
-            this.tPlugsheetLength_61.Location = new System.Drawing.Point(362, 316);
-            this.tPlugsheetLength_61.Name = "tPlugsheetLength_61";
-            this.tPlugsheetLength_61.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetLength_61.TabIndex = 184;
-            this.tPlugsheetLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetLength_63
-            // 
-            this.tPlugsheetLength_63.Location = new System.Drawing.Point(219, 316);
-            this.tPlugsheetLength_63.Name = "tPlugsheetLength_63";
-            this.tPlugsheetLength_63.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetLength_63.TabIndex = 187;
-            this.tPlugsheetLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(432, 319);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 13);
-            this.label7.TabIndex = 186;
-            this.label7.Text = "LENGTH  Plugsheet";
-            // 
-            // tPlugsheetLength_64
-            // 
-            this.tPlugsheetLength_64.Location = new System.Drawing.Point(146, 316);
-            this.tPlugsheetLength_64.Name = "tPlugsheetLength_64";
-            this.tPlugsheetLength_64.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetLength_64.TabIndex = 188;
-            this.tPlugsheetLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetLength_65
-            // 
-            this.tPlugsheetLength_65.Location = new System.Drawing.Point(76, 316);
-            this.tPlugsheetLength_65.Name = "tPlugsheetLength_65";
-            this.tPlugsheetLength_65.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetLength_65.TabIndex = 189;
-            this.tPlugsheetLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tPlugsheetTHK_66
             // 
@@ -1348,122 +2423,6 @@
             this.tEndPlateTHK_65.Size = new System.Drawing.Size(64, 20);
             this.tEndPlateTHK_65.TabIndex = 161;
             this.tEndPlateTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetWidth_66
-            // 
-            this.tTubesheetWidth_66.Location = new System.Drawing.Point(3, 177);
-            this.tTubesheetWidth_66.Name = "tTubesheetWidth_66";
-            this.tTubesheetWidth_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetWidth_66.TabIndex = 155;
-            this.tTubesheetWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetWidth_62
-            // 
-            this.tTubesheetWidth_62.Location = new System.Drawing.Point(289, 177);
-            this.tTubesheetWidth_62.Name = "tTubesheetWidth_62";
-            this.tTubesheetWidth_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetWidth_62.TabIndex = 150;
-            this.tTubesheetWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetWidth_61
-            // 
-            this.tTubesheetWidth_61.Location = new System.Drawing.Point(362, 177);
-            this.tTubesheetWidth_61.Name = "tTubesheetWidth_61";
-            this.tTubesheetWidth_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetWidth_61.TabIndex = 149;
-            this.tTubesheetWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetWidth_63
-            // 
-            this.tTubesheetWidth_63.Location = new System.Drawing.Point(219, 177);
-            this.tTubesheetWidth_63.Name = "tTubesheetWidth_63";
-            this.tTubesheetWidth_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetWidth_63.TabIndex = 152;
-            this.tTubesheetWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(432, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
-            this.label2.TabIndex = 151;
-            this.label2.Text = "WIDTH  Tubesheet";
-            // 
-            // tTubesheetWidth_64
-            // 
-            this.tTubesheetWidth_64.Location = new System.Drawing.Point(146, 177);
-            this.tTubesheetWidth_64.Name = "tTubesheetWidth_64";
-            this.tTubesheetWidth_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetWidth_64.TabIndex = 153;
-            this.tTubesheetWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetWidth_65
-            // 
-            this.tTubesheetWidth_65.Location = new System.Drawing.Point(76, 177);
-            this.tTubesheetWidth_65.Name = "tTubesheetWidth_65";
-            this.tTubesheetWidth_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetWidth_65.TabIndex = 154;
-            this.tTubesheetWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetLength_66
-            // 
-            this.tTubesheetLength_66.Location = new System.Drawing.Point(3, 290);
-            this.tTubesheetLength_66.Name = "tTubesheetLength_66";
-            this.tTubesheetLength_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetLength_66.TabIndex = 148;
-            this.tTubesheetLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetLength_62
-            // 
-            this.tTubesheetLength_62.Location = new System.Drawing.Point(289, 290);
-            this.tTubesheetLength_62.Name = "tTubesheetLength_62";
-            this.tTubesheetLength_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetLength_62.TabIndex = 143;
-            this.tTubesheetLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetLength_61
-            // 
-            this.tTubesheetLength_61.Location = new System.Drawing.Point(362, 290);
-            this.tTubesheetLength_61.Name = "tTubesheetLength_61";
-            this.tTubesheetLength_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetLength_61.TabIndex = 142;
-            this.tTubesheetLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetLength_63
-            // 
-            this.tTubesheetLength_63.Location = new System.Drawing.Point(219, 290);
-            this.tTubesheetLength_63.Name = "tTubesheetLength_63";
-            this.tTubesheetLength_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetLength_63.TabIndex = 145;
-            this.tTubesheetLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(432, 293);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
-            this.label1.TabIndex = 144;
-            this.label1.Text = "LENGTH  Tubesheet";
-            // 
-            // tTubesheetLength_64
-            // 
-            this.tTubesheetLength_64.Location = new System.Drawing.Point(146, 290);
-            this.tTubesheetLength_64.Name = "tTubesheetLength_64";
-            this.tTubesheetLength_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetLength_64.TabIndex = 146;
-            this.tTubesheetLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetLength_65
-            // 
-            this.tTubesheetLength_65.Location = new System.Drawing.Point(76, 290);
-            this.tTubesheetLength_65.Name = "tTubesheetLength_65";
-            this.tTubesheetLength_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetLength_65.TabIndex = 147;
-            this.tTubesheetLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tTubesheetTHK_66
             // 
@@ -1741,7 +2700,7 @@
             // bCreateUpdate
             // 
             this.bCreateUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreateUpdate.Location = new System.Drawing.Point(283, 565);
+            this.bCreateUpdate.Location = new System.Drawing.Point(393, 565);
             this.bCreateUpdate.Name = "bCreateUpdate";
             this.bCreateUpdate.Size = new System.Drawing.Size(44, 28);
             this.bCreateUpdate.TabIndex = 5;
@@ -1749,821 +2708,71 @@
             this.bCreateUpdate.UseVisualStyleBackColor = true;
             this.bCreateUpdate.Click += new System.EventHandler(this.bCreateUpdate_Click);
             // 
-            // tTubeRow1Count_66
-            // 
-            this.tTubeRow1Count_66.Location = new System.Drawing.Point(3, 507);
-            this.tTubeRow1Count_66.Name = "tTubeRow1Count_66";
-            this.tTubeRow1Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow1Count_66.TabIndex = 268;
-            this.tTubeRow1Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow1Count_62
-            // 
-            this.tTubeRow1Count_62.Location = new System.Drawing.Point(289, 507);
-            this.tTubeRow1Count_62.Name = "tTubeRow1Count_62";
-            this.tTubeRow1Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow1Count_62.TabIndex = 263;
-            this.tTubeRow1Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow1Count_61
-            // 
-            this.tTubeRow1Count_61.Location = new System.Drawing.Point(362, 507);
-            this.tTubeRow1Count_61.Name = "tTubeRow1Count_61";
-            this.tTubeRow1Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow1Count_61.TabIndex = 262;
-            this.tTubeRow1Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow1Count_63
-            // 
-            this.tTubeRow1Count_63.Location = new System.Drawing.Point(219, 507);
-            this.tTubeRow1Count_63.Name = "tTubeRow1Count_63";
-            this.tTubeRow1Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow1Count_63.TabIndex = 265;
-            this.tTubeRow1Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(432, 510);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(101, 13);
-            this.label26.TabIndex = 264;
-            this.label26.Text = "COUNT  Odd Rows";
-            // 
-            // tTubeRow1Count_64
-            // 
-            this.tTubeRow1Count_64.Location = new System.Drawing.Point(146, 507);
-            this.tTubeRow1Count_64.Name = "tTubeRow1Count_64";
-            this.tTubeRow1Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow1Count_64.TabIndex = 266;
-            this.tTubeRow1Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow1Count_65
-            // 
-            this.tTubeRow1Count_65.Location = new System.Drawing.Point(76, 507);
-            this.tTubeRow1Count_65.Name = "tTubeRow1Count_65";
-            this.tTubeRow1Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow1Count_65.TabIndex = 267;
-            this.tTubeRow1Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow2Count_66
-            // 
-            this.tTubeRow2Count_66.Location = new System.Drawing.Point(3, 533);
-            this.tTubeRow2Count_66.Name = "tTubeRow2Count_66";
-            this.tTubeRow2Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow2Count_66.TabIndex = 275;
-            this.tTubeRow2Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow2Count_62
-            // 
-            this.tTubeRow2Count_62.Location = new System.Drawing.Point(289, 533);
-            this.tTubeRow2Count_62.Name = "tTubeRow2Count_62";
-            this.tTubeRow2Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow2Count_62.TabIndex = 270;
-            this.tTubeRow2Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow2Count_61
-            // 
-            this.tTubeRow2Count_61.Location = new System.Drawing.Point(362, 533);
-            this.tTubeRow2Count_61.Name = "tTubeRow2Count_61";
-            this.tTubeRow2Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow2Count_61.TabIndex = 269;
-            this.tTubeRow2Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow2Count_63
-            // 
-            this.tTubeRow2Count_63.Location = new System.Drawing.Point(219, 533);
-            this.tTubeRow2Count_63.Name = "tTubeRow2Count_63";
-            this.tTubeRow2Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow2Count_63.TabIndex = 272;
-            this.tTubeRow2Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(432, 536);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(106, 13);
-            this.label27.TabIndex = 271;
-            this.label27.Text = "COUNT  Even Rows";
-            // 
-            // tTubeRow2Count_64
-            // 
-            this.tTubeRow2Count_64.Location = new System.Drawing.Point(146, 533);
-            this.tTubeRow2Count_64.Name = "tTubeRow2Count_64";
-            this.tTubeRow2Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow2Count_64.TabIndex = 273;
-            this.tTubeRow2Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow2Count_65
-            // 
-            this.tTubeRow2Count_65.Location = new System.Drawing.Point(76, 533);
-            this.tTubeRow2Count_65.Name = "tTubeRow2Count_65";
-            this.tTubeRow2Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow2Count_65.TabIndex = 274;
-            this.tTubeRow2Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchOdd_66
-            // 
-            this.tTubeHPitchOdd_66.Location = new System.Drawing.Point(3, 559);
-            this.tTubeHPitchOdd_66.Name = "tTubeHPitchOdd_66";
-            this.tTubeHPitchOdd_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeHPitchOdd_66.TabIndex = 338;
-            this.tTubeHPitchOdd_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchOdd_62
-            // 
-            this.tTubeHPitchOdd_62.Location = new System.Drawing.Point(289, 559);
-            this.tTubeHPitchOdd_62.Name = "tTubeHPitchOdd_62";
-            this.tTubeHPitchOdd_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeHPitchOdd_62.TabIndex = 333;
-            this.tTubeHPitchOdd_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchOdd_61
-            // 
-            this.tTubeHPitchOdd_61.Location = new System.Drawing.Point(362, 559);
-            this.tTubeHPitchOdd_61.Name = "tTubeHPitchOdd_61";
-            this.tTubeHPitchOdd_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeHPitchOdd_61.TabIndex = 332;
-            this.tTubeHPitchOdd_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchOdd_63
-            // 
-            this.tTubeHPitchOdd_63.Location = new System.Drawing.Point(219, 559);
-            this.tTubeHPitchOdd_63.Name = "tTubeHPitchOdd_63";
-            this.tTubeHPitchOdd_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeHPitchOdd_63.TabIndex = 335;
-            this.tTubeHPitchOdd_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(432, 562);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(101, 13);
-            this.label36.TabIndex = 334;
-            this.label36.Text = "H-PITCH  Row Odd";
-            // 
-            // tTubeHPitchOdd_64
-            // 
-            this.tTubeHPitchOdd_64.Location = new System.Drawing.Point(146, 559);
-            this.tTubeHPitchOdd_64.Name = "tTubeHPitchOdd_64";
-            this.tTubeHPitchOdd_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeHPitchOdd_64.TabIndex = 336;
-            this.tTubeHPitchOdd_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchOdd_65
-            // 
-            this.tTubeHPitchOdd_65.Location = new System.Drawing.Point(76, 559);
-            this.tTubeHPitchOdd_65.Name = "tTubeHPitchOdd_65";
-            this.tTubeHPitchOdd_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeHPitchOdd_65.TabIndex = 337;
-            this.tTubeHPitchOdd_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_66
-            // 
-            this.tTubeRow10Count_66.Location = new System.Drawing.Point(682, 407);
-            this.tTubeRow10Count_66.Name = "tTubeRow10Count_66";
-            this.tTubeRow10Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow10Count_66.TabIndex = 387;
-            this.tTubeRow10Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_62
-            // 
-            this.tTubeRow10Count_62.Location = new System.Drawing.Point(968, 407);
-            this.tTubeRow10Count_62.Name = "tTubeRow10Count_62";
-            this.tTubeRow10Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow10Count_62.TabIndex = 382;
-            this.tTubeRow10Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_61
-            // 
-            this.tTubeRow10Count_61.Location = new System.Drawing.Point(1041, 407);
-            this.tTubeRow10Count_61.Name = "tTubeRow10Count_61";
-            this.tTubeRow10Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow10Count_61.TabIndex = 381;
-            this.tTubeRow10Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_63
-            // 
-            this.tTubeRow10Count_63.Location = new System.Drawing.Point(898, 407);
-            this.tTubeRow10Count_63.Name = "tTubeRow10Count_63";
-            this.tTubeRow10Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow10Count_63.TabIndex = 384;
-            this.tTubeRow10Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(1111, 410);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(85, 13);
-            this.label35.TabIndex = 383;
-            this.label35.Text = "COUNT  Row10";
-            // 
-            // tTubeRow10Count_64
-            // 
-            this.tTubeRow10Count_64.Location = new System.Drawing.Point(825, 407);
-            this.tTubeRow10Count_64.Name = "tTubeRow10Count_64";
-            this.tTubeRow10Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow10Count_64.TabIndex = 385;
-            this.tTubeRow10Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_65
-            // 
-            this.tTubeRow10Count_65.Location = new System.Drawing.Point(755, 407);
-            this.tTubeRow10Count_65.Name = "tTubeRow10Count_65";
-            this.tTubeRow10Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow10Count_65.TabIndex = 386;
-            this.tTubeRow10Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_66
-            // 
-            this.tTubeRow9Count_66.Location = new System.Drawing.Point(682, 381);
-            this.tTubeRow9Count_66.Name = "tTubeRow9Count_66";
-            this.tTubeRow9Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow9Count_66.TabIndex = 380;
-            this.tTubeRow9Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_62
-            // 
-            this.tTubeRow9Count_62.Location = new System.Drawing.Point(968, 381);
-            this.tTubeRow9Count_62.Name = "tTubeRow9Count_62";
-            this.tTubeRow9Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow9Count_62.TabIndex = 375;
-            this.tTubeRow9Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_61
-            // 
-            this.tTubeRow9Count_61.Location = new System.Drawing.Point(1041, 381);
-            this.tTubeRow9Count_61.Name = "tTubeRow9Count_61";
-            this.tTubeRow9Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow9Count_61.TabIndex = 374;
-            this.tTubeRow9Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_63
-            // 
-            this.tTubeRow9Count_63.Location = new System.Drawing.Point(898, 381);
-            this.tTubeRow9Count_63.Name = "tTubeRow9Count_63";
-            this.tTubeRow9Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow9Count_63.TabIndex = 377;
-            this.tTubeRow9Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(1111, 384);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(79, 13);
-            this.label34.TabIndex = 376;
-            this.label34.Text = "COUNT  Row9";
-            // 
-            // tTubeRow9Count_64
-            // 
-            this.tTubeRow9Count_64.Location = new System.Drawing.Point(825, 381);
-            this.tTubeRow9Count_64.Name = "tTubeRow9Count_64";
-            this.tTubeRow9Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow9Count_64.TabIndex = 378;
-            this.tTubeRow9Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_65
-            // 
-            this.tTubeRow9Count_65.Location = new System.Drawing.Point(755, 381);
-            this.tTubeRow9Count_65.Name = "tTubeRow9Count_65";
-            this.tTubeRow9Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow9Count_65.TabIndex = 379;
-            this.tTubeRow9Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_66
-            // 
-            this.tTubeRow8Count_66.Location = new System.Drawing.Point(682, 355);
-            this.tTubeRow8Count_66.Name = "tTubeRow8Count_66";
-            this.tTubeRow8Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow8Count_66.TabIndex = 373;
-            this.tTubeRow8Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_62
-            // 
-            this.tTubeRow8Count_62.Location = new System.Drawing.Point(968, 355);
-            this.tTubeRow8Count_62.Name = "tTubeRow8Count_62";
-            this.tTubeRow8Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow8Count_62.TabIndex = 368;
-            this.tTubeRow8Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_61
-            // 
-            this.tTubeRow8Count_61.Location = new System.Drawing.Point(1041, 355);
-            this.tTubeRow8Count_61.Name = "tTubeRow8Count_61";
-            this.tTubeRow8Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow8Count_61.TabIndex = 367;
-            this.tTubeRow8Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_63
-            // 
-            this.tTubeRow8Count_63.Location = new System.Drawing.Point(898, 355);
-            this.tTubeRow8Count_63.Name = "tTubeRow8Count_63";
-            this.tTubeRow8Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow8Count_63.TabIndex = 370;
-            this.tTubeRow8Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(1111, 358);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(79, 13);
-            this.label33.TabIndex = 369;
-            this.label33.Text = "COUNT  Row8";
-            // 
-            // tTubeRow8Count_64
-            // 
-            this.tTubeRow8Count_64.Location = new System.Drawing.Point(825, 355);
-            this.tTubeRow8Count_64.Name = "tTubeRow8Count_64";
-            this.tTubeRow8Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow8Count_64.TabIndex = 371;
-            this.tTubeRow8Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_65
-            // 
-            this.tTubeRow8Count_65.Location = new System.Drawing.Point(755, 355);
-            this.tTubeRow8Count_65.Name = "tTubeRow8Count_65";
-            this.tTubeRow8Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow8Count_65.TabIndex = 372;
-            this.tTubeRow8Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_66
-            // 
-            this.tTubeRow7Count_66.Location = new System.Drawing.Point(682, 329);
-            this.tTubeRow7Count_66.Name = "tTubeRow7Count_66";
-            this.tTubeRow7Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow7Count_66.TabIndex = 366;
-            this.tTubeRow7Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_62
-            // 
-            this.tTubeRow7Count_62.Location = new System.Drawing.Point(968, 329);
-            this.tTubeRow7Count_62.Name = "tTubeRow7Count_62";
-            this.tTubeRow7Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow7Count_62.TabIndex = 361;
-            this.tTubeRow7Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_61
-            // 
-            this.tTubeRow7Count_61.Location = new System.Drawing.Point(1041, 329);
-            this.tTubeRow7Count_61.Name = "tTubeRow7Count_61";
-            this.tTubeRow7Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow7Count_61.TabIndex = 360;
-            this.tTubeRow7Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_63
-            // 
-            this.tTubeRow7Count_63.Location = new System.Drawing.Point(898, 329);
-            this.tTubeRow7Count_63.Name = "tTubeRow7Count_63";
-            this.tTubeRow7Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow7Count_63.TabIndex = 363;
-            this.tTubeRow7Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(1111, 332);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(79, 13);
-            this.label32.TabIndex = 362;
-            this.label32.Text = "COUNT  Row7";
-            // 
-            // tTubeRow7Count_64
-            // 
-            this.tTubeRow7Count_64.Location = new System.Drawing.Point(825, 329);
-            this.tTubeRow7Count_64.Name = "tTubeRow7Count_64";
-            this.tTubeRow7Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow7Count_64.TabIndex = 364;
-            this.tTubeRow7Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_65
-            // 
-            this.tTubeRow7Count_65.Location = new System.Drawing.Point(755, 329);
-            this.tTubeRow7Count_65.Name = "tTubeRow7Count_65";
-            this.tTubeRow7Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow7Count_65.TabIndex = 365;
-            this.tTubeRow7Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_66
-            // 
-            this.tTubeRow6Count_66.Location = new System.Drawing.Point(682, 303);
-            this.tTubeRow6Count_66.Name = "tTubeRow6Count_66";
-            this.tTubeRow6Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow6Count_66.TabIndex = 359;
-            this.tTubeRow6Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_62
-            // 
-            this.tTubeRow6Count_62.Location = new System.Drawing.Point(968, 303);
-            this.tTubeRow6Count_62.Name = "tTubeRow6Count_62";
-            this.tTubeRow6Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow6Count_62.TabIndex = 354;
-            this.tTubeRow6Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_61
-            // 
-            this.tTubeRow6Count_61.Location = new System.Drawing.Point(1041, 303);
-            this.tTubeRow6Count_61.Name = "tTubeRow6Count_61";
-            this.tTubeRow6Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow6Count_61.TabIndex = 353;
-            this.tTubeRow6Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_63
-            // 
-            this.tTubeRow6Count_63.Location = new System.Drawing.Point(898, 303);
-            this.tTubeRow6Count_63.Name = "tTubeRow6Count_63";
-            this.tTubeRow6Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow6Count_63.TabIndex = 356;
-            this.tTubeRow6Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(1111, 306);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(79, 13);
-            this.label31.TabIndex = 355;
-            this.label31.Text = "COUNT  Row6";
-            // 
-            // tTubeRow6Count_64
-            // 
-            this.tTubeRow6Count_64.Location = new System.Drawing.Point(825, 303);
-            this.tTubeRow6Count_64.Name = "tTubeRow6Count_64";
-            this.tTubeRow6Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow6Count_64.TabIndex = 357;
-            this.tTubeRow6Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_65
-            // 
-            this.tTubeRow6Count_65.Location = new System.Drawing.Point(755, 303);
-            this.tTubeRow6Count_65.Name = "tTubeRow6Count_65";
-            this.tTubeRow6Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow6Count_65.TabIndex = 358;
-            this.tTubeRow6Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_66
-            // 
-            this.tTubeRow5Count_66.Location = new System.Drawing.Point(682, 277);
-            this.tTubeRow5Count_66.Name = "tTubeRow5Count_66";
-            this.tTubeRow5Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow5Count_66.TabIndex = 352;
-            this.tTubeRow5Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_62
-            // 
-            this.tTubeRow5Count_62.Location = new System.Drawing.Point(968, 277);
-            this.tTubeRow5Count_62.Name = "tTubeRow5Count_62";
-            this.tTubeRow5Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow5Count_62.TabIndex = 347;
-            this.tTubeRow5Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_61
-            // 
-            this.tTubeRow5Count_61.Location = new System.Drawing.Point(1041, 277);
-            this.tTubeRow5Count_61.Name = "tTubeRow5Count_61";
-            this.tTubeRow5Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow5Count_61.TabIndex = 346;
-            this.tTubeRow5Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_63
-            // 
-            this.tTubeRow5Count_63.Location = new System.Drawing.Point(898, 277);
-            this.tTubeRow5Count_63.Name = "tTubeRow5Count_63";
-            this.tTubeRow5Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow5Count_63.TabIndex = 349;
-            this.tTubeRow5Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(1111, 280);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(79, 13);
-            this.label30.TabIndex = 348;
-            this.label30.Text = "COUNT  Row5";
-            // 
-            // tTubeRow5Count_64
-            // 
-            this.tTubeRow5Count_64.Location = new System.Drawing.Point(825, 277);
-            this.tTubeRow5Count_64.Name = "tTubeRow5Count_64";
-            this.tTubeRow5Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow5Count_64.TabIndex = 350;
-            this.tTubeRow5Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_65
-            // 
-            this.tTubeRow5Count_65.Location = new System.Drawing.Point(755, 277);
-            this.tTubeRow5Count_65.Name = "tTubeRow5Count_65";
-            this.tTubeRow5Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow5Count_65.TabIndex = 351;
-            this.tTubeRow5Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_66
-            // 
-            this.tTubeRow4Count_66.Location = new System.Drawing.Point(682, 251);
-            this.tTubeRow4Count_66.Name = "tTubeRow4Count_66";
-            this.tTubeRow4Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow4Count_66.TabIndex = 345;
-            this.tTubeRow4Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_62
-            // 
-            this.tTubeRow4Count_62.Location = new System.Drawing.Point(968, 251);
-            this.tTubeRow4Count_62.Name = "tTubeRow4Count_62";
-            this.tTubeRow4Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow4Count_62.TabIndex = 340;
-            this.tTubeRow4Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_61
-            // 
-            this.tTubeRow4Count_61.Location = new System.Drawing.Point(1041, 251);
-            this.tTubeRow4Count_61.Name = "tTubeRow4Count_61";
-            this.tTubeRow4Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow4Count_61.TabIndex = 339;
-            this.tTubeRow4Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_63
-            // 
-            this.tTubeRow4Count_63.Location = new System.Drawing.Point(898, 251);
-            this.tTubeRow4Count_63.Name = "tTubeRow4Count_63";
-            this.tTubeRow4Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow4Count_63.TabIndex = 342;
-            this.tTubeRow4Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(1111, 254);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(79, 13);
-            this.label29.TabIndex = 341;
-            this.label29.Text = "COUNT  Row4";
-            // 
-            // tTubeRow4Count_64
-            // 
-            this.tTubeRow4Count_64.Location = new System.Drawing.Point(825, 251);
-            this.tTubeRow4Count_64.Name = "tTubeRow4Count_64";
-            this.tTubeRow4Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow4Count_64.TabIndex = 343;
-            this.tTubeRow4Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_65
-            // 
-            this.tTubeRow4Count_65.Location = new System.Drawing.Point(755, 251);
-            this.tTubeRow4Count_65.Name = "tTubeRow4Count_65";
-            this.tTubeRow4Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow4Count_65.TabIndex = 344;
-            this.tTubeRow4Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_66
-            // 
-            this.tTubeRow3Count_66.Location = new System.Drawing.Point(682, 225);
-            this.tTubeRow3Count_66.Name = "tTubeRow3Count_66";
-            this.tTubeRow3Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow3Count_66.TabIndex = 338;
-            this.tTubeRow3Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_62
-            // 
-            this.tTubeRow3Count_62.Location = new System.Drawing.Point(968, 225);
-            this.tTubeRow3Count_62.Name = "tTubeRow3Count_62";
-            this.tTubeRow3Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow3Count_62.TabIndex = 333;
-            this.tTubeRow3Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_61
-            // 
-            this.tTubeRow3Count_61.Location = new System.Drawing.Point(1041, 225);
-            this.tTubeRow3Count_61.Name = "tTubeRow3Count_61";
-            this.tTubeRow3Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow3Count_61.TabIndex = 332;
-            this.tTubeRow3Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_63
-            // 
-            this.tTubeRow3Count_63.Location = new System.Drawing.Point(898, 225);
-            this.tTubeRow3Count_63.Name = "tTubeRow3Count_63";
-            this.tTubeRow3Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow3Count_63.TabIndex = 335;
-            this.tTubeRow3Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(1111, 228);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(79, 13);
-            this.label28.TabIndex = 334;
-            this.label28.Text = "COUNT  Row3";
-            // 
-            // tTubeRow3Count_64
-            // 
-            this.tTubeRow3Count_64.Location = new System.Drawing.Point(825, 225);
-            this.tTubeRow3Count_64.Name = "tTubeRow3Count_64";
-            this.tTubeRow3Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow3Count_64.TabIndex = 336;
-            this.tTubeRow3Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_65
-            // 
-            this.tTubeRow3Count_65.Location = new System.Drawing.Point(755, 225);
-            this.tTubeRow3Count_65.Name = "tTubeRow3Count_65";
-            this.tTubeRow3Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow3Count_65.TabIndex = 337;
-            this.tTubeRow3Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchEven_66
-            // 
-            this.tTubeHPitchEven_66.Location = new System.Drawing.Point(3, 585);
-            this.tTubeHPitchEven_66.Name = "tTubeHPitchEven_66";
-            this.tTubeHPitchEven_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeHPitchEven_66.TabIndex = 345;
-            this.tTubeHPitchEven_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchEven_62
-            // 
-            this.tTubeHPitchEven_62.Location = new System.Drawing.Point(289, 585);
-            this.tTubeHPitchEven_62.Name = "tTubeHPitchEven_62";
-            this.tTubeHPitchEven_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeHPitchEven_62.TabIndex = 340;
-            this.tTubeHPitchEven_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchEven_61
-            // 
-            this.tTubeHPitchEven_61.Location = new System.Drawing.Point(362, 585);
-            this.tTubeHPitchEven_61.Name = "tTubeHPitchEven_61";
-            this.tTubeHPitchEven_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeHPitchEven_61.TabIndex = 339;
-            this.tTubeHPitchEven_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchEven_63
-            // 
-            this.tTubeHPitchEven_63.Location = new System.Drawing.Point(219, 585);
-            this.tTubeHPitchEven_63.Name = "tTubeHPitchEven_63";
-            this.tTubeHPitchEven_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeHPitchEven_63.TabIndex = 342;
-            this.tTubeHPitchEven_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(432, 588);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(106, 13);
-            this.label37.TabIndex = 341;
-            this.label37.Text = "H-PITCH  Row Even";
-            // 
-            // tTubeHPitchEven_64
-            // 
-            this.tTubeHPitchEven_64.Location = new System.Drawing.Point(146, 585);
-            this.tTubeHPitchEven_64.Name = "tTubeHPitchEven_64";
-            this.tTubeHPitchEven_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeHPitchEven_64.TabIndex = 343;
-            this.tTubeHPitchEven_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeHPitchEven_65
-            // 
-            this.tTubeHPitchEven_65.Location = new System.Drawing.Point(76, 585);
-            this.tTubeHPitchEven_65.Name = "tTubeHPitchEven_65";
-            this.tTubeHPitchEven_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeHPitchEven_65.TabIndex = 344;
-            this.tTubeHPitchEven_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeVPitchOneTwo_66
-            // 
-            this.tTubeVPitchOneTwo_66.Location = new System.Drawing.Point(3, 611);
-            this.tTubeVPitchOneTwo_66.Name = "tTubeVPitchOneTwo_66";
-            this.tTubeVPitchOneTwo_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeVPitchOneTwo_66.TabIndex = 352;
-            this.tTubeVPitchOneTwo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeVPitchOneTwo_62
-            // 
-            this.tTubeVPitchOneTwo_62.Location = new System.Drawing.Point(289, 611);
-            this.tTubeVPitchOneTwo_62.Name = "tTubeVPitchOneTwo_62";
-            this.tTubeVPitchOneTwo_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeVPitchOneTwo_62.TabIndex = 347;
-            this.tTubeVPitchOneTwo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeVPitchOneTwo_61
-            // 
-            this.tTubeVPitchOneTwo_61.Location = new System.Drawing.Point(362, 611);
-            this.tTubeVPitchOneTwo_61.Name = "tTubeVPitchOneTwo_61";
-            this.tTubeVPitchOneTwo_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeVPitchOneTwo_61.TabIndex = 346;
-            this.tTubeVPitchOneTwo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeVPitchOneTwo_63
-            // 
-            this.tTubeVPitchOneTwo_63.Location = new System.Drawing.Point(219, 611);
-            this.tTubeVPitchOneTwo_63.Name = "tTubeVPitchOneTwo_63";
-            this.tTubeVPitchOneTwo_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeVPitchOneTwo_63.TabIndex = 349;
-            this.tTubeVPitchOneTwo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(432, 614);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(121, 13);
-            this.label38.TabIndex = 348;
-            this.label38.Text = "V-PITCH  Rows 1 and 2";
-            // 
-            // tTubeVPitchOneTwo_64
-            // 
-            this.tTubeVPitchOneTwo_64.Location = new System.Drawing.Point(146, 611);
-            this.tTubeVPitchOneTwo_64.Name = "tTubeVPitchOneTwo_64";
-            this.tTubeVPitchOneTwo_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeVPitchOneTwo_64.TabIndex = 350;
-            this.tTubeVPitchOneTwo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeVPitchOneTwo_65
-            // 
-            this.tTubeVPitchOneTwo_65.Location = new System.Drawing.Point(76, 611);
-            this.tTubeVPitchOneTwo_65.Name = "tTubeVPitchOneTwo_65";
-            this.tTubeVPitchOneTwo_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeVPitchOneTwo_65.TabIndex = 351;
-            this.tTubeVPitchOneTwo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // test62
+            // 
+            this.test62.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.test62.Location = new System.Drawing.Point(322, 565);
+            this.test62.Name = "test62";
+            this.test62.Size = new System.Drawing.Size(44, 28);
+            this.test62.TabIndex = 6;
+            this.test62.Text = "62";
+            this.test62.UseVisualStyleBackColor = true;
+            this.test62.Click += new System.EventHandler(this.test62_Click);
+            // 
+            // test63
+            // 
+            this.test63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.test63.Location = new System.Drawing.Point(251, 565);
+            this.test63.Name = "test63";
+            this.test63.Size = new System.Drawing.Size(44, 28);
+            this.test63.TabIndex = 7;
+            this.test63.Text = "63";
+            this.test63.UseVisualStyleBackColor = true;
+            this.test63.Click += new System.EventHandler(this.test63_Click);
+            // 
+            // test64
+            // 
+            this.test64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.test64.Location = new System.Drawing.Point(180, 565);
+            this.test64.Name = "test64";
+            this.test64.Size = new System.Drawing.Size(44, 28);
+            this.test64.TabIndex = 8;
+            this.test64.Text = "64";
+            this.test64.UseVisualStyleBackColor = true;
+            this.test64.Click += new System.EventHandler(this.test64_Click);
+            // 
+            // test65
+            // 
+            this.test65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.test65.Location = new System.Drawing.Point(108, 565);
+            this.test65.Name = "test65";
+            this.test65.Size = new System.Drawing.Size(44, 28);
+            this.test65.TabIndex = 9;
+            this.test65.Text = "65";
+            this.test65.UseVisualStyleBackColor = true;
+            this.test65.Click += new System.EventHandler(this.test65_Click);
+            // 
+            // test66
+            // 
+            this.test66.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.test66.Location = new System.Drawing.Point(35, 565);
+            this.test66.Name = "test66";
+            this.test66.Size = new System.Drawing.Size(44, 28);
+            this.test66.TabIndex = 10;
+            this.test66.Text = "66";
+            this.test66.UseVisualStyleBackColor = true;
+            this.test66.Click += new System.EventHandler(this.test66_Click);
             // 
             // HeaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 600);
-            this.Controls.Add(this.tTubeRow10Count_66);
-            this.Controls.Add(this.tTubeRow10Count_62);
-            this.Controls.Add(this.tTubeRow10Count_61);
-            this.Controls.Add(this.tTubeRow10Count_63);
-            this.Controls.Add(this.label35);
-            this.Controls.Add(this.tTubeRow10Count_64);
-            this.Controls.Add(this.tTubeRow10Count_65);
-            this.Controls.Add(this.tTubeRow9Count_66);
-            this.Controls.Add(this.tTubeRow9Count_62);
-            this.Controls.Add(this.tTubeRow9Count_61);
-            this.Controls.Add(this.tTubeRow9Count_63);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.tTubeRow9Count_64);
-            this.Controls.Add(this.tTubeRow9Count_65);
-            this.Controls.Add(this.tTubeRow8Count_66);
-            this.Controls.Add(this.tTubeRow8Count_62);
-            this.Controls.Add(this.tTubeRow8Count_61);
-            this.Controls.Add(this.tTubeRow8Count_63);
-            this.Controls.Add(this.label33);
-            this.Controls.Add(this.tTubeRow8Count_64);
-            this.Controls.Add(this.tTubeRow8Count_65);
-            this.Controls.Add(this.tTubeRow7Count_66);
-            this.Controls.Add(this.tTubeRow7Count_62);
-            this.Controls.Add(this.tTubeRow7Count_61);
-            this.Controls.Add(this.tTubeRow7Count_63);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.tTubeRow7Count_64);
-            this.Controls.Add(this.tTubeRow7Count_65);
-            this.Controls.Add(this.tTubeRow6Count_66);
-            this.Controls.Add(this.tTubeRow6Count_62);
-            this.Controls.Add(this.tTubeRow6Count_61);
-            this.Controls.Add(this.tTubeRow6Count_63);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.tTubeRow6Count_64);
-            this.Controls.Add(this.tTubeRow6Count_65);
-            this.Controls.Add(this.tTubeRow5Count_66);
-            this.Controls.Add(this.tTubeRow5Count_62);
-            this.Controls.Add(this.tTubeRow5Count_61);
-            this.Controls.Add(this.tTubeRow5Count_63);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.tTubeRow5Count_64);
-            this.Controls.Add(this.tTubeRow5Count_65);
-            this.Controls.Add(this.tTubeRow4Count_66);
-            this.Controls.Add(this.tTubeRow4Count_62);
-            this.Controls.Add(this.tTubeRow4Count_61);
-            this.Controls.Add(this.tTubeRow4Count_63);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.tTubeRow4Count_64);
-            this.Controls.Add(this.tTubeRow4Count_65);
-            this.Controls.Add(this.tTubeRow3Count_66);
-            this.Controls.Add(this.tTubeRow3Count_62);
-            this.Controls.Add(this.tTubeRow3Count_61);
-            this.Controls.Add(this.tTubeRow3Count_63);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.tTubeRow3Count_64);
-            this.Controls.Add(this.tTubeRow3Count_65);
+            this.Controls.Add(this.test66);
+            this.Controls.Add(this.test65);
+            this.Controls.Add(this.test64);
+            this.Controls.Add(this.test63);
+            this.Controls.Add(this.test62);
             this.Controls.Add(this.bCreateUpdate);
             this.Controls.Add(this.tabControl1);
             this.Name = "HeaderUI";
@@ -2579,7 +2788,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2757,62 +2965,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox tTubeHPitchOdd_64;
         private System.Windows.Forms.TextBox tTubeHPitchOdd_65;
-        private System.Windows.Forms.TextBox tTubeRow10Count_66;
-        private System.Windows.Forms.TextBox tTubeRow10Count_62;
-        private System.Windows.Forms.TextBox tTubeRow10Count_61;
-        private System.Windows.Forms.TextBox tTubeRow10Count_63;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox tTubeRow10Count_64;
-        private System.Windows.Forms.TextBox tTubeRow10Count_65;
-        private System.Windows.Forms.TextBox tTubeRow9Count_66;
-        private System.Windows.Forms.TextBox tTubeRow9Count_62;
-        private System.Windows.Forms.TextBox tTubeRow9Count_61;
-        private System.Windows.Forms.TextBox tTubeRow9Count_63;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox tTubeRow9Count_64;
-        private System.Windows.Forms.TextBox tTubeRow9Count_65;
-        private System.Windows.Forms.TextBox tTubeRow8Count_66;
-        private System.Windows.Forms.TextBox tTubeRow8Count_62;
-        private System.Windows.Forms.TextBox tTubeRow8Count_61;
-        private System.Windows.Forms.TextBox tTubeRow8Count_63;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox tTubeRow8Count_64;
-        private System.Windows.Forms.TextBox tTubeRow8Count_65;
-        private System.Windows.Forms.TextBox tTubeRow7Count_66;
-        private System.Windows.Forms.TextBox tTubeRow7Count_62;
-        private System.Windows.Forms.TextBox tTubeRow7Count_61;
-        private System.Windows.Forms.TextBox tTubeRow7Count_63;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox tTubeRow7Count_64;
-        private System.Windows.Forms.TextBox tTubeRow7Count_65;
-        private System.Windows.Forms.TextBox tTubeRow6Count_66;
-        private System.Windows.Forms.TextBox tTubeRow6Count_62;
-        private System.Windows.Forms.TextBox tTubeRow6Count_61;
-        private System.Windows.Forms.TextBox tTubeRow6Count_63;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox tTubeRow6Count_64;
-        private System.Windows.Forms.TextBox tTubeRow6Count_65;
-        private System.Windows.Forms.TextBox tTubeRow5Count_66;
-        private System.Windows.Forms.TextBox tTubeRow5Count_62;
-        private System.Windows.Forms.TextBox tTubeRow5Count_61;
-        private System.Windows.Forms.TextBox tTubeRow5Count_63;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox tTubeRow5Count_64;
-        private System.Windows.Forms.TextBox tTubeRow5Count_65;
-        private System.Windows.Forms.TextBox tTubeRow4Count_66;
-        private System.Windows.Forms.TextBox tTubeRow4Count_62;
-        private System.Windows.Forms.TextBox tTubeRow4Count_61;
-        private System.Windows.Forms.TextBox tTubeRow4Count_63;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox tTubeRow4Count_64;
-        private System.Windows.Forms.TextBox tTubeRow4Count_65;
-        private System.Windows.Forms.TextBox tTubeRow3Count_66;
-        private System.Windows.Forms.TextBox tTubeRow3Count_62;
-        private System.Windows.Forms.TextBox tTubeRow3Count_61;
-        private System.Windows.Forms.TextBox tTubeRow3Count_63;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox tTubeRow3Count_64;
-        private System.Windows.Forms.TextBox tTubeRow3Count_65;
         private System.Windows.Forms.TextBox tTubeHPitchEven_66;
         private System.Windows.Forms.TextBox tTubeHPitchEven_62;
         private System.Windows.Forms.TextBox tTubeHPitchEven_61;
@@ -2827,5 +2979,80 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox tTubeVPitchOneTwo_64;
         private System.Windows.Forms.TextBox tTubeVPitchOneTwo_65;
+        private System.Windows.Forms.TextBox tTubeVPitchElevenTwelve_66;
+        private System.Windows.Forms.TextBox tTubeVPitchElevenTwelve_62;
+        private System.Windows.Forms.TextBox tTubeVPitchElevenTwelve_61;
+        private System.Windows.Forms.TextBox tTubeVPitchElevenTwelve_63;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox tTubeVPitchElevenTwelve_64;
+        private System.Windows.Forms.TextBox tTubeVPitchElevenTwelve_65;
+        private System.Windows.Forms.TextBox tTubeVPitchTenEleven_66;
+        private System.Windows.Forms.TextBox tTubeVPitchTenEleven_62;
+        private System.Windows.Forms.TextBox tTubeVPitchTenEleven_61;
+        private System.Windows.Forms.TextBox tTubeVPitchTenEleven_63;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox tTubeVPitchTenEleven_64;
+        private System.Windows.Forms.TextBox tTubeVPitchTenEleven_65;
+        private System.Windows.Forms.TextBox tTubeVPitchNineTen_66;
+        private System.Windows.Forms.TextBox tTubeVPitchNineTen_62;
+        private System.Windows.Forms.TextBox tTubeVPitchNineTen_61;
+        private System.Windows.Forms.TextBox tTubeVPitchNineTen_63;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tTubeVPitchNineTen_64;
+        private System.Windows.Forms.TextBox tTubeVPitchNineTen_65;
+        private System.Windows.Forms.TextBox tTubeVPitchEightNine_66;
+        private System.Windows.Forms.TextBox tTubeVPitchEightNine_62;
+        private System.Windows.Forms.TextBox tTubeVPitchEightNine_61;
+        private System.Windows.Forms.TextBox tTubeVPitchEightNine_63;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox tTubeVPitchEightNine_64;
+        private System.Windows.Forms.TextBox tTubeVPitchEightNine_65;
+        private System.Windows.Forms.TextBox tTubeVPitchSevenEight_66;
+        private System.Windows.Forms.TextBox tTubeVPitchSevenEight_62;
+        private System.Windows.Forms.TextBox tTubeVPitchSevenEight_61;
+        private System.Windows.Forms.TextBox tTubeVPitchSevenEight_63;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox tTubeVPitchSevenEight_64;
+        private System.Windows.Forms.TextBox tTubeVPitchSevenEight_65;
+        private System.Windows.Forms.TextBox tTubeVPitchSixSeven_66;
+        private System.Windows.Forms.TextBox tTubeVPitchSixSeven_62;
+        private System.Windows.Forms.TextBox tTubeVPitchSixSeven_61;
+        private System.Windows.Forms.TextBox tTubeVPitchSixSeven_63;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox tTubeVPitchSixSeven_64;
+        private System.Windows.Forms.TextBox tTubeVPitchSixSeven_65;
+        private System.Windows.Forms.TextBox tTubeVPitchFiveSix_66;
+        private System.Windows.Forms.TextBox tTubeVPitchFiveSix_62;
+        private System.Windows.Forms.TextBox tTubeVPitchFiveSix_61;
+        private System.Windows.Forms.TextBox tTubeVPitchFiveSix_63;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox tTubeVPitchFiveSix_64;
+        private System.Windows.Forms.TextBox tTubeVPitchFiveSix_65;
+        private System.Windows.Forms.TextBox tTubeVPitchFourFive_66;
+        private System.Windows.Forms.TextBox tTubeVPitchFourFive_62;
+        private System.Windows.Forms.TextBox tTubeVPitchFourFive_61;
+        private System.Windows.Forms.TextBox tTubeVPitchFourFive_63;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox tTubeVPitchFourFive_64;
+        private System.Windows.Forms.TextBox tTubeVPitchFourFive_65;
+        private System.Windows.Forms.TextBox tTubeVPitchThreeFour_66;
+        private System.Windows.Forms.TextBox tTubeVPitchThreeFour_62;
+        private System.Windows.Forms.TextBox tTubeVPitchThreeFour_61;
+        private System.Windows.Forms.TextBox tTubeVPitchThreeFour_63;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox tTubeVPitchThreeFour_64;
+        private System.Windows.Forms.TextBox tTubeVPitchThreeFour_65;
+        private System.Windows.Forms.TextBox tTubeVPitchTwoThree_66;
+        private System.Windows.Forms.TextBox tTubeVPitchTwoThree_62;
+        private System.Windows.Forms.TextBox tTubeVPitchTwoThree_61;
+        private System.Windows.Forms.TextBox tTubeVPitchTwoThree_63;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox tTubeVPitchTwoThree_64;
+        private System.Windows.Forms.TextBox tTubeVPitchTwoThree_65;
+        private System.Windows.Forms.Button test62;
+        private System.Windows.Forms.Button test63;
+        private System.Windows.Forms.Button test64;
+        private System.Windows.Forms.Button test65;
+        private System.Windows.Forms.Button test66;
     }
 }

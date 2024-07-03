@@ -18,9 +18,9 @@ namespace HDR.Box
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Plate", Length);
-            EditDimension("Width", "sk:Plate", Width);
-            EditDimension("THK", "Plate", THK);
+            EditDimension("Length", "sk:Plate", Length, 0);
+            EditDimension("Width", "sk:Plate", Width, 0);
+            EditDimension("THK", "Plate", THK, 0);
         }
 
 
@@ -60,7 +60,7 @@ namespace HDR.Box
         }
         static public double Width
         {
-            get => Header.EndPlateWidth;
+            get => Header.EndPlateWidth > Header.BoxWidth ? Header.BoxWidth : Header.EndPlateWidth;
         }
     }
 }

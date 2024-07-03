@@ -53,5 +53,15 @@ namespace FileTools.Base
         double TubeHPitchEven { get; set; }
 
         double TubeVPitchOneTwo { get; set; }
+        double TubeVPitchTwoThree { get; set; }
+        double TubeVPitchThreeFour { get; set; }
+        double TubeVPitchFourFive { get; set; }
+        double TubeVPitchFiveSix { get; set; }
+        double TubeVPitchSixSeven { get; set; }
+        double TubeVPitchSevenEight { get; set; }
+        double TubeVPitchEightNine { get; set; }
+        double TubeVPitchNineTen { get; set; }
+        double TubeVPitchTenEleven { get; set; }
+        double TubeVPitchElevenTwelve { get; set; }
     }
 }

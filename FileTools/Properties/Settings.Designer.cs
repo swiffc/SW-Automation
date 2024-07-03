@@ -4018,5 +4018,725 @@ namespace FileTools.Properties {
                 this["TubeVPitchOneTwo_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTwoThree_61 {
+            get {
+                return ((double)(this["TubeVPitchTwoThree_61"]));
+            }
+            set {
+                this["TubeVPitchTwoThree_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTwoThree_62 {
+            get {
+                return ((double)(this["TubeVPitchTwoThree_62"]));
+            }
+            set {
+                this["TubeVPitchTwoThree_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTwoThree_63 {
+            get {
+                return ((double)(this["TubeVPitchTwoThree_63"]));
+            }
+            set {
+                this["TubeVPitchTwoThree_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTwoThree_64 {
+            get {
+                return ((double)(this["TubeVPitchTwoThree_64"]));
+            }
+            set {
+                this["TubeVPitchTwoThree_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTwoThree_65 {
+            get {
+                return ((double)(this["TubeVPitchTwoThree_65"]));
+            }
+            set {
+                this["TubeVPitchTwoThree_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTwoThree_66 {
+            get {
+                return ((double)(this["TubeVPitchTwoThree_66"]));
+            }
+            set {
+                this["TubeVPitchTwoThree_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchThreeFour_61 {
+            get {
+                return ((double)(this["TubeVPitchThreeFour_61"]));
+            }
+            set {
+                this["TubeVPitchThreeFour_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchThreeFour_62 {
+            get {
+                return ((double)(this["TubeVPitchThreeFour_62"]));
+            }
+            set {
+                this["TubeVPitchThreeFour_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchThreeFour_63 {
+            get {
+                return ((double)(this["TubeVPitchThreeFour_63"]));
+            }
+            set {
+                this["TubeVPitchThreeFour_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchThreeFour_64 {
+            get {
+                return ((double)(this["TubeVPitchThreeFour_64"]));
+            }
+            set {
+                this["TubeVPitchThreeFour_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchThreeFour_65 {
+            get {
+                return ((double)(this["TubeVPitchThreeFour_65"]));
+            }
+            set {
+                this["TubeVPitchThreeFour_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchThreeFour_66 {
+            get {
+                return ((double)(this["TubeVPitchThreeFour_66"]));
+            }
+            set {
+                this["TubeVPitchThreeFour_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFourFive_61 {
+            get {
+                return ((double)(this["TubeVPitchFourFive_61"]));
+            }
+            set {
+                this["TubeVPitchFourFive_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFourFive_62 {
+            get {
+                return ((double)(this["TubeVPitchFourFive_62"]));
+            }
+            set {
+                this["TubeVPitchFourFive_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFourFive_63 {
+            get {
+                return ((double)(this["TubeVPitchFourFive_63"]));
+            }
+            set {
+                this["TubeVPitchFourFive_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFourFive_64 {
+            get {
+                return ((double)(this["TubeVPitchFourFive_64"]));
+            }
+            set {
+                this["TubeVPitchFourFive_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFourFive_65 {
+            get {
+                return ((double)(this["TubeVPitchFourFive_65"]));
+            }
+            set {
+                this["TubeVPitchFourFive_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFourFive_66 {
+            get {
+                return ((double)(this["TubeVPitchFourFive_66"]));
+            }
+            set {
+                this["TubeVPitchFourFive_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFiveSix_61 {
+            get {
+                return ((double)(this["TubeVPitchFiveSix_61"]));
+            }
+            set {
+                this["TubeVPitchFiveSix_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFiveSix_62 {
+            get {
+                return ((double)(this["TubeVPitchFiveSix_62"]));
+            }
+            set {
+                this["TubeVPitchFiveSix_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFiveSix_63 {
+            get {
+                return ((double)(this["TubeVPitchFiveSix_63"]));
+            }
+            set {
+                this["TubeVPitchFiveSix_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFiveSix_64 {
+            get {
+                return ((double)(this["TubeVPitchFiveSix_64"]));
+            }
+            set {
+                this["TubeVPitchFiveSix_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFiveSix_65 {
+            get {
+                return ((double)(this["TubeVPitchFiveSix_65"]));
+            }
+            set {
+                this["TubeVPitchFiveSix_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchFiveSix_66 {
+            get {
+                return ((double)(this["TubeVPitchFiveSix_66"]));
+            }
+            set {
+                this["TubeVPitchFiveSix_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSixSeven_61 {
+            get {
+                return ((double)(this["TubeVPitchSixSeven_61"]));
+            }
+            set {
+                this["TubeVPitchSixSeven_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSixSeven_62 {
+            get {
+                return ((double)(this["TubeVPitchSixSeven_62"]));
+            }
+            set {
+                this["TubeVPitchSixSeven_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSixSeven_63 {
+            get {
+                return ((double)(this["TubeVPitchSixSeven_63"]));
+            }
+            set {
+                this["TubeVPitchSixSeven_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSixSeven_64 {
+            get {
+                return ((double)(this["TubeVPitchSixSeven_64"]));
+            }
+            set {
+                this["TubeVPitchSixSeven_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSixSeven_65 {
+            get {
+                return ((double)(this["TubeVPitchSixSeven_65"]));
+            }
+            set {
+                this["TubeVPitchSixSeven_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSixSeven_66 {
+            get {
+                return ((double)(this["TubeVPitchSixSeven_66"]));
+            }
+            set {
+                this["TubeVPitchSixSeven_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSevenEight_61 {
+            get {
+                return ((double)(this["TubeVPitchSevenEight_61"]));
+            }
+            set {
+                this["TubeVPitchSevenEight_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSevenEight_62 {
+            get {
+                return ((double)(this["TubeVPitchSevenEight_62"]));
+            }
+            set {
+                this["TubeVPitchSevenEight_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSevenEight_63 {
+            get {
+                return ((double)(this["TubeVPitchSevenEight_63"]));
+            }
+            set {
+                this["TubeVPitchSevenEight_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSevenEight_64 {
+            get {
+                return ((double)(this["TubeVPitchSevenEight_64"]));
+            }
+            set {
+                this["TubeVPitchSevenEight_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSevenEight_65 {
+            get {
+                return ((double)(this["TubeVPitchSevenEight_65"]));
+            }
+            set {
+                this["TubeVPitchSevenEight_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchSevenEight_66 {
+            get {
+                return ((double)(this["TubeVPitchSevenEight_66"]));
+            }
+            set {
+                this["TubeVPitchSevenEight_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchEightNine_61 {
+            get {
+                return ((double)(this["TubeVPitchEightNine_61"]));
+            }
+            set {
+                this["TubeVPitchEightNine_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchEightNine_62 {
+            get {
+                return ((double)(this["TubeVPitchEightNine_62"]));
+            }
+            set {
+                this["TubeVPitchEightNine_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchEightNine_63 {
+            get {
+                return ((double)(this["TubeVPitchEightNine_63"]));
+            }
+            set {
+                this["TubeVPitchEightNine_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchEightNine_64 {
+            get {
+                return ((double)(this["TubeVPitchEightNine_64"]));
+            }
+            set {
+                this["TubeVPitchEightNine_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchEightNine_65 {
+            get {
+                return ((double)(this["TubeVPitchEightNine_65"]));
+            }
+            set {
+                this["TubeVPitchEightNine_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchEightNine_66 {
+            get {
+                return ((double)(this["TubeVPitchEightNine_66"]));
+            }
+            set {
+                this["TubeVPitchEightNine_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchNineTen_61 {
+            get {
+                return ((double)(this["TubeVPitchNineTen_61"]));
+            }
+            set {
+                this["TubeVPitchNineTen_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchNineTen_62 {
+            get {
+                return ((double)(this["TubeVPitchNineTen_62"]));
+            }
+            set {
+                this["TubeVPitchNineTen_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchNineTen_63 {
+            get {
+                return ((double)(this["TubeVPitchNineTen_63"]));
+            }
+            set {
+                this["TubeVPitchNineTen_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchNineTen_64 {
+            get {
+                return ((double)(this["TubeVPitchNineTen_64"]));
+            }
+            set {
+                this["TubeVPitchNineTen_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchNineTen_65 {
+            get {
+                return ((double)(this["TubeVPitchNineTen_65"]));
+            }
+            set {
+                this["TubeVPitchNineTen_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchNineTen_66 {
+            get {
+                return ((double)(this["TubeVPitchNineTen_66"]));
+            }
+            set {
+                this["TubeVPitchNineTen_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTenEleven_61 {
+            get {
+                return ((double)(this["TubeVPitchTenEleven_61"]));
+            }
+            set {
+                this["TubeVPitchTenEleven_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTenEleven_62 {
+            get {
+                return ((double)(this["TubeVPitchTenEleven_62"]));
+            }
+            set {
+                this["TubeVPitchTenEleven_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTenEleven_63 {
+            get {
+                return ((double)(this["TubeVPitchTenEleven_63"]));
+            }
+            set {
+                this["TubeVPitchTenEleven_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTenEleven_64 {
+            get {
+                return ((double)(this["TubeVPitchTenEleven_64"]));
+            }
+            set {
+                this["TubeVPitchTenEleven_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTenEleven_65 {
+            get {
+                return ((double)(this["TubeVPitchTenEleven_65"]));
+            }
+            set {
+                this["TubeVPitchTenEleven_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchTenEleven_66 {
+            get {
+                return ((double)(this["TubeVPitchTenEleven_66"]));
+            }
+            set {
+                this["TubeVPitchTenEleven_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchElevenTwelve_61 {
+            get {
+                return ((double)(this["TubeVPitchElevenTwelve_61"]));
+            }
+            set {
+                this["TubeVPitchElevenTwelve_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchElevenTwelve_62 {
+            get {
+                return ((double)(this["TubeVPitchElevenTwelve_62"]));
+            }
+            set {
+                this["TubeVPitchElevenTwelve_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchElevenTwelve_63 {
+            get {
+                return ((double)(this["TubeVPitchElevenTwelve_63"]));
+            }
+            set {
+                this["TubeVPitchElevenTwelve_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchElevenTwelve_64 {
+            get {
+                return ((double)(this["TubeVPitchElevenTwelve_64"]));
+            }
+            set {
+                this["TubeVPitchElevenTwelve_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchElevenTwelve_65 {
+            get {
+                return ((double)(this["TubeVPitchElevenTwelve_65"]));
+            }
+            set {
+                this["TubeVPitchElevenTwelve_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeVPitchElevenTwelve_66 {
+            get {
+                return ((double)(this["TubeVPitchElevenTwelve_66"]));
+            }
+            set {
+                this["TubeVPitchElevenTwelve_66"] = value;
+            }
+        }
     }
 }
