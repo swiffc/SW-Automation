@@ -163,6 +163,16 @@ namespace FileTools.CommonData
                 get => Default.TubeRow10Count_66;
                 set => Default.TubeRow10Count_66 = value;
             }
+            public double TubeRow11Count
+            {
+                get => Default.TubeRow11Count_66;
+                set => Default.TubeRow11Count_66 = value;
+            }
+            public double TubeRow12Count
+            {
+                get => Default.TubeRow12Count_66;
+                set => Default.TubeRow12Count_66 = value;
+            }
             public double TubeHPitchOdd
             {
                 get => Default.TubeHPitchOdd_66;
@@ -232,6 +242,64 @@ namespace FileTools.CommonData
             {
                 get => Default.IsBusted_66;
                 set => Default.IsBusted_66 = value;
+            }
+
+            public double StiffenerTHK
+            {
+                get => Default.StiffenerTHK_66;
+                set => Default.StiffenerTHK_66 = value;
+            }
+            public double StiffenerWidth
+            {
+                get => Default.StiffenerWidth_66;
+                set => Default.StiffenerWidth_66 = value;
+            }
+            public double StiffenerOffset
+            {
+                get => Default.StiffenerLength_66;
+                set => Default.StiffenerLength_66 = value;
+            }
+            public double StiffenerBelowRow
+            {
+                get => Default.StiffenerBelowRow_66;
+                set => Default.StiffenerBelowRow_66 = value;
+            }
+            public double StiffenerDistanceBelow
+            {
+                get => Default.StiffenerDistanceBelow_66;
+                set => Default.StiffenerDistanceBelow_66 = value;
+            }
+            public int NumberOfRows
+            {
+                get
+                {
+                    return HeaderHelper.RowCounter(Header66);
+                }
+            }
+            public double StiffenerWindowWidth
+            {
+                get => Default.StiffenerWindowWidth_66;
+                set => Default.StiffenerWindowWidth_66 = value;
+            }
+            public double StiffenerWindowLength
+            {
+                get => Default.StiffenerWindowLength_66;
+                set => Default.StiffenerWindowLength_66 = value;
+            }
+            public double StiffenerWindowQuantity
+            {
+                get => Default.StiffenerWindowQuantity_66;
+                set => Default.StiffenerWindowQuantity_66 = value;
+            }
+            public double StiffenerWindowSpacing
+            {
+                get => Default.StiffenerWindowSpacing_66;
+                set => Default.StiffenerWindowSpacing_66 = value;
+            }
+            public double StiffenerWindowOffset
+            {
+                get => Default.StiffenerWindowOffset_66;
+                set => Default.StiffenerWindowOffset_66 = value;
             }
         }
     }

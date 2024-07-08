@@ -4810,5 +4810,869 @@ namespace FileTools.Properties {
                 this["IsBusted_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK_61 {
+            get {
+                return ((double)(this["StiffenerTHK_61"]));
+            }
+            set {
+                this["StiffenerTHK_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK_62 {
+            get {
+                return ((double)(this["StiffenerTHK_62"]));
+            }
+            set {
+                this["StiffenerTHK_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK_63 {
+            get {
+                return ((double)(this["StiffenerTHK_63"]));
+            }
+            set {
+                this["StiffenerTHK_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK_64 {
+            get {
+                return ((double)(this["StiffenerTHK_64"]));
+            }
+            set {
+                this["StiffenerTHK_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK_65 {
+            get {
+                return ((double)(this["StiffenerTHK_65"]));
+            }
+            set {
+                this["StiffenerTHK_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK_66 {
+            get {
+                return ((double)(this["StiffenerTHK_66"]));
+            }
+            set {
+                this["StiffenerTHK_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWidth_61 {
+            get {
+                return ((double)(this["StiffenerWidth_61"]));
+            }
+            set {
+                this["StiffenerWidth_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWidth_62 {
+            get {
+                return ((double)(this["StiffenerWidth_62"]));
+            }
+            set {
+                this["StiffenerWidth_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWidth_63 {
+            get {
+                return ((double)(this["StiffenerWidth_63"]));
+            }
+            set {
+                this["StiffenerWidth_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWidth_64 {
+            get {
+                return ((double)(this["StiffenerWidth_64"]));
+            }
+            set {
+                this["StiffenerWidth_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWidth_65 {
+            get {
+                return ((double)(this["StiffenerWidth_65"]));
+            }
+            set {
+                this["StiffenerWidth_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWidth_66 {
+            get {
+                return ((double)(this["StiffenerWidth_66"]));
+            }
+            set {
+                this["StiffenerWidth_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerLength_61 {
+            get {
+                return ((double)(this["StiffenerLength_61"]));
+            }
+            set {
+                this["StiffenerLength_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerLength_62 {
+            get {
+                return ((double)(this["StiffenerLength_62"]));
+            }
+            set {
+                this["StiffenerLength_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerLength_63 {
+            get {
+                return ((double)(this["StiffenerLength_63"]));
+            }
+            set {
+                this["StiffenerLength_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerLength_64 {
+            get {
+                return ((double)(this["StiffenerLength_64"]));
+            }
+            set {
+                this["StiffenerLength_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerLength_65 {
+            get {
+                return ((double)(this["StiffenerLength_65"]));
+            }
+            set {
+                this["StiffenerLength_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerLength_66 {
+            get {
+                return ((double)(this["StiffenerLength_66"]));
+            }
+            set {
+                this["StiffenerLength_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow_61 {
+            get {
+                return ((double)(this["StiffenerBelowRow_61"]));
+            }
+            set {
+                this["StiffenerBelowRow_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow_62 {
+            get {
+                return ((double)(this["StiffenerBelowRow_62"]));
+            }
+            set {
+                this["StiffenerBelowRow_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow_63 {
+            get {
+                return ((double)(this["StiffenerBelowRow_63"]));
+            }
+            set {
+                this["StiffenerBelowRow_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow_64 {
+            get {
+                return ((double)(this["StiffenerBelowRow_64"]));
+            }
+            set {
+                this["StiffenerBelowRow_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow_65 {
+            get {
+                return ((double)(this["StiffenerBelowRow_65"]));
+            }
+            set {
+                this["StiffenerBelowRow_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow_66 {
+            get {
+                return ((double)(this["StiffenerBelowRow_66"]));
+            }
+            set {
+                this["StiffenerBelowRow_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow_61 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow_61"]));
+            }
+            set {
+                this["StiffenerDistanceBelow_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow_62 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow_62"]));
+            }
+            set {
+                this["StiffenerDistanceBelow_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow_63 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow_63"]));
+            }
+            set {
+                this["StiffenerDistanceBelow_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow_64 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow_64"]));
+            }
+            set {
+                this["StiffenerDistanceBelow_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow_65 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow_65"]));
+            }
+            set {
+                this["StiffenerDistanceBelow_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow_66 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow_66"]));
+            }
+            set {
+                this["StiffenerDistanceBelow_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow11Count_61 {
+            get {
+                return ((double)(this["TubeRow11Count_61"]));
+            }
+            set {
+                this["TubeRow11Count_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow11Count_62 {
+            get {
+                return ((double)(this["TubeRow11Count_62"]));
+            }
+            set {
+                this["TubeRow11Count_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow11Count_63 {
+            get {
+                return ((double)(this["TubeRow11Count_63"]));
+            }
+            set {
+                this["TubeRow11Count_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow11Count_64 {
+            get {
+                return ((double)(this["TubeRow11Count_64"]));
+            }
+            set {
+                this["TubeRow11Count_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow11Count_65 {
+            get {
+                return ((double)(this["TubeRow11Count_65"]));
+            }
+            set {
+                this["TubeRow11Count_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow11Count_66 {
+            get {
+                return ((double)(this["TubeRow11Count_66"]));
+            }
+            set {
+                this["TubeRow11Count_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow12Count_61 {
+            get {
+                return ((double)(this["TubeRow12Count_61"]));
+            }
+            set {
+                this["TubeRow12Count_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow12Count_62 {
+            get {
+                return ((double)(this["TubeRow12Count_62"]));
+            }
+            set {
+                this["TubeRow12Count_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow12Count_63 {
+            get {
+                return ((double)(this["TubeRow12Count_63"]));
+            }
+            set {
+                this["TubeRow12Count_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow12Count_64 {
+            get {
+                return ((double)(this["TubeRow12Count_64"]));
+            }
+            set {
+                this["TubeRow12Count_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow12Count_65 {
+            get {
+                return ((double)(this["TubeRow12Count_65"]));
+            }
+            set {
+                this["TubeRow12Count_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double TubeRow12Count_66 {
+            get {
+                return ((double)(this["TubeRow12Count_66"]));
+            }
+            set {
+                this["TubeRow12Count_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowWidth_61 {
+            get {
+                return ((double)(this["StiffenerWindowWidth_61"]));
+            }
+            set {
+                this["StiffenerWindowWidth_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowWidth_62 {
+            get {
+                return ((double)(this["StiffenerWindowWidth_62"]));
+            }
+            set {
+                this["StiffenerWindowWidth_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowWidth_63 {
+            get {
+                return ((double)(this["StiffenerWindowWidth_63"]));
+            }
+            set {
+                this["StiffenerWindowWidth_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowWidth_64 {
+            get {
+                return ((double)(this["StiffenerWindowWidth_64"]));
+            }
+            set {
+                this["StiffenerWindowWidth_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowWidth_65 {
+            get {
+                return ((double)(this["StiffenerWindowWidth_65"]));
+            }
+            set {
+                this["StiffenerWindowWidth_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowWidth_66 {
+            get {
+                return ((double)(this["StiffenerWindowWidth_66"]));
+            }
+            set {
+                this["StiffenerWindowWidth_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowLength_61 {
+            get {
+                return ((double)(this["StiffenerWindowLength_61"]));
+            }
+            set {
+                this["StiffenerWindowLength_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowLength_62 {
+            get {
+                return ((double)(this["StiffenerWindowLength_62"]));
+            }
+            set {
+                this["StiffenerWindowLength_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowLength_63 {
+            get {
+                return ((double)(this["StiffenerWindowLength_63"]));
+            }
+            set {
+                this["StiffenerWindowLength_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowLength_64 {
+            get {
+                return ((double)(this["StiffenerWindowLength_64"]));
+            }
+            set {
+                this["StiffenerWindowLength_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowLength_65 {
+            get {
+                return ((double)(this["StiffenerWindowLength_65"]));
+            }
+            set {
+                this["StiffenerWindowLength_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowLength_66 {
+            get {
+                return ((double)(this["StiffenerWindowLength_66"]));
+            }
+            set {
+                this["StiffenerWindowLength_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowQuantity_61 {
+            get {
+                return ((double)(this["StiffenerWindowQuantity_61"]));
+            }
+            set {
+                this["StiffenerWindowQuantity_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowQuantity_62 {
+            get {
+                return ((double)(this["StiffenerWindowQuantity_62"]));
+            }
+            set {
+                this["StiffenerWindowQuantity_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowQuantity_63 {
+            get {
+                return ((double)(this["StiffenerWindowQuantity_63"]));
+            }
+            set {
+                this["StiffenerWindowQuantity_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowQuantity_64 {
+            get {
+                return ((double)(this["StiffenerWindowQuantity_64"]));
+            }
+            set {
+                this["StiffenerWindowQuantity_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowQuantity_65 {
+            get {
+                return ((double)(this["StiffenerWindowQuantity_65"]));
+            }
+            set {
+                this["StiffenerWindowQuantity_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowQuantity_66 {
+            get {
+                return ((double)(this["StiffenerWindowQuantity_66"]));
+            }
+            set {
+                this["StiffenerWindowQuantity_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowSpacing_61 {
+            get {
+                return ((double)(this["StiffenerWindowSpacing_61"]));
+            }
+            set {
+                this["StiffenerWindowSpacing_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowSpacing_62 {
+            get {
+                return ((double)(this["StiffenerWindowSpacing_62"]));
+            }
+            set {
+                this["StiffenerWindowSpacing_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowSpacing_63 {
+            get {
+                return ((double)(this["StiffenerWindowSpacing_63"]));
+            }
+            set {
+                this["StiffenerWindowSpacing_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowSpacing_64 {
+            get {
+                return ((double)(this["StiffenerWindowSpacing_64"]));
+            }
+            set {
+                this["StiffenerWindowSpacing_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowSpacing_65 {
+            get {
+                return ((double)(this["StiffenerWindowSpacing_65"]));
+            }
+            set {
+                this["StiffenerWindowSpacing_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowSpacing_66 {
+            get {
+                return ((double)(this["StiffenerWindowSpacing_66"]));
+            }
+            set {
+                this["StiffenerWindowSpacing_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowOffset_61 {
+            get {
+                return ((double)(this["StiffenerWindowOffset_61"]));
+            }
+            set {
+                this["StiffenerWindowOffset_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowOffset_62 {
+            get {
+                return ((double)(this["StiffenerWindowOffset_62"]));
+            }
+            set {
+                this["StiffenerWindowOffset_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowOffset_63 {
+            get {
+                return ((double)(this["StiffenerWindowOffset_63"]));
+            }
+            set {
+                this["StiffenerWindowOffset_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowOffset_64 {
+            get {
+                return ((double)(this["StiffenerWindowOffset_64"]));
+            }
+            set {
+                this["StiffenerWindowOffset_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowOffset_65 {
+            get {
+                return ((double)(this["StiffenerWindowOffset_65"]));
+            }
+            set {
+                this["StiffenerWindowOffset_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerWindowOffset_66 {
+            get {
+                return ((double)(this["StiffenerWindowOffset_66"]));
+            }
+            set {
+                this["StiffenerWindowOffset_66"] = value;
+            }
+        }
     }
 }

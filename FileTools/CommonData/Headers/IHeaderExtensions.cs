@@ -48,6 +48,9 @@ namespace FileTools.Base
         double TubeRow8Count { get; set; }
         double TubeRow9Count { get; set; }
         double TubeRow10Count { get; set; }
+        double TubeRow11Count { get; set; }
+        double TubeRow12Count { get; set; }
+        int NumberOfRows { get; }
 
         double TubeHPitchOdd { get; set; }
         double TubeHPitchEven { get; set; }
@@ -65,5 +68,37 @@ namespace FileTools.Base
         double TubeVPitchElevenTwelve { get; set; }
 
         bool IsBusted { get; set; }
+
+        double StiffenerTHK { get; set; }
+        double StiffenerWidth { get; set; }
+        double StiffenerOffset { get; set; }
+        double StiffenerBelowRow { get; set; }
+        double StiffenerDistanceBelow { get; set; }
+        double StiffenerWindowWidth { get; set; }
+        double StiffenerWindowLength { get; set; }
+        double StiffenerWindowQuantity { get; set; } 
+        double StiffenerWindowSpacing { get; set; }
+        double StiffenerWindowOffset { get; set; }
     }
+    public static class HeaderHelper
+    {
+        public static int RowCounter(IHeaderExtensions header)
+        {
+            int count = 0;
+            if (header.TubeRow1Count > 0) count++;
+            if (header.TubeRow2Count > 0) count++;
+            if (header.TubeRow3Count > 0) count++;
+            if (header.TubeRow4Count > 0) count++;
+            if (header.TubeRow5Count > 0) count++;
+            if (header.TubeRow6Count > 0) count++;
+            if (header.TubeRow7Count > 0) count++;
+            if (header.TubeRow8Count > 0) count++;
+            if (header.TubeRow9Count > 0) count++;
+            if (header.TubeRow10Count > 0) count++;
+            if (header.TubeRow11Count > 0) count++;
+            if (header.TubeRow12Count > 0) count++;
+            return count;
+        }
+    }
+  
 }

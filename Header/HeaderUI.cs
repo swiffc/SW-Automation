@@ -11,7 +11,6 @@ namespace HDR
         public HeaderUI()
         {
             InitializeComponent();
-            var v = Bust_63;
             #region HeaderData Event Handlers Description
             // HeaderData event handlers
             //    To use:
@@ -32,7 +31,7 @@ namespace HDR
             Header_TextChanged(this, "TopBtm");
             Header_TextChanged(this, "EndPlate");
             Header_TextChanged(this, "Tube");
-
+            Header_TextChanged(this, "Stiffener");
         }
     }
 }

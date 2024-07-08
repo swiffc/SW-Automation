@@ -78,7 +78,7 @@ namespace FileTools
 
             return modelDoc2 as AssemblyDoc;
         }
-        public static string GetPartNoFromAssembly(string staticPartNo, SW_Assembly swAssembly)
+        public static string GetPartNoFromAssembly(string staticPartNo, SW_Assembly swAssembly, string partNoToSearchFor = null)
         {
             string assemblyDocPath = (swAssembly.AssemblyDoc as ModelDoc2).GetPathName();
             string assemblyName = Path.GetFileNameWithoutExtension(assemblyDocPath);
@@ -112,9 +112,12 @@ namespace FileTools
                         {
                             string partName = Path.GetFileNameWithoutExtension(componentPath);
                             string partNo = ExtractPartNo(component);
-                            Debug.WriteLine($"         Found [{staticPartNo}] in ({swAssembly.Config})");
-                            Debug.WriteLine("");
-                            return partNo;
+                            if (partNo == partNoToSearchFor || partNoToSearchFor == null)
+                            {
+                                Debug.WriteLine($"         Found [{staticPartNo}] in ({swAssembly.Config})");
+                                Debug.WriteLine("");
+                                return partNo;
+                            }
                         }
                     }
                     else
@@ -192,8 +195,11 @@ namespace FileTools
                     return fileNameWithoutExtension;
                 }
 
-                (partNo1, partNo2) = IncrementPartNo(partNo1, partNo2);
+                if (over_ride == null)
+                    (partNo1, partNo2) = IncrementPartNo(partNo1, partNo2);
+                else break;
             }
+            return null;
         }
         public static string GetPartNoFromDirectory(string staticPartNo, SW_Assembly swAssembly)
         {
@@ -877,7 +883,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
 
 
         // Private methods
-        private static void CopyAsReadWrite(string sourceFile, string destinationFile)
+        public static void CopyAsReadWrite(string sourceFile, string destinationFile)
         {
             System.IO.File.Copy(sourceFile, destinationFile);
             FileAttributes attributes = System.IO.File.GetAttributes(destinationFile);

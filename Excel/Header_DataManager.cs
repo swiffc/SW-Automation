@@ -40,6 +40,16 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) TubeEvenX { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeRow1Count { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeRow2Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow3Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow4Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow5Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow6Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow7Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow8Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow9Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow10Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow11Count { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubeRow12Count { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeHPitchOdd { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeHPitchEven { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeVPitchOneTwo { get; set; }
@@ -53,7 +63,16 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) TubeVPitchNineTen { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeVPitchTenEleven { get; set; }
             public (string[] Cells, Worksheet Sheet) TubeVPitchElevenTwelve { get; set; }
-            
+            public (string[] Cells, Worksheet Sheet) StiffenerTHK { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerWidth { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerOffset { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerBelowRow { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerDistanceBelow { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerWindowWidth { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerWindowLength { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerWindowQuantity { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerWindowSpacing { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerWindowOffset { get; set; }
         }
 
 
@@ -84,6 +103,16 @@ namespace Excel
             public TextBox TubeEvenXTextBox { get; set; }
             public TextBox TubeRow1CountTextBox { get; set; }
             public TextBox TubeRow2CountTextBox { get; set; }
+            public TextBox TubeRow3CountTextBox { get; set; }
+            public TextBox TubeRow4CountTextBox { get; set; }
+            public TextBox TubeRow5CountTextBox { get; set; }
+            public TextBox TubeRow6CountTextBox { get; set; }
+            public TextBox TubeRow7CountTextBox { get; set; }
+            public TextBox TubeRow8CountTextBox { get; set; }
+            public TextBox TubeRow9CountTextBox { get; set; }
+            public TextBox TubeRow10CountTextBox { get; set; }
+            public TextBox TubeRow11CountTextBox { get; set; }
+            public TextBox TubeRow12CountTextBox { get; set; }
             public TextBox TubeHPitchOddTextBox { get; set; }
             public TextBox TubeHPitchEvenTextBox { get; set; }
             public TextBox TubeVPitchOneTwoTextBox { get; set; }
@@ -97,6 +126,16 @@ namespace Excel
             public TextBox TubeVPitchNineTenTextBox { get; set; }
             public TextBox TubeVPitchTenElevenTextBox { get; set; }
             public TextBox TubeVPitchElevenTwelveTextBox { get; set; }
+            public TextBox StiffenerTHKTextBox { get; set; }
+            public TextBox StiffenerWidthTextBox { get; set; }
+            public TextBox StiffenerOffsetTextBox { get; set; }
+            public TextBox StiffenerBelowRowTextBox { get; set; }
+            public TextBox StiffenerDistanceBelowTextBox { get; set; }
+            public TextBox StiffenerWindowWidthTextBox { get; set; }
+            public TextBox StiffenerWindowLengthTextBox { get; set; }
+            public TextBox StiffenerWindowQuantityTextBox { get; set; }
+            public TextBox StiffenerWindowSpacingTextBox { get; set; }
+            public TextBox StiffenerWindowOffsetTextBox { get; set; }
         }
 
 
@@ -132,6 +171,16 @@ namespace Excel
                     TubeOddXTextBox = GetControl<TextBox>(formInstance, "tTubeOddX_", i),
                     TubeRow1CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow1Count_", i),
                     TubeRow2CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow2Count_", i),
+                    TubeRow3CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow3Count_", i),
+                    TubeRow4CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow4Count_", i),
+                    TubeRow5CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow5Count_", i),
+                    TubeRow6CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow6Count_", i),
+                    TubeRow7CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow7Count_", i),
+                    TubeRow8CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow8Count_", i),
+                    TubeRow9CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow9Count_", i),
+                    TubeRow10CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow10Count_", i),
+                    TubeRow11CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow11Count_", i),
+                    TubeRow12CountTextBox = GetControl<TextBox>(formInstance, "tTubeRow12Count_", i),
                     TubeHPitchOddTextBox = GetControl<TextBox>(formInstance, "tTubeHPitchOdd_", i),
                     TubeHPitchEvenTextBox = GetControl<TextBox>(formInstance, "tTubeHPitchEven_", i),
                     TubeVPitchOneTwoTextBox = GetControl<TextBox>(formInstance, "tTubeVPitchOneTwo_", i),
@@ -145,6 +194,16 @@ namespace Excel
                     TubeVPitchNineTenTextBox = GetControl<TextBox>(formInstance, "tTubeVPitchNineTen_", i),
                     TubeVPitchTenElevenTextBox = GetControl<TextBox>(formInstance, "tTubeVPitchTenEleven_", i),
                     TubeVPitchElevenTwelveTextBox = GetControl<TextBox>(formInstance, "tTubeVPitchElevenTwelve_", i),
+                    StiffenerTHKTextBox = GetControl<TextBox>(formInstance, "tStiffenerTHK_", i),
+                    StiffenerWidthTextBox = GetControl<TextBox>(formInstance, "tStiffenerWidth_", i),
+                    StiffenerOffsetTextBox = GetControl<TextBox>(formInstance, "tStiffenerOffset_", i),
+                    StiffenerBelowRowTextBox = GetControl<TextBox>(formInstance, "tStiffenerBelowRow_", i),
+                    StiffenerDistanceBelowTextBox = GetControl<TextBox>(formInstance, "tStiffenerDistanceBelow_", i),
+                    StiffenerWindowWidthTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowWidth_", i),
+                    StiffenerWindowLengthTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowLength_", i),
+                    StiffenerWindowQuantityTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowQuantity_", i),
+                    StiffenerWindowSpacingTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowSpacing_", i),
+                    StiffenerWindowOffsetTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowOffset_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -182,21 +241,41 @@ namespace Excel
                         TubeY = (new string[] { "V32" }, InventorSheet),
                         TubeRow1Count = (new string[] { "V31" }, InventorSheet),
                         TubeRow2Count = (new string[] { "V40" }, InventorSheet),
+                        TubeRow3Count = (new string[] { "V49" }, InventorSheet),
+                        TubeRow4Count = (new string[] { "V58" }, InventorSheet),
+                        TubeRow5Count = (new string[] { "V67" }, InventorSheet),
+                        TubeRow6Count = (new string[] { "V76" }, InventorSheet),
+                        TubeRow7Count = (new string[] { "V85" }, InventorSheet),
+                        TubeRow8Count = (new string[] { "V94" }, InventorSheet),
+                        TubeRow9Count = (new string[] { "V103" }, InventorSheet),
+                        TubeRow10Count = (new string[] { "V112" }, InventorSheet),
+                        TubeRow11Count = (new string[] { "V121" }, InventorSheet),
+                        TubeRow12Count = (new string[] { "V130" }, InventorSheet),
                         TubeHPitchOdd = (new string[] { "V34" }, InventorSheet),
                         TubeHPitchEven = (new string[] { "V43" }, InventorSheet),
-                        TubeVPitchOneTwo = (new string[]       { "V41" }, InventorSheet),
-                        TubeVPitchTwoThree = (new string[]     { "V50" }, InventorSheet),
-                        TubeVPitchThreeFour = (new string[]    { "V59" }, InventorSheet),
-                        TubeVPitchFourFive = (new string[]     { "V68" }, InventorSheet),
-                        TubeVPitchFiveSix = (new string[]      { "V77" }, InventorSheet),
-                        TubeVPitchSixSeven = (new string[]     { "V86" }, InventorSheet),
-                        TubeVPitchSevenEight = (new string[]   { "V95" }, InventorSheet),
-                        TubeVPitchEightNine = (new string[]    { "V104" }, InventorSheet),
-                        TubeVPitchNineTen = (new string[]      { "V113" }, InventorSheet),
-                        TubeVPitchTenEleven = (new string[]    { "V122" }, InventorSheet),
+                        TubeVPitchOneTwo = (new string[] { "V41" }, InventorSheet),
+                        TubeVPitchTwoThree = (new string[] { "V50" }, InventorSheet),
+                        TubeVPitchThreeFour = (new string[] { "V59" }, InventorSheet),
+                        TubeVPitchFourFive = (new string[] { "V68" }, InventorSheet),
+                        TubeVPitchFiveSix = (new string[] { "V77" }, InventorSheet),
+                        TubeVPitchSixSeven = (new string[] { "V86" }, InventorSheet),
+                        TubeVPitchSevenEight = (new string[] { "V95" }, InventorSheet),
+                        TubeVPitchEightNine = (new string[] { "V104" }, InventorSheet),
+                        TubeVPitchNineTen = (new string[] { "V113" }, InventorSheet),
+                        TubeVPitchTenEleven = (new string[] { "V122" }, InventorSheet),
                         TubeVPitchElevenTwelve = (new string[] { "V131" }, InventorSheet),
                         TubesheetTHK = (new string[] { "V21" }, InventorSheet),
                         PlugsheetTHK = (new string[] { "V24", "V21" }, InventorSheet),
+                        StiffenerTHK = (new string[] { "V491" }, InventorSheet),
+                        StiffenerWidth = (new string[] { "V492" }, InventorSheet),
+                        StiffenerOffset = (new string[] { "V490" }, InventorSheet),
+                        StiffenerBelowRow = (new string[] { "V488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[]  { "V489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[]    { "V493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[]   { "V494" }, InventorSheet),
+                        StiffenerWindowQuantity = (new string[] { "V495" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[]  { "V496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[]   { "V497" }, InventorSheet),
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -221,21 +300,41 @@ namespace Excel
                         TubeY = (new string[] { "W32" }, InventorSheet),
                         TubeRow1Count = (new string[] { "W31" }, InventorSheet),
                         TubeRow2Count = (new string[] { "W40" }, InventorSheet),
+                        TubeRow3Count = (new string[] { "W49" }, InventorSheet),
+                        TubeRow4Count = (new string[] { "W58" }, InventorSheet),
+                        TubeRow5Count = (new string[] { "W67" }, InventorSheet),
+                        TubeRow6Count = (new string[] { "W76" }, InventorSheet),
+                        TubeRow7Count = (new string[] { "W85" }, InventorSheet),
+                        TubeRow8Count = (new string[] { "W94" }, InventorSheet),
+                        TubeRow9Count = (new string[] { "W103" }, InventorSheet),
+                        TubeRow10Count = (new string[] { "W112" }, InventorSheet),
+                        TubeRow11Count = (new string[] { "W121" }, InventorSheet),
+                        TubeRow12Count = (new string[] { "W130" }, InventorSheet),
                         TubeHPitchOdd = (new string[] { "W34" }, InventorSheet),
                         TubeHPitchEven = (new string[] { "W43" }, InventorSheet),
                         TubeVPitchOneTwo = (new string[] { "W41" }, InventorSheet),
-                        TubeVPitchTwoThree = (new string[]     { "W50" }, InventorSheet),
-                        TubeVPitchThreeFour = (new string[]    { "W59" }, InventorSheet),
-                        TubeVPitchFourFive = (new string[]     { "W68" }, InventorSheet),
-                        TubeVPitchFiveSix = (new string[]      { "W77" }, InventorSheet),
-                        TubeVPitchSixSeven = (new string[]     { "W86" }, InventorSheet),
-                        TubeVPitchSevenEight = (new string[]   { "W95" }, InventorSheet),
-                        TubeVPitchEightNine = (new string[]    { "W104" }, InventorSheet),
-                        TubeVPitchNineTen = (new string[]      { "W113" }, InventorSheet),
-                        TubeVPitchTenEleven = (new string[]    { "W122" }, InventorSheet),
+                        TubeVPitchTwoThree = (new string[] { "W50" }, InventorSheet),
+                        TubeVPitchThreeFour = (new string[] { "W59" }, InventorSheet),
+                        TubeVPitchFourFive = (new string[] { "W68" }, InventorSheet),
+                        TubeVPitchFiveSix = (new string[] { "W77" }, InventorSheet),
+                        TubeVPitchSixSeven = (new string[] { "W86" }, InventorSheet),
+                        TubeVPitchSevenEight = (new string[] { "W95" }, InventorSheet),
+                        TubeVPitchEightNine = (new string[] { "W104" }, InventorSheet),
+                        TubeVPitchNineTen = (new string[] { "W113" }, InventorSheet),
+                        TubeVPitchTenEleven = (new string[] { "W122" }, InventorSheet),
                         TubeVPitchElevenTwelve = (new string[] { "W131" }, InventorSheet),
                         TubesheetTHK = (new string[] { "W21" }, InventorSheet),
                         PlugsheetTHK = (new string[] { "W24", "W21" }, InventorSheet),
+                        StiffenerTHK = (new string[] { "W491" }, InventorSheet),
+                        StiffenerWidth = (new string[] { "W492" }, InventorSheet),
+                        StiffenerOffset = (new string[] { "W490" }, InventorSheet),
+                        StiffenerBelowRow = (new string[] { "W488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "W489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[]    { "W493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[]   { "W494" }, InventorSheet),
+                        StiffenerWindowQuantity = (new string[] { "W495" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[]  { "W496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[]   { "W497" }, InventorSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -260,21 +359,41 @@ namespace Excel
                         TubeY = (new string[] { "X32" }, InventorSheet),
                         TubeRow1Count = (new string[] { "X31" }, InventorSheet),
                         TubeRow2Count = (new string[] { "X40" }, InventorSheet),
+                        TubeRow3Count = (new string[] { "X49" }, InventorSheet),
+                        TubeRow4Count = (new string[] { "X58" }, InventorSheet),
+                        TubeRow5Count = (new string[] { "X67" }, InventorSheet),
+                        TubeRow6Count = (new string[] { "X76" }, InventorSheet),
+                        TubeRow7Count = (new string[] { "X85" }, InventorSheet),
+                        TubeRow8Count = (new string[] { "X94" }, InventorSheet),
+                        TubeRow9Count = (new string[] { "X103" }, InventorSheet),
+                        TubeRow10Count = (new string[] { "X112" }, InventorSheet),
+                        TubeRow11Count = (new string[] { "X121" }, InventorSheet),
+                        TubeRow12Count = (new string[] { "X130" }, InventorSheet),
                         TubeHPitchOdd = (new string[] { "X34" }, InventorSheet),
                         TubeHPitchEven = (new string[] { "X43" }, InventorSheet),
                         TubeVPitchOneTwo = (new string[] { "X41" }, InventorSheet),
-                        TubeVPitchTwoThree = (new string[]     { "X50" }, InventorSheet),
-                        TubeVPitchThreeFour = (new string[]    { "X59" }, InventorSheet),
-                        TubeVPitchFourFive = (new string[]     { "X68" }, InventorSheet),
-                        TubeVPitchFiveSix = (new string[]      { "X77" }, InventorSheet),
-                        TubeVPitchSixSeven = (new string[]     { "X86" }, InventorSheet),
-                        TubeVPitchSevenEight = (new string[]   { "X95" }, InventorSheet),
-                        TubeVPitchEightNine = (new string[]    { "X104" }, InventorSheet),
-                        TubeVPitchNineTen = (new string[]      { "X113" }, InventorSheet),
-                        TubeVPitchTenEleven = (new string[]    { "X122" }, InventorSheet),
+                        TubeVPitchTwoThree = (new string[] { "X50" }, InventorSheet),
+                        TubeVPitchThreeFour = (new string[] { "X59" }, InventorSheet),
+                        TubeVPitchFourFive = (new string[] { "X68" }, InventorSheet),
+                        TubeVPitchFiveSix = (new string[] { "X77" }, InventorSheet),
+                        TubeVPitchSixSeven = (new string[] { "X86" }, InventorSheet),
+                        TubeVPitchSevenEight = (new string[] { "X95" }, InventorSheet),
+                        TubeVPitchEightNine = (new string[] { "X104" }, InventorSheet),
+                        TubeVPitchNineTen = (new string[] { "X113" }, InventorSheet),
+                        TubeVPitchTenEleven = (new string[] { "X122" }, InventorSheet),
                         TubeVPitchElevenTwelve = (new string[] { "X131" }, InventorSheet),
                         TubesheetTHK = (new string[] { "X21" }, InventorSheet),
                         PlugsheetTHK = (new string[] { "X24", "X21" }, InventorSheet),
+                        StiffenerTHK = (new string[] { "X491" }, InventorSheet),
+                        StiffenerWidth = (new string[] { "X492" }, InventorSheet),
+                        StiffenerOffset = (new string[] { "X490" }, InventorSheet),
+                        StiffenerBelowRow = (new string[] { "X488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "X489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[]    { "X493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[]   { "X494" }, InventorSheet),
+                        StiffenerWindowQuantity = (new string[] { "X495" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[]  { "X496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[]   { "X497" }, InventorSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -299,21 +418,41 @@ namespace Excel
                         TubeY = (new string[] { "Y32" }, InventorSheet),
                         TubeRow1Count = (new string[] { "Y31" }, InventorSheet),
                         TubeRow2Count = (new string[] { "Y40" }, InventorSheet),
+                        TubeRow3Count = (new string[] { "Y49" }, InventorSheet),
+                        TubeRow4Count = (new string[] { "Y58" }, InventorSheet),
+                        TubeRow5Count = (new string[] { "Y67" }, InventorSheet),
+                        TubeRow6Count = (new string[] { "Y76" }, InventorSheet),
+                        TubeRow7Count = (new string[] { "Y85" }, InventorSheet),
+                        TubeRow8Count = (new string[] { "Y94" }, InventorSheet),
+                        TubeRow9Count = (new string[] { "Y103" }, InventorSheet),
+                        TubeRow10Count = (new string[] { "Y112" }, InventorSheet),
+                        TubeRow11Count = (new string[] { "Y121" }, InventorSheet),
+                        TubeRow12Count = (new string[] { "Y130" }, InventorSheet),
                         TubeHPitchOdd = (new string[] { "Y34" }, InventorSheet),
                         TubeHPitchEven = (new string[] { "Y43" }, InventorSheet),
                         TubeVPitchOneTwo = (new string[] { "Y41" }, InventorSheet),
-                        TubeVPitchTwoThree = (new string[]     { "Y50" }, InventorSheet),
-                        TubeVPitchThreeFour = (new string[]    { "Y59" }, InventorSheet),
-                        TubeVPitchFourFive = (new string[]     { "Y68" }, InventorSheet),
-                        TubeVPitchFiveSix = (new string[]      { "Y77" }, InventorSheet),
-                        TubeVPitchSixSeven = (new string[]     { "Y86" }, InventorSheet),
-                        TubeVPitchSevenEight = (new string[]   { "Y95" }, InventorSheet),
-                        TubeVPitchEightNine = (new string[]    { "Y104" }, InventorSheet),
-                        TubeVPitchNineTen = (new string[]      { "Y113" }, InventorSheet),
-                        TubeVPitchTenEleven = (new string[]    { "Y122" }, InventorSheet),
+                        TubeVPitchTwoThree = (new string[] { "Y50" }, InventorSheet),
+                        TubeVPitchThreeFour = (new string[] { "Y59" }, InventorSheet),
+                        TubeVPitchFourFive = (new string[] { "Y68" }, InventorSheet),
+                        TubeVPitchFiveSix = (new string[] { "Y77" }, InventorSheet),
+                        TubeVPitchSixSeven = (new string[] { "Y86" }, InventorSheet),
+                        TubeVPitchSevenEight = (new string[] { "Y95" }, InventorSheet),
+                        TubeVPitchEightNine = (new string[] { "Y104" }, InventorSheet),
+                        TubeVPitchNineTen = (new string[] { "Y113" }, InventorSheet),
+                        TubeVPitchTenEleven = (new string[] { "Y122" }, InventorSheet),
                         TubeVPitchElevenTwelve = (new string[] { "Y131" }, InventorSheet),
                         TubesheetTHK = (new string[] { "Y21" }, InventorSheet),
                         PlugsheetTHK = (new string[] { "Y24", "Y21" }, InventorSheet),
+                        StiffenerTHK = (new string[] { "Y491" }, InventorSheet),
+                        StiffenerWidth = (new string[] { "Y492" }, InventorSheet),
+                        StiffenerOffset = (new string[] { "Y490" }, InventorSheet),
+                        StiffenerBelowRow = (new string[] { "Y488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "Y489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[]    { "Y493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[]   { "Y494" }, InventorSheet),
+                        StiffenerWindowQuantity = (new string[] { "Y495" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[]  { "Y496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[]   { "Y497" }, InventorSheet),
                     },
 
                     ["64"] = new Prego_DTO
@@ -339,21 +478,41 @@ namespace Excel
                         TubeY = (new string[] { "Z32" }, InventorSheet),
                         TubeRow1Count = (new string[] { "Z31" }, InventorSheet),
                         TubeRow2Count = (new string[] { "Z40" }, InventorSheet),
+                        TubeRow3Count = (new string[] { "Z49" }, InventorSheet),
+                        TubeRow4Count = (new string[] { "Z58" }, InventorSheet),
+                        TubeRow5Count = (new string[] { "Z67" }, InventorSheet),
+                        TubeRow6Count = (new string[] { "Z76" }, InventorSheet),
+                        TubeRow7Count = (new string[] { "Z85" }, InventorSheet),
+                        TubeRow8Count = (new string[] { "Z94" }, InventorSheet),
+                        TubeRow9Count = (new string[] { "Z103" }, InventorSheet),
+                        TubeRow10Count = (new string[] { "Z112" }, InventorSheet),
+                        TubeRow11Count = (new string[] { "Z121" }, InventorSheet),
+                        TubeRow12Count = (new string[] { "Z130" }, InventorSheet),
                         TubeHPitchOdd = (new string[] { "Z34" }, InventorSheet),
                         TubeHPitchEven = (new string[] { "Z43" }, InventorSheet),
                         TubeVPitchOneTwo = (new string[] { "Z41" }, InventorSheet),
-                        TubeVPitchTwoThree = (new string[]     { "Z50" }, InventorSheet),
-                        TubeVPitchThreeFour = (new string[]    { "Z59" }, InventorSheet),
-                        TubeVPitchFourFive = (new string[]     { "Z68" }, InventorSheet),
-                        TubeVPitchFiveSix = (new string[]      { "Z77" }, InventorSheet),
-                        TubeVPitchSixSeven = (new string[]     { "Z86" }, InventorSheet),
-                        TubeVPitchSevenEight = (new string[]   { "Z95" }, InventorSheet),
-                        TubeVPitchEightNine = (new string[]    { "Z104" }, InventorSheet),
-                        TubeVPitchNineTen = (new string[]      { "Z113" }, InventorSheet),
-                        TubeVPitchTenEleven = (new string[]    { "Z122" }, InventorSheet),
+                        TubeVPitchTwoThree = (new string[] { "Z50" }, InventorSheet),
+                        TubeVPitchThreeFour = (new string[] { "Z59" }, InventorSheet),
+                        TubeVPitchFourFive = (new string[] { "Z68" }, InventorSheet),
+                        TubeVPitchFiveSix = (new string[] { "Z77" }, InventorSheet),
+                        TubeVPitchSixSeven = (new string[] { "Z86" }, InventorSheet),
+                        TubeVPitchSevenEight = (new string[] { "Z95" }, InventorSheet),
+                        TubeVPitchEightNine = (new string[] { "Z104" }, InventorSheet),
+                        TubeVPitchNineTen = (new string[] { "Z113" }, InventorSheet),
+                        TubeVPitchTenEleven = (new string[] { "Z122" }, InventorSheet),
                         TubeVPitchElevenTwelve = (new string[] { "Z131" }, InventorSheet),
                         TubesheetTHK = (new string[] { "Z21" }, InventorSheet),
                         PlugsheetTHK = (new string[] { "Z24", "Z21" }, InventorSheet),
+                        StiffenerTHK = (new string[] { "Z491" }, InventorSheet),
+                        StiffenerWidth = (new string[] { "Z492" }, InventorSheet),
+                        StiffenerOffset = (new string[] { "Z490" }, InventorSheet),
+                        StiffenerBelowRow = (new string[] { "Z488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "V489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[]    { "Z493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[]   { "Z494" }, InventorSheet),
+                        StiffenerWindowQuantity = (new string[] { "Z495" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[]  { "Z496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[]   { "Z497" }, InventorSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -378,21 +537,41 @@ namespace Excel
                         TubeY = (new string[] { "AA32" }, InventorSheet),
                         TubeRow1Count = (new string[] { "AA31" }, InventorSheet),
                         TubeRow2Count = (new string[] { "AA40" }, InventorSheet),
+                        TubeRow3Count = (new string[] { "AA49" }, InventorSheet),
+                        TubeRow4Count = (new string[] { "AA58" }, InventorSheet),
+                        TubeRow5Count = (new string[] { "AA67" }, InventorSheet),
+                        TubeRow6Count = (new string[] { "AA76" }, InventorSheet),
+                        TubeRow7Count = (new string[] { "AA85" }, InventorSheet),
+                        TubeRow8Count = (new string[] { "AA94" }, InventorSheet),
+                        TubeRow9Count = (new string[] { "AA103" }, InventorSheet),
+                        TubeRow10Count = (new string[] { "AA112" }, InventorSheet),
+                        TubeRow11Count = (new string[] { "AA121" }, InventorSheet),
+                        TubeRow12Count = (new string[] { "AA130" }, InventorSheet),
                         TubeHPitchOdd = (new string[] { "AA34" }, InventorSheet),
                         TubeHPitchEven = (new string[] { "AA43" }, InventorSheet),
                         TubeVPitchOneTwo = (new string[] { "AA41" }, InventorSheet),
-                        TubeVPitchTwoThree = (new string[]     { "AA50" }, InventorSheet),
-                        TubeVPitchThreeFour = (new string[]    { "AA59" }, InventorSheet),
-                        TubeVPitchFourFive = (new string[]     { "AA68" }, InventorSheet),
-                        TubeVPitchFiveSix = (new string[]      { "AA77" }, InventorSheet),
-                        TubeVPitchSixSeven = (new string[]     { "AA86" }, InventorSheet),
-                        TubeVPitchSevenEight = (new string[]   { "AA95" }, InventorSheet),
-                        TubeVPitchEightNine = (new string[]    { "AA104" }, InventorSheet),
-                        TubeVPitchNineTen = (new string[]      { "AA113" }, InventorSheet),
-                        TubeVPitchTenEleven = (new string[]    { "AA122" }, InventorSheet),
+                        TubeVPitchTwoThree = (new string[] { "AA50" }, InventorSheet),
+                        TubeVPitchThreeFour = (new string[] { "AA59" }, InventorSheet),
+                        TubeVPitchFourFive = (new string[] { "AA68" }, InventorSheet),
+                        TubeVPitchFiveSix = (new string[] { "AA77" }, InventorSheet),
+                        TubeVPitchSixSeven = (new string[] { "AA86" }, InventorSheet),
+                        TubeVPitchSevenEight = (new string[] { "AA95" }, InventorSheet),
+                        TubeVPitchEightNine = (new string[] { "AA104" }, InventorSheet),
+                        TubeVPitchNineTen = (new string[] { "AA113" }, InventorSheet),
+                        TubeVPitchTenEleven = (new string[] { "AA122" }, InventorSheet),
                         TubeVPitchElevenTwelve = (new string[] { "AA131" }, InventorSheet),
                         TubesheetTHK = (new string[] { "AA21" }, InventorSheet),
                         PlugsheetTHK = (new string[] { "AA24", "A21" }, InventorSheet),
+                        StiffenerTHK = (new string[] { "AA491" }, InventorSheet),
+                        StiffenerWidth = (new string[] { "AA492" }, InventorSheet),
+                        StiffenerOffset = (new string[] { "AA490" }, InventorSheet),
+                        StiffenerBelowRow = (new string[] { "AA488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "AA489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[]    { "AA493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[]   { "AA494" }, InventorSheet),
+                        StiffenerWindowQuantity = (new string[] { "AA495" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[]  { "AA496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[]   { "AA497" }, InventorSheet),
                     }
                 };
             }
@@ -438,6 +617,7 @@ namespace Excel
                                 Type headerType = header.GetType();
                                 PropertyInfo headerProperty = headerType.GetProperty(propertyName);
                                 double loadedValue = LoadPregoDouble(textBox, cellsAndSheet.Item2, cellsAndSheet.Item1);
+                                textBox.Text = loadedValue == 0 ? "" : loadedValue.ToString();
                                 headerProperty.SetValue(header, loadedValue);
                             }
                         }

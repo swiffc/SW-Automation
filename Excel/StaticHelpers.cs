@@ -138,7 +138,9 @@ namespace Excel
                     {
                         TextBox textBox = (TextBox)propertyInfo.GetValue(headerControls);
                         if (textBox != null)
-                            textBox.Text = value.ToString();
+                        {
+                            textBox.Text = value == 0 ? "" : value.ToString();
+                        }
                     }
                 }
             }

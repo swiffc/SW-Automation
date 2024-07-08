@@ -43,6 +43,9 @@ namespace FileTools.Base
         // Private methods
         private void InitializePart()
         {
+            if (PartNo != null && !_partNoCalculated)
+                PartNoOverride();
+
             var load = PartNo;
             if (_partNoCalculated == false)
                 Debug.WriteLine($"   [{StaticPartNo}] {LastType.Name}.cs was reflected in ({_parentAssembly.Config})" + "\n");
@@ -71,7 +74,7 @@ namespace FileTools.Base
 
                 if (dimension != null)
                 {
-                    if (valueSafety == 0 && newValue.Value == 0)
+                    if ((valueSafety == 0 || valueSafety == 1) && newValue.Value == 0)
                     {
                         newValue = 0.001;
                     }
@@ -293,6 +296,16 @@ namespace FileTools.Base
             }
 
             return results;
+        }
+        private void PartNoOverride()
+        {
+            string partNo = GetPartNoFromAssembly(StaticPartNo, _parentAssembly, PartNo);
+            if (partNo != PartNo)
+                partNo = GetPartNoFromDirectory(StaticPartNo, _parentAssembly);
+            if (partNo != PartNo)
+                partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, PartNo);
+            if (partNo != PartNo)
+                throw new Exception($"PartNo {PartNo} is already in use");
         }
 
 
