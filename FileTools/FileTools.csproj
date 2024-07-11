@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\ComponentRegistry.cs" />
+    <Compile Include="CommonData\Headers\Connections\CommonData.Inlet.cs" />
+    <Compile Include="CommonData\Headers\Connections\CommonData.Outlet.cs" />
+    <Compile Include="CommonData\Headers\Connections\IConnection.cs" />
     <Compile Include="CommonData\Headers\IHeaderExtensions.cs" />
     <Compile Include="Base\SW_Assembly.cs" />
     <Compile Include="Base\IComponentInfo2.cs" />
@@ -103,5 +106,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

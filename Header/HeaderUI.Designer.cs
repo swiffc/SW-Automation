@@ -29,8 +29,263 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.connectionPanel = new System.Windows.Forms.Panel();
+            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.tExtensionY_Outlet = new System.Windows.Forms.TextBox();
+            this.tExtensionY_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox57 = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.textBox63 = new System.Windows.Forms.TextBox();
+            this.textBox67 = new System.Windows.Forms.TextBox();
+            this.textBox68 = new System.Windows.Forms.TextBox();
+            this.tOffsetX_Outlet = new System.Windows.Forms.TextBox();
+            this.tOffsetX_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.textBox72 = new System.Windows.Forms.TextBox();
+            this.textBox73 = new System.Windows.Forms.TextBox();
+            this.textBox74 = new System.Windows.Forms.TextBox();
+            this.tSpacing_Outlet = new System.Windows.Forms.TextBox();
+            this.tSpacing_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox77 = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.tCount_Outlet = new System.Windows.Forms.TextBox();
+            this.tCount_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox83 = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.textBox84 = new System.Windows.Forms.TextBox();
+            this.textBox85 = new System.Windows.Forms.TextBox();
+            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.tWall_Outlet = new System.Windows.Forms.TextBox();
+            this.tWall_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox64 = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.textBox65 = new System.Windows.Forms.TextBox();
+            this.textBox66 = new System.Windows.Forms.TextBox();
+            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.tOD_Outlet = new System.Windows.Forms.TextBox();
+            this.tOD_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox58 = new System.Windows.Forms.TextBox();
+            this.label80 = new System.Windows.Forms.Label();
+            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.textBox60 = new System.Windows.Forms.TextBox();
+            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.tYY_Outlet = new System.Windows.Forms.TextBox();
+            this.tYY_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.textBox54 = new System.Windows.Forms.TextBox();
+            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.tBC_Outlet = new System.Windows.Forms.TextBox();
+            this.tBC_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.textBox47 = new System.Windows.Forms.TextBox();
+            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.tDB_Outlet = new System.Windows.Forms.TextBox();
+            this.tDB_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.tNB_Outlet = new System.Windows.Forms.TextBox();
+            this.tNB_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.tRD_Outlet = new System.Windows.Forms.TextBox();
+            this.tRD_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.tX_Outlet = new System.Windows.Forms.TextBox();
+            this.tX_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tR_Outlet = new System.Windows.Forms.TextBox();
+            this.tR_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tQ_Outlet = new System.Windows.Forms.TextBox();
+            this.tQ_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tO_Outlet = new System.Windows.Forms.TextBox();
+            this.tO_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.cLocation_Outlet = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.cLocation_Inlet = new System.Windows.Forms.ComboBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label72 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.tPartitionDistanceBelow_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionDistanceBelow_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionDistanceBelow_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionDistanceBelow_63 = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.tPartitionDistanceBelow_64 = new System.Windows.Forms.TextBox();
+            this.tPartitionDistanceBelow_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionBelowRow_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionBelowRow_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionBelowRow_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionBelowRow_63 = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.tPartitionBelowRow_64 = new System.Windows.Forms.TextBox();
+            this.tPartitionBelowRow_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionWidth_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionWidth_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionWidth_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionWidth_63 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.tPartitionWidth_64 = new System.Windows.Forms.TextBox();
+            this.tPartitionWidth_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionTHK_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionTHK_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionTHK_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionTHK_63 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.tPartitionTHK_64 = new System.Windows.Forms.TextBox();
+            this.tPartitionTHK_65 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowOffset_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowOffset_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowOffset_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowOffset_63 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.tStiffenerWindowOffset_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowOffset_65 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowSpacing_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowSpacing_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowSpacing_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowSpacing_63 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.tStiffenerWindowSpacing_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowSpacing_65 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowQuantity_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowQuantity_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowQuantity_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowQuantity_63 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.tStiffenerWindowQuantity_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowQuantity_65 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowLength_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowLength_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowLength_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowLength_63 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.tStiffenerWindowLength_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowLength_65 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowWidth_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowWidth_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowWidth_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowWidth_63 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.tStiffenerWindowWidth_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerWindowWidth_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow12Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow12Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow12Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow12Count_63 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.tTubeRow12Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow12Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow11Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow11Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow11Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow11Count_63 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.tTubeRow11Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow11Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow10Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow10Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow10Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow10Count_63 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.tTubeRow10Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow10Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow9Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow9Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow9Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow9Count_63 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.tTubeRow9Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow9Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow8Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow8Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow8Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow8Count_63 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.tTubeRow8Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow8Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow7Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow7Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow7Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow7Count_63 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.tTubeRow7Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow7Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow6Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow6Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow6Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow6Count_63 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.tTubeRow6Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow6Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow5Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow5Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow5Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow5Count_63 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.tTubeRow5Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow5Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow4Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow4Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow4Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow4Count_63 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.tTubeRow4Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow4Count_65 = new System.Windows.Forms.TextBox();
+            this.tTubeRow3Count_66 = new System.Windows.Forms.TextBox();
+            this.tTubeRow3Count_62 = new System.Windows.Forms.TextBox();
+            this.tTubeRow3Count_61 = new System.Windows.Forms.TextBox();
+            this.tTubeRow3Count_63 = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tTubeRow3Count_64 = new System.Windows.Forms.TextBox();
+            this.tTubeRow3Count_65 = new System.Windows.Forms.TextBox();
             this.tStiffenerDistanceBelow_66 = new System.Windows.Forms.TextBox();
             this.tStiffenerDistanceBelow_62 = new System.Windows.Forms.TextBox();
             this.tStiffenerDistanceBelow_61 = new System.Windows.Forms.TextBox();
@@ -268,7 +523,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.tBoxHeight_64 = new System.Windows.Forms.TextBox();
             this.tBoxHeight_65 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tPlugsheetTHK_66 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_62 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_61 = new System.Windows.Forms.TextBox();
@@ -319,8 +573,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cEnabled62 = new System.Windows.Forms.CheckBox();
             this.cEnabled61 = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.job_Box = new System.Windows.Forms.TextBox();
             this.textBox_Bank = new System.Windows.Forms.TextBox();
             this.bImportPrego = new System.Windows.Forms.Button();
@@ -330,143 +582,1303 @@
             this.test64 = new System.Windows.Forms.Button();
             this.test65 = new System.Windows.Forms.Button();
             this.test66 = new System.Windows.Forms.Button();
-            this.tTubeRow3Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_63 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.tTubeRow3Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow3Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_63 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.tTubeRow4Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow4Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_63 = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.tTubeRow5Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow5Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_63 = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.tTubeRow6Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow6Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_63 = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.tTubeRow7Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow7Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_63 = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.tTubeRow8Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow8Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_63 = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.tTubeRow9Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow9Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_63 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.tTubeRow10Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow10Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow11Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow11Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow11Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow11Count_63 = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.tTubeRow11Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow11Count_65 = new System.Windows.Forms.TextBox();
-            this.tTubeRow12Count_66 = new System.Windows.Forms.TextBox();
-            this.tTubeRow12Count_62 = new System.Windows.Forms.TextBox();
-            this.tTubeRow12Count_61 = new System.Windows.Forms.TextBox();
-            this.tTubeRow12Count_63 = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.tTubeRow12Count_64 = new System.Windows.Forms.TextBox();
-            this.tTubeRow12Count_65 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowWidth_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowWidth_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowWidth_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowWidth_63 = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.tStiffenerWindowWidth_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowWidth_65 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowLength_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowLength_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowLength_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowLength_63 = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.tStiffenerWindowLength_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowLength_65 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowQuantity_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowQuantity_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowQuantity_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowQuantity_63 = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.tStiffenerWindowQuantity_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowQuantity_65 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowSpacing_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowSpacing_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowSpacing_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowSpacing_63 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.tStiffenerWindowSpacing_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowSpacing_65 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowOffset_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowOffset_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowOffset_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowOffset_63 = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.tStiffenerWindowOffset_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerWindowOffset_65 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.connectionPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(634, 547);
+            this.tabControl1.Size = new System.Drawing.Size(644, 547);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.connectionPanel);
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(636, 521);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Connections";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // connectionPanel
+            // 
+            this.connectionPanel.AutoScroll = true;
+            this.connectionPanel.Controls.Add(this.textBox39);
+            this.connectionPanel.Controls.Add(this.tExtensionY_Outlet);
+            this.connectionPanel.Controls.Add(this.tExtensionY_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox57);
+            this.connectionPanel.Controls.Add(this.label83);
+            this.connectionPanel.Controls.Add(this.textBox63);
+            this.connectionPanel.Controls.Add(this.textBox67);
+            this.connectionPanel.Controls.Add(this.textBox68);
+            this.connectionPanel.Controls.Add(this.tOffsetX_Outlet);
+            this.connectionPanel.Controls.Add(this.tOffsetX_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox71);
+            this.connectionPanel.Controls.Add(this.label84);
+            this.connectionPanel.Controls.Add(this.textBox72);
+            this.connectionPanel.Controls.Add(this.textBox73);
+            this.connectionPanel.Controls.Add(this.textBox74);
+            this.connectionPanel.Controls.Add(this.tSpacing_Outlet);
+            this.connectionPanel.Controls.Add(this.tSpacing_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox77);
+            this.connectionPanel.Controls.Add(this.label85);
+            this.connectionPanel.Controls.Add(this.textBox78);
+            this.connectionPanel.Controls.Add(this.textBox79);
+            this.connectionPanel.Controls.Add(this.textBox80);
+            this.connectionPanel.Controls.Add(this.tCount_Outlet);
+            this.connectionPanel.Controls.Add(this.tCount_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox83);
+            this.connectionPanel.Controls.Add(this.label86);
+            this.connectionPanel.Controls.Add(this.textBox84);
+            this.connectionPanel.Controls.Add(this.textBox85);
+            this.connectionPanel.Controls.Add(this.textBox61);
+            this.connectionPanel.Controls.Add(this.tWall_Outlet);
+            this.connectionPanel.Controls.Add(this.tWall_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox64);
+            this.connectionPanel.Controls.Add(this.label81);
+            this.connectionPanel.Controls.Add(this.textBox65);
+            this.connectionPanel.Controls.Add(this.textBox66);
+            this.connectionPanel.Controls.Add(this.textBox55);
+            this.connectionPanel.Controls.Add(this.tOD_Outlet);
+            this.connectionPanel.Controls.Add(this.tOD_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox58);
+            this.connectionPanel.Controls.Add(this.label80);
+            this.connectionPanel.Controls.Add(this.textBox59);
+            this.connectionPanel.Controls.Add(this.textBox60);
+            this.connectionPanel.Controls.Add(this.textBox49);
+            this.connectionPanel.Controls.Add(this.tYY_Outlet);
+            this.connectionPanel.Controls.Add(this.tYY_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox52);
+            this.connectionPanel.Controls.Add(this.label79);
+            this.connectionPanel.Controls.Add(this.textBox53);
+            this.connectionPanel.Controls.Add(this.textBox54);
+            this.connectionPanel.Controls.Add(this.textBox43);
+            this.connectionPanel.Controls.Add(this.tBC_Outlet);
+            this.connectionPanel.Controls.Add(this.tBC_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox46);
+            this.connectionPanel.Controls.Add(this.label78);
+            this.connectionPanel.Controls.Add(this.textBox47);
+            this.connectionPanel.Controls.Add(this.textBox48);
+            this.connectionPanel.Controls.Add(this.textBox37);
+            this.connectionPanel.Controls.Add(this.tDB_Outlet);
+            this.connectionPanel.Controls.Add(this.tDB_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox40);
+            this.connectionPanel.Controls.Add(this.label77);
+            this.connectionPanel.Controls.Add(this.textBox41);
+            this.connectionPanel.Controls.Add(this.textBox42);
+            this.connectionPanel.Controls.Add(this.textBox31);
+            this.connectionPanel.Controls.Add(this.tNB_Outlet);
+            this.connectionPanel.Controls.Add(this.tNB_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox34);
+            this.connectionPanel.Controls.Add(this.label76);
+            this.connectionPanel.Controls.Add(this.textBox35);
+            this.connectionPanel.Controls.Add(this.textBox36);
+            this.connectionPanel.Controls.Add(this.textBox25);
+            this.connectionPanel.Controls.Add(this.tRD_Outlet);
+            this.connectionPanel.Controls.Add(this.tRD_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox28);
+            this.connectionPanel.Controls.Add(this.label75);
+            this.connectionPanel.Controls.Add(this.textBox29);
+            this.connectionPanel.Controls.Add(this.textBox30);
+            this.connectionPanel.Controls.Add(this.textBox19);
+            this.connectionPanel.Controls.Add(this.tX_Outlet);
+            this.connectionPanel.Controls.Add(this.tX_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox22);
+            this.connectionPanel.Controls.Add(this.label74);
+            this.connectionPanel.Controls.Add(this.textBox23);
+            this.connectionPanel.Controls.Add(this.textBox24);
+            this.connectionPanel.Controls.Add(this.textBox13);
+            this.connectionPanel.Controls.Add(this.tR_Outlet);
+            this.connectionPanel.Controls.Add(this.tR_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox16);
+            this.connectionPanel.Controls.Add(this.label73);
+            this.connectionPanel.Controls.Add(this.textBox17);
+            this.connectionPanel.Controls.Add(this.textBox18);
+            this.connectionPanel.Controls.Add(this.textBox7);
+            this.connectionPanel.Controls.Add(this.tQ_Outlet);
+            this.connectionPanel.Controls.Add(this.tQ_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox10);
+            this.connectionPanel.Controls.Add(this.label66);
+            this.connectionPanel.Controls.Add(this.textBox11);
+            this.connectionPanel.Controls.Add(this.textBox12);
+            this.connectionPanel.Controls.Add(this.textBox1);
+            this.connectionPanel.Controls.Add(this.tO_Outlet);
+            this.connectionPanel.Controls.Add(this.tO_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox4);
+            this.connectionPanel.Controls.Add(this.label13);
+            this.connectionPanel.Controls.Add(this.textBox5);
+            this.connectionPanel.Controls.Add(this.textBox6);
+            this.connectionPanel.Location = new System.Drawing.Point(6, 63);
+            this.connectionPanel.Name = "connectionPanel";
+            this.connectionPanel.Size = new System.Drawing.Size(624, 455);
+            this.connectionPanel.TabIndex = 612;
+            // 
+            // textBox39
+            // 
+            this.textBox39.Location = new System.Drawing.Point(3, 81);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.ReadOnly = true;
+            this.textBox39.Size = new System.Drawing.Size(67, 20);
+            this.textBox39.TabIndex = 281;
+            this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tExtensionY_Outlet
+            // 
+            this.tExtensionY_Outlet.Location = new System.Drawing.Point(289, 81);
+            this.tExtensionY_Outlet.Name = "tExtensionY_Outlet";
+            this.tExtensionY_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tExtensionY_Outlet.TabIndex = 276;
+            this.tExtensionY_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tExtensionY_Inlet
+            // 
+            this.tExtensionY_Inlet.Location = new System.Drawing.Point(362, 81);
+            this.tExtensionY_Inlet.Name = "tExtensionY_Inlet";
+            this.tExtensionY_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tExtensionY_Inlet.TabIndex = 275;
+            this.tExtensionY_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox57
+            // 
+            this.textBox57.Location = new System.Drawing.Point(219, 81);
+            this.textBox57.Name = "textBox57";
+            this.textBox57.ReadOnly = true;
+            this.textBox57.Size = new System.Drawing.Size(64, 20);
+            this.textBox57.TabIndex = 278;
+            this.textBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.BackColor = System.Drawing.Color.White;
+            this.label83.Location = new System.Drawing.Point(432, 84);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(168, 13);
+            this.label83.TabIndex = 277;
+            this.label83.Text = "EXTENSION Flange Face To Box";
+            // 
+            // textBox63
+            // 
+            this.textBox63.Location = new System.Drawing.Point(146, 81);
+            this.textBox63.Name = "textBox63";
+            this.textBox63.ReadOnly = true;
+            this.textBox63.Size = new System.Drawing.Size(67, 20);
+            this.textBox63.TabIndex = 279;
+            this.textBox63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox67
+            // 
+            this.textBox67.Location = new System.Drawing.Point(76, 81);
+            this.textBox67.Name = "textBox67";
+            this.textBox67.ReadOnly = true;
+            this.textBox67.Size = new System.Drawing.Size(64, 20);
+            this.textBox67.TabIndex = 280;
+            this.textBox67.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox68
+            // 
+            this.textBox68.Location = new System.Drawing.Point(3, 55);
+            this.textBox68.Name = "textBox68";
+            this.textBox68.ReadOnly = true;
+            this.textBox68.Size = new System.Drawing.Size(67, 20);
+            this.textBox68.TabIndex = 274;
+            this.textBox68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tOffsetX_Outlet
+            // 
+            this.tOffsetX_Outlet.Location = new System.Drawing.Point(289, 55);
+            this.tOffsetX_Outlet.Name = "tOffsetX_Outlet";
+            this.tOffsetX_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tOffsetX_Outlet.TabIndex = 269;
+            this.tOffsetX_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tOffsetX_Inlet
+            // 
+            this.tOffsetX_Inlet.Location = new System.Drawing.Point(362, 55);
+            this.tOffsetX_Inlet.Name = "tOffsetX_Inlet";
+            this.tOffsetX_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tOffsetX_Inlet.TabIndex = 268;
+            this.tOffsetX_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox71
+            // 
+            this.textBox71.Location = new System.Drawing.Point(219, 55);
+            this.textBox71.Name = "textBox71";
+            this.textBox71.ReadOnly = true;
+            this.textBox71.Size = new System.Drawing.Size(64, 20);
+            this.textBox71.TabIndex = 271;
+            this.textBox71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.BackColor = System.Drawing.Color.White;
+            this.label84.Location = new System.Drawing.Point(432, 58);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(129, 13);
+            this.label84.TabIndex = 270;
+            this.label84.Text = "OFFSET From Box Center";
+            // 
+            // textBox72
+            // 
+            this.textBox72.Location = new System.Drawing.Point(146, 55);
+            this.textBox72.Name = "textBox72";
+            this.textBox72.ReadOnly = true;
+            this.textBox72.Size = new System.Drawing.Size(67, 20);
+            this.textBox72.TabIndex = 272;
+            this.textBox72.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox73
+            // 
+            this.textBox73.Location = new System.Drawing.Point(76, 55);
+            this.textBox73.Name = "textBox73";
+            this.textBox73.ReadOnly = true;
+            this.textBox73.Size = new System.Drawing.Size(64, 20);
+            this.textBox73.TabIndex = 273;
+            this.textBox73.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox74
+            // 
+            this.textBox74.Location = new System.Drawing.Point(3, 29);
+            this.textBox74.Name = "textBox74";
+            this.textBox74.ReadOnly = true;
+            this.textBox74.Size = new System.Drawing.Size(67, 20);
+            this.textBox74.TabIndex = 267;
+            this.textBox74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tSpacing_Outlet
+            // 
+            this.tSpacing_Outlet.Location = new System.Drawing.Point(289, 29);
+            this.tSpacing_Outlet.Name = "tSpacing_Outlet";
+            this.tSpacing_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tSpacing_Outlet.TabIndex = 262;
+            this.tSpacing_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tSpacing_Inlet
+            // 
+            this.tSpacing_Inlet.Location = new System.Drawing.Point(362, 29);
+            this.tSpacing_Inlet.Name = "tSpacing_Inlet";
+            this.tSpacing_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tSpacing_Inlet.TabIndex = 261;
+            this.tSpacing_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox77
+            // 
+            this.textBox77.Location = new System.Drawing.Point(219, 29);
+            this.textBox77.Name = "textBox77";
+            this.textBox77.ReadOnly = true;
+            this.textBox77.Size = new System.Drawing.Size(64, 20);
+            this.textBox77.TabIndex = 264;
+            this.textBox77.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.White;
+            this.label85.Location = new System.Drawing.Point(432, 32);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(54, 13);
+            this.label85.TabIndex = 263;
+            this.label85.Text = "SPACING";
+            // 
+            // textBox78
+            // 
+            this.textBox78.Location = new System.Drawing.Point(146, 29);
+            this.textBox78.Name = "textBox78";
+            this.textBox78.ReadOnly = true;
+            this.textBox78.Size = new System.Drawing.Size(67, 20);
+            this.textBox78.TabIndex = 265;
+            this.textBox78.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox79
+            // 
+            this.textBox79.Location = new System.Drawing.Point(76, 29);
+            this.textBox79.Name = "textBox79";
+            this.textBox79.ReadOnly = true;
+            this.textBox79.Size = new System.Drawing.Size(64, 20);
+            this.textBox79.TabIndex = 266;
+            this.textBox79.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox80
+            // 
+            this.textBox80.Location = new System.Drawing.Point(3, 3);
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            this.textBox80.Size = new System.Drawing.Size(67, 20);
+            this.textBox80.TabIndex = 260;
+            this.textBox80.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tCount_Outlet
+            // 
+            this.tCount_Outlet.Location = new System.Drawing.Point(289, 3);
+            this.tCount_Outlet.Name = "tCount_Outlet";
+            this.tCount_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tCount_Outlet.TabIndex = 255;
+            this.tCount_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tCount_Inlet
+            // 
+            this.tCount_Inlet.Location = new System.Drawing.Point(362, 3);
+            this.tCount_Inlet.Name = "tCount_Inlet";
+            this.tCount_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tCount_Inlet.TabIndex = 254;
+            this.tCount_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox83
+            // 
+            this.textBox83.Location = new System.Drawing.Point(219, 3);
+            this.textBox83.Name = "textBox83";
+            this.textBox83.ReadOnly = true;
+            this.textBox83.Size = new System.Drawing.Size(64, 20);
+            this.textBox83.TabIndex = 257;
+            this.textBox83.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.BackColor = System.Drawing.Color.White;
+            this.label86.Location = new System.Drawing.Point(432, 6);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(45, 13);
+            this.label86.TabIndex = 256;
+            this.label86.Text = "COUNT";
+            this.label86.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox84
+            // 
+            this.textBox84.Location = new System.Drawing.Point(146, 3);
+            this.textBox84.Name = "textBox84";
+            this.textBox84.ReadOnly = true;
+            this.textBox84.Size = new System.Drawing.Size(67, 20);
+            this.textBox84.TabIndex = 258;
+            this.textBox84.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox85
+            // 
+            this.textBox85.Location = new System.Drawing.Point(76, 3);
+            this.textBox85.Name = "textBox85";
+            this.textBox85.ReadOnly = true;
+            this.textBox85.Size = new System.Drawing.Size(64, 20);
+            this.textBox85.TabIndex = 259;
+            this.textBox85.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox61
+            // 
+            this.textBox61.Location = new System.Drawing.Point(3, 367);
+            this.textBox61.Name = "textBox61";
+            this.textBox61.ReadOnly = true;
+            this.textBox61.Size = new System.Drawing.Size(67, 20);
+            this.textBox61.TabIndex = 253;
+            this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tWall_Outlet
+            // 
+            this.tWall_Outlet.Location = new System.Drawing.Point(289, 367);
+            this.tWall_Outlet.Name = "tWall_Outlet";
+            this.tWall_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tWall_Outlet.TabIndex = 248;
+            this.tWall_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tWall_Inlet
+            // 
+            this.tWall_Inlet.Location = new System.Drawing.Point(362, 367);
+            this.tWall_Inlet.Name = "tWall_Inlet";
+            this.tWall_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tWall_Inlet.TabIndex = 247;
+            this.tWall_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox64
+            // 
+            this.textBox64.Location = new System.Drawing.Point(219, 367);
+            this.textBox64.Name = "textBox64";
+            this.textBox64.ReadOnly = true;
+            this.textBox64.Size = new System.Drawing.Size(64, 20);
+            this.textBox64.TabIndex = 250;
+            this.textBox64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.BackColor = System.Drawing.Color.White;
+            this.label81.Location = new System.Drawing.Point(432, 370);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(28, 13);
+            this.label81.TabIndex = 249;
+            this.label81.Text = "Wall";
+            // 
+            // textBox65
+            // 
+            this.textBox65.Location = new System.Drawing.Point(146, 367);
+            this.textBox65.Name = "textBox65";
+            this.textBox65.ReadOnly = true;
+            this.textBox65.Size = new System.Drawing.Size(67, 20);
+            this.textBox65.TabIndex = 251;
+            this.textBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox66
+            // 
+            this.textBox66.Location = new System.Drawing.Point(76, 367);
+            this.textBox66.Name = "textBox66";
+            this.textBox66.ReadOnly = true;
+            this.textBox66.Size = new System.Drawing.Size(64, 20);
+            this.textBox66.TabIndex = 252;
+            this.textBox66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox55
+            // 
+            this.textBox55.Location = new System.Drawing.Point(3, 341);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.ReadOnly = true;
+            this.textBox55.Size = new System.Drawing.Size(67, 20);
+            this.textBox55.TabIndex = 246;
+            this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tOD_Outlet
+            // 
+            this.tOD_Outlet.Location = new System.Drawing.Point(289, 341);
+            this.tOD_Outlet.Name = "tOD_Outlet";
+            this.tOD_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tOD_Outlet.TabIndex = 241;
+            this.tOD_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tOD_Inlet
+            // 
+            this.tOD_Inlet.Location = new System.Drawing.Point(362, 341);
+            this.tOD_Inlet.Name = "tOD_Inlet";
+            this.tOD_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tOD_Inlet.TabIndex = 240;
+            this.tOD_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox58
+            // 
+            this.textBox58.Location = new System.Drawing.Point(219, 341);
+            this.textBox58.Name = "textBox58";
+            this.textBox58.ReadOnly = true;
+            this.textBox58.Size = new System.Drawing.Size(64, 20);
+            this.textBox58.TabIndex = 243;
+            this.textBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.BackColor = System.Drawing.Color.White;
+            this.label80.Location = new System.Drawing.Point(432, 344);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(23, 13);
+            this.label80.TabIndex = 242;
+            this.label80.Text = "OD";
+            // 
+            // textBox59
+            // 
+            this.textBox59.Location = new System.Drawing.Point(146, 341);
+            this.textBox59.Name = "textBox59";
+            this.textBox59.ReadOnly = true;
+            this.textBox59.Size = new System.Drawing.Size(67, 20);
+            this.textBox59.TabIndex = 244;
+            this.textBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox60
+            // 
+            this.textBox60.Location = new System.Drawing.Point(76, 341);
+            this.textBox60.Name = "textBox60";
+            this.textBox60.ReadOnly = true;
+            this.textBox60.Size = new System.Drawing.Size(64, 20);
+            this.textBox60.TabIndex = 245;
+            this.textBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox49
+            // 
+            this.textBox49.Location = new System.Drawing.Point(3, 315);
+            this.textBox49.Name = "textBox49";
+            this.textBox49.ReadOnly = true;
+            this.textBox49.Size = new System.Drawing.Size(67, 20);
+            this.textBox49.TabIndex = 239;
+            this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tYY_Outlet
+            // 
+            this.tYY_Outlet.Location = new System.Drawing.Point(289, 315);
+            this.tYY_Outlet.Name = "tYY_Outlet";
+            this.tYY_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tYY_Outlet.TabIndex = 234;
+            this.tYY_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tYY_Inlet
+            // 
+            this.tYY_Inlet.Location = new System.Drawing.Point(362, 315);
+            this.tYY_Inlet.Name = "tYY_Inlet";
+            this.tYY_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tYY_Inlet.TabIndex = 233;
+            this.tYY_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox52
+            // 
+            this.textBox52.Location = new System.Drawing.Point(219, 315);
+            this.textBox52.Name = "textBox52";
+            this.textBox52.ReadOnly = true;
+            this.textBox52.Size = new System.Drawing.Size(64, 20);
+            this.textBox52.TabIndex = 236;
+            this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.BackColor = System.Drawing.Color.White;
+            this.label79.Location = new System.Drawing.Point(432, 318);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(21, 13);
+            this.label79.TabIndex = 235;
+            this.label79.Text = "YY";
+            // 
+            // textBox53
+            // 
+            this.textBox53.Location = new System.Drawing.Point(146, 315);
+            this.textBox53.Name = "textBox53";
+            this.textBox53.ReadOnly = true;
+            this.textBox53.Size = new System.Drawing.Size(67, 20);
+            this.textBox53.TabIndex = 237;
+            this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox54
+            // 
+            this.textBox54.Location = new System.Drawing.Point(76, 315);
+            this.textBox54.Name = "textBox54";
+            this.textBox54.ReadOnly = true;
+            this.textBox54.Size = new System.Drawing.Size(64, 20);
+            this.textBox54.TabIndex = 238;
+            this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox43
+            // 
+            this.textBox43.Location = new System.Drawing.Point(3, 289);
+            this.textBox43.Name = "textBox43";
+            this.textBox43.ReadOnly = true;
+            this.textBox43.Size = new System.Drawing.Size(67, 20);
+            this.textBox43.TabIndex = 232;
+            this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tBC_Outlet
+            // 
+            this.tBC_Outlet.Location = new System.Drawing.Point(289, 289);
+            this.tBC_Outlet.Name = "tBC_Outlet";
+            this.tBC_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tBC_Outlet.TabIndex = 227;
+            this.tBC_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tBC_Inlet
+            // 
+            this.tBC_Inlet.Location = new System.Drawing.Point(362, 289);
+            this.tBC_Inlet.Name = "tBC_Inlet";
+            this.tBC_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tBC_Inlet.TabIndex = 226;
+            this.tBC_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox46
+            // 
+            this.textBox46.Location = new System.Drawing.Point(219, 289);
+            this.textBox46.Name = "textBox46";
+            this.textBox46.ReadOnly = true;
+            this.textBox46.Size = new System.Drawing.Size(64, 20);
+            this.textBox46.TabIndex = 229;
+            this.textBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.BackColor = System.Drawing.Color.White;
+            this.label78.Location = new System.Drawing.Point(432, 292);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(21, 13);
+            this.label78.TabIndex = 228;
+            this.label78.Text = "BC";
+            // 
+            // textBox47
+            // 
+            this.textBox47.Location = new System.Drawing.Point(146, 289);
+            this.textBox47.Name = "textBox47";
+            this.textBox47.ReadOnly = true;
+            this.textBox47.Size = new System.Drawing.Size(67, 20);
+            this.textBox47.TabIndex = 230;
+            this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox48
+            // 
+            this.textBox48.Location = new System.Drawing.Point(76, 289);
+            this.textBox48.Name = "textBox48";
+            this.textBox48.ReadOnly = true;
+            this.textBox48.Size = new System.Drawing.Size(64, 20);
+            this.textBox48.TabIndex = 231;
+            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox37
+            // 
+            this.textBox37.Location = new System.Drawing.Point(3, 263);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.ReadOnly = true;
+            this.textBox37.Size = new System.Drawing.Size(67, 20);
+            this.textBox37.TabIndex = 225;
+            this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tDB_Outlet
+            // 
+            this.tDB_Outlet.Location = new System.Drawing.Point(289, 263);
+            this.tDB_Outlet.Name = "tDB_Outlet";
+            this.tDB_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tDB_Outlet.TabIndex = 220;
+            this.tDB_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tDB_Inlet
+            // 
+            this.tDB_Inlet.Location = new System.Drawing.Point(362, 263);
+            this.tDB_Inlet.Name = "tDB_Inlet";
+            this.tDB_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tDB_Inlet.TabIndex = 219;
+            this.tDB_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox40
+            // 
+            this.textBox40.Location = new System.Drawing.Point(219, 263);
+            this.textBox40.Name = "textBox40";
+            this.textBox40.ReadOnly = true;
+            this.textBox40.Size = new System.Drawing.Size(64, 20);
+            this.textBox40.TabIndex = 222;
+            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.BackColor = System.Drawing.Color.White;
+            this.label77.Location = new System.Drawing.Point(432, 266);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(22, 13);
+            this.label77.TabIndex = 221;
+            this.label77.Text = "DB";
+            // 
+            // textBox41
+            // 
+            this.textBox41.Location = new System.Drawing.Point(146, 263);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.ReadOnly = true;
+            this.textBox41.Size = new System.Drawing.Size(67, 20);
+            this.textBox41.TabIndex = 223;
+            this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox42
+            // 
+            this.textBox42.Location = new System.Drawing.Point(76, 263);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.ReadOnly = true;
+            this.textBox42.Size = new System.Drawing.Size(64, 20);
+            this.textBox42.TabIndex = 224;
+            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox31
+            // 
+            this.textBox31.Location = new System.Drawing.Point(3, 237);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.ReadOnly = true;
+            this.textBox31.Size = new System.Drawing.Size(67, 20);
+            this.textBox31.TabIndex = 218;
+            this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tNB_Outlet
+            // 
+            this.tNB_Outlet.Location = new System.Drawing.Point(289, 237);
+            this.tNB_Outlet.Name = "tNB_Outlet";
+            this.tNB_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tNB_Outlet.TabIndex = 213;
+            this.tNB_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tNB_Inlet
+            // 
+            this.tNB_Inlet.Location = new System.Drawing.Point(362, 237);
+            this.tNB_Inlet.Name = "tNB_Inlet";
+            this.tNB_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tNB_Inlet.TabIndex = 212;
+            this.tNB_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(219, 237);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.ReadOnly = true;
+            this.textBox34.Size = new System.Drawing.Size(64, 20);
+            this.textBox34.TabIndex = 215;
+            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.BackColor = System.Drawing.Color.White;
+            this.label76.Location = new System.Drawing.Point(432, 240);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(22, 13);
+            this.label76.TabIndex = 214;
+            this.label76.Text = "NB";
+            // 
+            // textBox35
+            // 
+            this.textBox35.Location = new System.Drawing.Point(146, 237);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.ReadOnly = true;
+            this.textBox35.Size = new System.Drawing.Size(67, 20);
+            this.textBox35.TabIndex = 216;
+            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox36
+            // 
+            this.textBox36.Location = new System.Drawing.Point(76, 237);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.ReadOnly = true;
+            this.textBox36.Size = new System.Drawing.Size(64, 20);
+            this.textBox36.TabIndex = 217;
+            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Location = new System.Drawing.Point(3, 211);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.ReadOnly = true;
+            this.textBox25.Size = new System.Drawing.Size(67, 20);
+            this.textBox25.TabIndex = 211;
+            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tRD_Outlet
+            // 
+            this.tRD_Outlet.Location = new System.Drawing.Point(289, 211);
+            this.tRD_Outlet.Name = "tRD_Outlet";
+            this.tRD_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tRD_Outlet.TabIndex = 206;
+            this.tRD_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tRD_Inlet
+            // 
+            this.tRD_Inlet.Location = new System.Drawing.Point(362, 211);
+            this.tRD_Inlet.Name = "tRD_Inlet";
+            this.tRD_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tRD_Inlet.TabIndex = 205;
+            this.tRD_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(219, 211);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.ReadOnly = true;
+            this.textBox28.Size = new System.Drawing.Size(64, 20);
+            this.textBox28.TabIndex = 208;
+            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.BackColor = System.Drawing.Color.White;
+            this.label75.Location = new System.Drawing.Point(432, 214);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(23, 13);
+            this.label75.TabIndex = 207;
+            this.label75.Text = "RD";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Location = new System.Drawing.Point(146, 211);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ReadOnly = true;
+            this.textBox29.Size = new System.Drawing.Size(67, 20);
+            this.textBox29.TabIndex = 209;
+            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox30
+            // 
+            this.textBox30.Location = new System.Drawing.Point(76, 211);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.ReadOnly = true;
+            this.textBox30.Size = new System.Drawing.Size(64, 20);
+            this.textBox30.TabIndex = 210;
+            this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(3, 185);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.ReadOnly = true;
+            this.textBox19.Size = new System.Drawing.Size(67, 20);
+            this.textBox19.TabIndex = 204;
+            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tX_Outlet
+            // 
+            this.tX_Outlet.Location = new System.Drawing.Point(289, 185);
+            this.tX_Outlet.Name = "tX_Outlet";
+            this.tX_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tX_Outlet.TabIndex = 199;
+            this.tX_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tX_Inlet
+            // 
+            this.tX_Inlet.Location = new System.Drawing.Point(362, 185);
+            this.tX_Inlet.Name = "tX_Inlet";
+            this.tX_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tX_Inlet.TabIndex = 198;
+            this.tX_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(219, 185);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
+            this.textBox22.Size = new System.Drawing.Size(64, 20);
+            this.textBox22.TabIndex = 201;
+            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.BackColor = System.Drawing.Color.White;
+            this.label74.Location = new System.Drawing.Point(432, 188);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(14, 13);
+            this.label74.TabIndex = 200;
+            this.label74.Text = "X";
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(146, 185);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
+            this.textBox23.Size = new System.Drawing.Size(67, 20);
+            this.textBox23.TabIndex = 202;
+            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(76, 185);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.ReadOnly = true;
+            this.textBox24.Size = new System.Drawing.Size(64, 20);
+            this.textBox24.TabIndex = 203;
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(3, 159);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.Size = new System.Drawing.Size(67, 20);
+            this.textBox13.TabIndex = 197;
+            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tR_Outlet
+            // 
+            this.tR_Outlet.Location = new System.Drawing.Point(289, 159);
+            this.tR_Outlet.Name = "tR_Outlet";
+            this.tR_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tR_Outlet.TabIndex = 192;
+            this.tR_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tR_Inlet
+            // 
+            this.tR_Inlet.Location = new System.Drawing.Point(362, 159);
+            this.tR_Inlet.Name = "tR_Inlet";
+            this.tR_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tR_Inlet.TabIndex = 191;
+            this.tR_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(219, 159);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.Size = new System.Drawing.Size(64, 20);
+            this.textBox16.TabIndex = 194;
+            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.BackColor = System.Drawing.Color.White;
+            this.label73.Location = new System.Drawing.Point(432, 162);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(15, 13);
+            this.label73.TabIndex = 193;
+            this.label73.Text = "R";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(146, 159);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(67, 20);
+            this.textBox17.TabIndex = 195;
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(76, 159);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
+            this.textBox18.Size = new System.Drawing.Size(64, 20);
+            this.textBox18.TabIndex = 196;
+            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(3, 133);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(67, 20);
+            this.textBox7.TabIndex = 190;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tQ_Outlet
+            // 
+            this.tQ_Outlet.Location = new System.Drawing.Point(289, 133);
+            this.tQ_Outlet.Name = "tQ_Outlet";
+            this.tQ_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tQ_Outlet.TabIndex = 185;
+            this.tQ_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tQ_Inlet
+            // 
+            this.tQ_Inlet.Location = new System.Drawing.Point(362, 133);
+            this.tQ_Inlet.Name = "tQ_Inlet";
+            this.tQ_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tQ_Inlet.TabIndex = 184;
+            this.tQ_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(219, 133);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(64, 20);
+            this.textBox10.TabIndex = 187;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.BackColor = System.Drawing.Color.White;
+            this.label66.Location = new System.Drawing.Point(432, 136);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(15, 13);
+            this.label66.TabIndex = 186;
+            this.label66.Text = "Q";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(146, 133);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(67, 20);
+            this.textBox11.TabIndex = 188;
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(76, 133);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(64, 20);
+            this.textBox12.TabIndex = 189;
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 107);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(67, 20);
+            this.textBox1.TabIndex = 183;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tO_Outlet
+            // 
+            this.tO_Outlet.Location = new System.Drawing.Point(289, 107);
+            this.tO_Outlet.Name = "tO_Outlet";
+            this.tO_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tO_Outlet.TabIndex = 178;
+            this.tO_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tO_Inlet
+            // 
+            this.tO_Inlet.Location = new System.Drawing.Point(362, 107);
+            this.tO_Inlet.Name = "tO_Inlet";
+            this.tO_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tO_Inlet.TabIndex = 177;
+            this.tO_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(219, 107);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(64, 20);
+            this.textBox4.TabIndex = 180;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(432, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(15, 13);
+            this.label13.TabIndex = 179;
+            this.label13.Text = "O";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(146, 107);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(67, 20);
+            this.textBox5.TabIndex = 181;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(76, 107);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(64, 20);
+            this.textBox6.TabIndex = 182;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.splitter1);
+            this.panel1.Controls.Add(this.cLocation_Outlet);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.label68);
+            this.panel1.Controls.Add(this.comboBox5);
+            this.panel1.Controls.Add(this.label69);
+            this.panel1.Controls.Add(this.label71);
+            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.label65);
+            this.panel1.Controls.Add(this.cLocation_Inlet);
+            this.panel1.Controls.Add(this.label70);
+            this.panel1.Controls.Add(this.label67);
+            this.panel1.Controls.Add(this.comboBox4);
+            this.panel1.Controls.Add(this.label72);
+            this.panel1.Location = new System.Drawing.Point(6, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(624, 54);
+            this.panel1.TabIndex = 611;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter1.Location = new System.Drawing.Point(0, 51);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(624, 3);
+            this.splitter1.TabIndex = 123;
+            this.splitter1.TabStop = false;
+            // 
+            // cLocation_Outlet
+            // 
+            this.cLocation_Outlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cLocation_Outlet.FormattingEnabled = true;
+            this.cLocation_Outlet.Items.AddRange(new object[] {
+            "TL",
+            "TR",
+            "BL",
+            "BR"});
+            this.cLocation_Outlet.Location = new System.Drawing.Point(289, 23);
+            this.cLocation_Outlet.Name = "cLocation_Outlet";
+            this.cLocation_Outlet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cLocation_Outlet.Size = new System.Drawing.Size(67, 21);
+            this.cLocation_Outlet.TabIndex = 610;
+            this.cLocation_Outlet.SelectedIndexChanged += new System.EventHandler(this.cLocation_Outlet_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(3, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox2.Size = new System.Drawing.Size(67, 21);
+            this.comboBox2.TabIndex = 606;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.BackColor = System.Drawing.Color.White;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(160, 4);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(39, 16);
+            this.label68.TabIndex = 113;
+            this.label68.Text = "Drain";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(219, 23);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox5.Size = new System.Drawing.Size(64, 21);
+            this.comboBox5.TabIndex = 609;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.BackColor = System.Drawing.Color.White;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(16, 4);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(43, 16);
+            this.label69.TabIndex = 115;
+            this.label69.Text = "Temp";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.BackColor = System.Drawing.Color.White;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(88, 4);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(42, 16);
+            this.label71.TabIndex = 114;
+            this.label71.Text = "Press";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(76, 23);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox3.Size = new System.Drawing.Size(64, 21);
+            this.comboBox3.TabIndex = 607;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.Color.White;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(234, 4);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(34, 16);
+            this.label65.TabIndex = 112;
+            this.label65.Text = "Vent";
+            // 
+            // cLocation_Inlet
+            // 
+            this.cLocation_Inlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cLocation_Inlet.FormattingEnabled = true;
+            this.cLocation_Inlet.Items.AddRange(new object[] {
+            "TL",
+            "TR",
+            "BL",
+            "BR"});
+            this.cLocation_Inlet.Location = new System.Drawing.Point(362, 23);
+            this.cLocation_Inlet.Name = "cLocation_Inlet";
+            this.cLocation_Inlet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cLocation_Inlet.Size = new System.Drawing.Size(64, 21);
+            this.cLocation_Inlet.TabIndex = 605;
+            this.cLocation_Inlet.SelectedIndexChanged += new System.EventHandler(this.cLocation_Inlet_SelectedIndexChanged);
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.Color.White;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(308, 4);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(27, 16);
+            this.label70.TabIndex = 111;
+            this.label70.Text = "Out";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.BackColor = System.Drawing.Color.White;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(383, 4);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(17, 16);
+            this.label67.TabIndex = 110;
+            this.label67.Text = "In";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(146, 23);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox4.Size = new System.Drawing.Size(67, 21);
+            this.comboBox4.TabIndex = 608;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.BackColor = System.Drawing.Color.White;
+            this.label72.Location = new System.Drawing.Point(432, 26);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(61, 13);
+            this.label72.TabIndex = 600;
+            this.label72.Text = "LOCATION";
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.HeaderPanel);
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(626, 521);
+            this.tabPage1.Size = new System.Drawing.Size(636, 521);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Header";
+            this.tabPage1.Text = "Box";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // HeaderPanel
             // 
             this.HeaderPanel.AutoScroll = true;
+            this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_66);
+            this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_62);
+            this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_63);
+            this.HeaderPanel.Controls.Add(this.label64);
+            this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_64);
+            this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_65);
+            this.HeaderPanel.Controls.Add(this.tPartitionBelowRow_66);
+            this.HeaderPanel.Controls.Add(this.tPartitionBelowRow_62);
+            this.HeaderPanel.Controls.Add(this.tPartitionBelowRow_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionBelowRow_63);
+            this.HeaderPanel.Controls.Add(this.label63);
+            this.HeaderPanel.Controls.Add(this.tPartitionBelowRow_64);
+            this.HeaderPanel.Controls.Add(this.tPartitionBelowRow_65);
+            this.HeaderPanel.Controls.Add(this.tPartitionWidth_66);
+            this.HeaderPanel.Controls.Add(this.tPartitionWidth_62);
+            this.HeaderPanel.Controls.Add(this.tPartitionWidth_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionWidth_63);
+            this.HeaderPanel.Controls.Add(this.label62);
+            this.HeaderPanel.Controls.Add(this.tPartitionWidth_64);
+            this.HeaderPanel.Controls.Add(this.tPartitionWidth_65);
+            this.HeaderPanel.Controls.Add(this.tPartitionTHK_66);
+            this.HeaderPanel.Controls.Add(this.tPartitionTHK_62);
+            this.HeaderPanel.Controls.Add(this.tPartitionTHK_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionTHK_63);
+            this.HeaderPanel.Controls.Add(this.label61);
+            this.HeaderPanel.Controls.Add(this.tPartitionTHK_64);
+            this.HeaderPanel.Controls.Add(this.tPartitionTHK_65);
             this.HeaderPanel.Controls.Add(this.tStiffenerWindowOffset_66);
             this.HeaderPanel.Controls.Add(this.tStiffenerWindowOffset_62);
             this.HeaderPanel.Controls.Add(this.tStiffenerWindowOffset_61);
@@ -809,7 +2221,6 @@
             this.HeaderPanel.Controls.Add(this.label16);
             this.HeaderPanel.Controls.Add(this.tBoxHeight_64);
             this.HeaderPanel.Controls.Add(this.tBoxHeight_65);
-            this.HeaderPanel.Controls.Add(this.label13);
             this.HeaderPanel.Controls.Add(this.tPlugsheetTHK_66);
             this.HeaderPanel.Controls.Add(this.tPlugsheetTHK_62);
             this.HeaderPanel.Controls.Add(this.tPlugsheetTHK_61);
@@ -845,10 +2256,1112 @@
             this.HeaderPanel.Controls.Add(this.label23);
             this.HeaderPanel.Controls.Add(this.tTubesheetTHK_64);
             this.HeaderPanel.Controls.Add(this.tTubesheetTHK_65);
-            this.HeaderPanel.Location = new System.Drawing.Point(6, 125);
+            this.HeaderPanel.Location = new System.Drawing.Point(6, 57);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(614, 395);
+            this.HeaderPanel.Size = new System.Drawing.Size(624, 463);
             this.HeaderPanel.TabIndex = 125;
+            // 
+            // tPartitionDistanceBelow_66
+            // 
+            this.tPartitionDistanceBelow_66.Location = new System.Drawing.Point(3, 1515);
+            this.tPartitionDistanceBelow_66.Name = "tPartitionDistanceBelow_66";
+            this.tPartitionDistanceBelow_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionDistanceBelow_66.TabIndex = 597;
+            this.tPartitionDistanceBelow_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionDistanceBelow_62
+            // 
+            this.tPartitionDistanceBelow_62.Location = new System.Drawing.Point(289, 1515);
+            this.tPartitionDistanceBelow_62.Name = "tPartitionDistanceBelow_62";
+            this.tPartitionDistanceBelow_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionDistanceBelow_62.TabIndex = 592;
+            this.tPartitionDistanceBelow_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionDistanceBelow_61
+            // 
+            this.tPartitionDistanceBelow_61.Location = new System.Drawing.Point(362, 1515);
+            this.tPartitionDistanceBelow_61.Name = "tPartitionDistanceBelow_61";
+            this.tPartitionDistanceBelow_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionDistanceBelow_61.TabIndex = 591;
+            this.tPartitionDistanceBelow_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionDistanceBelow_63
+            // 
+            this.tPartitionDistanceBelow_63.Location = new System.Drawing.Point(219, 1515);
+            this.tPartitionDistanceBelow_63.Name = "tPartitionDistanceBelow_63";
+            this.tPartitionDistanceBelow_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionDistanceBelow_63.TabIndex = 594;
+            this.tPartitionDistanceBelow_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.White;
+            this.label64.Location = new System.Drawing.Point(432, 1519);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(166, 13);
+            this.label64.TabIndex = 593;
+            this.label64.Text = "LOCATION  Distance Below Row";
+            // 
+            // tPartitionDistanceBelow_64
+            // 
+            this.tPartitionDistanceBelow_64.Location = new System.Drawing.Point(146, 1515);
+            this.tPartitionDistanceBelow_64.Name = "tPartitionDistanceBelow_64";
+            this.tPartitionDistanceBelow_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionDistanceBelow_64.TabIndex = 595;
+            this.tPartitionDistanceBelow_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionDistanceBelow_65
+            // 
+            this.tPartitionDistanceBelow_65.Location = new System.Drawing.Point(76, 1515);
+            this.tPartitionDistanceBelow_65.Name = "tPartitionDistanceBelow_65";
+            this.tPartitionDistanceBelow_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionDistanceBelow_65.TabIndex = 596;
+            this.tPartitionDistanceBelow_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionBelowRow_66
+            // 
+            this.tPartitionBelowRow_66.Location = new System.Drawing.Point(3, 1489);
+            this.tPartitionBelowRow_66.Name = "tPartitionBelowRow_66";
+            this.tPartitionBelowRow_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionBelowRow_66.TabIndex = 590;
+            this.tPartitionBelowRow_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionBelowRow_62
+            // 
+            this.tPartitionBelowRow_62.Location = new System.Drawing.Point(289, 1489);
+            this.tPartitionBelowRow_62.Name = "tPartitionBelowRow_62";
+            this.tPartitionBelowRow_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionBelowRow_62.TabIndex = 585;
+            this.tPartitionBelowRow_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionBelowRow_61
+            // 
+            this.tPartitionBelowRow_61.Location = new System.Drawing.Point(362, 1489);
+            this.tPartitionBelowRow_61.Name = "tPartitionBelowRow_61";
+            this.tPartitionBelowRow_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionBelowRow_61.TabIndex = 584;
+            this.tPartitionBelowRow_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionBelowRow_63
+            // 
+            this.tPartitionBelowRow_63.Location = new System.Drawing.Point(219, 1489);
+            this.tPartitionBelowRow_63.Name = "tPartitionBelowRow_63";
+            this.tPartitionBelowRow_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionBelowRow_63.TabIndex = 587;
+            this.tPartitionBelowRow_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.BackColor = System.Drawing.Color.White;
+            this.label63.Location = new System.Drawing.Point(432, 1493);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(156, 13);
+            this.label63.TabIndex = 586;
+            this.label63.Text = "LOCATION  Below Tube Row#";
+            // 
+            // tPartitionBelowRow_64
+            // 
+            this.tPartitionBelowRow_64.Location = new System.Drawing.Point(146, 1489);
+            this.tPartitionBelowRow_64.Name = "tPartitionBelowRow_64";
+            this.tPartitionBelowRow_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionBelowRow_64.TabIndex = 588;
+            this.tPartitionBelowRow_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionBelowRow_65
+            // 
+            this.tPartitionBelowRow_65.Location = new System.Drawing.Point(76, 1489);
+            this.tPartitionBelowRow_65.Name = "tPartitionBelowRow_65";
+            this.tPartitionBelowRow_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionBelowRow_65.TabIndex = 589;
+            this.tPartitionBelowRow_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionWidth_66
+            // 
+            this.tPartitionWidth_66.Location = new System.Drawing.Point(3, 1463);
+            this.tPartitionWidth_66.Name = "tPartitionWidth_66";
+            this.tPartitionWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionWidth_66.TabIndex = 583;
+            this.tPartitionWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionWidth_62
+            // 
+            this.tPartitionWidth_62.Location = new System.Drawing.Point(289, 1463);
+            this.tPartitionWidth_62.Name = "tPartitionWidth_62";
+            this.tPartitionWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionWidth_62.TabIndex = 578;
+            this.tPartitionWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionWidth_61
+            // 
+            this.tPartitionWidth_61.Location = new System.Drawing.Point(362, 1463);
+            this.tPartitionWidth_61.Name = "tPartitionWidth_61";
+            this.tPartitionWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionWidth_61.TabIndex = 577;
+            this.tPartitionWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionWidth_63
+            // 
+            this.tPartitionWidth_63.Location = new System.Drawing.Point(219, 1463);
+            this.tPartitionWidth_63.Name = "tPartitionWidth_63";
+            this.tPartitionWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionWidth_63.TabIndex = 580;
+            this.tPartitionWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.BackColor = System.Drawing.Color.White;
+            this.label62.Location = new System.Drawing.Point(432, 1467);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(88, 13);
+            this.label62.TabIndex = 579;
+            this.label62.Text = "WIDTH  Partition";
+            // 
+            // tPartitionWidth_64
+            // 
+            this.tPartitionWidth_64.Location = new System.Drawing.Point(146, 1463);
+            this.tPartitionWidth_64.Name = "tPartitionWidth_64";
+            this.tPartitionWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionWidth_64.TabIndex = 581;
+            this.tPartitionWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionWidth_65
+            // 
+            this.tPartitionWidth_65.Location = new System.Drawing.Point(76, 1463);
+            this.tPartitionWidth_65.Name = "tPartitionWidth_65";
+            this.tPartitionWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionWidth_65.TabIndex = 582;
+            this.tPartitionWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionTHK_66
+            // 
+            this.tPartitionTHK_66.Location = new System.Drawing.Point(3, 1437);
+            this.tPartitionTHK_66.Name = "tPartitionTHK_66";
+            this.tPartitionTHK_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionTHK_66.TabIndex = 576;
+            this.tPartitionTHK_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionTHK_62
+            // 
+            this.tPartitionTHK_62.Location = new System.Drawing.Point(289, 1437);
+            this.tPartitionTHK_62.Name = "tPartitionTHK_62";
+            this.tPartitionTHK_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionTHK_62.TabIndex = 571;
+            this.tPartitionTHK_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionTHK_61
+            // 
+            this.tPartitionTHK_61.Location = new System.Drawing.Point(362, 1437);
+            this.tPartitionTHK_61.Name = "tPartitionTHK_61";
+            this.tPartitionTHK_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionTHK_61.TabIndex = 570;
+            this.tPartitionTHK_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionTHK_63
+            // 
+            this.tPartitionTHK_63.Location = new System.Drawing.Point(219, 1437);
+            this.tPartitionTHK_63.Name = "tPartitionTHK_63";
+            this.tPartitionTHK_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionTHK_63.TabIndex = 573;
+            this.tPartitionTHK_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.BackColor = System.Drawing.Color.White;
+            this.label61.Location = new System.Drawing.Point(432, 1441);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(73, 13);
+            this.label61.TabIndex = 572;
+            this.label61.Text = "THK  Partition";
+            // 
+            // tPartitionTHK_64
+            // 
+            this.tPartitionTHK_64.Location = new System.Drawing.Point(146, 1437);
+            this.tPartitionTHK_64.Name = "tPartitionTHK_64";
+            this.tPartitionTHK_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionTHK_64.TabIndex = 574;
+            this.tPartitionTHK_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionTHK_65
+            // 
+            this.tPartitionTHK_65.Location = new System.Drawing.Point(76, 1437);
+            this.tPartitionTHK_65.Name = "tPartitionTHK_65";
+            this.tPartitionTHK_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionTHK_65.TabIndex = 575;
+            this.tPartitionTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowOffset_66
+            // 
+            this.tStiffenerWindowOffset_66.Location = new System.Drawing.Point(3, 1402);
+            this.tStiffenerWindowOffset_66.Name = "tStiffenerWindowOffset_66";
+            this.tStiffenerWindowOffset_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowOffset_66.TabIndex = 569;
+            this.tStiffenerWindowOffset_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowOffset_62
+            // 
+            this.tStiffenerWindowOffset_62.Location = new System.Drawing.Point(289, 1402);
+            this.tStiffenerWindowOffset_62.Name = "tStiffenerWindowOffset_62";
+            this.tStiffenerWindowOffset_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowOffset_62.TabIndex = 564;
+            this.tStiffenerWindowOffset_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowOffset_61
+            // 
+            this.tStiffenerWindowOffset_61.Location = new System.Drawing.Point(362, 1402);
+            this.tStiffenerWindowOffset_61.Name = "tStiffenerWindowOffset_61";
+            this.tStiffenerWindowOffset_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowOffset_61.TabIndex = 563;
+            this.tStiffenerWindowOffset_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowOffset_63
+            // 
+            this.tStiffenerWindowOffset_63.Location = new System.Drawing.Point(219, 1402);
+            this.tStiffenerWindowOffset_63.Name = "tStiffenerWindowOffset_63";
+            this.tStiffenerWindowOffset_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowOffset_63.TabIndex = 566;
+            this.tStiffenerWindowOffset_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.BackColor = System.Drawing.Color.White;
+            this.label60.Location = new System.Drawing.Point(432, 1406);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(135, 13);
+            this.label60.TabIndex = 565;
+            this.label60.Text = "WINDOW  Offset (Siffener)";
+            // 
+            // tStiffenerWindowOffset_64
+            // 
+            this.tStiffenerWindowOffset_64.Location = new System.Drawing.Point(146, 1402);
+            this.tStiffenerWindowOffset_64.Name = "tStiffenerWindowOffset_64";
+            this.tStiffenerWindowOffset_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowOffset_64.TabIndex = 567;
+            this.tStiffenerWindowOffset_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowOffset_65
+            // 
+            this.tStiffenerWindowOffset_65.Location = new System.Drawing.Point(76, 1402);
+            this.tStiffenerWindowOffset_65.Name = "tStiffenerWindowOffset_65";
+            this.tStiffenerWindowOffset_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowOffset_65.TabIndex = 568;
+            this.tStiffenerWindowOffset_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowSpacing_66
+            // 
+            this.tStiffenerWindowSpacing_66.Location = new System.Drawing.Point(3, 1376);
+            this.tStiffenerWindowSpacing_66.Name = "tStiffenerWindowSpacing_66";
+            this.tStiffenerWindowSpacing_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowSpacing_66.TabIndex = 562;
+            this.tStiffenerWindowSpacing_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowSpacing_62
+            // 
+            this.tStiffenerWindowSpacing_62.Location = new System.Drawing.Point(289, 1376);
+            this.tStiffenerWindowSpacing_62.Name = "tStiffenerWindowSpacing_62";
+            this.tStiffenerWindowSpacing_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowSpacing_62.TabIndex = 557;
+            this.tStiffenerWindowSpacing_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowSpacing_61
+            // 
+            this.tStiffenerWindowSpacing_61.Location = new System.Drawing.Point(362, 1376);
+            this.tStiffenerWindowSpacing_61.Name = "tStiffenerWindowSpacing_61";
+            this.tStiffenerWindowSpacing_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowSpacing_61.TabIndex = 556;
+            this.tStiffenerWindowSpacing_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowSpacing_63
+            // 
+            this.tStiffenerWindowSpacing_63.Location = new System.Drawing.Point(219, 1376);
+            this.tStiffenerWindowSpacing_63.Name = "tStiffenerWindowSpacing_63";
+            this.tStiffenerWindowSpacing_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowSpacing_63.TabIndex = 559;
+            this.tStiffenerWindowSpacing_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.BackColor = System.Drawing.Color.White;
+            this.label59.Location = new System.Drawing.Point(432, 1380);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(146, 13);
+            this.label59.TabIndex = 558;
+            this.label59.Text = "WINDOW  Spacing (Siffener)";
+            // 
+            // tStiffenerWindowSpacing_64
+            // 
+            this.tStiffenerWindowSpacing_64.Location = new System.Drawing.Point(146, 1376);
+            this.tStiffenerWindowSpacing_64.Name = "tStiffenerWindowSpacing_64";
+            this.tStiffenerWindowSpacing_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowSpacing_64.TabIndex = 560;
+            this.tStiffenerWindowSpacing_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowSpacing_65
+            // 
+            this.tStiffenerWindowSpacing_65.Location = new System.Drawing.Point(76, 1376);
+            this.tStiffenerWindowSpacing_65.Name = "tStiffenerWindowSpacing_65";
+            this.tStiffenerWindowSpacing_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowSpacing_65.TabIndex = 561;
+            this.tStiffenerWindowSpacing_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowQuantity_66
+            // 
+            this.tStiffenerWindowQuantity_66.Location = new System.Drawing.Point(3, 1350);
+            this.tStiffenerWindowQuantity_66.Name = "tStiffenerWindowQuantity_66";
+            this.tStiffenerWindowQuantity_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowQuantity_66.TabIndex = 555;
+            this.tStiffenerWindowQuantity_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowQuantity_62
+            // 
+            this.tStiffenerWindowQuantity_62.Location = new System.Drawing.Point(289, 1350);
+            this.tStiffenerWindowQuantity_62.Name = "tStiffenerWindowQuantity_62";
+            this.tStiffenerWindowQuantity_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowQuantity_62.TabIndex = 550;
+            this.tStiffenerWindowQuantity_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowQuantity_61
+            // 
+            this.tStiffenerWindowQuantity_61.Location = new System.Drawing.Point(362, 1350);
+            this.tStiffenerWindowQuantity_61.Name = "tStiffenerWindowQuantity_61";
+            this.tStiffenerWindowQuantity_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowQuantity_61.TabIndex = 549;
+            this.tStiffenerWindowQuantity_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowQuantity_63
+            // 
+            this.tStiffenerWindowQuantity_63.Location = new System.Drawing.Point(219, 1350);
+            this.tStiffenerWindowQuantity_63.Name = "tStiffenerWindowQuantity_63";
+            this.tStiffenerWindowQuantity_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowQuantity_63.TabIndex = 552;
+            this.tStiffenerWindowQuantity_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.BackColor = System.Drawing.Color.White;
+            this.label58.Location = new System.Drawing.Point(432, 1354);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(146, 13);
+            this.label58.TabIndex = 551;
+            this.label58.Text = "WINDOW  Quantity (Siffener)";
+            // 
+            // tStiffenerWindowQuantity_64
+            // 
+            this.tStiffenerWindowQuantity_64.Location = new System.Drawing.Point(146, 1350);
+            this.tStiffenerWindowQuantity_64.Name = "tStiffenerWindowQuantity_64";
+            this.tStiffenerWindowQuantity_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowQuantity_64.TabIndex = 553;
+            this.tStiffenerWindowQuantity_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowQuantity_65
+            // 
+            this.tStiffenerWindowQuantity_65.Location = new System.Drawing.Point(76, 1350);
+            this.tStiffenerWindowQuantity_65.Name = "tStiffenerWindowQuantity_65";
+            this.tStiffenerWindowQuantity_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowQuantity_65.TabIndex = 554;
+            this.tStiffenerWindowQuantity_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowLength_66
+            // 
+            this.tStiffenerWindowLength_66.Location = new System.Drawing.Point(3, 1324);
+            this.tStiffenerWindowLength_66.Name = "tStiffenerWindowLength_66";
+            this.tStiffenerWindowLength_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowLength_66.TabIndex = 548;
+            this.tStiffenerWindowLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowLength_62
+            // 
+            this.tStiffenerWindowLength_62.Location = new System.Drawing.Point(289, 1324);
+            this.tStiffenerWindowLength_62.Name = "tStiffenerWindowLength_62";
+            this.tStiffenerWindowLength_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowLength_62.TabIndex = 543;
+            this.tStiffenerWindowLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowLength_61
+            // 
+            this.tStiffenerWindowLength_61.Location = new System.Drawing.Point(362, 1324);
+            this.tStiffenerWindowLength_61.Name = "tStiffenerWindowLength_61";
+            this.tStiffenerWindowLength_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowLength_61.TabIndex = 542;
+            this.tStiffenerWindowLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowLength_63
+            // 
+            this.tStiffenerWindowLength_63.Location = new System.Drawing.Point(219, 1324);
+            this.tStiffenerWindowLength_63.Name = "tStiffenerWindowLength_63";
+            this.tStiffenerWindowLength_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowLength_63.TabIndex = 545;
+            this.tStiffenerWindowLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.BackColor = System.Drawing.Color.White;
+            this.label57.Location = new System.Drawing.Point(432, 1328);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(140, 13);
+            this.label57.TabIndex = 544;
+            this.label57.Text = "WINDOW  Length (Siffener)";
+            // 
+            // tStiffenerWindowLength_64
+            // 
+            this.tStiffenerWindowLength_64.Location = new System.Drawing.Point(146, 1324);
+            this.tStiffenerWindowLength_64.Name = "tStiffenerWindowLength_64";
+            this.tStiffenerWindowLength_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowLength_64.TabIndex = 546;
+            this.tStiffenerWindowLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowLength_65
+            // 
+            this.tStiffenerWindowLength_65.Location = new System.Drawing.Point(76, 1324);
+            this.tStiffenerWindowLength_65.Name = "tStiffenerWindowLength_65";
+            this.tStiffenerWindowLength_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowLength_65.TabIndex = 547;
+            this.tStiffenerWindowLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowWidth_66
+            // 
+            this.tStiffenerWindowWidth_66.Location = new System.Drawing.Point(3, 1298);
+            this.tStiffenerWindowWidth_66.Name = "tStiffenerWindowWidth_66";
+            this.tStiffenerWindowWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowWidth_66.TabIndex = 541;
+            this.tStiffenerWindowWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowWidth_62
+            // 
+            this.tStiffenerWindowWidth_62.Location = new System.Drawing.Point(289, 1298);
+            this.tStiffenerWindowWidth_62.Name = "tStiffenerWindowWidth_62";
+            this.tStiffenerWindowWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowWidth_62.TabIndex = 536;
+            this.tStiffenerWindowWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowWidth_61
+            // 
+            this.tStiffenerWindowWidth_61.Location = new System.Drawing.Point(362, 1298);
+            this.tStiffenerWindowWidth_61.Name = "tStiffenerWindowWidth_61";
+            this.tStiffenerWindowWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowWidth_61.TabIndex = 535;
+            this.tStiffenerWindowWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowWidth_63
+            // 
+            this.tStiffenerWindowWidth_63.Location = new System.Drawing.Point(219, 1298);
+            this.tStiffenerWindowWidth_63.Name = "tStiffenerWindowWidth_63";
+            this.tStiffenerWindowWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowWidth_63.TabIndex = 538;
+            this.tStiffenerWindowWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.BackColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(432, 1302);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(135, 13);
+            this.label56.TabIndex = 537;
+            this.label56.Text = "WINDOW  Width (Siffener)";
+            // 
+            // tStiffenerWindowWidth_64
+            // 
+            this.tStiffenerWindowWidth_64.Location = new System.Drawing.Point(146, 1298);
+            this.tStiffenerWindowWidth_64.Name = "tStiffenerWindowWidth_64";
+            this.tStiffenerWindowWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerWindowWidth_64.TabIndex = 539;
+            this.tStiffenerWindowWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerWindowWidth_65
+            // 
+            this.tStiffenerWindowWidth_65.Location = new System.Drawing.Point(76, 1298);
+            this.tStiffenerWindowWidth_65.Name = "tStiffenerWindowWidth_65";
+            this.tStiffenerWindowWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerWindowWidth_65.TabIndex = 540;
+            this.tStiffenerWindowWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow12Count_66
+            // 
+            this.tTubeRow12Count_66.Location = new System.Drawing.Point(3, 795);
+            this.tTubeRow12Count_66.Name = "tTubeRow12Count_66";
+            this.tTubeRow12Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow12Count_66.TabIndex = 534;
+            this.tTubeRow12Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow12Count_62
+            // 
+            this.tTubeRow12Count_62.Location = new System.Drawing.Point(289, 795);
+            this.tTubeRow12Count_62.Name = "tTubeRow12Count_62";
+            this.tTubeRow12Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow12Count_62.TabIndex = 529;
+            this.tTubeRow12Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow12Count_61
+            // 
+            this.tTubeRow12Count_61.Location = new System.Drawing.Point(362, 795);
+            this.tTubeRow12Count_61.Name = "tTubeRow12Count_61";
+            this.tTubeRow12Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow12Count_61.TabIndex = 528;
+            this.tTubeRow12Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow12Count_63
+            // 
+            this.tTubeRow12Count_63.Location = new System.Drawing.Point(219, 795);
+            this.tTubeRow12Count_63.Name = "tTubeRow12Count_63";
+            this.tTubeRow12Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow12Count_63.TabIndex = 531;
+            this.tTubeRow12Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.BackColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(432, 798);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(85, 13);
+            this.label55.TabIndex = 530;
+            this.label55.Text = "COUNT  Row12";
+            // 
+            // tTubeRow12Count_64
+            // 
+            this.tTubeRow12Count_64.Location = new System.Drawing.Point(146, 795);
+            this.tTubeRow12Count_64.Name = "tTubeRow12Count_64";
+            this.tTubeRow12Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow12Count_64.TabIndex = 532;
+            this.tTubeRow12Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow12Count_65
+            // 
+            this.tTubeRow12Count_65.Location = new System.Drawing.Point(76, 795);
+            this.tTubeRow12Count_65.Name = "tTubeRow12Count_65";
+            this.tTubeRow12Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow12Count_65.TabIndex = 533;
+            this.tTubeRow12Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow11Count_66
+            // 
+            this.tTubeRow11Count_66.Location = new System.Drawing.Point(3, 769);
+            this.tTubeRow11Count_66.Name = "tTubeRow11Count_66";
+            this.tTubeRow11Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow11Count_66.TabIndex = 527;
+            this.tTubeRow11Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow11Count_62
+            // 
+            this.tTubeRow11Count_62.Location = new System.Drawing.Point(289, 769);
+            this.tTubeRow11Count_62.Name = "tTubeRow11Count_62";
+            this.tTubeRow11Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow11Count_62.TabIndex = 522;
+            this.tTubeRow11Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow11Count_61
+            // 
+            this.tTubeRow11Count_61.Location = new System.Drawing.Point(362, 769);
+            this.tTubeRow11Count_61.Name = "tTubeRow11Count_61";
+            this.tTubeRow11Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow11Count_61.TabIndex = 521;
+            this.tTubeRow11Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow11Count_63
+            // 
+            this.tTubeRow11Count_63.Location = new System.Drawing.Point(219, 769);
+            this.tTubeRow11Count_63.Name = "tTubeRow11Count_63";
+            this.tTubeRow11Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow11Count_63.TabIndex = 524;
+            this.tTubeRow11Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.White;
+            this.label54.Location = new System.Drawing.Point(432, 772);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(85, 13);
+            this.label54.TabIndex = 523;
+            this.label54.Text = "COUNT  Row11";
+            // 
+            // tTubeRow11Count_64
+            // 
+            this.tTubeRow11Count_64.Location = new System.Drawing.Point(146, 769);
+            this.tTubeRow11Count_64.Name = "tTubeRow11Count_64";
+            this.tTubeRow11Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow11Count_64.TabIndex = 525;
+            this.tTubeRow11Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow11Count_65
+            // 
+            this.tTubeRow11Count_65.Location = new System.Drawing.Point(76, 769);
+            this.tTubeRow11Count_65.Name = "tTubeRow11Count_65";
+            this.tTubeRow11Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow11Count_65.TabIndex = 526;
+            this.tTubeRow11Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow10Count_66
+            // 
+            this.tTubeRow10Count_66.Location = new System.Drawing.Point(3, 743);
+            this.tTubeRow10Count_66.Name = "tTubeRow10Count_66";
+            this.tTubeRow10Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow10Count_66.TabIndex = 520;
+            this.tTubeRow10Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow10Count_62
+            // 
+            this.tTubeRow10Count_62.Location = new System.Drawing.Point(289, 743);
+            this.tTubeRow10Count_62.Name = "tTubeRow10Count_62";
+            this.tTubeRow10Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow10Count_62.TabIndex = 515;
+            this.tTubeRow10Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow10Count_61
+            // 
+            this.tTubeRow10Count_61.Location = new System.Drawing.Point(362, 743);
+            this.tTubeRow10Count_61.Name = "tTubeRow10Count_61";
+            this.tTubeRow10Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow10Count_61.TabIndex = 514;
+            this.tTubeRow10Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow10Count_63
+            // 
+            this.tTubeRow10Count_63.Location = new System.Drawing.Point(219, 743);
+            this.tTubeRow10Count_63.Name = "tTubeRow10Count_63";
+            this.tTubeRow10Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow10Count_63.TabIndex = 517;
+            this.tTubeRow10Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.White;
+            this.label53.Location = new System.Drawing.Point(432, 746);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(85, 13);
+            this.label53.TabIndex = 516;
+            this.label53.Text = "COUNT  Row10";
+            // 
+            // tTubeRow10Count_64
+            // 
+            this.tTubeRow10Count_64.Location = new System.Drawing.Point(146, 743);
+            this.tTubeRow10Count_64.Name = "tTubeRow10Count_64";
+            this.tTubeRow10Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow10Count_64.TabIndex = 518;
+            this.tTubeRow10Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow10Count_65
+            // 
+            this.tTubeRow10Count_65.Location = new System.Drawing.Point(76, 743);
+            this.tTubeRow10Count_65.Name = "tTubeRow10Count_65";
+            this.tTubeRow10Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow10Count_65.TabIndex = 519;
+            this.tTubeRow10Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow9Count_66
+            // 
+            this.tTubeRow9Count_66.Location = new System.Drawing.Point(3, 717);
+            this.tTubeRow9Count_66.Name = "tTubeRow9Count_66";
+            this.tTubeRow9Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow9Count_66.TabIndex = 513;
+            this.tTubeRow9Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow9Count_62
+            // 
+            this.tTubeRow9Count_62.Location = new System.Drawing.Point(289, 717);
+            this.tTubeRow9Count_62.Name = "tTubeRow9Count_62";
+            this.tTubeRow9Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow9Count_62.TabIndex = 508;
+            this.tTubeRow9Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow9Count_61
+            // 
+            this.tTubeRow9Count_61.Location = new System.Drawing.Point(362, 717);
+            this.tTubeRow9Count_61.Name = "tTubeRow9Count_61";
+            this.tTubeRow9Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow9Count_61.TabIndex = 507;
+            this.tTubeRow9Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow9Count_63
+            // 
+            this.tTubeRow9Count_63.Location = new System.Drawing.Point(219, 717);
+            this.tTubeRow9Count_63.Name = "tTubeRow9Count_63";
+            this.tTubeRow9Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow9Count_63.TabIndex = 510;
+            this.tTubeRow9Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.White;
+            this.label52.Location = new System.Drawing.Point(432, 720);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(79, 13);
+            this.label52.TabIndex = 509;
+            this.label52.Text = "COUNT  Row9";
+            // 
+            // tTubeRow9Count_64
+            // 
+            this.tTubeRow9Count_64.Location = new System.Drawing.Point(146, 717);
+            this.tTubeRow9Count_64.Name = "tTubeRow9Count_64";
+            this.tTubeRow9Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow9Count_64.TabIndex = 511;
+            this.tTubeRow9Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow9Count_65
+            // 
+            this.tTubeRow9Count_65.Location = new System.Drawing.Point(76, 717);
+            this.tTubeRow9Count_65.Name = "tTubeRow9Count_65";
+            this.tTubeRow9Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow9Count_65.TabIndex = 512;
+            this.tTubeRow9Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow8Count_66
+            // 
+            this.tTubeRow8Count_66.Location = new System.Drawing.Point(3, 691);
+            this.tTubeRow8Count_66.Name = "tTubeRow8Count_66";
+            this.tTubeRow8Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow8Count_66.TabIndex = 506;
+            this.tTubeRow8Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow8Count_62
+            // 
+            this.tTubeRow8Count_62.Location = new System.Drawing.Point(289, 691);
+            this.tTubeRow8Count_62.Name = "tTubeRow8Count_62";
+            this.tTubeRow8Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow8Count_62.TabIndex = 501;
+            this.tTubeRow8Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow8Count_61
+            // 
+            this.tTubeRow8Count_61.Location = new System.Drawing.Point(362, 691);
+            this.tTubeRow8Count_61.Name = "tTubeRow8Count_61";
+            this.tTubeRow8Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow8Count_61.TabIndex = 500;
+            this.tTubeRow8Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow8Count_63
+            // 
+            this.tTubeRow8Count_63.Location = new System.Drawing.Point(219, 691);
+            this.tTubeRow8Count_63.Name = "tTubeRow8Count_63";
+            this.tTubeRow8Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow8Count_63.TabIndex = 503;
+            this.tTubeRow8Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(432, 694);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(79, 13);
+            this.label51.TabIndex = 502;
+            this.label51.Text = "COUNT  Row8";
+            // 
+            // tTubeRow8Count_64
+            // 
+            this.tTubeRow8Count_64.Location = new System.Drawing.Point(146, 691);
+            this.tTubeRow8Count_64.Name = "tTubeRow8Count_64";
+            this.tTubeRow8Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow8Count_64.TabIndex = 504;
+            this.tTubeRow8Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow8Count_65
+            // 
+            this.tTubeRow8Count_65.Location = new System.Drawing.Point(76, 691);
+            this.tTubeRow8Count_65.Name = "tTubeRow8Count_65";
+            this.tTubeRow8Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow8Count_65.TabIndex = 505;
+            this.tTubeRow8Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow7Count_66
+            // 
+            this.tTubeRow7Count_66.Location = new System.Drawing.Point(3, 665);
+            this.tTubeRow7Count_66.Name = "tTubeRow7Count_66";
+            this.tTubeRow7Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow7Count_66.TabIndex = 499;
+            this.tTubeRow7Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow7Count_62
+            // 
+            this.tTubeRow7Count_62.Location = new System.Drawing.Point(289, 665);
+            this.tTubeRow7Count_62.Name = "tTubeRow7Count_62";
+            this.tTubeRow7Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow7Count_62.TabIndex = 494;
+            this.tTubeRow7Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow7Count_61
+            // 
+            this.tTubeRow7Count_61.Location = new System.Drawing.Point(362, 665);
+            this.tTubeRow7Count_61.Name = "tTubeRow7Count_61";
+            this.tTubeRow7Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow7Count_61.TabIndex = 493;
+            this.tTubeRow7Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow7Count_63
+            // 
+            this.tTubeRow7Count_63.Location = new System.Drawing.Point(219, 665);
+            this.tTubeRow7Count_63.Name = "tTubeRow7Count_63";
+            this.tTubeRow7Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow7Count_63.TabIndex = 496;
+            this.tTubeRow7Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(432, 668);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(79, 13);
+            this.label50.TabIndex = 495;
+            this.label50.Text = "COUNT  Row7";
+            // 
+            // tTubeRow7Count_64
+            // 
+            this.tTubeRow7Count_64.Location = new System.Drawing.Point(146, 665);
+            this.tTubeRow7Count_64.Name = "tTubeRow7Count_64";
+            this.tTubeRow7Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow7Count_64.TabIndex = 497;
+            this.tTubeRow7Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow7Count_65
+            // 
+            this.tTubeRow7Count_65.Location = new System.Drawing.Point(76, 665);
+            this.tTubeRow7Count_65.Name = "tTubeRow7Count_65";
+            this.tTubeRow7Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow7Count_65.TabIndex = 498;
+            this.tTubeRow7Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow6Count_66
+            // 
+            this.tTubeRow6Count_66.Location = new System.Drawing.Point(3, 639);
+            this.tTubeRow6Count_66.Name = "tTubeRow6Count_66";
+            this.tTubeRow6Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow6Count_66.TabIndex = 492;
+            this.tTubeRow6Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow6Count_62
+            // 
+            this.tTubeRow6Count_62.Location = new System.Drawing.Point(289, 639);
+            this.tTubeRow6Count_62.Name = "tTubeRow6Count_62";
+            this.tTubeRow6Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow6Count_62.TabIndex = 487;
+            this.tTubeRow6Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow6Count_61
+            // 
+            this.tTubeRow6Count_61.Location = new System.Drawing.Point(362, 639);
+            this.tTubeRow6Count_61.Name = "tTubeRow6Count_61";
+            this.tTubeRow6Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow6Count_61.TabIndex = 486;
+            this.tTubeRow6Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow6Count_63
+            // 
+            this.tTubeRow6Count_63.Location = new System.Drawing.Point(219, 639);
+            this.tTubeRow6Count_63.Name = "tTubeRow6Count_63";
+            this.tTubeRow6Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow6Count_63.TabIndex = 489;
+            this.tTubeRow6Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.White;
+            this.label49.Location = new System.Drawing.Point(432, 642);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(79, 13);
+            this.label49.TabIndex = 488;
+            this.label49.Text = "COUNT  Row6";
+            // 
+            // tTubeRow6Count_64
+            // 
+            this.tTubeRow6Count_64.Location = new System.Drawing.Point(146, 639);
+            this.tTubeRow6Count_64.Name = "tTubeRow6Count_64";
+            this.tTubeRow6Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow6Count_64.TabIndex = 490;
+            this.tTubeRow6Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow6Count_65
+            // 
+            this.tTubeRow6Count_65.Location = new System.Drawing.Point(76, 639);
+            this.tTubeRow6Count_65.Name = "tTubeRow6Count_65";
+            this.tTubeRow6Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow6Count_65.TabIndex = 491;
+            this.tTubeRow6Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow5Count_66
+            // 
+            this.tTubeRow5Count_66.Location = new System.Drawing.Point(3, 613);
+            this.tTubeRow5Count_66.Name = "tTubeRow5Count_66";
+            this.tTubeRow5Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow5Count_66.TabIndex = 485;
+            this.tTubeRow5Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow5Count_62
+            // 
+            this.tTubeRow5Count_62.Location = new System.Drawing.Point(289, 613);
+            this.tTubeRow5Count_62.Name = "tTubeRow5Count_62";
+            this.tTubeRow5Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow5Count_62.TabIndex = 480;
+            this.tTubeRow5Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow5Count_61
+            // 
+            this.tTubeRow5Count_61.Location = new System.Drawing.Point(362, 613);
+            this.tTubeRow5Count_61.Name = "tTubeRow5Count_61";
+            this.tTubeRow5Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow5Count_61.TabIndex = 479;
+            this.tTubeRow5Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow5Count_63
+            // 
+            this.tTubeRow5Count_63.Location = new System.Drawing.Point(219, 613);
+            this.tTubeRow5Count_63.Name = "tTubeRow5Count_63";
+            this.tTubeRow5Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow5Count_63.TabIndex = 482;
+            this.tTubeRow5Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.BackColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(432, 616);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(79, 13);
+            this.label48.TabIndex = 481;
+            this.label48.Text = "COUNT  Row5";
+            // 
+            // tTubeRow5Count_64
+            // 
+            this.tTubeRow5Count_64.Location = new System.Drawing.Point(146, 613);
+            this.tTubeRow5Count_64.Name = "tTubeRow5Count_64";
+            this.tTubeRow5Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow5Count_64.TabIndex = 483;
+            this.tTubeRow5Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow5Count_65
+            // 
+            this.tTubeRow5Count_65.Location = new System.Drawing.Point(76, 613);
+            this.tTubeRow5Count_65.Name = "tTubeRow5Count_65";
+            this.tTubeRow5Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow5Count_65.TabIndex = 484;
+            this.tTubeRow5Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow4Count_66
+            // 
+            this.tTubeRow4Count_66.Location = new System.Drawing.Point(3, 587);
+            this.tTubeRow4Count_66.Name = "tTubeRow4Count_66";
+            this.tTubeRow4Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow4Count_66.TabIndex = 478;
+            this.tTubeRow4Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow4Count_62
+            // 
+            this.tTubeRow4Count_62.Location = new System.Drawing.Point(289, 587);
+            this.tTubeRow4Count_62.Name = "tTubeRow4Count_62";
+            this.tTubeRow4Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow4Count_62.TabIndex = 473;
+            this.tTubeRow4Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow4Count_61
+            // 
+            this.tTubeRow4Count_61.Location = new System.Drawing.Point(362, 587);
+            this.tTubeRow4Count_61.Name = "tTubeRow4Count_61";
+            this.tTubeRow4Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow4Count_61.TabIndex = 472;
+            this.tTubeRow4Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow4Count_63
+            // 
+            this.tTubeRow4Count_63.Location = new System.Drawing.Point(219, 587);
+            this.tTubeRow4Count_63.Name = "tTubeRow4Count_63";
+            this.tTubeRow4Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow4Count_63.TabIndex = 475;
+            this.tTubeRow4Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.Color.White;
+            this.label47.Location = new System.Drawing.Point(432, 590);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(79, 13);
+            this.label47.TabIndex = 474;
+            this.label47.Text = "COUNT  Row4";
+            // 
+            // tTubeRow4Count_64
+            // 
+            this.tTubeRow4Count_64.Location = new System.Drawing.Point(146, 587);
+            this.tTubeRow4Count_64.Name = "tTubeRow4Count_64";
+            this.tTubeRow4Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow4Count_64.TabIndex = 476;
+            this.tTubeRow4Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow4Count_65
+            // 
+            this.tTubeRow4Count_65.Location = new System.Drawing.Point(76, 587);
+            this.tTubeRow4Count_65.Name = "tTubeRow4Count_65";
+            this.tTubeRow4Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow4Count_65.TabIndex = 477;
+            this.tTubeRow4Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow3Count_66
+            // 
+            this.tTubeRow3Count_66.Location = new System.Drawing.Point(3, 561);
+            this.tTubeRow3Count_66.Name = "tTubeRow3Count_66";
+            this.tTubeRow3Count_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow3Count_66.TabIndex = 471;
+            this.tTubeRow3Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow3Count_62
+            // 
+            this.tTubeRow3Count_62.Location = new System.Drawing.Point(289, 561);
+            this.tTubeRow3Count_62.Name = "tTubeRow3Count_62";
+            this.tTubeRow3Count_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow3Count_62.TabIndex = 466;
+            this.tTubeRow3Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow3Count_61
+            // 
+            this.tTubeRow3Count_61.Location = new System.Drawing.Point(362, 561);
+            this.tTubeRow3Count_61.Name = "tTubeRow3Count_61";
+            this.tTubeRow3Count_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow3Count_61.TabIndex = 465;
+            this.tTubeRow3Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow3Count_63
+            // 
+            this.tTubeRow3Count_63.Location = new System.Drawing.Point(219, 561);
+            this.tTubeRow3Count_63.Name = "tTubeRow3Count_63";
+            this.tTubeRow3Count_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow3Count_63.TabIndex = 468;
+            this.tTubeRow3Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(432, 564);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(79, 13);
+            this.label46.TabIndex = 467;
+            this.label46.Text = "COUNT  Row3";
+            // 
+            // tTubeRow3Count_64
+            // 
+            this.tTubeRow3Count_64.Location = new System.Drawing.Point(146, 561);
+            this.tTubeRow3Count_64.Name = "tTubeRow3Count_64";
+            this.tTubeRow3Count_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubeRow3Count_64.TabIndex = 469;
+            this.tTubeRow3Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubeRow3Count_65
+            // 
+            this.tTubeRow3Count_65.Location = new System.Drawing.Point(76, 561);
+            this.tTubeRow3Count_65.Name = "tTubeRow3Count_65";
+            this.tTubeRow3Count_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubeRow3Count_65.TabIndex = 470;
+            this.tTubeRow3Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tStiffenerDistanceBelow_66
             // 
@@ -2824,16 +5337,6 @@
             this.tBoxHeight_65.TabIndex = 232;
             this.tBoxHeight_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(269, 2000);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 13);
-            this.label13.TabIndex = 226;
-            this.label13.Text = "temp";
-            // 
             // tPlugsheetTHK_66
             // 
             this.tPlugsheetTHK_66.Location = new System.Drawing.Point(3, 90);
@@ -3140,9 +5643,9 @@
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.cEnabled62);
             this.panel2.Controls.Add(this.cEnabled61);
-            this.panel2.Location = new System.Drawing.Point(6, 69);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(614, 45);
+            this.panel2.Size = new System.Drawing.Size(624, 45);
             this.panel2.TabIndex = 124;
             // 
             // splitter2
@@ -3151,7 +5654,7 @@
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter2.Location = new System.Drawing.Point(0, 42);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(614, 3);
+            this.splitter2.Size = new System.Drawing.Size(624, 3);
             this.splitter2.TabIndex = 123;
             this.splitter2.TabStop = false;
             // 
@@ -3291,30 +5794,9 @@
             this.cEnabled61.UseVisualStyleBackColor = true;
             this.cEnabled61.CheckedChanged += new System.EventHandler(this.cEnabled61_CheckedChanged);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.splitter1);
-            this.panel1.Controls.Add(this.job_Box);
-            this.panel1.Controls.Add(this.textBox_Bank);
-            this.panel1.Controls.Add(this.bImportPrego);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(614, 58);
-            this.panel1.TabIndex = 123;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 55);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(614, 3);
-            this.splitter1.TabIndex = 0;
-            this.splitter1.TabStop = false;
-            // 
             // job_Box
             // 
-            this.job_Box.Location = new System.Drawing.Point(229, 0);
+            this.job_Box.Location = new System.Drawing.Point(16, 12);
             this.job_Box.Name = "job_Box";
             this.job_Box.Size = new System.Drawing.Size(74, 20);
             this.job_Box.TabIndex = 85;
@@ -3323,7 +5805,7 @@
             // 
             // textBox_Bank
             // 
-            this.textBox_Bank.Location = new System.Drawing.Point(309, 0);
+            this.textBox_Bank.Location = new System.Drawing.Point(96, 12);
             this.textBox_Bank.Name = "textBox_Bank";
             this.textBox_Bank.Size = new System.Drawing.Size(20, 20);
             this.textBox_Bank.TabIndex = 86;
@@ -3331,7 +5813,7 @@
             // 
             // bImportPrego
             // 
-            this.bImportPrego.Location = new System.Drawing.Point(229, 26);
+            this.bImportPrego.Location = new System.Drawing.Point(16, 38);
             this.bImportPrego.Name = "bImportPrego";
             this.bImportPrego.Size = new System.Drawing.Size(99, 23);
             this.bImportPrego.TabIndex = 87;
@@ -3342,7 +5824,7 @@
             // bCreateUpdate
             // 
             this.bCreateUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCreateUpdate.Location = new System.Drawing.Point(393, 565);
+            this.bCreateUpdate.Location = new System.Drawing.Point(393, 620);
             this.bCreateUpdate.Name = "bCreateUpdate";
             this.bCreateUpdate.Size = new System.Drawing.Size(44, 28);
             this.bCreateUpdate.TabIndex = 5;
@@ -3353,7 +5835,7 @@
             // test62
             // 
             this.test62.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test62.Location = new System.Drawing.Point(322, 565);
+            this.test62.Location = new System.Drawing.Point(322, 620);
             this.test62.Name = "test62";
             this.test62.Size = new System.Drawing.Size(44, 28);
             this.test62.TabIndex = 6;
@@ -3364,7 +5846,7 @@
             // test63
             // 
             this.test63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test63.Location = new System.Drawing.Point(251, 565);
+            this.test63.Location = new System.Drawing.Point(251, 620);
             this.test63.Name = "test63";
             this.test63.Size = new System.Drawing.Size(44, 28);
             this.test63.TabIndex = 7;
@@ -3375,7 +5857,7 @@
             // test64
             // 
             this.test64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test64.Location = new System.Drawing.Point(180, 565);
+            this.test64.Location = new System.Drawing.Point(180, 620);
             this.test64.Name = "test64";
             this.test64.Size = new System.Drawing.Size(44, 28);
             this.test64.TabIndex = 8;
@@ -3386,7 +5868,7 @@
             // test65
             // 
             this.test65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test65.Location = new System.Drawing.Point(108, 565);
+            this.test65.Location = new System.Drawing.Point(108, 620);
             this.test65.Name = "test65";
             this.test65.Size = new System.Drawing.Size(44, 28);
             this.test65.TabIndex = 9;
@@ -3397,7 +5879,7 @@
             // test66
             // 
             this.test66.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.test66.Location = new System.Drawing.Point(35, 565);
+            this.test66.Location = new System.Drawing.Point(35, 620);
             this.test66.Name = "test66";
             this.test66.Size = new System.Drawing.Size(44, 28);
             this.test66.TabIndex = 10;
@@ -3405,883 +5887,16 @@
             this.test66.UseVisualStyleBackColor = true;
             this.test66.Click += new System.EventHandler(this.test66_Click);
             // 
-            // tTubeRow3Count_66
-            // 
-            this.tTubeRow3Count_66.Location = new System.Drawing.Point(3, 561);
-            this.tTubeRow3Count_66.Name = "tTubeRow3Count_66";
-            this.tTubeRow3Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow3Count_66.TabIndex = 471;
-            this.tTubeRow3Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_62
-            // 
-            this.tTubeRow3Count_62.Location = new System.Drawing.Point(289, 561);
-            this.tTubeRow3Count_62.Name = "tTubeRow3Count_62";
-            this.tTubeRow3Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow3Count_62.TabIndex = 466;
-            this.tTubeRow3Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_61
-            // 
-            this.tTubeRow3Count_61.Location = new System.Drawing.Point(362, 561);
-            this.tTubeRow3Count_61.Name = "tTubeRow3Count_61";
-            this.tTubeRow3Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow3Count_61.TabIndex = 465;
-            this.tTubeRow3Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_63
-            // 
-            this.tTubeRow3Count_63.Location = new System.Drawing.Point(219, 561);
-            this.tTubeRow3Count_63.Name = "tTubeRow3Count_63";
-            this.tTubeRow3Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow3Count_63.TabIndex = 468;
-            this.tTubeRow3Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(432, 564);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(79, 13);
-            this.label46.TabIndex = 467;
-            this.label46.Text = "COUNT  Row3";
-            // 
-            // tTubeRow3Count_64
-            // 
-            this.tTubeRow3Count_64.Location = new System.Drawing.Point(146, 561);
-            this.tTubeRow3Count_64.Name = "tTubeRow3Count_64";
-            this.tTubeRow3Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow3Count_64.TabIndex = 469;
-            this.tTubeRow3Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow3Count_65
-            // 
-            this.tTubeRow3Count_65.Location = new System.Drawing.Point(76, 561);
-            this.tTubeRow3Count_65.Name = "tTubeRow3Count_65";
-            this.tTubeRow3Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow3Count_65.TabIndex = 470;
-            this.tTubeRow3Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_66
-            // 
-            this.tTubeRow4Count_66.Location = new System.Drawing.Point(3, 587);
-            this.tTubeRow4Count_66.Name = "tTubeRow4Count_66";
-            this.tTubeRow4Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow4Count_66.TabIndex = 478;
-            this.tTubeRow4Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_62
-            // 
-            this.tTubeRow4Count_62.Location = new System.Drawing.Point(289, 587);
-            this.tTubeRow4Count_62.Name = "tTubeRow4Count_62";
-            this.tTubeRow4Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow4Count_62.TabIndex = 473;
-            this.tTubeRow4Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_61
-            // 
-            this.tTubeRow4Count_61.Location = new System.Drawing.Point(362, 587);
-            this.tTubeRow4Count_61.Name = "tTubeRow4Count_61";
-            this.tTubeRow4Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow4Count_61.TabIndex = 472;
-            this.tTubeRow4Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_63
-            // 
-            this.tTubeRow4Count_63.Location = new System.Drawing.Point(219, 587);
-            this.tTubeRow4Count_63.Name = "tTubeRow4Count_63";
-            this.tTubeRow4Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow4Count_63.TabIndex = 475;
-            this.tTubeRow4Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(432, 590);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(79, 13);
-            this.label47.TabIndex = 474;
-            this.label47.Text = "COUNT  Row4";
-            // 
-            // tTubeRow4Count_64
-            // 
-            this.tTubeRow4Count_64.Location = new System.Drawing.Point(146, 587);
-            this.tTubeRow4Count_64.Name = "tTubeRow4Count_64";
-            this.tTubeRow4Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow4Count_64.TabIndex = 476;
-            this.tTubeRow4Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow4Count_65
-            // 
-            this.tTubeRow4Count_65.Location = new System.Drawing.Point(76, 587);
-            this.tTubeRow4Count_65.Name = "tTubeRow4Count_65";
-            this.tTubeRow4Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow4Count_65.TabIndex = 477;
-            this.tTubeRow4Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_66
-            // 
-            this.tTubeRow5Count_66.Location = new System.Drawing.Point(3, 613);
-            this.tTubeRow5Count_66.Name = "tTubeRow5Count_66";
-            this.tTubeRow5Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow5Count_66.TabIndex = 485;
-            this.tTubeRow5Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_62
-            // 
-            this.tTubeRow5Count_62.Location = new System.Drawing.Point(289, 613);
-            this.tTubeRow5Count_62.Name = "tTubeRow5Count_62";
-            this.tTubeRow5Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow5Count_62.TabIndex = 480;
-            this.tTubeRow5Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_61
-            // 
-            this.tTubeRow5Count_61.Location = new System.Drawing.Point(362, 613);
-            this.tTubeRow5Count_61.Name = "tTubeRow5Count_61";
-            this.tTubeRow5Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow5Count_61.TabIndex = 479;
-            this.tTubeRow5Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_63
-            // 
-            this.tTubeRow5Count_63.Location = new System.Drawing.Point(219, 613);
-            this.tTubeRow5Count_63.Name = "tTubeRow5Count_63";
-            this.tTubeRow5Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow5Count_63.TabIndex = 482;
-            this.tTubeRow5Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(432, 616);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(79, 13);
-            this.label48.TabIndex = 481;
-            this.label48.Text = "COUNT  Row5";
-            // 
-            // tTubeRow5Count_64
-            // 
-            this.tTubeRow5Count_64.Location = new System.Drawing.Point(146, 613);
-            this.tTubeRow5Count_64.Name = "tTubeRow5Count_64";
-            this.tTubeRow5Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow5Count_64.TabIndex = 483;
-            this.tTubeRow5Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow5Count_65
-            // 
-            this.tTubeRow5Count_65.Location = new System.Drawing.Point(76, 613);
-            this.tTubeRow5Count_65.Name = "tTubeRow5Count_65";
-            this.tTubeRow5Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow5Count_65.TabIndex = 484;
-            this.tTubeRow5Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_66
-            // 
-            this.tTubeRow6Count_66.Location = new System.Drawing.Point(3, 639);
-            this.tTubeRow6Count_66.Name = "tTubeRow6Count_66";
-            this.tTubeRow6Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow6Count_66.TabIndex = 492;
-            this.tTubeRow6Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_62
-            // 
-            this.tTubeRow6Count_62.Location = new System.Drawing.Point(289, 639);
-            this.tTubeRow6Count_62.Name = "tTubeRow6Count_62";
-            this.tTubeRow6Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow6Count_62.TabIndex = 487;
-            this.tTubeRow6Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_61
-            // 
-            this.tTubeRow6Count_61.Location = new System.Drawing.Point(362, 639);
-            this.tTubeRow6Count_61.Name = "tTubeRow6Count_61";
-            this.tTubeRow6Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow6Count_61.TabIndex = 486;
-            this.tTubeRow6Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_63
-            // 
-            this.tTubeRow6Count_63.Location = new System.Drawing.Point(219, 639);
-            this.tTubeRow6Count_63.Name = "tTubeRow6Count_63";
-            this.tTubeRow6Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow6Count_63.TabIndex = 489;
-            this.tTubeRow6Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(432, 642);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(79, 13);
-            this.label49.TabIndex = 488;
-            this.label49.Text = "COUNT  Row6";
-            // 
-            // tTubeRow6Count_64
-            // 
-            this.tTubeRow6Count_64.Location = new System.Drawing.Point(146, 639);
-            this.tTubeRow6Count_64.Name = "tTubeRow6Count_64";
-            this.tTubeRow6Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow6Count_64.TabIndex = 490;
-            this.tTubeRow6Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow6Count_65
-            // 
-            this.tTubeRow6Count_65.Location = new System.Drawing.Point(76, 639);
-            this.tTubeRow6Count_65.Name = "tTubeRow6Count_65";
-            this.tTubeRow6Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow6Count_65.TabIndex = 491;
-            this.tTubeRow6Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_66
-            // 
-            this.tTubeRow7Count_66.Location = new System.Drawing.Point(3, 665);
-            this.tTubeRow7Count_66.Name = "tTubeRow7Count_66";
-            this.tTubeRow7Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow7Count_66.TabIndex = 499;
-            this.tTubeRow7Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_62
-            // 
-            this.tTubeRow7Count_62.Location = new System.Drawing.Point(289, 665);
-            this.tTubeRow7Count_62.Name = "tTubeRow7Count_62";
-            this.tTubeRow7Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow7Count_62.TabIndex = 494;
-            this.tTubeRow7Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_61
-            // 
-            this.tTubeRow7Count_61.Location = new System.Drawing.Point(362, 665);
-            this.tTubeRow7Count_61.Name = "tTubeRow7Count_61";
-            this.tTubeRow7Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow7Count_61.TabIndex = 493;
-            this.tTubeRow7Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_63
-            // 
-            this.tTubeRow7Count_63.Location = new System.Drawing.Point(219, 665);
-            this.tTubeRow7Count_63.Name = "tTubeRow7Count_63";
-            this.tTubeRow7Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow7Count_63.TabIndex = 496;
-            this.tTubeRow7Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(432, 668);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(79, 13);
-            this.label50.TabIndex = 495;
-            this.label50.Text = "COUNT  Row7";
-            // 
-            // tTubeRow7Count_64
-            // 
-            this.tTubeRow7Count_64.Location = new System.Drawing.Point(146, 665);
-            this.tTubeRow7Count_64.Name = "tTubeRow7Count_64";
-            this.tTubeRow7Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow7Count_64.TabIndex = 497;
-            this.tTubeRow7Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow7Count_65
-            // 
-            this.tTubeRow7Count_65.Location = new System.Drawing.Point(76, 665);
-            this.tTubeRow7Count_65.Name = "tTubeRow7Count_65";
-            this.tTubeRow7Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow7Count_65.TabIndex = 498;
-            this.tTubeRow7Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_66
-            // 
-            this.tTubeRow8Count_66.Location = new System.Drawing.Point(3, 691);
-            this.tTubeRow8Count_66.Name = "tTubeRow8Count_66";
-            this.tTubeRow8Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow8Count_66.TabIndex = 506;
-            this.tTubeRow8Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_62
-            // 
-            this.tTubeRow8Count_62.Location = new System.Drawing.Point(289, 691);
-            this.tTubeRow8Count_62.Name = "tTubeRow8Count_62";
-            this.tTubeRow8Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow8Count_62.TabIndex = 501;
-            this.tTubeRow8Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_61
-            // 
-            this.tTubeRow8Count_61.Location = new System.Drawing.Point(362, 691);
-            this.tTubeRow8Count_61.Name = "tTubeRow8Count_61";
-            this.tTubeRow8Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow8Count_61.TabIndex = 500;
-            this.tTubeRow8Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_63
-            // 
-            this.tTubeRow8Count_63.Location = new System.Drawing.Point(219, 691);
-            this.tTubeRow8Count_63.Name = "tTubeRow8Count_63";
-            this.tTubeRow8Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow8Count_63.TabIndex = 503;
-            this.tTubeRow8Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(432, 694);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(79, 13);
-            this.label51.TabIndex = 502;
-            this.label51.Text = "COUNT  Row8";
-            // 
-            // tTubeRow8Count_64
-            // 
-            this.tTubeRow8Count_64.Location = new System.Drawing.Point(146, 691);
-            this.tTubeRow8Count_64.Name = "tTubeRow8Count_64";
-            this.tTubeRow8Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow8Count_64.TabIndex = 504;
-            this.tTubeRow8Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow8Count_65
-            // 
-            this.tTubeRow8Count_65.Location = new System.Drawing.Point(76, 691);
-            this.tTubeRow8Count_65.Name = "tTubeRow8Count_65";
-            this.tTubeRow8Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow8Count_65.TabIndex = 505;
-            this.tTubeRow8Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_66
-            // 
-            this.tTubeRow9Count_66.Location = new System.Drawing.Point(3, 717);
-            this.tTubeRow9Count_66.Name = "tTubeRow9Count_66";
-            this.tTubeRow9Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow9Count_66.TabIndex = 513;
-            this.tTubeRow9Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_62
-            // 
-            this.tTubeRow9Count_62.Location = new System.Drawing.Point(289, 717);
-            this.tTubeRow9Count_62.Name = "tTubeRow9Count_62";
-            this.tTubeRow9Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow9Count_62.TabIndex = 508;
-            this.tTubeRow9Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_61
-            // 
-            this.tTubeRow9Count_61.Location = new System.Drawing.Point(362, 717);
-            this.tTubeRow9Count_61.Name = "tTubeRow9Count_61";
-            this.tTubeRow9Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow9Count_61.TabIndex = 507;
-            this.tTubeRow9Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_63
-            // 
-            this.tTubeRow9Count_63.Location = new System.Drawing.Point(219, 717);
-            this.tTubeRow9Count_63.Name = "tTubeRow9Count_63";
-            this.tTubeRow9Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow9Count_63.TabIndex = 510;
-            this.tTubeRow9Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.BackColor = System.Drawing.Color.White;
-            this.label52.Location = new System.Drawing.Point(432, 720);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(79, 13);
-            this.label52.TabIndex = 509;
-            this.label52.Text = "COUNT  Row9";
-            // 
-            // tTubeRow9Count_64
-            // 
-            this.tTubeRow9Count_64.Location = new System.Drawing.Point(146, 717);
-            this.tTubeRow9Count_64.Name = "tTubeRow9Count_64";
-            this.tTubeRow9Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow9Count_64.TabIndex = 511;
-            this.tTubeRow9Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow9Count_65
-            // 
-            this.tTubeRow9Count_65.Location = new System.Drawing.Point(76, 717);
-            this.tTubeRow9Count_65.Name = "tTubeRow9Count_65";
-            this.tTubeRow9Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow9Count_65.TabIndex = 512;
-            this.tTubeRow9Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_66
-            // 
-            this.tTubeRow10Count_66.Location = new System.Drawing.Point(3, 743);
-            this.tTubeRow10Count_66.Name = "tTubeRow10Count_66";
-            this.tTubeRow10Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow10Count_66.TabIndex = 520;
-            this.tTubeRow10Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_62
-            // 
-            this.tTubeRow10Count_62.Location = new System.Drawing.Point(289, 743);
-            this.tTubeRow10Count_62.Name = "tTubeRow10Count_62";
-            this.tTubeRow10Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow10Count_62.TabIndex = 515;
-            this.tTubeRow10Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_61
-            // 
-            this.tTubeRow10Count_61.Location = new System.Drawing.Point(362, 743);
-            this.tTubeRow10Count_61.Name = "tTubeRow10Count_61";
-            this.tTubeRow10Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow10Count_61.TabIndex = 514;
-            this.tTubeRow10Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_63
-            // 
-            this.tTubeRow10Count_63.Location = new System.Drawing.Point(219, 743);
-            this.tTubeRow10Count_63.Name = "tTubeRow10Count_63";
-            this.tTubeRow10Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow10Count_63.TabIndex = 517;
-            this.tTubeRow10Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.BackColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(432, 746);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(85, 13);
-            this.label53.TabIndex = 516;
-            this.label53.Text = "COUNT  Row10";
-            // 
-            // tTubeRow10Count_64
-            // 
-            this.tTubeRow10Count_64.Location = new System.Drawing.Point(146, 743);
-            this.tTubeRow10Count_64.Name = "tTubeRow10Count_64";
-            this.tTubeRow10Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow10Count_64.TabIndex = 518;
-            this.tTubeRow10Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow10Count_65
-            // 
-            this.tTubeRow10Count_65.Location = new System.Drawing.Point(76, 743);
-            this.tTubeRow10Count_65.Name = "tTubeRow10Count_65";
-            this.tTubeRow10Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow10Count_65.TabIndex = 519;
-            this.tTubeRow10Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow11Count_66
-            // 
-            this.tTubeRow11Count_66.Location = new System.Drawing.Point(3, 769);
-            this.tTubeRow11Count_66.Name = "tTubeRow11Count_66";
-            this.tTubeRow11Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow11Count_66.TabIndex = 527;
-            this.tTubeRow11Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow11Count_62
-            // 
-            this.tTubeRow11Count_62.Location = new System.Drawing.Point(289, 769);
-            this.tTubeRow11Count_62.Name = "tTubeRow11Count_62";
-            this.tTubeRow11Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow11Count_62.TabIndex = 522;
-            this.tTubeRow11Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow11Count_61
-            // 
-            this.tTubeRow11Count_61.Location = new System.Drawing.Point(362, 769);
-            this.tTubeRow11Count_61.Name = "tTubeRow11Count_61";
-            this.tTubeRow11Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow11Count_61.TabIndex = 521;
-            this.tTubeRow11Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow11Count_63
-            // 
-            this.tTubeRow11Count_63.Location = new System.Drawing.Point(219, 769);
-            this.tTubeRow11Count_63.Name = "tTubeRow11Count_63";
-            this.tTubeRow11Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow11Count_63.TabIndex = 524;
-            this.tTubeRow11Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.BackColor = System.Drawing.Color.White;
-            this.label54.Location = new System.Drawing.Point(432, 772);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(85, 13);
-            this.label54.TabIndex = 523;
-            this.label54.Text = "COUNT  Row11";
-            // 
-            // tTubeRow11Count_64
-            // 
-            this.tTubeRow11Count_64.Location = new System.Drawing.Point(146, 769);
-            this.tTubeRow11Count_64.Name = "tTubeRow11Count_64";
-            this.tTubeRow11Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow11Count_64.TabIndex = 525;
-            this.tTubeRow11Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow11Count_65
-            // 
-            this.tTubeRow11Count_65.Location = new System.Drawing.Point(76, 769);
-            this.tTubeRow11Count_65.Name = "tTubeRow11Count_65";
-            this.tTubeRow11Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow11Count_65.TabIndex = 526;
-            this.tTubeRow11Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow12Count_66
-            // 
-            this.tTubeRow12Count_66.Location = new System.Drawing.Point(3, 795);
-            this.tTubeRow12Count_66.Name = "tTubeRow12Count_66";
-            this.tTubeRow12Count_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow12Count_66.TabIndex = 534;
-            this.tTubeRow12Count_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow12Count_62
-            // 
-            this.tTubeRow12Count_62.Location = new System.Drawing.Point(289, 795);
-            this.tTubeRow12Count_62.Name = "tTubeRow12Count_62";
-            this.tTubeRow12Count_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow12Count_62.TabIndex = 529;
-            this.tTubeRow12Count_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow12Count_61
-            // 
-            this.tTubeRow12Count_61.Location = new System.Drawing.Point(362, 795);
-            this.tTubeRow12Count_61.Name = "tTubeRow12Count_61";
-            this.tTubeRow12Count_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow12Count_61.TabIndex = 528;
-            this.tTubeRow12Count_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow12Count_63
-            // 
-            this.tTubeRow12Count_63.Location = new System.Drawing.Point(219, 795);
-            this.tTubeRow12Count_63.Name = "tTubeRow12Count_63";
-            this.tTubeRow12Count_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow12Count_63.TabIndex = 531;
-            this.tTubeRow12Count_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.BackColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(432, 798);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(85, 13);
-            this.label55.TabIndex = 530;
-            this.label55.Text = "COUNT  Row12";
-            // 
-            // tTubeRow12Count_64
-            // 
-            this.tTubeRow12Count_64.Location = new System.Drawing.Point(146, 795);
-            this.tTubeRow12Count_64.Name = "tTubeRow12Count_64";
-            this.tTubeRow12Count_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubeRow12Count_64.TabIndex = 532;
-            this.tTubeRow12Count_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubeRow12Count_65
-            // 
-            this.tTubeRow12Count_65.Location = new System.Drawing.Point(76, 795);
-            this.tTubeRow12Count_65.Name = "tTubeRow12Count_65";
-            this.tTubeRow12Count_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubeRow12Count_65.TabIndex = 533;
-            this.tTubeRow12Count_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowWidth_66
-            // 
-            this.tStiffenerWindowWidth_66.Location = new System.Drawing.Point(3, 1298);
-            this.tStiffenerWindowWidth_66.Name = "tStiffenerWindowWidth_66";
-            this.tStiffenerWindowWidth_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowWidth_66.TabIndex = 541;
-            this.tStiffenerWindowWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowWidth_62
-            // 
-            this.tStiffenerWindowWidth_62.Location = new System.Drawing.Point(289, 1298);
-            this.tStiffenerWindowWidth_62.Name = "tStiffenerWindowWidth_62";
-            this.tStiffenerWindowWidth_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowWidth_62.TabIndex = 536;
-            this.tStiffenerWindowWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowWidth_61
-            // 
-            this.tStiffenerWindowWidth_61.Location = new System.Drawing.Point(362, 1298);
-            this.tStiffenerWindowWidth_61.Name = "tStiffenerWindowWidth_61";
-            this.tStiffenerWindowWidth_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowWidth_61.TabIndex = 535;
-            this.tStiffenerWindowWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowWidth_63
-            // 
-            this.tStiffenerWindowWidth_63.Location = new System.Drawing.Point(219, 1298);
-            this.tStiffenerWindowWidth_63.Name = "tStiffenerWindowWidth_63";
-            this.tStiffenerWindowWidth_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowWidth_63.TabIndex = 538;
-            this.tStiffenerWindowWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.BackColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(432, 1302);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(135, 13);
-            this.label56.TabIndex = 537;
-            this.label56.Text = "WINDOW  Width (Siffener)";
-            // 
-            // tStiffenerWindowWidth_64
-            // 
-            this.tStiffenerWindowWidth_64.Location = new System.Drawing.Point(146, 1298);
-            this.tStiffenerWindowWidth_64.Name = "tStiffenerWindowWidth_64";
-            this.tStiffenerWindowWidth_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowWidth_64.TabIndex = 539;
-            this.tStiffenerWindowWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowWidth_65
-            // 
-            this.tStiffenerWindowWidth_65.Location = new System.Drawing.Point(76, 1298);
-            this.tStiffenerWindowWidth_65.Name = "tStiffenerWindowWidth_65";
-            this.tStiffenerWindowWidth_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowWidth_65.TabIndex = 540;
-            this.tStiffenerWindowWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowLength_66
-            // 
-            this.tStiffenerWindowLength_66.Location = new System.Drawing.Point(3, 1324);
-            this.tStiffenerWindowLength_66.Name = "tStiffenerWindowLength_66";
-            this.tStiffenerWindowLength_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowLength_66.TabIndex = 548;
-            this.tStiffenerWindowLength_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowLength_62
-            // 
-            this.tStiffenerWindowLength_62.Location = new System.Drawing.Point(289, 1324);
-            this.tStiffenerWindowLength_62.Name = "tStiffenerWindowLength_62";
-            this.tStiffenerWindowLength_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowLength_62.TabIndex = 543;
-            this.tStiffenerWindowLength_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowLength_61
-            // 
-            this.tStiffenerWindowLength_61.Location = new System.Drawing.Point(362, 1324);
-            this.tStiffenerWindowLength_61.Name = "tStiffenerWindowLength_61";
-            this.tStiffenerWindowLength_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowLength_61.TabIndex = 542;
-            this.tStiffenerWindowLength_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowLength_63
-            // 
-            this.tStiffenerWindowLength_63.Location = new System.Drawing.Point(219, 1324);
-            this.tStiffenerWindowLength_63.Name = "tStiffenerWindowLength_63";
-            this.tStiffenerWindowLength_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowLength_63.TabIndex = 545;
-            this.tStiffenerWindowLength_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.BackColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(432, 1328);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(140, 13);
-            this.label57.TabIndex = 544;
-            this.label57.Text = "WINDOW  Length (Siffener)";
-            // 
-            // tStiffenerWindowLength_64
-            // 
-            this.tStiffenerWindowLength_64.Location = new System.Drawing.Point(146, 1324);
-            this.tStiffenerWindowLength_64.Name = "tStiffenerWindowLength_64";
-            this.tStiffenerWindowLength_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowLength_64.TabIndex = 546;
-            this.tStiffenerWindowLength_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowLength_65
-            // 
-            this.tStiffenerWindowLength_65.Location = new System.Drawing.Point(76, 1324);
-            this.tStiffenerWindowLength_65.Name = "tStiffenerWindowLength_65";
-            this.tStiffenerWindowLength_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowLength_65.TabIndex = 547;
-            this.tStiffenerWindowLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowQuantity_66
-            // 
-            this.tStiffenerWindowQuantity_66.Location = new System.Drawing.Point(3, 1350);
-            this.tStiffenerWindowQuantity_66.Name = "tStiffenerWindowQuantity_66";
-            this.tStiffenerWindowQuantity_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowQuantity_66.TabIndex = 555;
-            this.tStiffenerWindowQuantity_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowQuantity_62
-            // 
-            this.tStiffenerWindowQuantity_62.Location = new System.Drawing.Point(289, 1350);
-            this.tStiffenerWindowQuantity_62.Name = "tStiffenerWindowQuantity_62";
-            this.tStiffenerWindowQuantity_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowQuantity_62.TabIndex = 550;
-            this.tStiffenerWindowQuantity_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowQuantity_61
-            // 
-            this.tStiffenerWindowQuantity_61.Location = new System.Drawing.Point(362, 1350);
-            this.tStiffenerWindowQuantity_61.Name = "tStiffenerWindowQuantity_61";
-            this.tStiffenerWindowQuantity_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowQuantity_61.TabIndex = 549;
-            this.tStiffenerWindowQuantity_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowQuantity_63
-            // 
-            this.tStiffenerWindowQuantity_63.Location = new System.Drawing.Point(219, 1350);
-            this.tStiffenerWindowQuantity_63.Name = "tStiffenerWindowQuantity_63";
-            this.tStiffenerWindowQuantity_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowQuantity_63.TabIndex = 552;
-            this.tStiffenerWindowQuantity_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.BackColor = System.Drawing.Color.White;
-            this.label58.Location = new System.Drawing.Point(432, 1354);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(146, 13);
-            this.label58.TabIndex = 551;
-            this.label58.Text = "WINDOW  Quantity (Siffener)";
-            // 
-            // tStiffenerWindowQuantity_64
-            // 
-            this.tStiffenerWindowQuantity_64.Location = new System.Drawing.Point(146, 1350);
-            this.tStiffenerWindowQuantity_64.Name = "tStiffenerWindowQuantity_64";
-            this.tStiffenerWindowQuantity_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowQuantity_64.TabIndex = 553;
-            this.tStiffenerWindowQuantity_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowQuantity_65
-            // 
-            this.tStiffenerWindowQuantity_65.Location = new System.Drawing.Point(76, 1350);
-            this.tStiffenerWindowQuantity_65.Name = "tStiffenerWindowQuantity_65";
-            this.tStiffenerWindowQuantity_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowQuantity_65.TabIndex = 554;
-            this.tStiffenerWindowQuantity_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowSpacing_66
-            // 
-            this.tStiffenerWindowSpacing_66.Location = new System.Drawing.Point(3, 1376);
-            this.tStiffenerWindowSpacing_66.Name = "tStiffenerWindowSpacing_66";
-            this.tStiffenerWindowSpacing_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowSpacing_66.TabIndex = 562;
-            this.tStiffenerWindowSpacing_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowSpacing_62
-            // 
-            this.tStiffenerWindowSpacing_62.Location = new System.Drawing.Point(289, 1376);
-            this.tStiffenerWindowSpacing_62.Name = "tStiffenerWindowSpacing_62";
-            this.tStiffenerWindowSpacing_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowSpacing_62.TabIndex = 557;
-            this.tStiffenerWindowSpacing_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowSpacing_61
-            // 
-            this.tStiffenerWindowSpacing_61.Location = new System.Drawing.Point(362, 1376);
-            this.tStiffenerWindowSpacing_61.Name = "tStiffenerWindowSpacing_61";
-            this.tStiffenerWindowSpacing_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowSpacing_61.TabIndex = 556;
-            this.tStiffenerWindowSpacing_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowSpacing_63
-            // 
-            this.tStiffenerWindowSpacing_63.Location = new System.Drawing.Point(219, 1376);
-            this.tStiffenerWindowSpacing_63.Name = "tStiffenerWindowSpacing_63";
-            this.tStiffenerWindowSpacing_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowSpacing_63.TabIndex = 559;
-            this.tStiffenerWindowSpacing_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.Color.White;
-            this.label59.Location = new System.Drawing.Point(432, 1380);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(146, 13);
-            this.label59.TabIndex = 558;
-            this.label59.Text = "WINDOW  Spacing (Siffener)";
-            // 
-            // tStiffenerWindowSpacing_64
-            // 
-            this.tStiffenerWindowSpacing_64.Location = new System.Drawing.Point(146, 1376);
-            this.tStiffenerWindowSpacing_64.Name = "tStiffenerWindowSpacing_64";
-            this.tStiffenerWindowSpacing_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowSpacing_64.TabIndex = 560;
-            this.tStiffenerWindowSpacing_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowSpacing_65
-            // 
-            this.tStiffenerWindowSpacing_65.Location = new System.Drawing.Point(76, 1376);
-            this.tStiffenerWindowSpacing_65.Name = "tStiffenerWindowSpacing_65";
-            this.tStiffenerWindowSpacing_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowSpacing_65.TabIndex = 561;
-            this.tStiffenerWindowSpacing_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowOffset_66
-            // 
-            this.tStiffenerWindowOffset_66.Location = new System.Drawing.Point(3, 1402);
-            this.tStiffenerWindowOffset_66.Name = "tStiffenerWindowOffset_66";
-            this.tStiffenerWindowOffset_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowOffset_66.TabIndex = 569;
-            this.tStiffenerWindowOffset_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowOffset_62
-            // 
-            this.tStiffenerWindowOffset_62.Location = new System.Drawing.Point(289, 1402);
-            this.tStiffenerWindowOffset_62.Name = "tStiffenerWindowOffset_62";
-            this.tStiffenerWindowOffset_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowOffset_62.TabIndex = 564;
-            this.tStiffenerWindowOffset_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowOffset_61
-            // 
-            this.tStiffenerWindowOffset_61.Location = new System.Drawing.Point(362, 1402);
-            this.tStiffenerWindowOffset_61.Name = "tStiffenerWindowOffset_61";
-            this.tStiffenerWindowOffset_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowOffset_61.TabIndex = 563;
-            this.tStiffenerWindowOffset_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowOffset_63
-            // 
-            this.tStiffenerWindowOffset_63.Location = new System.Drawing.Point(219, 1402);
-            this.tStiffenerWindowOffset_63.Name = "tStiffenerWindowOffset_63";
-            this.tStiffenerWindowOffset_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowOffset_63.TabIndex = 566;
-            this.tStiffenerWindowOffset_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(432, 1406);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(135, 13);
-            this.label60.TabIndex = 565;
-            this.label60.Text = "WINDOW  Offset (Siffener)";
-            // 
-            // tStiffenerWindowOffset_64
-            // 
-            this.tStiffenerWindowOffset_64.Location = new System.Drawing.Point(146, 1402);
-            this.tStiffenerWindowOffset_64.Name = "tStiffenerWindowOffset_64";
-            this.tStiffenerWindowOffset_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerWindowOffset_64.TabIndex = 567;
-            this.tStiffenerWindowOffset_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerWindowOffset_65
-            // 
-            this.tStiffenerWindowOffset_65.Location = new System.Drawing.Point(76, 1402);
-            this.tStiffenerWindowOffset_65.Name = "tStiffenerWindowOffset_65";
-            this.tStiffenerWindowOffset_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerWindowOffset_65.TabIndex = 568;
-            this.tStiffenerWindowOffset_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // HeaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 600);
+            this.ClientSize = new System.Drawing.Size(671, 666);
             this.Controls.Add(this.test66);
+            this.Controls.Add(this.job_Box);
+            this.Controls.Add(this.textBox_Bank);
             this.Controls.Add(this.test65);
+            this.Controls.Add(this.bImportPrego);
             this.Controls.Add(this.test64);
             this.Controls.Add(this.test63);
             this.Controls.Add(this.test62);
@@ -4292,14 +5907,18 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HeaderUI_FormClosing);
             this.Load += new System.EventHandler(this.HeaderUI_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.connectionPanel.ResumeLayout(false);
+            this.connectionPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -4311,8 +5930,6 @@
         private System.Windows.Forms.TextBox job_Box;
         private System.Windows.Forms.Button bImportPrego;
         private System.Windows.Forms.TextBox textBox_Bank;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox cEnabled66;
         private System.Windows.Forms.CheckBox cEnabled65;
@@ -4406,7 +6023,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tTopBtmWidth_64;
         private System.Windows.Forms.TextBox tTopBtmWidth_65;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tEndPlateLength_66;
         private System.Windows.Forms.TextBox tEndPlateLength_62;
         private System.Windows.Forms.TextBox tEndPlateLength_61;
@@ -4712,5 +6328,155 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox tStiffenerWindowOffset_64;
         private System.Windows.Forms.TextBox tStiffenerWindowOffset_65;
+        private System.Windows.Forms.TextBox tPartitionBelowRow_66;
+        private System.Windows.Forms.TextBox tPartitionBelowRow_62;
+        private System.Windows.Forms.TextBox tPartitionBelowRow_61;
+        private System.Windows.Forms.TextBox tPartitionBelowRow_63;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox tPartitionBelowRow_64;
+        private System.Windows.Forms.TextBox tPartitionBelowRow_65;
+        private System.Windows.Forms.TextBox tPartitionWidth_66;
+        private System.Windows.Forms.TextBox tPartitionWidth_62;
+        private System.Windows.Forms.TextBox tPartitionWidth_61;
+        private System.Windows.Forms.TextBox tPartitionWidth_63;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox tPartitionWidth_64;
+        private System.Windows.Forms.TextBox tPartitionWidth_65;
+        private System.Windows.Forms.TextBox tPartitionTHK_66;
+        private System.Windows.Forms.TextBox tPartitionTHK_62;
+        private System.Windows.Forms.TextBox tPartitionTHK_61;
+        private System.Windows.Forms.TextBox tPartitionTHK_63;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox tPartitionTHK_64;
+        private System.Windows.Forms.TextBox tPartitionTHK_65;
+        private System.Windows.Forms.TextBox tPartitionDistanceBelow_66;
+        private System.Windows.Forms.TextBox tPartitionDistanceBelow_62;
+        private System.Windows.Forms.TextBox tPartitionDistanceBelow_61;
+        private System.Windows.Forms.TextBox tPartitionDistanceBelow_63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox tPartitionDistanceBelow_64;
+        private System.Windows.Forms.TextBox tPartitionDistanceBelow_65;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.ComboBox cLocation_Outlet;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cLocation_Inlet;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel connectionPanel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tO_Outlet;
+        private System.Windows.Forms.TextBox tO_Inlet;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox61;
+        private System.Windows.Forms.TextBox tWall_Outlet;
+        private System.Windows.Forms.TextBox tWall_Inlet;
+        private System.Windows.Forms.TextBox textBox64;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.TextBox textBox65;
+        private System.Windows.Forms.TextBox textBox66;
+        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.TextBox tOD_Outlet;
+        private System.Windows.Forms.TextBox tOD_Inlet;
+        private System.Windows.Forms.TextBox textBox58;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox textBox59;
+        private System.Windows.Forms.TextBox textBox60;
+        private System.Windows.Forms.TextBox textBox49;
+        private System.Windows.Forms.TextBox tYY_Outlet;
+        private System.Windows.Forms.TextBox tYY_Inlet;
+        private System.Windows.Forms.TextBox textBox52;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.TextBox textBox54;
+        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.TextBox tBC_Outlet;
+        private System.Windows.Forms.TextBox tBC_Inlet;
+        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox tDB_Outlet;
+        private System.Windows.Forms.TextBox tDB_Inlet;
+        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox textBox41;
+        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox tNB_Outlet;
+        private System.Windows.Forms.TextBox tNB_Inlet;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox tRD_Outlet;
+        private System.Windows.Forms.TextBox tRD_Inlet;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox tX_Outlet;
+        private System.Windows.Forms.TextBox tX_Inlet;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox tR_Outlet;
+        private System.Windows.Forms.TextBox tR_Inlet;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tQ_Outlet;
+        private System.Windows.Forms.TextBox tQ_Inlet;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox tExtensionY_Outlet;
+        private System.Windows.Forms.TextBox tExtensionY_Inlet;
+        private System.Windows.Forms.TextBox textBox57;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.TextBox textBox63;
+        private System.Windows.Forms.TextBox textBox67;
+        private System.Windows.Forms.TextBox textBox68;
+        private System.Windows.Forms.TextBox tOffsetX_Outlet;
+        private System.Windows.Forms.TextBox tOffsetX_Inlet;
+        private System.Windows.Forms.TextBox textBox71;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.TextBox textBox72;
+        private System.Windows.Forms.TextBox textBox73;
+        private System.Windows.Forms.TextBox textBox74;
+        private System.Windows.Forms.TextBox tSpacing_Outlet;
+        private System.Windows.Forms.TextBox tSpacing_Inlet;
+        private System.Windows.Forms.TextBox textBox77;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.TextBox textBox78;
+        private System.Windows.Forms.TextBox textBox79;
+        private System.Windows.Forms.TextBox textBox80;
+        private System.Windows.Forms.TextBox tCount_Outlet;
+        private System.Windows.Forms.TextBox tCount_Inlet;
+        private System.Windows.Forms.TextBox textBox83;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox textBox84;
+        private System.Windows.Forms.TextBox textBox85;
     }
 }

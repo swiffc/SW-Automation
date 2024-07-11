@@ -73,6 +73,25 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) StiffenerWindowQuantity { get; set; }
             public (string[] Cells, Worksheet Sheet) StiffenerWindowSpacing { get; set; }
             public (string[] Cells, Worksheet Sheet) StiffenerWindowOffset { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionTHK { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionWidth { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionBelowRow { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionDistanceBelow { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopOD { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopID { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopQ { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopRD { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopYY { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopX { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopR { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopO { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopBC { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopNB { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopDB { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopOffsetX { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopOffsetY { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopCount { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeTopSpacing { get; set; }
         }
 
 
@@ -136,6 +155,25 @@ namespace Excel
             public TextBox StiffenerWindowQuantityTextBox { get; set; }
             public TextBox StiffenerWindowSpacingTextBox { get; set; }
             public TextBox StiffenerWindowOffsetTextBox { get; set; }
+            public TextBox PartitionTHKTextBox { get; set; }
+            public TextBox PartitionWidthTextBox { get; set; }
+            public TextBox PartitionBelowRowTextBox { get; set; }
+            public TextBox PartitionDistanceBelowTextBox { get; set; }
+            public TextBox FlangeTopODTextBox { get; set; }
+            public TextBox FlangeTopIDTextBox { get; set; }
+            public TextBox FlangeTopQTextBox { get; set; }
+            public TextBox FlangeTopRDTextBox { get; set; }
+            public TextBox FlangeTopYYTextBox { get; set; }
+            public TextBox FlangeTopXTextBox { get; set; }
+            public TextBox FlangeTopRTextBox { get; set; }
+            public TextBox FlangeTopOTextBox { get; set; }
+            public TextBox FlangeTopBCTextBox { get; set; }
+            public TextBox FlangeTopNBTextBox { get; set; }
+            public TextBox FlangeTopDBTextBox { get; set; }
+            public TextBox FlangeTopOffsetXTextBox { get; set; }
+            public TextBox FlangeTopOffsetYTextBox { get; set; }
+            public TextBox FlangeTopCountTextBox { get; set; }
+            public TextBox FlangeTopSpacingTextBox { get; set; }
         }
 
 
@@ -204,6 +242,25 @@ namespace Excel
                     StiffenerWindowQuantityTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowQuantity_", i),
                     StiffenerWindowSpacingTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowSpacing_", i),
                     StiffenerWindowOffsetTextBox = GetControl<TextBox>(formInstance, "tStiffenerWindowOffset_", i),
+                    PartitionTHKTextBox = GetControl<TextBox>(formInstance, "tPartitionTHK_", i),
+                    PartitionWidthTextBox = GetControl<TextBox>(formInstance, "tPartitionWidth_", i),
+                    PartitionBelowRowTextBox = GetControl<TextBox>(formInstance, "tPartitionBelowRow_", i),
+                    PartitionDistanceBelowTextBox = GetControl<TextBox>(formInstance, "tPartitionDistanceBelow_", i),
+                    FlangeTopODTextBox = GetControl<TextBox>(formInstance, "tFlangeTopOD_", i),
+                    FlangeTopIDTextBox = GetControl<TextBox>(formInstance, "tFlangeTopID_", i),
+                    FlangeTopQTextBox = GetControl<TextBox>(formInstance, "tFlangeTopQ_", i),
+                    FlangeTopRDTextBox = GetControl<TextBox>(formInstance, "tFlangeTopRD_", i),
+                    FlangeTopYYTextBox = GetControl<TextBox>(formInstance, "tFlangeTopYY_", i),
+                    FlangeTopXTextBox = GetControl<TextBox>(formInstance, "tFlangeTopX_", i),
+                    FlangeTopRTextBox = GetControl<TextBox>(formInstance, "tFlangeTopR_", i),
+                    FlangeTopOTextBox = GetControl<TextBox>(formInstance, "tFlangeTopO_", i),
+                    FlangeTopBCTextBox = GetControl<TextBox>(formInstance, "tFlangeTopBC_", i),
+                    FlangeTopNBTextBox = GetControl<TextBox>(formInstance, "tFlangeTopNB_", i),
+                    FlangeTopDBTextBox = GetControl<TextBox>(formInstance, "tFlangeTopDB_", i),
+                    FlangeTopOffsetXTextBox = GetControl<TextBox>(formInstance, "tFlangeTopOffsetX_", i),
+                    FlangeTopOffsetYTextBox = GetControl<TextBox>(formInstance, "tFlangeTopOffsetY_", i),
+                    FlangeTopCountTextBox = GetControl<TextBox>(formInstance, "tFlangeTopCount_", i),
+                    FlangeTopSpacingTextBox = GetControl<TextBox>(formInstance, "tFlangeTopSpacing_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -270,12 +327,31 @@ namespace Excel
                         StiffenerWidth = (new string[] { "V492" }, InventorSheet),
                         StiffenerOffset = (new string[] { "V490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "V488" }, InventorSheet),
-                        StiffenerDistanceBelow = (new string[]  { "V489" }, InventorSheet),
-                        StiffenerWindowWidth = (new string[]    { "V493" }, InventorSheet),
-                        StiffenerWindowLength = (new string[]   { "V494" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "V489" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[] { "V493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[] { "V494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "V495" }, InventorSheet),
-                        StiffenerWindowSpacing = (new string[]  { "V496" }, InventorSheet),
-                        StiffenerWindowOffset = (new string[]   { "V497" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[] { "V496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[] { "V497" }, InventorSheet),
+                        PartitionTHK = (new string[] { "V645" }, InventorSheet),
+                        PartitionWidth = (new string[] { "V646" }, InventorSheet),
+                        PartitionBelowRow = (new string[] { "V641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[] { "V647" }, InventorSheet),
+                        FlangeTopCount = (new string[] { "AMZ17" }, InputsCalcsSheet),
+                        FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
+                        FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
+                        FlangeTopQ = (new string[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeTopRD = (new string[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeTopYY = (new string[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeTopX = (new string[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeTopR = (new string[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeTopO = (new string[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeTopBC = (new string[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeTopNB = (new string[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeTopDB = (new string[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
+                        FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
+                        FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -330,11 +406,30 @@ namespace Excel
                         StiffenerOffset = (new string[] { "W490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "W488" }, InventorSheet),
                         StiffenerDistanceBelow = (new string[] { "W489" }, InventorSheet),
-                        StiffenerWindowWidth = (new string[]    { "W493" }, InventorSheet),
-                        StiffenerWindowLength = (new string[]   { "W494" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[] { "W493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[] { "W494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "W495" }, InventorSheet),
-                        StiffenerWindowSpacing = (new string[]  { "W496" }, InventorSheet),
-                        StiffenerWindowOffset = (new string[]   { "W497" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[] { "W496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[] { "W497" }, InventorSheet),
+                        PartitionTHK = (new string[] { "W645" }, InventorSheet),
+                        PartitionWidth = (new string[] { "W646" }, InventorSheet),
+                        PartitionBelowRow = (new string[] { "W641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[] { "W647" }, InventorSheet),
+                        FlangeTopCount = (new string[] { "A67" }, InputSheet),
+                        FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
+                        FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
+                        FlangeTopQ = (new string[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeTopRD = (new string[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeTopYY = (new string[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeTopX = (new string[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeTopR = (new string[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeTopO = (new string[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeTopBC = (new string[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeTopNB = (new string[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeTopDB = (new string[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
+                        FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
+                        FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -389,11 +484,30 @@ namespace Excel
                         StiffenerOffset = (new string[] { "X490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "X488" }, InventorSheet),
                         StiffenerDistanceBelow = (new string[] { "X489" }, InventorSheet),
-                        StiffenerWindowWidth = (new string[]    { "X493" }, InventorSheet),
-                        StiffenerWindowLength = (new string[]   { "X494" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[] { "X493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[] { "X494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "X495" }, InventorSheet),
-                        StiffenerWindowSpacing = (new string[]  { "X496" }, InventorSheet),
-                        StiffenerWindowOffset = (new string[]   { "X497" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[] { "X496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[] { "X497" }, InventorSheet),
+                        PartitionTHK = (new string[] { "X645" }, InventorSheet),
+                        PartitionWidth = (new string[] { "X646" }, InventorSheet),
+                        PartitionBelowRow = (new string[] { "X641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[] { "X647" }, InventorSheet),
+                        FlangeTopCount = (new string[] { "A67" }, InputSheet),
+                        FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
+                        FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
+                        FlangeTopQ = (new string[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeTopRD = (new string[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeTopYY = (new string[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeTopX = (new string[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeTopR = (new string[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeTopO = (new string[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeTopBC = (new string[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeTopNB = (new string[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeTopDB = (new string[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
+                        FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
+                        FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -448,11 +562,31 @@ namespace Excel
                         StiffenerOffset = (new string[] { "Y490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "Y488" }, InventorSheet),
                         StiffenerDistanceBelow = (new string[] { "Y489" }, InventorSheet),
-                        StiffenerWindowWidth = (new string[]    { "Y493" }, InventorSheet),
-                        StiffenerWindowLength = (new string[]   { "Y494" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[] { "Y493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[] { "Y494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "Y495" }, InventorSheet),
-                        StiffenerWindowSpacing = (new string[]  { "Y496" }, InventorSheet),
-                        StiffenerWindowOffset = (new string[]   { "Y497" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[] { "Y496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[] { "Y497" }, InventorSheet),
+                        PartitionTHK = (new string[] { "Y645" }, InventorSheet),
+                        PartitionWidth = (new string[] { "Y646" }, InventorSheet),
+                        PartitionBelowRow = (new string[] { "Y641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[] { "Y647" }, InventorSheet),
+                        FlangeTopCount = (new string[] { "AMZ73" }, InputsCalcsSheet),
+                        FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
+                        FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
+                        FlangeTopQ = (new string[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeTopRD = (new string[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeTopYY = (new string[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeTopX = (new string[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeTopR = (new string[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeTopO = (new string[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeTopBC = (new string[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeTopNB = (new string[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeTopDB = (new string[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
+                        FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
+                        FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
+
                     },
 
                     ["64"] = new Prego_DTO
@@ -508,11 +642,30 @@ namespace Excel
                         StiffenerOffset = (new string[] { "Z490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "Z488" }, InventorSheet),
                         StiffenerDistanceBelow = (new string[] { "V489" }, InventorSheet),
-                        StiffenerWindowWidth = (new string[]    { "Z493" }, InventorSheet),
-                        StiffenerWindowLength = (new string[]   { "Z494" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[] { "Z493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[] { "Z494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "Z495" }, InventorSheet),
-                        StiffenerWindowSpacing = (new string[]  { "Z496" }, InventorSheet),
-                        StiffenerWindowOffset = (new string[]   { "Z497" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[] { "Z496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[] { "Z497" }, InventorSheet),
+                        PartitionTHK = (new string[] { "Z645" }, InventorSheet),
+                        PartitionWidth = (new string[] { "Z646" }, InventorSheet),
+                        PartitionBelowRow = (new string[] { "Z641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[] { "Z647" }, InventorSheet),
+                        FlangeTopCount = (new string[] { "A67" }, InputSheet),
+                        FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
+                        FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
+                        FlangeTopQ = (new string[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeTopRD = (new string[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeTopYY = (new string[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeTopX = (new string[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeTopR = (new string[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeTopO = (new string[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeTopBC = (new string[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeTopNB = (new string[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeTopDB = (new string[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
+                        FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
+                        FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -567,11 +720,30 @@ namespace Excel
                         StiffenerOffset = (new string[] { "AA490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "AA488" }, InventorSheet),
                         StiffenerDistanceBelow = (new string[] { "AA489" }, InventorSheet),
-                        StiffenerWindowWidth = (new string[]    { "AA493" }, InventorSheet),
-                        StiffenerWindowLength = (new string[]   { "AA494" }, InventorSheet),
+                        StiffenerWindowWidth = (new string[] { "AA493" }, InventorSheet),
+                        StiffenerWindowLength = (new string[] { "AA494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "AA495" }, InventorSheet),
-                        StiffenerWindowSpacing = (new string[]  { "AA496" }, InventorSheet),
-                        StiffenerWindowOffset = (new string[]   { "AA497" }, InventorSheet),
+                        StiffenerWindowSpacing = (new string[] { "AA496" }, InventorSheet),
+                        StiffenerWindowOffset = (new string[] { "AA497" }, InventorSheet),
+                        PartitionTHK = (new string[] { "AA645" }, InventorSheet),
+                        PartitionWidth = (new string[] { "AA646" }, InventorSheet),
+                        PartitionBelowRow = (new string[] { "AA641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[] { "AA647" }, InventorSheet),
+                        FlangeTopCount = (new string[] { "A67" }, InputSheet),
+                        FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
+                        FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
+                        FlangeTopQ = (new string[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeTopRD = (new string[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeTopYY = (new string[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeTopX = (new string[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeTopR = (new string[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeTopO = (new string[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeTopBC = (new string[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeTopNB = (new string[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeTopDB = (new string[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
+                        FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
+                        FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                     }
                 };
             }
@@ -630,28 +802,21 @@ namespace Excel
         // Push application data to UI
         public static void ImportHeaderData_FromPrego()
         {
-            if (PregoDoc != null)
+            var headerNumbers = new[] { "61", "62", "63", "64", "65", "66" };
+            foreach (var headerNumber in headerNumbers)
             {
-                var headerNumbers = new[] { "61", "62", "63", "64", "65", "66" };
-                foreach (var headerNumber in headerNumbers)
-                {
-                    var headerAppData = HeaderAppData[headerNumber];
-                    var headerPregoData = _headerPregoData[headerNumber];
-                    LoadHeaderData_FromPrego
-                    (
-                        headerAppData.Header,
-                        headerAppData.Enabled,
-                        headerAppData,
-                        headerPregoData
-                    );
-                }
-                SaveSettings();
-                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var headerAppData = HeaderAppData[headerNumber];
+                var headerPregoData = _headerPregoData[headerNumber];
+                LoadHeaderData_FromPrego
+                (
+                    headerAppData.Header,
+                    headerAppData.Enabled,
+                    headerAppData,
+                    headerPregoData
+                );
             }
-            else
-            {
-                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            SaveSettings();
+
         }
 
         #endregion  

@@ -13,6 +13,32 @@ namespace HDR
         // Static properties
         public static IHeaderExtensions Header { get; set; }
         static public double ModelLengthReduction => 6;
+        static public IHeaderExtensions LowestLeftHeader
+        {
+            get
+            {
+                IHeaderExtensions lowestHeader;
+                if (Header65.IsRequired)
+                    lowestHeader = Header65;
+                else if (Header63.IsRequired)
+                    lowestHeader = Header63;
+                else lowestHeader = Header61;
+                return lowestHeader;
+            }
+        }
+        static public IHeaderExtensions LowestRightHeader
+        {
+            get
+            {
+                IHeaderExtensions lowestHeader;
+                if (Header66.IsRequired)
+                    lowestHeader = Header66;
+                else if (Header64.IsRequired)
+                    lowestHeader = Header64;
+                else lowestHeader = Header62;
+                return lowestHeader;
+            }
+        }
 
 
         // Constructor

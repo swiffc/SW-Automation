@@ -301,6 +301,27 @@ namespace FileTools.CommonData
                 get => Default.StiffenerWindowOffset_64;
                 set => Default.StiffenerWindowOffset_64 = value;
             }
+            public double PartitionTHK
+            {
+                get => Default.PartitionTHK_64;
+                set => Default.PartitionTHK_64 = value;
+            }
+            public double PartitionWidth
+            {
+                get => Default.PartitionWidth_64;
+                set => Default.PartitionWidth_64 = value;
+            }
+            public double PartitionBelowRow
+            {
+                get => Default.PartitionBelowRow_64;
+                set => Default.PartitionBelowRow_64 = value;
+            }
+            public double PartitionDistanceBelow
+            {
+                get => Default.PartitionDistanceBelow_64;
+                set => Default.PartitionDistanceBelow_64 = value;
+            }
+
         }
     }
 }

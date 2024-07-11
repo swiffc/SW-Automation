@@ -295,7 +295,11 @@ namespace Bundle
                     "CF30");// Frame Thk (in)
 
                 ImportHeaderData_FromPrego();
-
+                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

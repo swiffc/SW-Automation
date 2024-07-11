@@ -146,5 +146,23 @@ namespace HDR.Box
         {
             get => Header.TubesheetWidth;
         }
+
+
+        // Lists
+        internal static List<double> HoleLocations = new List<double>
+        {
+            Header.TubeY,
+            Header.TubeVPitchOneTwo,
+            Header.TubeVPitchTwoThree,
+            Header.TubeVPitchThreeFour,
+            Header.TubeVPitchFourFive,
+            Header.TubeVPitchFiveSix,
+            Header.TubeVPitchSixSeven,
+            Header.TubeVPitchSevenEight,
+            Header.TubeVPitchEightNine,
+            Header.TubeVPitchNineTen,
+            Header.TubeVPitchTenEleven,
+            Header.TubeVPitchElevenTwelve
+        };
     }
 }

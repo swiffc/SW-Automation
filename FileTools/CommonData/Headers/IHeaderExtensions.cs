@@ -79,7 +79,13 @@ namespace FileTools.Base
         double StiffenerWindowQuantity { get; set; } 
         double StiffenerWindowSpacing { get; set; }
         double StiffenerWindowOffset { get; set; }
+        double PartitionTHK { get; set; }
+        double PartitionWidth { get; set; }
+        double PartitionBelowRow { get; set; }
+        double PartitionDistanceBelow { get; set; }
     }
+
+
     public static class HeaderHelper
     {
         public static int RowCounter(IHeaderExtensions header)

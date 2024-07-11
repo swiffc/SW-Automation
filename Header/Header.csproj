@@ -55,10 +55,13 @@
   <ItemGroup>
     <Compile Include="Box\Derived\EndPlate2.cs" />
     <Compile Include="Box\EndPlate.cs" />
+    <Compile Include="Box\Partition.cs" />
     <Compile Include="Box\PlugSheet.cs" />
     <Compile Include="Box\Stiffener.cs" />
     <Compile Include="Box\TopBtmPlate.cs" />
     <Compile Include="Box\TubeSheet.cs" />
+    <Compile Include="Connections\InletFLG.cs" />
+    <Compile Include="Connections\OutletFLG.cs" />
     <Compile Include="HeaderBase.cs" />
     <Compile Include="HeaderUI.cs">
       <SubType>Form</SubType>

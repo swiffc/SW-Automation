@@ -5674,5 +5674,1781 @@ namespace FileTools.Properties {
                 this["StiffenerWindowOffset_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK_61 {
+            get {
+                return ((double)(this["PartitionTHK_61"]));
+            }
+            set {
+                this["PartitionTHK_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK_62 {
+            get {
+                return ((double)(this["PartitionTHK_62"]));
+            }
+            set {
+                this["PartitionTHK_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK_63 {
+            get {
+                return ((double)(this["PartitionTHK_63"]));
+            }
+            set {
+                this["PartitionTHK_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK_64 {
+            get {
+                return ((double)(this["PartitionTHK_64"]));
+            }
+            set {
+                this["PartitionTHK_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK_65 {
+            get {
+                return ((double)(this["PartitionTHK_65"]));
+            }
+            set {
+                this["PartitionTHK_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK_66 {
+            get {
+                return ((double)(this["PartitionTHK_66"]));
+            }
+            set {
+                this["PartitionTHK_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionWidth_61 {
+            get {
+                return ((double)(this["PartitionWidth_61"]));
+            }
+            set {
+                this["PartitionWidth_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionWidth_62 {
+            get {
+                return ((double)(this["PartitionWidth_62"]));
+            }
+            set {
+                this["PartitionWidth_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionWidth_63 {
+            get {
+                return ((double)(this["PartitionWidth_63"]));
+            }
+            set {
+                this["PartitionWidth_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionWidth_64 {
+            get {
+                return ((double)(this["PartitionWidth_64"]));
+            }
+            set {
+                this["PartitionWidth_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionWidth_65 {
+            get {
+                return ((double)(this["PartitionWidth_65"]));
+            }
+            set {
+                this["PartitionWidth_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionWidth_66 {
+            get {
+                return ((double)(this["PartitionWidth_66"]));
+            }
+            set {
+                this["PartitionWidth_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow_61 {
+            get {
+                return ((double)(this["PartitionBelowRow_61"]));
+            }
+            set {
+                this["PartitionBelowRow_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow_62 {
+            get {
+                return ((double)(this["PartitionBelowRow_62"]));
+            }
+            set {
+                this["PartitionBelowRow_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow_63 {
+            get {
+                return ((double)(this["PartitionBelowRow_63"]));
+            }
+            set {
+                this["PartitionBelowRow_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow_64 {
+            get {
+                return ((double)(this["PartitionBelowRow_64"]));
+            }
+            set {
+                this["PartitionBelowRow_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow_65 {
+            get {
+                return ((double)(this["PartitionBelowRow_65"]));
+            }
+            set {
+                this["PartitionBelowRow_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow_66 {
+            get {
+                return ((double)(this["PartitionBelowRow_66"]));
+            }
+            set {
+                this["PartitionBelowRow_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow_61 {
+            get {
+                return ((double)(this["PartitionDistanceBelow_61"]));
+            }
+            set {
+                this["PartitionDistanceBelow_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow_62 {
+            get {
+                return ((double)(this["PartitionDistanceBelow_62"]));
+            }
+            set {
+                this["PartitionDistanceBelow_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow_63 {
+            get {
+                return ((double)(this["PartitionDistanceBelow_63"]));
+            }
+            set {
+                this["PartitionDistanceBelow_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow_64 {
+            get {
+                return ((double)(this["PartitionDistanceBelow_64"]));
+            }
+            set {
+                this["PartitionDistanceBelow_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow_65 {
+            get {
+                return ((double)(this["PartitionDistanceBelow_65"]));
+            }
+            set {
+                this["PartitionDistanceBelow_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow_66 {
+            get {
+                return ((double)(this["PartitionDistanceBelow_66"]));
+            }
+            set {
+                this["PartitionDistanceBelow_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOD_61 {
+            get {
+                return ((double)(this["FlangeTopOD_61"]));
+            }
+            set {
+                this["FlangeTopOD_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOD_62 {
+            get {
+                return ((double)(this["FlangeTopOD_62"]));
+            }
+            set {
+                this["FlangeTopOD_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOD_63 {
+            get {
+                return ((double)(this["FlangeTopOD_63"]));
+            }
+            set {
+                this["FlangeTopOD_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOD_64 {
+            get {
+                return ((double)(this["FlangeTopOD_64"]));
+            }
+            set {
+                this["FlangeTopOD_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOD_65 {
+            get {
+                return ((double)(this["FlangeTopOD_65"]));
+            }
+            set {
+                this["FlangeTopOD_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOD_66 {
+            get {
+                return ((double)(this["FlangeTopOD_66"]));
+            }
+            set {
+                this["FlangeTopOD_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopID_61 {
+            get {
+                return ((double)(this["FlangeTopID_61"]));
+            }
+            set {
+                this["FlangeTopID_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopID_62 {
+            get {
+                return ((double)(this["FlangeTopID_62"]));
+            }
+            set {
+                this["FlangeTopID_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopID_63 {
+            get {
+                return ((double)(this["FlangeTopID_63"]));
+            }
+            set {
+                this["FlangeTopID_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopID_64 {
+            get {
+                return ((double)(this["FlangeTopID_64"]));
+            }
+            set {
+                this["FlangeTopID_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopID_65 {
+            get {
+                return ((double)(this["FlangeTopID_65"]));
+            }
+            set {
+                this["FlangeTopID_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopID_66 {
+            get {
+                return ((double)(this["FlangeTopID_66"]));
+            }
+            set {
+                this["FlangeTopID_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopQ_61 {
+            get {
+                return ((double)(this["FlangeTopQ_61"]));
+            }
+            set {
+                this["FlangeTopQ_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopQ_62 {
+            get {
+                return ((double)(this["FlangeTopQ_62"]));
+            }
+            set {
+                this["FlangeTopQ_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopQ_63 {
+            get {
+                return ((double)(this["FlangeTopQ_63"]));
+            }
+            set {
+                this["FlangeTopQ_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopQ_64 {
+            get {
+                return ((double)(this["FlangeTopQ_64"]));
+            }
+            set {
+                this["FlangeTopQ_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopQ_65 {
+            get {
+                return ((double)(this["FlangeTopQ_65"]));
+            }
+            set {
+                this["FlangeTopQ_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopQ_66 {
+            get {
+                return ((double)(this["FlangeTopQ_66"]));
+            }
+            set {
+                this["FlangeTopQ_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopRD_61 {
+            get {
+                return ((double)(this["FlangeTopRD_61"]));
+            }
+            set {
+                this["FlangeTopRD_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopRD_62 {
+            get {
+                return ((double)(this["FlangeTopRD_62"]));
+            }
+            set {
+                this["FlangeTopRD_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopRD_63 {
+            get {
+                return ((double)(this["FlangeTopRD_63"]));
+            }
+            set {
+                this["FlangeTopRD_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopRD_64 {
+            get {
+                return ((double)(this["FlangeTopRD_64"]));
+            }
+            set {
+                this["FlangeTopRD_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopRD_65 {
+            get {
+                return ((double)(this["FlangeTopRD_65"]));
+            }
+            set {
+                this["FlangeTopRD_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopRD_66 {
+            get {
+                return ((double)(this["FlangeTopRD_66"]));
+            }
+            set {
+                this["FlangeTopRD_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopYY_61 {
+            get {
+                return ((double)(this["FlangeTopYY_61"]));
+            }
+            set {
+                this["FlangeTopYY_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopYY_62 {
+            get {
+                return ((double)(this["FlangeTopYY_62"]));
+            }
+            set {
+                this["FlangeTopYY_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopYY_63 {
+            get {
+                return ((double)(this["FlangeTopYY_63"]));
+            }
+            set {
+                this["FlangeTopYY_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopYY_64 {
+            get {
+                return ((double)(this["FlangeTopYY_64"]));
+            }
+            set {
+                this["FlangeTopYY_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopYY_65 {
+            get {
+                return ((double)(this["FlangeTopYY_65"]));
+            }
+            set {
+                this["FlangeTopYY_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopYY_66 {
+            get {
+                return ((double)(this["FlangeTopYY_66"]));
+            }
+            set {
+                this["FlangeTopYY_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopX_61 {
+            get {
+                return ((double)(this["FlangeTopX_61"]));
+            }
+            set {
+                this["FlangeTopX_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopX_62 {
+            get {
+                return ((double)(this["FlangeTopX_62"]));
+            }
+            set {
+                this["FlangeTopX_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopX_63 {
+            get {
+                return ((double)(this["FlangeTopX_63"]));
+            }
+            set {
+                this["FlangeTopX_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopX_64 {
+            get {
+                return ((double)(this["FlangeTopX_64"]));
+            }
+            set {
+                this["FlangeTopX_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopX_65 {
+            get {
+                return ((double)(this["FlangeTopX_65"]));
+            }
+            set {
+                this["FlangeTopX_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopX_66 {
+            get {
+                return ((double)(this["FlangeTopX_66"]));
+            }
+            set {
+                this["FlangeTopX_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopR_61 {
+            get {
+                return ((double)(this["FlangeTopR_61"]));
+            }
+            set {
+                this["FlangeTopR_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopR_62 {
+            get {
+                return ((double)(this["FlangeTopR_62"]));
+            }
+            set {
+                this["FlangeTopR_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopR_63 {
+            get {
+                return ((double)(this["FlangeTopR_63"]));
+            }
+            set {
+                this["FlangeTopR_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopR_64 {
+            get {
+                return ((double)(this["FlangeTopR_64"]));
+            }
+            set {
+                this["FlangeTopR_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopR_65 {
+            get {
+                return ((double)(this["FlangeTopR_65"]));
+            }
+            set {
+                this["FlangeTopR_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopR_66 {
+            get {
+                return ((double)(this["FlangeTopR_66"]));
+            }
+            set {
+                this["FlangeTopR_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopO_61 {
+            get {
+                return ((double)(this["FlangeTopO_61"]));
+            }
+            set {
+                this["FlangeTopO_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopO_62 {
+            get {
+                return ((double)(this["FlangeTopO_62"]));
+            }
+            set {
+                this["FlangeTopO_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopO_63 {
+            get {
+                return ((double)(this["FlangeTopO_63"]));
+            }
+            set {
+                this["FlangeTopO_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopO_64 {
+            get {
+                return ((double)(this["FlangeTopO_64"]));
+            }
+            set {
+                this["FlangeTopO_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopO_65 {
+            get {
+                return ((double)(this["FlangeTopO_65"]));
+            }
+            set {
+                this["FlangeTopO_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopO_66 {
+            get {
+                return ((double)(this["FlangeTopO_66"]));
+            }
+            set {
+                this["FlangeTopO_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopBC_61 {
+            get {
+                return ((double)(this["FlangeTopBC_61"]));
+            }
+            set {
+                this["FlangeTopBC_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopBC_62 {
+            get {
+                return ((double)(this["FlangeTopBC_62"]));
+            }
+            set {
+                this["FlangeTopBC_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopBC_63 {
+            get {
+                return ((double)(this["FlangeTopBC_63"]));
+            }
+            set {
+                this["FlangeTopBC_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopBC_64 {
+            get {
+                return ((double)(this["FlangeTopBC_64"]));
+            }
+            set {
+                this["FlangeTopBC_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopBC_65 {
+            get {
+                return ((double)(this["FlangeTopBC_65"]));
+            }
+            set {
+                this["FlangeTopBC_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopBC_66 {
+            get {
+                return ((double)(this["FlangeTopBC_66"]));
+            }
+            set {
+                this["FlangeTopBC_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopNB_61 {
+            get {
+                return ((double)(this["FlangeTopNB_61"]));
+            }
+            set {
+                this["FlangeTopNB_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopNB_62 {
+            get {
+                return ((double)(this["FlangeTopNB_62"]));
+            }
+            set {
+                this["FlangeTopNB_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopNB_63 {
+            get {
+                return ((double)(this["FlangeTopNB_63"]));
+            }
+            set {
+                this["FlangeTopNB_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopNB_64 {
+            get {
+                return ((double)(this["FlangeTopNB_64"]));
+            }
+            set {
+                this["FlangeTopNB_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopNB_65 {
+            get {
+                return ((double)(this["FlangeTopNB_65"]));
+            }
+            set {
+                this["FlangeTopNB_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopNB_66 {
+            get {
+                return ((double)(this["FlangeTopNB_66"]));
+            }
+            set {
+                this["FlangeTopNB_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopDB_61 {
+            get {
+                return ((double)(this["FlangeTopDB_61"]));
+            }
+            set {
+                this["FlangeTopDB_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopDB_62 {
+            get {
+                return ((double)(this["FlangeTopDB_62"]));
+            }
+            set {
+                this["FlangeTopDB_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopDB_63 {
+            get {
+                return ((double)(this["FlangeTopDB_63"]));
+            }
+            set {
+                this["FlangeTopDB_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopDB_64 {
+            get {
+                return ((double)(this["FlangeTopDB_64"]));
+            }
+            set {
+                this["FlangeTopDB_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopDB_65 {
+            get {
+                return ((double)(this["FlangeTopDB_65"]));
+            }
+            set {
+                this["FlangeTopDB_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopDB_66 {
+            get {
+                return ((double)(this["FlangeTopDB_66"]));
+            }
+            set {
+                this["FlangeTopDB_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetX_61 {
+            get {
+                return ((double)(this["FlangeTopOffsetX_61"]));
+            }
+            set {
+                this["FlangeTopOffsetX_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetX_62 {
+            get {
+                return ((double)(this["FlangeTopOffsetX_62"]));
+            }
+            set {
+                this["FlangeTopOffsetX_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetX_63 {
+            get {
+                return ((double)(this["FlangeTopOffsetX_63"]));
+            }
+            set {
+                this["FlangeTopOffsetX_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetX_64 {
+            get {
+                return ((double)(this["FlangeTopOffsetX_64"]));
+            }
+            set {
+                this["FlangeTopOffsetX_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetX_65 {
+            get {
+                return ((double)(this["FlangeTopOffsetX_65"]));
+            }
+            set {
+                this["FlangeTopOffsetX_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetX_66 {
+            get {
+                return ((double)(this["FlangeTopOffsetX_66"]));
+            }
+            set {
+                this["FlangeTopOffsetX_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetY_61 {
+            get {
+                return ((double)(this["FlangeTopOffsetY_61"]));
+            }
+            set {
+                this["FlangeTopOffsetY_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetY_62 {
+            get {
+                return ((double)(this["FlangeTopOffsetY_62"]));
+            }
+            set {
+                this["FlangeTopOffsetY_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetY_63 {
+            get {
+                return ((double)(this["FlangeTopOffsetY_63"]));
+            }
+            set {
+                this["FlangeTopOffsetY_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetY_64 {
+            get {
+                return ((double)(this["FlangeTopOffsetY_64"]));
+            }
+            set {
+                this["FlangeTopOffsetY_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetY_65 {
+            get {
+                return ((double)(this["FlangeTopOffsetY_65"]));
+            }
+            set {
+                this["FlangeTopOffsetY_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopOffsetY_66 {
+            get {
+                return ((double)(this["FlangeTopOffsetY_66"]));
+            }
+            set {
+                this["FlangeTopOffsetY_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopCount_61 {
+            get {
+                return ((double)(this["FlangeTopCount_61"]));
+            }
+            set {
+                this["FlangeTopCount_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopCount_62 {
+            get {
+                return ((double)(this["FlangeTopCount_62"]));
+            }
+            set {
+                this["FlangeTopCount_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopCount_63 {
+            get {
+                return ((double)(this["FlangeTopCount_63"]));
+            }
+            set {
+                this["FlangeTopCount_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopCount_64 {
+            get {
+                return ((double)(this["FlangeTopCount_64"]));
+            }
+            set {
+                this["FlangeTopCount_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopCount_65 {
+            get {
+                return ((double)(this["FlangeTopCount_65"]));
+            }
+            set {
+                this["FlangeTopCount_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopCount_66 {
+            get {
+                return ((double)(this["FlangeTopCount_66"]));
+            }
+            set {
+                this["FlangeTopCount_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopSpacing_61 {
+            get {
+                return ((double)(this["FlangeTopSpacing_61"]));
+            }
+            set {
+                this["FlangeTopSpacing_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopSpacing_62 {
+            get {
+                return ((double)(this["FlangeTopSpacing_62"]));
+            }
+            set {
+                this["FlangeTopSpacing_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopSpacing_63 {
+            get {
+                return ((double)(this["FlangeTopSpacing_63"]));
+            }
+            set {
+                this["FlangeTopSpacing_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopSpacing_64 {
+            get {
+                return ((double)(this["FlangeTopSpacing_64"]));
+            }
+            set {
+                this["FlangeTopSpacing_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopSpacing_65 {
+            get {
+                return ((double)(this["FlangeTopSpacing_65"]));
+            }
+            set {
+                this["FlangeTopSpacing_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FlangeTopSpacing_66 {
+            get {
+                return ((double)(this["FlangeTopSpacing_66"]));
+            }
+            set {
+                this["FlangeTopSpacing_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("TL")]
+        public string Location_Inlet {
+            get {
+                return ((string)(this["Location_Inlet"]));
+            }
+            set {
+                this["Location_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double O_Inlet {
+            get {
+                return ((double)(this["O_Inlet"]));
+            }
+            set {
+                this["O_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Q_Inlet {
+            get {
+                return ((double)(this["Q_Inlet"]));
+            }
+            set {
+                this["Q_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double R_Inlet {
+            get {
+                return ((double)(this["R_Inlet"]));
+            }
+            set {
+                this["R_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double X_Inlet {
+            get {
+                return ((double)(this["X_Inlet"]));
+            }
+            set {
+                this["X_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RD_Inlet {
+            get {
+                return ((double)(this["RD_Inlet"]));
+            }
+            set {
+                this["RD_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double NB_Inlet {
+            get {
+                return ((double)(this["NB_Inlet"]));
+            }
+            set {
+                this["NB_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double DB_Inlet {
+            get {
+                return ((double)(this["DB_Inlet"]));
+            }
+            set {
+                this["DB_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BC_Inlet {
+            get {
+                return ((double)(this["BC_Inlet"]));
+            }
+            set {
+                this["BC_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double YY_Inlet {
+            get {
+                return ((double)(this["YY_Inlet"]));
+            }
+            set {
+                this["YY_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OD_Inlet {
+            get {
+                return ((double)(this["OD_Inlet"]));
+            }
+            set {
+                this["OD_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Wall_Inlet {
+            get {
+                return ((double)(this["Wall_Inlet"]));
+            }
+            set {
+                this["Wall_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Count_Inlet {
+            get {
+                return ((double)(this["Count_Inlet"]));
+            }
+            set {
+                this["Count_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Spacing_Inlet {
+            get {
+                return ((double)(this["Spacing_Inlet"]));
+            }
+            set {
+                this["Spacing_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OffsetX_Inlet {
+            get {
+                return ((double)(this["OffsetX_Inlet"]));
+            }
+            set {
+                this["OffsetX_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ExtensionY_Inlet {
+            get {
+                return ((double)(this["ExtensionY_Inlet"]));
+            }
+            set {
+                this["ExtensionY_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ShiftZ_Inlet {
+            get {
+                return ((double)(this["ShiftZ_Inlet"]));
+            }
+            set {
+                this["ShiftZ_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string Location_Outlet {
+            get {
+                return ((string)(this["Location_Outlet"]));
+            }
+            set {
+                this["Location_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double O_Outlet {
+            get {
+                return ((double)(this["O_Outlet"]));
+            }
+            set {
+                this["O_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Q_Outlet {
+            get {
+                return ((double)(this["Q_Outlet"]));
+            }
+            set {
+                this["Q_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double R_Outlet {
+            get {
+                return ((double)(this["R_Outlet"]));
+            }
+            set {
+                this["R_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double X_Outlet {
+            get {
+                return ((double)(this["X_Outlet"]));
+            }
+            set {
+                this["X_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RD_Outlet {
+            get {
+                return ((double)(this["RD_Outlet"]));
+            }
+            set {
+                this["RD_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double NB_Outlet {
+            get {
+                return ((double)(this["NB_Outlet"]));
+            }
+            set {
+                this["NB_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double DB_Outlet {
+            get {
+                return ((double)(this["DB_Outlet"]));
+            }
+            set {
+                this["DB_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double BC_Outlet {
+            get {
+                return ((double)(this["BC_Outlet"]));
+            }
+            set {
+                this["BC_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double YY_Outlet {
+            get {
+                return ((double)(this["YY_Outlet"]));
+            }
+            set {
+                this["YY_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OD_Outlet {
+            get {
+                return ((double)(this["OD_Outlet"]));
+            }
+            set {
+                this["OD_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Wall_Outlet {
+            get {
+                return ((double)(this["Wall_Outlet"]));
+            }
+            set {
+                this["Wall_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Count_Outlet {
+            get {
+                return ((double)(this["Count_Outlet"]));
+            }
+            set {
+                this["Count_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Spacing_Outlet {
+            get {
+                return ((double)(this["Spacing_Outlet"]));
+            }
+            set {
+                this["Spacing_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OffsetX_Outlet {
+            get {
+                return ((double)(this["OffsetX_Outlet"]));
+            }
+            set {
+                this["OffsetX_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ExtensionY_Outlet {
+            get {
+                return ((double)(this["ExtensionY_Outlet"]));
+            }
+            set {
+                this["ExtensionY_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ShiftZ_Outlet {
+            get {
+                return ((double)(this["ShiftZ_Outlet"]));
+            }
+            set {
+                this["ShiftZ_Outlet"] = value;
+            }
+        }
     }
 }

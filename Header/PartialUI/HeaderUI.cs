@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FileTools.CommonData.CommonData;
-using static Excel.Header_DataManager;
 using FileTools.Base;
 using System.Reflection;
 using SplashScreen;
@@ -25,13 +24,17 @@ namespace HDR
         private void LoadAllHeaderData()
         {
             // Automated
-            MapLocal_UI_To_DTO(this);
-            LoadHeaderData_FromApp("61");
-            LoadHeaderData_FromApp("62");
-            LoadHeaderData_FromApp("63");
-            LoadHeaderData_FromApp("64");
-            LoadHeaderData_FromApp("65");
-            LoadHeaderData_FromApp("66");
+            Header_DataManager.MapLocal_UI_To_DTO(this);
+            Header_DataManager.LoadHeaderData_FromApp("61");
+            Header_DataManager.LoadHeaderData_FromApp("62");
+            Header_DataManager.LoadHeaderData_FromApp("63");
+            Header_DataManager.LoadHeaderData_FromApp("64");
+            Header_DataManager.LoadHeaderData_FromApp("65");
+            Header_DataManager.LoadHeaderData_FromApp("66");
+
+            Connection_DataManager.MapLocal_UI_To_DTO(this);
+            Connection_DataManager.LoadConnectionData_FromApp("Inlet");
+            Connection_DataManager.LoadConnectionData_FromApp("Outlet");
 
             // Manual
             cIsBusted61.Checked = Header61.IsBusted;
@@ -68,14 +71,25 @@ namespace HDR
         #region Buttons
         private void bImportPrego_Click(object sender, EventArgs e)
         {
-            // Automated imports Double values from Prego
-            ImportHeaderData_FromPrego();
+            if (PregoDoc != null)
+            {
+                // Automated imports Double values from Prego
+                Header_DataManager.ImportHeaderData_FromPrego();
+                Connection_DataManager.ImportConnectionData_FromPrego();
 
-            // Manual imports for non-Double values
-            ImportHeaderData_FromPrego_Manual();
+                // Manual imports for non-Double values
+                ImportHeaderData_FromPrego_Manual();
 
-            // Excel
-            CleanUp();
+                // Excel
+                CleanUp();
+
+                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void HeaderUI_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -140,6 +154,14 @@ namespace HDR
         }
         #endregion
         #region Manual Event Handlers
+        private void cLocation_Inlet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(cLocation_Inlet.Text, x => InletFlange.Location = x);
+        }
+        private void cLocation_Outlet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UI_StringChanged(cLocation_Outlet.Text, x => OutletFlange.Location = x);
+        }
         private void job_Box_TextChanged(object sender, EventArgs e)
         {
             UI_StringChanged(job_Box.Text, x => Project = x);
@@ -153,42 +175,42 @@ namespace HDR
         private void cEnabled61_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled61.Checked, x => Header61.IsRequired = x);
-            LoadHeaderData_FromApp("61");
+            Header_DataManager.LoadHeaderData_FromApp("61");
 
             cIsBusted61.Enabled = Header61.IsRequired;
         }
         private void cEnabled62_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled62.Checked, x => Header62.IsRequired = x);
-            LoadHeaderData_FromApp("62");
+            Header_DataManager.LoadHeaderData_FromApp("62");
 
             cIsBusted62.Enabled = Header62.IsRequired;
         }
         private void cEnabled63_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled63.Checked, x => Header63.IsRequired = x);
-            LoadHeaderData_FromApp("63");
+            Header_DataManager.LoadHeaderData_FromApp("63");
 
             cIsBusted63.Enabled = Header63.IsRequired;
         }
         private void cEnabled64_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled64.Checked, x => Header64.IsRequired = x);
-            LoadHeaderData_FromApp("64");
+            Header_DataManager.LoadHeaderData_FromApp("64");
 
             cIsBusted64.Enabled = Header64.IsRequired;
         }
         private void cEnabled65_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled65.Checked, x => Header65.IsRequired = x);
-            LoadHeaderData_FromApp("65");
+            Header_DataManager.LoadHeaderData_FromApp("65");
 
             cIsBusted65.Enabled = Header65.IsRequired;
         }
         private void cEnabled66_CheckedChanged(object sender, EventArgs e)
         {
             UI_BoolChanged(cEnabled66.Checked, x => Header66.IsRequired = x);
-            LoadHeaderData_FromApp("66");
+            Header_DataManager.LoadHeaderData_FromApp("66");
 
             cIsBusted66.Enabled = Header66.IsRequired;
         }

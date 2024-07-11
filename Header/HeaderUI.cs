@@ -32,6 +32,10 @@ namespace HDR
             Header_TextChanged(this, "EndPlate");
             Header_TextChanged(this, "Tube");
             Header_TextChanged(this, "Stiffener");
+            Header_TextChanged(this, "Partition");
+
+            Connection_TextChanged(this, "Inlet");
+            Connection_TextChanged(this, "Outlet");
         }
     }
 }

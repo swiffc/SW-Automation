@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>PositionDataListProperty</Title>
-			<Shortcut>poslistprop</Shortcut>
-			<Description>Code snippet for a property that returns a List of PositionData with a getter, including translation variables</Description>
-			<Author>Your Name</Author>
-			<SnippetTypes>
-				<SnippetType>Expansion</SnippetType>
-			</SnippetTypes>
-		</Header>
-		<Snippet>
-			<Declarations>
-				<Literal>
-					<ID>type</ID>
-					<ToolTip>Property type</ToolTip>
-					<Default>List&lt;PositionData&gt;</Default>
-				</Literal>
-				<Literal>
-					<ID>propertyname</ID>
-					<ToolTip>The name of the property.</ToolTip>
-					<Default>Position</Default>
-				</Literal>
-			</Declarations>
-			<Code Language="csharp">
-				<![CDATA[
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>PositionDataListProperty</Title>
+            <Shortcut>poslistprop</Shortcut>
+            <Description>Code snippet for a property that returns a List of PositionData with a getter, including translation variables</Description>
+            <Author>Your Name</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Property type</ToolTip>
+                    <Default>List&lt;PositionData&gt;</Default>
+                </Literal>
+                <Literal>
+                    <ID>propertyname</ID>
+                    <ToolTip>The name of the property.</ToolTip>
+                    <Default>Position</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+	<![CDATA[
         public override $type$ $propertyname$
         {
             get
@@ -35,7 +35,7 @@
                     double yTranslation = 0;
                     double zTranslation = 0;
 
-                    return new $type$
+                    _pos = new $type$
                     {
                         PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation),
                     };
@@ -45,7 +45,7 @@
         }
         $end$
         ]]>
-			</Code>
-		</Snippet>
-	</CodeSnippet>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
 </CodeSnippets>

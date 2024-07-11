@@ -1096,42 +1096,6 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                     dictionary.Add(componentKey, null);
                     continue;
                 }
-
-
-
-
-
-
-
-                //// If not found, proceed to potentially instantiate a new component
-                //var matchingType = assembly.GetTypes()
-                //    .Where(type => type.IsClass && !type.IsAbstract)
-                //    .FirstOrDefault(type =>
-                //    {
-                //        var propInfo = type.GetProperty("StaticPartNo", BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-                //        if (propInfo != null && propInfo.GetMethod != null && propInfo.GetMethod.IsVirtual)
-                //        {
-                //            // Since no existing instance was found, instantiate a new one for comparison
-                //            object instance = null;
-                //            var constructorInfo = type.GetConstructor(new Type[] { typeof(MainAssembly) });
-                //            if (constructorInfo != null)
-                //            {
-                //                instance = constructorInfo.Invoke(new object[] { swAssembly });
-                //            }
-
-                //            if (instance != null)
-                //            {
-                //                var value = propInfo.GetValue(instance)?.ToString();
-                //                return value == staticNumber;
-                //            }
-                //        }
-                //        return false;
-                //    });
-
-                //if (matchingType != null)
-                //{
-                //    dictionary.Add(componentKey, matchingType);
-                //}
             }
 
             return dictionary;

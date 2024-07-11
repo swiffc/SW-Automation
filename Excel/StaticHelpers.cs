@@ -12,6 +12,8 @@ using TextBox = System.Windows.Forms.TextBox;
 using CheckBox = System.Windows.Forms.CheckBox;
 using FileTools.Base;
 using static FileTools.CommonData.CommonData;
+using FileTools.CommonData.Headers.Connections;
+using System.Diagnostics;
 
 namespace Excel
 {
@@ -84,6 +86,16 @@ namespace Excel
             control.Text = value;
             return (T)Convert.ChangeType(value, typeof(T));
         }
+        public static string LoadPregoString(Control control, Worksheet worksheet, params string[] cellNames)
+        {
+            var value = CellString(worksheet, cellNames);
+            if (value == null)
+            {
+                value = CellDouble(worksheet, cellNames).ToString();
+            }
+            control.Text = value;
+            return value;
+        }
         public static bool LoadPregoBool_NullOrEmpty(CheckBox checkBox, Worksheet worksheet, params string[] cellNames)
         {
             string value = CellString(worksheet, cellNames);
@@ -110,7 +122,7 @@ namespace Excel
             checkBox.Checked = enabled;
             return enabled;
         }
-        public static void ToggleTextbox_OnOff(UI_DTO headerControls)
+        public static void ToggleTextbox_OnOff(Header_DataManager.UI_DTO headerControls)
         {
             foreach (var property in headerControls.GetType().GetProperties())
             {
@@ -122,7 +134,19 @@ namespace Excel
                 }
             }
         }
-        public static void PushApplicationDataToTextbox(UI_DTO headerControls)
+        public static void ToggleTextbox_OnOff(Connection_DataManager.UI_DTO connectionControls)
+        {
+            foreach (var property in connectionControls.GetType().GetProperties())
+            {
+                if (property.PropertyType == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)property.GetValue(connectionControls);
+                    if (textBox != null)
+                        textBox.Enabled = connectionControls.Connection.Location != "None";
+                }
+            }
+        }
+        public static void PushApplicationDataToTextbox(Header_DataManager.UI_DTO headerControls)
         {
             foreach (var property in headerControls.Header.GetType().GetProperties())
             {
@@ -145,13 +169,48 @@ namespace Excel
                 }
             }
         }
-        public static void SetTextboxToEmptyString(UI_DTO headerControls)
+        public static void PushApplicationDataToTextbox(Connection_DataManager.UI_DTO connectionControls)
+        {
+            foreach (var property in connectionControls.Connection.GetType().GetProperties())
+            {
+                if (property.PropertyType == typeof(double))
+                {
+                    double value = (double)property.GetValue(connectionControls.Connection);
+                    Type connectionControlsType = connectionControls.GetType();
+
+                    string propertyName = property.Name + "TextBox";
+                    PropertyInfo propertyInfo = connectionControlsType.GetProperty(propertyName);
+
+                    if (propertyInfo != null)
+                    {
+                        TextBox textBox = (TextBox)propertyInfo.GetValue(connectionControls);
+                        if (textBox != null)
+                        {
+                            textBox.Text = value == 0 ? "" : value.ToString();
+                        }
+                    }
+                }
+            }
+        }
+        public static void SetTextboxToEmptyString(Header_DataManager.UI_DTO headerControls)
         {
             foreach (var property in headerControls.GetType().GetProperties())
             {
                 if (property.PropertyType == typeof(TextBox))
                 {
                     TextBox textBox = (TextBox)property.GetValue(headerControls);
+                    if (textBox != null)
+                        textBox.Text = "";
+                }
+            }
+        }
+        public static void SetTextboxToEmptyString(Connection_DataManager.UI_DTO connectionControls)
+        {
+            foreach (var property in connectionControls.GetType().GetProperties())
+            {
+                if (property.PropertyType == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)property.GetValue(connectionControls);
                     if (textBox != null)
                         textBox.Text = "";
                 }
@@ -177,10 +236,37 @@ namespace Excel
                     throw new ArgumentException($"Invalid index: {index}");
             }
         }
+        public static IConnection GetConnection(string name)
+        {
+            switch (name)
+            {
+                case "Inlet":
+                    return InletFlange;
+                    case "Outlet":
+                    return OutletFlange;
+                default:
+                    throw new ArgumentException($"Invalid index: {name}");
+            }
+        }
         public static T GetControl<T>(Form formInstance, string baseName, int index) where T : class
         {
             var controlName = $"{baseName}{index}";
             return formInstance.GetType().GetField(controlName, BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(formInstance) as T;
+        }
+        public static T GetControl<T>(Form formInstance, string baseName, string name) where T : class
+        {
+            var controlName = $"{baseName}{name}";
+
+            Type formType = formInstance.GetType();
+
+            var fieldInfo = formType.GetField(controlName, BindingFlags.Instance | BindingFlags.NonPublic);
+
+            var control = fieldInfo.GetValue(formInstance);
+
+            if (control is T typedControl)
+                return typedControl;
+            else
+                return null;
         }
         public static void HeaderTextBoxDoubleChanged(object sender, EventArgs e)
         {
@@ -202,6 +288,33 @@ namespace Excel
                             if (property != null && property.PropertyType == typeof(double))
                             {
                                 property.SetValue(header, value);
+                                SaveSettings();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public static void ConnectionTextBoxDoubleChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                var parts = textBox.Tag.ToString().Split(':');
+                if (parts.Length == 2)
+                {
+                    string ConnectionID = parts[0];
+                    string propertyName = parts[1];
+                    if (textBox.Text != "")
+                    {
+                        double value = double.TryParse(textBox.Text, out double parsedValue) ? parsedValue : 0;
+
+                        var connection = GetConnection(ConnectionID);
+                        if (connection != null)
+                        {
+                            var property = connection.GetType().GetProperty(propertyName);
+                            if (property != null && property.PropertyType == typeof(double))
+                            {
+                                property.SetValue(connection, value);
                                 SaveSettings();
                             }
                         }
@@ -259,6 +372,45 @@ namespace Excel
                 }
             }
         }
+        public static void Connection_TextChanged(Form formInstance, string propertyName)
+        {
+            foreach (Control foundTabControl in formInstance.Controls)
+            {
+                if (foundTabControl is TabControl tabControl)
+                {
+                    foreach (Control foundTabPage in tabControl.Controls)
+                    {
+                        if (foundTabPage is TabPage tabPage)
+                        {
+                            foreach (Control foundPanel in tabPage.Controls)
+                            {
+                                if (foundPanel is Panel panel)
+                                {
+                                    foreach (Control control in panel.Controls)
+                                    {
+                                        if (control is TextBox textBox && textBox.Name.EndsWith("_" + propertyName))
+                                        {
+                                            string suffix = textBox.Name.Substring(("t").Length);
+                                            string[] parts = suffix.Split('_');
+
+                                            if (parts.Length == 2)
+                                            {
+                                                string propertyType = parts[0];
+                                                string id = parts[1];
+                                                textBox.Tag = $"{propertyName}:{propertyType}";
+                                                textBox.TextChanged += ConnectionTextBoxDoubleChanged;
+                                            }
+                                            else throw new ArgumentException("Invalid TextBox name format");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
 
     }
 }
