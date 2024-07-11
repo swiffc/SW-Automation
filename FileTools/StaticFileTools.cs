@@ -839,7 +839,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
             if (swAssembly.ComponentArray != null)
             {
                 var subComponentStaticNumbers = AssignConfigToComponent(swAssembly.ComponentArray);
-                var subComponentTypes = DetermineComponentTypes(subComponentStaticNumbers, swAssembly);
+                var subComponentTypes = DetermineComponentTypes(subComponentStaticNumbers);
                 var componentsToDelete = IdentifyComponentsToDelete(subComponentTypes, swAssembly.ComponentArray);
 
                 RemoveComponents(componentsToDelete, swAssembly.AssemblyDoc);
@@ -1071,18 +1071,18 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
 
             return dictionary;
         }
-        private static Dictionary<Component2, Type> DetermineComponentTypes(Dictionary<Component2, string> staticNumbers, SW_Assembly swAssembly)
+        private static Dictionary<Component2, Type> DetermineComponentTypes(Dictionary<Component2, string> staticNumbers)
         {
             var dictionary = new Dictionary<Component2, Type>();
-            Assembly assembly = Assembly.GetAssembly(swAssembly.GetType());
 
             foreach (var kvp in staticNumbers)
             {
                 var componentKey = kvp.Key;
                 var staticNumber = kvp.Value;
+                var fileName = Path.GetFileNameWithoutExtension(componentKey.GetPathName());
 
                 // First, try to find an existing component by its StaticPartNo
-                var existingComponent = ComponentRegistry.GetComponentByPartNo(staticNumber);
+                var existingComponent = ComponentRegistry.GetComponentByPartNo(staticNumber, fileName);
 
                 if (existingComponent != null)
                 {
@@ -1108,14 +1108,15 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
             {
                 Component2 component = kvp.Key;
                 Type componentType = kvp.Value;
+                string fileName = Path.GetFileNameWithoutExtension(component.GetPathName());
 
                 // Attempt to get the type directly from the registry using known StaticPartNo
-                Type registeredType = ComponentRegistry.GetComponentTypeByPartNo(component.ReferencedConfiguration);
+                Type registeredType = ComponentRegistry.GetComponentTypeByPartNo(component.ReferencedConfiguration, fileName);
 
                 if (registeredType != null && registeredType == componentType)
                 {
                     // If the type matches and you need to check if it's enabled, retrieve the instance
-                    var instance = ComponentRegistry.GetComponentByPartNo(component.ReferencedConfiguration);
+                    var instance = ComponentRegistry.GetComponentByPartNo(component.ReferencedConfiguration, fileName);
 
                     // Handles local part instances
                     if (instance != null && !instance.Enabled)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace FileTools.Base
 {
@@ -13,21 +14,23 @@ namespace FileTools.Base
         }
 
         // Modify the dictionary to store ComponentEntry
-        private static readonly Dictionary<string, ComponentEntry> _componentsByPartNo = new Dictionary<string, ComponentEntry>();
+        private static readonly Dictionary<(string, string), ComponentEntry> _componentsByPartNo = new Dictionary<(string StaticPartNo, string FileName), ComponentEntry>();
 
         public static void RegisterComponent(IComponentInfo2 component)
         {
             if (component != null && !string.IsNullOrWhiteSpace(component.StaticPartNo))
             {
                 // Store both the instance and its type in the dictionary
-                _componentsByPartNo[component.StaticPartNo] = new ComponentEntry { Instance = component, ComponentType = component.GetType() };
+                string staticPartNo = component.StaticPartNo;
+                string fileName = Path.GetFileNameWithoutExtension(component.FilePath);
+                _componentsByPartNo[(staticPartNo, fileName)] = new ComponentEntry { Instance = component, ComponentType = component.GetType() };
             }
         }
 
         // Method to get a component by StaticPartNo
-        public static IComponentInfo2 GetComponentByPartNo(string partNo)
+        public static IComponentInfo2 GetComponentByPartNo(string partNo, string fileNameWithoutExtension)
         {
-            if (_componentsByPartNo.TryGetValue(partNo, out var entry))
+            if (_componentsByPartNo.TryGetValue((partNo, fileNameWithoutExtension), out var entry))
             {
                 return entry.Instance;
             }
@@ -36,9 +39,9 @@ namespace FileTools.Base
         }
 
         // New method to get a component's type by StaticPartNo
-        public static Type GetComponentTypeByPartNo(string partNo)
+        public static Type GetComponentTypeByPartNo(string partNo, string fileNameWithoutExtension)
         {
-            if (_componentsByPartNo.TryGetValue(partNo, out var entry))
+            if (_componentsByPartNo.TryGetValue((partNo, fileNameWithoutExtension), out var entry))
             {
                 return entry.ComponentType;
             }
