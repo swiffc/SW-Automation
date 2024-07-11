@@ -7450,5 +7450,77 @@ namespace FileTools.Properties {
                 this["ShiftZ_Outlet"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double EndPlateBustedSpan2_61 {
+            get {
+                return ((double)(this["EndPlateBustedSpan2_61"]));
+            }
+            set {
+                this["EndPlateBustedSpan2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double EndPlateBustedSpan2_62 {
+            get {
+                return ((double)(this["EndPlateBustedSpan2_62"]));
+            }
+            set {
+                this["EndPlateBustedSpan2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double EndPlateBustedSpan2_63 {
+            get {
+                return ((double)(this["EndPlateBustedSpan2_63"]));
+            }
+            set {
+                this["EndPlateBustedSpan2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double EndPlateBustedSpan2_64 {
+            get {
+                return ((double)(this["EndPlateBustedSpan2_64"]));
+            }
+            set {
+                this["EndPlateBustedSpan2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double EndPlateBustedSpan2_65 {
+            get {
+                return ((double)(this["EndPlateBustedSpan2_65"]));
+            }
+            set {
+                this["EndPlateBustedSpan2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double EndPlateBustedSpan2_66 {
+            get {
+                return ((double)(this["EndPlateBustedSpan2_66"]));
+            }
+            set {
+                this["EndPlateBustedSpan2_66"] = value;
+            }
+        }
     }
 }

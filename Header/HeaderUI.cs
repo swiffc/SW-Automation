@@ -37,5 +37,15 @@ namespace HDR
             Connection_TextChanged(this, "Inlet");
             Connection_TextChanged(this, "Outlet");
         }
+
+        private void cLocation_Outlet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cLocation_Inlet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

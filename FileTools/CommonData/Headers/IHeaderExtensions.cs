@@ -83,6 +83,8 @@ namespace FileTools.Base
         double PartitionWidth { get; set; }
         double PartitionBelowRow { get; set; }
         double PartitionDistanceBelow { get; set; }
+
+        double EndPlateBustedSpan2 { get; set; }
     }
 
 

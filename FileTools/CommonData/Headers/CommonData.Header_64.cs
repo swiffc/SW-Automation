@@ -321,6 +321,11 @@ namespace FileTools.CommonData
                 get => Default.PartitionDistanceBelow_64;
                 set => Default.PartitionDistanceBelow_64 = value;
             }
+            public double EndPlateBustedSpan2
+            {
+                get => Default.EndPlateBustedSpan2_64;
+                set => Default.EndPlateBustedSpan2_64 = value;
+            }
 
         }
     }

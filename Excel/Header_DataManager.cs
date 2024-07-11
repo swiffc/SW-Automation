@@ -174,6 +174,7 @@ namespace Excel
             public TextBox FlangeTopOffsetYTextBox { get; set; }
             public TextBox FlangeTopCountTextBox { get; set; }
             public TextBox FlangeTopSpacingTextBox { get; set; }
+            public TextBox EndPlateBustedSpan2TextBox { get; set; }
         }
 
 
@@ -261,6 +262,7 @@ namespace Excel
                     FlangeTopOffsetYTextBox = GetControl<TextBox>(formInstance, "tFlangeTopOffsetY_", i),
                     FlangeTopCountTextBox = GetControl<TextBox>(formInstance, "tFlangeTopCount_", i),
                     FlangeTopSpacingTextBox = GetControl<TextBox>(formInstance, "tFlangeTopSpacing_", i),
+                    EndPlateBustedSpan2TextBox = GetControl<TextBox>(formInstance, "tEndPlateBustedSpan2_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);

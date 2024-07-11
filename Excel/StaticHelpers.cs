@@ -410,7 +410,16 @@ namespace Excel
                 }
             }
         }
-
+        public static void AssignSpans(Action<double> setProperty, TextBox textBox, int index, List<double> bustedSpans)
+        {
+            index -= 1; // Adjusting index to be zero-based
+            if (bustedSpans.Count > index)
+            {
+                double value = bustedSpans[index];
+                setProperty(value);
+                textBox.Text = value.ToString();
+            }
+        }
 
     }
 }

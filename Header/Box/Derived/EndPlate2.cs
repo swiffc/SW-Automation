@@ -16,9 +16,9 @@ namespace HDR.Box.Derived
 
 
         // Property overrides
-        public override bool Enabled => BustSpans.Count >= 2;
-        public override double Length => BustSpans[1];
+        public override bool Enabled => Header.EndPlateBustedSpan2 != 0 && IsBusted;
         public override string PartNo => "AE";
+        protected override double LocalLength => Length2;
         public override string StaticPartNo => "EndPlate";
         public override List<PositionData> Position
         {
@@ -30,7 +30,7 @@ namespace HDR.Box.Derived
                     double yTranslation;
                     if (Header.IsBusted)
                     {
-                        yTranslation = - BustSpans[0] - BustSpans[1] / 2 - (Header.BoxHeight - BustSpans[0] - BustSpans[1]);
+                        yTranslation = - Length1 - Length2 / 2 - (Header.BoxHeight - Length1 - Length2);
                     }
                     else
                     {
@@ -48,6 +48,9 @@ namespace HDR.Box.Derived
             }
         }
 
+
+        // Wrapper properties
+        public double Length2 => Header.EndPlateBustedSpan2;
 
     }
 }

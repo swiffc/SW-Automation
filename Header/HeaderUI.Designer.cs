@@ -582,6 +582,20 @@
             this.test64 = new System.Windows.Forms.Button();
             this.test65 = new System.Windows.Forms.Button();
             this.test66 = new System.Windows.Forms.Button();
+            this.tEndPlateBustedSpan2_66 = new System.Windows.Forms.TextBox();
+            this.tEndPlateBustedSpan2_62 = new System.Windows.Forms.TextBox();
+            this.tEndPlateBustedSpan2_61 = new System.Windows.Forms.TextBox();
+            this.tEndPlateBustedSpan2_63 = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.tEndPlateBustedSpan2_64 = new System.Windows.Forms.TextBox();
+            this.tEndPlateBustedSpan2_65 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.label82 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.connectionPanel.SuspendLayout();
@@ -615,6 +629,13 @@
             // connectionPanel
             // 
             this.connectionPanel.AutoScroll = true;
+            this.connectionPanel.Controls.Add(this.comboBox1);
+            this.connectionPanel.Controls.Add(this.comboBox6);
+            this.connectionPanel.Controls.Add(this.comboBox7);
+            this.connectionPanel.Controls.Add(this.comboBox8);
+            this.connectionPanel.Controls.Add(this.comboBox9);
+            this.connectionPanel.Controls.Add(this.comboBox10);
+            this.connectionPanel.Controls.Add(this.label82);
             this.connectionPanel.Controls.Add(this.textBox39);
             this.connectionPanel.Controls.Add(this.tExtensionY_Outlet);
             this.connectionPanel.Controls.Add(this.tExtensionY_Inlet);
@@ -1851,6 +1872,13 @@
             // HeaderPanel
             // 
             this.HeaderPanel.AutoScroll = true;
+            this.HeaderPanel.Controls.Add(this.tEndPlateBustedSpan2_66);
+            this.HeaderPanel.Controls.Add(this.tEndPlateBustedSpan2_62);
+            this.HeaderPanel.Controls.Add(this.tEndPlateBustedSpan2_61);
+            this.HeaderPanel.Controls.Add(this.tEndPlateBustedSpan2_63);
+            this.HeaderPanel.Controls.Add(this.label87);
+            this.HeaderPanel.Controls.Add(this.tEndPlateBustedSpan2_64);
+            this.HeaderPanel.Controls.Add(this.tEndPlateBustedSpan2_65);
             this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_66);
             this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_62);
             this.HeaderPanel.Controls.Add(this.tPartitionDistanceBelow_61);
@@ -2263,7 +2291,7 @@
             // 
             // tPartitionDistanceBelow_66
             // 
-            this.tPartitionDistanceBelow_66.Location = new System.Drawing.Point(3, 1515);
+            this.tPartitionDistanceBelow_66.Location = new System.Drawing.Point(3, 1618);
             this.tPartitionDistanceBelow_66.Name = "tPartitionDistanceBelow_66";
             this.tPartitionDistanceBelow_66.Size = new System.Drawing.Size(67, 20);
             this.tPartitionDistanceBelow_66.TabIndex = 597;
@@ -2271,7 +2299,7 @@
             // 
             // tPartitionDistanceBelow_62
             // 
-            this.tPartitionDistanceBelow_62.Location = new System.Drawing.Point(289, 1515);
+            this.tPartitionDistanceBelow_62.Location = new System.Drawing.Point(289, 1618);
             this.tPartitionDistanceBelow_62.Name = "tPartitionDistanceBelow_62";
             this.tPartitionDistanceBelow_62.Size = new System.Drawing.Size(67, 20);
             this.tPartitionDistanceBelow_62.TabIndex = 592;
@@ -2279,7 +2307,7 @@
             // 
             // tPartitionDistanceBelow_61
             // 
-            this.tPartitionDistanceBelow_61.Location = new System.Drawing.Point(362, 1515);
+            this.tPartitionDistanceBelow_61.Location = new System.Drawing.Point(362, 1618);
             this.tPartitionDistanceBelow_61.Name = "tPartitionDistanceBelow_61";
             this.tPartitionDistanceBelow_61.Size = new System.Drawing.Size(64, 20);
             this.tPartitionDistanceBelow_61.TabIndex = 591;
@@ -2287,7 +2315,7 @@
             // 
             // tPartitionDistanceBelow_63
             // 
-            this.tPartitionDistanceBelow_63.Location = new System.Drawing.Point(219, 1515);
+            this.tPartitionDistanceBelow_63.Location = new System.Drawing.Point(219, 1618);
             this.tPartitionDistanceBelow_63.Name = "tPartitionDistanceBelow_63";
             this.tPartitionDistanceBelow_63.Size = new System.Drawing.Size(64, 20);
             this.tPartitionDistanceBelow_63.TabIndex = 594;
@@ -2297,7 +2325,7 @@
             // 
             this.label64.AutoSize = true;
             this.label64.BackColor = System.Drawing.Color.White;
-            this.label64.Location = new System.Drawing.Point(432, 1519);
+            this.label64.Location = new System.Drawing.Point(432, 1622);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(166, 13);
             this.label64.TabIndex = 593;
@@ -2305,7 +2333,7 @@
             // 
             // tPartitionDistanceBelow_64
             // 
-            this.tPartitionDistanceBelow_64.Location = new System.Drawing.Point(146, 1515);
+            this.tPartitionDistanceBelow_64.Location = new System.Drawing.Point(146, 1618);
             this.tPartitionDistanceBelow_64.Name = "tPartitionDistanceBelow_64";
             this.tPartitionDistanceBelow_64.Size = new System.Drawing.Size(67, 20);
             this.tPartitionDistanceBelow_64.TabIndex = 595;
@@ -2313,7 +2341,7 @@
             // 
             // tPartitionDistanceBelow_65
             // 
-            this.tPartitionDistanceBelow_65.Location = new System.Drawing.Point(76, 1515);
+            this.tPartitionDistanceBelow_65.Location = new System.Drawing.Point(76, 1618);
             this.tPartitionDistanceBelow_65.Name = "tPartitionDistanceBelow_65";
             this.tPartitionDistanceBelow_65.Size = new System.Drawing.Size(64, 20);
             this.tPartitionDistanceBelow_65.TabIndex = 596;
@@ -2321,7 +2349,7 @@
             // 
             // tPartitionBelowRow_66
             // 
-            this.tPartitionBelowRow_66.Location = new System.Drawing.Point(3, 1489);
+            this.tPartitionBelowRow_66.Location = new System.Drawing.Point(3, 1592);
             this.tPartitionBelowRow_66.Name = "tPartitionBelowRow_66";
             this.tPartitionBelowRow_66.Size = new System.Drawing.Size(67, 20);
             this.tPartitionBelowRow_66.TabIndex = 590;
@@ -2329,7 +2357,7 @@
             // 
             // tPartitionBelowRow_62
             // 
-            this.tPartitionBelowRow_62.Location = new System.Drawing.Point(289, 1489);
+            this.tPartitionBelowRow_62.Location = new System.Drawing.Point(289, 1592);
             this.tPartitionBelowRow_62.Name = "tPartitionBelowRow_62";
             this.tPartitionBelowRow_62.Size = new System.Drawing.Size(67, 20);
             this.tPartitionBelowRow_62.TabIndex = 585;
@@ -2337,7 +2365,7 @@
             // 
             // tPartitionBelowRow_61
             // 
-            this.tPartitionBelowRow_61.Location = new System.Drawing.Point(362, 1489);
+            this.tPartitionBelowRow_61.Location = new System.Drawing.Point(362, 1592);
             this.tPartitionBelowRow_61.Name = "tPartitionBelowRow_61";
             this.tPartitionBelowRow_61.Size = new System.Drawing.Size(64, 20);
             this.tPartitionBelowRow_61.TabIndex = 584;
@@ -2345,7 +2373,7 @@
             // 
             // tPartitionBelowRow_63
             // 
-            this.tPartitionBelowRow_63.Location = new System.Drawing.Point(219, 1489);
+            this.tPartitionBelowRow_63.Location = new System.Drawing.Point(219, 1592);
             this.tPartitionBelowRow_63.Name = "tPartitionBelowRow_63";
             this.tPartitionBelowRow_63.Size = new System.Drawing.Size(64, 20);
             this.tPartitionBelowRow_63.TabIndex = 587;
@@ -2355,7 +2383,7 @@
             // 
             this.label63.AutoSize = true;
             this.label63.BackColor = System.Drawing.Color.White;
-            this.label63.Location = new System.Drawing.Point(432, 1493);
+            this.label63.Location = new System.Drawing.Point(432, 1596);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(156, 13);
             this.label63.TabIndex = 586;
@@ -2363,7 +2391,7 @@
             // 
             // tPartitionBelowRow_64
             // 
-            this.tPartitionBelowRow_64.Location = new System.Drawing.Point(146, 1489);
+            this.tPartitionBelowRow_64.Location = new System.Drawing.Point(146, 1592);
             this.tPartitionBelowRow_64.Name = "tPartitionBelowRow_64";
             this.tPartitionBelowRow_64.Size = new System.Drawing.Size(67, 20);
             this.tPartitionBelowRow_64.TabIndex = 588;
@@ -2371,7 +2399,7 @@
             // 
             // tPartitionBelowRow_65
             // 
-            this.tPartitionBelowRow_65.Location = new System.Drawing.Point(76, 1489);
+            this.tPartitionBelowRow_65.Location = new System.Drawing.Point(76, 1592);
             this.tPartitionBelowRow_65.Name = "tPartitionBelowRow_65";
             this.tPartitionBelowRow_65.Size = new System.Drawing.Size(64, 20);
             this.tPartitionBelowRow_65.TabIndex = 589;
@@ -2379,7 +2407,7 @@
             // 
             // tPartitionWidth_66
             // 
-            this.tPartitionWidth_66.Location = new System.Drawing.Point(3, 1463);
+            this.tPartitionWidth_66.Location = new System.Drawing.Point(3, 1566);
             this.tPartitionWidth_66.Name = "tPartitionWidth_66";
             this.tPartitionWidth_66.Size = new System.Drawing.Size(67, 20);
             this.tPartitionWidth_66.TabIndex = 583;
@@ -2387,7 +2415,7 @@
             // 
             // tPartitionWidth_62
             // 
-            this.tPartitionWidth_62.Location = new System.Drawing.Point(289, 1463);
+            this.tPartitionWidth_62.Location = new System.Drawing.Point(289, 1566);
             this.tPartitionWidth_62.Name = "tPartitionWidth_62";
             this.tPartitionWidth_62.Size = new System.Drawing.Size(67, 20);
             this.tPartitionWidth_62.TabIndex = 578;
@@ -2395,7 +2423,7 @@
             // 
             // tPartitionWidth_61
             // 
-            this.tPartitionWidth_61.Location = new System.Drawing.Point(362, 1463);
+            this.tPartitionWidth_61.Location = new System.Drawing.Point(362, 1566);
             this.tPartitionWidth_61.Name = "tPartitionWidth_61";
             this.tPartitionWidth_61.Size = new System.Drawing.Size(64, 20);
             this.tPartitionWidth_61.TabIndex = 577;
@@ -2403,7 +2431,7 @@
             // 
             // tPartitionWidth_63
             // 
-            this.tPartitionWidth_63.Location = new System.Drawing.Point(219, 1463);
+            this.tPartitionWidth_63.Location = new System.Drawing.Point(219, 1566);
             this.tPartitionWidth_63.Name = "tPartitionWidth_63";
             this.tPartitionWidth_63.Size = new System.Drawing.Size(64, 20);
             this.tPartitionWidth_63.TabIndex = 580;
@@ -2413,7 +2441,7 @@
             // 
             this.label62.AutoSize = true;
             this.label62.BackColor = System.Drawing.Color.White;
-            this.label62.Location = new System.Drawing.Point(432, 1467);
+            this.label62.Location = new System.Drawing.Point(432, 1570);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(88, 13);
             this.label62.TabIndex = 579;
@@ -2421,7 +2449,7 @@
             // 
             // tPartitionWidth_64
             // 
-            this.tPartitionWidth_64.Location = new System.Drawing.Point(146, 1463);
+            this.tPartitionWidth_64.Location = new System.Drawing.Point(146, 1566);
             this.tPartitionWidth_64.Name = "tPartitionWidth_64";
             this.tPartitionWidth_64.Size = new System.Drawing.Size(67, 20);
             this.tPartitionWidth_64.TabIndex = 581;
@@ -2429,7 +2457,7 @@
             // 
             // tPartitionWidth_65
             // 
-            this.tPartitionWidth_65.Location = new System.Drawing.Point(76, 1463);
+            this.tPartitionWidth_65.Location = new System.Drawing.Point(76, 1566);
             this.tPartitionWidth_65.Name = "tPartitionWidth_65";
             this.tPartitionWidth_65.Size = new System.Drawing.Size(64, 20);
             this.tPartitionWidth_65.TabIndex = 582;
@@ -2437,7 +2465,7 @@
             // 
             // tPartitionTHK_66
             // 
-            this.tPartitionTHK_66.Location = new System.Drawing.Point(3, 1437);
+            this.tPartitionTHK_66.Location = new System.Drawing.Point(3, 1540);
             this.tPartitionTHK_66.Name = "tPartitionTHK_66";
             this.tPartitionTHK_66.Size = new System.Drawing.Size(67, 20);
             this.tPartitionTHK_66.TabIndex = 576;
@@ -2445,7 +2473,7 @@
             // 
             // tPartitionTHK_62
             // 
-            this.tPartitionTHK_62.Location = new System.Drawing.Point(289, 1437);
+            this.tPartitionTHK_62.Location = new System.Drawing.Point(289, 1540);
             this.tPartitionTHK_62.Name = "tPartitionTHK_62";
             this.tPartitionTHK_62.Size = new System.Drawing.Size(67, 20);
             this.tPartitionTHK_62.TabIndex = 571;
@@ -2453,7 +2481,7 @@
             // 
             // tPartitionTHK_61
             // 
-            this.tPartitionTHK_61.Location = new System.Drawing.Point(362, 1437);
+            this.tPartitionTHK_61.Location = new System.Drawing.Point(362, 1540);
             this.tPartitionTHK_61.Name = "tPartitionTHK_61";
             this.tPartitionTHK_61.Size = new System.Drawing.Size(64, 20);
             this.tPartitionTHK_61.TabIndex = 570;
@@ -2461,7 +2489,7 @@
             // 
             // tPartitionTHK_63
             // 
-            this.tPartitionTHK_63.Location = new System.Drawing.Point(219, 1437);
+            this.tPartitionTHK_63.Location = new System.Drawing.Point(219, 1540);
             this.tPartitionTHK_63.Name = "tPartitionTHK_63";
             this.tPartitionTHK_63.Size = new System.Drawing.Size(64, 20);
             this.tPartitionTHK_63.TabIndex = 573;
@@ -2471,7 +2499,7 @@
             // 
             this.label61.AutoSize = true;
             this.label61.BackColor = System.Drawing.Color.White;
-            this.label61.Location = new System.Drawing.Point(432, 1441);
+            this.label61.Location = new System.Drawing.Point(432, 1544);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(73, 13);
             this.label61.TabIndex = 572;
@@ -2479,7 +2507,7 @@
             // 
             // tPartitionTHK_64
             // 
-            this.tPartitionTHK_64.Location = new System.Drawing.Point(146, 1437);
+            this.tPartitionTHK_64.Location = new System.Drawing.Point(146, 1540);
             this.tPartitionTHK_64.Name = "tPartitionTHK_64";
             this.tPartitionTHK_64.Size = new System.Drawing.Size(67, 20);
             this.tPartitionTHK_64.TabIndex = 574;
@@ -2487,7 +2515,7 @@
             // 
             // tPartitionTHK_65
             // 
-            this.tPartitionTHK_65.Location = new System.Drawing.Point(76, 1437);
+            this.tPartitionTHK_65.Location = new System.Drawing.Point(76, 1540);
             this.tPartitionTHK_65.Name = "tPartitionTHK_65";
             this.tPartitionTHK_65.Size = new System.Drawing.Size(64, 20);
             this.tPartitionTHK_65.TabIndex = 575;
@@ -2495,7 +2523,7 @@
             // 
             // tStiffenerWindowOffset_66
             // 
-            this.tStiffenerWindowOffset_66.Location = new System.Drawing.Point(3, 1402);
+            this.tStiffenerWindowOffset_66.Location = new System.Drawing.Point(3, 1505);
             this.tStiffenerWindowOffset_66.Name = "tStiffenerWindowOffset_66";
             this.tStiffenerWindowOffset_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowOffset_66.TabIndex = 569;
@@ -2503,7 +2531,7 @@
             // 
             // tStiffenerWindowOffset_62
             // 
-            this.tStiffenerWindowOffset_62.Location = new System.Drawing.Point(289, 1402);
+            this.tStiffenerWindowOffset_62.Location = new System.Drawing.Point(289, 1505);
             this.tStiffenerWindowOffset_62.Name = "tStiffenerWindowOffset_62";
             this.tStiffenerWindowOffset_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowOffset_62.TabIndex = 564;
@@ -2511,7 +2539,7 @@
             // 
             // tStiffenerWindowOffset_61
             // 
-            this.tStiffenerWindowOffset_61.Location = new System.Drawing.Point(362, 1402);
+            this.tStiffenerWindowOffset_61.Location = new System.Drawing.Point(362, 1505);
             this.tStiffenerWindowOffset_61.Name = "tStiffenerWindowOffset_61";
             this.tStiffenerWindowOffset_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowOffset_61.TabIndex = 563;
@@ -2519,7 +2547,7 @@
             // 
             // tStiffenerWindowOffset_63
             // 
-            this.tStiffenerWindowOffset_63.Location = new System.Drawing.Point(219, 1402);
+            this.tStiffenerWindowOffset_63.Location = new System.Drawing.Point(219, 1505);
             this.tStiffenerWindowOffset_63.Name = "tStiffenerWindowOffset_63";
             this.tStiffenerWindowOffset_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowOffset_63.TabIndex = 566;
@@ -2529,7 +2557,7 @@
             // 
             this.label60.AutoSize = true;
             this.label60.BackColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(432, 1406);
+            this.label60.Location = new System.Drawing.Point(432, 1509);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(135, 13);
             this.label60.TabIndex = 565;
@@ -2537,7 +2565,7 @@
             // 
             // tStiffenerWindowOffset_64
             // 
-            this.tStiffenerWindowOffset_64.Location = new System.Drawing.Point(146, 1402);
+            this.tStiffenerWindowOffset_64.Location = new System.Drawing.Point(146, 1505);
             this.tStiffenerWindowOffset_64.Name = "tStiffenerWindowOffset_64";
             this.tStiffenerWindowOffset_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowOffset_64.TabIndex = 567;
@@ -2545,7 +2573,7 @@
             // 
             // tStiffenerWindowOffset_65
             // 
-            this.tStiffenerWindowOffset_65.Location = new System.Drawing.Point(76, 1402);
+            this.tStiffenerWindowOffset_65.Location = new System.Drawing.Point(76, 1505);
             this.tStiffenerWindowOffset_65.Name = "tStiffenerWindowOffset_65";
             this.tStiffenerWindowOffset_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowOffset_65.TabIndex = 568;
@@ -2553,7 +2581,7 @@
             // 
             // tStiffenerWindowSpacing_66
             // 
-            this.tStiffenerWindowSpacing_66.Location = new System.Drawing.Point(3, 1376);
+            this.tStiffenerWindowSpacing_66.Location = new System.Drawing.Point(3, 1479);
             this.tStiffenerWindowSpacing_66.Name = "tStiffenerWindowSpacing_66";
             this.tStiffenerWindowSpacing_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowSpacing_66.TabIndex = 562;
@@ -2561,7 +2589,7 @@
             // 
             // tStiffenerWindowSpacing_62
             // 
-            this.tStiffenerWindowSpacing_62.Location = new System.Drawing.Point(289, 1376);
+            this.tStiffenerWindowSpacing_62.Location = new System.Drawing.Point(289, 1479);
             this.tStiffenerWindowSpacing_62.Name = "tStiffenerWindowSpacing_62";
             this.tStiffenerWindowSpacing_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowSpacing_62.TabIndex = 557;
@@ -2569,7 +2597,7 @@
             // 
             // tStiffenerWindowSpacing_61
             // 
-            this.tStiffenerWindowSpacing_61.Location = new System.Drawing.Point(362, 1376);
+            this.tStiffenerWindowSpacing_61.Location = new System.Drawing.Point(362, 1479);
             this.tStiffenerWindowSpacing_61.Name = "tStiffenerWindowSpacing_61";
             this.tStiffenerWindowSpacing_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowSpacing_61.TabIndex = 556;
@@ -2577,7 +2605,7 @@
             // 
             // tStiffenerWindowSpacing_63
             // 
-            this.tStiffenerWindowSpacing_63.Location = new System.Drawing.Point(219, 1376);
+            this.tStiffenerWindowSpacing_63.Location = new System.Drawing.Point(219, 1479);
             this.tStiffenerWindowSpacing_63.Name = "tStiffenerWindowSpacing_63";
             this.tStiffenerWindowSpacing_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowSpacing_63.TabIndex = 559;
@@ -2587,7 +2615,7 @@
             // 
             this.label59.AutoSize = true;
             this.label59.BackColor = System.Drawing.Color.White;
-            this.label59.Location = new System.Drawing.Point(432, 1380);
+            this.label59.Location = new System.Drawing.Point(432, 1483);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(146, 13);
             this.label59.TabIndex = 558;
@@ -2595,7 +2623,7 @@
             // 
             // tStiffenerWindowSpacing_64
             // 
-            this.tStiffenerWindowSpacing_64.Location = new System.Drawing.Point(146, 1376);
+            this.tStiffenerWindowSpacing_64.Location = new System.Drawing.Point(146, 1479);
             this.tStiffenerWindowSpacing_64.Name = "tStiffenerWindowSpacing_64";
             this.tStiffenerWindowSpacing_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowSpacing_64.TabIndex = 560;
@@ -2603,7 +2631,7 @@
             // 
             // tStiffenerWindowSpacing_65
             // 
-            this.tStiffenerWindowSpacing_65.Location = new System.Drawing.Point(76, 1376);
+            this.tStiffenerWindowSpacing_65.Location = new System.Drawing.Point(76, 1479);
             this.tStiffenerWindowSpacing_65.Name = "tStiffenerWindowSpacing_65";
             this.tStiffenerWindowSpacing_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowSpacing_65.TabIndex = 561;
@@ -2611,7 +2639,7 @@
             // 
             // tStiffenerWindowQuantity_66
             // 
-            this.tStiffenerWindowQuantity_66.Location = new System.Drawing.Point(3, 1350);
+            this.tStiffenerWindowQuantity_66.Location = new System.Drawing.Point(3, 1453);
             this.tStiffenerWindowQuantity_66.Name = "tStiffenerWindowQuantity_66";
             this.tStiffenerWindowQuantity_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowQuantity_66.TabIndex = 555;
@@ -2619,7 +2647,7 @@
             // 
             // tStiffenerWindowQuantity_62
             // 
-            this.tStiffenerWindowQuantity_62.Location = new System.Drawing.Point(289, 1350);
+            this.tStiffenerWindowQuantity_62.Location = new System.Drawing.Point(289, 1453);
             this.tStiffenerWindowQuantity_62.Name = "tStiffenerWindowQuantity_62";
             this.tStiffenerWindowQuantity_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowQuantity_62.TabIndex = 550;
@@ -2627,7 +2655,7 @@
             // 
             // tStiffenerWindowQuantity_61
             // 
-            this.tStiffenerWindowQuantity_61.Location = new System.Drawing.Point(362, 1350);
+            this.tStiffenerWindowQuantity_61.Location = new System.Drawing.Point(362, 1453);
             this.tStiffenerWindowQuantity_61.Name = "tStiffenerWindowQuantity_61";
             this.tStiffenerWindowQuantity_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowQuantity_61.TabIndex = 549;
@@ -2635,7 +2663,7 @@
             // 
             // tStiffenerWindowQuantity_63
             // 
-            this.tStiffenerWindowQuantity_63.Location = new System.Drawing.Point(219, 1350);
+            this.tStiffenerWindowQuantity_63.Location = new System.Drawing.Point(219, 1453);
             this.tStiffenerWindowQuantity_63.Name = "tStiffenerWindowQuantity_63";
             this.tStiffenerWindowQuantity_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowQuantity_63.TabIndex = 552;
@@ -2645,7 +2673,7 @@
             // 
             this.label58.AutoSize = true;
             this.label58.BackColor = System.Drawing.Color.White;
-            this.label58.Location = new System.Drawing.Point(432, 1354);
+            this.label58.Location = new System.Drawing.Point(432, 1457);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(146, 13);
             this.label58.TabIndex = 551;
@@ -2653,7 +2681,7 @@
             // 
             // tStiffenerWindowQuantity_64
             // 
-            this.tStiffenerWindowQuantity_64.Location = new System.Drawing.Point(146, 1350);
+            this.tStiffenerWindowQuantity_64.Location = new System.Drawing.Point(146, 1453);
             this.tStiffenerWindowQuantity_64.Name = "tStiffenerWindowQuantity_64";
             this.tStiffenerWindowQuantity_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowQuantity_64.TabIndex = 553;
@@ -2661,7 +2689,7 @@
             // 
             // tStiffenerWindowQuantity_65
             // 
-            this.tStiffenerWindowQuantity_65.Location = new System.Drawing.Point(76, 1350);
+            this.tStiffenerWindowQuantity_65.Location = new System.Drawing.Point(76, 1453);
             this.tStiffenerWindowQuantity_65.Name = "tStiffenerWindowQuantity_65";
             this.tStiffenerWindowQuantity_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowQuantity_65.TabIndex = 554;
@@ -2669,7 +2697,7 @@
             // 
             // tStiffenerWindowLength_66
             // 
-            this.tStiffenerWindowLength_66.Location = new System.Drawing.Point(3, 1324);
+            this.tStiffenerWindowLength_66.Location = new System.Drawing.Point(3, 1427);
             this.tStiffenerWindowLength_66.Name = "tStiffenerWindowLength_66";
             this.tStiffenerWindowLength_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowLength_66.TabIndex = 548;
@@ -2677,7 +2705,7 @@
             // 
             // tStiffenerWindowLength_62
             // 
-            this.tStiffenerWindowLength_62.Location = new System.Drawing.Point(289, 1324);
+            this.tStiffenerWindowLength_62.Location = new System.Drawing.Point(289, 1427);
             this.tStiffenerWindowLength_62.Name = "tStiffenerWindowLength_62";
             this.tStiffenerWindowLength_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowLength_62.TabIndex = 543;
@@ -2685,7 +2713,7 @@
             // 
             // tStiffenerWindowLength_61
             // 
-            this.tStiffenerWindowLength_61.Location = new System.Drawing.Point(362, 1324);
+            this.tStiffenerWindowLength_61.Location = new System.Drawing.Point(362, 1427);
             this.tStiffenerWindowLength_61.Name = "tStiffenerWindowLength_61";
             this.tStiffenerWindowLength_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowLength_61.TabIndex = 542;
@@ -2693,7 +2721,7 @@
             // 
             // tStiffenerWindowLength_63
             // 
-            this.tStiffenerWindowLength_63.Location = new System.Drawing.Point(219, 1324);
+            this.tStiffenerWindowLength_63.Location = new System.Drawing.Point(219, 1427);
             this.tStiffenerWindowLength_63.Name = "tStiffenerWindowLength_63";
             this.tStiffenerWindowLength_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowLength_63.TabIndex = 545;
@@ -2703,7 +2731,7 @@
             // 
             this.label57.AutoSize = true;
             this.label57.BackColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(432, 1328);
+            this.label57.Location = new System.Drawing.Point(432, 1431);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(140, 13);
             this.label57.TabIndex = 544;
@@ -2711,7 +2739,7 @@
             // 
             // tStiffenerWindowLength_64
             // 
-            this.tStiffenerWindowLength_64.Location = new System.Drawing.Point(146, 1324);
+            this.tStiffenerWindowLength_64.Location = new System.Drawing.Point(146, 1427);
             this.tStiffenerWindowLength_64.Name = "tStiffenerWindowLength_64";
             this.tStiffenerWindowLength_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowLength_64.TabIndex = 546;
@@ -2719,7 +2747,7 @@
             // 
             // tStiffenerWindowLength_65
             // 
-            this.tStiffenerWindowLength_65.Location = new System.Drawing.Point(76, 1324);
+            this.tStiffenerWindowLength_65.Location = new System.Drawing.Point(76, 1427);
             this.tStiffenerWindowLength_65.Name = "tStiffenerWindowLength_65";
             this.tStiffenerWindowLength_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowLength_65.TabIndex = 547;
@@ -2727,7 +2755,7 @@
             // 
             // tStiffenerWindowWidth_66
             // 
-            this.tStiffenerWindowWidth_66.Location = new System.Drawing.Point(3, 1298);
+            this.tStiffenerWindowWidth_66.Location = new System.Drawing.Point(3, 1401);
             this.tStiffenerWindowWidth_66.Name = "tStiffenerWindowWidth_66";
             this.tStiffenerWindowWidth_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowWidth_66.TabIndex = 541;
@@ -2735,7 +2763,7 @@
             // 
             // tStiffenerWindowWidth_62
             // 
-            this.tStiffenerWindowWidth_62.Location = new System.Drawing.Point(289, 1298);
+            this.tStiffenerWindowWidth_62.Location = new System.Drawing.Point(289, 1401);
             this.tStiffenerWindowWidth_62.Name = "tStiffenerWindowWidth_62";
             this.tStiffenerWindowWidth_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowWidth_62.TabIndex = 536;
@@ -2743,7 +2771,7 @@
             // 
             // tStiffenerWindowWidth_61
             // 
-            this.tStiffenerWindowWidth_61.Location = new System.Drawing.Point(362, 1298);
+            this.tStiffenerWindowWidth_61.Location = new System.Drawing.Point(362, 1401);
             this.tStiffenerWindowWidth_61.Name = "tStiffenerWindowWidth_61";
             this.tStiffenerWindowWidth_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowWidth_61.TabIndex = 535;
@@ -2751,7 +2779,7 @@
             // 
             // tStiffenerWindowWidth_63
             // 
-            this.tStiffenerWindowWidth_63.Location = new System.Drawing.Point(219, 1298);
+            this.tStiffenerWindowWidth_63.Location = new System.Drawing.Point(219, 1401);
             this.tStiffenerWindowWidth_63.Name = "tStiffenerWindowWidth_63";
             this.tStiffenerWindowWidth_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowWidth_63.TabIndex = 538;
@@ -2761,7 +2789,7 @@
             // 
             this.label56.AutoSize = true;
             this.label56.BackColor = System.Drawing.Color.White;
-            this.label56.Location = new System.Drawing.Point(432, 1302);
+            this.label56.Location = new System.Drawing.Point(432, 1405);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(135, 13);
             this.label56.TabIndex = 537;
@@ -2769,7 +2797,7 @@
             // 
             // tStiffenerWindowWidth_64
             // 
-            this.tStiffenerWindowWidth_64.Location = new System.Drawing.Point(146, 1298);
+            this.tStiffenerWindowWidth_64.Location = new System.Drawing.Point(146, 1401);
             this.tStiffenerWindowWidth_64.Name = "tStiffenerWindowWidth_64";
             this.tStiffenerWindowWidth_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWindowWidth_64.TabIndex = 539;
@@ -2777,7 +2805,7 @@
             // 
             // tStiffenerWindowWidth_65
             // 
-            this.tStiffenerWindowWidth_65.Location = new System.Drawing.Point(76, 1298);
+            this.tStiffenerWindowWidth_65.Location = new System.Drawing.Point(76, 1401);
             this.tStiffenerWindowWidth_65.Name = "tStiffenerWindowWidth_65";
             this.tStiffenerWindowWidth_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWindowWidth_65.TabIndex = 540;
@@ -2785,7 +2813,7 @@
             // 
             // tTubeRow12Count_66
             // 
-            this.tTubeRow12Count_66.Location = new System.Drawing.Point(3, 795);
+            this.tTubeRow12Count_66.Location = new System.Drawing.Point(3, 898);
             this.tTubeRow12Count_66.Name = "tTubeRow12Count_66";
             this.tTubeRow12Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow12Count_66.TabIndex = 534;
@@ -2793,7 +2821,7 @@
             // 
             // tTubeRow12Count_62
             // 
-            this.tTubeRow12Count_62.Location = new System.Drawing.Point(289, 795);
+            this.tTubeRow12Count_62.Location = new System.Drawing.Point(289, 898);
             this.tTubeRow12Count_62.Name = "tTubeRow12Count_62";
             this.tTubeRow12Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow12Count_62.TabIndex = 529;
@@ -2801,7 +2829,7 @@
             // 
             // tTubeRow12Count_61
             // 
-            this.tTubeRow12Count_61.Location = new System.Drawing.Point(362, 795);
+            this.tTubeRow12Count_61.Location = new System.Drawing.Point(362, 898);
             this.tTubeRow12Count_61.Name = "tTubeRow12Count_61";
             this.tTubeRow12Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow12Count_61.TabIndex = 528;
@@ -2809,7 +2837,7 @@
             // 
             // tTubeRow12Count_63
             // 
-            this.tTubeRow12Count_63.Location = new System.Drawing.Point(219, 795);
+            this.tTubeRow12Count_63.Location = new System.Drawing.Point(219, 898);
             this.tTubeRow12Count_63.Name = "tTubeRow12Count_63";
             this.tTubeRow12Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow12Count_63.TabIndex = 531;
@@ -2819,7 +2847,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.BackColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(432, 798);
+            this.label55.Location = new System.Drawing.Point(432, 901);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(85, 13);
             this.label55.TabIndex = 530;
@@ -2827,7 +2855,7 @@
             // 
             // tTubeRow12Count_64
             // 
-            this.tTubeRow12Count_64.Location = new System.Drawing.Point(146, 795);
+            this.tTubeRow12Count_64.Location = new System.Drawing.Point(146, 898);
             this.tTubeRow12Count_64.Name = "tTubeRow12Count_64";
             this.tTubeRow12Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow12Count_64.TabIndex = 532;
@@ -2835,7 +2863,7 @@
             // 
             // tTubeRow12Count_65
             // 
-            this.tTubeRow12Count_65.Location = new System.Drawing.Point(76, 795);
+            this.tTubeRow12Count_65.Location = new System.Drawing.Point(76, 898);
             this.tTubeRow12Count_65.Name = "tTubeRow12Count_65";
             this.tTubeRow12Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow12Count_65.TabIndex = 533;
@@ -2843,7 +2871,7 @@
             // 
             // tTubeRow11Count_66
             // 
-            this.tTubeRow11Count_66.Location = new System.Drawing.Point(3, 769);
+            this.tTubeRow11Count_66.Location = new System.Drawing.Point(3, 872);
             this.tTubeRow11Count_66.Name = "tTubeRow11Count_66";
             this.tTubeRow11Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow11Count_66.TabIndex = 527;
@@ -2851,7 +2879,7 @@
             // 
             // tTubeRow11Count_62
             // 
-            this.tTubeRow11Count_62.Location = new System.Drawing.Point(289, 769);
+            this.tTubeRow11Count_62.Location = new System.Drawing.Point(289, 872);
             this.tTubeRow11Count_62.Name = "tTubeRow11Count_62";
             this.tTubeRow11Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow11Count_62.TabIndex = 522;
@@ -2859,7 +2887,7 @@
             // 
             // tTubeRow11Count_61
             // 
-            this.tTubeRow11Count_61.Location = new System.Drawing.Point(362, 769);
+            this.tTubeRow11Count_61.Location = new System.Drawing.Point(362, 872);
             this.tTubeRow11Count_61.Name = "tTubeRow11Count_61";
             this.tTubeRow11Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow11Count_61.TabIndex = 521;
@@ -2867,7 +2895,7 @@
             // 
             // tTubeRow11Count_63
             // 
-            this.tTubeRow11Count_63.Location = new System.Drawing.Point(219, 769);
+            this.tTubeRow11Count_63.Location = new System.Drawing.Point(219, 872);
             this.tTubeRow11Count_63.Name = "tTubeRow11Count_63";
             this.tTubeRow11Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow11Count_63.TabIndex = 524;
@@ -2877,7 +2905,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.BackColor = System.Drawing.Color.White;
-            this.label54.Location = new System.Drawing.Point(432, 772);
+            this.label54.Location = new System.Drawing.Point(432, 875);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(85, 13);
             this.label54.TabIndex = 523;
@@ -2885,7 +2913,7 @@
             // 
             // tTubeRow11Count_64
             // 
-            this.tTubeRow11Count_64.Location = new System.Drawing.Point(146, 769);
+            this.tTubeRow11Count_64.Location = new System.Drawing.Point(146, 872);
             this.tTubeRow11Count_64.Name = "tTubeRow11Count_64";
             this.tTubeRow11Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow11Count_64.TabIndex = 525;
@@ -2893,7 +2921,7 @@
             // 
             // tTubeRow11Count_65
             // 
-            this.tTubeRow11Count_65.Location = new System.Drawing.Point(76, 769);
+            this.tTubeRow11Count_65.Location = new System.Drawing.Point(76, 872);
             this.tTubeRow11Count_65.Name = "tTubeRow11Count_65";
             this.tTubeRow11Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow11Count_65.TabIndex = 526;
@@ -2901,7 +2929,7 @@
             // 
             // tTubeRow10Count_66
             // 
-            this.tTubeRow10Count_66.Location = new System.Drawing.Point(3, 743);
+            this.tTubeRow10Count_66.Location = new System.Drawing.Point(3, 846);
             this.tTubeRow10Count_66.Name = "tTubeRow10Count_66";
             this.tTubeRow10Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow10Count_66.TabIndex = 520;
@@ -2909,7 +2937,7 @@
             // 
             // tTubeRow10Count_62
             // 
-            this.tTubeRow10Count_62.Location = new System.Drawing.Point(289, 743);
+            this.tTubeRow10Count_62.Location = new System.Drawing.Point(289, 846);
             this.tTubeRow10Count_62.Name = "tTubeRow10Count_62";
             this.tTubeRow10Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow10Count_62.TabIndex = 515;
@@ -2917,7 +2945,7 @@
             // 
             // tTubeRow10Count_61
             // 
-            this.tTubeRow10Count_61.Location = new System.Drawing.Point(362, 743);
+            this.tTubeRow10Count_61.Location = new System.Drawing.Point(362, 846);
             this.tTubeRow10Count_61.Name = "tTubeRow10Count_61";
             this.tTubeRow10Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow10Count_61.TabIndex = 514;
@@ -2925,7 +2953,7 @@
             // 
             // tTubeRow10Count_63
             // 
-            this.tTubeRow10Count_63.Location = new System.Drawing.Point(219, 743);
+            this.tTubeRow10Count_63.Location = new System.Drawing.Point(219, 846);
             this.tTubeRow10Count_63.Name = "tTubeRow10Count_63";
             this.tTubeRow10Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow10Count_63.TabIndex = 517;
@@ -2935,7 +2963,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.BackColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(432, 746);
+            this.label53.Location = new System.Drawing.Point(432, 849);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(85, 13);
             this.label53.TabIndex = 516;
@@ -2943,7 +2971,7 @@
             // 
             // tTubeRow10Count_64
             // 
-            this.tTubeRow10Count_64.Location = new System.Drawing.Point(146, 743);
+            this.tTubeRow10Count_64.Location = new System.Drawing.Point(146, 846);
             this.tTubeRow10Count_64.Name = "tTubeRow10Count_64";
             this.tTubeRow10Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow10Count_64.TabIndex = 518;
@@ -2951,7 +2979,7 @@
             // 
             // tTubeRow10Count_65
             // 
-            this.tTubeRow10Count_65.Location = new System.Drawing.Point(76, 743);
+            this.tTubeRow10Count_65.Location = new System.Drawing.Point(76, 846);
             this.tTubeRow10Count_65.Name = "tTubeRow10Count_65";
             this.tTubeRow10Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow10Count_65.TabIndex = 519;
@@ -2959,7 +2987,7 @@
             // 
             // tTubeRow9Count_66
             // 
-            this.tTubeRow9Count_66.Location = new System.Drawing.Point(3, 717);
+            this.tTubeRow9Count_66.Location = new System.Drawing.Point(3, 820);
             this.tTubeRow9Count_66.Name = "tTubeRow9Count_66";
             this.tTubeRow9Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow9Count_66.TabIndex = 513;
@@ -2967,7 +2995,7 @@
             // 
             // tTubeRow9Count_62
             // 
-            this.tTubeRow9Count_62.Location = new System.Drawing.Point(289, 717);
+            this.tTubeRow9Count_62.Location = new System.Drawing.Point(289, 820);
             this.tTubeRow9Count_62.Name = "tTubeRow9Count_62";
             this.tTubeRow9Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow9Count_62.TabIndex = 508;
@@ -2975,7 +3003,7 @@
             // 
             // tTubeRow9Count_61
             // 
-            this.tTubeRow9Count_61.Location = new System.Drawing.Point(362, 717);
+            this.tTubeRow9Count_61.Location = new System.Drawing.Point(362, 820);
             this.tTubeRow9Count_61.Name = "tTubeRow9Count_61";
             this.tTubeRow9Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow9Count_61.TabIndex = 507;
@@ -2983,7 +3011,7 @@
             // 
             // tTubeRow9Count_63
             // 
-            this.tTubeRow9Count_63.Location = new System.Drawing.Point(219, 717);
+            this.tTubeRow9Count_63.Location = new System.Drawing.Point(219, 820);
             this.tTubeRow9Count_63.Name = "tTubeRow9Count_63";
             this.tTubeRow9Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow9Count_63.TabIndex = 510;
@@ -2993,7 +3021,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.BackColor = System.Drawing.Color.White;
-            this.label52.Location = new System.Drawing.Point(432, 720);
+            this.label52.Location = new System.Drawing.Point(432, 823);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(79, 13);
             this.label52.TabIndex = 509;
@@ -3001,7 +3029,7 @@
             // 
             // tTubeRow9Count_64
             // 
-            this.tTubeRow9Count_64.Location = new System.Drawing.Point(146, 717);
+            this.tTubeRow9Count_64.Location = new System.Drawing.Point(146, 820);
             this.tTubeRow9Count_64.Name = "tTubeRow9Count_64";
             this.tTubeRow9Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow9Count_64.TabIndex = 511;
@@ -3009,7 +3037,7 @@
             // 
             // tTubeRow9Count_65
             // 
-            this.tTubeRow9Count_65.Location = new System.Drawing.Point(76, 717);
+            this.tTubeRow9Count_65.Location = new System.Drawing.Point(76, 820);
             this.tTubeRow9Count_65.Name = "tTubeRow9Count_65";
             this.tTubeRow9Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow9Count_65.TabIndex = 512;
@@ -3017,7 +3045,7 @@
             // 
             // tTubeRow8Count_66
             // 
-            this.tTubeRow8Count_66.Location = new System.Drawing.Point(3, 691);
+            this.tTubeRow8Count_66.Location = new System.Drawing.Point(3, 794);
             this.tTubeRow8Count_66.Name = "tTubeRow8Count_66";
             this.tTubeRow8Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow8Count_66.TabIndex = 506;
@@ -3025,7 +3053,7 @@
             // 
             // tTubeRow8Count_62
             // 
-            this.tTubeRow8Count_62.Location = new System.Drawing.Point(289, 691);
+            this.tTubeRow8Count_62.Location = new System.Drawing.Point(289, 794);
             this.tTubeRow8Count_62.Name = "tTubeRow8Count_62";
             this.tTubeRow8Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow8Count_62.TabIndex = 501;
@@ -3033,7 +3061,7 @@
             // 
             // tTubeRow8Count_61
             // 
-            this.tTubeRow8Count_61.Location = new System.Drawing.Point(362, 691);
+            this.tTubeRow8Count_61.Location = new System.Drawing.Point(362, 794);
             this.tTubeRow8Count_61.Name = "tTubeRow8Count_61";
             this.tTubeRow8Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow8Count_61.TabIndex = 500;
@@ -3041,7 +3069,7 @@
             // 
             // tTubeRow8Count_63
             // 
-            this.tTubeRow8Count_63.Location = new System.Drawing.Point(219, 691);
+            this.tTubeRow8Count_63.Location = new System.Drawing.Point(219, 794);
             this.tTubeRow8Count_63.Name = "tTubeRow8Count_63";
             this.tTubeRow8Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow8Count_63.TabIndex = 503;
@@ -3051,7 +3079,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.BackColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(432, 694);
+            this.label51.Location = new System.Drawing.Point(432, 797);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(79, 13);
             this.label51.TabIndex = 502;
@@ -3059,7 +3087,7 @@
             // 
             // tTubeRow8Count_64
             // 
-            this.tTubeRow8Count_64.Location = new System.Drawing.Point(146, 691);
+            this.tTubeRow8Count_64.Location = new System.Drawing.Point(146, 794);
             this.tTubeRow8Count_64.Name = "tTubeRow8Count_64";
             this.tTubeRow8Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow8Count_64.TabIndex = 504;
@@ -3067,7 +3095,7 @@
             // 
             // tTubeRow8Count_65
             // 
-            this.tTubeRow8Count_65.Location = new System.Drawing.Point(76, 691);
+            this.tTubeRow8Count_65.Location = new System.Drawing.Point(76, 794);
             this.tTubeRow8Count_65.Name = "tTubeRow8Count_65";
             this.tTubeRow8Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow8Count_65.TabIndex = 505;
@@ -3075,7 +3103,7 @@
             // 
             // tTubeRow7Count_66
             // 
-            this.tTubeRow7Count_66.Location = new System.Drawing.Point(3, 665);
+            this.tTubeRow7Count_66.Location = new System.Drawing.Point(3, 768);
             this.tTubeRow7Count_66.Name = "tTubeRow7Count_66";
             this.tTubeRow7Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow7Count_66.TabIndex = 499;
@@ -3083,7 +3111,7 @@
             // 
             // tTubeRow7Count_62
             // 
-            this.tTubeRow7Count_62.Location = new System.Drawing.Point(289, 665);
+            this.tTubeRow7Count_62.Location = new System.Drawing.Point(289, 768);
             this.tTubeRow7Count_62.Name = "tTubeRow7Count_62";
             this.tTubeRow7Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow7Count_62.TabIndex = 494;
@@ -3091,7 +3119,7 @@
             // 
             // tTubeRow7Count_61
             // 
-            this.tTubeRow7Count_61.Location = new System.Drawing.Point(362, 665);
+            this.tTubeRow7Count_61.Location = new System.Drawing.Point(362, 768);
             this.tTubeRow7Count_61.Name = "tTubeRow7Count_61";
             this.tTubeRow7Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow7Count_61.TabIndex = 493;
@@ -3099,7 +3127,7 @@
             // 
             // tTubeRow7Count_63
             // 
-            this.tTubeRow7Count_63.Location = new System.Drawing.Point(219, 665);
+            this.tTubeRow7Count_63.Location = new System.Drawing.Point(219, 768);
             this.tTubeRow7Count_63.Name = "tTubeRow7Count_63";
             this.tTubeRow7Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow7Count_63.TabIndex = 496;
@@ -3109,7 +3137,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.BackColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(432, 668);
+            this.label50.Location = new System.Drawing.Point(432, 771);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(79, 13);
             this.label50.TabIndex = 495;
@@ -3117,7 +3145,7 @@
             // 
             // tTubeRow7Count_64
             // 
-            this.tTubeRow7Count_64.Location = new System.Drawing.Point(146, 665);
+            this.tTubeRow7Count_64.Location = new System.Drawing.Point(146, 768);
             this.tTubeRow7Count_64.Name = "tTubeRow7Count_64";
             this.tTubeRow7Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow7Count_64.TabIndex = 497;
@@ -3125,7 +3153,7 @@
             // 
             // tTubeRow7Count_65
             // 
-            this.tTubeRow7Count_65.Location = new System.Drawing.Point(76, 665);
+            this.tTubeRow7Count_65.Location = new System.Drawing.Point(76, 768);
             this.tTubeRow7Count_65.Name = "tTubeRow7Count_65";
             this.tTubeRow7Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow7Count_65.TabIndex = 498;
@@ -3133,7 +3161,7 @@
             // 
             // tTubeRow6Count_66
             // 
-            this.tTubeRow6Count_66.Location = new System.Drawing.Point(3, 639);
+            this.tTubeRow6Count_66.Location = new System.Drawing.Point(3, 742);
             this.tTubeRow6Count_66.Name = "tTubeRow6Count_66";
             this.tTubeRow6Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow6Count_66.TabIndex = 492;
@@ -3141,7 +3169,7 @@
             // 
             // tTubeRow6Count_62
             // 
-            this.tTubeRow6Count_62.Location = new System.Drawing.Point(289, 639);
+            this.tTubeRow6Count_62.Location = new System.Drawing.Point(289, 742);
             this.tTubeRow6Count_62.Name = "tTubeRow6Count_62";
             this.tTubeRow6Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow6Count_62.TabIndex = 487;
@@ -3149,7 +3177,7 @@
             // 
             // tTubeRow6Count_61
             // 
-            this.tTubeRow6Count_61.Location = new System.Drawing.Point(362, 639);
+            this.tTubeRow6Count_61.Location = new System.Drawing.Point(362, 742);
             this.tTubeRow6Count_61.Name = "tTubeRow6Count_61";
             this.tTubeRow6Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow6Count_61.TabIndex = 486;
@@ -3157,7 +3185,7 @@
             // 
             // tTubeRow6Count_63
             // 
-            this.tTubeRow6Count_63.Location = new System.Drawing.Point(219, 639);
+            this.tTubeRow6Count_63.Location = new System.Drawing.Point(219, 742);
             this.tTubeRow6Count_63.Name = "tTubeRow6Count_63";
             this.tTubeRow6Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow6Count_63.TabIndex = 489;
@@ -3167,7 +3195,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.BackColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(432, 642);
+            this.label49.Location = new System.Drawing.Point(432, 745);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(79, 13);
             this.label49.TabIndex = 488;
@@ -3175,7 +3203,7 @@
             // 
             // tTubeRow6Count_64
             // 
-            this.tTubeRow6Count_64.Location = new System.Drawing.Point(146, 639);
+            this.tTubeRow6Count_64.Location = new System.Drawing.Point(146, 742);
             this.tTubeRow6Count_64.Name = "tTubeRow6Count_64";
             this.tTubeRow6Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow6Count_64.TabIndex = 490;
@@ -3183,7 +3211,7 @@
             // 
             // tTubeRow6Count_65
             // 
-            this.tTubeRow6Count_65.Location = new System.Drawing.Point(76, 639);
+            this.tTubeRow6Count_65.Location = new System.Drawing.Point(76, 742);
             this.tTubeRow6Count_65.Name = "tTubeRow6Count_65";
             this.tTubeRow6Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow6Count_65.TabIndex = 491;
@@ -3191,7 +3219,7 @@
             // 
             // tTubeRow5Count_66
             // 
-            this.tTubeRow5Count_66.Location = new System.Drawing.Point(3, 613);
+            this.tTubeRow5Count_66.Location = new System.Drawing.Point(3, 716);
             this.tTubeRow5Count_66.Name = "tTubeRow5Count_66";
             this.tTubeRow5Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow5Count_66.TabIndex = 485;
@@ -3199,7 +3227,7 @@
             // 
             // tTubeRow5Count_62
             // 
-            this.tTubeRow5Count_62.Location = new System.Drawing.Point(289, 613);
+            this.tTubeRow5Count_62.Location = new System.Drawing.Point(289, 716);
             this.tTubeRow5Count_62.Name = "tTubeRow5Count_62";
             this.tTubeRow5Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow5Count_62.TabIndex = 480;
@@ -3207,7 +3235,7 @@
             // 
             // tTubeRow5Count_61
             // 
-            this.tTubeRow5Count_61.Location = new System.Drawing.Point(362, 613);
+            this.tTubeRow5Count_61.Location = new System.Drawing.Point(362, 716);
             this.tTubeRow5Count_61.Name = "tTubeRow5Count_61";
             this.tTubeRow5Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow5Count_61.TabIndex = 479;
@@ -3215,7 +3243,7 @@
             // 
             // tTubeRow5Count_63
             // 
-            this.tTubeRow5Count_63.Location = new System.Drawing.Point(219, 613);
+            this.tTubeRow5Count_63.Location = new System.Drawing.Point(219, 716);
             this.tTubeRow5Count_63.Name = "tTubeRow5Count_63";
             this.tTubeRow5Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow5Count_63.TabIndex = 482;
@@ -3225,7 +3253,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.BackColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(432, 616);
+            this.label48.Location = new System.Drawing.Point(432, 719);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(79, 13);
             this.label48.TabIndex = 481;
@@ -3233,7 +3261,7 @@
             // 
             // tTubeRow5Count_64
             // 
-            this.tTubeRow5Count_64.Location = new System.Drawing.Point(146, 613);
+            this.tTubeRow5Count_64.Location = new System.Drawing.Point(146, 716);
             this.tTubeRow5Count_64.Name = "tTubeRow5Count_64";
             this.tTubeRow5Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow5Count_64.TabIndex = 483;
@@ -3241,7 +3269,7 @@
             // 
             // tTubeRow5Count_65
             // 
-            this.tTubeRow5Count_65.Location = new System.Drawing.Point(76, 613);
+            this.tTubeRow5Count_65.Location = new System.Drawing.Point(76, 716);
             this.tTubeRow5Count_65.Name = "tTubeRow5Count_65";
             this.tTubeRow5Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow5Count_65.TabIndex = 484;
@@ -3249,7 +3277,7 @@
             // 
             // tTubeRow4Count_66
             // 
-            this.tTubeRow4Count_66.Location = new System.Drawing.Point(3, 587);
+            this.tTubeRow4Count_66.Location = new System.Drawing.Point(3, 690);
             this.tTubeRow4Count_66.Name = "tTubeRow4Count_66";
             this.tTubeRow4Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow4Count_66.TabIndex = 478;
@@ -3257,7 +3285,7 @@
             // 
             // tTubeRow4Count_62
             // 
-            this.tTubeRow4Count_62.Location = new System.Drawing.Point(289, 587);
+            this.tTubeRow4Count_62.Location = new System.Drawing.Point(289, 690);
             this.tTubeRow4Count_62.Name = "tTubeRow4Count_62";
             this.tTubeRow4Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow4Count_62.TabIndex = 473;
@@ -3265,7 +3293,7 @@
             // 
             // tTubeRow4Count_61
             // 
-            this.tTubeRow4Count_61.Location = new System.Drawing.Point(362, 587);
+            this.tTubeRow4Count_61.Location = new System.Drawing.Point(362, 690);
             this.tTubeRow4Count_61.Name = "tTubeRow4Count_61";
             this.tTubeRow4Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow4Count_61.TabIndex = 472;
@@ -3273,7 +3301,7 @@
             // 
             // tTubeRow4Count_63
             // 
-            this.tTubeRow4Count_63.Location = new System.Drawing.Point(219, 587);
+            this.tTubeRow4Count_63.Location = new System.Drawing.Point(219, 690);
             this.tTubeRow4Count_63.Name = "tTubeRow4Count_63";
             this.tTubeRow4Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow4Count_63.TabIndex = 475;
@@ -3283,7 +3311,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(432, 590);
+            this.label47.Location = new System.Drawing.Point(432, 693);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(79, 13);
             this.label47.TabIndex = 474;
@@ -3291,7 +3319,7 @@
             // 
             // tTubeRow4Count_64
             // 
-            this.tTubeRow4Count_64.Location = new System.Drawing.Point(146, 587);
+            this.tTubeRow4Count_64.Location = new System.Drawing.Point(146, 690);
             this.tTubeRow4Count_64.Name = "tTubeRow4Count_64";
             this.tTubeRow4Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow4Count_64.TabIndex = 476;
@@ -3299,7 +3327,7 @@
             // 
             // tTubeRow4Count_65
             // 
-            this.tTubeRow4Count_65.Location = new System.Drawing.Point(76, 587);
+            this.tTubeRow4Count_65.Location = new System.Drawing.Point(76, 690);
             this.tTubeRow4Count_65.Name = "tTubeRow4Count_65";
             this.tTubeRow4Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow4Count_65.TabIndex = 477;
@@ -3307,7 +3335,7 @@
             // 
             // tTubeRow3Count_66
             // 
-            this.tTubeRow3Count_66.Location = new System.Drawing.Point(3, 561);
+            this.tTubeRow3Count_66.Location = new System.Drawing.Point(3, 664);
             this.tTubeRow3Count_66.Name = "tTubeRow3Count_66";
             this.tTubeRow3Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow3Count_66.TabIndex = 471;
@@ -3315,7 +3343,7 @@
             // 
             // tTubeRow3Count_62
             // 
-            this.tTubeRow3Count_62.Location = new System.Drawing.Point(289, 561);
+            this.tTubeRow3Count_62.Location = new System.Drawing.Point(289, 664);
             this.tTubeRow3Count_62.Name = "tTubeRow3Count_62";
             this.tTubeRow3Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow3Count_62.TabIndex = 466;
@@ -3323,7 +3351,7 @@
             // 
             // tTubeRow3Count_61
             // 
-            this.tTubeRow3Count_61.Location = new System.Drawing.Point(362, 561);
+            this.tTubeRow3Count_61.Location = new System.Drawing.Point(362, 664);
             this.tTubeRow3Count_61.Name = "tTubeRow3Count_61";
             this.tTubeRow3Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow3Count_61.TabIndex = 465;
@@ -3331,7 +3359,7 @@
             // 
             // tTubeRow3Count_63
             // 
-            this.tTubeRow3Count_63.Location = new System.Drawing.Point(219, 561);
+            this.tTubeRow3Count_63.Location = new System.Drawing.Point(219, 664);
             this.tTubeRow3Count_63.Name = "tTubeRow3Count_63";
             this.tTubeRow3Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow3Count_63.TabIndex = 468;
@@ -3341,7 +3369,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.BackColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(432, 564);
+            this.label46.Location = new System.Drawing.Point(432, 667);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(79, 13);
             this.label46.TabIndex = 467;
@@ -3349,7 +3377,7 @@
             // 
             // tTubeRow3Count_64
             // 
-            this.tTubeRow3Count_64.Location = new System.Drawing.Point(146, 561);
+            this.tTubeRow3Count_64.Location = new System.Drawing.Point(146, 664);
             this.tTubeRow3Count_64.Name = "tTubeRow3Count_64";
             this.tTubeRow3Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow3Count_64.TabIndex = 469;
@@ -3357,7 +3385,7 @@
             // 
             // tTubeRow3Count_65
             // 
-            this.tTubeRow3Count_65.Location = new System.Drawing.Point(76, 561);
+            this.tTubeRow3Count_65.Location = new System.Drawing.Point(76, 664);
             this.tTubeRow3Count_65.Name = "tTubeRow3Count_65";
             this.tTubeRow3Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow3Count_65.TabIndex = 470;
@@ -3365,7 +3393,7 @@
             // 
             // tStiffenerDistanceBelow_66
             // 
-            this.tStiffenerDistanceBelow_66.Location = new System.Drawing.Point(3, 1272);
+            this.tStiffenerDistanceBelow_66.Location = new System.Drawing.Point(3, 1375);
             this.tStiffenerDistanceBelow_66.Name = "tStiffenerDistanceBelow_66";
             this.tStiffenerDistanceBelow_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerDistanceBelow_66.TabIndex = 464;
@@ -3373,7 +3401,7 @@
             // 
             // tStiffenerDistanceBelow_62
             // 
-            this.tStiffenerDistanceBelow_62.Location = new System.Drawing.Point(289, 1272);
+            this.tStiffenerDistanceBelow_62.Location = new System.Drawing.Point(289, 1375);
             this.tStiffenerDistanceBelow_62.Name = "tStiffenerDistanceBelow_62";
             this.tStiffenerDistanceBelow_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerDistanceBelow_62.TabIndex = 459;
@@ -3381,7 +3409,7 @@
             // 
             // tStiffenerDistanceBelow_61
             // 
-            this.tStiffenerDistanceBelow_61.Location = new System.Drawing.Point(362, 1272);
+            this.tStiffenerDistanceBelow_61.Location = new System.Drawing.Point(362, 1375);
             this.tStiffenerDistanceBelow_61.Name = "tStiffenerDistanceBelow_61";
             this.tStiffenerDistanceBelow_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerDistanceBelow_61.TabIndex = 458;
@@ -3389,7 +3417,7 @@
             // 
             // tStiffenerDistanceBelow_63
             // 
-            this.tStiffenerDistanceBelow_63.Location = new System.Drawing.Point(219, 1272);
+            this.tStiffenerDistanceBelow_63.Location = new System.Drawing.Point(219, 1375);
             this.tStiffenerDistanceBelow_63.Name = "tStiffenerDistanceBelow_63";
             this.tStiffenerDistanceBelow_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerDistanceBelow_63.TabIndex = 461;
@@ -3399,7 +3427,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(432, 1276);
+            this.label45.Location = new System.Drawing.Point(432, 1379);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(166, 13);
             this.label45.TabIndex = 460;
@@ -3407,7 +3435,7 @@
             // 
             // tStiffenerDistanceBelow_64
             // 
-            this.tStiffenerDistanceBelow_64.Location = new System.Drawing.Point(146, 1272);
+            this.tStiffenerDistanceBelow_64.Location = new System.Drawing.Point(146, 1375);
             this.tStiffenerDistanceBelow_64.Name = "tStiffenerDistanceBelow_64";
             this.tStiffenerDistanceBelow_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerDistanceBelow_64.TabIndex = 462;
@@ -3415,7 +3443,7 @@
             // 
             // tStiffenerDistanceBelow_65
             // 
-            this.tStiffenerDistanceBelow_65.Location = new System.Drawing.Point(76, 1272);
+            this.tStiffenerDistanceBelow_65.Location = new System.Drawing.Point(76, 1375);
             this.tStiffenerDistanceBelow_65.Name = "tStiffenerDistanceBelow_65";
             this.tStiffenerDistanceBelow_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerDistanceBelow_65.TabIndex = 463;
@@ -3423,7 +3451,7 @@
             // 
             // tStiffenerBelowRow_66
             // 
-            this.tStiffenerBelowRow_66.Location = new System.Drawing.Point(3, 1248);
+            this.tStiffenerBelowRow_66.Location = new System.Drawing.Point(3, 1351);
             this.tStiffenerBelowRow_66.Name = "tStiffenerBelowRow_66";
             this.tStiffenerBelowRow_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerBelowRow_66.TabIndex = 457;
@@ -3431,7 +3459,7 @@
             // 
             // tStiffenerBelowRow_62
             // 
-            this.tStiffenerBelowRow_62.Location = new System.Drawing.Point(289, 1248);
+            this.tStiffenerBelowRow_62.Location = new System.Drawing.Point(289, 1351);
             this.tStiffenerBelowRow_62.Name = "tStiffenerBelowRow_62";
             this.tStiffenerBelowRow_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerBelowRow_62.TabIndex = 452;
@@ -3439,7 +3467,7 @@
             // 
             // tStiffenerBelowRow_61
             // 
-            this.tStiffenerBelowRow_61.Location = new System.Drawing.Point(362, 1248);
+            this.tStiffenerBelowRow_61.Location = new System.Drawing.Point(362, 1351);
             this.tStiffenerBelowRow_61.Name = "tStiffenerBelowRow_61";
             this.tStiffenerBelowRow_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerBelowRow_61.TabIndex = 451;
@@ -3447,7 +3475,7 @@
             // 
             // tStiffenerBelowRow_63
             // 
-            this.tStiffenerBelowRow_63.Location = new System.Drawing.Point(219, 1248);
+            this.tStiffenerBelowRow_63.Location = new System.Drawing.Point(219, 1351);
             this.tStiffenerBelowRow_63.Name = "tStiffenerBelowRow_63";
             this.tStiffenerBelowRow_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerBelowRow_63.TabIndex = 454;
@@ -3457,7 +3485,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(432, 1251);
+            this.label44.Location = new System.Drawing.Point(432, 1354);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(156, 13);
             this.label44.TabIndex = 453;
@@ -3465,7 +3493,7 @@
             // 
             // tStiffenerBelowRow_64
             // 
-            this.tStiffenerBelowRow_64.Location = new System.Drawing.Point(146, 1248);
+            this.tStiffenerBelowRow_64.Location = new System.Drawing.Point(146, 1351);
             this.tStiffenerBelowRow_64.Name = "tStiffenerBelowRow_64";
             this.tStiffenerBelowRow_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerBelowRow_64.TabIndex = 455;
@@ -3473,7 +3501,7 @@
             // 
             // tStiffenerBelowRow_65
             // 
-            this.tStiffenerBelowRow_65.Location = new System.Drawing.Point(76, 1248);
+            this.tStiffenerBelowRow_65.Location = new System.Drawing.Point(76, 1351);
             this.tStiffenerBelowRow_65.Name = "tStiffenerBelowRow_65";
             this.tStiffenerBelowRow_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerBelowRow_65.TabIndex = 456;
@@ -3481,7 +3509,7 @@
             // 
             // tStiffenerOffset_66
             // 
-            this.tStiffenerOffset_66.Location = new System.Drawing.Point(3, 1224);
+            this.tStiffenerOffset_66.Location = new System.Drawing.Point(3, 1327);
             this.tStiffenerOffset_66.Name = "tStiffenerOffset_66";
             this.tStiffenerOffset_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerOffset_66.TabIndex = 450;
@@ -3489,7 +3517,7 @@
             // 
             // tStiffenerOffset_62
             // 
-            this.tStiffenerOffset_62.Location = new System.Drawing.Point(289, 1224);
+            this.tStiffenerOffset_62.Location = new System.Drawing.Point(289, 1327);
             this.tStiffenerOffset_62.Name = "tStiffenerOffset_62";
             this.tStiffenerOffset_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerOffset_62.TabIndex = 445;
@@ -3497,7 +3525,7 @@
             // 
             // tStiffenerOffset_61
             // 
-            this.tStiffenerOffset_61.Location = new System.Drawing.Point(362, 1224);
+            this.tStiffenerOffset_61.Location = new System.Drawing.Point(362, 1327);
             this.tStiffenerOffset_61.Name = "tStiffenerOffset_61";
             this.tStiffenerOffset_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerOffset_61.TabIndex = 444;
@@ -3505,7 +3533,7 @@
             // 
             // tStiffenerOffset_63
             // 
-            this.tStiffenerOffset_63.Location = new System.Drawing.Point(219, 1224);
+            this.tStiffenerOffset_63.Location = new System.Drawing.Point(219, 1327);
             this.tStiffenerOffset_63.Name = "tStiffenerOffset_63";
             this.tStiffenerOffset_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerOffset_63.TabIndex = 447;
@@ -3515,7 +3543,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(432, 1227);
+            this.label43.Location = new System.Drawing.Point(432, 1330);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(93, 13);
             this.label43.TabIndex = 446;
@@ -3523,7 +3551,7 @@
             // 
             // tStiffenerOffset_64
             // 
-            this.tStiffenerOffset_64.Location = new System.Drawing.Point(146, 1224);
+            this.tStiffenerOffset_64.Location = new System.Drawing.Point(146, 1327);
             this.tStiffenerOffset_64.Name = "tStiffenerOffset_64";
             this.tStiffenerOffset_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerOffset_64.TabIndex = 448;
@@ -3531,7 +3559,7 @@
             // 
             // tStiffenerOffset_65
             // 
-            this.tStiffenerOffset_65.Location = new System.Drawing.Point(76, 1224);
+            this.tStiffenerOffset_65.Location = new System.Drawing.Point(76, 1327);
             this.tStiffenerOffset_65.Name = "tStiffenerOffset_65";
             this.tStiffenerOffset_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerOffset_65.TabIndex = 449;
@@ -3539,7 +3567,7 @@
             // 
             // tStiffenerWidth_66
             // 
-            this.tStiffenerWidth_66.Location = new System.Drawing.Point(3, 1199);
+            this.tStiffenerWidth_66.Location = new System.Drawing.Point(3, 1302);
             this.tStiffenerWidth_66.Name = "tStiffenerWidth_66";
             this.tStiffenerWidth_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWidth_66.TabIndex = 443;
@@ -3547,7 +3575,7 @@
             // 
             // tStiffenerWidth_62
             // 
-            this.tStiffenerWidth_62.Location = new System.Drawing.Point(289, 1199);
+            this.tStiffenerWidth_62.Location = new System.Drawing.Point(289, 1302);
             this.tStiffenerWidth_62.Name = "tStiffenerWidth_62";
             this.tStiffenerWidth_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWidth_62.TabIndex = 438;
@@ -3555,7 +3583,7 @@
             // 
             // tStiffenerWidth_61
             // 
-            this.tStiffenerWidth_61.Location = new System.Drawing.Point(362, 1199);
+            this.tStiffenerWidth_61.Location = new System.Drawing.Point(362, 1302);
             this.tStiffenerWidth_61.Name = "tStiffenerWidth_61";
             this.tStiffenerWidth_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWidth_61.TabIndex = 437;
@@ -3563,7 +3591,7 @@
             // 
             // tStiffenerWidth_63
             // 
-            this.tStiffenerWidth_63.Location = new System.Drawing.Point(219, 1199);
+            this.tStiffenerWidth_63.Location = new System.Drawing.Point(219, 1302);
             this.tStiffenerWidth_63.Name = "tStiffenerWidth_63";
             this.tStiffenerWidth_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWidth_63.TabIndex = 440;
@@ -3573,7 +3601,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(432, 1203);
+            this.label42.Location = new System.Drawing.Point(432, 1306);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(89, 13);
             this.label42.TabIndex = 439;
@@ -3581,7 +3609,7 @@
             // 
             // tStiffenerWidth_64
             // 
-            this.tStiffenerWidth_64.Location = new System.Drawing.Point(146, 1199);
+            this.tStiffenerWidth_64.Location = new System.Drawing.Point(146, 1302);
             this.tStiffenerWidth_64.Name = "tStiffenerWidth_64";
             this.tStiffenerWidth_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerWidth_64.TabIndex = 441;
@@ -3589,7 +3617,7 @@
             // 
             // tStiffenerWidth_65
             // 
-            this.tStiffenerWidth_65.Location = new System.Drawing.Point(76, 1199);
+            this.tStiffenerWidth_65.Location = new System.Drawing.Point(76, 1302);
             this.tStiffenerWidth_65.Name = "tStiffenerWidth_65";
             this.tStiffenerWidth_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerWidth_65.TabIndex = 442;
@@ -3597,7 +3625,7 @@
             // 
             // tStiffenerTHK_66
             // 
-            this.tStiffenerTHK_66.Location = new System.Drawing.Point(3, 1175);
+            this.tStiffenerTHK_66.Location = new System.Drawing.Point(3, 1278);
             this.tStiffenerTHK_66.Name = "tStiffenerTHK_66";
             this.tStiffenerTHK_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerTHK_66.TabIndex = 436;
@@ -3605,7 +3633,7 @@
             // 
             // tStiffenerTHK_62
             // 
-            this.tStiffenerTHK_62.Location = new System.Drawing.Point(289, 1175);
+            this.tStiffenerTHK_62.Location = new System.Drawing.Point(289, 1278);
             this.tStiffenerTHK_62.Name = "tStiffenerTHK_62";
             this.tStiffenerTHK_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerTHK_62.TabIndex = 431;
@@ -3613,7 +3641,7 @@
             // 
             // tStiffenerTHK_61
             // 
-            this.tStiffenerTHK_61.Location = new System.Drawing.Point(362, 1175);
+            this.tStiffenerTHK_61.Location = new System.Drawing.Point(362, 1278);
             this.tStiffenerTHK_61.Name = "tStiffenerTHK_61";
             this.tStiffenerTHK_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerTHK_61.TabIndex = 430;
@@ -3621,7 +3649,7 @@
             // 
             // tStiffenerTHK_63
             // 
-            this.tStiffenerTHK_63.Location = new System.Drawing.Point(219, 1175);
+            this.tStiffenerTHK_63.Location = new System.Drawing.Point(219, 1278);
             this.tStiffenerTHK_63.Name = "tStiffenerTHK_63";
             this.tStiffenerTHK_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerTHK_63.TabIndex = 433;
@@ -3631,7 +3659,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.BackColor = System.Drawing.Color.White;
-            this.label41.Location = new System.Drawing.Point(432, 1178);
+            this.label41.Location = new System.Drawing.Point(432, 1281);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(74, 13);
             this.label41.TabIndex = 432;
@@ -3639,7 +3667,7 @@
             // 
             // tStiffenerTHK_64
             // 
-            this.tStiffenerTHK_64.Location = new System.Drawing.Point(146, 1175);
+            this.tStiffenerTHK_64.Location = new System.Drawing.Point(146, 1278);
             this.tStiffenerTHK_64.Name = "tStiffenerTHK_64";
             this.tStiffenerTHK_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerTHK_64.TabIndex = 434;
@@ -3647,7 +3675,7 @@
             // 
             // tStiffenerTHK_65
             // 
-            this.tStiffenerTHK_65.Location = new System.Drawing.Point(76, 1175);
+            this.tStiffenerTHK_65.Location = new System.Drawing.Point(76, 1278);
             this.tStiffenerTHK_65.Name = "tStiffenerTHK_65";
             this.tStiffenerTHK_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerTHK_65.TabIndex = 435;
@@ -3715,7 +3743,7 @@
             // 
             // tTubeVPitchElevenTwelve_66
             // 
-            this.tTubeVPitchElevenTwelve_66.Location = new System.Drawing.Point(3, 1142);
+            this.tTubeVPitchElevenTwelve_66.Location = new System.Drawing.Point(3, 1245);
             this.tTubeVPitchElevenTwelve_66.Name = "tTubeVPitchElevenTwelve_66";
             this.tTubeVPitchElevenTwelve_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchElevenTwelve_66.TabIndex = 422;
@@ -3723,7 +3751,7 @@
             // 
             // tTubeVPitchElevenTwelve_62
             // 
-            this.tTubeVPitchElevenTwelve_62.Location = new System.Drawing.Point(289, 1142);
+            this.tTubeVPitchElevenTwelve_62.Location = new System.Drawing.Point(289, 1245);
             this.tTubeVPitchElevenTwelve_62.Name = "tTubeVPitchElevenTwelve_62";
             this.tTubeVPitchElevenTwelve_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchElevenTwelve_62.TabIndex = 417;
@@ -3731,7 +3759,7 @@
             // 
             // tTubeVPitchElevenTwelve_61
             // 
-            this.tTubeVPitchElevenTwelve_61.Location = new System.Drawing.Point(362, 1142);
+            this.tTubeVPitchElevenTwelve_61.Location = new System.Drawing.Point(362, 1245);
             this.tTubeVPitchElevenTwelve_61.Name = "tTubeVPitchElevenTwelve_61";
             this.tTubeVPitchElevenTwelve_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchElevenTwelve_61.TabIndex = 416;
@@ -3739,7 +3767,7 @@
             // 
             // tTubeVPitchElevenTwelve_63
             // 
-            this.tTubeVPitchElevenTwelve_63.Location = new System.Drawing.Point(219, 1142);
+            this.tTubeVPitchElevenTwelve_63.Location = new System.Drawing.Point(219, 1245);
             this.tTubeVPitchElevenTwelve_63.Name = "tTubeVPitchElevenTwelve_63";
             this.tTubeVPitchElevenTwelve_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchElevenTwelve_63.TabIndex = 419;
@@ -3749,7 +3777,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.BackColor = System.Drawing.Color.White;
-            this.label40.Location = new System.Drawing.Point(432, 1145);
+            this.label40.Location = new System.Drawing.Point(432, 1248);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(133, 13);
             this.label40.TabIndex = 418;
@@ -3757,7 +3785,7 @@
             // 
             // tTubeVPitchElevenTwelve_64
             // 
-            this.tTubeVPitchElevenTwelve_64.Location = new System.Drawing.Point(146, 1142);
+            this.tTubeVPitchElevenTwelve_64.Location = new System.Drawing.Point(146, 1245);
             this.tTubeVPitchElevenTwelve_64.Name = "tTubeVPitchElevenTwelve_64";
             this.tTubeVPitchElevenTwelve_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchElevenTwelve_64.TabIndex = 420;
@@ -3765,7 +3793,7 @@
             // 
             // tTubeVPitchElevenTwelve_65
             // 
-            this.tTubeVPitchElevenTwelve_65.Location = new System.Drawing.Point(76, 1142);
+            this.tTubeVPitchElevenTwelve_65.Location = new System.Drawing.Point(76, 1245);
             this.tTubeVPitchElevenTwelve_65.Name = "tTubeVPitchElevenTwelve_65";
             this.tTubeVPitchElevenTwelve_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchElevenTwelve_65.TabIndex = 421;
@@ -3773,7 +3801,7 @@
             // 
             // tTubeVPitchTenEleven_66
             // 
-            this.tTubeVPitchTenEleven_66.Location = new System.Drawing.Point(3, 1116);
+            this.tTubeVPitchTenEleven_66.Location = new System.Drawing.Point(3, 1219);
             this.tTubeVPitchTenEleven_66.Name = "tTubeVPitchTenEleven_66";
             this.tTubeVPitchTenEleven_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchTenEleven_66.TabIndex = 415;
@@ -3781,7 +3809,7 @@
             // 
             // tTubeVPitchTenEleven_62
             // 
-            this.tTubeVPitchTenEleven_62.Location = new System.Drawing.Point(289, 1116);
+            this.tTubeVPitchTenEleven_62.Location = new System.Drawing.Point(289, 1219);
             this.tTubeVPitchTenEleven_62.Name = "tTubeVPitchTenEleven_62";
             this.tTubeVPitchTenEleven_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchTenEleven_62.TabIndex = 410;
@@ -3789,7 +3817,7 @@
             // 
             // tTubeVPitchTenEleven_61
             // 
-            this.tTubeVPitchTenEleven_61.Location = new System.Drawing.Point(362, 1116);
+            this.tTubeVPitchTenEleven_61.Location = new System.Drawing.Point(362, 1219);
             this.tTubeVPitchTenEleven_61.Name = "tTubeVPitchTenEleven_61";
             this.tTubeVPitchTenEleven_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchTenEleven_61.TabIndex = 409;
@@ -3797,7 +3825,7 @@
             // 
             // tTubeVPitchTenEleven_63
             // 
-            this.tTubeVPitchTenEleven_63.Location = new System.Drawing.Point(219, 1116);
+            this.tTubeVPitchTenEleven_63.Location = new System.Drawing.Point(219, 1219);
             this.tTubeVPitchTenEleven_63.Name = "tTubeVPitchTenEleven_63";
             this.tTubeVPitchTenEleven_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchTenEleven_63.TabIndex = 412;
@@ -3807,7 +3835,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.BackColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(432, 1119);
+            this.label39.Location = new System.Drawing.Point(432, 1222);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(133, 13);
             this.label39.TabIndex = 411;
@@ -3815,7 +3843,7 @@
             // 
             // tTubeVPitchTenEleven_64
             // 
-            this.tTubeVPitchTenEleven_64.Location = new System.Drawing.Point(146, 1116);
+            this.tTubeVPitchTenEleven_64.Location = new System.Drawing.Point(146, 1219);
             this.tTubeVPitchTenEleven_64.Name = "tTubeVPitchTenEleven_64";
             this.tTubeVPitchTenEleven_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchTenEleven_64.TabIndex = 413;
@@ -3823,7 +3851,7 @@
             // 
             // tTubeVPitchTenEleven_65
             // 
-            this.tTubeVPitchTenEleven_65.Location = new System.Drawing.Point(76, 1116);
+            this.tTubeVPitchTenEleven_65.Location = new System.Drawing.Point(76, 1219);
             this.tTubeVPitchTenEleven_65.Name = "tTubeVPitchTenEleven_65";
             this.tTubeVPitchTenEleven_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchTenEleven_65.TabIndex = 414;
@@ -3831,7 +3859,7 @@
             // 
             // tTubeVPitchNineTen_66
             // 
-            this.tTubeVPitchNineTen_66.Location = new System.Drawing.Point(3, 1090);
+            this.tTubeVPitchNineTen_66.Location = new System.Drawing.Point(3, 1193);
             this.tTubeVPitchNineTen_66.Name = "tTubeVPitchNineTen_66";
             this.tTubeVPitchNineTen_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchNineTen_66.TabIndex = 408;
@@ -3839,7 +3867,7 @@
             // 
             // tTubeVPitchNineTen_62
             // 
-            this.tTubeVPitchNineTen_62.Location = new System.Drawing.Point(289, 1090);
+            this.tTubeVPitchNineTen_62.Location = new System.Drawing.Point(289, 1193);
             this.tTubeVPitchNineTen_62.Name = "tTubeVPitchNineTen_62";
             this.tTubeVPitchNineTen_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchNineTen_62.TabIndex = 403;
@@ -3847,7 +3875,7 @@
             // 
             // tTubeVPitchNineTen_61
             // 
-            this.tTubeVPitchNineTen_61.Location = new System.Drawing.Point(362, 1090);
+            this.tTubeVPitchNineTen_61.Location = new System.Drawing.Point(362, 1193);
             this.tTubeVPitchNineTen_61.Name = "tTubeVPitchNineTen_61";
             this.tTubeVPitchNineTen_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchNineTen_61.TabIndex = 402;
@@ -3855,7 +3883,7 @@
             // 
             // tTubeVPitchNineTen_63
             // 
-            this.tTubeVPitchNineTen_63.Location = new System.Drawing.Point(219, 1090);
+            this.tTubeVPitchNineTen_63.Location = new System.Drawing.Point(219, 1193);
             this.tTubeVPitchNineTen_63.Name = "tTubeVPitchNineTen_63";
             this.tTubeVPitchNineTen_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchNineTen_63.TabIndex = 405;
@@ -3865,7 +3893,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(432, 1093);
+            this.label35.Location = new System.Drawing.Point(432, 1196);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(127, 13);
             this.label35.TabIndex = 404;
@@ -3873,7 +3901,7 @@
             // 
             // tTubeVPitchNineTen_64
             // 
-            this.tTubeVPitchNineTen_64.Location = new System.Drawing.Point(146, 1090);
+            this.tTubeVPitchNineTen_64.Location = new System.Drawing.Point(146, 1193);
             this.tTubeVPitchNineTen_64.Name = "tTubeVPitchNineTen_64";
             this.tTubeVPitchNineTen_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchNineTen_64.TabIndex = 406;
@@ -3881,7 +3909,7 @@
             // 
             // tTubeVPitchNineTen_65
             // 
-            this.tTubeVPitchNineTen_65.Location = new System.Drawing.Point(76, 1090);
+            this.tTubeVPitchNineTen_65.Location = new System.Drawing.Point(76, 1193);
             this.tTubeVPitchNineTen_65.Name = "tTubeVPitchNineTen_65";
             this.tTubeVPitchNineTen_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchNineTen_65.TabIndex = 407;
@@ -3889,7 +3917,7 @@
             // 
             // tTubeVPitchEightNine_66
             // 
-            this.tTubeVPitchEightNine_66.Location = new System.Drawing.Point(3, 1064);
+            this.tTubeVPitchEightNine_66.Location = new System.Drawing.Point(3, 1167);
             this.tTubeVPitchEightNine_66.Name = "tTubeVPitchEightNine_66";
             this.tTubeVPitchEightNine_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchEightNine_66.TabIndex = 401;
@@ -3897,7 +3925,7 @@
             // 
             // tTubeVPitchEightNine_62
             // 
-            this.tTubeVPitchEightNine_62.Location = new System.Drawing.Point(289, 1064);
+            this.tTubeVPitchEightNine_62.Location = new System.Drawing.Point(289, 1167);
             this.tTubeVPitchEightNine_62.Name = "tTubeVPitchEightNine_62";
             this.tTubeVPitchEightNine_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchEightNine_62.TabIndex = 396;
@@ -3905,7 +3933,7 @@
             // 
             // tTubeVPitchEightNine_61
             // 
-            this.tTubeVPitchEightNine_61.Location = new System.Drawing.Point(362, 1064);
+            this.tTubeVPitchEightNine_61.Location = new System.Drawing.Point(362, 1167);
             this.tTubeVPitchEightNine_61.Name = "tTubeVPitchEightNine_61";
             this.tTubeVPitchEightNine_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchEightNine_61.TabIndex = 395;
@@ -3913,7 +3941,7 @@
             // 
             // tTubeVPitchEightNine_63
             // 
-            this.tTubeVPitchEightNine_63.Location = new System.Drawing.Point(219, 1064);
+            this.tTubeVPitchEightNine_63.Location = new System.Drawing.Point(219, 1167);
             this.tTubeVPitchEightNine_63.Name = "tTubeVPitchEightNine_63";
             this.tTubeVPitchEightNine_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchEightNine_63.TabIndex = 398;
@@ -3923,7 +3951,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(432, 1067);
+            this.label34.Location = new System.Drawing.Point(432, 1170);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(121, 13);
             this.label34.TabIndex = 397;
@@ -3931,7 +3959,7 @@
             // 
             // tTubeVPitchEightNine_64
             // 
-            this.tTubeVPitchEightNine_64.Location = new System.Drawing.Point(146, 1064);
+            this.tTubeVPitchEightNine_64.Location = new System.Drawing.Point(146, 1167);
             this.tTubeVPitchEightNine_64.Name = "tTubeVPitchEightNine_64";
             this.tTubeVPitchEightNine_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchEightNine_64.TabIndex = 399;
@@ -3939,7 +3967,7 @@
             // 
             // tTubeVPitchEightNine_65
             // 
-            this.tTubeVPitchEightNine_65.Location = new System.Drawing.Point(76, 1064);
+            this.tTubeVPitchEightNine_65.Location = new System.Drawing.Point(76, 1167);
             this.tTubeVPitchEightNine_65.Name = "tTubeVPitchEightNine_65";
             this.tTubeVPitchEightNine_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchEightNine_65.TabIndex = 400;
@@ -3947,7 +3975,7 @@
             // 
             // tTubeVPitchSevenEight_66
             // 
-            this.tTubeVPitchSevenEight_66.Location = new System.Drawing.Point(3, 1038);
+            this.tTubeVPitchSevenEight_66.Location = new System.Drawing.Point(3, 1141);
             this.tTubeVPitchSevenEight_66.Name = "tTubeVPitchSevenEight_66";
             this.tTubeVPitchSevenEight_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchSevenEight_66.TabIndex = 394;
@@ -3955,7 +3983,7 @@
             // 
             // tTubeVPitchSevenEight_62
             // 
-            this.tTubeVPitchSevenEight_62.Location = new System.Drawing.Point(289, 1038);
+            this.tTubeVPitchSevenEight_62.Location = new System.Drawing.Point(289, 1141);
             this.tTubeVPitchSevenEight_62.Name = "tTubeVPitchSevenEight_62";
             this.tTubeVPitchSevenEight_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchSevenEight_62.TabIndex = 389;
@@ -3963,7 +3991,7 @@
             // 
             // tTubeVPitchSevenEight_61
             // 
-            this.tTubeVPitchSevenEight_61.Location = new System.Drawing.Point(362, 1038);
+            this.tTubeVPitchSevenEight_61.Location = new System.Drawing.Point(362, 1141);
             this.tTubeVPitchSevenEight_61.Name = "tTubeVPitchSevenEight_61";
             this.tTubeVPitchSevenEight_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchSevenEight_61.TabIndex = 388;
@@ -3971,7 +3999,7 @@
             // 
             // tTubeVPitchSevenEight_63
             // 
-            this.tTubeVPitchSevenEight_63.Location = new System.Drawing.Point(219, 1038);
+            this.tTubeVPitchSevenEight_63.Location = new System.Drawing.Point(219, 1141);
             this.tTubeVPitchSevenEight_63.Name = "tTubeVPitchSevenEight_63";
             this.tTubeVPitchSevenEight_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchSevenEight_63.TabIndex = 391;
@@ -3981,7 +4009,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(432, 1041);
+            this.label33.Location = new System.Drawing.Point(432, 1144);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(121, 13);
             this.label33.TabIndex = 390;
@@ -3989,7 +4017,7 @@
             // 
             // tTubeVPitchSevenEight_64
             // 
-            this.tTubeVPitchSevenEight_64.Location = new System.Drawing.Point(146, 1038);
+            this.tTubeVPitchSevenEight_64.Location = new System.Drawing.Point(146, 1141);
             this.tTubeVPitchSevenEight_64.Name = "tTubeVPitchSevenEight_64";
             this.tTubeVPitchSevenEight_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchSevenEight_64.TabIndex = 392;
@@ -3997,7 +4025,7 @@
             // 
             // tTubeVPitchSevenEight_65
             // 
-            this.tTubeVPitchSevenEight_65.Location = new System.Drawing.Point(76, 1038);
+            this.tTubeVPitchSevenEight_65.Location = new System.Drawing.Point(76, 1141);
             this.tTubeVPitchSevenEight_65.Name = "tTubeVPitchSevenEight_65";
             this.tTubeVPitchSevenEight_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchSevenEight_65.TabIndex = 393;
@@ -4005,7 +4033,7 @@
             // 
             // tTubeVPitchSixSeven_66
             // 
-            this.tTubeVPitchSixSeven_66.Location = new System.Drawing.Point(3, 1012);
+            this.tTubeVPitchSixSeven_66.Location = new System.Drawing.Point(3, 1115);
             this.tTubeVPitchSixSeven_66.Name = "tTubeVPitchSixSeven_66";
             this.tTubeVPitchSixSeven_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchSixSeven_66.TabIndex = 387;
@@ -4013,7 +4041,7 @@
             // 
             // tTubeVPitchSixSeven_62
             // 
-            this.tTubeVPitchSixSeven_62.Location = new System.Drawing.Point(289, 1012);
+            this.tTubeVPitchSixSeven_62.Location = new System.Drawing.Point(289, 1115);
             this.tTubeVPitchSixSeven_62.Name = "tTubeVPitchSixSeven_62";
             this.tTubeVPitchSixSeven_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchSixSeven_62.TabIndex = 382;
@@ -4021,7 +4049,7 @@
             // 
             // tTubeVPitchSixSeven_61
             // 
-            this.tTubeVPitchSixSeven_61.Location = new System.Drawing.Point(362, 1012);
+            this.tTubeVPitchSixSeven_61.Location = new System.Drawing.Point(362, 1115);
             this.tTubeVPitchSixSeven_61.Name = "tTubeVPitchSixSeven_61";
             this.tTubeVPitchSixSeven_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchSixSeven_61.TabIndex = 381;
@@ -4029,7 +4057,7 @@
             // 
             // tTubeVPitchSixSeven_63
             // 
-            this.tTubeVPitchSixSeven_63.Location = new System.Drawing.Point(219, 1012);
+            this.tTubeVPitchSixSeven_63.Location = new System.Drawing.Point(219, 1115);
             this.tTubeVPitchSixSeven_63.Name = "tTubeVPitchSixSeven_63";
             this.tTubeVPitchSixSeven_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchSixSeven_63.TabIndex = 384;
@@ -4039,7 +4067,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(432, 1015);
+            this.label32.Location = new System.Drawing.Point(432, 1118);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(121, 13);
             this.label32.TabIndex = 383;
@@ -4047,7 +4075,7 @@
             // 
             // tTubeVPitchSixSeven_64
             // 
-            this.tTubeVPitchSixSeven_64.Location = new System.Drawing.Point(146, 1012);
+            this.tTubeVPitchSixSeven_64.Location = new System.Drawing.Point(146, 1115);
             this.tTubeVPitchSixSeven_64.Name = "tTubeVPitchSixSeven_64";
             this.tTubeVPitchSixSeven_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchSixSeven_64.TabIndex = 385;
@@ -4055,7 +4083,7 @@
             // 
             // tTubeVPitchSixSeven_65
             // 
-            this.tTubeVPitchSixSeven_65.Location = new System.Drawing.Point(76, 1012);
+            this.tTubeVPitchSixSeven_65.Location = new System.Drawing.Point(76, 1115);
             this.tTubeVPitchSixSeven_65.Name = "tTubeVPitchSixSeven_65";
             this.tTubeVPitchSixSeven_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchSixSeven_65.TabIndex = 386;
@@ -4063,7 +4091,7 @@
             // 
             // tTubeVPitchFiveSix_66
             // 
-            this.tTubeVPitchFiveSix_66.Location = new System.Drawing.Point(3, 986);
+            this.tTubeVPitchFiveSix_66.Location = new System.Drawing.Point(3, 1089);
             this.tTubeVPitchFiveSix_66.Name = "tTubeVPitchFiveSix_66";
             this.tTubeVPitchFiveSix_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchFiveSix_66.TabIndex = 380;
@@ -4071,7 +4099,7 @@
             // 
             // tTubeVPitchFiveSix_62
             // 
-            this.tTubeVPitchFiveSix_62.Location = new System.Drawing.Point(289, 986);
+            this.tTubeVPitchFiveSix_62.Location = new System.Drawing.Point(289, 1089);
             this.tTubeVPitchFiveSix_62.Name = "tTubeVPitchFiveSix_62";
             this.tTubeVPitchFiveSix_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchFiveSix_62.TabIndex = 375;
@@ -4079,7 +4107,7 @@
             // 
             // tTubeVPitchFiveSix_61
             // 
-            this.tTubeVPitchFiveSix_61.Location = new System.Drawing.Point(362, 986);
+            this.tTubeVPitchFiveSix_61.Location = new System.Drawing.Point(362, 1089);
             this.tTubeVPitchFiveSix_61.Name = "tTubeVPitchFiveSix_61";
             this.tTubeVPitchFiveSix_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchFiveSix_61.TabIndex = 374;
@@ -4087,7 +4115,7 @@
             // 
             // tTubeVPitchFiveSix_63
             // 
-            this.tTubeVPitchFiveSix_63.Location = new System.Drawing.Point(219, 986);
+            this.tTubeVPitchFiveSix_63.Location = new System.Drawing.Point(219, 1089);
             this.tTubeVPitchFiveSix_63.Name = "tTubeVPitchFiveSix_63";
             this.tTubeVPitchFiveSix_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchFiveSix_63.TabIndex = 377;
@@ -4097,7 +4125,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(432, 989);
+            this.label31.Location = new System.Drawing.Point(432, 1092);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(121, 13);
             this.label31.TabIndex = 376;
@@ -4105,7 +4133,7 @@
             // 
             // tTubeVPitchFiveSix_64
             // 
-            this.tTubeVPitchFiveSix_64.Location = new System.Drawing.Point(146, 986);
+            this.tTubeVPitchFiveSix_64.Location = new System.Drawing.Point(146, 1089);
             this.tTubeVPitchFiveSix_64.Name = "tTubeVPitchFiveSix_64";
             this.tTubeVPitchFiveSix_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchFiveSix_64.TabIndex = 378;
@@ -4113,7 +4141,7 @@
             // 
             // tTubeVPitchFiveSix_65
             // 
-            this.tTubeVPitchFiveSix_65.Location = new System.Drawing.Point(76, 986);
+            this.tTubeVPitchFiveSix_65.Location = new System.Drawing.Point(76, 1089);
             this.tTubeVPitchFiveSix_65.Name = "tTubeVPitchFiveSix_65";
             this.tTubeVPitchFiveSix_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchFiveSix_65.TabIndex = 379;
@@ -4121,7 +4149,7 @@
             // 
             // tTubeVPitchFourFive_66
             // 
-            this.tTubeVPitchFourFive_66.Location = new System.Drawing.Point(3, 960);
+            this.tTubeVPitchFourFive_66.Location = new System.Drawing.Point(3, 1063);
             this.tTubeVPitchFourFive_66.Name = "tTubeVPitchFourFive_66";
             this.tTubeVPitchFourFive_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchFourFive_66.TabIndex = 373;
@@ -4129,7 +4157,7 @@
             // 
             // tTubeVPitchFourFive_62
             // 
-            this.tTubeVPitchFourFive_62.Location = new System.Drawing.Point(289, 960);
+            this.tTubeVPitchFourFive_62.Location = new System.Drawing.Point(289, 1063);
             this.tTubeVPitchFourFive_62.Name = "tTubeVPitchFourFive_62";
             this.tTubeVPitchFourFive_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchFourFive_62.TabIndex = 368;
@@ -4137,7 +4165,7 @@
             // 
             // tTubeVPitchFourFive_61
             // 
-            this.tTubeVPitchFourFive_61.Location = new System.Drawing.Point(362, 960);
+            this.tTubeVPitchFourFive_61.Location = new System.Drawing.Point(362, 1063);
             this.tTubeVPitchFourFive_61.Name = "tTubeVPitchFourFive_61";
             this.tTubeVPitchFourFive_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchFourFive_61.TabIndex = 367;
@@ -4145,7 +4173,7 @@
             // 
             // tTubeVPitchFourFive_63
             // 
-            this.tTubeVPitchFourFive_63.Location = new System.Drawing.Point(219, 960);
+            this.tTubeVPitchFourFive_63.Location = new System.Drawing.Point(219, 1063);
             this.tTubeVPitchFourFive_63.Name = "tTubeVPitchFourFive_63";
             this.tTubeVPitchFourFive_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchFourFive_63.TabIndex = 370;
@@ -4155,7 +4183,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(432, 963);
+            this.label30.Location = new System.Drawing.Point(432, 1066);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(121, 13);
             this.label30.TabIndex = 369;
@@ -4163,7 +4191,7 @@
             // 
             // tTubeVPitchFourFive_64
             // 
-            this.tTubeVPitchFourFive_64.Location = new System.Drawing.Point(146, 960);
+            this.tTubeVPitchFourFive_64.Location = new System.Drawing.Point(146, 1063);
             this.tTubeVPitchFourFive_64.Name = "tTubeVPitchFourFive_64";
             this.tTubeVPitchFourFive_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchFourFive_64.TabIndex = 371;
@@ -4171,7 +4199,7 @@
             // 
             // tTubeVPitchFourFive_65
             // 
-            this.tTubeVPitchFourFive_65.Location = new System.Drawing.Point(76, 960);
+            this.tTubeVPitchFourFive_65.Location = new System.Drawing.Point(76, 1063);
             this.tTubeVPitchFourFive_65.Name = "tTubeVPitchFourFive_65";
             this.tTubeVPitchFourFive_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchFourFive_65.TabIndex = 372;
@@ -4179,7 +4207,7 @@
             // 
             // tTubeVPitchThreeFour_66
             // 
-            this.tTubeVPitchThreeFour_66.Location = new System.Drawing.Point(3, 934);
+            this.tTubeVPitchThreeFour_66.Location = new System.Drawing.Point(3, 1037);
             this.tTubeVPitchThreeFour_66.Name = "tTubeVPitchThreeFour_66";
             this.tTubeVPitchThreeFour_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchThreeFour_66.TabIndex = 366;
@@ -4187,7 +4215,7 @@
             // 
             // tTubeVPitchThreeFour_62
             // 
-            this.tTubeVPitchThreeFour_62.Location = new System.Drawing.Point(289, 934);
+            this.tTubeVPitchThreeFour_62.Location = new System.Drawing.Point(289, 1037);
             this.tTubeVPitchThreeFour_62.Name = "tTubeVPitchThreeFour_62";
             this.tTubeVPitchThreeFour_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchThreeFour_62.TabIndex = 361;
@@ -4195,7 +4223,7 @@
             // 
             // tTubeVPitchThreeFour_61
             // 
-            this.tTubeVPitchThreeFour_61.Location = new System.Drawing.Point(362, 934);
+            this.tTubeVPitchThreeFour_61.Location = new System.Drawing.Point(362, 1037);
             this.tTubeVPitchThreeFour_61.Name = "tTubeVPitchThreeFour_61";
             this.tTubeVPitchThreeFour_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchThreeFour_61.TabIndex = 360;
@@ -4203,7 +4231,7 @@
             // 
             // tTubeVPitchThreeFour_63
             // 
-            this.tTubeVPitchThreeFour_63.Location = new System.Drawing.Point(219, 934);
+            this.tTubeVPitchThreeFour_63.Location = new System.Drawing.Point(219, 1037);
             this.tTubeVPitchThreeFour_63.Name = "tTubeVPitchThreeFour_63";
             this.tTubeVPitchThreeFour_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchThreeFour_63.TabIndex = 363;
@@ -4213,7 +4241,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(432, 937);
+            this.label29.Location = new System.Drawing.Point(432, 1040);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(121, 13);
             this.label29.TabIndex = 362;
@@ -4221,7 +4249,7 @@
             // 
             // tTubeVPitchThreeFour_64
             // 
-            this.tTubeVPitchThreeFour_64.Location = new System.Drawing.Point(146, 934);
+            this.tTubeVPitchThreeFour_64.Location = new System.Drawing.Point(146, 1037);
             this.tTubeVPitchThreeFour_64.Name = "tTubeVPitchThreeFour_64";
             this.tTubeVPitchThreeFour_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchThreeFour_64.TabIndex = 364;
@@ -4229,7 +4257,7 @@
             // 
             // tTubeVPitchThreeFour_65
             // 
-            this.tTubeVPitchThreeFour_65.Location = new System.Drawing.Point(76, 934);
+            this.tTubeVPitchThreeFour_65.Location = new System.Drawing.Point(76, 1037);
             this.tTubeVPitchThreeFour_65.Name = "tTubeVPitchThreeFour_65";
             this.tTubeVPitchThreeFour_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchThreeFour_65.TabIndex = 365;
@@ -4237,7 +4265,7 @@
             // 
             // tTubeVPitchTwoThree_66
             // 
-            this.tTubeVPitchTwoThree_66.Location = new System.Drawing.Point(3, 908);
+            this.tTubeVPitchTwoThree_66.Location = new System.Drawing.Point(3, 1011);
             this.tTubeVPitchTwoThree_66.Name = "tTubeVPitchTwoThree_66";
             this.tTubeVPitchTwoThree_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchTwoThree_66.TabIndex = 359;
@@ -4245,7 +4273,7 @@
             // 
             // tTubeVPitchTwoThree_62
             // 
-            this.tTubeVPitchTwoThree_62.Location = new System.Drawing.Point(289, 908);
+            this.tTubeVPitchTwoThree_62.Location = new System.Drawing.Point(289, 1011);
             this.tTubeVPitchTwoThree_62.Name = "tTubeVPitchTwoThree_62";
             this.tTubeVPitchTwoThree_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchTwoThree_62.TabIndex = 354;
@@ -4253,7 +4281,7 @@
             // 
             // tTubeVPitchTwoThree_61
             // 
-            this.tTubeVPitchTwoThree_61.Location = new System.Drawing.Point(362, 908);
+            this.tTubeVPitchTwoThree_61.Location = new System.Drawing.Point(362, 1011);
             this.tTubeVPitchTwoThree_61.Name = "tTubeVPitchTwoThree_61";
             this.tTubeVPitchTwoThree_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchTwoThree_61.TabIndex = 353;
@@ -4261,7 +4289,7 @@
             // 
             // tTubeVPitchTwoThree_63
             // 
-            this.tTubeVPitchTwoThree_63.Location = new System.Drawing.Point(219, 908);
+            this.tTubeVPitchTwoThree_63.Location = new System.Drawing.Point(219, 1011);
             this.tTubeVPitchTwoThree_63.Name = "tTubeVPitchTwoThree_63";
             this.tTubeVPitchTwoThree_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchTwoThree_63.TabIndex = 356;
@@ -4271,7 +4299,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(432, 911);
+            this.label28.Location = new System.Drawing.Point(432, 1014);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(121, 13);
             this.label28.TabIndex = 355;
@@ -4279,7 +4307,7 @@
             // 
             // tTubeVPitchTwoThree_64
             // 
-            this.tTubeVPitchTwoThree_64.Location = new System.Drawing.Point(146, 908);
+            this.tTubeVPitchTwoThree_64.Location = new System.Drawing.Point(146, 1011);
             this.tTubeVPitchTwoThree_64.Name = "tTubeVPitchTwoThree_64";
             this.tTubeVPitchTwoThree_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchTwoThree_64.TabIndex = 357;
@@ -4287,7 +4315,7 @@
             // 
             // tTubeVPitchTwoThree_65
             // 
-            this.tTubeVPitchTwoThree_65.Location = new System.Drawing.Point(76, 908);
+            this.tTubeVPitchTwoThree_65.Location = new System.Drawing.Point(76, 1011);
             this.tTubeVPitchTwoThree_65.Name = "tTubeVPitchTwoThree_65";
             this.tTubeVPitchTwoThree_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchTwoThree_65.TabIndex = 358;
@@ -4295,7 +4323,7 @@
             // 
             // tTubeVPitchOneTwo_66
             // 
-            this.tTubeVPitchOneTwo_66.Location = new System.Drawing.Point(3, 882);
+            this.tTubeVPitchOneTwo_66.Location = new System.Drawing.Point(3, 985);
             this.tTubeVPitchOneTwo_66.Name = "tTubeVPitchOneTwo_66";
             this.tTubeVPitchOneTwo_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchOneTwo_66.TabIndex = 352;
@@ -4303,7 +4331,7 @@
             // 
             // tTubeVPitchOneTwo_62
             // 
-            this.tTubeVPitchOneTwo_62.Location = new System.Drawing.Point(289, 882);
+            this.tTubeVPitchOneTwo_62.Location = new System.Drawing.Point(289, 985);
             this.tTubeVPitchOneTwo_62.Name = "tTubeVPitchOneTwo_62";
             this.tTubeVPitchOneTwo_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchOneTwo_62.TabIndex = 347;
@@ -4311,7 +4339,7 @@
             // 
             // tTubeVPitchOneTwo_61
             // 
-            this.tTubeVPitchOneTwo_61.Location = new System.Drawing.Point(362, 882);
+            this.tTubeVPitchOneTwo_61.Location = new System.Drawing.Point(362, 985);
             this.tTubeVPitchOneTwo_61.Name = "tTubeVPitchOneTwo_61";
             this.tTubeVPitchOneTwo_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchOneTwo_61.TabIndex = 346;
@@ -4319,7 +4347,7 @@
             // 
             // tTubeVPitchOneTwo_63
             // 
-            this.tTubeVPitchOneTwo_63.Location = new System.Drawing.Point(219, 882);
+            this.tTubeVPitchOneTwo_63.Location = new System.Drawing.Point(219, 985);
             this.tTubeVPitchOneTwo_63.Name = "tTubeVPitchOneTwo_63";
             this.tTubeVPitchOneTwo_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchOneTwo_63.TabIndex = 349;
@@ -4329,7 +4357,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.BackColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(432, 885);
+            this.label38.Location = new System.Drawing.Point(432, 988);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(121, 13);
             this.label38.TabIndex = 348;
@@ -4337,7 +4365,7 @@
             // 
             // tTubeVPitchOneTwo_64
             // 
-            this.tTubeVPitchOneTwo_64.Location = new System.Drawing.Point(146, 882);
+            this.tTubeVPitchOneTwo_64.Location = new System.Drawing.Point(146, 985);
             this.tTubeVPitchOneTwo_64.Name = "tTubeVPitchOneTwo_64";
             this.tTubeVPitchOneTwo_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeVPitchOneTwo_64.TabIndex = 350;
@@ -4345,7 +4373,7 @@
             // 
             // tTubeVPitchOneTwo_65
             // 
-            this.tTubeVPitchOneTwo_65.Location = new System.Drawing.Point(76, 882);
+            this.tTubeVPitchOneTwo_65.Location = new System.Drawing.Point(76, 985);
             this.tTubeVPitchOneTwo_65.Name = "tTubeVPitchOneTwo_65";
             this.tTubeVPitchOneTwo_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeVPitchOneTwo_65.TabIndex = 351;
@@ -4353,7 +4381,7 @@
             // 
             // tTubeHPitchEven_66
             // 
-            this.tTubeHPitchEven_66.Location = new System.Drawing.Point(3, 856);
+            this.tTubeHPitchEven_66.Location = new System.Drawing.Point(3, 959);
             this.tTubeHPitchEven_66.Name = "tTubeHPitchEven_66";
             this.tTubeHPitchEven_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeHPitchEven_66.TabIndex = 345;
@@ -4361,7 +4389,7 @@
             // 
             // tTubeHPitchEven_62
             // 
-            this.tTubeHPitchEven_62.Location = new System.Drawing.Point(289, 856);
+            this.tTubeHPitchEven_62.Location = new System.Drawing.Point(289, 959);
             this.tTubeHPitchEven_62.Name = "tTubeHPitchEven_62";
             this.tTubeHPitchEven_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeHPitchEven_62.TabIndex = 340;
@@ -4369,7 +4397,7 @@
             // 
             // tTubeHPitchEven_61
             // 
-            this.tTubeHPitchEven_61.Location = new System.Drawing.Point(362, 856);
+            this.tTubeHPitchEven_61.Location = new System.Drawing.Point(362, 959);
             this.tTubeHPitchEven_61.Name = "tTubeHPitchEven_61";
             this.tTubeHPitchEven_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeHPitchEven_61.TabIndex = 339;
@@ -4377,7 +4405,7 @@
             // 
             // tTubeHPitchEven_63
             // 
-            this.tTubeHPitchEven_63.Location = new System.Drawing.Point(219, 856);
+            this.tTubeHPitchEven_63.Location = new System.Drawing.Point(219, 959);
             this.tTubeHPitchEven_63.Name = "tTubeHPitchEven_63";
             this.tTubeHPitchEven_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeHPitchEven_63.TabIndex = 342;
@@ -4387,7 +4415,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.BackColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(432, 859);
+            this.label37.Location = new System.Drawing.Point(432, 962);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(106, 13);
             this.label37.TabIndex = 341;
@@ -4395,7 +4423,7 @@
             // 
             // tTubeHPitchEven_64
             // 
-            this.tTubeHPitchEven_64.Location = new System.Drawing.Point(146, 856);
+            this.tTubeHPitchEven_64.Location = new System.Drawing.Point(146, 959);
             this.tTubeHPitchEven_64.Name = "tTubeHPitchEven_64";
             this.tTubeHPitchEven_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeHPitchEven_64.TabIndex = 343;
@@ -4403,7 +4431,7 @@
             // 
             // tTubeHPitchEven_65
             // 
-            this.tTubeHPitchEven_65.Location = new System.Drawing.Point(76, 856);
+            this.tTubeHPitchEven_65.Location = new System.Drawing.Point(76, 959);
             this.tTubeHPitchEven_65.Name = "tTubeHPitchEven_65";
             this.tTubeHPitchEven_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeHPitchEven_65.TabIndex = 344;
@@ -4411,7 +4439,7 @@
             // 
             // tTubeHPitchOdd_66
             // 
-            this.tTubeHPitchOdd_66.Location = new System.Drawing.Point(3, 830);
+            this.tTubeHPitchOdd_66.Location = new System.Drawing.Point(3, 933);
             this.tTubeHPitchOdd_66.Name = "tTubeHPitchOdd_66";
             this.tTubeHPitchOdd_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeHPitchOdd_66.TabIndex = 338;
@@ -4419,7 +4447,7 @@
             // 
             // tTubeHPitchOdd_62
             // 
-            this.tTubeHPitchOdd_62.Location = new System.Drawing.Point(289, 830);
+            this.tTubeHPitchOdd_62.Location = new System.Drawing.Point(289, 933);
             this.tTubeHPitchOdd_62.Name = "tTubeHPitchOdd_62";
             this.tTubeHPitchOdd_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeHPitchOdd_62.TabIndex = 333;
@@ -4427,7 +4455,7 @@
             // 
             // tTubeHPitchOdd_61
             // 
-            this.tTubeHPitchOdd_61.Location = new System.Drawing.Point(362, 830);
+            this.tTubeHPitchOdd_61.Location = new System.Drawing.Point(362, 933);
             this.tTubeHPitchOdd_61.Name = "tTubeHPitchOdd_61";
             this.tTubeHPitchOdd_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeHPitchOdd_61.TabIndex = 332;
@@ -4435,7 +4463,7 @@
             // 
             // tTubeHPitchOdd_63
             // 
-            this.tTubeHPitchOdd_63.Location = new System.Drawing.Point(219, 830);
+            this.tTubeHPitchOdd_63.Location = new System.Drawing.Point(219, 933);
             this.tTubeHPitchOdd_63.Name = "tTubeHPitchOdd_63";
             this.tTubeHPitchOdd_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeHPitchOdd_63.TabIndex = 335;
@@ -4445,7 +4473,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(432, 833);
+            this.label36.Location = new System.Drawing.Point(432, 936);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(101, 13);
             this.label36.TabIndex = 334;
@@ -4453,7 +4481,7 @@
             // 
             // tTubeHPitchOdd_64
             // 
-            this.tTubeHPitchOdd_64.Location = new System.Drawing.Point(146, 830);
+            this.tTubeHPitchOdd_64.Location = new System.Drawing.Point(146, 933);
             this.tTubeHPitchOdd_64.Name = "tTubeHPitchOdd_64";
             this.tTubeHPitchOdd_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeHPitchOdd_64.TabIndex = 336;
@@ -4461,7 +4489,7 @@
             // 
             // tTubeHPitchOdd_65
             // 
-            this.tTubeHPitchOdd_65.Location = new System.Drawing.Point(76, 830);
+            this.tTubeHPitchOdd_65.Location = new System.Drawing.Point(76, 933);
             this.tTubeHPitchOdd_65.Name = "tTubeHPitchOdd_65";
             this.tTubeHPitchOdd_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeHPitchOdd_65.TabIndex = 337;
@@ -4469,7 +4497,7 @@
             // 
             // tTubeRow2Count_66
             // 
-            this.tTubeRow2Count_66.Location = new System.Drawing.Point(3, 535);
+            this.tTubeRow2Count_66.Location = new System.Drawing.Point(3, 638);
             this.tTubeRow2Count_66.Name = "tTubeRow2Count_66";
             this.tTubeRow2Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow2Count_66.TabIndex = 275;
@@ -4477,7 +4505,7 @@
             // 
             // tTubeRow2Count_62
             // 
-            this.tTubeRow2Count_62.Location = new System.Drawing.Point(289, 535);
+            this.tTubeRow2Count_62.Location = new System.Drawing.Point(289, 638);
             this.tTubeRow2Count_62.Name = "tTubeRow2Count_62";
             this.tTubeRow2Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow2Count_62.TabIndex = 270;
@@ -4485,7 +4513,7 @@
             // 
             // tTubeRow2Count_61
             // 
-            this.tTubeRow2Count_61.Location = new System.Drawing.Point(362, 535);
+            this.tTubeRow2Count_61.Location = new System.Drawing.Point(362, 638);
             this.tTubeRow2Count_61.Name = "tTubeRow2Count_61";
             this.tTubeRow2Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow2Count_61.TabIndex = 269;
@@ -4493,7 +4521,7 @@
             // 
             // tTubeRow2Count_63
             // 
-            this.tTubeRow2Count_63.Location = new System.Drawing.Point(219, 535);
+            this.tTubeRow2Count_63.Location = new System.Drawing.Point(219, 638);
             this.tTubeRow2Count_63.Name = "tTubeRow2Count_63";
             this.tTubeRow2Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow2Count_63.TabIndex = 272;
@@ -4503,7 +4531,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(432, 538);
+            this.label27.Location = new System.Drawing.Point(432, 641);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(79, 13);
             this.label27.TabIndex = 271;
@@ -4511,7 +4539,7 @@
             // 
             // tTubeRow2Count_64
             // 
-            this.tTubeRow2Count_64.Location = new System.Drawing.Point(146, 535);
+            this.tTubeRow2Count_64.Location = new System.Drawing.Point(146, 638);
             this.tTubeRow2Count_64.Name = "tTubeRow2Count_64";
             this.tTubeRow2Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow2Count_64.TabIndex = 273;
@@ -4519,7 +4547,7 @@
             // 
             // tTubeRow2Count_65
             // 
-            this.tTubeRow2Count_65.Location = new System.Drawing.Point(76, 535);
+            this.tTubeRow2Count_65.Location = new System.Drawing.Point(76, 638);
             this.tTubeRow2Count_65.Name = "tTubeRow2Count_65";
             this.tTubeRow2Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow2Count_65.TabIndex = 274;
@@ -4527,7 +4555,7 @@
             // 
             // tTubeRow1Count_66
             // 
-            this.tTubeRow1Count_66.Location = new System.Drawing.Point(3, 509);
+            this.tTubeRow1Count_66.Location = new System.Drawing.Point(3, 612);
             this.tTubeRow1Count_66.Name = "tTubeRow1Count_66";
             this.tTubeRow1Count_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow1Count_66.TabIndex = 268;
@@ -4535,7 +4563,7 @@
             // 
             // tTubeRow1Count_62
             // 
-            this.tTubeRow1Count_62.Location = new System.Drawing.Point(289, 509);
+            this.tTubeRow1Count_62.Location = new System.Drawing.Point(289, 612);
             this.tTubeRow1Count_62.Name = "tTubeRow1Count_62";
             this.tTubeRow1Count_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow1Count_62.TabIndex = 263;
@@ -4543,7 +4571,7 @@
             // 
             // tTubeRow1Count_61
             // 
-            this.tTubeRow1Count_61.Location = new System.Drawing.Point(362, 509);
+            this.tTubeRow1Count_61.Location = new System.Drawing.Point(362, 612);
             this.tTubeRow1Count_61.Name = "tTubeRow1Count_61";
             this.tTubeRow1Count_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow1Count_61.TabIndex = 262;
@@ -4551,7 +4579,7 @@
             // 
             // tTubeRow1Count_63
             // 
-            this.tTubeRow1Count_63.Location = new System.Drawing.Point(219, 509);
+            this.tTubeRow1Count_63.Location = new System.Drawing.Point(219, 612);
             this.tTubeRow1Count_63.Name = "tTubeRow1Count_63";
             this.tTubeRow1Count_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow1Count_63.TabIndex = 265;
@@ -4561,7 +4589,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(432, 512);
+            this.label26.Location = new System.Drawing.Point(432, 615);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(79, 13);
             this.label26.TabIndex = 264;
@@ -4569,7 +4597,7 @@
             // 
             // tTubeRow1Count_64
             // 
-            this.tTubeRow1Count_64.Location = new System.Drawing.Point(146, 509);
+            this.tTubeRow1Count_64.Location = new System.Drawing.Point(146, 612);
             this.tTubeRow1Count_64.Name = "tTubeRow1Count_64";
             this.tTubeRow1Count_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeRow1Count_64.TabIndex = 266;
@@ -4577,7 +4605,7 @@
             // 
             // tTubeRow1Count_65
             // 
-            this.tTubeRow1Count_65.Location = new System.Drawing.Point(76, 509);
+            this.tTubeRow1Count_65.Location = new System.Drawing.Point(76, 612);
             this.tTubeRow1Count_65.Name = "tTubeRow1Count_65";
             this.tTubeRow1Count_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeRow1Count_65.TabIndex = 267;
@@ -4585,7 +4613,7 @@
             // 
             // tTubeHoleDiameter_66
             // 
-            this.tTubeHoleDiameter_66.Location = new System.Drawing.Point(3, 405);
+            this.tTubeHoleDiameter_66.Location = new System.Drawing.Point(3, 508);
             this.tTubeHoleDiameter_66.Name = "tTubeHoleDiameter_66";
             this.tTubeHoleDiameter_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeHoleDiameter_66.TabIndex = 261;
@@ -4593,7 +4621,7 @@
             // 
             // tTubeHoleDiameter_62
             // 
-            this.tTubeHoleDiameter_62.Location = new System.Drawing.Point(289, 405);
+            this.tTubeHoleDiameter_62.Location = new System.Drawing.Point(289, 508);
             this.tTubeHoleDiameter_62.Name = "tTubeHoleDiameter_62";
             this.tTubeHoleDiameter_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeHoleDiameter_62.TabIndex = 256;
@@ -4651,7 +4679,7 @@
             // 
             // tTubeHoleDiameter_61
             // 
-            this.tTubeHoleDiameter_61.Location = new System.Drawing.Point(362, 405);
+            this.tTubeHoleDiameter_61.Location = new System.Drawing.Point(362, 508);
             this.tTubeHoleDiameter_61.Name = "tTubeHoleDiameter_61";
             this.tTubeHoleDiameter_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeHoleDiameter_61.TabIndex = 255;
@@ -4683,7 +4711,7 @@
             // 
             // tTubeHoleDiameter_63
             // 
-            this.tTubeHoleDiameter_63.Location = new System.Drawing.Point(219, 405);
+            this.tTubeHoleDiameter_63.Location = new System.Drawing.Point(219, 508);
             this.tTubeHoleDiameter_63.Name = "tTubeHoleDiameter_63";
             this.tTubeHoleDiameter_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeHoleDiameter_63.TabIndex = 258;
@@ -4719,7 +4747,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(432, 408);
+            this.label25.Location = new System.Drawing.Point(432, 511);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(124, 13);
             this.label25.TabIndex = 257;
@@ -4751,7 +4779,7 @@
             // 
             // tTubeHoleDiameter_64
             // 
-            this.tTubeHoleDiameter_64.Location = new System.Drawing.Point(146, 405);
+            this.tTubeHoleDiameter_64.Location = new System.Drawing.Point(146, 508);
             this.tTubeHoleDiameter_64.Name = "tTubeHoleDiameter_64";
             this.tTubeHoleDiameter_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeHoleDiameter_64.TabIndex = 259;
@@ -4783,7 +4811,7 @@
             // 
             // tTubeHoleDiameter_65
             // 
-            this.tTubeHoleDiameter_65.Location = new System.Drawing.Point(76, 405);
+            this.tTubeHoleDiameter_65.Location = new System.Drawing.Point(76, 508);
             this.tTubeHoleDiameter_65.Name = "tTubeHoleDiameter_65";
             this.tTubeHoleDiameter_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeHoleDiameter_65.TabIndex = 260;
@@ -4817,7 +4845,7 @@
             // 
             // tTubeY_66
             // 
-            this.tTubeY_66.Location = new System.Drawing.Point(3, 431);
+            this.tTubeY_66.Location = new System.Drawing.Point(3, 534);
             this.tTubeY_66.Name = "tTubeY_66";
             this.tTubeY_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeY_66.TabIndex = 254;
@@ -4829,9 +4857,9 @@
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(432, 371);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 13);
+            this.label11.Size = new System.Drawing.Size(151, 13);
             this.label11.TabIndex = 221;
-            this.label11.Text = "LENGTH  End Plate (Bust?)";
+            this.label11.Text = "LENGTH  End Plate (Busted?)";
             // 
             // tPlugsheetWidth_65
             // 
@@ -4851,7 +4879,7 @@
             // 
             // tTubeY_62
             // 
-            this.tTubeY_62.Location = new System.Drawing.Point(289, 431);
+            this.tTubeY_62.Location = new System.Drawing.Point(289, 534);
             this.tTubeY_62.Name = "tTubeY_62";
             this.tTubeY_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeY_62.TabIndex = 249;
@@ -4883,7 +4911,7 @@
             // 
             // tTubeY_61
             // 
-            this.tTubeY_61.Location = new System.Drawing.Point(362, 431);
+            this.tTubeY_61.Location = new System.Drawing.Point(362, 534);
             this.tTubeY_61.Name = "tTubeY_61";
             this.tTubeY_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeY_61.TabIndex = 248;
@@ -4917,7 +4945,7 @@
             // 
             // tTubeY_63
             // 
-            this.tTubeY_63.Location = new System.Drawing.Point(219, 431);
+            this.tTubeY_63.Location = new System.Drawing.Point(219, 534);
             this.tTubeY_63.Name = "tTubeY_63";
             this.tTubeY_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeY_63.TabIndex = 251;
@@ -4951,7 +4979,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(432, 434);
+            this.label24.Location = new System.Drawing.Point(432, 537);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(120, 13);
             this.label24.TabIndex = 250;
@@ -4983,7 +5011,7 @@
             // 
             // tTubeY_64
             // 
-            this.tTubeY_64.Location = new System.Drawing.Point(146, 431);
+            this.tTubeY_64.Location = new System.Drawing.Point(146, 534);
             this.tTubeY_64.Name = "tTubeY_64";
             this.tTubeY_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeY_64.TabIndex = 252;
@@ -5015,7 +5043,7 @@
             // 
             // tTubeY_65
             // 
-            this.tTubeY_65.Location = new System.Drawing.Point(76, 431);
+            this.tTubeY_65.Location = new System.Drawing.Point(76, 534);
             this.tTubeY_65.Name = "tTubeY_65";
             this.tTubeY_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeY_65.TabIndex = 253;
@@ -5049,7 +5077,7 @@
             // 
             // tTubeEvenX_66
             // 
-            this.tTubeEvenX_66.Location = new System.Drawing.Point(3, 483);
+            this.tTubeEvenX_66.Location = new System.Drawing.Point(3, 586);
             this.tTubeEvenX_66.Name = "tTubeEvenX_66";
             this.tTubeEvenX_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeEvenX_66.TabIndex = 247;
@@ -5065,7 +5093,7 @@
             // 
             // tTubeEvenX_62
             // 
-            this.tTubeEvenX_62.Location = new System.Drawing.Point(289, 483);
+            this.tTubeEvenX_62.Location = new System.Drawing.Point(289, 586);
             this.tTubeEvenX_62.Name = "tTubeEvenX_62";
             this.tTubeEvenX_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeEvenX_62.TabIndex = 242;
@@ -5081,7 +5109,7 @@
             // 
             // tTubeEvenX_61
             // 
-            this.tTubeEvenX_61.Location = new System.Drawing.Point(362, 483);
+            this.tTubeEvenX_61.Location = new System.Drawing.Point(362, 586);
             this.tTubeEvenX_61.Name = "tTubeEvenX_61";
             this.tTubeEvenX_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeEvenX_61.TabIndex = 241;
@@ -5099,7 +5127,7 @@
             // 
             // tTubeEvenX_63
             // 
-            this.tTubeEvenX_63.Location = new System.Drawing.Point(219, 483);
+            this.tTubeEvenX_63.Location = new System.Drawing.Point(219, 586);
             this.tTubeEvenX_63.Name = "tTubeEvenX_63";
             this.tTubeEvenX_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeEvenX_63.TabIndex = 244;
@@ -5117,7 +5145,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(432, 486);
+            this.label21.Location = new System.Drawing.Point(432, 589);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(153, 13);
             this.label21.TabIndex = 243;
@@ -5133,7 +5161,7 @@
             // 
             // tTubeEvenX_64
             // 
-            this.tTubeEvenX_64.Location = new System.Drawing.Point(146, 483);
+            this.tTubeEvenX_64.Location = new System.Drawing.Point(146, 586);
             this.tTubeEvenX_64.Name = "tTubeEvenX_64";
             this.tTubeEvenX_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeEvenX_64.TabIndex = 245;
@@ -5149,7 +5177,7 @@
             // 
             // tTubeEvenX_65
             // 
-            this.tTubeEvenX_65.Location = new System.Drawing.Point(76, 483);
+            this.tTubeEvenX_65.Location = new System.Drawing.Point(76, 586);
             this.tTubeEvenX_65.Name = "tTubeEvenX_65";
             this.tTubeEvenX_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeEvenX_65.TabIndex = 246;
@@ -5165,7 +5193,7 @@
             // 
             // tTubeOddX_66
             // 
-            this.tTubeOddX_66.Location = new System.Drawing.Point(3, 457);
+            this.tTubeOddX_66.Location = new System.Drawing.Point(3, 560);
             this.tTubeOddX_66.Name = "tTubeOddX_66";
             this.tTubeOddX_66.Size = new System.Drawing.Size(67, 20);
             this.tTubeOddX_66.TabIndex = 240;
@@ -5181,7 +5209,7 @@
             // 
             // tTubeOddX_62
             // 
-            this.tTubeOddX_62.Location = new System.Drawing.Point(289, 457);
+            this.tTubeOddX_62.Location = new System.Drawing.Point(289, 560);
             this.tTubeOddX_62.Name = "tTubeOddX_62";
             this.tTubeOddX_62.Size = new System.Drawing.Size(67, 20);
             this.tTubeOddX_62.TabIndex = 235;
@@ -5197,7 +5225,7 @@
             // 
             // tTubeOddX_61
             // 
-            this.tTubeOddX_61.Location = new System.Drawing.Point(362, 457);
+            this.tTubeOddX_61.Location = new System.Drawing.Point(362, 560);
             this.tTubeOddX_61.Name = "tTubeOddX_61";
             this.tTubeOddX_61.Size = new System.Drawing.Size(64, 20);
             this.tTubeOddX_61.TabIndex = 234;
@@ -5215,7 +5243,7 @@
             // 
             // tTubeOddX_63
             // 
-            this.tTubeOddX_63.Location = new System.Drawing.Point(219, 457);
+            this.tTubeOddX_63.Location = new System.Drawing.Point(219, 560);
             this.tTubeOddX_63.Name = "tTubeOddX_63";
             this.tTubeOddX_63.Size = new System.Drawing.Size(64, 20);
             this.tTubeOddX_63.TabIndex = 237;
@@ -5233,7 +5261,7 @@
             // 
             this.text1112.AutoSize = true;
             this.text1112.BackColor = System.Drawing.Color.White;
-            this.text1112.Location = new System.Drawing.Point(432, 460);
+            this.text1112.Location = new System.Drawing.Point(432, 563);
             this.text1112.Name = "text1112";
             this.text1112.Size = new System.Drawing.Size(148, 13);
             this.text1112.TabIndex = 236;
@@ -5249,7 +5277,7 @@
             // 
             // tTubeOddX_64
             // 
-            this.tTubeOddX_64.Location = new System.Drawing.Point(146, 457);
+            this.tTubeOddX_64.Location = new System.Drawing.Point(146, 560);
             this.tTubeOddX_64.Name = "tTubeOddX_64";
             this.tTubeOddX_64.Size = new System.Drawing.Size(67, 20);
             this.tTubeOddX_64.TabIndex = 238;
@@ -5265,7 +5293,7 @@
             // 
             // tTubeOddX_65
             // 
-            this.tTubeOddX_65.Location = new System.Drawing.Point(76, 457);
+            this.tTubeOddX_65.Location = new System.Drawing.Point(76, 560);
             this.tTubeOddX_65.Name = "tTubeOddX_65";
             this.tTubeOddX_65.Size = new System.Drawing.Size(64, 20);
             this.tTubeOddX_65.TabIndex = 239;
@@ -5887,6 +5915,144 @@
             this.test66.UseVisualStyleBackColor = true;
             this.test66.Click += new System.EventHandler(this.test66_Click);
             // 
+            // tEndPlateBustedSpan2_66
+            // 
+            this.tEndPlateBustedSpan2_66.Location = new System.Drawing.Point(3, 394);
+            this.tEndPlateBustedSpan2_66.Name = "tEndPlateBustedSpan2_66";
+            this.tEndPlateBustedSpan2_66.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateBustedSpan2_66.TabIndex = 611;
+            this.tEndPlateBustedSpan2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateBustedSpan2_62
+            // 
+            this.tEndPlateBustedSpan2_62.Location = new System.Drawing.Point(289, 394);
+            this.tEndPlateBustedSpan2_62.Name = "tEndPlateBustedSpan2_62";
+            this.tEndPlateBustedSpan2_62.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateBustedSpan2_62.TabIndex = 606;
+            this.tEndPlateBustedSpan2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateBustedSpan2_61
+            // 
+            this.tEndPlateBustedSpan2_61.Location = new System.Drawing.Point(362, 394);
+            this.tEndPlateBustedSpan2_61.Name = "tEndPlateBustedSpan2_61";
+            this.tEndPlateBustedSpan2_61.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateBustedSpan2_61.TabIndex = 605;
+            this.tEndPlateBustedSpan2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateBustedSpan2_63
+            // 
+            this.tEndPlateBustedSpan2_63.Location = new System.Drawing.Point(219, 394);
+            this.tEndPlateBustedSpan2_63.Name = "tEndPlateBustedSpan2_63";
+            this.tEndPlateBustedSpan2_63.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateBustedSpan2_63.TabIndex = 608;
+            this.tEndPlateBustedSpan2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.BackColor = System.Drawing.Color.White;
+            this.label87.Location = new System.Drawing.Point(432, 397);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(148, 13);
+            this.label87.TabIndex = 607;
+            this.label87.Text = "LENGTH  End Plate Busted 2";
+            // 
+            // tEndPlateBustedSpan2_64
+            // 
+            this.tEndPlateBustedSpan2_64.Location = new System.Drawing.Point(146, 394);
+            this.tEndPlateBustedSpan2_64.Name = "tEndPlateBustedSpan2_64";
+            this.tEndPlateBustedSpan2_64.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlateBustedSpan2_64.TabIndex = 609;
+            this.tEndPlateBustedSpan2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlateBustedSpan2_65
+            // 
+            this.tEndPlateBustedSpan2_65.Location = new System.Drawing.Point(76, 394);
+            this.tEndPlateBustedSpan2_65.Name = "tEndPlateBustedSpan2_65";
+            this.tEndPlateBustedSpan2_65.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlateBustedSpan2_65.TabIndex = 610;
+            this.tEndPlateBustedSpan2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "TL",
+            "TR",
+            "BL",
+            "BR"});
+            this.comboBox1.Location = new System.Drawing.Point(289, 402);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(67, 21);
+            this.comboBox1.TabIndex = 617;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(3, 402);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox6.Size = new System.Drawing.Size(67, 21);
+            this.comboBox6.TabIndex = 613;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(219, 402);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox7.Size = new System.Drawing.Size(64, 21);
+            this.comboBox7.TabIndex = 616;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(76, 402);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox8.Size = new System.Drawing.Size(64, 21);
+            this.comboBox8.TabIndex = 614;
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "TL",
+            "TR",
+            "BL",
+            "BR"});
+            this.comboBox9.Location = new System.Drawing.Point(362, 402);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox9.Size = new System.Drawing.Size(64, 21);
+            this.comboBox9.TabIndex = 612;
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(146, 402);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox10.Size = new System.Drawing.Size(67, 21);
+            this.comboBox10.TabIndex = 615;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.BackColor = System.Drawing.Color.White;
+            this.label82.Location = new System.Drawing.Point(432, 405);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(98, 13);
+            this.label82.TabIndex = 611;
+            this.label82.Text = "TYPE Of Extension";
+            // 
             // HeaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6478,5 +6644,19 @@
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.TextBox textBox84;
         private System.Windows.Forms.TextBox textBox85;
+        private System.Windows.Forms.TextBox tEndPlateBustedSpan2_66;
+        private System.Windows.Forms.TextBox tEndPlateBustedSpan2_62;
+        private System.Windows.Forms.TextBox tEndPlateBustedSpan2_61;
+        private System.Windows.Forms.TextBox tEndPlateBustedSpan2_63;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox tEndPlateBustedSpan2_64;
+        private System.Windows.Forms.TextBox tEndPlateBustedSpan2_65;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.Label label82;
     }
 }

@@ -20,7 +20,7 @@ namespace HDR.Box
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("Length", "sk:Plate", Length, 0);
+            EditDimension("Length", "sk:Plate", LocalLength, 0);
             EditDimension("Width", "sk:Plate", Width, 0);
             EditDimension("THK", "Plate", THK, 0);
         }
@@ -42,7 +42,7 @@ namespace HDR.Box
                     double yTranslation;
                     if (Header.IsBusted)
                     {
-                        yTranslation = -BustSpans[0] / 2;
+                        yTranslation = -Length1 / 2;
                     }
                     else
                     {
@@ -61,46 +61,12 @@ namespace HDR.Box
         }
 
 
-        // Bust data
-        private List<double> _bustSpans;
-        protected List<double> BustSpans
-        {
-            get
-            {
-                if (_bustSpans == null)
-                {
-                    string[] bustedSpans;
-                    switch (Header)
-                    {
-                        case Header_61 Header61:
-                            bustedSpans = CellNameColumnArray("AAF5", "AAF43");
-                            break;
-                        case Header_62 Header62:
-                            bustedSpans = CellNameColumnArray("ACZ5", "ACZ43");
-                            break;
-                        case Header_63 Header63:
-                            bustedSpans = CellNameColumnArray("AAJ5", "AAJ43");
-                            break;
-                        case Header_64 Header64:
-                            bustedSpans = CellNameColumnArray("ADA5", "ADA43");
-                            break;
-                        case Header_65 Header65:
-                            bustedSpans = CellNameColumnArray("AAK5", "AAK43");
-                            break;
-                        case Header_66 Header66:
-                            bustedSpans = CellNameColumnArray("ADB5", "ADB43");
-                            break;
-                        default: throw new NotImplementedException();
-                    }
-                    _bustSpans = CellDoubleList(InputsCalcsSheet, bustedSpans);
-                }
-                return _bustSpans;
-            }
-        }
-
-
         // Virtual properties
-        public virtual double Length
+        protected virtual double LocalLength => Length1;
+
+
+        // Wrapper properties
+        public double Length1
         {
             get
             {
@@ -108,23 +74,16 @@ namespace HDR.Box
                 {
                     if (Header.IsBusted)
                     {
-                        if (BustSpans.Count >= 1)
-                        {
-                            var bustedLength = BustSpans[0];
-                            _length = bustedLength;
-                        }
+                        _length = Header.EndPlateLength + 0.25;
                     }
                     else
                     {
-                        _length = Header.EndPlateLength;
+                        _length = Header.BoxHeight;
                     }
                 }
                 return _length.Value;
             }
         }
-
-
-        // Wrapper properties
         static public double THK
         {
             get => Header.EndPlateTHK;

@@ -16,6 +16,7 @@ using Excel;
 using static FileTools.StaticFileTools;
 using static Excel.Prego;
 using System.Runtime.InteropServices;
+using static FileTools.Properties.Settings;
 
 namespace HDR
 {
@@ -67,6 +68,29 @@ namespace HDR
             LoadPregoBool(cIsBusted62, InputsCalcsSheet, "ADC45");
             LoadPregoBool(cIsBusted64, InputsCalcsSheet, "ADD45");
             LoadPregoBool(cIsBusted66, InputsCalcsSheet, "ADE45");
+
+            ImportBustedSpans();
+        }
+        private void ImportBustedSpans()
+        {
+            List<double> bustSpans_61 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAF5", "AAF43"));
+            AssignSpans(value => Default.EndPlateBustedSpan2_61 = value, tEndPlateBustedSpan2_61, 2, bustSpans_61);
+
+            List<double> bustSpans_62 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ACZ5", "ACZ43"));
+            AssignSpans(value => Default.EndPlateBustedSpan2_62 = value, tEndPlateBustedSpan2_62, 2, bustSpans_62);
+
+            List<double> bustSpans_63 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAJ5", "AAJ43"));
+            AssignSpans(value => Default.EndPlateBustedSpan2_63 = value, tEndPlateBustedSpan2_63, 2, bustSpans_63);
+
+            List<double> bustSpans_64 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADA5", "ADA43"));
+            AssignSpans(value => Default.EndPlateBustedSpan2_64 = value, tEndPlateBustedSpan2_64, 2, bustSpans_64);
+
+            List<double> bustSpans_65 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAK5", "AAK43"));
+            AssignSpans(value => Default.EndPlateBustedSpan2_65 = value, tEndPlateBustedSpan2_65, 2, bustSpans_65);
+
+            List<double> bustSpans_66 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADB5", "ADB43"));
+            AssignSpans(value => Default.EndPlateBustedSpan2_66 = value, tEndPlateBustedSpan2_66, 2, bustSpans_66);
+
         }
         #region Buttons
         private void bImportPrego_Click(object sender, EventArgs e)
