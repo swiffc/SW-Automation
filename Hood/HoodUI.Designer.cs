@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_JobItemNo = new System.Windows.Forms.TextBox();
             this.txt_JobPO = new System.Windows.Forms.TextBox();
             this.txt_JobLocation = new System.Windows.Forms.TextBox();
@@ -58,7 +57,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.txt_Stacks = new System.Windows.Forms.TextBox();
             this.txt_Height = new System.Windows.Forms.TextBox();
             this.txt_Width = new System.Windows.Forms.TextBox();
@@ -91,13 +89,13 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.txt_Initials);
+            this.tabPage1.Controls.Add(this.txt_Bank);
             this.tabPage1.Controls.Add(this.label34);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.txt_JobItemNo);
             this.tabPage1.Controls.Add(this.txt_JobPO);
             this.tabPage1.Controls.Add(this.txt_JobLocation);
@@ -114,7 +112,7 @@
             // 
             // txt_Initials
             // 
-            this.txt_Initials.Location = new System.Drawing.Point(227, 245);
+            this.txt_Initials.Location = new System.Drawing.Point(200, 240);
             this.txt_Initials.Name = "txt_Initials";
             this.txt_Initials.Size = new System.Drawing.Size(100, 20);
             this.txt_Initials.TabIndex = 14;
@@ -123,7 +121,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(141, 248);
+            this.label34.Location = new System.Drawing.Point(114, 243);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(36, 13);
             this.label34.TabIndex = 12;
@@ -132,7 +130,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 197);
+            this.label5.Location = new System.Drawing.Point(114, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 11;
@@ -141,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(141, 223);
+            this.label6.Location = new System.Drawing.Point(114, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 10;
@@ -150,7 +148,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 145);
+            this.label3.Location = new System.Drawing.Point(114, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 9;
@@ -159,7 +157,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(141, 171);
+            this.label4.Location = new System.Drawing.Point(114, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 8;
@@ -168,24 +166,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(141, 119);
+            this.label2.Location = new System.Drawing.Point(114, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Customer";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Job #";
-            // 
             // txt_JobItemNo
             // 
-            this.txt_JobItemNo.Location = new System.Drawing.Point(227, 216);
+            this.txt_JobItemNo.Location = new System.Drawing.Point(200, 211);
             this.txt_JobItemNo.Name = "txt_JobItemNo";
             this.txt_JobItemNo.Size = new System.Drawing.Size(100, 20);
             this.txt_JobItemNo.TabIndex = 5;
@@ -193,7 +182,7 @@
             // 
             // txt_JobPO
             // 
-            this.txt_JobPO.Location = new System.Drawing.Point(227, 190);
+            this.txt_JobPO.Location = new System.Drawing.Point(200, 185);
             this.txt_JobPO.Name = "txt_JobPO";
             this.txt_JobPO.Size = new System.Drawing.Size(100, 20);
             this.txt_JobPO.TabIndex = 4;
@@ -201,7 +190,7 @@
             // 
             // txt_JobLocation
             // 
-            this.txt_JobLocation.Location = new System.Drawing.Point(227, 164);
+            this.txt_JobLocation.Location = new System.Drawing.Point(200, 159);
             this.txt_JobLocation.Name = "txt_JobLocation";
             this.txt_JobLocation.Size = new System.Drawing.Size(100, 20);
             this.txt_JobLocation.TabIndex = 3;
@@ -209,7 +198,7 @@
             // 
             // txt_JobClient
             // 
-            this.txt_JobClient.Location = new System.Drawing.Point(227, 138);
+            this.txt_JobClient.Location = new System.Drawing.Point(200, 133);
             this.txt_JobClient.Name = "txt_JobClient";
             this.txt_JobClient.Size = new System.Drawing.Size(100, 20);
             this.txt_JobClient.TabIndex = 2;
@@ -217,7 +206,7 @@
             // 
             // txt_JobCustomer
             // 
-            this.txt_JobCustomer.Location = new System.Drawing.Point(227, 112);
+            this.txt_JobCustomer.Location = new System.Drawing.Point(200, 107);
             this.txt_JobCustomer.Name = "txt_JobCustomer";
             this.txt_JobCustomer.Size = new System.Drawing.Size(100, 20);
             this.txt_JobCustomer.TabIndex = 1;
@@ -225,10 +214,11 @@
             // 
             // txt_JobNumber
             // 
-            this.txt_JobNumber.Location = new System.Drawing.Point(227, 86);
+            this.txt_JobNumber.Location = new System.Drawing.Point(200, 81);
             this.txt_JobNumber.Name = "txt_JobNumber";
-            this.txt_JobNumber.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobNumber.Size = new System.Drawing.Size(70, 20);
             this.txt_JobNumber.TabIndex = 0;
+            this.txt_JobNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_JobNumber.TextChanged += new System.EventHandler(this.txt_JobNumber_TextChanged);
             // 
             // tabPage2
@@ -246,12 +236,10 @@
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.txt_Stacks);
             this.tabPage2.Controls.Add(this.txt_Height);
             this.tabPage2.Controls.Add(this.txt_Width);
             this.tabPage2.Controls.Add(this.txt_Length);
-            this.tabPage2.Controls.Add(this.txt_Bank);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -397,15 +385,6 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Length";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(105, 31);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Bank";
-            // 
             // txt_Stacks
             // 
             this.txt_Stacks.Location = new System.Drawing.Point(152, 185);
@@ -440,9 +419,9 @@
             // 
             // txt_Bank
             // 
-            this.txt_Bank.Location = new System.Drawing.Point(152, 28);
+            this.txt_Bank.Location = new System.Drawing.Point(276, 81);
             this.txt_Bank.Name = "txt_Bank";
-            this.txt_Bank.Size = new System.Drawing.Size(100, 20);
+            this.txt_Bank.Size = new System.Drawing.Size(24, 20);
             this.txt_Bank.TabIndex = 12;
             this.txt_Bank.TextChanged += new System.EventHandler(this.txt_Bank_TextChanged);
             // 
@@ -519,7 +498,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 397);
+            this.ClientSize = new System.Drawing.Size(492, 397);
             this.Controls.Add(this.txt_HandrailBank);
             this.Name = "HoodUI";
             this.Text = "Hood Interface";
@@ -546,7 +525,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_JobItemNo;
         private System.Windows.Forms.TextBox txt_JobPO;
         private System.Windows.Forms.TextBox txt_JobLocation;
@@ -567,7 +545,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_Stacks;
         private System.Windows.Forms.TextBox txt_Height;
         private System.Windows.Forms.TextBox txt_Width;

@@ -38,7 +38,6 @@ namespace Walkway
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_JobItemNo = new System.Windows.Forms.TextBox();
             this.txt_JobPO = new System.Windows.Forms.TextBox();
             this.txt_JobLocation = new System.Windows.Forms.TextBox();
@@ -63,7 +62,6 @@ namespace Walkway
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.txt_WalkwayOffsetFromColumnCenter = new System.Windows.Forms.TextBox();
             this.txt_WalkwayFloorHeight = new System.Windows.Forms.TextBox();
             this.txt_WalkwayWidth = new System.Windows.Forms.TextBox();
@@ -79,11 +77,9 @@ namespace Walkway
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.txt_PlatformFloorHeight = new System.Windows.Forms.TextBox();
             this.txt_PlatformWidth = new System.Windows.Forms.TextBox();
             this.txt_PlatformLength = new System.Windows.Forms.TextBox();
-            this.txt_PlatformBank = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -92,11 +88,9 @@ namespace Walkway
             this.label20 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.txt_HandrailFloorHeight = new System.Windows.Forms.TextBox();
             this.txt_HandrailRailHeight = new System.Windows.Forms.TextBox();
             this.txt_HandrailLength = new System.Windows.Forms.TextBox();
-            this.txt_RailBank = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label33 = new System.Windows.Forms.Label();
             this.txt_SupportWalkwayLength = new System.Windows.Forms.TextBox();
@@ -108,10 +102,8 @@ namespace Walkway
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.txt_SupportOffsetFromColumnCenter = new System.Windows.Forms.TextBox();
             this.txt_SupportWalkwayWidth = new System.Windows.Forms.TextBox();
-            this.txt_SupportBank = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -136,7 +128,7 @@ namespace Walkway
             this.txt_HandrailBank.Controls.Add(this.tabPage4);
             this.txt_HandrailBank.Controls.Add(this.tabPage5);
             this.txt_HandrailBank.Controls.Add(this.tabPage6);
-            this.txt_HandrailBank.Location = new System.Drawing.Point(12, 12);
+            this.txt_HandrailBank.Location = new System.Drawing.Point(12, 38);
             this.txt_HandrailBank.Name = "txt_HandrailBank";
             this.txt_HandrailBank.SelectedIndex = 0;
             this.txt_HandrailBank.Size = new System.Drawing.Size(466, 373);
@@ -151,13 +143,11 @@ namespace Walkway
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.txt_JobItemNo);
             this.tabPage1.Controls.Add(this.txt_JobPO);
             this.tabPage1.Controls.Add(this.txt_JobLocation);
             this.tabPage1.Controls.Add(this.txt_JobClient);
             this.tabPage1.Controls.Add(this.txt_JobCustomer);
-            this.tabPage1.Controls.Add(this.txt_JobNumber);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -168,7 +158,7 @@ namespace Walkway
             // 
             // txt_Initials
             // 
-            this.txt_Initials.Location = new System.Drawing.Point(227, 245);
+            this.txt_Initials.Location = new System.Drawing.Point(208, 234);
             this.txt_Initials.Name = "txt_Initials";
             this.txt_Initials.Size = new System.Drawing.Size(100, 20);
             this.txt_Initials.TabIndex = 14;
@@ -177,7 +167,7 @@ namespace Walkway
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(141, 248);
+            this.label34.Location = new System.Drawing.Point(122, 237);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(36, 13);
             this.label34.TabIndex = 12;
@@ -186,7 +176,7 @@ namespace Walkway
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 197);
+            this.label5.Location = new System.Drawing.Point(122, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 11;
@@ -195,7 +185,7 @@ namespace Walkway
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(141, 223);
+            this.label6.Location = new System.Drawing.Point(122, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 10;
@@ -204,7 +194,7 @@ namespace Walkway
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 145);
+            this.label3.Location = new System.Drawing.Point(122, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 9;
@@ -213,7 +203,7 @@ namespace Walkway
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(141, 171);
+            this.label4.Location = new System.Drawing.Point(122, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 8;
@@ -222,24 +212,15 @@ namespace Walkway
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(141, 119);
+            this.label2.Location = new System.Drawing.Point(122, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Customer";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Job #";
-            // 
             // txt_JobItemNo
             // 
-            this.txt_JobItemNo.Location = new System.Drawing.Point(227, 216);
+            this.txt_JobItemNo.Location = new System.Drawing.Point(208, 205);
             this.txt_JobItemNo.Name = "txt_JobItemNo";
             this.txt_JobItemNo.Size = new System.Drawing.Size(100, 20);
             this.txt_JobItemNo.TabIndex = 5;
@@ -247,7 +228,7 @@ namespace Walkway
             // 
             // txt_JobPO
             // 
-            this.txt_JobPO.Location = new System.Drawing.Point(227, 190);
+            this.txt_JobPO.Location = new System.Drawing.Point(208, 179);
             this.txt_JobPO.Name = "txt_JobPO";
             this.txt_JobPO.Size = new System.Drawing.Size(100, 20);
             this.txt_JobPO.TabIndex = 4;
@@ -255,7 +236,7 @@ namespace Walkway
             // 
             // txt_JobLocation
             // 
-            this.txt_JobLocation.Location = new System.Drawing.Point(227, 164);
+            this.txt_JobLocation.Location = new System.Drawing.Point(208, 153);
             this.txt_JobLocation.Name = "txt_JobLocation";
             this.txt_JobLocation.Size = new System.Drawing.Size(100, 20);
             this.txt_JobLocation.TabIndex = 3;
@@ -263,7 +244,7 @@ namespace Walkway
             // 
             // txt_JobClient
             // 
-            this.txt_JobClient.Location = new System.Drawing.Point(227, 138);
+            this.txt_JobClient.Location = new System.Drawing.Point(208, 127);
             this.txt_JobClient.Name = "txt_JobClient";
             this.txt_JobClient.Size = new System.Drawing.Size(100, 20);
             this.txt_JobClient.TabIndex = 2;
@@ -271,7 +252,7 @@ namespace Walkway
             // 
             // txt_JobCustomer
             // 
-            this.txt_JobCustomer.Location = new System.Drawing.Point(227, 112);
+            this.txt_JobCustomer.Location = new System.Drawing.Point(208, 101);
             this.txt_JobCustomer.Name = "txt_JobCustomer";
             this.txt_JobCustomer.Size = new System.Drawing.Size(100, 20);
             this.txt_JobCustomer.TabIndex = 1;
@@ -279,10 +260,11 @@ namespace Walkway
             // 
             // txt_JobNumber
             // 
-            this.txt_JobNumber.Location = new System.Drawing.Point(227, 86);
+            this.txt_JobNumber.Location = new System.Drawing.Point(12, 12);
             this.txt_JobNumber.Name = "txt_JobNumber";
-            this.txt_JobNumber.Size = new System.Drawing.Size(100, 20);
+            this.txt_JobNumber.Size = new System.Drawing.Size(70, 20);
             this.txt_JobNumber.TabIndex = 0;
+            this.txt_JobNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_JobNumber.TextChanged += new System.EventHandler(this.txt_JobNumber_TextChanged);
             // 
             // tabPage2
@@ -291,8 +273,6 @@ namespace Walkway
             this.tabPage2.Controls.Add(this.txt_WalkwaySupportCenterToWalkwayEnd);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.txt_WalkwayRailHeight);
-            this.tabPage2.Controls.Add(this.combo_WalkwayMinimumStringerSize);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.btn_WalkwayEdit);
             this.tabPage2.Controls.Add(this.btn_WalkwayCreate);
             this.tabPage2.Controls.Add(this.radio_WalkwayRailRight);
@@ -304,12 +284,10 @@ namespace Walkway
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.txt_WalkwayOffsetFromColumnCenter);
             this.tabPage2.Controls.Add(this.txt_WalkwayFloorHeight);
             this.tabPage2.Controls.Add(this.txt_WalkwayWidth);
             this.tabPage2.Controls.Add(this.txt_WalkwayPlenumCenterWidth);
-            this.tabPage2.Controls.Add(this.txt_WalkwayBank);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -360,7 +338,7 @@ namespace Walkway
             "C6",
             "C8",
             "C10"});
-            this.combo_WalkwayMinimumStringerSize.Location = new System.Drawing.Point(152, 157);
+            this.combo_WalkwayMinimumStringerSize.Location = new System.Drawing.Point(140, 82);
             this.combo_WalkwayMinimumStringerSize.Name = "combo_WalkwayMinimumStringerSize";
             this.combo_WalkwayMinimumStringerSize.Size = new System.Drawing.Size(121, 21);
             this.combo_WalkwayMinimumStringerSize.TabIndex = 32;
@@ -369,7 +347,7 @@ namespace Walkway
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 160);
+            this.label14.Location = new System.Drawing.Point(15, 85);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 13);
             this.label14.TabIndex = 31;
@@ -445,11 +423,11 @@ namespace Walkway
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 135);
+            this.label7.Location = new System.Drawing.Point(26, 135);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 13);
+            this.label7.Size = new System.Drawing.Size(108, 13);
             this.label7.TabIndex = 23;
-            this.label7.Text = "Offset from Column Center";
+            this.label7.Text = "Column cL to Stringer";
             // 
             // label8
             // 
@@ -473,29 +451,20 @@ namespace Walkway
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(73, 109);
+            this.label10.Location = new System.Drawing.Point(50, 109);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.Size = new System.Drawing.Size(87, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Floor Height";
+            this.label10.Text = "Height of Grating";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(30, 57);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 13);
+            this.label11.Size = new System.Drawing.Size(109, 13);
             this.label11.TabIndex = 19;
-            this.label11.Text = "Plenum Center Width";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(105, 31);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Bank";
+            this.label11.Text = "Plenum Width (cL-cL)";
             // 
             // txt_WalkwayOffsetFromColumnCenter
             // 
@@ -531,9 +500,9 @@ namespace Walkway
             // 
             // txt_WalkwayBank
             // 
-            this.txt_WalkwayBank.Location = new System.Drawing.Point(152, 28);
+            this.txt_WalkwayBank.Location = new System.Drawing.Point(88, 12);
             this.txt_WalkwayBank.Name = "txt_WalkwayBank";
-            this.txt_WalkwayBank.Size = new System.Drawing.Size(100, 20);
+            this.txt_WalkwayBank.Size = new System.Drawing.Size(24, 20);
             this.txt_WalkwayBank.TabIndex = 12;
             this.txt_WalkwayBank.TextChanged += new System.EventHandler(this.txt_WalkwayBank_TextChanged);
             // 
@@ -548,11 +517,9 @@ namespace Walkway
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.txt_PlatformFloorHeight);
             this.tabPage3.Controls.Add(this.txt_PlatformWidth);
             this.tabPage3.Controls.Add(this.txt_PlatformLength);
-            this.tabPage3.Controls.Add(this.txt_PlatformBank);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(458, 347);
@@ -632,11 +599,11 @@ namespace Walkway
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(152, 153);
+            this.label16.Location = new System.Drawing.Point(142, 153);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 13);
+            this.label16.Size = new System.Drawing.Size(75, 13);
             this.label16.TabIndex = 20;
-            this.label16.Text = "Floor Height";
+            this.label16.Text = "Grating Height";
             // 
             // label17
             // 
@@ -646,15 +613,6 @@ namespace Walkway
             this.label17.Size = new System.Drawing.Size(40, 13);
             this.label17.TabIndex = 19;
             this.label17.Text = "Length";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(181, 75);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(32, 13);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "Bank";
             // 
             // txt_PlatformFloorHeight
             // 
@@ -680,14 +638,6 @@ namespace Walkway
             this.txt_PlatformLength.TabIndex = 13;
             this.txt_PlatformLength.TextChanged += new System.EventHandler(this.txt_PlatformLength_TextChanged);
             // 
-            // txt_PlatformBank
-            // 
-            this.txt_PlatformBank.Location = new System.Drawing.Point(222, 72);
-            this.txt_PlatformBank.Name = "txt_PlatformBank";
-            this.txt_PlatformBank.Size = new System.Drawing.Size(100, 20);
-            this.txt_PlatformBank.TabIndex = 12;
-            this.txt_PlatformBank.TextChanged += new System.EventHandler(this.txt_PlatformBank_TextChanged);
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.button3);
@@ -697,11 +647,9 @@ namespace Walkway
             this.tabPage4.Controls.Add(this.label20);
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.label23);
-            this.tabPage4.Controls.Add(this.label24);
             this.tabPage4.Controls.Add(this.txt_HandrailFloorHeight);
             this.tabPage4.Controls.Add(this.txt_HandrailRailHeight);
             this.tabPage4.Controls.Add(this.txt_HandrailLength);
-            this.tabPage4.Controls.Add(this.txt_RailBank);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(458, 347);
@@ -746,11 +694,11 @@ namespace Walkway
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(152, 179);
+            this.label19.Location = new System.Drawing.Point(143, 179);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(64, 13);
+            this.label19.Size = new System.Drawing.Size(75, 13);
             this.label19.TabIndex = 23;
-            this.label19.Text = "Floor Height";
+            this.label19.Text = "Grating Height";
             // 
             // label20
             // 
@@ -779,15 +727,6 @@ namespace Walkway
             this.label23.TabIndex = 19;
             this.label23.Text = "Length";
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(184, 101);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(32, 13);
-            this.label24.TabIndex = 18;
-            this.label24.Text = "Bank";
-            // 
             // txt_HandrailFloorHeight
             // 
             this.txt_HandrailFloorHeight.Location = new System.Drawing.Point(222, 176);
@@ -812,17 +751,9 @@ namespace Walkway
             this.txt_HandrailLength.TabIndex = 13;
             this.txt_HandrailLength.TextChanged += new System.EventHandler(this.txt_HandrailLength_TextChanged);
             // 
-            // txt_RailBank
-            // 
-            this.txt_RailBank.Location = new System.Drawing.Point(222, 98);
-            this.txt_RailBank.Name = "txt_RailBank";
-            this.txt_RailBank.Size = new System.Drawing.Size(100, 20);
-            this.txt_RailBank.TabIndex = 12;
-            this.txt_RailBank.TextChanged += new System.EventHandler(this.txt_RailBank_TextChanged);
-            // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage5.BackColor = System.Drawing.Color.White;
             this.tabPage5.Controls.Add(this.label33);
             this.tabPage5.Controls.Add(this.txt_SupportWalkwayLength);
             this.tabPage5.Controls.Add(this.combo_SupportColumnSize);
@@ -833,10 +764,8 @@ namespace Walkway
             this.tabPage5.Controls.Add(this.label27);
             this.tabPage5.Controls.Add(this.label28);
             this.tabPage5.Controls.Add(this.label29);
-            this.tabPage5.Controls.Add(this.label30);
             this.tabPage5.Controls.Add(this.txt_SupportOffsetFromColumnCenter);
             this.tabPage5.Controls.Add(this.txt_SupportWalkwayWidth);
-            this.tabPage5.Controls.Add(this.txt_SupportBank);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(458, 347);
@@ -920,11 +849,11 @@ namespace Walkway
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(76, 153);
+            this.label27.Location = new System.Drawing.Point(96, 153);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(130, 13);
+            this.label27.Size = new System.Drawing.Size(108, 13);
             this.label27.TabIndex = 21;
-            this.label27.Text = "Offset from Column Center";
+            this.label27.Text = "Column cL to Stringer";
             // 
             // label28
             // 
@@ -944,15 +873,6 @@ namespace Walkway
             this.label29.TabIndex = 19;
             this.label29.Text = "Walkway Width";
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(174, 75);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(32, 13);
-            this.label30.TabIndex = 18;
-            this.label30.Text = "Bank";
-            // 
             // txt_SupportOffsetFromColumnCenter
             // 
             this.txt_SupportOffsetFromColumnCenter.Location = new System.Drawing.Point(222, 150);
@@ -969,17 +889,11 @@ namespace Walkway
             this.txt_SupportWalkwayWidth.TabIndex = 13;
             this.txt_SupportWalkwayWidth.TextChanged += new System.EventHandler(this.txt_SupportWalkwayWidth_TextChanged);
             // 
-            // txt_SupportBank
-            // 
-            this.txt_SupportBank.Location = new System.Drawing.Point(222, 72);
-            this.txt_SupportBank.Name = "txt_SupportBank";
-            this.txt_SupportBank.Size = new System.Drawing.Size(100, 20);
-            this.txt_SupportBank.TabIndex = 12;
-            this.txt_SupportBank.TextChanged += new System.EventHandler(this.txt_SupportBank_TextChanged);
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.button11);
+            this.tabPage6.Controls.Add(this.combo_WalkwayMinimumStringerSize);
+            this.tabPage6.Controls.Add(this.label14);
             this.tabPage6.Controls.Add(this.button10);
             this.tabPage6.Controls.Add(this.button9);
             this.tabPage6.Controls.Add(this.button8);
@@ -1059,8 +973,10 @@ namespace Walkway
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 397);
+            this.ClientSize = new System.Drawing.Size(497, 425);
             this.Controls.Add(this.txt_HandrailBank);
+            this.Controls.Add(this.txt_WalkwayBank);
+            this.Controls.Add(this.txt_JobNumber);
             this.Name = "WalkwayUI";
             this.Text = "Walkway Interface";
             this.Load += new System.EventHandler(this.WalkwayUI_Load);
@@ -1078,6 +994,7 @@ namespace Walkway
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1091,7 +1008,6 @@ namespace Walkway
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_JobItemNo;
         private System.Windows.Forms.TextBox txt_JobPO;
         private System.Windows.Forms.TextBox txt_JobLocation;
@@ -1106,7 +1022,6 @@ namespace Walkway
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_WalkwayOffsetFromColumnCenter;
         private System.Windows.Forms.TextBox txt_WalkwayFloorHeight;
         private System.Windows.Forms.TextBox txt_WalkwayWidth;
@@ -1116,28 +1031,22 @@ namespace Walkway
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txt_PlatformFloorHeight;
         private System.Windows.Forms.TextBox txt_PlatformWidth;
         private System.Windows.Forms.TextBox txt_PlatformLength;
-        private System.Windows.Forms.TextBox txt_PlatformBank;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txt_HandrailFloorHeight;
         private System.Windows.Forms.TextBox txt_HandrailRailHeight;
         private System.Windows.Forms.TextBox txt_HandrailLength;
-        private System.Windows.Forms.TextBox txt_RailBank;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txt_SupportOffsetFromColumnCenter;
         private System.Windows.Forms.TextBox txt_SupportWalkwayWidth;
-        private System.Windows.Forms.TextBox txt_SupportBank;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.RadioButton radio_WalkwayRailRight;
         private System.Windows.Forms.RadioButton radio_WalkwayRailLeft;

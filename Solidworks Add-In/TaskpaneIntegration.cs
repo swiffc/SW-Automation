@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FileTools.StaticFileTools;
 using static FileTools.CommonData.CommonData;
+using static Fork.ConfigFileManagement;
 
 
 namespace SolidWorks_Add_In
@@ -18,9 +19,9 @@ namespace SolidWorks_Add_In
     /// </summary>
     public class TaskpaneIntegration : SwAddin
     {
-        static public string VersionNumber => "6.0.1";
+        static public string VersionNumber => "6.0.2";
         static public string SpeechBubble =>
-            @"""" + "Bugfix to SE keeper length" + @"""";
+            @"""" + "Minor bugfixes" + @"""";
 
         #region Private Members
 
@@ -80,6 +81,10 @@ namespace SolidWorks_Add_In
                 VersionControl();
                 SignInitials();
             }
+            else
+            {
+                ClearConfigFileCache();
+            }
 
             // Create our UI
             LoadUI();
@@ -125,6 +130,8 @@ namespace SolidWorks_Add_In
             // Check if the local version is older than the current version
             if (localVersionNo < currentVersion || localVersionObsolete)
             {
+                ClearConfigFileCache();
+
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = versionControl;
                 Process.Start(startInfo);

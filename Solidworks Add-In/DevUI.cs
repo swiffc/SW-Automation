@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using static FileTools.Properties.Settings;
 using static FileTools.CommonData.CommonData;
 using static FileTools.StaticFileTools;
+using static Tools.ModelTools;
 
 namespace SolidWorks_Add_In
 {
@@ -52,6 +53,16 @@ namespace SolidWorks_Add_In
         private void DevUI_Load(object sender, EventArgs e)
         {
             cDevMode.Checked = DevMode;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveEverything();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SW.CloseAllDocuments(true);
         }
     }
 }

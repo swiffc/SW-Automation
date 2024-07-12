@@ -19,6 +19,7 @@ using static FileTools.Base.SW_Assembly;
 using System.ComponentModel;
 using ModelTools;
 using System.Security.AccessControl;
+using System.Windows.Forms;
 
 namespace FileTools
 {
@@ -65,6 +66,14 @@ namespace FileTools
         public static AssemblyDoc OpenAssembly(string filePath, string configurationName, bool silent = false)
         {
             ModelDoc2 modelDoc2 = OpenDocument(filePath, configurationName);
+            if (modelDoc2 == null)
+            {
+                MessageBox.Show(
+                    $"Could not open: {filePath}." + "\n" + "\n" +
+                    $"Ensure that you do not have another {Path.GetFileNameWithoutExtension(filePath)} open from another location.",
+                    "NullReferenceException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new NullReferenceException();   
+            }
             SW.ActivateDoc3(filePath, false, (int)swRebuildOnActivation_e.swDontRebuildActiveDoc, 0);
             if (silent)
             {
@@ -457,6 +466,14 @@ namespace FileTools
         public static ModelDoc2 OpenSilent(Part part)
         {
             ModelDoc2 modelDoc2 = OpenDocument(part.FilePath, part.StaticPartNo);
+            if (modelDoc2 == null)
+            {
+                MessageBox.Show(
+                    $"Could not open: {part.FilePath}." + "\n" + "\n" +
+                    $"Ensure that you do not have another {Path.GetFileNameWithoutExtension(part.FilePath)} open from another location.",
+                    "NullReferenceException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new NullReferenceException();
+            }
 
             SetProperty("PartNo", ExtractPartNumber(Path.GetFileName(part.FilePath)), modelDoc2);
             SetProperty("Title", GetConfigurationTitle(modelDoc2), modelDoc2);

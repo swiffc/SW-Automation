@@ -30,8 +30,6 @@ namespace Plenum
         public PlenumUI()
         {
             InitializeComponent();
-
-            SettingsChanged += UpdateUI;
         }
 
         private void UpdateUI()

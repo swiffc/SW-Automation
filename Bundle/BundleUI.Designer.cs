@@ -39,6 +39,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label72 = new System.Windows.Forms.Label();
+            this.tLugStagger = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.tFanCount = new System.Windows.Forms.TextBox();
             this.tLiftingLugSpacing = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.tWeight = new System.Windows.Forms.TextBox();
@@ -219,10 +224,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.initials_Box = new System.Windows.Forms.TextBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.tFanCount = new System.Windows.Forms.TextBox();
-            this.tLugStagger = new System.Windows.Forms.TextBox();
-            this.label71 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -362,6 +363,7 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label72);
             this.panel2.Controls.Add(this.tLugStagger);
             this.panel2.Controls.Add(this.label71);
             this.panel2.Controls.Add(this.label70);
@@ -387,9 +389,57 @@
             this.panel2.Size = new System.Drawing.Size(244, 398);
             this.panel2.TabIndex = 88;
             // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.BackColor = System.Drawing.Color.White;
+            this.label72.Location = new System.Drawing.Point(107, 88);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(75, 13);
+            this.label72.TabIndex = 188;
+            this.label72.Text = " to unit center)";
+            // 
+            // tLugStagger
+            // 
+            this.tLugStagger.Location = new System.Drawing.Point(3, 278);
+            this.tLugStagger.Name = "tLugStagger";
+            this.tLugStagger.Size = new System.Drawing.Size(100, 20);
+            this.tLugStagger.TabIndex = 186;
+            this.tLugStagger.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tLugStagger.TextChanged += new System.EventHandler(this.tLugStagger_TextChanged);
+            // 
+            // label71
+            // 
+            this.label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(107, 282);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(96, 13);
+            this.label71.TabIndex = 187;
+            this.label71.Text = "Lifting Lug Stagger";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.Color.White;
+            this.label70.Location = new System.Drawing.Point(109, 53);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(56, 13);
+            this.label70.TabIndex = 185;
+            this.label70.Text = "Fan Count";
+            // 
+            // tFanCount
+            // 
+            this.tFanCount.Location = new System.Drawing.Point(3, 50);
+            this.tFanCount.Name = "tFanCount";
+            this.tFanCount.Size = new System.Drawing.Size(100, 20);
+            this.tFanCount.TabIndex = 184;
+            this.tFanCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tFanCount.TextChanged += new System.EventHandler(this.tFanCount_TextChanged);
+            // 
             // tLiftingLugSpacing
             // 
-            this.tLiftingLugSpacing.Location = new System.Drawing.Point(3, 242);
+            this.tLiftingLugSpacing.Location = new System.Drawing.Point(3, 251);
             this.tLiftingLugSpacing.Name = "tLiftingLugSpacing";
             this.tLiftingLugSpacing.Size = new System.Drawing.Size(100, 20);
             this.tLiftingLugSpacing.TabIndex = 182;
@@ -400,7 +450,7 @@
             // 
             this.label53.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(109, 245);
+            this.label53.Location = new System.Drawing.Point(107, 255);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(98, 13);
             this.label53.TabIndex = 183;
@@ -408,7 +458,7 @@
             // 
             // tWeight
             // 
-            this.tWeight.Location = new System.Drawing.Point(3, 216);
+            this.tWeight.Location = new System.Drawing.Point(3, 225);
             this.tWeight.Name = "tWeight";
             this.tWeight.Size = new System.Drawing.Size(100, 20);
             this.tWeight.TabIndex = 180;
@@ -419,11 +469,11 @@
             // 
             this.label52.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(109, 219);
+            this.label52.Location = new System.Drawing.Point(107, 229);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(73, 13);
+            this.label52.Size = new System.Drawing.Size(100, 13);
             this.label52.TabIndex = 181;
-            this.label52.Text = "ACHE Weight";
+            this.label52.Text = "Total ACHE Weight";
             // 
             // label51
             // 
@@ -431,7 +481,7 @@
             this.label51.BackColor = System.Drawing.Color.White;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(3, 197);
+            this.label51.Location = new System.Drawing.Point(3, 206);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(77, 16);
             this.label51.TabIndex = 179;
@@ -443,7 +493,7 @@
             this.label50.BackColor = System.Drawing.Color.White;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(3, 7);
+            this.label50.Location = new System.Drawing.Point(3, 6);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(87, 16);
             this.label50.TabIndex = 178;
@@ -451,7 +501,7 @@
             // 
             // tExtraLength
             // 
-            this.tExtraLength.Location = new System.Drawing.Point(3, 154);
+            this.tExtraLength.Location = new System.Drawing.Point(3, 163);
             this.tExtraLength.Name = "tExtraLength";
             this.tExtraLength.Size = new System.Drawing.Size(100, 20);
             this.tExtraLength.TabIndex = 176;
@@ -462,7 +512,7 @@
             // 
             this.label49.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(109, 157);
+            this.label49.Location = new System.Drawing.Point(107, 166);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(110, 13);
             this.label49.TabIndex = 177;
@@ -477,7 +527,7 @@
             "W6x20",
             "W6x25",
             "W8x31"});
-            this.cColumnSize.Location = new System.Drawing.Point(3, 127);
+            this.cColumnSize.Location = new System.Drawing.Point(3, 136);
             this.cColumnSize.Name = "cColumnSize";
             this.cColumnSize.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cColumnSize.Size = new System.Drawing.Size(100, 21);
@@ -488,7 +538,7 @@
             // 
             this.label48.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(109, 130);
+            this.label48.Location = new System.Drawing.Point(109, 139);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(65, 13);
             this.label48.TabIndex = 40;
@@ -502,7 +552,7 @@
             "Standard",
             "Johnson",
             "Legacy"});
-            this.cPlenumStyle.Location = new System.Drawing.Point(3, 100);
+            this.cPlenumStyle.Location = new System.Drawing.Point(3, 109);
             this.cPlenumStyle.Name = "cPlenumStyle";
             this.cPlenumStyle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cPlenumStyle.Size = new System.Drawing.Size(100, 21);
@@ -513,7 +563,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.BackColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(109, 102);
+            this.label46.Location = new System.Drawing.Point(107, 117);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(68, 13);
             this.label46.TabIndex = 174;
@@ -525,9 +575,9 @@
             this.label45.BackColor = System.Drawing.Color.White;
             this.label45.Location = new System.Drawing.Point(109, 77);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(133, 13);
+            this.label45.Size = new System.Drawing.Size(106, 13);
             this.label45.TabIndex = 114;
-            this.label45.Text = "Offset From Plenum Center";
+            this.label45.Text = "Offset (bundle center";
             // 
             // tOffsetFromPlenumCenter
             // 
@@ -553,9 +603,9 @@
             this.label44.BackColor = System.Drawing.Color.White;
             this.label44.Location = new System.Drawing.Point(109, 29);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(78, 13);
+            this.label44.Size = new System.Drawing.Size(114, 13);
             this.label44.TabIndex = 112;
-            this.label44.Text = "Plenum Length";
+            this.label44.Text = "Plenum Length (cL-cL)";
             // 
             // label4
             // 
@@ -2321,44 +2371,6 @@
             this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
             // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.BackColor = System.Drawing.Color.White;
-            this.label70.Location = new System.Drawing.Point(109, 53);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(56, 13);
-            this.label70.TabIndex = 185;
-            this.label70.Text = "Fan Count";
-            // 
-            // tFanCount
-            // 
-            this.tFanCount.Location = new System.Drawing.Point(3, 50);
-            this.tFanCount.Name = "tFanCount";
-            this.tFanCount.Size = new System.Drawing.Size(100, 20);
-            this.tFanCount.TabIndex = 184;
-            this.tFanCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tFanCount.TextChanged += new System.EventHandler(this.tFanCount_TextChanged);
-            // 
-            // tLugStagger
-            // 
-            this.tLugStagger.Location = new System.Drawing.Point(3, 269);
-            this.tLugStagger.Name = "tLugStagger";
-            this.tLugStagger.Size = new System.Drawing.Size(100, 20);
-            this.tLugStagger.TabIndex = 186;
-            this.tLugStagger.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tLugStagger.TextChanged += new System.EventHandler(this.tLugStagger_TextChanged);
-            // 
-            // label71
-            // 
-            this.label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(109, 272);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(96, 13);
-            this.label71.TabIndex = 187;
-            this.label71.Text = "Lifting Lug Stagger";
-            // 
             // BundleUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2589,6 +2601,7 @@
         private System.Windows.Forms.TextBox tFanCount;
         private System.Windows.Forms.TextBox tLugStagger;
         private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
     }
 }
 

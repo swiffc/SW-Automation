@@ -17,8 +17,6 @@ namespace Structure
             InitializeComponent();
 
             CommonData.OnFanCountChanged += SharedProperties_OnFanCountChanged;
-
-            SettingsChanged += UpdateUI;
         }
         #region Events
 

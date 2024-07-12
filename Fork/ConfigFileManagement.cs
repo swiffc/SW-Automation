@@ -48,7 +48,7 @@ namespace Fork
         [STAThread]
         static void Main()
         {
-            ImportConfigFile();
+            ClearConfigFileCache();
         }
 
         public static void ExportConfigFile()
@@ -130,7 +130,16 @@ namespace Fork
             }
             MessageBox.Show($"{Path.GetFileNameWithoutExtension(selectedFile)} loaded", "Config file", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public static void ClearConfigFileCache()
+        {
+            string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string chartPath = Path.Combine(localAppDataPath, "Dassault_Systèmes_SolidWo");
+            string[] subdirectories = Directory.GetDirectories(chartPath);
 
+            // Delete all subdirectories
+            foreach (string subdirectory in subdirectories)
+                Directory.Delete(subdirectory, true);
+        }
 
     }
 }

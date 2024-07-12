@@ -252,10 +252,6 @@ namespace Walkway
         }
 
         // Platform
-        private void txt_PlatformBank_TextChanged(object sender, EventArgs e)
-        {
-            Walkway.Bank = txt_PlatformBank.Text[0];
-        }
         private void txt_PlatformLength_TextChanged(object sender, EventArgs e)
         {
             Walkway.Length = double.Parse(txt_PlatformLength.Text);
@@ -287,10 +283,6 @@ namespace Walkway
         }
 
         // Handrail
-        private void txt_RailBank_TextChanged(object sender, EventArgs e)
-        {
-            Walkway.Bank = txt_RailBank.Text[0];
-        }
         private void txt_HandrailLength_TextChanged(object sender, EventArgs e)
         {
             Walkway.Length = double.Parse(txt_HandrailLength.Text);
@@ -318,10 +310,6 @@ namespace Walkway
         }
 
         // Support
-        private void txt_SupportBank_TextChanged(object sender, EventArgs e)
-        {
-            Walkway.Bank = txt_SupportBank.Text[0];
-        }
         private void txt_SupportWalkwayLength_TextChanged(object sender, EventArgs e)
         {
             Walkway.Length = double.Parse(txt_SupportWalkwayLength.Text);
@@ -403,7 +391,6 @@ namespace Walkway
             combo_WalkwayMinimumStringerSize.Text = minStringerSize;
 
             // Platform
-            txt_PlatformBank.Text = Walkway.Bank.ToString();
             txt_PlatformLength.Text = Walkway.Length.ToString();
             txt_PlatformWidth.Text = Walkway.Width.ToString();
             txt_PlatformFloorHeight.Text = Walkway.FloorHeight.ToString();
@@ -411,14 +398,12 @@ namespace Walkway
             combo_PlatformMinimumStringerSize.Text = minStringerSize;
 
             // Handrail
-            txt_RailBank.Text = Walkway.Bank.ToString();
             txt_HandrailLength.Text = Walkway.Length.ToString();
             txt_HandrailRailHeight.Text = Walkway.RailHeight.ToString();
             txt_HandrailFloorHeight.Text = Walkway.FloorHeight.ToString();
             combo_HandrailMinimumStringerSize.Text = minStringerSize;
 
             // Supports
-            txt_SupportBank.Text = Walkway.Bank.ToString();
             txt_SupportWalkwayLength.Text = Walkway.Length.ToString();
             txt_SupportWalkwayWidth.Text = Walkway.Width.ToString();
             txt_SupportOffsetFromColumnCenter.Text = Walkway.OffsetFromColumnCenter.ToString();
