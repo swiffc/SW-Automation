@@ -176,6 +176,17 @@ namespace Excel
                 return _inventor;
             }
         }
+        public static Worksheet BomInputSheet
+        {
+            get
+            {
+                if (_bomInput == null && PregoDoc != null)
+                {
+                    _bomInput = (Worksheet)PregoDoc.Sheets["BOM_Input"];
+                }
+                return _bomInput;
+            }
+        }
 
         public static int Version
         {
@@ -390,5 +401,6 @@ namespace Excel
         static Worksheet _inputsCalcsSheet;
         static Worksheet _pregoToMikeySheet;
         static Worksheet _inventor;
+        static Worksheet _bomInput;
     }
 }

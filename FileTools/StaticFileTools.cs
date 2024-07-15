@@ -525,17 +525,32 @@ namespace FileTools
 
             Predicate<Type> hasStaticPartNo = type =>
             {
-                // Get the property named 'StaticPartNo' that is public and an instance member
-                PropertyInfo staticPartNoProperty = type.GetProperty("StaticPartNo", BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                // Exclude abstract classes
+                if (type.IsAbstract)
+                {
+                    return false;
+                }
+
+                // Start with the current type
+                Type currentType = type;
+                PropertyInfo staticPartNoProperty = null;
+
+                // Traverse up the inheritance chain to find the 'StaticPartNo' property
+                while (currentType != null && staticPartNoProperty == null)
+                {
+                    staticPartNoProperty = currentType.GetProperty("StaticPartNo", BindingFlags.Public | BindingFlags.Instance);
+                    currentType = currentType.BaseType; // Move up the inheritance chain
+                }
 
                 // Check if the property exists and is a string
                 if (staticPartNoProperty != null && staticPartNoProperty.PropertyType == typeof(string))
                 {
                     // Check if the property is an override
                     MethodInfo getMethod = staticPartNoProperty.GetGetMethod();
-                    if (getMethod != null)
+                    if (getMethod != null && getMethod.IsPublic)
                     {
-                        return getMethod.IsVirtual && getMethod.GetBaseDefinition().DeclaringType != type;
+                        // The property is valid if we've found it and it's public
+                        return true;
                     }
                 }
                 return false;

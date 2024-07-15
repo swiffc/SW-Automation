@@ -33,19 +33,12 @@ namespace HDR
             Header_TextChanged(this, "Tube");
             Header_TextChanged(this, "Stiffener");
             Header_TextChanged(this, "Partition");
+            Header_TextChanged(this, "Foot");
 
             Connection_TextChanged(this, "Inlet");
             Connection_TextChanged(this, "Outlet");
         }
 
-        private void cLocation_Outlet_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cLocation_Inlet_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

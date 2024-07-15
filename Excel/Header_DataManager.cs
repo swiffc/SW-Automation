@@ -92,6 +92,7 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) FlangeTopOffsetY { get; set; }
             public (string[] Cells, Worksheet Sheet) FlangeTopCount { get; set; }
             public (string[] Cells, Worksheet Sheet) FlangeTopSpacing { get; set; }
+            public (string[] Cells, Worksheet Sheet) FootHeight { get; set; }
         }
 
 
@@ -175,6 +176,7 @@ namespace Excel
             public TextBox FlangeTopCountTextBox { get; set; }
             public TextBox FlangeTopSpacingTextBox { get; set; }
             public TextBox EndPlateBustedSpan2TextBox { get; set; }
+            public TextBox FootHeightTextBox { get; set; }
         }
 
 
@@ -263,6 +265,7 @@ namespace Excel
                     FlangeTopCountTextBox = GetControl<TextBox>(formInstance, "tFlangeTopCount_", i),
                     FlangeTopSpacingTextBox = GetControl<TextBox>(formInstance, "tFlangeTopSpacing_", i),
                     EndPlateBustedSpan2TextBox = GetControl<TextBox>(formInstance, "tEndPlateBustedSpan2_", i),
+                    FootHeightTextBox = GetControl<TextBox>(formInstance, "tFootHeight_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -354,6 +357,7 @@ namespace Excel
                         FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
+                        FootHeight = (new string[] { "ATK121" }, InputsCalcsSheet),
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -432,6 +436,7 @@ namespace Excel
                         FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
+                        FootHeight = (new string[] { "ATL121" }, InputsCalcsSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -510,6 +515,7 @@ namespace Excel
                         FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
+                        FootHeight = (new string[] { "ATM121" }, InputsCalcsSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -588,7 +594,7 @@ namespace Excel
                         FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
-
+                        FootHeight = (new string[] { "ATN121" }, InputsCalcsSheet),
                     },
 
                     ["64"] = new Prego_DTO
@@ -668,6 +674,7 @@ namespace Excel
                         FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
+                        FootHeight = (new string[] { "ATO121" }, InputsCalcsSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -746,6 +753,7 @@ namespace Excel
                         FlangeTopOffsetX = (new string[] { "DO40" }, InputsCalcsSheet),
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
+                        FootHeight = (new string[] { "ATP121" }, InputsCalcsSheet),
                     }
                 };
             }

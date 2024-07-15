@@ -241,9 +241,9 @@ namespace Excel
             switch (name)
             {
                 case "Inlet":
-                    return InletFlange;
+                    return Inlet;
                     case "Outlet":
-                    return OutletFlange;
+                    return Outlet;
                 default:
                     throw new ArgumentException($"Invalid index: {name}");
             }

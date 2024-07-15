@@ -9,16 +9,17 @@ namespace FileTools.CommonData.Headers.Connections
     public interface IConnection
     {
         string Location { get; set; }
+        string ExtensionType { get; set; }
 
-        double O { get; set; }
-        double Q { get; set; }
-        double R { get; set; }
-        double X { get; set; }
-        double RD { get; set; }
-        double NB { get; set; }
-        double DB { get; set; }
-        double BC { get; set; }
-        double YY { get; set; }
+        double FlangeO { get; set; }
+        double FlangeQ { get; set; }
+        double FlangeR { get; set; }
+        double FlangeX { get; set; }
+        double FlangeRD { get; set; }
+        double FlangeNB { get; set; }
+        double FlangeDB { get; set; }
+        double FlangeBC { get; set; }
+        double FlangeYY { get; set; }
 
         double OD { get; set; }
         double Wall { get; set; }
@@ -26,6 +27,6 @@ namespace FileTools.CommonData.Headers.Connections
         double Count { get; set; }
         double Spacing { get; set; }
         double OffsetX { get; set; }
-        double ExtensionY { get; set; }
+        double ProjectionY { get; set; }
     }
 }

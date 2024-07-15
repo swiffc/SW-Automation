@@ -20,21 +20,21 @@ namespace Excel
         public class Prego_DTO
         {
             public (string[] Cells, Worksheet Sheet) Location { get; set; }
-            public (string[] Cells, Worksheet Sheet) O { get; set; }
-            public (string[] Cells, Worksheet Sheet) Q { get; set; }
-            public (string[] Cells, Worksheet Sheet) R { get; set; }
-            public (string[] Cells, Worksheet Sheet) X { get; set; }
-            public (string[] Cells, Worksheet Sheet) RD { get; set; }
-            public (string[] Cells, Worksheet Sheet) NB { get; set; }
-            public (string[] Cells, Worksheet Sheet) DB { get; set; }
-            public (string[] Cells, Worksheet Sheet) BC { get; set; }
-            public (string[] Cells, Worksheet Sheet) YY { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeO { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeQ { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeR { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeX { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeRD { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeNB { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeDB { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeBC { get; set; }
+            public (string[] Cells, Worksheet Sheet) FlangeYY { get; set; }
             public (string[] Cells, Worksheet Sheet) OD { get; set; }
             public (string[] Cells, Worksheet Sheet) Wall { get; set; }
             public (string[] Cells, Worksheet Sheet) Count { get; set; }
             public (string[] Cells, Worksheet Sheet) Spacing { get; set; }
             public (string[] Cells, Worksheet Sheet) OffsetX { get; set; }
-            public (string[] Cells, Worksheet Sheet) ExtensionY { get; set; }
+            public (string[] Cells, Worksheet Sheet) ProjectionY { get; set; }
         }
 
         public static Dictionary<string, UI_DTO> ConnectionAppData;
@@ -42,21 +42,21 @@ namespace Excel
         {
             public IConnection Connection { get; set; }
             public ComboBox Location { get; set; }
-            public TextBox OTextBox { get; set; }
-            public TextBox QTextBox { get; set; }
-            public TextBox RTextBox { get; set; }
-            public TextBox XTextBox { get; set; }
-            public TextBox RDTextBox { get; set; }
-            public TextBox NBTextBox { get; set; }
-            public TextBox DBTextBox { get; set; }
-            public TextBox BCTextBox { get; set; }
-            public TextBox YYTextBox { get; set; }
+            public TextBox FlangeOTextBox { get; set; }
+            public TextBox FlangeQTextBox { get; set; }
+            public TextBox FlangeRTextBox { get; set; }
+            public TextBox FlangeXTextBox { get; set; }
+            public TextBox FlangeRDTextBox { get; set; }
+            public TextBox FlangeNBTextBox { get; set; }
+            public TextBox FlangeDBTextBox { get; set; }
+            public TextBox FlangeBCTextBox { get; set; }
+            public TextBox FlangeYYTextBox { get; set; }
             public TextBox ODTextBox { get; set; }
             public TextBox WallTextBox { get; set; }
             public TextBox CountTextBox { get; set; }
             public TextBox SpacingTextBox { get; set; }
             public TextBox OffsetXTextBox { get; set; }
-            public TextBox ExtensionYTextBox { get; set; }
+            public TextBox ProjectionYTextBox { get; set; }
         }
 
         public enum ConnectionNames
@@ -88,21 +88,21 @@ namespace Excel
                 {
                     Connection = GetConnection(connectionName),
                     Location = GetControl<ComboBox>(formInstance, "cLocation_", connectionName),
-                    OTextBox = GetControl<TextBox>(formInstance, "tO_", connectionName),
-                    QTextBox = GetControl<TextBox>(formInstance, "tQ_", connectionName),
-                    RTextBox = GetControl<TextBox>(formInstance, "tR_", connectionName),
-                    XTextBox = GetControl<TextBox>(formInstance, "tX_", connectionName),
-                    RDTextBox = GetControl<TextBox>(formInstance, "tRD_", connectionName),
-                    NBTextBox = GetControl<TextBox>(formInstance, "tNB_", connectionName),
-                    DBTextBox = GetControl<TextBox>(formInstance, "tDB_", connectionName),
-                    BCTextBox = GetControl<TextBox>(formInstance, "tBC_", connectionName),
-                    YYTextBox = GetControl<TextBox>(formInstance, "tYY_", connectionName),
+                    FlangeOTextBox = GetControl<TextBox>(formInstance, "tO_", connectionName),
+                    FlangeQTextBox = GetControl<TextBox>(formInstance, "tQ_", connectionName),
+                    FlangeRTextBox = GetControl<TextBox>(formInstance, "tR_", connectionName),
+                    FlangeXTextBox = GetControl<TextBox>(formInstance, "tX_", connectionName),
+                    FlangeRDTextBox = GetControl<TextBox>(formInstance, "tRD_", connectionName),
+                    FlangeNBTextBox = GetControl<TextBox>(formInstance, "tNB_", connectionName),
+                    FlangeDBTextBox = GetControl<TextBox>(formInstance, "tDB_", connectionName),
+                    FlangeBCTextBox = GetControl<TextBox>(formInstance, "tBC_", connectionName),
+                    FlangeYYTextBox = GetControl<TextBox>(formInstance, "tYY_", connectionName),
                     ODTextBox = GetControl<TextBox>(formInstance, "tOD_", connectionName),
                     WallTextBox = GetControl<TextBox>(formInstance, "tWall_", connectionName),
                     CountTextBox = GetControl<TextBox>(formInstance, "tCount_", connectionName),
                     SpacingTextBox = GetControl<TextBox>(formInstance, "tSpacing_", connectionName),
                     OffsetXTextBox = GetControl<TextBox>(formInstance, "tOffsetX_", connectionName),
-                    ExtensionYTextBox = GetControl<TextBox>(formInstance, "tExtensionY_", connectionName),
+                    ProjectionYTextBox = GetControl<TextBox>(formInstance, "tExtensionY_", connectionName),
                 };
 
                 ConnectionAppData.Add(connectionName, uiDto);
@@ -118,40 +118,40 @@ namespace Excel
                     ["Inlet"] = new Prego_DTO
                     {
                         Location = (new[] { "L31" }, InputSheet),
-                        O = (new[] { "AQX14" }, InputsCalcsSheet),
-                        Q = (new[] { "AQX15" }, InputsCalcsSheet),
-                        R = (new[] { "AQX16" }, InputsCalcsSheet),
-                        X = (new[] { "AQX17" }, InputsCalcsSheet),
-                        RD = (new[] { "AQX18" }, InputsCalcsSheet),
-                        NB = (new[] { "AQX24" }, InputsCalcsSheet),
-                        DB = (new[] { "AQX25" }, InputsCalcsSheet),
-                        BC = (new[] { "AQX26" }, InputsCalcsSheet),
-                        YY = (new[] { "AQX27" }, InputsCalcsSheet),
+                        FlangeO = (new[] { "AQX14" }, InputsCalcsSheet),
+                        FlangeQ = (new[] { "AQX15" }, InputsCalcsSheet),
+                        FlangeR = (new[] { "AQX16" }, InputsCalcsSheet),
+                        FlangeX = (new[] { "AQX17" }, InputsCalcsSheet),
+                        FlangeRD = (new[] { "AQX18" }, InputsCalcsSheet),
+                        FlangeNB = (new[] { "AQX24" }, InputsCalcsSheet),
+                        FlangeDB = (new[] { "AQX25" }, InputsCalcsSheet),
+                        FlangeBC = (new[] { "AQX26" }, InputsCalcsSheet),
+                        FlangeYY = (new[] { "AQX27" }, InputsCalcsSheet),
                         OD = (new[] { "CY40" }, InputsCalcsSheet),
                         Wall = (new[] { "DL14" }, InputsCalcsSheet),
                         Count = (new[] { "L32" }, InputSheet),
                         Spacing = (new[] { "DO37" }, InputsCalcsSheet),
                         OffsetX = (new[] { "DO40" }, InputsCalcsSheet),
-                        ExtensionY = (new[] { "DL60" }, InputsCalcsSheet),
+                        ProjectionY = (new[] { "DL60" }, InputsCalcsSheet),
                     },
                     ["Outlet"] = new Prego_DTO
                     {
                         Location = (new[] { "DR6" }, InputsCalcsSheet),
-                        O = (new[]  { "AQY14" }, InputsCalcsSheet),
-                        Q = (new[]  { "AQY15" }, InputsCalcsSheet),
-                        R = (new[]  { "AQY16" }, InputsCalcsSheet),
-                        X = (new[]  { "AQY17" }, InputsCalcsSheet),
-                        RD = (new[] { "AQY18" }, InputsCalcsSheet),
-                        NB = (new[] { "AQY24" }, InputsCalcsSheet),
-                        DB = (new[] { "AQY25" }, InputsCalcsSheet),
-                        BC = (new[] { "AQY26" }, InputsCalcsSheet),
-                        YY = (new[] { "AQY27" }, InputsCalcsSheet),
+                        FlangeO = (new[]  { "AQY14" }, InputsCalcsSheet),
+                        FlangeQ = (new[]  { "AQY15" }, InputsCalcsSheet),
+                        FlangeR = (new[]  { "AQY16" }, InputsCalcsSheet),
+                        FlangeX = (new[]  { "AQY17" }, InputsCalcsSheet),
+                        FlangeRD = (new[] { "AQY18" }, InputsCalcsSheet),
+                        FlangeNB = (new[] { "AQY24" }, InputsCalcsSheet),
+                        FlangeDB = (new[] { "AQY25" }, InputsCalcsSheet),
+                        FlangeBC = (new[] { "AQY26" }, InputsCalcsSheet),
+                        FlangeYY = (new[] { "AQY27" }, InputsCalcsSheet),
                         OD = (new[] { "EA40" }, InputsCalcsSheet),
                         Wall = (new[] { "EN14" }, InputsCalcsSheet),
                         Count = (new[] { "DR9" }, InputsCalcsSheet),
                         Spacing = (new[] { "EQ37" }, InputsCalcsSheet),
                         OffsetX = (new[] { "EQ40" }, InputsCalcsSheet),
-                        ExtensionY = (new[] { "EN60" }, InputsCalcsSheet),
+                        ProjectionY = (new[] { "EN60" }, InputsCalcsSheet),
                     }
                 };
             }

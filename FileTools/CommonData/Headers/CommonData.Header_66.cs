@@ -327,6 +327,11 @@ namespace FileTools.CommonData
                 get => Default.EndPlateBustedSpan2_66;
                 set => Default.EndPlateBustedSpan2_66 = value;
             }
+            public double FootHeight
+            {
+                get => Default.FootHeight_66;
+                set => Default.FootHeight_66 = value;
+            }
 
         }
     }

@@ -10,55 +10,55 @@ namespace FileTools.CommonData
 {
     public static partial class CommonData
     {
-        public static Outlet OutletFlange = new Outlet();
-        public class Outlet : IConnection
+        public static OutletNozzle Outlet = new OutletNozzle();
+        public class OutletNozzle : IConnection
         {
             public string Location
             {
                 get => Default.Location_Outlet;
                 set => Default.Location_Outlet = value;
             }
-            public double O
+            public double FlangeO
             {
                 get => Default.O_Outlet;
                 set => Default.O_Outlet = value;
             }
-            public double Q
+            public double FlangeQ
             {
                 get => Default.Q_Outlet;
                 set => Default.Q_Outlet = value;
             }
-            public double R
+            public double FlangeR
             {
                 get => Default.R_Outlet;
                 set => Default.R_Outlet = value;
             }
-            public double X
+            public double FlangeX
             {
                 get => Default.X_Outlet;
                 set => Default.X_Outlet = value;
             }
-            public double RD
+            public double FlangeRD
             {
                 get => Default.RD_Outlet;
                 set => Default.RD_Outlet = value;
             }
-            public double NB
+            public double FlangeNB
             {
                 get => Default.NB_Outlet;
                 set => Default.NB_Outlet = value;
             }
-            public double DB
+            public double FlangeDB
             {
                 get => Default.DB_Outlet;
                 set => Default.DB_Outlet = value;
             }
-            public double BC
+            public double FlangeBC
             {
                 get => Default.BC_Outlet;
                 set => Default.BC_Outlet = value;
             }
-            public double YY
+            public double FlangeYY
             {
                 get => Default.YY_Outlet;
                 set => Default.YY_Outlet = value;
@@ -89,10 +89,16 @@ namespace FileTools.CommonData
                 get => Default.OffsetX_Outlet;
                 set => Default.OffsetX_Outlet = value;
             }
-            public double ExtensionY
+            public double ProjectionY
             {
                 get => Default.ExtensionY_Outlet;
                 set => Default.ExtensionY_Outlet = value;
+            }
+
+            public string ExtensionType
+            {
+                get => Default.ExtensionType_Outlet;
+                set => Default.ExtensionType_Outlet = value;
             }
         }
     }

@@ -10,55 +10,55 @@ namespace FileTools.CommonData
 {
     public static partial class CommonData
     {
-        public static Inlet InletFlange = new Inlet();
-        public class Inlet : IConnection
+        public static InletNozzle Inlet = new InletNozzle();
+        public class InletNozzle : IConnection
         {
             public string Location
             {
                 get => Default.Location_Inlet;
                 set => Default.Location_Inlet = value;
             }
-            public double O
+            public double FlangeO
             {
                 get => Default.O_Inlet;
                 set => Default.O_Inlet = value;
             }
-            public double Q
+            public double FlangeQ
             {
                 get => Default.Q_Inlet;
                 set => Default.Q_Inlet = value;
             }
-            public double R
+            public double FlangeR
             {
                 get => Default.R_Inlet;
                 set => Default.R_Inlet = value;
             }
-            public double X
+            public double FlangeX
             {
                 get => Default.X_Inlet;
                 set => Default.X_Inlet = value;
             }
-            public double RD
+            public double FlangeRD
             {
                 get => Default.RD_Inlet;
                 set => Default.RD_Inlet = value;
             }
-            public double NB
+            public double FlangeNB
             {
                 get => Default.NB_Inlet;
                 set => Default.NB_Inlet = value;
             }
-            public double DB
+            public double FlangeDB
             {
                 get => Default.DB_Inlet;
                 set => Default.DB_Inlet = value;
             }
-            public double BC
+            public double FlangeBC
             {
                 get => Default.BC_Inlet;
                 set => Default.BC_Inlet = value;
             }
-            public double YY
+            public double FlangeYY
             {
                 get => Default.YY_Inlet;
                 set => Default.YY_Inlet = value;
@@ -89,10 +89,16 @@ namespace FileTools.CommonData
                 get => Default.OffsetX_Inlet;
                 set => Default.OffsetX_Inlet = value;
             }
-            public double ExtensionY
+            public double ProjectionY
             {
                 get => Default.ExtensionY_Inlet;
                 set => Default.ExtensionY_Inlet = value;
+            }
+
+            public string ExtensionType
+            {
+                get => Default.ExtensionType_Inlet;
+                set => Default.ExtensionType_Inlet = value;
             }
         }
     }

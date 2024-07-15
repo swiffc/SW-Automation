@@ -7522,5 +7522,113 @@ namespace FileTools.Properties {
                 this["EndPlateBustedSpan2_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExtensionType_Inlet {
+            get {
+                return ((string)(this["ExtensionType_Inlet"]));
+            }
+            set {
+                this["ExtensionType_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExtensionType_Outlet {
+            get {
+                return ((string)(this["ExtensionType_Outlet"]));
+            }
+            set {
+                this["ExtensionType_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsSmithCo {
+            get {
+                return ((bool)(this["IsSmithCo"]));
+            }
+            set {
+                this["IsSmithCo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FootHeight_61 {
+            get {
+                return ((double)(this["FootHeight_61"]));
+            }
+            set {
+                this["FootHeight_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FootHeight_62 {
+            get {
+                return ((double)(this["FootHeight_62"]));
+            }
+            set {
+                this["FootHeight_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FootHeight_63 {
+            get {
+                return ((double)(this["FootHeight_63"]));
+            }
+            set {
+                this["FootHeight_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FootHeight_64 {
+            get {
+                return ((double)(this["FootHeight_64"]));
+            }
+            set {
+                this["FootHeight_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FootHeight_65 {
+            get {
+                return ((double)(this["FootHeight_65"]));
+            }
+            set {
+                this["FootHeight_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FootHeight_66 {
+            get {
+                return ((double)(this["FootHeight_66"]));
+            }
+            set {
+                this["FootHeight_66"] = value;
+            }
+        }
     }
 }

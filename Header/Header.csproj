@@ -60,8 +60,18 @@
     <Compile Include="Box\Stiffener.cs" />
     <Compile Include="Box\TopBtmPlate.cs" />
     <Compile Include="Box\TubeSheet.cs" />
-    <Compile Include="Connections\InletFLG.cs" />
-    <Compile Include="Connections\OutletFLG.cs" />
+    <Compile Include="Connections\Derived\Derived\InletTrans.cs" />
+    <Compile Include="Connections\Derived\Derived\OutletPipe.cs" />
+    <Compile Include="Connections\Derived\Derived\OutletTrans.cs" />
+    <Compile Include="Connections\Derived\Transition.cs" />
+    <Compile Include="Connections\Derived\Pipe.cs" />
+    <Compile Include="Connections\Extension.cs" />
+    <Compile Include="Connections\Flange.cs" />
+    <Compile Include="Connections\Derived\InletFlange.cs" />
+    <Compile Include="Connections\Derived\Derived\InletPipe.cs" />
+    <Compile Include="Connections\Derived\OutletFlange.cs" />
+    <Compile Include="Foot\FootPL.cs" />
+    <Compile Include="Foot\FootPRL.cs" />
     <Compile Include="HeaderBase.cs" />
     <Compile Include="HeaderUI.cs">
       <SubType>Form</SubType>
