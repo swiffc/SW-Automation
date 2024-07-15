@@ -17,6 +17,7 @@ using static FileTools.StaticFileTools;
 using static Excel.Prego;
 using System.Runtime.InteropServices;
 using static FileTools.Properties.Settings;
+using HDR.Box;
 
 namespace HDR
 {
@@ -57,6 +58,21 @@ namespace HDR
 
             cTileblockManuf.Text = TitleblockManuf;
             cHeadersOutsideFrames.Checked = HeadersOutsideFrames;
+
+            tPartitionPartNo2_61.Enabled = Header61.IsRequired;
+            tPartitionPartNo2_62.Enabled = Header62.IsRequired;
+            tPartitionPartNo2_63.Enabled = Header63.IsRequired;
+            tPartitionPartNo2_64.Enabled = Header64.IsRequired;
+            tPartitionPartNo2_65.Enabled = Header65.IsRequired;
+            tPartitionPartNo2_66.Enabled = Header66.IsRequired;
+
+            tStiffenerPartNo2_61.Enabled = Header61.IsRequired;
+            tStiffenerPartNo2_62.Enabled = Header62.IsRequired;
+            tStiffenerPartNo2_63.Enabled = Header63.IsRequired;
+            tStiffenerPartNo2_64.Enabled = Header64.IsRequired;
+            tStiffenerPartNo2_65.Enabled = Header65.IsRequired;
+            tStiffenerPartNo2_66.Enabled = Header66.IsRequired;
+
         }
         private void HeaderUI_Load(object sender, EventArgs e)
         {
@@ -82,7 +98,171 @@ namespace HDR
 
             LoadPregoString(cTileblockManuf, InputsCalcsSheet, "R48");
             LoadPregoBool(cHeadersOutsideFrames, InputsCalcsSheet, "R41");
+
+            ImportPartStiffPartNumbers();
         }
+        private void ImportPartStiffPartNumbers()
+        {
+            // Mapped data to be processed
+            var pTHK_Process = new List<double>
+            {
+                Header61.PartitionTHK,
+                Header63.PartitionTHK,
+                Header65.PartitionTHK,
+
+                Header61.PartitionTHK2,
+                Header63.PartitionTHK2,
+                Header65.PartitionTHK2,
+            };
+            var pApp_Process = new List<string>
+            {
+                Header61.PartitionPartNo,
+                Header63.PartitionPartNo,
+                Header65.PartitionPartNo,
+
+                Header61.PartitionPartNo2,
+                Header63.PartitionPartNo2,
+                Header65.PartitionPartNo2,
+            };
+            var pUI_Process = new List<TextBox>
+            {
+                tPartitionPartNo_61,
+                tPartitionPartNo_63,
+                tPartitionPartNo_65,
+
+                tPartitionPartNo2_61,
+                tPartitionPartNo2_63,
+                tPartitionPartNo2_65,
+            };
+
+            var sTHK_Process = new List<double>
+            {
+                Header61.StiffenerTHK,
+                Header63.StiffenerTHK,
+                Header65.StiffenerTHK,
+
+                Header61.StiffenerTHK2,
+                Header63.StiffenerTHK2,
+                Header65.StiffenerTHK2,
+            };
+            var sApp_Process = new List<string>
+            {
+                Header61.StiffenerPartNo,
+                Header63.StiffenerPartNo,
+                Header65.StiffenerPartNo,
+
+                Header61.StiffenerPartNo2,
+                Header63.StiffenerPartNo2,
+                Header65.StiffenerPartNo2,
+            };
+            var sUI_Process = new List<TextBox>
+            {
+                tStiffenerPartNo_61,
+                tStiffenerPartNo_63,
+                tStiffenerPartNo_65,
+
+                tStiffenerPartNo2_61,
+                tStiffenerPartNo2_63,
+                tStiffenerPartNo2_65,
+            };
+
+            // Get order and quantity of partitions and stiffeners for all odd numbered headers
+            List<string> partStiff_135 = CellStringList(InputsCalcsSheet, CellNameColumnArray("NK25", "NL37"));
+
+            // Lists to hold observed values
+            var pTHK_Observed = new List<double>();
+            var pApp_Observed = new List<string>();
+            var pUI_Observed = new List<TextBox>();
+
+            var sTHK_Observed = new List<double>();
+            var sApp_Observed = new List<string>();
+            var sUI_Observed = new List<TextBox>();
+
+            bool pClear = false;
+            bool sClear = false;
+
+            // 
+            var partNumberCells = new List<string>
+            {
+                "JF30", "JF32", "JF34", "JF36", "JF38", "JF40", "JF42", "JF44", "JF46", "JF48", "JF50", "JF52"
+            };
+
+            // Loop with specified ceiling
+            int l = 2;
+            for (int i = 0; i < (partStiff_135.Count >= l ? l : partStiff_135.Count); i++)
+            {
+                // Populate lists
+                if (partStiff_135[i].Contains("P") && pTHK_Observed.Count == 0)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        pTHK_Observed.Add(pTHK_Process[0]);
+                        pTHK_Process.RemoveAt(0);
+
+                        pApp_Observed.Add(pApp_Process[0]);
+                        pApp_Process.RemoveAt(0);
+
+                        pUI_Observed.Add(pUI_Process[0]);
+                        pUI_Process.RemoveAt(0);
+                    }
+                    pClear = true;
+                }
+                else if (partStiff_135[i].Contains("S") && sTHK_Observed.Count == 0)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        sTHK_Observed.Add(sTHK_Process[0]);
+                        sTHK_Process.RemoveAt(0);
+
+                        sApp_Observed.Add(sApp_Process[0]);
+                        sApp_Process.RemoveAt(0);
+
+                        sUI_Observed.Add(sUI_Process[0]);
+                        sUI_Process.RemoveAt(0);
+                    }
+                    sClear = true;
+                }
+                else throw new Exception("Must return partition or stiffener");
+
+                // Assign part next available part number
+                if (pClear)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (pTHK_Observed[j] != 0)
+                        {
+                            pApp_Observed[j] = pUI_Observed[j].Text = CellString(BomInputSheet, partNumberCells[0]);
+                            partNumberCells.RemoveAt(0);
+                            break;
+                        }
+                        else pApp_Observed[j] = pUI_Observed[j].Text = "";
+                    }
+
+                    pTHK_Observed.Clear();
+                    pClear = false;
+                }
+
+                if (sClear)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (sTHK_Observed[j] != 0)
+                        {
+                            sApp_Observed[j] = sUI_Observed[j].Text = CellString(BomInputSheet, partNumberCells[0]);
+                            partNumberCells.RemoveAt(0);
+                            break;
+                        }
+                        else sApp_Observed[j] = sUI_Observed[j].Text = "";
+                    }
+
+                    sTHK_Observed.Clear();
+                    sClear = false;
+                }
+
+                SaveSettings();
+            }
+        }
+
         private void ImportBustedSpans()
         {
             List<double> bustSpans_61 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAF5", "AAF43"));

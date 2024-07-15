@@ -228,6 +228,19 @@ namespace Excel
 
             return list;
         }
+        public static List<string> CellStringList(Worksheet sheet, params string[] cellNames)
+        {
+            var list = new List<string>();
+
+            foreach (var cellName in cellNames)
+            {
+                string cellString = CellString(sheet, cellName);
+                if (cellString != null)
+                    list.Add(cellString);
+            }
+
+            return list;
+        }
         public static string[] CellNameColumnArray(string firstCell, string lastCell)
         {
             // Extract the column letters and row numbers from the cell names

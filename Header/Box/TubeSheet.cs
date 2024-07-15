@@ -108,7 +108,7 @@ namespace HDR.Box
 
 
         // Property overrides
-        public override string PartNo => "AA";
+        public override string PartNo => Header.TubesheetPartNo;
         public override bool Enabled => true;
         public override string StaticPartNo => "TubeSheet";
         public override Shape RawMaterialShape => Shape.Plate;

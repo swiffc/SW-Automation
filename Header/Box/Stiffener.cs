@@ -51,7 +51,7 @@ namespace HDR.Box
 
 
         // Property overrides
-        public override string PartNo => "HA";
+        public override string PartNo => Header.StiffenerPartNo;
         public override bool Enabled => THK != 0;
         public override Shape RawMaterialShape => Shape.Plate;
         public override string SizeOrThickness => THK.ToString();

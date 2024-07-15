@@ -76,7 +76,7 @@ namespace FileTools.Base
         double StiffenerDistanceBelow { get; set; }
         double StiffenerWindowWidth { get; set; }
         double StiffenerWindowLength { get; set; }
-        double StiffenerWindowQuantity { get; set; } 
+        double StiffenerWindowQuantity { get; set; }
         double StiffenerWindowSpacing { get; set; }
         double StiffenerWindowOffset { get; set; }
         double PartitionTHK { get; set; }
@@ -87,6 +87,21 @@ namespace FileTools.Base
         double FootHeight { get; set; }
 
         double EndPlateBustedSpan2 { get; set; }
+
+        string TubesheetPartNo { get; set; }
+        string PlugsheetPartNo { get; set; }
+        string TopBtmPartNo { get; set; }
+        string EndPlatePartNo { get; set; }
+        string EndPlatePartNo2 { get; set; }
+        string StiffenerPartNo { get; set; }
+        string PartitionPartNo { get; set; }
+        string FootPRLPartNo { get; set; }
+        string FootPlatePartNo { get; set; }
+
+        double PartitionTHK2 { get; set; }
+        string PartitionPartNo2 { get; set; }
+        double StiffenerTHK2 { get; set; }
+        string StiffenerPartNo2 { get; set; }
     }
 
 
@@ -110,5 +125,5 @@ namespace FileTools.Base
             return count;
         }
     }
-  
+
 }

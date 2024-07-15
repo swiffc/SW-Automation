@@ -93,6 +93,15 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) FlangeTopCount { get; set; }
             public (string[] Cells, Worksheet Sheet) FlangeTopSpacing { get; set; }
             public (string[] Cells, Worksheet Sheet) FootHeight { get; set; }
+            public (string[] Cells, Worksheet Sheet) TubesheetPartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) PlugsheetPartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) TopBtmPartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) EndPlatePartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) EndPlatePartNo2 { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerPartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionPartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) FootPRLPartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) FootPlatePartNo { get; set; }
         }
 
 
@@ -177,6 +186,15 @@ namespace Excel
             public TextBox FlangeTopSpacingTextBox { get; set; }
             public TextBox EndPlateBustedSpan2TextBox { get; set; }
             public TextBox FootHeightTextBox { get; set; }
+            public TextBox TubesheetPartNoTextBox { get; set; }
+            public TextBox PlugsheetPartNoTextBox { get; set; }
+            public TextBox TopBtmPartNoTextBox { get; set; }
+            public TextBox EndPlatePartNoTextBox { get; set; }
+            public TextBox EndPlatePartNo2TextBox { get; set; }
+            public TextBox StiffenerPartNoTextBox { get; set; }
+            public TextBox PartitionPartNoTextBox { get; set; }
+            public TextBox FootPRLPartNoTextBox { get; set; }
+            public TextBox FootPlatePartNoTextBox { get; set; }
         }
 
 
@@ -266,6 +284,15 @@ namespace Excel
                     FlangeTopSpacingTextBox = GetControl<TextBox>(formInstance, "tFlangeTopSpacing_", i),
                     EndPlateBustedSpan2TextBox = GetControl<TextBox>(formInstance, "tEndPlateBustedSpan2_", i),
                     FootHeightTextBox = GetControl<TextBox>(formInstance, "tFootHeight_", i),
+                    TubesheetPartNoTextBox = GetControl<TextBox>(formInstance, "tTubesheetPartNo_", i),
+                    PlugsheetPartNoTextBox = GetControl<TextBox>(formInstance, "tPlugsheetPartNo_", i),
+                    TopBtmPartNoTextBox = GetControl<TextBox>(formInstance, "tTopBtmPartNo_", i),
+                    EndPlatePartNoTextBox = GetControl<TextBox>(formInstance, "tEndPlatePartNo_", i),
+                    EndPlatePartNo2TextBox = GetControl<TextBox>(formInstance, "tEndPlatePartNo2_", i),
+                    StiffenerPartNoTextBox = GetControl<TextBox>(formInstance, "tStiffenerPartNo_", i),
+                    PartitionPartNoTextBox = GetControl<TextBox>(formInstance, "tPartitionPartNo_", i),
+                    FootPRLPartNoTextBox = GetControl<TextBox>(formInstance, "tFootPRLPartNo_", i),
+                    FootPlatePartNoTextBox = GetControl<TextBox>(formInstance, "tFootPlatePartNo_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -358,6 +385,13 @@ namespace Excel
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                         FootHeight = (new string[] { "ATK121" }, InputsCalcsSheet),
+                        TubesheetPartNo = (new string[] { "JF6" }, BomInputSheet),
+                        PlugsheetPartNo = (new string[] { "JF8" }, BomInputSheet),
+                        TopBtmPartNo = (new string[]    { "JF12" }, BomInputSheet),
+                        EndPlatePartNo = (new string[]  { "JF14" }, BomInputSheet),
+                        EndPlatePartNo2 = (new string[] { "JF16" }, BomInputSheet),
+                        FootPRLPartNo = (new string[]   { "JF94" }, BomInputSheet),
+                        FootPlatePartNo = (new string[] { "JF96" }, BomInputSheet),
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -437,6 +471,13 @@ namespace Excel
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                         FootHeight = (new string[] { "ATL121" }, InputsCalcsSheet),
+                        TubesheetPartNo = (new string[] { "JF264" }, BomInputSheet),
+                        PlugsheetPartNo = (new string[] { "JF266" }, BomInputSheet),
+                        TopBtmPartNo = (new string[]    { "JF270" }, BomInputSheet),
+                        EndPlatePartNo = (new string[]  { "JF272" }, BomInputSheet),
+                        EndPlatePartNo2 = (new string[] { "JF274" }, BomInputSheet),
+                        FootPRLPartNo = (new string[]   { "JF352" }, BomInputSheet),
+                        FootPlatePartNo = (new string[] { "JF354" }, BomInputSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -516,6 +557,13 @@ namespace Excel
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                         FootHeight = (new string[] { "ATM121" }, InputsCalcsSheet),
+                        TubesheetPartNo = (new string[] { "JF522" }, BomInputSheet),
+                        PlugsheetPartNo = (new string[] { "JF524" }, BomInputSheet),
+                        TopBtmPartNo = (new string[]    { "JF528" }, BomInputSheet),
+                        EndPlatePartNo = (new string[]  { "JF530" }, BomInputSheet),
+                        EndPlatePartNo2 = (new string[] { "JF532" }, BomInputSheet),
+                        FootPRLPartNo = (new string[]   { "JF610" }, BomInputSheet),
+                        FootPlatePartNo = (new string[] { "JF612" }, BomInputSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -595,6 +643,13 @@ namespace Excel
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                         FootHeight = (new string[] { "ATN121" }, InputsCalcsSheet),
+                        TubesheetPartNo = (new string[] { "JF780" }, BomInputSheet),
+                        PlugsheetPartNo = (new string[] { "JF782" }, BomInputSheet),
+                        TopBtmPartNo = (new string[]    { "JF786" }, BomInputSheet),
+                        EndPlatePartNo = (new string[]  { "JF788" }, BomInputSheet),
+                        EndPlatePartNo2 = (new string[] { "JF790" }, BomInputSheet),
+                        FootPRLPartNo = (new string[]   { "JF868" }, BomInputSheet),
+                        FootPlatePartNo = (new string[] { "JF870" }, BomInputSheet),
                     },
 
                     ["64"] = new Prego_DTO
@@ -675,6 +730,13 @@ namespace Excel
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                         FootHeight = (new string[] { "ATO121" }, InputsCalcsSheet),
+                        TubesheetPartNo = (new string[] { "JF1038" }, BomInputSheet),
+                        PlugsheetPartNo = (new string[] { "JF1040" }, BomInputSheet),
+                        TopBtmPartNo = (new string[]    { "JF1044" }, BomInputSheet),
+                        EndPlatePartNo = (new string[]  { "JF1046" }, BomInputSheet),
+                        EndPlatePartNo2 = (new string[] { "JF1048" }, BomInputSheet),
+                        FootPRLPartNo = (new string[]   { "JF1126" }, BomInputSheet),
+                        FootPlatePartNo = (new string[] { "JF1128" }, BomInputSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -754,6 +816,13 @@ namespace Excel
                         FlangeTopOffsetY = (new string[] { "DL60" }, InputsCalcsSheet),
                         FlangeTopSpacing = (new string[] { "DO37" }, InputsCalcsSheet),
                         FootHeight = (new string[] { "ATP121" }, InputsCalcsSheet),
+                        TubesheetPartNo = (new string[] { "JF1296" }, BomInputSheet),
+                        PlugsheetPartNo = (new string[] { "JF1298" }, BomInputSheet),
+                        TopBtmPartNo = (new string[]    { "JF1302" }, BomInputSheet),
+                        EndPlatePartNo = (new string[]  { "JF1304" }, BomInputSheet),
+                        EndPlatePartNo2 = (new string[] { "JF1306" }, BomInputSheet),
+                        FootPRLPartNo = (new string[]   { "JF1384" }, BomInputSheet),
+                        FootPlatePartNo = (new string[] { "JF1386" }, BomInputSheet),
                     }
                 };
             }
@@ -798,9 +867,20 @@ namespace Excel
                             {
                                 Type headerType = header.GetType();
                                 PropertyInfo headerProperty = headerType.GetProperty(propertyName);
-                                double loadedValue = LoadPregoDouble(textBox, cellsAndSheet.Item2, cellsAndSheet.Item1);
-                                textBox.Text = loadedValue == 0 ? "" : loadedValue.ToString();
-                                headerProperty.SetValue(header, loadedValue);
+
+                                if (headerProperty.PropertyType == typeof(double))
+                                {
+                                    double loadedValue = LoadPregoDouble(textBox, cellsAndSheet.Item2, cellsAndSheet.Item1);
+                                    textBox.Text = loadedValue == 0 ? "" : loadedValue.ToString();
+                                    headerProperty.SetValue(header, loadedValue);
+                                }
+                                else if (headerProperty.PropertyType == typeof(string))
+                                {
+                                    string loadedValue = LoadPregoString(textBox, cellsAndSheet.Item2, cellsAndSheet.Item1);
+                                    loadedValue = loadedValue == "0" ? "" : loadedValue;
+                                    textBox.Text = loadedValue ?? "";
+                                    headerProperty.SetValue(header, loadedValue);
+                                }
                             }
                         }
                     }

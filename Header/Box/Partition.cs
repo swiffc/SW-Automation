@@ -45,7 +45,7 @@ namespace HDR.Box
 
 
         // Property overrides
-        public override string PartNo => "HB";
+        public override string PartNo => Header.PartitionPartNo;
         public override bool Enabled => THK != 0;
         public override string StaticPartNo => "Partition";
         public override Shape RawMaterialShape => Shape.Plate;

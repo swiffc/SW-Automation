@@ -670,6 +670,20 @@
             this.label99 = new System.Windows.Forms.Label();
             this.tFootPlatePartNo_64 = new System.Windows.Forms.TextBox();
             this.tFootPlatePartNo_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_64 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_63 = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.tStiffenerPartNo2_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_63 = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.tStiffenerPartNo2_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_65 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Box.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -704,6 +718,20 @@
             // HeaderPanel
             // 
             this.HeaderPanel.AutoScroll = true;
+            this.HeaderPanel.Controls.Add(this.tStiffenerPartNo2_66);
+            this.HeaderPanel.Controls.Add(this.tStiffenerPartNo2_62);
+            this.HeaderPanel.Controls.Add(this.tStiffenerPartNo2_61);
+            this.HeaderPanel.Controls.Add(this.tStiffenerPartNo2_63);
+            this.HeaderPanel.Controls.Add(this.label100);
+            this.HeaderPanel.Controls.Add(this.tStiffenerPartNo2_64);
+            this.HeaderPanel.Controls.Add(this.tStiffenerPartNo2_65);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo2_66);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo2_62);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo2_65);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo2_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo2_64);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo2_63);
+            this.HeaderPanel.Controls.Add(this.label90);
             this.HeaderPanel.Controls.Add(this.tFootPlatePartNo_66);
             this.HeaderPanel.Controls.Add(this.tFootPlatePartNo_62);
             this.HeaderPanel.Controls.Add(this.tFootPlatePartNo_61);
@@ -719,17 +747,17 @@
             this.HeaderPanel.Controls.Add(this.tFootPRLPartNo_64);
             this.HeaderPanel.Controls.Add(this.tFootPRLPartNo_65);
             this.HeaderPanel.Controls.Add(this.tPartitionPartNo_66);
-            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_62);
-            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_61);
-            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_63);
-            this.HeaderPanel.Controls.Add(this.label97);
-            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_64);
-            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_65);
             this.HeaderPanel.Controls.Add(this.tStiffenerPartNo_66);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_62);
             this.HeaderPanel.Controls.Add(this.tStiffenerPartNo_62);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_65);
             this.HeaderPanel.Controls.Add(this.tStiffenerPartNo_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_61);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_64);
             this.HeaderPanel.Controls.Add(this.tStiffenerPartNo_63);
+            this.HeaderPanel.Controls.Add(this.tPartitionPartNo_63);
             this.HeaderPanel.Controls.Add(this.label96);
+            this.HeaderPanel.Controls.Add(this.label97);
             this.HeaderPanel.Controls.Add(this.tStiffenerPartNo_64);
             this.HeaderPanel.Controls.Add(this.tStiffenerPartNo_65);
             this.HeaderPanel.Controls.Add(this.tEndPlatePartNo2_66);
@@ -6663,7 +6691,7 @@
             // 
             // tStiffenerPartNo_66
             // 
-            this.tStiffenerPartNo_66.Location = new System.Drawing.Point(3, 1740);
+            this.tStiffenerPartNo_66.Location = new System.Drawing.Point(3, 1792);
             this.tStiffenerPartNo_66.Name = "tStiffenerPartNo_66";
             this.tStiffenerPartNo_66.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerPartNo_66.TabIndex = 661;
@@ -6671,7 +6699,7 @@
             // 
             // tStiffenerPartNo_62
             // 
-            this.tStiffenerPartNo_62.Location = new System.Drawing.Point(289, 1740);
+            this.tStiffenerPartNo_62.Location = new System.Drawing.Point(289, 1792);
             this.tStiffenerPartNo_62.Name = "tStiffenerPartNo_62";
             this.tStiffenerPartNo_62.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerPartNo_62.TabIndex = 656;
@@ -6679,7 +6707,7 @@
             // 
             // tStiffenerPartNo_61
             // 
-            this.tStiffenerPartNo_61.Location = new System.Drawing.Point(362, 1740);
+            this.tStiffenerPartNo_61.Location = new System.Drawing.Point(362, 1792);
             this.tStiffenerPartNo_61.Name = "tStiffenerPartNo_61";
             this.tStiffenerPartNo_61.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerPartNo_61.TabIndex = 655;
@@ -6687,7 +6715,7 @@
             // 
             // tStiffenerPartNo_63
             // 
-            this.tStiffenerPartNo_63.Location = new System.Drawing.Point(219, 1740);
+            this.tStiffenerPartNo_63.Location = new System.Drawing.Point(219, 1792);
             this.tStiffenerPartNo_63.Name = "tStiffenerPartNo_63";
             this.tStiffenerPartNo_63.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerPartNo_63.TabIndex = 658;
@@ -6697,7 +6725,7 @@
             // 
             this.label96.AutoSize = true;
             this.label96.BackColor = System.Drawing.Color.White;
-            this.label96.Location = new System.Drawing.Point(432, 1744);
+            this.label96.Location = new System.Drawing.Point(432, 1796);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(97, 13);
             this.label96.TabIndex = 657;
@@ -6705,7 +6733,7 @@
             // 
             // tStiffenerPartNo_64
             // 
-            this.tStiffenerPartNo_64.Location = new System.Drawing.Point(146, 1740);
+            this.tStiffenerPartNo_64.Location = new System.Drawing.Point(146, 1792);
             this.tStiffenerPartNo_64.Name = "tStiffenerPartNo_64";
             this.tStiffenerPartNo_64.Size = new System.Drawing.Size(67, 20);
             this.tStiffenerPartNo_64.TabIndex = 659;
@@ -6713,7 +6741,7 @@
             // 
             // tStiffenerPartNo_65
             // 
-            this.tStiffenerPartNo_65.Location = new System.Drawing.Point(76, 1740);
+            this.tStiffenerPartNo_65.Location = new System.Drawing.Point(76, 1792);
             this.tStiffenerPartNo_65.Name = "tStiffenerPartNo_65";
             this.tStiffenerPartNo_65.Size = new System.Drawing.Size(64, 20);
             this.tStiffenerPartNo_65.TabIndex = 660;
@@ -6721,7 +6749,7 @@
             // 
             // tPartitionPartNo_66
             // 
-            this.tPartitionPartNo_66.Location = new System.Drawing.Point(3, 1766);
+            this.tPartitionPartNo_66.Location = new System.Drawing.Point(3, 1740);
             this.tPartitionPartNo_66.Name = "tPartitionPartNo_66";
             this.tPartitionPartNo_66.Size = new System.Drawing.Size(67, 20);
             this.tPartitionPartNo_66.TabIndex = 668;
@@ -6729,7 +6757,7 @@
             // 
             // tPartitionPartNo_62
             // 
-            this.tPartitionPartNo_62.Location = new System.Drawing.Point(289, 1766);
+            this.tPartitionPartNo_62.Location = new System.Drawing.Point(289, 1740);
             this.tPartitionPartNo_62.Name = "tPartitionPartNo_62";
             this.tPartitionPartNo_62.Size = new System.Drawing.Size(67, 20);
             this.tPartitionPartNo_62.TabIndex = 663;
@@ -6737,7 +6765,7 @@
             // 
             // tPartitionPartNo_61
             // 
-            this.tPartitionPartNo_61.Location = new System.Drawing.Point(362, 1766);
+            this.tPartitionPartNo_61.Location = new System.Drawing.Point(362, 1740);
             this.tPartitionPartNo_61.Name = "tPartitionPartNo_61";
             this.tPartitionPartNo_61.Size = new System.Drawing.Size(64, 20);
             this.tPartitionPartNo_61.TabIndex = 662;
@@ -6745,7 +6773,7 @@
             // 
             // tPartitionPartNo_63
             // 
-            this.tPartitionPartNo_63.Location = new System.Drawing.Point(219, 1766);
+            this.tPartitionPartNo_63.Location = new System.Drawing.Point(219, 1740);
             this.tPartitionPartNo_63.Name = "tPartitionPartNo_63";
             this.tPartitionPartNo_63.Size = new System.Drawing.Size(64, 20);
             this.tPartitionPartNo_63.TabIndex = 665;
@@ -6755,7 +6783,7 @@
             // 
             this.label97.AutoSize = true;
             this.label97.BackColor = System.Drawing.Color.White;
-            this.label97.Location = new System.Drawing.Point(432, 1770);
+            this.label97.Location = new System.Drawing.Point(432, 1744);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(96, 13);
             this.label97.TabIndex = 664;
@@ -6763,7 +6791,7 @@
             // 
             // tPartitionPartNo_64
             // 
-            this.tPartitionPartNo_64.Location = new System.Drawing.Point(146, 1766);
+            this.tPartitionPartNo_64.Location = new System.Drawing.Point(146, 1740);
             this.tPartitionPartNo_64.Name = "tPartitionPartNo_64";
             this.tPartitionPartNo_64.Size = new System.Drawing.Size(67, 20);
             this.tPartitionPartNo_64.TabIndex = 666;
@@ -6771,7 +6799,7 @@
             // 
             // tPartitionPartNo_65
             // 
-            this.tPartitionPartNo_65.Location = new System.Drawing.Point(76, 1766);
+            this.tPartitionPartNo_65.Location = new System.Drawing.Point(76, 1740);
             this.tPartitionPartNo_65.Name = "tPartitionPartNo_65";
             this.tPartitionPartNo_65.Size = new System.Drawing.Size(64, 20);
             this.tPartitionPartNo_65.TabIndex = 667;
@@ -6779,7 +6807,7 @@
             // 
             // tFootPRLPartNo_66
             // 
-            this.tFootPRLPartNo_66.Location = new System.Drawing.Point(3, 1792);
+            this.tFootPRLPartNo_66.Location = new System.Drawing.Point(3, 1844);
             this.tFootPRLPartNo_66.Name = "tFootPRLPartNo_66";
             this.tFootPRLPartNo_66.Size = new System.Drawing.Size(67, 20);
             this.tFootPRLPartNo_66.TabIndex = 675;
@@ -6787,7 +6815,7 @@
             // 
             // tFootPRLPartNo_62
             // 
-            this.tFootPRLPartNo_62.Location = new System.Drawing.Point(289, 1792);
+            this.tFootPRLPartNo_62.Location = new System.Drawing.Point(289, 1844);
             this.tFootPRLPartNo_62.Name = "tFootPRLPartNo_62";
             this.tFootPRLPartNo_62.Size = new System.Drawing.Size(67, 20);
             this.tFootPRLPartNo_62.TabIndex = 670;
@@ -6795,7 +6823,7 @@
             // 
             // tFootPRLPartNo_61
             // 
-            this.tFootPRLPartNo_61.Location = new System.Drawing.Point(362, 1792);
+            this.tFootPRLPartNo_61.Location = new System.Drawing.Point(362, 1844);
             this.tFootPRLPartNo_61.Name = "tFootPRLPartNo_61";
             this.tFootPRLPartNo_61.Size = new System.Drawing.Size(64, 20);
             this.tFootPRLPartNo_61.TabIndex = 669;
@@ -6803,7 +6831,7 @@
             // 
             // tFootPRLPartNo_63
             // 
-            this.tFootPRLPartNo_63.Location = new System.Drawing.Point(219, 1792);
+            this.tFootPRLPartNo_63.Location = new System.Drawing.Point(219, 1844);
             this.tFootPRLPartNo_63.Name = "tFootPRLPartNo_63";
             this.tFootPRLPartNo_63.Size = new System.Drawing.Size(64, 20);
             this.tFootPRLPartNo_63.TabIndex = 672;
@@ -6813,7 +6841,7 @@
             // 
             this.label98.AutoSize = true;
             this.label98.BackColor = System.Drawing.Color.White;
-            this.label98.Location = new System.Drawing.Point(432, 1796);
+            this.label98.Location = new System.Drawing.Point(432, 1848);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(103, 13);
             this.label98.TabIndex = 671;
@@ -6821,7 +6849,7 @@
             // 
             // tFootPRLPartNo_64
             // 
-            this.tFootPRLPartNo_64.Location = new System.Drawing.Point(146, 1792);
+            this.tFootPRLPartNo_64.Location = new System.Drawing.Point(146, 1844);
             this.tFootPRLPartNo_64.Name = "tFootPRLPartNo_64";
             this.tFootPRLPartNo_64.Size = new System.Drawing.Size(67, 20);
             this.tFootPRLPartNo_64.TabIndex = 673;
@@ -6829,7 +6857,7 @@
             // 
             // tFootPRLPartNo_65
             // 
-            this.tFootPRLPartNo_65.Location = new System.Drawing.Point(76, 1792);
+            this.tFootPRLPartNo_65.Location = new System.Drawing.Point(76, 1844);
             this.tFootPRLPartNo_65.Name = "tFootPRLPartNo_65";
             this.tFootPRLPartNo_65.Size = new System.Drawing.Size(64, 20);
             this.tFootPRLPartNo_65.TabIndex = 674;
@@ -6837,7 +6865,7 @@
             // 
             // tFootPlatePartNo_66
             // 
-            this.tFootPlatePartNo_66.Location = new System.Drawing.Point(3, 1818);
+            this.tFootPlatePartNo_66.Location = new System.Drawing.Point(3, 1870);
             this.tFootPlatePartNo_66.Name = "tFootPlatePartNo_66";
             this.tFootPlatePartNo_66.Size = new System.Drawing.Size(67, 20);
             this.tFootPlatePartNo_66.TabIndex = 682;
@@ -6845,7 +6873,7 @@
             // 
             // tFootPlatePartNo_62
             // 
-            this.tFootPlatePartNo_62.Location = new System.Drawing.Point(289, 1818);
+            this.tFootPlatePartNo_62.Location = new System.Drawing.Point(289, 1870);
             this.tFootPlatePartNo_62.Name = "tFootPlatePartNo_62";
             this.tFootPlatePartNo_62.Size = new System.Drawing.Size(67, 20);
             this.tFootPlatePartNo_62.TabIndex = 677;
@@ -6853,7 +6881,7 @@
             // 
             // tFootPlatePartNo_61
             // 
-            this.tFootPlatePartNo_61.Location = new System.Drawing.Point(362, 1818);
+            this.tFootPlatePartNo_61.Location = new System.Drawing.Point(362, 1870);
             this.tFootPlatePartNo_61.Name = "tFootPlatePartNo_61";
             this.tFootPlatePartNo_61.Size = new System.Drawing.Size(64, 20);
             this.tFootPlatePartNo_61.TabIndex = 676;
@@ -6861,7 +6889,7 @@
             // 
             // tFootPlatePartNo_63
             // 
-            this.tFootPlatePartNo_63.Location = new System.Drawing.Point(219, 1818);
+            this.tFootPlatePartNo_63.Location = new System.Drawing.Point(219, 1870);
             this.tFootPlatePartNo_63.Name = "tFootPlatePartNo_63";
             this.tFootPlatePartNo_63.Size = new System.Drawing.Size(64, 20);
             this.tFootPlatePartNo_63.TabIndex = 679;
@@ -6871,7 +6899,7 @@
             // 
             this.label99.AutoSize = true;
             this.label99.BackColor = System.Drawing.Color.White;
-            this.label99.Location = new System.Drawing.Point(432, 1822);
+            this.label99.Location = new System.Drawing.Point(432, 1874);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(106, 13);
             this.label99.TabIndex = 678;
@@ -6879,7 +6907,7 @@
             // 
             // tFootPlatePartNo_64
             // 
-            this.tFootPlatePartNo_64.Location = new System.Drawing.Point(146, 1818);
+            this.tFootPlatePartNo_64.Location = new System.Drawing.Point(146, 1870);
             this.tFootPlatePartNo_64.Name = "tFootPlatePartNo_64";
             this.tFootPlatePartNo_64.Size = new System.Drawing.Size(67, 20);
             this.tFootPlatePartNo_64.TabIndex = 680;
@@ -6887,17 +6915,133 @@
             // 
             // tFootPlatePartNo_65
             // 
-            this.tFootPlatePartNo_65.Location = new System.Drawing.Point(76, 1818);
+            this.tFootPlatePartNo_65.Location = new System.Drawing.Point(76, 1870);
             this.tFootPlatePartNo_65.Name = "tFootPlatePartNo_65";
             this.tFootPlatePartNo_65.Size = new System.Drawing.Size(64, 20);
             this.tFootPlatePartNo_65.TabIndex = 681;
             this.tFootPlatePartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tPartitionPartNo2_66
+            // 
+            this.tPartitionPartNo2_66.Location = new System.Drawing.Point(3, 1766);
+            this.tPartitionPartNo2_66.Name = "tPartitionPartNo2_66";
+            this.tPartitionPartNo2_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo2_66.TabIndex = 689;
+            this.tPartitionPartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_62
+            // 
+            this.tPartitionPartNo2_62.Location = new System.Drawing.Point(289, 1766);
+            this.tPartitionPartNo2_62.Name = "tPartitionPartNo2_62";
+            this.tPartitionPartNo2_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo2_62.TabIndex = 684;
+            this.tPartitionPartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_65
+            // 
+            this.tPartitionPartNo2_65.Location = new System.Drawing.Point(76, 1766);
+            this.tPartitionPartNo2_65.Name = "tPartitionPartNo2_65";
+            this.tPartitionPartNo2_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo2_65.TabIndex = 688;
+            this.tPartitionPartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_61
+            // 
+            this.tPartitionPartNo2_61.Location = new System.Drawing.Point(362, 1766);
+            this.tPartitionPartNo2_61.Name = "tPartitionPartNo2_61";
+            this.tPartitionPartNo2_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo2_61.TabIndex = 683;
+            this.tPartitionPartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_64
+            // 
+            this.tPartitionPartNo2_64.Location = new System.Drawing.Point(146, 1766);
+            this.tPartitionPartNo2_64.Name = "tPartitionPartNo2_64";
+            this.tPartitionPartNo2_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo2_64.TabIndex = 687;
+            this.tPartitionPartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_63
+            // 
+            this.tPartitionPartNo2_63.Location = new System.Drawing.Point(219, 1766);
+            this.tPartitionPartNo2_63.Name = "tPartitionPartNo2_63";
+            this.tPartitionPartNo2_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo2_63.TabIndex = 686;
+            this.tPartitionPartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.BackColor = System.Drawing.Color.White;
+            this.label90.Location = new System.Drawing.Point(432, 1770);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(102, 13);
+            this.label90.TabIndex = 685;
+            this.label90.Text = "PARTNO  Partition2";
+            // 
+            // tStiffenerPartNo2_66
+            // 
+            this.tStiffenerPartNo2_66.Location = new System.Drawing.Point(3, 1818);
+            this.tStiffenerPartNo2_66.Name = "tStiffenerPartNo2_66";
+            this.tStiffenerPartNo2_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo2_66.TabIndex = 696;
+            this.tStiffenerPartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_62
+            // 
+            this.tStiffenerPartNo2_62.Location = new System.Drawing.Point(289, 1818);
+            this.tStiffenerPartNo2_62.Name = "tStiffenerPartNo2_62";
+            this.tStiffenerPartNo2_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo2_62.TabIndex = 691;
+            this.tStiffenerPartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_61
+            // 
+            this.tStiffenerPartNo2_61.Location = new System.Drawing.Point(362, 1818);
+            this.tStiffenerPartNo2_61.Name = "tStiffenerPartNo2_61";
+            this.tStiffenerPartNo2_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo2_61.TabIndex = 690;
+            this.tStiffenerPartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_63
+            // 
+            this.tStiffenerPartNo2_63.Location = new System.Drawing.Point(219, 1818);
+            this.tStiffenerPartNo2_63.Name = "tStiffenerPartNo2_63";
+            this.tStiffenerPartNo2_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo2_63.TabIndex = 693;
+            this.tStiffenerPartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.BackColor = System.Drawing.Color.White;
+            this.label100.Location = new System.Drawing.Point(432, 1822);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(103, 13);
+            this.label100.TabIndex = 692;
+            this.label100.Text = "PARTNO  Stiffener2";
+            // 
+            // tStiffenerPartNo2_64
+            // 
+            this.tStiffenerPartNo2_64.Location = new System.Drawing.Point(146, 1818);
+            this.tStiffenerPartNo2_64.Name = "tStiffenerPartNo2_64";
+            this.tStiffenerPartNo2_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo2_64.TabIndex = 694;
+            this.tStiffenerPartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_65
+            // 
+            this.tStiffenerPartNo2_65.Location = new System.Drawing.Point(76, 1818);
+            this.tStiffenerPartNo2_65.Name = "tStiffenerPartNo2_65";
+            this.tStiffenerPartNo2_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo2_65.TabIndex = 695;
+            this.tStiffenerPartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // HeaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 627);
+            this.ClientSize = new System.Drawing.Size(668, 627);
             this.Controls.Add(this.bRun);
             this.Controls.Add(this.cTileblockManuf);
             this.Controls.Add(this.label88);
@@ -7576,5 +7720,19 @@
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.TextBox tFootPlatePartNo_64;
         private System.Windows.Forms.TextBox tFootPlatePartNo_65;
+        private System.Windows.Forms.TextBox tStiffenerPartNo2_66;
+        private System.Windows.Forms.TextBox tStiffenerPartNo2_62;
+        private System.Windows.Forms.TextBox tStiffenerPartNo2_61;
+        private System.Windows.Forms.TextBox tStiffenerPartNo2_63;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TextBox tStiffenerPartNo2_64;
+        private System.Windows.Forms.TextBox tStiffenerPartNo2_65;
+        private System.Windows.Forms.TextBox tPartitionPartNo2_66;
+        private System.Windows.Forms.TextBox tPartitionPartNo2_62;
+        private System.Windows.Forms.TextBox tPartitionPartNo2_65;
+        private System.Windows.Forms.TextBox tPartitionPartNo2_61;
+        private System.Windows.Forms.TextBox tPartitionPartNo2_64;
+        private System.Windows.Forms.TextBox tPartitionPartNo2_63;
+        private System.Windows.Forms.Label label90;
     }
 }

@@ -150,21 +150,23 @@ namespace Excel
         {
             foreach (var property in headerControls.Header.GetType().GetProperties())
             {
-                if (property.PropertyType == typeof(double))
+                Type headerControlsType = headerControls.GetType();
+
+                string propertyName = property.Name + "TextBox";
+                PropertyInfo propertyInfo = headerControlsType.GetProperty(propertyName);
+
+                if (propertyInfo != null)
                 {
-                    double value = (double)property.GetValue(headerControls.Header);
-                    Type headerControlsType = headerControls.GetType();
-
-                    string propertyName = property.Name + "TextBox";
-                    PropertyInfo propertyInfo = headerControlsType.GetProperty(propertyName);
-
-                    if (propertyInfo != null)
+                    TextBox textBox = (TextBox)propertyInfo.GetValue(headerControls);
+                    double valueDouble;
+                    if (textBox != null && property.PropertyType == typeof(double))
                     {
-                        TextBox textBox = (TextBox)propertyInfo.GetValue(headerControls);
-                        if (textBox != null)
-                        {
-                            textBox.Text = value == 0 ? "" : value.ToString();
-                        }
+                        valueDouble = (double)property.GetValue(headerControls.Header);
+                        textBox.Text = valueDouble == 0 ? "" : valueDouble.ToString();
+                    }
+                    else if (textBox != null && property.PropertyType == typeof(string))
+                    {
+                        textBox.Text = (string)property.GetValue(headerControls.Header);
                     }
                 }
             }
@@ -242,7 +244,7 @@ namespace Excel
             {
                 case "Inlet":
                     return Inlet;
-                    case "Outlet":
+                case "Outlet":
                     return Outlet;
                 default:
                     throw new ArgumentException($"Invalid index: {name}");
@@ -268,7 +270,7 @@ namespace Excel
             else
                 return null;
         }
-        public static void HeaderTextBoxDoubleChanged(object sender, EventArgs e)
+        public static void HeaderTextBoxChanged(object sender, EventArgs e)
         {
             if (sender is TextBox textBox)
             {
@@ -279,15 +281,19 @@ namespace Excel
                     string propertyName = parts[1];
                     if (textBox.Text != "")
                     {
-                        double value = double.TryParse(textBox.Text, out double parsedValue) ? parsedValue : 0;
-
                         var header = GetHeader(headerId);
                         if (header != null)
                         {
                             var property = header.GetType().GetProperty(propertyName);
+                            double valueDouble = double.TryParse(textBox.Text, out double parsedValue) ? parsedValue : 0;
                             if (property != null && property.PropertyType == typeof(double))
                             {
-                                property.SetValue(header, value);
+                                property.SetValue(header, valueDouble);
+                                SaveSettings();
+                            }
+                            else if (property != null && property.PropertyType == typeof(string))
+                            {
+                                property.SetValue(header, textBox.Text);
                                 SaveSettings();
                             }
                         }
@@ -360,7 +366,7 @@ namespace Excel
 
                                                 // Attach the HeaderTextBoxDoubleChanged event handler to the TextBox
                                                 // This event handler will be triggered whenever the text in the TextBox changes
-                                                textBox.TextChanged += HeaderTextBoxDoubleChanged;
+                                                textBox.TextChanged += HeaderTextBoxChanged;
                                             }
                                             else throw new ArgumentException("Invalid TextBox name format");
                                         }

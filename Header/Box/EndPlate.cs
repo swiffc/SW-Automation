@@ -27,7 +27,7 @@ namespace HDR.Box
 
 
         // Property overrides
-        public override string PartNo => "AD";
+        public override string PartNo => Header.EndPlatePartNo;
         public override bool Enabled => true;
         public override Shape RawMaterialShape => Shape.Plate;
         public override string SizeOrThickness => THK.ToString();

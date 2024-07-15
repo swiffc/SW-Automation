@@ -331,6 +331,72 @@ namespace FileTools.CommonData
                 get => Default.FootHeight_61;
                 set => Default.FootHeight_61 = value;
             }
+            public string TubesheetPartNo
+            {
+                get => Default.TubesheetPartNo_61;
+                set => Default.TubesheetPartNo_61 = value;
+            }
+            public string PlugsheetPartNo
+            {
+                get => Default.PlugsheetPartNo_61;
+                set => Default.PlugsheetPartNo_61 = value;
+            }
+            public string TopBtmPartNo
+            {
+                get => Default.TopBtmPartNo_61;
+                set => Default.TopBtmPartNo_61 = value;
+            }
+            public string EndPlatePartNo
+            {
+                get => Default.EndPlatePartNo_61;
+                set => Default.EndPlatePartNo_61 = value;
+            }
+            public string EndPlatePartNo2
+            {
+                get => Default.EndPlatePartNo2_61;
+                set => Default.EndPlatePartNo2_61 = value;
+            }
+            public string StiffenerPartNo
+            {
+                get => Default.StiffenerPartNo_61;
+                set => Default.StiffenerPartNo_61 = value;
+            }
+            public string PartitionPartNo
+            {
+                get => Default.PartitionPartNo_61;
+                set => Default.PartitionPartNo_61 = value;
+            }
+            public string FootPRLPartNo
+            {
+                get => Default.FootPRLPartNo_61;
+                set => Default.FootPRLPartNo_61 = value;
+            }
+            public string FootPlatePartNo
+            {
+                get => Default.FootPlatePartNo_61;
+                set => Default.FootPlatePartNo_61 = value;
+            }
+            public double PartitionTHK2
+            {
+                get => Default.PartitionTHK2_61;
+                set => Default.PartitionTHK2_61 = value;
+            }
+            public string PartitionPartNo2
+            {
+                get => Default.PartitionPartNo2_61;
+                set => Default.PartitionPartNo2_61 = value;
+            }
+            public double StiffenerTHK2
+            {
+                get => Default.StiffenerTHK2_61;
+                set => Default.StiffenerTHK2_61 = value;
+            }
+            public string StiffenerPartNo2
+            {
+                get => Default.StiffenerPartNo2_61;
+                set => Default.StiffenerPartNo2_61 = value;
+            }
+
         }
 
     }

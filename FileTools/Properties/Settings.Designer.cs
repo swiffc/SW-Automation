@@ -7630,5 +7630,941 @@ namespace FileTools.Properties {
                 this["FootHeight_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TubesheetPartNo_61 {
+            get {
+                return ((string)(this["TubesheetPartNo_61"]));
+            }
+            set {
+                this["TubesheetPartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TubesheetPartNo_62 {
+            get {
+                return ((string)(this["TubesheetPartNo_62"]));
+            }
+            set {
+                this["TubesheetPartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TubesheetPartNo_63 {
+            get {
+                return ((string)(this["TubesheetPartNo_63"]));
+            }
+            set {
+                this["TubesheetPartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TubesheetPartNo_64 {
+            get {
+                return ((string)(this["TubesheetPartNo_64"]));
+            }
+            set {
+                this["TubesheetPartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TubesheetPartNo_65 {
+            get {
+                return ((string)(this["TubesheetPartNo_65"]));
+            }
+            set {
+                this["TubesheetPartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TubesheetPartNo_66 {
+            get {
+                return ((string)(this["TubesheetPartNo_66"]));
+            }
+            set {
+                this["TubesheetPartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlugsheetPartNo_61 {
+            get {
+                return ((string)(this["PlugsheetPartNo_61"]));
+            }
+            set {
+                this["PlugsheetPartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlugsheetPartNo_62 {
+            get {
+                return ((string)(this["PlugsheetPartNo_62"]));
+            }
+            set {
+                this["PlugsheetPartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlugsheetPartNo_63 {
+            get {
+                return ((string)(this["PlugsheetPartNo_63"]));
+            }
+            set {
+                this["PlugsheetPartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlugsheetPartNo_64 {
+            get {
+                return ((string)(this["PlugsheetPartNo_64"]));
+            }
+            set {
+                this["PlugsheetPartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlugsheetPartNo_65 {
+            get {
+                return ((string)(this["PlugsheetPartNo_65"]));
+            }
+            set {
+                this["PlugsheetPartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlugsheetPartNo_66 {
+            get {
+                return ((string)(this["PlugsheetPartNo_66"]));
+            }
+            set {
+                this["PlugsheetPartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TopBtmPartNo_61 {
+            get {
+                return ((string)(this["TopBtmPartNo_61"]));
+            }
+            set {
+                this["TopBtmPartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TopBtmPartNo_62 {
+            get {
+                return ((string)(this["TopBtmPartNo_62"]));
+            }
+            set {
+                this["TopBtmPartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TopBtmPartNo_63 {
+            get {
+                return ((string)(this["TopBtmPartNo_63"]));
+            }
+            set {
+                this["TopBtmPartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TopBtmPartNo_64 {
+            get {
+                return ((string)(this["TopBtmPartNo_64"]));
+            }
+            set {
+                this["TopBtmPartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TopBtmPartNo_65 {
+            get {
+                return ((string)(this["TopBtmPartNo_65"]));
+            }
+            set {
+                this["TopBtmPartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TopBtmPartNo_66 {
+            get {
+                return ((string)(this["TopBtmPartNo_66"]));
+            }
+            set {
+                this["TopBtmPartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo_61 {
+            get {
+                return ((string)(this["EndPlatePartNo_61"]));
+            }
+            set {
+                this["EndPlatePartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo_62 {
+            get {
+                return ((string)(this["EndPlatePartNo_62"]));
+            }
+            set {
+                this["EndPlatePartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo_63 {
+            get {
+                return ((string)(this["EndPlatePartNo_63"]));
+            }
+            set {
+                this["EndPlatePartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo_64 {
+            get {
+                return ((string)(this["EndPlatePartNo_64"]));
+            }
+            set {
+                this["EndPlatePartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo_65 {
+            get {
+                return ((string)(this["EndPlatePartNo_65"]));
+            }
+            set {
+                this["EndPlatePartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo_66 {
+            get {
+                return ((string)(this["EndPlatePartNo_66"]));
+            }
+            set {
+                this["EndPlatePartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo2_61 {
+            get {
+                return ((string)(this["EndPlatePartNo2_61"]));
+            }
+            set {
+                this["EndPlatePartNo2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo2_62 {
+            get {
+                return ((string)(this["EndPlatePartNo2_62"]));
+            }
+            set {
+                this["EndPlatePartNo2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo2_63 {
+            get {
+                return ((string)(this["EndPlatePartNo2_63"]));
+            }
+            set {
+                this["EndPlatePartNo2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo2_64 {
+            get {
+                return ((string)(this["EndPlatePartNo2_64"]));
+            }
+            set {
+                this["EndPlatePartNo2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo2_65 {
+            get {
+                return ((string)(this["EndPlatePartNo2_65"]));
+            }
+            set {
+                this["EndPlatePartNo2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EndPlatePartNo2_66 {
+            get {
+                return ((string)(this["EndPlatePartNo2_66"]));
+            }
+            set {
+                this["EndPlatePartNo2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo_61 {
+            get {
+                return ((string)(this["StiffenerPartNo_61"]));
+            }
+            set {
+                this["StiffenerPartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo_62 {
+            get {
+                return ((string)(this["StiffenerPartNo_62"]));
+            }
+            set {
+                this["StiffenerPartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo_63 {
+            get {
+                return ((string)(this["StiffenerPartNo_63"]));
+            }
+            set {
+                this["StiffenerPartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo_64 {
+            get {
+                return ((string)(this["StiffenerPartNo_64"]));
+            }
+            set {
+                this["StiffenerPartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo_65 {
+            get {
+                return ((string)(this["StiffenerPartNo_65"]));
+            }
+            set {
+                this["StiffenerPartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo_66 {
+            get {
+                return ((string)(this["StiffenerPartNo_66"]));
+            }
+            set {
+                this["StiffenerPartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo_61 {
+            get {
+                return ((string)(this["PartitionPartNo_61"]));
+            }
+            set {
+                this["PartitionPartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo_62 {
+            get {
+                return ((string)(this["PartitionPartNo_62"]));
+            }
+            set {
+                this["PartitionPartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo_63 {
+            get {
+                return ((string)(this["PartitionPartNo_63"]));
+            }
+            set {
+                this["PartitionPartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo_64 {
+            get {
+                return ((string)(this["PartitionPartNo_64"]));
+            }
+            set {
+                this["PartitionPartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo_65 {
+            get {
+                return ((string)(this["PartitionPartNo_65"]));
+            }
+            set {
+                this["PartitionPartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo_66 {
+            get {
+                return ((string)(this["PartitionPartNo_66"]));
+            }
+            set {
+                this["PartitionPartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPRLPartNo_61 {
+            get {
+                return ((string)(this["FootPRLPartNo_61"]));
+            }
+            set {
+                this["FootPRLPartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPRLPartNo_62 {
+            get {
+                return ((string)(this["FootPRLPartNo_62"]));
+            }
+            set {
+                this["FootPRLPartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPRLPartNo_63 {
+            get {
+                return ((string)(this["FootPRLPartNo_63"]));
+            }
+            set {
+                this["FootPRLPartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPRLPartNo_64 {
+            get {
+                return ((string)(this["FootPRLPartNo_64"]));
+            }
+            set {
+                this["FootPRLPartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPRLPartNo_65 {
+            get {
+                return ((string)(this["FootPRLPartNo_65"]));
+            }
+            set {
+                this["FootPRLPartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPRLPartNo_66 {
+            get {
+                return ((string)(this["FootPRLPartNo_66"]));
+            }
+            set {
+                this["FootPRLPartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPlatePartNo_61 {
+            get {
+                return ((string)(this["FootPlatePartNo_61"]));
+            }
+            set {
+                this["FootPlatePartNo_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPlatePartNo_62 {
+            get {
+                return ((string)(this["FootPlatePartNo_62"]));
+            }
+            set {
+                this["FootPlatePartNo_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPlatePartNo_63 {
+            get {
+                return ((string)(this["FootPlatePartNo_63"]));
+            }
+            set {
+                this["FootPlatePartNo_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPlatePartNo_64 {
+            get {
+                return ((string)(this["FootPlatePartNo_64"]));
+            }
+            set {
+                this["FootPlatePartNo_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPlatePartNo_65 {
+            get {
+                return ((string)(this["FootPlatePartNo_65"]));
+            }
+            set {
+                this["FootPlatePartNo_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FootPlatePartNo_66 {
+            get {
+                return ((string)(this["FootPlatePartNo_66"]));
+            }
+            set {
+                this["FootPlatePartNo_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK2_61 {
+            get {
+                return ((double)(this["PartitionTHK2_61"]));
+            }
+            set {
+                this["PartitionTHK2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK2_62 {
+            get {
+                return ((double)(this["PartitionTHK2_62"]));
+            }
+            set {
+                this["PartitionTHK2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK2_63 {
+            get {
+                return ((double)(this["PartitionTHK2_63"]));
+            }
+            set {
+                this["PartitionTHK2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK2_64 {
+            get {
+                return ((double)(this["PartitionTHK2_64"]));
+            }
+            set {
+                this["PartitionTHK2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK2_65 {
+            get {
+                return ((double)(this["PartitionTHK2_65"]));
+            }
+            set {
+                this["PartitionTHK2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionTHK2_66 {
+            get {
+                return ((double)(this["PartitionTHK2_66"]));
+            }
+            set {
+                this["PartitionTHK2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo2_61 {
+            get {
+                return ((string)(this["PartitionPartNo2_61"]));
+            }
+            set {
+                this["PartitionPartNo2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo2_62 {
+            get {
+                return ((string)(this["PartitionPartNo2_62"]));
+            }
+            set {
+                this["PartitionPartNo2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo2_63 {
+            get {
+                return ((string)(this["PartitionPartNo2_63"]));
+            }
+            set {
+                this["PartitionPartNo2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo2_64 {
+            get {
+                return ((string)(this["PartitionPartNo2_64"]));
+            }
+            set {
+                this["PartitionPartNo2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo2_65 {
+            get {
+                return ((string)(this["PartitionPartNo2_65"]));
+            }
+            set {
+                this["PartitionPartNo2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PartitionPartNo2_66 {
+            get {
+                return ((string)(this["PartitionPartNo2_66"]));
+            }
+            set {
+                this["PartitionPartNo2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK2_61 {
+            get {
+                return ((double)(this["StiffenerTHK2_61"]));
+            }
+            set {
+                this["StiffenerTHK2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK2_62 {
+            get {
+                return ((double)(this["StiffenerTHK2_62"]));
+            }
+            set {
+                this["StiffenerTHK2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK2_63 {
+            get {
+                return ((double)(this["StiffenerTHK2_63"]));
+            }
+            set {
+                this["StiffenerTHK2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK2_64 {
+            get {
+                return ((double)(this["StiffenerTHK2_64"]));
+            }
+            set {
+                this["StiffenerTHK2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK2_65 {
+            get {
+                return ((double)(this["StiffenerTHK2_65"]));
+            }
+            set {
+                this["StiffenerTHK2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerTHK2_66 {
+            get {
+                return ((double)(this["StiffenerTHK2_66"]));
+            }
+            set {
+                this["StiffenerTHK2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo2_61 {
+            get {
+                return ((string)(this["StiffenerPartNo2_61"]));
+            }
+            set {
+                this["StiffenerPartNo2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo2_62 {
+            get {
+                return ((string)(this["StiffenerPartNo2_62"]));
+            }
+            set {
+                this["StiffenerPartNo2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo2_63 {
+            get {
+                return ((string)(this["StiffenerPartNo2_63"]));
+            }
+            set {
+                this["StiffenerPartNo2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo2_64 {
+            get {
+                return ((string)(this["StiffenerPartNo2_64"]));
+            }
+            set {
+                this["StiffenerPartNo2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo2_65 {
+            get {
+                return ((string)(this["StiffenerPartNo2_65"]));
+            }
+            set {
+                this["StiffenerPartNo2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StiffenerPartNo2_66 {
+            get {
+                return ((string)(this["StiffenerPartNo2_66"]));
+            }
+            set {
+                this["StiffenerPartNo2_66"] = value;
+            }
+        }
     }
 }
