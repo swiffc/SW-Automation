@@ -1114,7 +1114,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                 var fileName = Path.GetFileNameWithoutExtension(componentKey.GetPathName());
 
                 // First, try to find an existing component by its StaticPartNo
-                var existingComponent = ComponentRegistry.GetComponentByPartNo(staticNumber, fileName);
+                var existingComponent = ComponentRegistry.GetComponentByPartNoAndFileName(staticNumber, fileName);
 
                 if (existingComponent != null)
                 {
@@ -1128,6 +1128,17 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                     dictionary.Add(componentKey, null);
                     continue;
                 }
+
+                if (existingComponent == null)
+                {
+                    existingComponent = ComponentRegistry.GetComponentByPartNo(staticNumber);
+                    if (existingComponent != null)
+                    {
+                        dictionary.Add(componentKey, existingComponent.GetType());
+                        continue;
+                    }
+                }
+
             }
 
             return dictionary;
@@ -1148,7 +1159,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                 if (registeredType != null && registeredType == componentType)
                 {
                     // If the type matches and you need to check if it's enabled, retrieve the instance
-                    var instance = ComponentRegistry.GetComponentByPartNo(component.ReferencedConfiguration, fileName);
+                    var instance = ComponentRegistry.GetComponentByPartNoAndFileName(component.ReferencedConfiguration, fileName);
 
                     // Handles local part instances
                     if (instance != null && !instance.Enabled)
@@ -1421,6 +1432,6 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         public static List<string> AssignedComponentPaths = new List<string>();
         public static Type LastType { get; set; }
         public static bool Developer => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") && DevMode ? true : false;
-        public static bool DevMode { get; set; } = true;
+        public static bool DevMode { get; set; } = false;
     }
 }

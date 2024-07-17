@@ -28,11 +28,23 @@ namespace FileTools.Base
         }
 
         // Method to get a component by StaticPartNo
-        public static IComponentInfo2 GetComponentByPartNo(string partNo, string fileNameWithoutExtension)
+        public static IComponentInfo2 GetComponentByPartNoAndFileName(string partNo, string fileNameWithoutExtension)
         {
             if (_componentsByPartNo.TryGetValue((partNo, fileNameWithoutExtension), out var entry))
             {
                 return entry.Instance;
+            }
+
+            return null;
+        }
+        public static IComponentInfo2 GetComponentByPartNo(string partNo)
+        {
+            foreach (var entry in _componentsByPartNo)
+            {
+                if (entry.Key.Item1 == partNo)
+                {
+                    return entry.Value.Instance;
+                }
             }
 
             return null;

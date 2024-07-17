@@ -11,7 +11,7 @@ namespace HDR.Connections.Derived
 
 
         // Property overrides
-        public override string PartNo => "InletFlange";
+        public override string PartNo => Inlet.FlangePartNo == "0" ? GetType().Name : Inlet.FlangePartNo;
         protected override IConnection FLG => Inlet;
     }
 }

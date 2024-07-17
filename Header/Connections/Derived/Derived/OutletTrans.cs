@@ -11,7 +11,7 @@ namespace HDR.Connections.Derived.Derived
 
 
         // Property overrides
-        public override string PartNo => "OutletTrans";
+        public override string PartNo => Outlet.ExtensionPartNo == "0" ? GetType().Name : Outlet.ExtensionPartNo;
         protected override IConnection Ext => Outlet;
     }
 }

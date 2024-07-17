@@ -28,5 +28,9 @@ namespace FileTools.CommonData.Headers.Connections
         double Spacing { get; set; }
         double OffsetX { get; set; }
         double ProjectionY { get; set; }
+
+        string FlangePartNo { get; set; }
+        string ExtensionPartNo { get; set; }
+
     }
 }

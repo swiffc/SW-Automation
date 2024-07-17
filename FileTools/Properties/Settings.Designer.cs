@@ -8566,5 +8566,53 @@ namespace FileTools.Properties {
                 this["StiffenerPartNo2_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FlangePartNo_Inlet {
+            get {
+                return ((string)(this["FlangePartNo_Inlet"]));
+            }
+            set {
+                this["FlangePartNo_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FlangePartNo_Outlet {
+            get {
+                return ((string)(this["FlangePartNo_Outlet"]));
+            }
+            set {
+                this["FlangePartNo_Outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExtensionPartNo_Inlet {
+            get {
+                return ((string)(this["ExtensionPartNo_Inlet"]));
+            }
+            set {
+                this["ExtensionPartNo_Inlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExtensionPartNo_Outlet {
+            get {
+                return ((string)(this["ExtensionPartNo_Outlet"]));
+            }
+            set {
+                this["ExtensionPartNo_Outlet"] = value;
+            }
+        }
     }
 }

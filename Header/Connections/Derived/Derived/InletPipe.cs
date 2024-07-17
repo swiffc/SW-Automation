@@ -11,7 +11,7 @@ namespace HDR.Connections.Derived.Derived
 
 
         // Property overrides
-        public override string PartNo => "InletPipe";
+        public override string PartNo => Inlet.ExtensionPartNo == "0" ? GetType().Name :  Inlet.ExtensionPartNo;
         protected override IConnection Ext => Inlet;
     }
 }

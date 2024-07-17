@@ -57,6 +57,8 @@ namespace Excel
             public TextBox SpacingTextBox { get; set; }
             public TextBox OffsetXTextBox { get; set; }
             public TextBox ProjectionYTextBox { get; set; }
+            public TextBox FlangePartNoTextBox { get; set; }
+            public TextBox ExtensionPartNoTextBox { get; set; }
         }
 
         public enum ConnectionNames
@@ -103,6 +105,8 @@ namespace Excel
                     SpacingTextBox = GetControl<TextBox>(formInstance, "tSpacing_", connectionName),
                     OffsetXTextBox = GetControl<TextBox>(formInstance, "tOffsetX_", connectionName),
                     ProjectionYTextBox = GetControl<TextBox>(formInstance, "tExtensionY_", connectionName),
+                    FlangePartNoTextBox = GetControl<TextBox>(formInstance, "tFlangePartNo_", connectionName),
+                    ExtensionPartNoTextBox = GetControl<TextBox>(formInstance, "tExtensionPartNo_", connectionName),
                 };
 
                 ConnectionAppData.Add(connectionName, uiDto);

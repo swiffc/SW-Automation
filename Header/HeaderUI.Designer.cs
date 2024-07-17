@@ -31,6 +31,83 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Box = new System.Windows.Forms.TabPage();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.tStiffenerPartNo2_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_61 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_63 = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.tStiffenerPartNo2_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo2_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_64 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo2_63 = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.tFootPlatePartNo_66 = new System.Windows.Forms.TextBox();
+            this.tFootPlatePartNo_62 = new System.Windows.Forms.TextBox();
+            this.tFootPlatePartNo_61 = new System.Windows.Forms.TextBox();
+            this.tFootPlatePartNo_63 = new System.Windows.Forms.TextBox();
+            this.label99 = new System.Windows.Forms.Label();
+            this.tFootPlatePartNo_64 = new System.Windows.Forms.TextBox();
+            this.tFootPlatePartNo_65 = new System.Windows.Forms.TextBox();
+            this.tFootPRLPartNo_66 = new System.Windows.Forms.TextBox();
+            this.tFootPRLPartNo_62 = new System.Windows.Forms.TextBox();
+            this.tFootPRLPartNo_61 = new System.Windows.Forms.TextBox();
+            this.tFootPRLPartNo_63 = new System.Windows.Forms.TextBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.tFootPRLPartNo_64 = new System.Windows.Forms.TextBox();
+            this.tFootPRLPartNo_65 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo_66 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo_66 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo_62 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo_62 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo_65 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo_61 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo_63 = new System.Windows.Forms.TextBox();
+            this.tPartitionPartNo_63 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.tStiffenerPartNo_64 = new System.Windows.Forms.TextBox();
+            this.tStiffenerPartNo_65 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo2_66 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo2_62 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo2_61 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo2_63 = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.tEndPlatePartNo2_64 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo2_65 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo_66 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo_62 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo_61 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo_63 = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.tEndPlatePartNo_64 = new System.Windows.Forms.TextBox();
+            this.tEndPlatePartNo_65 = new System.Windows.Forms.TextBox();
+            this.tTopBtmPartNo_66 = new System.Windows.Forms.TextBox();
+            this.tTopBtmPartNo_62 = new System.Windows.Forms.TextBox();
+            this.tTopBtmPartNo_61 = new System.Windows.Forms.TextBox();
+            this.tTopBtmPartNo_63 = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.tTopBtmPartNo_64 = new System.Windows.Forms.TextBox();
+            this.tTopBtmPartNo_65 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetPartNo_66 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetPartNo_62 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetPartNo_61 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetPartNo_63 = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.tPlugsheetPartNo_64 = new System.Windows.Forms.TextBox();
+            this.tPlugsheetPartNo_65 = new System.Windows.Forms.TextBox();
+            this.tTubesheetPartNo_66 = new System.Windows.Forms.TextBox();
+            this.tTubesheetPartNo_62 = new System.Windows.Forms.TextBox();
+            this.tTubesheetPartNo_61 = new System.Windows.Forms.TextBox();
+            this.tTubesheetPartNo_63 = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.tTubesheetPartNo_64 = new System.Windows.Forms.TextBox();
+            this.tTubesheetPartNo_65 = new System.Windows.Forms.TextBox();
             this.tFootHeight_66 = new System.Windows.Forms.TextBox();
             this.tFootHeight_62 = new System.Windows.Forms.TextBox();
             this.tFootHeight_61 = new System.Windows.Forms.TextBox();
@@ -607,83 +684,20 @@
             this.cTileblockManuf = new System.Windows.Forms.ComboBox();
             this.label88 = new System.Windows.Forms.Label();
             this.bRun = new System.Windows.Forms.Button();
-            this.tTubesheetPartNo_66 = new System.Windows.Forms.TextBox();
-            this.tTubesheetPartNo_62 = new System.Windows.Forms.TextBox();
-            this.tTubesheetPartNo_61 = new System.Windows.Forms.TextBox();
-            this.tTubesheetPartNo_63 = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.tTubesheetPartNo_64 = new System.Windows.Forms.TextBox();
-            this.tTubesheetPartNo_65 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetPartNo_66 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetPartNo_62 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetPartNo_61 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetPartNo_63 = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.tPlugsheetPartNo_64 = new System.Windows.Forms.TextBox();
-            this.tPlugsheetPartNo_65 = new System.Windows.Forms.TextBox();
-            this.tTopBtmPartNo_66 = new System.Windows.Forms.TextBox();
-            this.tTopBtmPartNo_62 = new System.Windows.Forms.TextBox();
-            this.tTopBtmPartNo_61 = new System.Windows.Forms.TextBox();
-            this.tTopBtmPartNo_63 = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.tTopBtmPartNo_64 = new System.Windows.Forms.TextBox();
-            this.tTopBtmPartNo_65 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo_66 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo_62 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo_61 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo_63 = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.tEndPlatePartNo_64 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo_65 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo2_66 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo2_62 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo2_61 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo2_63 = new System.Windows.Forms.TextBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.tEndPlatePartNo2_64 = new System.Windows.Forms.TextBox();
-            this.tEndPlatePartNo2_65 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo_63 = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.tStiffenerPartNo_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo_65 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo_66 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo_62 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo_61 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo_63 = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
-            this.tPartitionPartNo_64 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo_65 = new System.Windows.Forms.TextBox();
-            this.tFootPRLPartNo_66 = new System.Windows.Forms.TextBox();
-            this.tFootPRLPartNo_62 = new System.Windows.Forms.TextBox();
-            this.tFootPRLPartNo_61 = new System.Windows.Forms.TextBox();
-            this.tFootPRLPartNo_63 = new System.Windows.Forms.TextBox();
-            this.label98 = new System.Windows.Forms.Label();
-            this.tFootPRLPartNo_64 = new System.Windows.Forms.TextBox();
-            this.tFootPRLPartNo_65 = new System.Windows.Forms.TextBox();
-            this.tFootPlatePartNo_66 = new System.Windows.Forms.TextBox();
-            this.tFootPlatePartNo_62 = new System.Windows.Forms.TextBox();
-            this.tFootPlatePartNo_61 = new System.Windows.Forms.TextBox();
-            this.tFootPlatePartNo_63 = new System.Windows.Forms.TextBox();
-            this.label99 = new System.Windows.Forms.Label();
-            this.tFootPlatePartNo_64 = new System.Windows.Forms.TextBox();
-            this.tFootPlatePartNo_65 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo2_66 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo2_62 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo2_65 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo2_61 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo2_64 = new System.Windows.Forms.TextBox();
-            this.tPartitionPartNo2_63 = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.tStiffenerPartNo2_66 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo2_62 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo2_61 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo2_63 = new System.Windows.Forms.TextBox();
-            this.label100 = new System.Windows.Forms.Label();
-            this.tStiffenerPartNo2_64 = new System.Windows.Forms.TextBox();
-            this.tStiffenerPartNo2_65 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tFlangePartNo_Outlet = new System.Windows.Forms.TextBox();
+            this.tFlangePartNo_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.tExtensionPartNo_Outlet = new System.Windows.Forms.TextBox();
+            this.tExtensionPartNo_Inlet = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label104 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.textBox33 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Box.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -1218,6 +1232,644 @@
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(624, 463);
             this.HeaderPanel.TabIndex = 125;
+            // 
+            // tStiffenerPartNo2_66
+            // 
+            this.tStiffenerPartNo2_66.Location = new System.Drawing.Point(3, 1827);
+            this.tStiffenerPartNo2_66.Name = "tStiffenerPartNo2_66";
+            this.tStiffenerPartNo2_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo2_66.TabIndex = 696;
+            this.tStiffenerPartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_62
+            // 
+            this.tStiffenerPartNo2_62.Location = new System.Drawing.Point(289, 1827);
+            this.tStiffenerPartNo2_62.Name = "tStiffenerPartNo2_62";
+            this.tStiffenerPartNo2_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo2_62.TabIndex = 691;
+            this.tStiffenerPartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_61
+            // 
+            this.tStiffenerPartNo2_61.Location = new System.Drawing.Point(362, 1827);
+            this.tStiffenerPartNo2_61.Name = "tStiffenerPartNo2_61";
+            this.tStiffenerPartNo2_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo2_61.TabIndex = 690;
+            this.tStiffenerPartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_63
+            // 
+            this.tStiffenerPartNo2_63.Location = new System.Drawing.Point(219, 1827);
+            this.tStiffenerPartNo2_63.Name = "tStiffenerPartNo2_63";
+            this.tStiffenerPartNo2_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo2_63.TabIndex = 693;
+            this.tStiffenerPartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.BackColor = System.Drawing.Color.White;
+            this.label100.Location = new System.Drawing.Point(432, 1831);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(103, 13);
+            this.label100.TabIndex = 692;
+            this.label100.Text = "PARTNO  Stiffener2";
+            // 
+            // tStiffenerPartNo2_64
+            // 
+            this.tStiffenerPartNo2_64.Location = new System.Drawing.Point(146, 1827);
+            this.tStiffenerPartNo2_64.Name = "tStiffenerPartNo2_64";
+            this.tStiffenerPartNo2_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo2_64.TabIndex = 694;
+            this.tStiffenerPartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo2_65
+            // 
+            this.tStiffenerPartNo2_65.Location = new System.Drawing.Point(76, 1827);
+            this.tStiffenerPartNo2_65.Name = "tStiffenerPartNo2_65";
+            this.tStiffenerPartNo2_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo2_65.TabIndex = 695;
+            this.tStiffenerPartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_66
+            // 
+            this.tPartitionPartNo2_66.Location = new System.Drawing.Point(3, 1775);
+            this.tPartitionPartNo2_66.Name = "tPartitionPartNo2_66";
+            this.tPartitionPartNo2_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo2_66.TabIndex = 689;
+            this.tPartitionPartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_62
+            // 
+            this.tPartitionPartNo2_62.Location = new System.Drawing.Point(289, 1775);
+            this.tPartitionPartNo2_62.Name = "tPartitionPartNo2_62";
+            this.tPartitionPartNo2_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo2_62.TabIndex = 684;
+            this.tPartitionPartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_65
+            // 
+            this.tPartitionPartNo2_65.Location = new System.Drawing.Point(76, 1775);
+            this.tPartitionPartNo2_65.Name = "tPartitionPartNo2_65";
+            this.tPartitionPartNo2_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo2_65.TabIndex = 688;
+            this.tPartitionPartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_61
+            // 
+            this.tPartitionPartNo2_61.Location = new System.Drawing.Point(362, 1775);
+            this.tPartitionPartNo2_61.Name = "tPartitionPartNo2_61";
+            this.tPartitionPartNo2_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo2_61.TabIndex = 683;
+            this.tPartitionPartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_64
+            // 
+            this.tPartitionPartNo2_64.Location = new System.Drawing.Point(146, 1775);
+            this.tPartitionPartNo2_64.Name = "tPartitionPartNo2_64";
+            this.tPartitionPartNo2_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo2_64.TabIndex = 687;
+            this.tPartitionPartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo2_63
+            // 
+            this.tPartitionPartNo2_63.Location = new System.Drawing.Point(219, 1775);
+            this.tPartitionPartNo2_63.Name = "tPartitionPartNo2_63";
+            this.tPartitionPartNo2_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo2_63.TabIndex = 686;
+            this.tPartitionPartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.BackColor = System.Drawing.Color.White;
+            this.label90.Location = new System.Drawing.Point(432, 1779);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(102, 13);
+            this.label90.TabIndex = 685;
+            this.label90.Text = "PARTNO  Partition2";
+            // 
+            // tFootPlatePartNo_66
+            // 
+            this.tFootPlatePartNo_66.Location = new System.Drawing.Point(3, 1888);
+            this.tFootPlatePartNo_66.Name = "tFootPlatePartNo_66";
+            this.tFootPlatePartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tFootPlatePartNo_66.TabIndex = 682;
+            this.tFootPlatePartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPlatePartNo_62
+            // 
+            this.tFootPlatePartNo_62.Location = new System.Drawing.Point(289, 1888);
+            this.tFootPlatePartNo_62.Name = "tFootPlatePartNo_62";
+            this.tFootPlatePartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tFootPlatePartNo_62.TabIndex = 677;
+            this.tFootPlatePartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPlatePartNo_61
+            // 
+            this.tFootPlatePartNo_61.Location = new System.Drawing.Point(362, 1888);
+            this.tFootPlatePartNo_61.Name = "tFootPlatePartNo_61";
+            this.tFootPlatePartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tFootPlatePartNo_61.TabIndex = 676;
+            this.tFootPlatePartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPlatePartNo_63
+            // 
+            this.tFootPlatePartNo_63.Location = new System.Drawing.Point(219, 1888);
+            this.tFootPlatePartNo_63.Name = "tFootPlatePartNo_63";
+            this.tFootPlatePartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tFootPlatePartNo_63.TabIndex = 679;
+            this.tFootPlatePartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.BackColor = System.Drawing.Color.White;
+            this.label99.Location = new System.Drawing.Point(432, 1892);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(106, 13);
+            this.label99.TabIndex = 678;
+            this.label99.Text = "PARTNO  Foot Plate";
+            // 
+            // tFootPlatePartNo_64
+            // 
+            this.tFootPlatePartNo_64.Location = new System.Drawing.Point(146, 1888);
+            this.tFootPlatePartNo_64.Name = "tFootPlatePartNo_64";
+            this.tFootPlatePartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tFootPlatePartNo_64.TabIndex = 680;
+            this.tFootPlatePartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPlatePartNo_65
+            // 
+            this.tFootPlatePartNo_65.Location = new System.Drawing.Point(76, 1888);
+            this.tFootPlatePartNo_65.Name = "tFootPlatePartNo_65";
+            this.tFootPlatePartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tFootPlatePartNo_65.TabIndex = 681;
+            this.tFootPlatePartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPRLPartNo_66
+            // 
+            this.tFootPRLPartNo_66.Location = new System.Drawing.Point(3, 1862);
+            this.tFootPRLPartNo_66.Name = "tFootPRLPartNo_66";
+            this.tFootPRLPartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tFootPRLPartNo_66.TabIndex = 675;
+            this.tFootPRLPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPRLPartNo_62
+            // 
+            this.tFootPRLPartNo_62.Location = new System.Drawing.Point(289, 1862);
+            this.tFootPRLPartNo_62.Name = "tFootPRLPartNo_62";
+            this.tFootPRLPartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tFootPRLPartNo_62.TabIndex = 670;
+            this.tFootPRLPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPRLPartNo_61
+            // 
+            this.tFootPRLPartNo_61.Location = new System.Drawing.Point(362, 1862);
+            this.tFootPRLPartNo_61.Name = "tFootPRLPartNo_61";
+            this.tFootPRLPartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tFootPRLPartNo_61.TabIndex = 669;
+            this.tFootPRLPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPRLPartNo_63
+            // 
+            this.tFootPRLPartNo_63.Location = new System.Drawing.Point(219, 1862);
+            this.tFootPRLPartNo_63.Name = "tFootPRLPartNo_63";
+            this.tFootPRLPartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tFootPRLPartNo_63.TabIndex = 672;
+            this.tFootPRLPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.BackColor = System.Drawing.Color.White;
+            this.label98.Location = new System.Drawing.Point(432, 1866);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(103, 13);
+            this.label98.TabIndex = 671;
+            this.label98.Text = "PARTNO  Foot PRL";
+            // 
+            // tFootPRLPartNo_64
+            // 
+            this.tFootPRLPartNo_64.Location = new System.Drawing.Point(146, 1862);
+            this.tFootPRLPartNo_64.Name = "tFootPRLPartNo_64";
+            this.tFootPRLPartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tFootPRLPartNo_64.TabIndex = 673;
+            this.tFootPRLPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFootPRLPartNo_65
+            // 
+            this.tFootPRLPartNo_65.Location = new System.Drawing.Point(76, 1862);
+            this.tFootPRLPartNo_65.Name = "tFootPRLPartNo_65";
+            this.tFootPRLPartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tFootPRLPartNo_65.TabIndex = 674;
+            this.tFootPRLPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo_66
+            // 
+            this.tPartitionPartNo_66.Location = new System.Drawing.Point(3, 1749);
+            this.tPartitionPartNo_66.Name = "tPartitionPartNo_66";
+            this.tPartitionPartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo_66.TabIndex = 668;
+            this.tPartitionPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo_66
+            // 
+            this.tStiffenerPartNo_66.Location = new System.Drawing.Point(3, 1801);
+            this.tStiffenerPartNo_66.Name = "tStiffenerPartNo_66";
+            this.tStiffenerPartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo_66.TabIndex = 661;
+            this.tStiffenerPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo_62
+            // 
+            this.tPartitionPartNo_62.Location = new System.Drawing.Point(289, 1749);
+            this.tPartitionPartNo_62.Name = "tPartitionPartNo_62";
+            this.tPartitionPartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo_62.TabIndex = 663;
+            this.tPartitionPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo_62
+            // 
+            this.tStiffenerPartNo_62.Location = new System.Drawing.Point(289, 1801);
+            this.tStiffenerPartNo_62.Name = "tStiffenerPartNo_62";
+            this.tStiffenerPartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo_62.TabIndex = 656;
+            this.tStiffenerPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo_65
+            // 
+            this.tPartitionPartNo_65.Location = new System.Drawing.Point(76, 1749);
+            this.tPartitionPartNo_65.Name = "tPartitionPartNo_65";
+            this.tPartitionPartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo_65.TabIndex = 667;
+            this.tPartitionPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo_61
+            // 
+            this.tStiffenerPartNo_61.Location = new System.Drawing.Point(362, 1801);
+            this.tStiffenerPartNo_61.Name = "tStiffenerPartNo_61";
+            this.tStiffenerPartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo_61.TabIndex = 655;
+            this.tStiffenerPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo_61
+            // 
+            this.tPartitionPartNo_61.Location = new System.Drawing.Point(362, 1749);
+            this.tPartitionPartNo_61.Name = "tPartitionPartNo_61";
+            this.tPartitionPartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo_61.TabIndex = 662;
+            this.tPartitionPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo_64
+            // 
+            this.tPartitionPartNo_64.Location = new System.Drawing.Point(146, 1749);
+            this.tPartitionPartNo_64.Name = "tPartitionPartNo_64";
+            this.tPartitionPartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tPartitionPartNo_64.TabIndex = 666;
+            this.tPartitionPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo_63
+            // 
+            this.tStiffenerPartNo_63.Location = new System.Drawing.Point(219, 1801);
+            this.tStiffenerPartNo_63.Name = "tStiffenerPartNo_63";
+            this.tStiffenerPartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo_63.TabIndex = 658;
+            this.tStiffenerPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPartitionPartNo_63
+            // 
+            this.tPartitionPartNo_63.Location = new System.Drawing.Point(219, 1749);
+            this.tPartitionPartNo_63.Name = "tPartitionPartNo_63";
+            this.tPartitionPartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tPartitionPartNo_63.TabIndex = 665;
+            this.tPartitionPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.BackColor = System.Drawing.Color.White;
+            this.label96.Location = new System.Drawing.Point(432, 1805);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(97, 13);
+            this.label96.TabIndex = 657;
+            this.label96.Text = "PARTNO  Stiffener";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.BackColor = System.Drawing.Color.White;
+            this.label97.Location = new System.Drawing.Point(432, 1753);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(96, 13);
+            this.label97.TabIndex = 664;
+            this.label97.Text = "PARTNO  Partition";
+            // 
+            // tStiffenerPartNo_64
+            // 
+            this.tStiffenerPartNo_64.Location = new System.Drawing.Point(146, 1801);
+            this.tStiffenerPartNo_64.Name = "tStiffenerPartNo_64";
+            this.tStiffenerPartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tStiffenerPartNo_64.TabIndex = 659;
+            this.tStiffenerPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tStiffenerPartNo_65
+            // 
+            this.tStiffenerPartNo_65.Location = new System.Drawing.Point(76, 1801);
+            this.tStiffenerPartNo_65.Name = "tStiffenerPartNo_65";
+            this.tStiffenerPartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tStiffenerPartNo_65.TabIndex = 660;
+            this.tStiffenerPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo2_66
+            // 
+            this.tEndPlatePartNo2_66.Location = new System.Drawing.Point(3, 1714);
+            this.tEndPlatePartNo2_66.Name = "tEndPlatePartNo2_66";
+            this.tEndPlatePartNo2_66.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlatePartNo2_66.TabIndex = 654;
+            this.tEndPlatePartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo2_62
+            // 
+            this.tEndPlatePartNo2_62.Location = new System.Drawing.Point(289, 1714);
+            this.tEndPlatePartNo2_62.Name = "tEndPlatePartNo2_62";
+            this.tEndPlatePartNo2_62.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlatePartNo2_62.TabIndex = 649;
+            this.tEndPlatePartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo2_61
+            // 
+            this.tEndPlatePartNo2_61.Location = new System.Drawing.Point(362, 1714);
+            this.tEndPlatePartNo2_61.Name = "tEndPlatePartNo2_61";
+            this.tEndPlatePartNo2_61.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlatePartNo2_61.TabIndex = 648;
+            this.tEndPlatePartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo2_63
+            // 
+            this.tEndPlatePartNo2_63.Location = new System.Drawing.Point(219, 1714);
+            this.tEndPlatePartNo2_63.Name = "tEndPlatePartNo2_63";
+            this.tEndPlatePartNo2_63.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlatePartNo2_63.TabIndex = 651;
+            this.tEndPlatePartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.BackColor = System.Drawing.Color.White;
+            this.label95.Location = new System.Drawing.Point(432, 1718);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(110, 13);
+            this.label95.TabIndex = 650;
+            this.label95.Text = "PARTNO  End Plate2";
+            // 
+            // tEndPlatePartNo2_64
+            // 
+            this.tEndPlatePartNo2_64.Location = new System.Drawing.Point(146, 1714);
+            this.tEndPlatePartNo2_64.Name = "tEndPlatePartNo2_64";
+            this.tEndPlatePartNo2_64.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlatePartNo2_64.TabIndex = 652;
+            this.tEndPlatePartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo2_65
+            // 
+            this.tEndPlatePartNo2_65.Location = new System.Drawing.Point(76, 1714);
+            this.tEndPlatePartNo2_65.Name = "tEndPlatePartNo2_65";
+            this.tEndPlatePartNo2_65.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlatePartNo2_65.TabIndex = 653;
+            this.tEndPlatePartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo_66
+            // 
+            this.tEndPlatePartNo_66.Location = new System.Drawing.Point(3, 1688);
+            this.tEndPlatePartNo_66.Name = "tEndPlatePartNo_66";
+            this.tEndPlatePartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlatePartNo_66.TabIndex = 647;
+            this.tEndPlatePartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo_62
+            // 
+            this.tEndPlatePartNo_62.Location = new System.Drawing.Point(289, 1688);
+            this.tEndPlatePartNo_62.Name = "tEndPlatePartNo_62";
+            this.tEndPlatePartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlatePartNo_62.TabIndex = 642;
+            this.tEndPlatePartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo_61
+            // 
+            this.tEndPlatePartNo_61.Location = new System.Drawing.Point(362, 1688);
+            this.tEndPlatePartNo_61.Name = "tEndPlatePartNo_61";
+            this.tEndPlatePartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlatePartNo_61.TabIndex = 641;
+            this.tEndPlatePartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo_63
+            // 
+            this.tEndPlatePartNo_63.Location = new System.Drawing.Point(219, 1688);
+            this.tEndPlatePartNo_63.Name = "tEndPlatePartNo_63";
+            this.tEndPlatePartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlatePartNo_63.TabIndex = 644;
+            this.tEndPlatePartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.BackColor = System.Drawing.Color.White;
+            this.label94.Location = new System.Drawing.Point(432, 1692);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(104, 13);
+            this.label94.TabIndex = 643;
+            this.label94.Text = "PARTNO  End Plate";
+            // 
+            // tEndPlatePartNo_64
+            // 
+            this.tEndPlatePartNo_64.Location = new System.Drawing.Point(146, 1688);
+            this.tEndPlatePartNo_64.Name = "tEndPlatePartNo_64";
+            this.tEndPlatePartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tEndPlatePartNo_64.TabIndex = 645;
+            this.tEndPlatePartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tEndPlatePartNo_65
+            // 
+            this.tEndPlatePartNo_65.Location = new System.Drawing.Point(76, 1688);
+            this.tEndPlatePartNo_65.Name = "tEndPlatePartNo_65";
+            this.tEndPlatePartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tEndPlatePartNo_65.TabIndex = 646;
+            this.tEndPlatePartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmPartNo_66
+            // 
+            this.tTopBtmPartNo_66.Location = new System.Drawing.Point(3, 1662);
+            this.tTopBtmPartNo_66.Name = "tTopBtmPartNo_66";
+            this.tTopBtmPartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmPartNo_66.TabIndex = 640;
+            this.tTopBtmPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmPartNo_62
+            // 
+            this.tTopBtmPartNo_62.Location = new System.Drawing.Point(289, 1662);
+            this.tTopBtmPartNo_62.Name = "tTopBtmPartNo_62";
+            this.tTopBtmPartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmPartNo_62.TabIndex = 635;
+            this.tTopBtmPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmPartNo_61
+            // 
+            this.tTopBtmPartNo_61.Location = new System.Drawing.Point(362, 1662);
+            this.tTopBtmPartNo_61.Name = "tTopBtmPartNo_61";
+            this.tTopBtmPartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmPartNo_61.TabIndex = 634;
+            this.tTopBtmPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmPartNo_63
+            // 
+            this.tTopBtmPartNo_63.Location = new System.Drawing.Point(219, 1662);
+            this.tTopBtmPartNo_63.Name = "tTopBtmPartNo_63";
+            this.tTopBtmPartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmPartNo_63.TabIndex = 637;
+            this.tTopBtmPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.BackColor = System.Drawing.Color.White;
+            this.label93.Location = new System.Drawing.Point(432, 1666);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(142, 13);
+            this.label93.TabIndex = 636;
+            this.label93.Text = "PARTNO  Top/Bottom Plate";
+            // 
+            // tTopBtmPartNo_64
+            // 
+            this.tTopBtmPartNo_64.Location = new System.Drawing.Point(146, 1662);
+            this.tTopBtmPartNo_64.Name = "tTopBtmPartNo_64";
+            this.tTopBtmPartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tTopBtmPartNo_64.TabIndex = 638;
+            this.tTopBtmPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTopBtmPartNo_65
+            // 
+            this.tTopBtmPartNo_65.Location = new System.Drawing.Point(76, 1662);
+            this.tTopBtmPartNo_65.Name = "tTopBtmPartNo_65";
+            this.tTopBtmPartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tTopBtmPartNo_65.TabIndex = 639;
+            this.tTopBtmPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetPartNo_66
+            // 
+            this.tPlugsheetPartNo_66.Location = new System.Drawing.Point(3, 1636);
+            this.tPlugsheetPartNo_66.Name = "tPlugsheetPartNo_66";
+            this.tPlugsheetPartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetPartNo_66.TabIndex = 633;
+            this.tPlugsheetPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetPartNo_62
+            // 
+            this.tPlugsheetPartNo_62.Location = new System.Drawing.Point(289, 1636);
+            this.tPlugsheetPartNo_62.Name = "tPlugsheetPartNo_62";
+            this.tPlugsheetPartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetPartNo_62.TabIndex = 628;
+            this.tPlugsheetPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetPartNo_61
+            // 
+            this.tPlugsheetPartNo_61.Location = new System.Drawing.Point(362, 1636);
+            this.tPlugsheetPartNo_61.Name = "tPlugsheetPartNo_61";
+            this.tPlugsheetPartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetPartNo_61.TabIndex = 627;
+            this.tPlugsheetPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetPartNo_63
+            // 
+            this.tPlugsheetPartNo_63.Location = new System.Drawing.Point(219, 1636);
+            this.tPlugsheetPartNo_63.Name = "tPlugsheetPartNo_63";
+            this.tPlugsheetPartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetPartNo_63.TabIndex = 630;
+            this.tPlugsheetPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.White;
+            this.label92.Location = new System.Drawing.Point(432, 1640);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(105, 13);
+            this.label92.TabIndex = 629;
+            this.label92.Text = "PARTNO  Plugsheet";
+            // 
+            // tPlugsheetPartNo_64
+            // 
+            this.tPlugsheetPartNo_64.Location = new System.Drawing.Point(146, 1636);
+            this.tPlugsheetPartNo_64.Name = "tPlugsheetPartNo_64";
+            this.tPlugsheetPartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tPlugsheetPartNo_64.TabIndex = 631;
+            this.tPlugsheetPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPlugsheetPartNo_65
+            // 
+            this.tPlugsheetPartNo_65.Location = new System.Drawing.Point(76, 1636);
+            this.tPlugsheetPartNo_65.Name = "tPlugsheetPartNo_65";
+            this.tPlugsheetPartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tPlugsheetPartNo_65.TabIndex = 632;
+            this.tPlugsheetPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetPartNo_66
+            // 
+            this.tTubesheetPartNo_66.Location = new System.Drawing.Point(3, 1610);
+            this.tTubesheetPartNo_66.Name = "tTubesheetPartNo_66";
+            this.tTubesheetPartNo_66.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetPartNo_66.TabIndex = 626;
+            this.tTubesheetPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetPartNo_62
+            // 
+            this.tTubesheetPartNo_62.Location = new System.Drawing.Point(289, 1610);
+            this.tTubesheetPartNo_62.Name = "tTubesheetPartNo_62";
+            this.tTubesheetPartNo_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetPartNo_62.TabIndex = 621;
+            this.tTubesheetPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetPartNo_61
+            // 
+            this.tTubesheetPartNo_61.Location = new System.Drawing.Point(362, 1610);
+            this.tTubesheetPartNo_61.Name = "tTubesheetPartNo_61";
+            this.tTubesheetPartNo_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetPartNo_61.TabIndex = 620;
+            this.tTubesheetPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetPartNo_63
+            // 
+            this.tTubesheetPartNo_63.Location = new System.Drawing.Point(219, 1610);
+            this.tTubesheetPartNo_63.Name = "tTubesheetPartNo_63";
+            this.tTubesheetPartNo_63.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetPartNo_63.TabIndex = 623;
+            this.tTubesheetPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.BackColor = System.Drawing.Color.White;
+            this.label91.Location = new System.Drawing.Point(432, 1614);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(109, 13);
+            this.label91.TabIndex = 622;
+            this.label91.Text = "PARTNO  Tubesheet";
+            // 
+            // tTubesheetPartNo_64
+            // 
+            this.tTubesheetPartNo_64.Location = new System.Drawing.Point(146, 1610);
+            this.tTubesheetPartNo_64.Name = "tTubesheetPartNo_64";
+            this.tTubesheetPartNo_64.Size = new System.Drawing.Size(67, 20);
+            this.tTubesheetPartNo_64.TabIndex = 624;
+            this.tTubesheetPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tTubesheetPartNo_65
+            // 
+            this.tTubesheetPartNo_65.Location = new System.Drawing.Point(76, 1610);
+            this.tTubesheetPartNo_65.Name = "tTubesheetPartNo_65";
+            this.tTubesheetPartNo_65.Size = new System.Drawing.Size(64, 20);
+            this.tTubesheetPartNo_65.TabIndex = 625;
+            this.tTubesheetPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tFootHeight_66
             // 
@@ -4882,6 +5534,20 @@
             // connectionPanel
             // 
             this.connectionPanel.AutoScroll = true;
+            this.connectionPanel.Controls.Add(this.textBox20);
+            this.connectionPanel.Controls.Add(this.tExtensionPartNo_Outlet);
+            this.connectionPanel.Controls.Add(this.tExtensionPartNo_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox27);
+            this.connectionPanel.Controls.Add(this.label104);
+            this.connectionPanel.Controls.Add(this.textBox32);
+            this.connectionPanel.Controls.Add(this.textBox33);
+            this.connectionPanel.Controls.Add(this.textBox2);
+            this.connectionPanel.Controls.Add(this.tFlangePartNo_Outlet);
+            this.connectionPanel.Controls.Add(this.tFlangePartNo_Inlet);
+            this.connectionPanel.Controls.Add(this.textBox9);
+            this.connectionPanel.Controls.Add(this.label103);
+            this.connectionPanel.Controls.Add(this.textBox14);
+            this.connectionPanel.Controls.Add(this.textBox15);
             this.connectionPanel.Controls.Add(this.cExtensionType_Outlet);
             this.connectionPanel.Controls.Add(this.comboBox6);
             this.connectionPanel.Controls.Add(this.comboBox7);
@@ -5007,7 +5673,7 @@
             "Pipe",
             "Trans",
             "None"});
-            this.cExtensionType_Outlet.Location = new System.Drawing.Point(289, 393);
+            this.cExtensionType_Outlet.Location = new System.Drawing.Point(289, 107);
             this.cExtensionType_Outlet.Name = "cExtensionType_Outlet";
             this.cExtensionType_Outlet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cExtensionType_Outlet.Size = new System.Drawing.Size(67, 21);
@@ -5019,7 +5685,7 @@
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.Enabled = false;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(3, 393);
+            this.comboBox6.Location = new System.Drawing.Point(3, 107);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox6.Size = new System.Drawing.Size(67, 21);
@@ -5030,7 +5696,7 @@
             this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.Enabled = false;
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(219, 393);
+            this.comboBox7.Location = new System.Drawing.Point(219, 107);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox7.Size = new System.Drawing.Size(64, 21);
@@ -5041,7 +5707,7 @@
             this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox8.Enabled = false;
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(76, 393);
+            this.comboBox8.Location = new System.Drawing.Point(76, 107);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox8.Size = new System.Drawing.Size(64, 21);
@@ -5055,7 +5721,7 @@
             "Pipe",
             "Trans",
             "None"});
-            this.cExtensionType_Inlet.Location = new System.Drawing.Point(362, 393);
+            this.cExtensionType_Inlet.Location = new System.Drawing.Point(362, 107);
             this.cExtensionType_Inlet.Name = "cExtensionType_Inlet";
             this.cExtensionType_Inlet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cExtensionType_Inlet.Size = new System.Drawing.Size(64, 21);
@@ -5067,7 +5733,7 @@
             this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox10.Enabled = false;
             this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(146, 393);
+            this.comboBox10.Location = new System.Drawing.Point(146, 107);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox10.Size = new System.Drawing.Size(67, 21);
@@ -5077,7 +5743,7 @@
             // 
             this.label82.AutoSize = true;
             this.label82.BackColor = System.Drawing.Color.White;
-            this.label82.Location = new System.Drawing.Point(432, 396);
+            this.label82.Location = new System.Drawing.Point(432, 110);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(99, 13);
             this.label82.TabIndex = 611;
@@ -5351,7 +6017,7 @@
             // textBox61
             // 
             this.textBox61.Enabled = false;
-            this.textBox61.Location = new System.Drawing.Point(3, 367);
+            this.textBox61.Location = new System.Drawing.Point(3, 403);
             this.textBox61.Name = "textBox61";
             this.textBox61.ReadOnly = true;
             this.textBox61.Size = new System.Drawing.Size(67, 20);
@@ -5360,7 +6026,7 @@
             // 
             // tWall_Outlet
             // 
-            this.tWall_Outlet.Location = new System.Drawing.Point(289, 367);
+            this.tWall_Outlet.Location = new System.Drawing.Point(289, 403);
             this.tWall_Outlet.Name = "tWall_Outlet";
             this.tWall_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tWall_Outlet.TabIndex = 248;
@@ -5368,7 +6034,7 @@
             // 
             // tWall_Inlet
             // 
-            this.tWall_Inlet.Location = new System.Drawing.Point(362, 367);
+            this.tWall_Inlet.Location = new System.Drawing.Point(362, 403);
             this.tWall_Inlet.Name = "tWall_Inlet";
             this.tWall_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tWall_Inlet.TabIndex = 247;
@@ -5377,7 +6043,7 @@
             // textBox64
             // 
             this.textBox64.Enabled = false;
-            this.textBox64.Location = new System.Drawing.Point(219, 367);
+            this.textBox64.Location = new System.Drawing.Point(219, 403);
             this.textBox64.Name = "textBox64";
             this.textBox64.ReadOnly = true;
             this.textBox64.Size = new System.Drawing.Size(64, 20);
@@ -5388,7 +6054,7 @@
             // 
             this.label81.AutoSize = true;
             this.label81.BackColor = System.Drawing.Color.White;
-            this.label81.Location = new System.Drawing.Point(432, 370);
+            this.label81.Location = new System.Drawing.Point(432, 406);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(37, 13);
             this.label81.TabIndex = 249;
@@ -5397,7 +6063,7 @@
             // textBox65
             // 
             this.textBox65.Enabled = false;
-            this.textBox65.Location = new System.Drawing.Point(146, 367);
+            this.textBox65.Location = new System.Drawing.Point(146, 403);
             this.textBox65.Name = "textBox65";
             this.textBox65.ReadOnly = true;
             this.textBox65.Size = new System.Drawing.Size(67, 20);
@@ -5407,7 +6073,7 @@
             // textBox66
             // 
             this.textBox66.Enabled = false;
-            this.textBox66.Location = new System.Drawing.Point(76, 367);
+            this.textBox66.Location = new System.Drawing.Point(76, 403);
             this.textBox66.Name = "textBox66";
             this.textBox66.ReadOnly = true;
             this.textBox66.Size = new System.Drawing.Size(64, 20);
@@ -5417,7 +6083,7 @@
             // textBox55
             // 
             this.textBox55.Enabled = false;
-            this.textBox55.Location = new System.Drawing.Point(3, 341);
+            this.textBox55.Location = new System.Drawing.Point(3, 377);
             this.textBox55.Name = "textBox55";
             this.textBox55.ReadOnly = true;
             this.textBox55.Size = new System.Drawing.Size(67, 20);
@@ -5426,7 +6092,7 @@
             // 
             // tOD_Outlet
             // 
-            this.tOD_Outlet.Location = new System.Drawing.Point(289, 341);
+            this.tOD_Outlet.Location = new System.Drawing.Point(289, 377);
             this.tOD_Outlet.Name = "tOD_Outlet";
             this.tOD_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tOD_Outlet.TabIndex = 241;
@@ -5434,7 +6100,7 @@
             // 
             // tOD_Inlet
             // 
-            this.tOD_Inlet.Location = new System.Drawing.Point(362, 341);
+            this.tOD_Inlet.Location = new System.Drawing.Point(362, 377);
             this.tOD_Inlet.Name = "tOD_Inlet";
             this.tOD_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tOD_Inlet.TabIndex = 240;
@@ -5443,7 +6109,7 @@
             // textBox58
             // 
             this.textBox58.Enabled = false;
-            this.textBox58.Location = new System.Drawing.Point(219, 341);
+            this.textBox58.Location = new System.Drawing.Point(219, 377);
             this.textBox58.Name = "textBox58";
             this.textBox58.ReadOnly = true;
             this.textBox58.Size = new System.Drawing.Size(64, 20);
@@ -5454,7 +6120,7 @@
             // 
             this.label80.AutoSize = true;
             this.label80.BackColor = System.Drawing.Color.White;
-            this.label80.Location = new System.Drawing.Point(432, 344);
+            this.label80.Location = new System.Drawing.Point(432, 380);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(23, 13);
             this.label80.TabIndex = 242;
@@ -5463,7 +6129,7 @@
             // textBox59
             // 
             this.textBox59.Enabled = false;
-            this.textBox59.Location = new System.Drawing.Point(146, 341);
+            this.textBox59.Location = new System.Drawing.Point(146, 377);
             this.textBox59.Name = "textBox59";
             this.textBox59.ReadOnly = true;
             this.textBox59.Size = new System.Drawing.Size(67, 20);
@@ -5473,7 +6139,7 @@
             // textBox60
             // 
             this.textBox60.Enabled = false;
-            this.textBox60.Location = new System.Drawing.Point(76, 341);
+            this.textBox60.Location = new System.Drawing.Point(76, 377);
             this.textBox60.Name = "textBox60";
             this.textBox60.ReadOnly = true;
             this.textBox60.Size = new System.Drawing.Size(64, 20);
@@ -5483,7 +6149,7 @@
             // textBox49
             // 
             this.textBox49.Enabled = false;
-            this.textBox49.Location = new System.Drawing.Point(3, 315);
+            this.textBox49.Location = new System.Drawing.Point(3, 351);
             this.textBox49.Name = "textBox49";
             this.textBox49.ReadOnly = true;
             this.textBox49.Size = new System.Drawing.Size(67, 20);
@@ -5492,7 +6158,7 @@
             // 
             // tYY_Outlet
             // 
-            this.tYY_Outlet.Location = new System.Drawing.Point(289, 315);
+            this.tYY_Outlet.Location = new System.Drawing.Point(289, 351);
             this.tYY_Outlet.Name = "tYY_Outlet";
             this.tYY_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tYY_Outlet.TabIndex = 234;
@@ -5500,7 +6166,7 @@
             // 
             // tYY_Inlet
             // 
-            this.tYY_Inlet.Location = new System.Drawing.Point(362, 315);
+            this.tYY_Inlet.Location = new System.Drawing.Point(362, 351);
             this.tYY_Inlet.Name = "tYY_Inlet";
             this.tYY_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tYY_Inlet.TabIndex = 233;
@@ -5509,7 +6175,7 @@
             // textBox52
             // 
             this.textBox52.Enabled = false;
-            this.textBox52.Location = new System.Drawing.Point(219, 315);
+            this.textBox52.Location = new System.Drawing.Point(219, 351);
             this.textBox52.Name = "textBox52";
             this.textBox52.ReadOnly = true;
             this.textBox52.Size = new System.Drawing.Size(64, 20);
@@ -5520,7 +6186,7 @@
             // 
             this.label79.AutoSize = true;
             this.label79.BackColor = System.Drawing.Color.White;
-            this.label79.Location = new System.Drawing.Point(432, 318);
+            this.label79.Location = new System.Drawing.Point(432, 354);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(21, 13);
             this.label79.TabIndex = 235;
@@ -5529,7 +6195,7 @@
             // textBox53
             // 
             this.textBox53.Enabled = false;
-            this.textBox53.Location = new System.Drawing.Point(146, 315);
+            this.textBox53.Location = new System.Drawing.Point(146, 351);
             this.textBox53.Name = "textBox53";
             this.textBox53.ReadOnly = true;
             this.textBox53.Size = new System.Drawing.Size(67, 20);
@@ -5539,7 +6205,7 @@
             // textBox54
             // 
             this.textBox54.Enabled = false;
-            this.textBox54.Location = new System.Drawing.Point(76, 315);
+            this.textBox54.Location = new System.Drawing.Point(76, 351);
             this.textBox54.Name = "textBox54";
             this.textBox54.ReadOnly = true;
             this.textBox54.Size = new System.Drawing.Size(64, 20);
@@ -5549,7 +6215,7 @@
             // textBox43
             // 
             this.textBox43.Enabled = false;
-            this.textBox43.Location = new System.Drawing.Point(3, 289);
+            this.textBox43.Location = new System.Drawing.Point(3, 325);
             this.textBox43.Name = "textBox43";
             this.textBox43.ReadOnly = true;
             this.textBox43.Size = new System.Drawing.Size(67, 20);
@@ -5558,7 +6224,7 @@
             // 
             // tBC_Outlet
             // 
-            this.tBC_Outlet.Location = new System.Drawing.Point(289, 289);
+            this.tBC_Outlet.Location = new System.Drawing.Point(289, 325);
             this.tBC_Outlet.Name = "tBC_Outlet";
             this.tBC_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tBC_Outlet.TabIndex = 227;
@@ -5566,7 +6232,7 @@
             // 
             // tBC_Inlet
             // 
-            this.tBC_Inlet.Location = new System.Drawing.Point(362, 289);
+            this.tBC_Inlet.Location = new System.Drawing.Point(362, 325);
             this.tBC_Inlet.Name = "tBC_Inlet";
             this.tBC_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tBC_Inlet.TabIndex = 226;
@@ -5575,7 +6241,7 @@
             // textBox46
             // 
             this.textBox46.Enabled = false;
-            this.textBox46.Location = new System.Drawing.Point(219, 289);
+            this.textBox46.Location = new System.Drawing.Point(219, 325);
             this.textBox46.Name = "textBox46";
             this.textBox46.ReadOnly = true;
             this.textBox46.Size = new System.Drawing.Size(64, 20);
@@ -5586,7 +6252,7 @@
             // 
             this.label78.AutoSize = true;
             this.label78.BackColor = System.Drawing.Color.White;
-            this.label78.Location = new System.Drawing.Point(432, 292);
+            this.label78.Location = new System.Drawing.Point(432, 328);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(21, 13);
             this.label78.TabIndex = 228;
@@ -5595,7 +6261,7 @@
             // textBox47
             // 
             this.textBox47.Enabled = false;
-            this.textBox47.Location = new System.Drawing.Point(146, 289);
+            this.textBox47.Location = new System.Drawing.Point(146, 325);
             this.textBox47.Name = "textBox47";
             this.textBox47.ReadOnly = true;
             this.textBox47.Size = new System.Drawing.Size(67, 20);
@@ -5605,7 +6271,7 @@
             // textBox48
             // 
             this.textBox48.Enabled = false;
-            this.textBox48.Location = new System.Drawing.Point(76, 289);
+            this.textBox48.Location = new System.Drawing.Point(76, 325);
             this.textBox48.Name = "textBox48";
             this.textBox48.ReadOnly = true;
             this.textBox48.Size = new System.Drawing.Size(64, 20);
@@ -5615,7 +6281,7 @@
             // textBox37
             // 
             this.textBox37.Enabled = false;
-            this.textBox37.Location = new System.Drawing.Point(3, 263);
+            this.textBox37.Location = new System.Drawing.Point(3, 299);
             this.textBox37.Name = "textBox37";
             this.textBox37.ReadOnly = true;
             this.textBox37.Size = new System.Drawing.Size(67, 20);
@@ -5624,7 +6290,7 @@
             // 
             // tDB_Outlet
             // 
-            this.tDB_Outlet.Location = new System.Drawing.Point(289, 263);
+            this.tDB_Outlet.Location = new System.Drawing.Point(289, 299);
             this.tDB_Outlet.Name = "tDB_Outlet";
             this.tDB_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tDB_Outlet.TabIndex = 220;
@@ -5632,7 +6298,7 @@
             // 
             // tDB_Inlet
             // 
-            this.tDB_Inlet.Location = new System.Drawing.Point(362, 263);
+            this.tDB_Inlet.Location = new System.Drawing.Point(362, 299);
             this.tDB_Inlet.Name = "tDB_Inlet";
             this.tDB_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tDB_Inlet.TabIndex = 219;
@@ -5641,7 +6307,7 @@
             // textBox40
             // 
             this.textBox40.Enabled = false;
-            this.textBox40.Location = new System.Drawing.Point(219, 263);
+            this.textBox40.Location = new System.Drawing.Point(219, 299);
             this.textBox40.Name = "textBox40";
             this.textBox40.ReadOnly = true;
             this.textBox40.Size = new System.Drawing.Size(64, 20);
@@ -5652,7 +6318,7 @@
             // 
             this.label77.AutoSize = true;
             this.label77.BackColor = System.Drawing.Color.White;
-            this.label77.Location = new System.Drawing.Point(432, 266);
+            this.label77.Location = new System.Drawing.Point(432, 302);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(22, 13);
             this.label77.TabIndex = 221;
@@ -5661,7 +6327,7 @@
             // textBox41
             // 
             this.textBox41.Enabled = false;
-            this.textBox41.Location = new System.Drawing.Point(146, 263);
+            this.textBox41.Location = new System.Drawing.Point(146, 299);
             this.textBox41.Name = "textBox41";
             this.textBox41.ReadOnly = true;
             this.textBox41.Size = new System.Drawing.Size(67, 20);
@@ -5671,7 +6337,7 @@
             // textBox42
             // 
             this.textBox42.Enabled = false;
-            this.textBox42.Location = new System.Drawing.Point(76, 263);
+            this.textBox42.Location = new System.Drawing.Point(76, 299);
             this.textBox42.Name = "textBox42";
             this.textBox42.ReadOnly = true;
             this.textBox42.Size = new System.Drawing.Size(64, 20);
@@ -5681,7 +6347,7 @@
             // textBox31
             // 
             this.textBox31.Enabled = false;
-            this.textBox31.Location = new System.Drawing.Point(3, 237);
+            this.textBox31.Location = new System.Drawing.Point(3, 273);
             this.textBox31.Name = "textBox31";
             this.textBox31.ReadOnly = true;
             this.textBox31.Size = new System.Drawing.Size(67, 20);
@@ -5690,7 +6356,7 @@
             // 
             // tNB_Outlet
             // 
-            this.tNB_Outlet.Location = new System.Drawing.Point(289, 237);
+            this.tNB_Outlet.Location = new System.Drawing.Point(289, 273);
             this.tNB_Outlet.Name = "tNB_Outlet";
             this.tNB_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tNB_Outlet.TabIndex = 213;
@@ -5698,7 +6364,7 @@
             // 
             // tNB_Inlet
             // 
-            this.tNB_Inlet.Location = new System.Drawing.Point(362, 237);
+            this.tNB_Inlet.Location = new System.Drawing.Point(362, 273);
             this.tNB_Inlet.Name = "tNB_Inlet";
             this.tNB_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tNB_Inlet.TabIndex = 212;
@@ -5707,7 +6373,7 @@
             // textBox34
             // 
             this.textBox34.Enabled = false;
-            this.textBox34.Location = new System.Drawing.Point(219, 237);
+            this.textBox34.Location = new System.Drawing.Point(219, 273);
             this.textBox34.Name = "textBox34";
             this.textBox34.ReadOnly = true;
             this.textBox34.Size = new System.Drawing.Size(64, 20);
@@ -5718,7 +6384,7 @@
             // 
             this.label76.AutoSize = true;
             this.label76.BackColor = System.Drawing.Color.White;
-            this.label76.Location = new System.Drawing.Point(432, 240);
+            this.label76.Location = new System.Drawing.Point(432, 276);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(22, 13);
             this.label76.TabIndex = 214;
@@ -5727,7 +6393,7 @@
             // textBox35
             // 
             this.textBox35.Enabled = false;
-            this.textBox35.Location = new System.Drawing.Point(146, 237);
+            this.textBox35.Location = new System.Drawing.Point(146, 273);
             this.textBox35.Name = "textBox35";
             this.textBox35.ReadOnly = true;
             this.textBox35.Size = new System.Drawing.Size(67, 20);
@@ -5737,7 +6403,7 @@
             // textBox36
             // 
             this.textBox36.Enabled = false;
-            this.textBox36.Location = new System.Drawing.Point(76, 237);
+            this.textBox36.Location = new System.Drawing.Point(76, 273);
             this.textBox36.Name = "textBox36";
             this.textBox36.ReadOnly = true;
             this.textBox36.Size = new System.Drawing.Size(64, 20);
@@ -5747,7 +6413,7 @@
             // textBox25
             // 
             this.textBox25.Enabled = false;
-            this.textBox25.Location = new System.Drawing.Point(3, 211);
+            this.textBox25.Location = new System.Drawing.Point(3, 247);
             this.textBox25.Name = "textBox25";
             this.textBox25.ReadOnly = true;
             this.textBox25.Size = new System.Drawing.Size(67, 20);
@@ -5756,7 +6422,7 @@
             // 
             // tRD_Outlet
             // 
-            this.tRD_Outlet.Location = new System.Drawing.Point(289, 211);
+            this.tRD_Outlet.Location = new System.Drawing.Point(289, 247);
             this.tRD_Outlet.Name = "tRD_Outlet";
             this.tRD_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tRD_Outlet.TabIndex = 206;
@@ -5764,7 +6430,7 @@
             // 
             // tRD_Inlet
             // 
-            this.tRD_Inlet.Location = new System.Drawing.Point(362, 211);
+            this.tRD_Inlet.Location = new System.Drawing.Point(362, 247);
             this.tRD_Inlet.Name = "tRD_Inlet";
             this.tRD_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tRD_Inlet.TabIndex = 205;
@@ -5773,7 +6439,7 @@
             // textBox28
             // 
             this.textBox28.Enabled = false;
-            this.textBox28.Location = new System.Drawing.Point(219, 211);
+            this.textBox28.Location = new System.Drawing.Point(219, 247);
             this.textBox28.Name = "textBox28";
             this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(64, 20);
@@ -5784,7 +6450,7 @@
             // 
             this.label75.AutoSize = true;
             this.label75.BackColor = System.Drawing.Color.White;
-            this.label75.Location = new System.Drawing.Point(432, 214);
+            this.label75.Location = new System.Drawing.Point(432, 250);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(23, 13);
             this.label75.TabIndex = 207;
@@ -5793,7 +6459,7 @@
             // textBox29
             // 
             this.textBox29.Enabled = false;
-            this.textBox29.Location = new System.Drawing.Point(146, 211);
+            this.textBox29.Location = new System.Drawing.Point(146, 247);
             this.textBox29.Name = "textBox29";
             this.textBox29.ReadOnly = true;
             this.textBox29.Size = new System.Drawing.Size(67, 20);
@@ -5803,7 +6469,7 @@
             // textBox30
             // 
             this.textBox30.Enabled = false;
-            this.textBox30.Location = new System.Drawing.Point(76, 211);
+            this.textBox30.Location = new System.Drawing.Point(76, 247);
             this.textBox30.Name = "textBox30";
             this.textBox30.ReadOnly = true;
             this.textBox30.Size = new System.Drawing.Size(64, 20);
@@ -5813,7 +6479,7 @@
             // textBox19
             // 
             this.textBox19.Enabled = false;
-            this.textBox19.Location = new System.Drawing.Point(3, 185);
+            this.textBox19.Location = new System.Drawing.Point(3, 221);
             this.textBox19.Name = "textBox19";
             this.textBox19.ReadOnly = true;
             this.textBox19.Size = new System.Drawing.Size(67, 20);
@@ -5822,7 +6488,7 @@
             // 
             // tX_Outlet
             // 
-            this.tX_Outlet.Location = new System.Drawing.Point(289, 185);
+            this.tX_Outlet.Location = new System.Drawing.Point(289, 221);
             this.tX_Outlet.Name = "tX_Outlet";
             this.tX_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tX_Outlet.TabIndex = 199;
@@ -5830,7 +6496,7 @@
             // 
             // tX_Inlet
             // 
-            this.tX_Inlet.Location = new System.Drawing.Point(362, 185);
+            this.tX_Inlet.Location = new System.Drawing.Point(362, 221);
             this.tX_Inlet.Name = "tX_Inlet";
             this.tX_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tX_Inlet.TabIndex = 198;
@@ -5839,7 +6505,7 @@
             // textBox22
             // 
             this.textBox22.Enabled = false;
-            this.textBox22.Location = new System.Drawing.Point(219, 185);
+            this.textBox22.Location = new System.Drawing.Point(219, 221);
             this.textBox22.Name = "textBox22";
             this.textBox22.ReadOnly = true;
             this.textBox22.Size = new System.Drawing.Size(64, 20);
@@ -5850,7 +6516,7 @@
             // 
             this.label74.AutoSize = true;
             this.label74.BackColor = System.Drawing.Color.White;
-            this.label74.Location = new System.Drawing.Point(432, 188);
+            this.label74.Location = new System.Drawing.Point(432, 224);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(14, 13);
             this.label74.TabIndex = 200;
@@ -5859,7 +6525,7 @@
             // textBox23
             // 
             this.textBox23.Enabled = false;
-            this.textBox23.Location = new System.Drawing.Point(146, 185);
+            this.textBox23.Location = new System.Drawing.Point(146, 221);
             this.textBox23.Name = "textBox23";
             this.textBox23.ReadOnly = true;
             this.textBox23.Size = new System.Drawing.Size(67, 20);
@@ -5869,7 +6535,7 @@
             // textBox24
             // 
             this.textBox24.Enabled = false;
-            this.textBox24.Location = new System.Drawing.Point(76, 185);
+            this.textBox24.Location = new System.Drawing.Point(76, 221);
             this.textBox24.Name = "textBox24";
             this.textBox24.ReadOnly = true;
             this.textBox24.Size = new System.Drawing.Size(64, 20);
@@ -5879,7 +6545,7 @@
             // textBox13
             // 
             this.textBox13.Enabled = false;
-            this.textBox13.Location = new System.Drawing.Point(3, 159);
+            this.textBox13.Location = new System.Drawing.Point(3, 195);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(67, 20);
@@ -5888,7 +6554,7 @@
             // 
             // tR_Outlet
             // 
-            this.tR_Outlet.Location = new System.Drawing.Point(289, 159);
+            this.tR_Outlet.Location = new System.Drawing.Point(289, 195);
             this.tR_Outlet.Name = "tR_Outlet";
             this.tR_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tR_Outlet.TabIndex = 192;
@@ -5896,7 +6562,7 @@
             // 
             // tR_Inlet
             // 
-            this.tR_Inlet.Location = new System.Drawing.Point(362, 159);
+            this.tR_Inlet.Location = new System.Drawing.Point(362, 195);
             this.tR_Inlet.Name = "tR_Inlet";
             this.tR_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tR_Inlet.TabIndex = 191;
@@ -5905,7 +6571,7 @@
             // textBox16
             // 
             this.textBox16.Enabled = false;
-            this.textBox16.Location = new System.Drawing.Point(219, 159);
+            this.textBox16.Location = new System.Drawing.Point(219, 195);
             this.textBox16.Name = "textBox16";
             this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(64, 20);
@@ -5916,7 +6582,7 @@
             // 
             this.label73.AutoSize = true;
             this.label73.BackColor = System.Drawing.Color.White;
-            this.label73.Location = new System.Drawing.Point(432, 162);
+            this.label73.Location = new System.Drawing.Point(432, 198);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(15, 13);
             this.label73.TabIndex = 193;
@@ -5925,7 +6591,7 @@
             // textBox17
             // 
             this.textBox17.Enabled = false;
-            this.textBox17.Location = new System.Drawing.Point(146, 159);
+            this.textBox17.Location = new System.Drawing.Point(146, 195);
             this.textBox17.Name = "textBox17";
             this.textBox17.ReadOnly = true;
             this.textBox17.Size = new System.Drawing.Size(67, 20);
@@ -5935,7 +6601,7 @@
             // textBox18
             // 
             this.textBox18.Enabled = false;
-            this.textBox18.Location = new System.Drawing.Point(76, 159);
+            this.textBox18.Location = new System.Drawing.Point(76, 195);
             this.textBox18.Name = "textBox18";
             this.textBox18.ReadOnly = true;
             this.textBox18.Size = new System.Drawing.Size(64, 20);
@@ -5945,7 +6611,7 @@
             // textBox7
             // 
             this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(3, 133);
+            this.textBox7.Location = new System.Drawing.Point(3, 169);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(67, 20);
@@ -5954,7 +6620,7 @@
             // 
             // tQ_Outlet
             // 
-            this.tQ_Outlet.Location = new System.Drawing.Point(289, 133);
+            this.tQ_Outlet.Location = new System.Drawing.Point(289, 169);
             this.tQ_Outlet.Name = "tQ_Outlet";
             this.tQ_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tQ_Outlet.TabIndex = 185;
@@ -5962,7 +6628,7 @@
             // 
             // tQ_Inlet
             // 
-            this.tQ_Inlet.Location = new System.Drawing.Point(362, 133);
+            this.tQ_Inlet.Location = new System.Drawing.Point(362, 169);
             this.tQ_Inlet.Name = "tQ_Inlet";
             this.tQ_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tQ_Inlet.TabIndex = 184;
@@ -5971,7 +6637,7 @@
             // textBox10
             // 
             this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(219, 133);
+            this.textBox10.Location = new System.Drawing.Point(219, 169);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(64, 20);
@@ -5982,7 +6648,7 @@
             // 
             this.label66.AutoSize = true;
             this.label66.BackColor = System.Drawing.Color.White;
-            this.label66.Location = new System.Drawing.Point(432, 136);
+            this.label66.Location = new System.Drawing.Point(432, 172);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(15, 13);
             this.label66.TabIndex = 186;
@@ -5991,7 +6657,7 @@
             // textBox11
             // 
             this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(146, 133);
+            this.textBox11.Location = new System.Drawing.Point(146, 169);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(67, 20);
@@ -6001,7 +6667,7 @@
             // textBox12
             // 
             this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(76, 133);
+            this.textBox12.Location = new System.Drawing.Point(76, 169);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(64, 20);
@@ -6011,7 +6677,7 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(3, 107);
+            this.textBox1.Location = new System.Drawing.Point(3, 143);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(67, 20);
@@ -6020,7 +6686,7 @@
             // 
             // tO_Outlet
             // 
-            this.tO_Outlet.Location = new System.Drawing.Point(289, 107);
+            this.tO_Outlet.Location = new System.Drawing.Point(289, 143);
             this.tO_Outlet.Name = "tO_Outlet";
             this.tO_Outlet.Size = new System.Drawing.Size(67, 20);
             this.tO_Outlet.TabIndex = 178;
@@ -6028,7 +6694,7 @@
             // 
             // tO_Inlet
             // 
-            this.tO_Inlet.Location = new System.Drawing.Point(362, 107);
+            this.tO_Inlet.Location = new System.Drawing.Point(362, 143);
             this.tO_Inlet.Name = "tO_Inlet";
             this.tO_Inlet.Size = new System.Drawing.Size(64, 20);
             this.tO_Inlet.TabIndex = 177;
@@ -6037,7 +6703,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(219, 107);
+            this.textBox4.Location = new System.Drawing.Point(219, 143);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(64, 20);
@@ -6048,7 +6714,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(432, 110);
+            this.label13.Location = new System.Drawing.Point(432, 146);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 13);
             this.label13.TabIndex = 179;
@@ -6058,7 +6724,7 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(146, 107);
+            this.textBox5.Location = new System.Drawing.Point(146, 143);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(67, 20);
@@ -6068,7 +6734,7 @@
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(76, 107);
+            this.textBox6.Location = new System.Drawing.Point(76, 143);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(64, 20);
@@ -6391,657 +7057,151 @@
             // bRun
             // 
             this.bRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRun.Location = new System.Drawing.Point(122, 22);
+            this.bRun.Location = new System.Drawing.Point(232, 621);
             this.bRun.Name = "bRun";
-            this.bRun.Size = new System.Drawing.Size(64, 31);
+            this.bRun.Size = new System.Drawing.Size(200, 31);
             this.bRun.TabIndex = 622;
-            this.bRun.Text = "Run";
+            this.bRun.Text = "Run All Headers";
             this.bRun.UseVisualStyleBackColor = true;
             this.bRun.Click += new System.EventHandler(this.bRun_Click);
             // 
-            // tTubesheetPartNo_66
-            // 
-            this.tTubesheetPartNo_66.Location = new System.Drawing.Point(3, 1610);
-            this.tTubesheetPartNo_66.Name = "tTubesheetPartNo_66";
-            this.tTubesheetPartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetPartNo_66.TabIndex = 626;
-            this.tTubesheetPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetPartNo_62
-            // 
-            this.tTubesheetPartNo_62.Location = new System.Drawing.Point(289, 1610);
-            this.tTubesheetPartNo_62.Name = "tTubesheetPartNo_62";
-            this.tTubesheetPartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetPartNo_62.TabIndex = 621;
-            this.tTubesheetPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetPartNo_61
-            // 
-            this.tTubesheetPartNo_61.Location = new System.Drawing.Point(362, 1610);
-            this.tTubesheetPartNo_61.Name = "tTubesheetPartNo_61";
-            this.tTubesheetPartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetPartNo_61.TabIndex = 620;
-            this.tTubesheetPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetPartNo_63
-            // 
-            this.tTubesheetPartNo_63.Location = new System.Drawing.Point(219, 1610);
-            this.tTubesheetPartNo_63.Name = "tTubesheetPartNo_63";
-            this.tTubesheetPartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetPartNo_63.TabIndex = 623;
-            this.tTubesheetPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.BackColor = System.Drawing.Color.White;
-            this.label91.Location = new System.Drawing.Point(432, 1614);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(109, 13);
-            this.label91.TabIndex = 622;
-            this.label91.Text = "PARTNO  Tubesheet";
-            // 
-            // tTubesheetPartNo_64
-            // 
-            this.tTubesheetPartNo_64.Location = new System.Drawing.Point(146, 1610);
-            this.tTubesheetPartNo_64.Name = "tTubesheetPartNo_64";
-            this.tTubesheetPartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tTubesheetPartNo_64.TabIndex = 624;
-            this.tTubesheetPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTubesheetPartNo_65
-            // 
-            this.tTubesheetPartNo_65.Location = new System.Drawing.Point(76, 1610);
-            this.tTubesheetPartNo_65.Name = "tTubesheetPartNo_65";
-            this.tTubesheetPartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tTubesheetPartNo_65.TabIndex = 625;
-            this.tTubesheetPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetPartNo_66
-            // 
-            this.tPlugsheetPartNo_66.Location = new System.Drawing.Point(3, 1636);
-            this.tPlugsheetPartNo_66.Name = "tPlugsheetPartNo_66";
-            this.tPlugsheetPartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetPartNo_66.TabIndex = 633;
-            this.tPlugsheetPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetPartNo_62
-            // 
-            this.tPlugsheetPartNo_62.Location = new System.Drawing.Point(289, 1636);
-            this.tPlugsheetPartNo_62.Name = "tPlugsheetPartNo_62";
-            this.tPlugsheetPartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetPartNo_62.TabIndex = 628;
-            this.tPlugsheetPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetPartNo_61
-            // 
-            this.tPlugsheetPartNo_61.Location = new System.Drawing.Point(362, 1636);
-            this.tPlugsheetPartNo_61.Name = "tPlugsheetPartNo_61";
-            this.tPlugsheetPartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetPartNo_61.TabIndex = 627;
-            this.tPlugsheetPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetPartNo_63
-            // 
-            this.tPlugsheetPartNo_63.Location = new System.Drawing.Point(219, 1636);
-            this.tPlugsheetPartNo_63.Name = "tPlugsheetPartNo_63";
-            this.tPlugsheetPartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetPartNo_63.TabIndex = 630;
-            this.tPlugsheetPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.White;
-            this.label92.Location = new System.Drawing.Point(432, 1640);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(105, 13);
-            this.label92.TabIndex = 629;
-            this.label92.Text = "PARTNO  Plugsheet";
-            // 
-            // tPlugsheetPartNo_64
-            // 
-            this.tPlugsheetPartNo_64.Location = new System.Drawing.Point(146, 1636);
-            this.tPlugsheetPartNo_64.Name = "tPlugsheetPartNo_64";
-            this.tPlugsheetPartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tPlugsheetPartNo_64.TabIndex = 631;
-            this.tPlugsheetPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPlugsheetPartNo_65
-            // 
-            this.tPlugsheetPartNo_65.Location = new System.Drawing.Point(76, 1636);
-            this.tPlugsheetPartNo_65.Name = "tPlugsheetPartNo_65";
-            this.tPlugsheetPartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tPlugsheetPartNo_65.TabIndex = 632;
-            this.tPlugsheetPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmPartNo_66
-            // 
-            this.tTopBtmPartNo_66.Location = new System.Drawing.Point(3, 1662);
-            this.tTopBtmPartNo_66.Name = "tTopBtmPartNo_66";
-            this.tTopBtmPartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmPartNo_66.TabIndex = 640;
-            this.tTopBtmPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmPartNo_62
-            // 
-            this.tTopBtmPartNo_62.Location = new System.Drawing.Point(289, 1662);
-            this.tTopBtmPartNo_62.Name = "tTopBtmPartNo_62";
-            this.tTopBtmPartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmPartNo_62.TabIndex = 635;
-            this.tTopBtmPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmPartNo_61
-            // 
-            this.tTopBtmPartNo_61.Location = new System.Drawing.Point(362, 1662);
-            this.tTopBtmPartNo_61.Name = "tTopBtmPartNo_61";
-            this.tTopBtmPartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmPartNo_61.TabIndex = 634;
-            this.tTopBtmPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmPartNo_63
-            // 
-            this.tTopBtmPartNo_63.Location = new System.Drawing.Point(219, 1662);
-            this.tTopBtmPartNo_63.Name = "tTopBtmPartNo_63";
-            this.tTopBtmPartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmPartNo_63.TabIndex = 637;
-            this.tTopBtmPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.BackColor = System.Drawing.Color.White;
-            this.label93.Location = new System.Drawing.Point(432, 1666);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(142, 13);
-            this.label93.TabIndex = 636;
-            this.label93.Text = "PARTNO  Top/Bottom Plate";
-            // 
-            // tTopBtmPartNo_64
-            // 
-            this.tTopBtmPartNo_64.Location = new System.Drawing.Point(146, 1662);
-            this.tTopBtmPartNo_64.Name = "tTopBtmPartNo_64";
-            this.tTopBtmPartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tTopBtmPartNo_64.TabIndex = 638;
-            this.tTopBtmPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tTopBtmPartNo_65
-            // 
-            this.tTopBtmPartNo_65.Location = new System.Drawing.Point(76, 1662);
-            this.tTopBtmPartNo_65.Name = "tTopBtmPartNo_65";
-            this.tTopBtmPartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tTopBtmPartNo_65.TabIndex = 639;
-            this.tTopBtmPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo_66
-            // 
-            this.tEndPlatePartNo_66.Location = new System.Drawing.Point(3, 1688);
-            this.tEndPlatePartNo_66.Name = "tEndPlatePartNo_66";
-            this.tEndPlatePartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlatePartNo_66.TabIndex = 647;
-            this.tEndPlatePartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo_62
-            // 
-            this.tEndPlatePartNo_62.Location = new System.Drawing.Point(289, 1688);
-            this.tEndPlatePartNo_62.Name = "tEndPlatePartNo_62";
-            this.tEndPlatePartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlatePartNo_62.TabIndex = 642;
-            this.tEndPlatePartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo_61
-            // 
-            this.tEndPlatePartNo_61.Location = new System.Drawing.Point(362, 1688);
-            this.tEndPlatePartNo_61.Name = "tEndPlatePartNo_61";
-            this.tEndPlatePartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlatePartNo_61.TabIndex = 641;
-            this.tEndPlatePartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo_63
-            // 
-            this.tEndPlatePartNo_63.Location = new System.Drawing.Point(219, 1688);
-            this.tEndPlatePartNo_63.Name = "tEndPlatePartNo_63";
-            this.tEndPlatePartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlatePartNo_63.TabIndex = 644;
-            this.tEndPlatePartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.BackColor = System.Drawing.Color.White;
-            this.label94.Location = new System.Drawing.Point(432, 1692);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(104, 13);
-            this.label94.TabIndex = 643;
-            this.label94.Text = "PARTNO  End Plate";
-            // 
-            // tEndPlatePartNo_64
-            // 
-            this.tEndPlatePartNo_64.Location = new System.Drawing.Point(146, 1688);
-            this.tEndPlatePartNo_64.Name = "tEndPlatePartNo_64";
-            this.tEndPlatePartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlatePartNo_64.TabIndex = 645;
-            this.tEndPlatePartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo_65
-            // 
-            this.tEndPlatePartNo_65.Location = new System.Drawing.Point(76, 1688);
-            this.tEndPlatePartNo_65.Name = "tEndPlatePartNo_65";
-            this.tEndPlatePartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlatePartNo_65.TabIndex = 646;
-            this.tEndPlatePartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo2_66
-            // 
-            this.tEndPlatePartNo2_66.Location = new System.Drawing.Point(3, 1714);
-            this.tEndPlatePartNo2_66.Name = "tEndPlatePartNo2_66";
-            this.tEndPlatePartNo2_66.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlatePartNo2_66.TabIndex = 654;
-            this.tEndPlatePartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo2_62
-            // 
-            this.tEndPlatePartNo2_62.Location = new System.Drawing.Point(289, 1714);
-            this.tEndPlatePartNo2_62.Name = "tEndPlatePartNo2_62";
-            this.tEndPlatePartNo2_62.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlatePartNo2_62.TabIndex = 649;
-            this.tEndPlatePartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo2_61
-            // 
-            this.tEndPlatePartNo2_61.Location = new System.Drawing.Point(362, 1714);
-            this.tEndPlatePartNo2_61.Name = "tEndPlatePartNo2_61";
-            this.tEndPlatePartNo2_61.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlatePartNo2_61.TabIndex = 648;
-            this.tEndPlatePartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo2_63
-            // 
-            this.tEndPlatePartNo2_63.Location = new System.Drawing.Point(219, 1714);
-            this.tEndPlatePartNo2_63.Name = "tEndPlatePartNo2_63";
-            this.tEndPlatePartNo2_63.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlatePartNo2_63.TabIndex = 651;
-            this.tEndPlatePartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.BackColor = System.Drawing.Color.White;
-            this.label95.Location = new System.Drawing.Point(432, 1718);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(110, 13);
-            this.label95.TabIndex = 650;
-            this.label95.Text = "PARTNO  End Plate2";
-            // 
-            // tEndPlatePartNo2_64
-            // 
-            this.tEndPlatePartNo2_64.Location = new System.Drawing.Point(146, 1714);
-            this.tEndPlatePartNo2_64.Name = "tEndPlatePartNo2_64";
-            this.tEndPlatePartNo2_64.Size = new System.Drawing.Size(67, 20);
-            this.tEndPlatePartNo2_64.TabIndex = 652;
-            this.tEndPlatePartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tEndPlatePartNo2_65
-            // 
-            this.tEndPlatePartNo2_65.Location = new System.Drawing.Point(76, 1714);
-            this.tEndPlatePartNo2_65.Name = "tEndPlatePartNo2_65";
-            this.tEndPlatePartNo2_65.Size = new System.Drawing.Size(64, 20);
-            this.tEndPlatePartNo2_65.TabIndex = 653;
-            this.tEndPlatePartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo_66
-            // 
-            this.tStiffenerPartNo_66.Location = new System.Drawing.Point(3, 1792);
-            this.tStiffenerPartNo_66.Name = "tStiffenerPartNo_66";
-            this.tStiffenerPartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerPartNo_66.TabIndex = 661;
-            this.tStiffenerPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo_62
-            // 
-            this.tStiffenerPartNo_62.Location = new System.Drawing.Point(289, 1792);
-            this.tStiffenerPartNo_62.Name = "tStiffenerPartNo_62";
-            this.tStiffenerPartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerPartNo_62.TabIndex = 656;
-            this.tStiffenerPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo_61
-            // 
-            this.tStiffenerPartNo_61.Location = new System.Drawing.Point(362, 1792);
-            this.tStiffenerPartNo_61.Name = "tStiffenerPartNo_61";
-            this.tStiffenerPartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerPartNo_61.TabIndex = 655;
-            this.tStiffenerPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo_63
-            // 
-            this.tStiffenerPartNo_63.Location = new System.Drawing.Point(219, 1792);
-            this.tStiffenerPartNo_63.Name = "tStiffenerPartNo_63";
-            this.tStiffenerPartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerPartNo_63.TabIndex = 658;
-            this.tStiffenerPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.BackColor = System.Drawing.Color.White;
-            this.label96.Location = new System.Drawing.Point(432, 1796);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(97, 13);
-            this.label96.TabIndex = 657;
-            this.label96.Text = "PARTNO  Stiffener";
-            // 
-            // tStiffenerPartNo_64
-            // 
-            this.tStiffenerPartNo_64.Location = new System.Drawing.Point(146, 1792);
-            this.tStiffenerPartNo_64.Name = "tStiffenerPartNo_64";
-            this.tStiffenerPartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerPartNo_64.TabIndex = 659;
-            this.tStiffenerPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo_65
-            // 
-            this.tStiffenerPartNo_65.Location = new System.Drawing.Point(76, 1792);
-            this.tStiffenerPartNo_65.Name = "tStiffenerPartNo_65";
-            this.tStiffenerPartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerPartNo_65.TabIndex = 660;
-            this.tStiffenerPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo_66
-            // 
-            this.tPartitionPartNo_66.Location = new System.Drawing.Point(3, 1740);
-            this.tPartitionPartNo_66.Name = "tPartitionPartNo_66";
-            this.tPartitionPartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tPartitionPartNo_66.TabIndex = 668;
-            this.tPartitionPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo_62
-            // 
-            this.tPartitionPartNo_62.Location = new System.Drawing.Point(289, 1740);
-            this.tPartitionPartNo_62.Name = "tPartitionPartNo_62";
-            this.tPartitionPartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tPartitionPartNo_62.TabIndex = 663;
-            this.tPartitionPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo_61
-            // 
-            this.tPartitionPartNo_61.Location = new System.Drawing.Point(362, 1740);
-            this.tPartitionPartNo_61.Name = "tPartitionPartNo_61";
-            this.tPartitionPartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tPartitionPartNo_61.TabIndex = 662;
-            this.tPartitionPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo_63
-            // 
-            this.tPartitionPartNo_63.Location = new System.Drawing.Point(219, 1740);
-            this.tPartitionPartNo_63.Name = "tPartitionPartNo_63";
-            this.tPartitionPartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tPartitionPartNo_63.TabIndex = 665;
-            this.tPartitionPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.BackColor = System.Drawing.Color.White;
-            this.label97.Location = new System.Drawing.Point(432, 1744);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(96, 13);
-            this.label97.TabIndex = 664;
-            this.label97.Text = "PARTNO  Partition";
-            // 
-            // tPartitionPartNo_64
-            // 
-            this.tPartitionPartNo_64.Location = new System.Drawing.Point(146, 1740);
-            this.tPartitionPartNo_64.Name = "tPartitionPartNo_64";
-            this.tPartitionPartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tPartitionPartNo_64.TabIndex = 666;
-            this.tPartitionPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo_65
-            // 
-            this.tPartitionPartNo_65.Location = new System.Drawing.Point(76, 1740);
-            this.tPartitionPartNo_65.Name = "tPartitionPartNo_65";
-            this.tPartitionPartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tPartitionPartNo_65.TabIndex = 667;
-            this.tPartitionPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPRLPartNo_66
-            // 
-            this.tFootPRLPartNo_66.Location = new System.Drawing.Point(3, 1844);
-            this.tFootPRLPartNo_66.Name = "tFootPRLPartNo_66";
-            this.tFootPRLPartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tFootPRLPartNo_66.TabIndex = 675;
-            this.tFootPRLPartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPRLPartNo_62
-            // 
-            this.tFootPRLPartNo_62.Location = new System.Drawing.Point(289, 1844);
-            this.tFootPRLPartNo_62.Name = "tFootPRLPartNo_62";
-            this.tFootPRLPartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tFootPRLPartNo_62.TabIndex = 670;
-            this.tFootPRLPartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPRLPartNo_61
-            // 
-            this.tFootPRLPartNo_61.Location = new System.Drawing.Point(362, 1844);
-            this.tFootPRLPartNo_61.Name = "tFootPRLPartNo_61";
-            this.tFootPRLPartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tFootPRLPartNo_61.TabIndex = 669;
-            this.tFootPRLPartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPRLPartNo_63
-            // 
-            this.tFootPRLPartNo_63.Location = new System.Drawing.Point(219, 1844);
-            this.tFootPRLPartNo_63.Name = "tFootPRLPartNo_63";
-            this.tFootPRLPartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tFootPRLPartNo_63.TabIndex = 672;
-            this.tFootPRLPartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.BackColor = System.Drawing.Color.White;
-            this.label98.Location = new System.Drawing.Point(432, 1848);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(103, 13);
-            this.label98.TabIndex = 671;
-            this.label98.Text = "PARTNO  Foot PRL";
-            // 
-            // tFootPRLPartNo_64
-            // 
-            this.tFootPRLPartNo_64.Location = new System.Drawing.Point(146, 1844);
-            this.tFootPRLPartNo_64.Name = "tFootPRLPartNo_64";
-            this.tFootPRLPartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tFootPRLPartNo_64.TabIndex = 673;
-            this.tFootPRLPartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPRLPartNo_65
-            // 
-            this.tFootPRLPartNo_65.Location = new System.Drawing.Point(76, 1844);
-            this.tFootPRLPartNo_65.Name = "tFootPRLPartNo_65";
-            this.tFootPRLPartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tFootPRLPartNo_65.TabIndex = 674;
-            this.tFootPRLPartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPlatePartNo_66
-            // 
-            this.tFootPlatePartNo_66.Location = new System.Drawing.Point(3, 1870);
-            this.tFootPlatePartNo_66.Name = "tFootPlatePartNo_66";
-            this.tFootPlatePartNo_66.Size = new System.Drawing.Size(67, 20);
-            this.tFootPlatePartNo_66.TabIndex = 682;
-            this.tFootPlatePartNo_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPlatePartNo_62
-            // 
-            this.tFootPlatePartNo_62.Location = new System.Drawing.Point(289, 1870);
-            this.tFootPlatePartNo_62.Name = "tFootPlatePartNo_62";
-            this.tFootPlatePartNo_62.Size = new System.Drawing.Size(67, 20);
-            this.tFootPlatePartNo_62.TabIndex = 677;
-            this.tFootPlatePartNo_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPlatePartNo_61
-            // 
-            this.tFootPlatePartNo_61.Location = new System.Drawing.Point(362, 1870);
-            this.tFootPlatePartNo_61.Name = "tFootPlatePartNo_61";
-            this.tFootPlatePartNo_61.Size = new System.Drawing.Size(64, 20);
-            this.tFootPlatePartNo_61.TabIndex = 676;
-            this.tFootPlatePartNo_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPlatePartNo_63
-            // 
-            this.tFootPlatePartNo_63.Location = new System.Drawing.Point(219, 1870);
-            this.tFootPlatePartNo_63.Name = "tFootPlatePartNo_63";
-            this.tFootPlatePartNo_63.Size = new System.Drawing.Size(64, 20);
-            this.tFootPlatePartNo_63.TabIndex = 679;
-            this.tFootPlatePartNo_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.BackColor = System.Drawing.Color.White;
-            this.label99.Location = new System.Drawing.Point(432, 1874);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(106, 13);
-            this.label99.TabIndex = 678;
-            this.label99.Text = "PARTNO  Foot Plate";
-            // 
-            // tFootPlatePartNo_64
-            // 
-            this.tFootPlatePartNo_64.Location = new System.Drawing.Point(146, 1870);
-            this.tFootPlatePartNo_64.Name = "tFootPlatePartNo_64";
-            this.tFootPlatePartNo_64.Size = new System.Drawing.Size(67, 20);
-            this.tFootPlatePartNo_64.TabIndex = 680;
-            this.tFootPlatePartNo_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tFootPlatePartNo_65
-            // 
-            this.tFootPlatePartNo_65.Location = new System.Drawing.Point(76, 1870);
-            this.tFootPlatePartNo_65.Name = "tFootPlatePartNo_65";
-            this.tFootPlatePartNo_65.Size = new System.Drawing.Size(64, 20);
-            this.tFootPlatePartNo_65.TabIndex = 681;
-            this.tFootPlatePartNo_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo2_66
-            // 
-            this.tPartitionPartNo2_66.Location = new System.Drawing.Point(3, 1766);
-            this.tPartitionPartNo2_66.Name = "tPartitionPartNo2_66";
-            this.tPartitionPartNo2_66.Size = new System.Drawing.Size(67, 20);
-            this.tPartitionPartNo2_66.TabIndex = 689;
-            this.tPartitionPartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo2_62
-            // 
-            this.tPartitionPartNo2_62.Location = new System.Drawing.Point(289, 1766);
-            this.tPartitionPartNo2_62.Name = "tPartitionPartNo2_62";
-            this.tPartitionPartNo2_62.Size = new System.Drawing.Size(67, 20);
-            this.tPartitionPartNo2_62.TabIndex = 684;
-            this.tPartitionPartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo2_65
-            // 
-            this.tPartitionPartNo2_65.Location = new System.Drawing.Point(76, 1766);
-            this.tPartitionPartNo2_65.Name = "tPartitionPartNo2_65";
-            this.tPartitionPartNo2_65.Size = new System.Drawing.Size(64, 20);
-            this.tPartitionPartNo2_65.TabIndex = 688;
-            this.tPartitionPartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo2_61
-            // 
-            this.tPartitionPartNo2_61.Location = new System.Drawing.Point(362, 1766);
-            this.tPartitionPartNo2_61.Name = "tPartitionPartNo2_61";
-            this.tPartitionPartNo2_61.Size = new System.Drawing.Size(64, 20);
-            this.tPartitionPartNo2_61.TabIndex = 683;
-            this.tPartitionPartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo2_64
-            // 
-            this.tPartitionPartNo2_64.Location = new System.Drawing.Point(146, 1766);
-            this.tPartitionPartNo2_64.Name = "tPartitionPartNo2_64";
-            this.tPartitionPartNo2_64.Size = new System.Drawing.Size(67, 20);
-            this.tPartitionPartNo2_64.TabIndex = 687;
-            this.tPartitionPartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPartitionPartNo2_63
-            // 
-            this.tPartitionPartNo2_63.Location = new System.Drawing.Point(219, 1766);
-            this.tPartitionPartNo2_63.Name = "tPartitionPartNo2_63";
-            this.tPartitionPartNo2_63.Size = new System.Drawing.Size(64, 20);
-            this.tPartitionPartNo2_63.TabIndex = 686;
-            this.tPartitionPartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.BackColor = System.Drawing.Color.White;
-            this.label90.Location = new System.Drawing.Point(432, 1770);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(102, 13);
-            this.label90.TabIndex = 685;
-            this.label90.Text = "PARTNO  Partition2";
-            // 
-            // tStiffenerPartNo2_66
-            // 
-            this.tStiffenerPartNo2_66.Location = new System.Drawing.Point(3, 1818);
-            this.tStiffenerPartNo2_66.Name = "tStiffenerPartNo2_66";
-            this.tStiffenerPartNo2_66.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerPartNo2_66.TabIndex = 696;
-            this.tStiffenerPartNo2_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo2_62
-            // 
-            this.tStiffenerPartNo2_62.Location = new System.Drawing.Point(289, 1818);
-            this.tStiffenerPartNo2_62.Name = "tStiffenerPartNo2_62";
-            this.tStiffenerPartNo2_62.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerPartNo2_62.TabIndex = 691;
-            this.tStiffenerPartNo2_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo2_61
-            // 
-            this.tStiffenerPartNo2_61.Location = new System.Drawing.Point(362, 1818);
-            this.tStiffenerPartNo2_61.Name = "tStiffenerPartNo2_61";
-            this.tStiffenerPartNo2_61.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerPartNo2_61.TabIndex = 690;
-            this.tStiffenerPartNo2_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo2_63
-            // 
-            this.tStiffenerPartNo2_63.Location = new System.Drawing.Point(219, 1818);
-            this.tStiffenerPartNo2_63.Name = "tStiffenerPartNo2_63";
-            this.tStiffenerPartNo2_63.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerPartNo2_63.TabIndex = 693;
-            this.tStiffenerPartNo2_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.BackColor = System.Drawing.Color.White;
-            this.label100.Location = new System.Drawing.Point(432, 1822);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(103, 13);
-            this.label100.TabIndex = 692;
-            this.label100.Text = "PARTNO  Stiffener2";
-            // 
-            // tStiffenerPartNo2_64
-            // 
-            this.tStiffenerPartNo2_64.Location = new System.Drawing.Point(146, 1818);
-            this.tStiffenerPartNo2_64.Name = "tStiffenerPartNo2_64";
-            this.tStiffenerPartNo2_64.Size = new System.Drawing.Size(67, 20);
-            this.tStiffenerPartNo2_64.TabIndex = 694;
-            this.tStiffenerPartNo2_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tStiffenerPartNo2_65
-            // 
-            this.tStiffenerPartNo2_65.Location = new System.Drawing.Point(76, 1818);
-            this.tStiffenerPartNo2_65.Name = "tStiffenerPartNo2_65";
-            this.tStiffenerPartNo2_65.Size = new System.Drawing.Size(64, 20);
-            this.tStiffenerPartNo2_65.TabIndex = 695;
-            this.tStiffenerPartNo2_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(3, 438);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(67, 20);
+            this.textBox2.TabIndex = 625;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFlangePartNo_Outlet
+            // 
+            this.tFlangePartNo_Outlet.Location = new System.Drawing.Point(289, 438);
+            this.tFlangePartNo_Outlet.Name = "tFlangePartNo_Outlet";
+            this.tFlangePartNo_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tFlangePartNo_Outlet.TabIndex = 620;
+            this.tFlangePartNo_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tFlangePartNo_Inlet
+            // 
+            this.tFlangePartNo_Inlet.Location = new System.Drawing.Point(362, 438);
+            this.tFlangePartNo_Inlet.Name = "tFlangePartNo_Inlet";
+            this.tFlangePartNo_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tFlangePartNo_Inlet.TabIndex = 619;
+            this.tFlangePartNo_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(219, 438);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(64, 20);
+            this.textBox9.TabIndex = 622;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.BackColor = System.Drawing.Color.White;
+            this.label103.Location = new System.Drawing.Point(432, 441);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(90, 13);
+            this.label103.TabIndex = 621;
+            this.label103.Text = "PARTNO  Flange";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Enabled = false;
+            this.textBox14.Location = new System.Drawing.Point(146, 438);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(67, 20);
+            this.textBox14.TabIndex = 623;
+            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Enabled = false;
+            this.textBox15.Location = new System.Drawing.Point(76, 438);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(64, 20);
+            this.textBox15.TabIndex = 624;
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Enabled = false;
+            this.textBox20.Location = new System.Drawing.Point(3, 464);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
+            this.textBox20.Size = new System.Drawing.Size(67, 20);
+            this.textBox20.TabIndex = 632;
+            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tExtensionPartNo_Outlet
+            // 
+            this.tExtensionPartNo_Outlet.Location = new System.Drawing.Point(289, 464);
+            this.tExtensionPartNo_Outlet.Name = "tExtensionPartNo_Outlet";
+            this.tExtensionPartNo_Outlet.Size = new System.Drawing.Size(67, 20);
+            this.tExtensionPartNo_Outlet.TabIndex = 627;
+            this.tExtensionPartNo_Outlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tExtensionPartNo_Inlet
+            // 
+            this.tExtensionPartNo_Inlet.Location = new System.Drawing.Point(362, 464);
+            this.tExtensionPartNo_Inlet.Name = "tExtensionPartNo_Inlet";
+            this.tExtensionPartNo_Inlet.Size = new System.Drawing.Size(64, 20);
+            this.tExtensionPartNo_Inlet.TabIndex = 626;
+            this.tExtensionPartNo_Inlet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Enabled = false;
+            this.textBox27.Location = new System.Drawing.Point(219, 464);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.ReadOnly = true;
+            this.textBox27.Size = new System.Drawing.Size(64, 20);
+            this.textBox27.TabIndex = 629;
+            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.BackColor = System.Drawing.Color.White;
+            this.label104.Location = new System.Drawing.Point(432, 467);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(104, 13);
+            this.label104.TabIndex = 628;
+            this.label104.Text = "PARTNO  Extension";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Enabled = false;
+            this.textBox32.Location = new System.Drawing.Point(146, 464);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.ReadOnly = true;
+            this.textBox32.Size = new System.Drawing.Size(67, 20);
+            this.textBox32.TabIndex = 630;
+            this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox33
+            // 
+            this.textBox33.Enabled = false;
+            this.textBox33.Location = new System.Drawing.Point(76, 464);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.ReadOnly = true;
+            this.textBox33.Size = new System.Drawing.Size(64, 20);
+            this.textBox33.TabIndex = 631;
+            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // HeaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 627);
+            this.ClientSize = new System.Drawing.Size(668, 660);
             this.Controls.Add(this.bRun);
             this.Controls.Add(this.cTileblockManuf);
             this.Controls.Add(this.label88);
@@ -7734,5 +7894,19 @@
         private System.Windows.Forms.TextBox tPartitionPartNo2_64;
         private System.Windows.Forms.TextBox tPartitionPartNo2_63;
         private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox tExtensionPartNo_Outlet;
+        private System.Windows.Forms.TextBox tExtensionPartNo_Inlet;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tFlangePartNo_Outlet;
+        private System.Windows.Forms.TextBox tFlangePartNo_Inlet;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
     }
 }

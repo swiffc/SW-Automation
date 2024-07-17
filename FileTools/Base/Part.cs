@@ -34,7 +34,7 @@ namespace FileTools.Base
                 InitializePart();
             }
         }
-        protected Part(int NoParent) 
+        protected Part(int NoParent)
         {
             // Used to access instance properties
         }
@@ -304,8 +304,20 @@ namespace FileTools.Base
                 partNo = GetPartNoFromDirectory(StaticPartNo, _parentAssembly);
             if (partNo != PartNo)
                 partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, PartNo);
-            if (partNo != PartNo)
-                throw new Exception($"PartNo {PartNo} is already in use");
+
+            int i = 1;
+            string tryPartNo;
+            while (partNo == null)
+            {
+                int index = PartNo.IndexOf('(');
+                if (index > 0)
+                    tryPartNo = PartNo.Substring(0, index - 1);
+
+                i++;
+                tryPartNo = PartNo + $" ({i})";
+
+                partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, tryPartNo);
+            }
         }
 
 

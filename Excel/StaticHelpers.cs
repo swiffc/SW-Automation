@@ -175,21 +175,23 @@ namespace Excel
         {
             foreach (var property in connectionControls.Connection.GetType().GetProperties())
             {
-                if (property.PropertyType == typeof(double))
+                Type connectionControlsType = connectionControls.GetType();
+
+                string propertyName = property.Name + "TextBox";
+                PropertyInfo propertyInfo = connectionControlsType.GetProperty(propertyName);
+
+                if (propertyInfo != null)
                 {
-                    double value = (double)property.GetValue(connectionControls.Connection);
-                    Type connectionControlsType = connectionControls.GetType();
-
-                    string propertyName = property.Name + "TextBox";
-                    PropertyInfo propertyInfo = connectionControlsType.GetProperty(propertyName);
-
-                    if (propertyInfo != null)
+                    TextBox textBox = (TextBox)propertyInfo.GetValue(connectionControls);
+                    double valueDouble;
+                    if (textBox != null && property.PropertyType == typeof(double))
                     {
-                        TextBox textBox = (TextBox)propertyInfo.GetValue(connectionControls);
-                        if (textBox != null)
-                        {
-                            textBox.Text = value == 0 ? "" : value.ToString();
-                        }
+                        valueDouble = (double)property.GetValue(connectionControls.Connection);
+                        textBox.Text = valueDouble == 0 ? "" : valueDouble.ToString();
+                    }
+                    else if (textBox != null && property.PropertyType == typeof(string))
+                    {
+                        textBox.Text = (string)property.GetValue(connectionControls.Connection);
                     }
                 }
             }
@@ -301,7 +303,7 @@ namespace Excel
                 }
             }
         }
-        public static void ConnectionTextBoxDoubleChanged(object sender, EventArgs e)
+        public static void ConnectionTextBoxChanged(object sender, EventArgs e)
         {
             if (sender is TextBox textBox)
             {
@@ -312,15 +314,19 @@ namespace Excel
                     string propertyName = parts[1];
                     if (textBox.Text != "")
                     {
-                        double value = double.TryParse(textBox.Text, out double parsedValue) ? parsedValue : 0;
-
                         var connection = GetConnection(ConnectionID);
                         if (connection != null)
                         {
                             var property = connection.GetType().GetProperty(propertyName);
+                            double valueDouble = double.TryParse(textBox.Text, out double parsedValue) ? parsedValue : 0;
                             if (property != null && property.PropertyType == typeof(double))
                             {
-                                property.SetValue(connection, value);
+                                property.SetValue(connection, valueDouble);
+                                SaveSettings();
+                            }
+                            else if (property != null && property.PropertyType == typeof(string))
+                            {
+                                property.SetValue(connection, textBox.Text);
                                 SaveSettings();
                             }
                         }
@@ -404,7 +410,7 @@ namespace Excel
                                                 string propertyType = parts[0];
                                                 string id = parts[1];
                                                 textBox.Tag = $"{propertyName}:{propertyType}";
-                                                textBox.TextChanged += ConnectionTextBoxDoubleChanged;
+                                                textBox.TextChanged += ConnectionTextBoxChanged;
                                             }
                                             else throw new ArgumentException("Invalid TextBox name format");
                                         }

@@ -100,6 +100,16 @@ namespace FileTools.CommonData
                 get => Default.ExtensionType_Outlet;
                 set => Default.ExtensionType_Outlet = value;
             }
+            public string FlangePartNo
+            {
+                get => Default.FlangePartNo_Outlet;
+                set => Default.FlangePartNo_Outlet = value;
+            }
+            public string ExtensionPartNo
+            {
+                get => Default.ExtensionPartNo_Outlet;
+                set => Default.ExtensionPartNo_Outlet = value;
+            }
         }
     }
 }

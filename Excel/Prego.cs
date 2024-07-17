@@ -343,7 +343,7 @@ namespace Excel
 
             if (_pregoDoc != null)
             {
-                _pregoDoc.Close(false);
+                //_pregoDoc.Close(false);
                 Marshal.ReleaseComObject(_pregoDoc);
                 _pregoDoc = null;
             }
@@ -355,8 +355,8 @@ namespace Excel
             //    _excel = null;
             //}
 
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
         }
 
 
