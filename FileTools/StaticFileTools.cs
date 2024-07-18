@@ -20,6 +20,7 @@ using System.ComponentModel;
 using ModelTools;
 using System.Security.AccessControl;
 using System.Windows.Forms;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace FileTools
 {
@@ -210,7 +211,7 @@ namespace FileTools
             }
             return null;
         }
-        public static string GetPartNoFromDirectory(string staticPartNo, SW_Assembly swAssembly)
+        public static string GetPartNoFromDirectory(string staticPartNo, SW_Assembly swAssembly, bool checkLoaded = false)
         {
             ModelDoc2 modelDoc = swAssembly.AssemblyDoc as ModelDoc2;
             string parentPath = modelDoc.GetPathName();
@@ -271,6 +272,12 @@ namespace FileTools
             string partNo = null;
             bool exitOuterLoop = false;
 
+            if (checkLoaded)
+                unloadedComponentPaths.AddRange(loadedComponentPaths);
+
+            // Remove null or empty strings
+            unloadedComponentPaths.RemoveAll(string.IsNullOrEmpty);
+
             foreach (string unloadedComponentPath in unloadedComponentPaths)
             {
                 ModelDoc2 temp = Open(unloadedComponentPath);
@@ -319,7 +326,14 @@ namespace FileTools
             Component2[] userLocatedComponents = UnfixedComponentsArray(swAssembly.ComponentArray);
 
             foreach (var component in components)
-                PlaceComponent(component, swAssembly);
+            {
+                if (!swAssembly.ProcessedPartNumbers.Contains(component.StaticPartNo))
+                {
+                    PlaceComponent(component, swAssembly);
+                    swAssembly.ProcessedPartNumbers.Add(component.StaticPartNo);
+                }
+            }
+                
 
             swAssembly.ClearComponentArray();
             FixComponentLocations(userLocatedComponents, swAssembly.AssemblyDoc, swAssembly.ComponentArray);
@@ -359,9 +373,10 @@ namespace FileTools
 
             // Search assembly for existing component instances
             List<Component2> componentList;
-            if (component.PartNo != null)
+            if (component.PartNo != null && !sW_Assembly.ProcessedPartNumbers.Contains(component.StaticPartNo))
             {
                 componentList = FindMatchingComponents(component.FilePath, sW_Assembly.ComponentArray);
+                
             }
             else
             {
@@ -380,9 +395,16 @@ namespace FileTools
             {
                 componentList.Add(null);
             }
+            Component2 cmp2;
+            string cmp2Name;
             while (componentList.Count > component.Position.Count)
             {
-                DeleteComponentByName(componentList[componentList.Count - 1].Name2, sW_Assembly.AssemblyDoc);
+                cmp2 = componentList[componentList.Count - 1];
+                cmp2Name = cmp2.Name2;
+
+                Debug.WriteLine($"   Deleted [{cmp2.ReferencedConfiguration}:{cmp2Name.Substring(cmp2Name.LastIndexOf('-') + 1)}] in assembly ({sW_Assembly.Config})");
+                DeleteComponentByName(cmp2Name, sW_Assembly.AssemblyDoc);
+
                 componentList.RemoveAt(componentList.Count - 1);
             }
 
@@ -962,12 +984,26 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         {
             string fileName = Path.GetFileNameWithoutExtension(path);
 
-            // Find the last occurrence of '-' or '_'
+            // Assuming fileName is the input string you're working with
             int lastDash = fileName.LastIndexOf('-');
+            int secondLastDash = lastDash > 0 ? fileName.LastIndexOf('-', lastDash - 1) : -1;
             int lastUnderscore = fileName.LastIndexOf('_');
 
+            // Check if the fileName ends with "HPC"
+            bool endsWithHPC = fileName.EndsWith("HPC");
+
             // Determine which of the two delimiters comes last
-            int lastDelimiter = Math.Max(lastDash, lastUnderscore);
+            int lastDelimiter;
+            if (endsWithHPC && secondLastDash != -1)
+            {
+                // If the file name ends with "HPC", use the second last dash
+                lastDelimiter = secondLastDash;
+            }
+            else
+            {
+                // Otherwise, use the last occurrence of '-' or '_'
+                lastDelimiter = Math.Max(lastDash, lastUnderscore);
+            }
 
             // If a delimiter was found, extract the substring after it; otherwise, use the entire input
             string result = lastDelimiter >= 0 ? fileName.Substring(lastDelimiter + 1) : fileName;

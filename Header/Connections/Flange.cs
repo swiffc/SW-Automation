@@ -1,6 +1,7 @@
 ﻿using FileTools.Base;
 using FileTools.CommonData.Headers.Connections;
 using HDR.Box;
+using HDR.Connections.Derived;
 using ModelTools;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
@@ -11,7 +12,10 @@ namespace HDR.Connections
     internal abstract class Flange : Part
     {
         // Constructor
-        protected Flange(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        protected Flange(SW_Assembly parentMainAssembly) : base(parentMainAssembly) 
+        {
+            var loadPositionData = Position;
+        }
 
 
         // Static methods
@@ -52,26 +56,55 @@ namespace HDR.Connections
         {
             get
             {
-                if (_pos == null)
+                if (_staticPos == null) { _staticPos = new List<PositionData>(); }
+
+                if (_posInlet == null && FLG is InletNozzle)
                 {
-                    double xTranslation = OffsetX;
-                    double yTranslation = CalculateYTranslation(ProjectionY, BundleLocation);
-                    double zTranslation = 0;
-                    double xRotation = top ? 0 : 180;
-
-                    _pos = new List<PositionData>
-                        {
-                            PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, xRotation),
-                        };
-
-                    for (int i = 1; i < Count; i++)
-                    {
-                        xTranslation -= Spacing;
-                        _pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, xRotation));
-                    }
+                    _posInlet = NewPositionData();
+                    _staticPos.AddRange(_posInlet);
                 }
-                return _pos;
+                else if (_posOutlet == null && FLG is OutletNozzle)
+                {
+                    _posOutlet = NewPositionData();
+                    _staticPos.AddRange(_posOutlet);
+                }
+
+                return _staticPos;
             }
+        }
+
+
+        // Public methods
+        public static void ClearPositionData()
+        {
+            _staticPos = null;
+            _posInlet = null;
+            _posOutlet = null;
+        }
+
+
+        // Private methods
+        List<PositionData> NewPositionData()
+        {
+            double xTranslation = OffsetX;
+            double yTranslation = CalculateYTranslation(ProjectionY, BundleLocation);
+            double zTranslation = 0;
+            double xRotation = top ? 0 : 180;
+
+            // Seed
+            var pos = new List<PositionData>
+            {
+                PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, xRotation),
+            };
+
+            // Pattern
+            for (int i = 1; i < Count; i++)
+            {
+                xTranslation -= Spacing;
+                pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, xRotation));
+            }
+
+            return pos;
         }
 
 
@@ -87,5 +120,11 @@ namespace HDR.Connections
         double Spacing => FLG.Spacing;
         bool top => BundleLocation.StartsWith("T");
         bool bottom => BundleLocation.StartsWith("B");
+
+
+        // Backing fields
+        static List<PositionData> _staticPos;
+        static List<PositionData> _posInlet;
+        static List<PositionData> _posOutlet;
     }
 }

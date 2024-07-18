@@ -176,23 +176,34 @@ namespace HDR
         }
         private void ProcessPartStiffLoop(List<string> partStiff, List<double> pTHK_Process, List<IPropertyWrapper> pApp_Process, List<TextBox> pUI_Process, List<double> pTHK_Observed, List<IPropertyWrapper> pApp_Observed, List<TextBox> pUI_Observed, ref bool pClear, List<double> sTHK_Process, List<IPropertyWrapper> sApp_Process, List<TextBox> sUI_Process, List<double> sTHK_Observed, List<IPropertyWrapper> sApp_Observed, List<TextBox> sUI_Observed, ref bool sClear, List<string> partNumberCells_1, List<string> partNumberCells_3, List<string> partNumberCells_5)
         {
-            int maxSupportedLoops = 2;
+            // Flags to prevent multiple assignments
+            bool pFlag = false;
+            bool sFlag = false;
 
-            for (int i = 0; i < (partStiff.Count >= maxSupportedLoops ? maxSupportedLoops : partStiff.Count); i++)
+            // Process first as partition
+            if (partStiff[0].Contains("P") && pTHK_Observed.Count == 0)
             {
-                if (partStiff[i].Contains("P") && pTHK_Observed.Count == 0)
-                {
-                    ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
-                }
-                else if (partStiff[i].Contains("S") && sTHK_Observed.Count == 0)
-                {
-                    ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
-                }
-                else
-                {
-                    partStiff.RemoveAt(i);
-                    i--;
-                }
+                ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                pFlag = true;
+            }
+
+            // Process first as stiffener
+            if (partStiff[0].Contains("S") && sTHK_Observed.Count == 0)
+            {
+                ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                sFlag = true;
+            }
+
+            // Process second as partition
+            if (partStiff.Contains("P") && pTHK_Observed.Count == 0 && !pFlag)
+            {
+                ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+            }
+
+            // Process second as stiffener
+            if (partStiff.Contains("S") && sTHK_Observed.Count == 0 && !sFlag)
+            {
+                ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
             }
         }
         private void ProcessPartStiffNumbers(List<double> thkProcess, List<IPropertyWrapper> appProcess, List<TextBox> uiProcess, List<double> thkObserved, List<IPropertyWrapper> appObserved, List<TextBox> uiObserved, ref bool clearFlag, List<string> partNumberCells0, List<string> partNumberCells1, List<string> partNumberCells2)
@@ -202,32 +213,23 @@ namespace HDR
 
             for (int j = 0; j < 3; j++)
             {
-                appObserved.Add(appProcess[0]);
-                appProcess.RemoveAt(0);
-
-                uiObserved.Add(uiProcess[0]);
-                uiProcess.RemoveAt(0);
-            }
-
-            for (int j = 0; j < 3; j++)
-            {
                 if (thkProcess[j] != 0)
                 {
                     var currentPartNumberCells = partNumberCellsArray[j];
                     string value = CellString(BomInputSheet, currentPartNumberCells[0]);
-                    appObserved[j].SetValue(value);
-                    uiObserved[j].Text = value;
+                    appProcess[j].SetValue(value);
+                    uiProcess[j].Text = value;
                     currentPartNumberCells.RemoveAt(0);
+                    appProcess.Clear();
+                    break;
                 }
                 else
                 {
-                    appObserved[j].SetValue("");
-                    uiObserved[j].Text = "";
+                    appProcess[j].SetValue("");
+                    uiProcess[j].Text = "";
                 }
             }
 
-            appObserved.Clear();
-            uiObserved.Clear();
         }
 
 
@@ -239,10 +241,6 @@ namespace HDR
                 Header61.PartitionTHK,
                 Header63.PartitionTHK,
                 Header65.PartitionTHK,
-
-                //Header61.PartitionTHK2,
-                //Header63.PartitionTHK2,
-                //Header65.PartitionTHK2,
             };
         }
         private List<double> InitializePTHKProcess_246()
@@ -252,10 +250,6 @@ namespace HDR
                 Header62.PartitionTHK,
                 Header64.PartitionTHK,
                 Header66.PartitionTHK,
-
-                Header62.PartitionTHK2,
-                Header64.PartitionTHK2,
-                Header66.PartitionTHK2,
             };
         }
         private List<IPropertyWrapper> InitializePAppProcess_135()
@@ -267,9 +261,6 @@ namespace HDR
                 new { Getter = new Func<string>(() => Header61.PartitionPartNo), Setter = new Action<string>(value => Header61.PartitionPartNo = value) },
                 new { Getter = new Func<string>(() => Header63.PartitionPartNo), Setter = new Action<string>(value => Header63.PartitionPartNo = value) },
                 new { Getter = new Func<string>(() => Header65.PartitionPartNo), Setter = new Action<string>(value => Header65.PartitionPartNo = value) },
-                new { Getter = new Func<string>(() => Header61.PartitionPartNo2), Setter = new Action<string>(value => Header61.PartitionPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header63.PartitionPartNo2), Setter = new Action<string>(value => Header63.PartitionPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header65.PartitionPartNo2), Setter = new Action<string>(value => Header65.PartitionPartNo2 = value) },
             };
 
             foreach (var wrapper in tempWrappers)
@@ -288,10 +279,6 @@ namespace HDR
                 new { Getter = new Func<string>(() => Header62.PartitionPartNo), Setter = new Action<string>(value => Header62.PartitionPartNo = value) },
                 new { Getter = new Func<string>(() => Header64.PartitionPartNo), Setter = new Action<string>(value => Header64.PartitionPartNo = value) },
                 new { Getter = new Func<string>(() => Header66.PartitionPartNo), Setter = new Action<string>(value => Header66.PartitionPartNo = value) },
-
-                new { Getter = new Func<string>(() => Header62.PartitionPartNo2), Setter = new Action<string>(value => Header62.PartitionPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header64.PartitionPartNo2), Setter = new Action<string>(value => Header64.PartitionPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header66.PartitionPartNo2), Setter = new Action<string>(value => Header66.PartitionPartNo2 = value) },
             };
 
             foreach (var wrapper in tempWrappers)
@@ -308,10 +295,6 @@ namespace HDR
                 tPartitionPartNo_61,
                 tPartitionPartNo_63,
                 tPartitionPartNo_65,
-
-                tPartitionPartNo2_61,
-                tPartitionPartNo2_63,
-                tPartitionPartNo2_65,
             };
         }
         private List<TextBox> InitializePUIProcess_246()
@@ -321,10 +304,6 @@ namespace HDR
                 tPartitionPartNo_62,
                 tPartitionPartNo_64,
                 tPartitionPartNo_66,
-
-                tPartitionPartNo2_62,
-                tPartitionPartNo2_64,
-                tPartitionPartNo2_66,
             };
         }
 
@@ -337,10 +316,6 @@ namespace HDR
                 Header61.StiffenerTHK,
                 Header63.StiffenerTHK,
                 Header65.StiffenerTHK,
-
-                Header61.StiffenerTHK2,
-                Header63.StiffenerTHK2,
-                Header65.StiffenerTHK2,
             };
         }
         private List<double> InitializeSTHKProcess_246()
@@ -350,10 +325,6 @@ namespace HDR
                 Header62.StiffenerTHK,
                 Header64.StiffenerTHK,
                 Header66.StiffenerTHK,
-
-                Header62.StiffenerTHK2,
-                Header64.StiffenerTHK2,
-                Header66.StiffenerTHK2,
             };
         }
         private List<IPropertyWrapper> InitializeSAppProcess_135()
@@ -365,10 +336,6 @@ namespace HDR
                 new { Getter = new Func<string>(() => Header61.StiffenerPartNo), Setter = new Action<string>(value => Header61.StiffenerPartNo = value) },
                 new { Getter = new Func<string>(() => Header63.StiffenerPartNo), Setter = new Action<string>(value => Header63.StiffenerPartNo = value) },
                 new { Getter = new Func<string>(() => Header65.StiffenerPartNo), Setter = new Action<string>(value => Header65.StiffenerPartNo = value) },
-
-                new { Getter = new Func<string>(() => Header61.StiffenerPartNo2), Setter = new Action<string>(value => Header61.StiffenerPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header63.StiffenerPartNo2), Setter = new Action<string>(value => Header63.StiffenerPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header65.StiffenerPartNo2), Setter = new Action<string>(value => Header65.StiffenerPartNo2 = value) },
             };
 
             foreach (var wrapper in tempWrappers)
@@ -387,10 +354,6 @@ namespace HDR
                 new { Getter = new Func<string>(() => Header62.StiffenerPartNo), Setter = new Action<string>(value => Header62.StiffenerPartNo = value) },
                 new { Getter = new Func<string>(() => Header64.StiffenerPartNo), Setter = new Action<string>(value => Header64.StiffenerPartNo = value) },
                 new { Getter = new Func<string>(() => Header66.StiffenerPartNo), Setter = new Action<string>(value => Header66.StiffenerPartNo = value) },
-
-                new { Getter = new Func<string>(() => Header62.StiffenerPartNo2), Setter = new Action<string>(value => Header62.StiffenerPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header64.StiffenerPartNo2), Setter = new Action<string>(value => Header64.StiffenerPartNo2 = value) },
-                new { Getter = new Func<string>(() => Header66.StiffenerPartNo2), Setter = new Action<string>(value => Header66.StiffenerPartNo2 = value) },
             };
 
             foreach (var wrapper in tempWrappers)
@@ -407,10 +370,6 @@ namespace HDR
                 tStiffenerPartNo_61,
                 tStiffenerPartNo_63,
                 tStiffenerPartNo_65,
-
-                tStiffenerPartNo2_61,
-                tStiffenerPartNo2_63,
-                tStiffenerPartNo2_65,
             };
         }
         private List<TextBox> InitializeSUIProcess_246()
@@ -420,10 +379,6 @@ namespace HDR
                 tStiffenerPartNo_62,
                 tStiffenerPartNo_64,
                 tStiffenerPartNo_66,
-
-                tStiffenerPartNo2_62,
-                tStiffenerPartNo2_64,
-                tStiffenerPartNo2_66,
             };
         }
 

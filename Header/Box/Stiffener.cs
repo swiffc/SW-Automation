@@ -16,21 +16,6 @@ namespace HDR.Box
         static public double Length => TubeSheet.Length - EndPlate.THK * 2 - Header.StiffenerOffset * 2;
 
 
-        // Private properties
-        private double YTranslation
-        {
-            get
-            {
-                double value = Header.StiffenerDistanceBelow;
-                for (int i = 0; i < LocationBelowRowNumber; i++)
-                {
-                    value += TubeSheet.HoleLocations[i];
-                }
-                return value;
-            }
-        }
-
-
         // Constructor
         public Stiffener(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
@@ -50,6 +35,24 @@ namespace HDR.Box
         }
 
 
+        // Protected methods
+        protected double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
+        {
+            double value = distanceBelow;
+            for (int i = 0; i < locationBelowRowNumber; i++)
+            {
+                value += TubeSheet.HoleLocations[i];
+            }
+            return value;
+        }
+
+
+        // Protected properties
+        protected PositionData Position1 => PositionData.Create(tY: -GetYTranslation(
+            Header.StiffenerDistanceBelow,
+            LocationBelowRowNumber));
+
+
         // Property overrides
         public override string PartNo => Header.StiffenerPartNo;
         public override bool Enabled => THK != 0;
@@ -62,13 +65,9 @@ namespace HDR.Box
             {
                 if (_pos == null)
                 {
-                    double xTranslation = 0;
-                    double yTranslation = -YTranslation;
-                    double zTranslation = 0;
-
                     return new List<PositionData>
                     {
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation),
+                        Position1
                     };
                 }
                 return _pos;

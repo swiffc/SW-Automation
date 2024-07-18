@@ -48,22 +48,6 @@ namespace HDR
             cTileblockManuf.Text = TitleblockManuf;
             cHeadersOutsideFrames.Checked = HeadersOutsideFrames;
 
-
-            // PartNo's
-            tPartitionPartNo2_61.Enabled = Header61.IsRequired;
-            tPartitionPartNo2_62.Enabled = Header62.IsRequired;
-            tPartitionPartNo2_63.Enabled = Header63.IsRequired;
-            tPartitionPartNo2_64.Enabled = Header64.IsRequired;
-            tPartitionPartNo2_65.Enabled = Header65.IsRequired;
-            tPartitionPartNo2_66.Enabled = Header66.IsRequired;
-
-            tStiffenerPartNo2_61.Enabled = Header61.IsRequired;
-            tStiffenerPartNo2_62.Enabled = Header62.IsRequired;
-            tStiffenerPartNo2_63.Enabled = Header63.IsRequired;
-            tStiffenerPartNo2_64.Enabled = Header64.IsRequired;
-            tStiffenerPartNo2_65.Enabled = Header65.IsRequired;
-            tStiffenerPartNo2_66.Enabled = Header66.IsRequired;
-
         }
         private void HeaderUI_Load(object sender, EventArgs e)
         {
@@ -74,7 +58,6 @@ namespace HDR
         }
         private void ImportHeaderData_FromPrego_Manual()
         {
-            // Get bust boolean by cell
             LoadPregoBool(cIsBusted61, InputsCalcsSheet, "AAI45");
             LoadPregoBool(cIsBusted63, InputsCalcsSheet, "AAJ45");
             LoadPregoBool(cIsBusted65, InputsCalcsSheet, "AAK45");
@@ -92,6 +75,11 @@ namespace HDR
 
             ImportPartStiffPartNumbers();
             ImportConnectionPartNumbers();
+
+            tFlangePartNo_Inlet.Text = tFlangePartNo_Inlet.Text == "0" ? "" : tFlangePartNo_Inlet.Text;
+            tFlangePartNo_Outlet.Text = tFlangePartNo_Outlet.Text == "0" ? "" : tFlangePartNo_Outlet.Text;
+            tExtensionPartNo_Inlet.Text = tExtensionPartNo_Inlet.Text == "0" ? "" : tExtensionPartNo_Inlet.Text;
+            tExtensionPartNo_Outlet.Text = tExtensionPartNo_Outlet.Text == "0" ? "" : tExtensionPartNo_Outlet.Text;
         }
         private void ImportConnectionPartNumbers()
         {

@@ -102,6 +102,12 @@ namespace FileTools.Base
         string PartitionPartNo2 { get; set; }
         double StiffenerTHK2 { get; set; }
         string StiffenerPartNo2 { get; set; }
+
+        double PartitionBelowRow2 { get; set; }
+        double PartitionDistanceBelow2 { get; set; }
+
+        double StiffenerBelowRow2 { get; set; }
+        double StiffenerDistanceBelow2 { get; set; }
     }
 
 

@@ -1,6 +1,8 @@
 ﻿using FileTools.Base;
 using FileTools.CommonData.Headers.Connections;
 using HDR.Box;
+using HDR.Connections.Derived.Derived;
+using Microsoft.Office.Interop.Excel;
 using ModelTools;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,10 @@ namespace HDR.Connections
 
 
         // Constructor
-        protected Extension(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        protected Extension(SW_Assembly parentMainAssembly) : base(parentMainAssembly)
+        {
+            var loadPositionData = Position;
+        }
 
 
         // Property overrides
@@ -25,28 +30,56 @@ namespace HDR.Connections
         {
             get
             {
-                if (_pos == null)
+                if (_staticPos == null) { _staticPos = new List<PositionData>(); }
+
+                if (_posInlet == null && Ext is InletNozzle)
                 {
-                    bool bottom = Location.StartsWith("B");
-
-                    double xTranslation = OffsetX;
-                    double yTranslation = (TopBtmPlate.THK + Length / 2 + WeldGap) * (bottom ? -1 : 1) - (bottom ? Header.BoxHeight : 0);
-                    double zTranslation = 0;
-                    double xRotation = bottom ? 180 : 0;
-
-                    _pos = new List<PositionData>
-                    {
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: xRotation),
-                    };
-
-                    for (int i = 1; i < Count; i++)
-                    {
-                        xTranslation -= Spacing;
-                        _pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: xRotation));
-                    }
+                    _posInlet = NewPositionData();
+                    _staticPos.AddRange(_posInlet);
                 }
-                return _pos;
+                else if (_posOutlet == null && Ext is OutletNozzle)
+                {
+                    _posOutlet = NewPositionData();
+                    _staticPos.AddRange(_posOutlet);
+                }
+
+                return _staticPos;
             }
+        }
+
+
+        // Public methods
+        public static void ClearPositionData()
+        {
+            _staticPos = null;
+            _posInlet = null;
+            _posOutlet = null;
+        }
+
+
+        // Private methods
+        List<PositionData> NewPositionData()
+        {
+
+            bool bottom = Location.StartsWith("B");
+
+            double xTranslation = OffsetX;
+            double yTranslation = (TopBtmPlate.THK + Length / 2 + WeldGap) * (bottom ? -1 : 1) - (bottom ? Header.BoxHeight : 0);
+            double zTranslation = 0;
+            double xRotation = bottom ? 180 : 0;
+
+            var pos = new List<PositionData>
+            {
+                PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: xRotation),
+            };
+
+            for (int i = 1; i < Count; i++)
+            {
+                xTranslation -= Spacing;
+                pos.Add(PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation, rX: xRotation));
+            }
+
+            return pos;
         }
 
 
@@ -79,5 +112,11 @@ namespace HDR.Connections
         protected double OffsetX => Ext.OffsetX;
         protected double Count => Ext.Count;
         protected double Spacing => Ext.Spacing;
+
+
+        // Backing fields
+        static List<PositionData> _staticPos;
+        static List<PositionData> _posInlet;
+        static List<PositionData> _posOutlet;
     }
 }

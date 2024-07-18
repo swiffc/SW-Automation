@@ -16,21 +16,6 @@ namespace HDR.Box
         static public double Length => TubeSheet.Length - EndPlate.THK * 2;
 
 
-        // Private properties
-        private double YTranslation
-        {
-            get
-            {
-                double value = Header.PartitionDistanceBelow;
-                for (int i = 0; i < LocationBelowRowNumber; i++)
-                {
-                    value += TubeSheet.HoleLocations[i];
-                }
-                return value;
-            }
-        }
-
-
         // Constructor
         public Partition(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
@@ -42,6 +27,24 @@ namespace HDR.Box
             EditDimension("Width", "sk:Plate", Width);
             EditDimension("THK", "Plate", THK);
         }
+
+
+        // Protected methods
+        protected double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
+        {
+            double value = distanceBelow;
+            for (int i = 0; i < locationBelowRowNumber; i++)
+            {
+                value += TubeSheet.HoleLocations[i];
+            }
+            return value;
+        }
+
+
+        // Protected properties
+        protected PositionData Position1 => PositionData.Create(tY: -GetYTranslation(
+            Header.PartitionDistanceBelow, 
+            LocationBelowRowNumber));
 
 
         // Property overrides
@@ -56,13 +59,9 @@ namespace HDR.Box
             {
                 if (_pos == null)
                 {
-                    double xTranslation = 0;
-                    double yTranslation = -YTranslation;
-                    double zTranslation = 0;
-
-                    return new List<PositionData>
+                    _pos =  new List<PositionData>
                     {
-                        PositionData.Create(tX: xTranslation, tY: yTranslation, tZ: zTranslation),
+                        Position1
                     };
                 }
                 return _pos;
@@ -71,9 +70,9 @@ namespace HDR.Box
 
 
         // Wrapper properties
-        static public double THK => Header.PartitionTHK;
-        static public double Width => Header.PartitionWidth > Header.BoxWidth ? Header.BoxWidth : Header.PartitionWidth;
-        static public double LocationBelowRowNumber
+        static protected double THK => Header.PartitionTHK;
+        static protected double Width => Header.PartitionWidth > Header.BoxWidth ? Header.BoxWidth : Header.PartitionWidth;
+        static private double LocationBelowRowNumber
         {
             get
             {

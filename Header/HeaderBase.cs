@@ -6,6 +6,8 @@ using static FileTools.CommonData.CommonData;
 using static Excel.Prego;
 using HDR.Box;
 using HDR.Box.Derived;
+using HDR.Connections;
+
 namespace HDR
 {
     internal class HeaderBase : MainAssembly
@@ -45,7 +47,10 @@ namespace HDR
         public HeaderBase(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription
             //, typeof(EndPlate2)
             )
-        { }
+        {
+            Flange.ClearPositionData();
+            Extension.ClearPositionData();
+        }
 
 
         // Debugging

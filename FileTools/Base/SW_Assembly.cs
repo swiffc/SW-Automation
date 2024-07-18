@@ -170,6 +170,7 @@ namespace FileTools.Base
                 return (AssemblyDoc as ModelDoc2).ConfigurationManager.ActiveConfiguration.Name;
             }
         }
+        public HashSet<string> ProcessedPartNumbers = new HashSet<string>();
 
 
         // Static properties

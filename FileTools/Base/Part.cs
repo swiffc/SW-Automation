@@ -301,7 +301,7 @@ namespace FileTools.Base
         {
             string partNo = GetPartNoFromAssembly(StaticPartNo, _parentAssembly, PartNo);
             if (partNo != PartNo)
-                partNo = GetPartNoFromDirectory(StaticPartNo, _parentAssembly);
+                partNo = GetPartNoFromDirectory(StaticPartNo, _parentAssembly, true);
             if (partNo != PartNo)
                 partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, PartNo);
 

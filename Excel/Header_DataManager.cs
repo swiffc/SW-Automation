@@ -102,6 +102,10 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) PartitionPartNo { get; set; }
             public (string[] Cells, Worksheet Sheet) FootPRLPartNo { get; set; }
             public (string[] Cells, Worksheet Sheet) FootPlatePartNo { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionBelowRow2 { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionDistanceBelow2 { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerBelowRow2 { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerDistanceBelow2 { get; set; }
         }
 
 
@@ -195,6 +199,10 @@ namespace Excel
             public TextBox PartitionPartNoTextBox { get; set; }
             public TextBox FootPRLPartNoTextBox { get; set; }
             public TextBox FootPlatePartNoTextBox { get; set; }
+            public TextBox PartitionBelowRow2TextBox { get; set; }
+            public TextBox PartitionDistanceBelow2TextBox { get; set; }
+            public TextBox StiffenerBelowRow2TextBox { get; set; }
+            public TextBox StiffenerDistanceBelow2TextBox { get; set; }
         }
 
 
@@ -293,6 +301,10 @@ namespace Excel
                     PartitionPartNoTextBox = GetControl<TextBox>(formInstance, "tPartitionPartNo_", i),
                     FootPRLPartNoTextBox = GetControl<TextBox>(formInstance, "tFootPRLPartNo_", i),
                     FootPlatePartNoTextBox = GetControl<TextBox>(formInstance, "tFootPlatePartNo_", i),
+                    PartitionBelowRow2TextBox = GetControl<TextBox>(formInstance, "tPartitionBelowRow2_", i),
+                    PartitionDistanceBelow2TextBox = GetControl<TextBox>(formInstance, "tPartitionDistanceBelow2_", i),
+                    StiffenerBelowRow2TextBox = GetControl<TextBox>(formInstance, "tStiffenerBelowRow2_", i),
+                    StiffenerDistanceBelow2TextBox = GetControl<TextBox>(formInstance, "tStiffenerDistanceBelow2_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -392,6 +404,10 @@ namespace Excel
                         EndPlatePartNo2 = (new string[] { "JF16" }, BomInputSheet),
                         FootPRLPartNo = (new string[]   { "JF94" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF96" }, BomInputSheet),
+                        PartitionBelowRow2 = (new string[]      { "V652" }, InventorSheet),
+                        PartitionDistanceBelow2 = (new string[] { "V658" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[]      { "V503" }, InventorSheet),
+                        StiffenerDistanceBelow2 = (new string[] { "V504" }, InventorSheet),
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -478,6 +494,10 @@ namespace Excel
                         EndPlatePartNo2 = (new string[] { "JF274" }, BomInputSheet),
                         FootPRLPartNo = (new string[]   { "JF352" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF354" }, BomInputSheet),
+                        PartitionBelowRow2 = (new string[]      { "W652" }, InventorSheet),
+                        PartitionDistanceBelow2 = (new string[] { "W658" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[]      { "W503" }, InventorSheet),
+                        StiffenerDistanceBelow2 = (new string[] { "W504" }, InventorSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -564,6 +584,10 @@ namespace Excel
                         EndPlatePartNo2 = (new string[] { "JF532" }, BomInputSheet),
                         FootPRLPartNo = (new string[]   { "JF610" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF612" }, BomInputSheet),
+                        PartitionBelowRow2 = (new string[]      { "X652" }, InventorSheet),
+                        PartitionDistanceBelow2 = (new string[] { "X658" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[]      { "X503" }, InventorSheet),
+                        StiffenerDistanceBelow2 = (new string[] { "X504" }, InventorSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -650,6 +674,10 @@ namespace Excel
                         EndPlatePartNo2 = (new string[] { "JF790" }, BomInputSheet),
                         FootPRLPartNo = (new string[]   { "JF868" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF870" }, BomInputSheet),
+                        PartitionBelowRow2 = (new string[]      { "Y652" }, InventorSheet),
+                        PartitionDistanceBelow2 = (new string[] { "Y658" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[]      { "Y503" }, InventorSheet),
+                        StiffenerDistanceBelow2 = (new string[] { "Y504" }, InventorSheet),
                     },
 
                     ["64"] = new Prego_DTO
@@ -737,6 +765,10 @@ namespace Excel
                         EndPlatePartNo2 = (new string[] { "JF1048" }, BomInputSheet),
                         FootPRLPartNo = (new string[]   { "JF1126" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF1128" }, BomInputSheet),
+                        PartitionBelowRow2 = (new string[]      { "Z652" }, InventorSheet),
+                        PartitionDistanceBelow2 = (new string[] { "Z658" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[]      { "Z503" }, InventorSheet),
+                        StiffenerDistanceBelow2 = (new string[] { "Z504" }, InventorSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -823,6 +855,10 @@ namespace Excel
                         EndPlatePartNo2 = (new string[] { "JF1306" }, BomInputSheet),
                         FootPRLPartNo = (new string[]   { "JF1384" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF1386" }, BomInputSheet),
+                        PartitionBelowRow2 = (new string[]      { "AA652" }, InventorSheet),
+                        PartitionDistanceBelow2 = (new string[] { "AA658" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[]      { "AA503" }, InventorSheet),
+                        StiffenerDistanceBelow2 = (new string[] { "AA504" }, InventorSheet),
                     }
                 };
             }

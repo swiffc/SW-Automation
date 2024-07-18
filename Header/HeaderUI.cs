@@ -39,6 +39,5 @@ namespace HDR
             Connection_TextChanged(this, "Outlet");
         }
 
-
     }
 }

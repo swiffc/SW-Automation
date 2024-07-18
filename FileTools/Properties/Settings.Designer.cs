@@ -8614,5 +8614,293 @@ namespace FileTools.Properties {
                 this["ExtensionPartNo_Outlet"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow2_61 {
+            get {
+                return ((double)(this["PartitionBelowRow2_61"]));
+            }
+            set {
+                this["PartitionBelowRow2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow2_62 {
+            get {
+                return ((double)(this["PartitionBelowRow2_62"]));
+            }
+            set {
+                this["PartitionBelowRow2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow2_63 {
+            get {
+                return ((double)(this["PartitionBelowRow2_63"]));
+            }
+            set {
+                this["PartitionBelowRow2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow2_64 {
+            get {
+                return ((double)(this["PartitionBelowRow2_64"]));
+            }
+            set {
+                this["PartitionBelowRow2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow2_65 {
+            get {
+                return ((double)(this["PartitionBelowRow2_65"]));
+            }
+            set {
+                this["PartitionBelowRow2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionBelowRow2_66 {
+            get {
+                return ((double)(this["PartitionBelowRow2_66"]));
+            }
+            set {
+                this["PartitionBelowRow2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow2_61 {
+            get {
+                return ((double)(this["PartitionDistanceBelow2_61"]));
+            }
+            set {
+                this["PartitionDistanceBelow2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow2_62 {
+            get {
+                return ((double)(this["PartitionDistanceBelow2_62"]));
+            }
+            set {
+                this["PartitionDistanceBelow2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow2_63 {
+            get {
+                return ((double)(this["PartitionDistanceBelow2_63"]));
+            }
+            set {
+                this["PartitionDistanceBelow2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow2_64 {
+            get {
+                return ((double)(this["PartitionDistanceBelow2_64"]));
+            }
+            set {
+                this["PartitionDistanceBelow2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow2_65 {
+            get {
+                return ((double)(this["PartitionDistanceBelow2_65"]));
+            }
+            set {
+                this["PartitionDistanceBelow2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PartitionDistanceBelow2_66 {
+            get {
+                return ((double)(this["PartitionDistanceBelow2_66"]));
+            }
+            set {
+                this["PartitionDistanceBelow2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow2_61 {
+            get {
+                return ((double)(this["StiffenerBelowRow2_61"]));
+            }
+            set {
+                this["StiffenerBelowRow2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow2_62 {
+            get {
+                return ((double)(this["StiffenerBelowRow2_62"]));
+            }
+            set {
+                this["StiffenerBelowRow2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow2_63 {
+            get {
+                return ((double)(this["StiffenerBelowRow2_63"]));
+            }
+            set {
+                this["StiffenerBelowRow2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow2_64 {
+            get {
+                return ((double)(this["StiffenerBelowRow2_64"]));
+            }
+            set {
+                this["StiffenerBelowRow2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow2_65 {
+            get {
+                return ((double)(this["StiffenerBelowRow2_65"]));
+            }
+            set {
+                this["StiffenerBelowRow2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerBelowRow2_66 {
+            get {
+                return ((double)(this["StiffenerBelowRow2_66"]));
+            }
+            set {
+                this["StiffenerBelowRow2_66"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow2_61 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow2_61"]));
+            }
+            set {
+                this["StiffenerDistanceBelow2_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow2_62 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow2_62"]));
+            }
+            set {
+                this["StiffenerDistanceBelow2_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow2_63 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow2_63"]));
+            }
+            set {
+                this["StiffenerDistanceBelow2_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow2_64 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow2_64"]));
+            }
+            set {
+                this["StiffenerDistanceBelow2_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow2_65 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow2_65"]));
+            }
+            set {
+                this["StiffenerDistanceBelow2_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double StiffenerDistanceBelow2_66 {
+            get {
+                return ((double)(this["StiffenerDistanceBelow2_66"]));
+            }
+            set {
+                this["StiffenerDistanceBelow2_66"] = value;
+            }
+        }
     }
 }
