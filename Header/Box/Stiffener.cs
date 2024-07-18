@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static HDR.HeaderBase;
 using static FileTools.CommonData.CommonData;
+using HDR.Box.Derived;
 
 namespace HDR.Box
 {
@@ -17,7 +18,10 @@ namespace HDR.Box
 
 
         // Constructor
-        public Stiffener(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        public Stiffener(SW_Assembly parentMainAssembly) : base(parentMainAssembly) 
+        {
+            var loadPos = Position;
+        }
 
 
         // Protected overrides
@@ -35,8 +39,18 @@ namespace HDR.Box
         }
 
 
+        // Public methods
+        public static void ClearPositionData()
+        {
+            _staticPos = null;
+            _pos1 = null;
+            _pos2 = null;
+            _pos3 = null;
+        }
+
+
         // Protected methods
-        protected double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
+        protected static double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
         {
             double value = distanceBelow;
             for (int i = 0; i < locationBelowRowNumber; i++)
@@ -63,14 +77,39 @@ namespace HDR.Box
         {
             get
             {
-                if (_pos == null)
+                if (_staticPos == null) { _staticPos = new List<PositionData>(); }
+
+                // 1
+                if (_pos1 == null)
                 {
-                    return new List<PositionData>
+                    _pos1 = new List<PositionData>
                     {
                         Position1
                     };
+                    _staticPos.AddRange(_pos1);
                 }
-                return _pos;
+
+                // 2
+                if (_pos2 == null && Stiffener2.IsRequired)
+                {
+                    _pos2 = new List<PositionData>
+                    {
+                        Stiffener2.Position2
+                    };
+                    _staticPos.AddRange(_pos2);
+                }
+
+                // 3
+                if (_pos3 == null && Stiffener3.IsRequired)
+                {
+                    _pos3 = new List<PositionData>
+                    {
+                        Stiffener3.Position3
+                    };
+                    _staticPos.AddRange(_pos3);
+                }
+
+                return _staticPos;
             }
         }
 
@@ -102,5 +141,12 @@ namespace HDR.Box
                 }
             }
         }
+
+
+        // Backing fields
+        static List<PositionData> _staticPos;
+        static List<PositionData> _pos1;
+        static List<PositionData> _pos2;
+        static List<PositionData> _pos3;
     }
 }

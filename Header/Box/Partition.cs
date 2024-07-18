@@ -1,4 +1,5 @@
 ﻿using FileTools.Base;
+using HDR.Box.Derived;
 using ModelTools;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,10 @@ namespace HDR.Box
 
 
         // Constructor
-        public Partition(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
+        public Partition(SW_Assembly parentMainAssembly) : base(parentMainAssembly) 
+        {
+            var loadPos = Position;
+        }
 
 
         // Protected overrides
@@ -30,7 +34,7 @@ namespace HDR.Box
 
 
         // Protected methods
-        protected double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
+        protected static double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
         {
             double value = distanceBelow;
             for (int i = 0; i < locationBelowRowNumber; i++)
@@ -38,6 +42,16 @@ namespace HDR.Box
                 value += TubeSheet.HoleLocations[i];
             }
             return value;
+        }
+
+
+        // Public methods
+        public static void ClearPositionData()
+        {
+            _staticPos = null;
+            _pos1 = null;
+            _pos2 = null;
+            _pos3 = null;
         }
 
 
@@ -57,14 +71,39 @@ namespace HDR.Box
         {
             get
             {
-                if (_pos == null)
+                if (_staticPos == null) { _staticPos = new List<PositionData>(); }
+
+                // 1
+                if (_pos1 == null)
                 {
-                    _pos =  new List<PositionData>
+                    _pos1 = new List<PositionData>
                     {
                         Position1
                     };
+                    _staticPos.AddRange(_pos1);
                 }
-                return _pos;
+
+                // 2
+                if (_pos2 == null && Partition2.IsRequired)
+                {
+                    _pos2 = new List<PositionData>
+                    {
+                        Partition2.Position2
+                    };
+                    _staticPos.AddRange(_pos2);
+                }
+
+                // 3
+                if (_pos3 == null && Partition3.IsRequired)
+                {
+                    _pos3 = new List<PositionData>
+                    {
+                        Partition3.Position3
+                    };
+                    _staticPos.AddRange(_pos3);
+                }
+
+                return _staticPos;
             }
         }
 
@@ -96,5 +135,12 @@ namespace HDR.Box
                 }
             }
         }
+
+
+        // Backing fields
+        static List<PositionData> _staticPos;
+        static List<PositionData> _pos1;
+        static List<PositionData> _pos2;
+        static List<PositionData> _pos3;
     }
 }

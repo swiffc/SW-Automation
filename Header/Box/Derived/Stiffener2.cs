@@ -13,36 +13,21 @@ namespace HDR.Box.Derived
 {
     internal class Stiffener2 : Stiffener
     {
+        // Static properties
+        static public bool IsRequired =>
+            THK != 0 &&
+            Header.StiffenerBelowRow2 != 0 &&
+            Header.StiffenerDistanceBelow2 != 0;
+
+
         // Constructor
         public Stiffener2(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
 
         // Protected properties
-        protected PositionData Position2 => PositionData.Create(tY: -GetYTranslation(
+        public static PositionData Position2 => PositionData.Create(tY: -GetYTranslation(
             Header.StiffenerDistanceBelow2,
             LocationBelowRowNumber2));
-
-
-        // Property overrides
-        public override bool Enabled =>
-            THK != 0 &&
-            Header.StiffenerBelowRow2 != 0 &&
-            Header.StiffenerDistanceBelow2 != 0;
-        public override List<PositionData> Position
-        {
-            get
-            {
-                if (_pos == null)
-                {
-                    _pos = new List<PositionData>
-                    {
-                        Position1,
-                        Position2
-                    };
-                }
-                return _pos;
-            }
-        }
 
 
         // Private properties

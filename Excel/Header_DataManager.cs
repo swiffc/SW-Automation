@@ -106,6 +106,10 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) PartitionDistanceBelow2 { get; set; }
             public (string[] Cells, Worksheet Sheet) StiffenerBelowRow2 { get; set; }
             public (string[] Cells, Worksheet Sheet) StiffenerDistanceBelow2 { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionBelowRow3 { get; set; }
+            public (string[] Cells, Worksheet Sheet) PartitionDistanceBelow3 { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerBelowRow3 { get; set; }
+            public (string[] Cells, Worksheet Sheet) StiffenerDistanceBelow3 { get; set; }
         }
 
 
@@ -203,6 +207,10 @@ namespace Excel
             public TextBox PartitionDistanceBelow2TextBox { get; set; }
             public TextBox StiffenerBelowRow2TextBox { get; set; }
             public TextBox StiffenerDistanceBelow2TextBox { get; set; }
+            public TextBox PartitionBelowRow3TextBox { get; set; }
+            public TextBox PartitionDistanceBelow3TextBox { get; set; }
+            public TextBox StiffenerBelowRow3TextBox { get; set; }
+            public TextBox StiffenerDistanceBelow3TextBox { get; set; }
         }
 
 
@@ -305,6 +313,10 @@ namespace Excel
                     PartitionDistanceBelow2TextBox = GetControl<TextBox>(formInstance, "tPartitionDistanceBelow2_", i),
                     StiffenerBelowRow2TextBox = GetControl<TextBox>(formInstance, "tStiffenerBelowRow2_", i),
                     StiffenerDistanceBelow2TextBox = GetControl<TextBox>(formInstance, "tStiffenerDistanceBelow2_", i),
+                    PartitionBelowRow3TextBox = GetControl<TextBox>(formInstance, "tPartitionBelowRow3_", i),
+                    PartitionDistanceBelow3TextBox = GetControl<TextBox>(formInstance, "tPartitionDistanceBelow3_", i),
+                    StiffenerBelowRow3TextBox = GetControl<TextBox>(formInstance, "tStiffenerBelowRow3_", i),
+                    StiffenerDistanceBelow3TextBox = GetControl<TextBox>(formInstance, "tStiffenerDistanceBelow3_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -370,8 +382,6 @@ namespace Excel
                         StiffenerTHK = (new string[] { "V491" }, InventorSheet),
                         StiffenerWidth = (new string[] { "V492" }, InventorSheet),
                         StiffenerOffset = (new string[] { "V490" }, InventorSheet),
-                        StiffenerBelowRow = (new string[] { "V488" }, InventorSheet),
-                        StiffenerDistanceBelow = (new string[] { "V489" }, InventorSheet),
                         StiffenerWindowWidth = (new string[] { "V493" }, InventorSheet),
                         StiffenerWindowLength = (new string[] { "V494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "V495" }, InventorSheet),
@@ -379,8 +389,6 @@ namespace Excel
                         StiffenerWindowOffset = (new string[] { "V497" }, InventorSheet),
                         PartitionTHK = (new string[] { "V645" }, InventorSheet),
                         PartitionWidth = (new string[] { "V646" }, InventorSheet),
-                        PartitionBelowRow = (new string[] { "V641" }, InventorSheet),
-                        PartitionDistanceBelow = (new string[] { "V647" }, InventorSheet),
                         FlangeTopCount = (new string[] { "AMZ17" }, InputsCalcsSheet),
                         FlangeTopOD = (new string[] { "CY40" }, InputsCalcsSheet),
                         FlangeTopID = (new string[] { "ASD25" }, InputsCalcsSheet),
@@ -399,15 +407,27 @@ namespace Excel
                         FootHeight = (new string[] { "ATK121" }, InputsCalcsSheet),
                         TubesheetPartNo = (new string[] { "JF6" }, BomInputSheet),
                         PlugsheetPartNo = (new string[] { "JF8" }, BomInputSheet),
-                        TopBtmPartNo = (new string[]    { "JF12" }, BomInputSheet),
-                        EndPlatePartNo = (new string[]  { "JF14" }, BomInputSheet),
+                        TopBtmPartNo = (new string[] { "JF12" }, BomInputSheet),
+                        EndPlatePartNo = (new string[] { "JF14" }, BomInputSheet),
                         EndPlatePartNo2 = (new string[] { "JF16" }, BomInputSheet),
-                        FootPRLPartNo = (new string[]   { "JF94" }, BomInputSheet),
+                        FootPRLPartNo = (new string[] { "JF94" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF96" }, BomInputSheet),
+
+                        PartitionBelowRow = (new string[]       { "V641" }, InventorSheet),
+                        PartitionDistanceBelow = (new string[]  { "V647" }, InventorSheet),
+                        StiffenerBelowRow = (new string[]       { "V488" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[]  { "V489" }, InventorSheet),
+
                         PartitionBelowRow2 = (new string[]      { "V652" }, InventorSheet),
                         PartitionDistanceBelow2 = (new string[] { "V658" }, InventorSheet),
                         StiffenerBelowRow2 = (new string[]      { "V503" }, InventorSheet),
                         StiffenerDistanceBelow2 = (new string[] { "V504" }, InventorSheet),
+
+                        PartitionBelowRow3 = (new string[]      { "V663" }, InventorSheet),
+                        PartitionDistanceBelow3 = (new string[] { "V669" }, InventorSheet),
+                        StiffenerBelowRow3 = (new string[]      { "V518" }, InventorSheet),
+                        StiffenerDistanceBelow3 = (new string[] { "V519" }, InventorSheet),
+                       
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -489,15 +509,19 @@ namespace Excel
                         FootHeight = (new string[] { "ATL121" }, InputsCalcsSheet),
                         TubesheetPartNo = (new string[] { "JF264" }, BomInputSheet),
                         PlugsheetPartNo = (new string[] { "JF266" }, BomInputSheet),
-                        TopBtmPartNo = (new string[]    { "JF270" }, BomInputSheet),
-                        EndPlatePartNo = (new string[]  { "JF272" }, BomInputSheet),
+                        TopBtmPartNo = (new string[] { "JF270" }, BomInputSheet),
+                        EndPlatePartNo = (new string[] { "JF272" }, BomInputSheet),
                         EndPlatePartNo2 = (new string[] { "JF274" }, BomInputSheet),
-                        FootPRLPartNo = (new string[]   { "JF352" }, BomInputSheet),
+                        FootPRLPartNo = (new string[] { "JF352" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF354" }, BomInputSheet),
-                        PartitionBelowRow2 = (new string[]      { "W652" }, InventorSheet),
+                        PartitionBelowRow2 = (new string[] { "W652" }, InventorSheet),
                         PartitionDistanceBelow2 = (new string[] { "W658" }, InventorSheet),
-                        StiffenerBelowRow2 = (new string[]      { "W503" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[] { "W503" }, InventorSheet),
                         StiffenerDistanceBelow2 = (new string[] { "W504" }, InventorSheet),
+                        PartitionBelowRow3 = (new string[]         { "W663" }, InventorSheet),
+                        PartitionDistanceBelow3 = (new string[]    { "W669" }, InventorSheet),
+                        StiffenerBelowRow3 = (new string[]         { "W518" }, InventorSheet),
+                        StiffenerDistanceBelow3 = (new string[]    { "W519" }, InventorSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -579,15 +603,19 @@ namespace Excel
                         FootHeight = (new string[] { "ATM121" }, InputsCalcsSheet),
                         TubesheetPartNo = (new string[] { "JF522" }, BomInputSheet),
                         PlugsheetPartNo = (new string[] { "JF524" }, BomInputSheet),
-                        TopBtmPartNo = (new string[]    { "JF528" }, BomInputSheet),
-                        EndPlatePartNo = (new string[]  { "JF530" }, BomInputSheet),
+                        TopBtmPartNo = (new string[] { "JF528" }, BomInputSheet),
+                        EndPlatePartNo = (new string[] { "JF530" }, BomInputSheet),
                         EndPlatePartNo2 = (new string[] { "JF532" }, BomInputSheet),
-                        FootPRLPartNo = (new string[]   { "JF610" }, BomInputSheet),
+                        FootPRLPartNo = (new string[] { "JF610" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF612" }, BomInputSheet),
-                        PartitionBelowRow2 = (new string[]      { "X652" }, InventorSheet),
+                        PartitionBelowRow2 = (new string[] { "X652" }, InventorSheet),
                         PartitionDistanceBelow2 = (new string[] { "X658" }, InventorSheet),
-                        StiffenerBelowRow2 = (new string[]      { "X503" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[] { "X503" }, InventorSheet),
                         StiffenerDistanceBelow2 = (new string[] { "X504" }, InventorSheet),
+                        PartitionBelowRow3 = (new string[]         { "X663" }, InventorSheet),
+                        PartitionDistanceBelow3 = (new string[]    { "X669" }, InventorSheet),
+                        StiffenerBelowRow3 = (new string[]         { "X518" }, InventorSheet),
+                        StiffenerDistanceBelow3 = (new string[]    { "X519" }, InventorSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -669,15 +697,19 @@ namespace Excel
                         FootHeight = (new string[] { "ATN121" }, InputsCalcsSheet),
                         TubesheetPartNo = (new string[] { "JF780" }, BomInputSheet),
                         PlugsheetPartNo = (new string[] { "JF782" }, BomInputSheet),
-                        TopBtmPartNo = (new string[]    { "JF786" }, BomInputSheet),
-                        EndPlatePartNo = (new string[]  { "JF788" }, BomInputSheet),
+                        TopBtmPartNo = (new string[] { "JF786" }, BomInputSheet),
+                        EndPlatePartNo = (new string[] { "JF788" }, BomInputSheet),
                         EndPlatePartNo2 = (new string[] { "JF790" }, BomInputSheet),
-                        FootPRLPartNo = (new string[]   { "JF868" }, BomInputSheet),
+                        FootPRLPartNo = (new string[] { "JF868" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF870" }, BomInputSheet),
-                        PartitionBelowRow2 = (new string[]      { "Y652" }, InventorSheet),
+                        PartitionBelowRow2 = (new string[] { "Y652" }, InventorSheet),
                         PartitionDistanceBelow2 = (new string[] { "Y658" }, InventorSheet),
-                        StiffenerBelowRow2 = (new string[]      { "Y503" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[] { "Y503" }, InventorSheet),
                         StiffenerDistanceBelow2 = (new string[] { "Y504" }, InventorSheet),
+                        PartitionBelowRow3 = (new string[]         { "Y663" }, InventorSheet),
+                        PartitionDistanceBelow3 = (new string[]    { "Y669" }, InventorSheet),
+                        StiffenerBelowRow3 = (new string[]         { "Y518" }, InventorSheet),
+                        StiffenerDistanceBelow3 = (new string[]    { "Y519" }, InventorSheet),
                     },
 
                     ["64"] = new Prego_DTO
@@ -760,15 +792,19 @@ namespace Excel
                         FootHeight = (new string[] { "ATO121" }, InputsCalcsSheet),
                         TubesheetPartNo = (new string[] { "JF1038" }, BomInputSheet),
                         PlugsheetPartNo = (new string[] { "JF1040" }, BomInputSheet),
-                        TopBtmPartNo = (new string[]    { "JF1044" }, BomInputSheet),
-                        EndPlatePartNo = (new string[]  { "JF1046" }, BomInputSheet),
+                        TopBtmPartNo = (new string[] { "JF1044" }, BomInputSheet),
+                        EndPlatePartNo = (new string[] { "JF1046" }, BomInputSheet),
                         EndPlatePartNo2 = (new string[] { "JF1048" }, BomInputSheet),
-                        FootPRLPartNo = (new string[]   { "JF1126" }, BomInputSheet),
+                        FootPRLPartNo = (new string[] { "JF1126" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF1128" }, BomInputSheet),
-                        PartitionBelowRow2 = (new string[]      { "Z652" }, InventorSheet),
+                        PartitionBelowRow2 = (new string[] { "Z652" }, InventorSheet),
                         PartitionDistanceBelow2 = (new string[] { "Z658" }, InventorSheet),
-                        StiffenerBelowRow2 = (new string[]      { "Z503" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[] { "Z503" }, InventorSheet),
                         StiffenerDistanceBelow2 = (new string[] { "Z504" }, InventorSheet),
+                        PartitionBelowRow3 = (new string[]         { "Z663" }, InventorSheet),
+                        PartitionDistanceBelow3 = (new string[]    { "Z669" }, InventorSheet),
+                        StiffenerBelowRow3 = (new string[]         { "Z518" }, InventorSheet),
+                        StiffenerDistanceBelow3 = (new string[]    { "Z519" }, InventorSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -850,15 +886,19 @@ namespace Excel
                         FootHeight = (new string[] { "ATP121" }, InputsCalcsSheet),
                         TubesheetPartNo = (new string[] { "JF1296" }, BomInputSheet),
                         PlugsheetPartNo = (new string[] { "JF1298" }, BomInputSheet),
-                        TopBtmPartNo = (new string[]    { "JF1302" }, BomInputSheet),
-                        EndPlatePartNo = (new string[]  { "JF1304" }, BomInputSheet),
+                        TopBtmPartNo = (new string[] { "JF1302" }, BomInputSheet),
+                        EndPlatePartNo = (new string[] { "JF1304" }, BomInputSheet),
                         EndPlatePartNo2 = (new string[] { "JF1306" }, BomInputSheet),
-                        FootPRLPartNo = (new string[]   { "JF1384" }, BomInputSheet),
+                        FootPRLPartNo = (new string[] { "JF1384" }, BomInputSheet),
                         FootPlatePartNo = (new string[] { "JF1386" }, BomInputSheet),
-                        PartitionBelowRow2 = (new string[]      { "AA652" }, InventorSheet),
+                        PartitionBelowRow2 = (new string[] { "AA652" }, InventorSheet),
                         PartitionDistanceBelow2 = (new string[] { "AA658" }, InventorSheet),
-                        StiffenerBelowRow2 = (new string[]      { "AA503" }, InventorSheet),
+                        StiffenerBelowRow2 = (new string[] { "AA503" }, InventorSheet),
                         StiffenerDistanceBelow2 = (new string[] { "AA504" }, InventorSheet),
+                        PartitionBelowRow3 = (new string[]         { "AA663" }, InventorSheet),
+                        PartitionDistanceBelow3 = (new string[]    { "AA669" }, InventorSheet),
+                        StiffenerBelowRow3 = (new string[]         { "AA518" }, InventorSheet),
+                        StiffenerDistanceBelow3 = (new string[]    { "AA519" }, InventorSheet),
                     }
                 };
             }

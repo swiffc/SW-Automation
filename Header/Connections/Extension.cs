@@ -32,12 +32,12 @@ namespace HDR.Connections
             {
                 if (_staticPos == null) { _staticPos = new List<PositionData>(); }
 
-                if (_posInlet == null && Ext is InletNozzle)
+                if (_posInlet == null && Ext is InletNozzle && Enabled)
                 {
                     _posInlet = NewPositionData();
                     _staticPos.AddRange(_posInlet);
                 }
-                else if (_posOutlet == null && Ext is OutletNozzle)
+                else if (_posOutlet == null && Ext is OutletNozzle && Enabled)
                 {
                     _posOutlet = NewPositionData();
                     _staticPos.AddRange(_posOutlet);

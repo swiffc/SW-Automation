@@ -321,7 +321,7 @@ namespace FileTools
             Debug.WriteLine($"------------Locating components in ({swAssembly.Config})-------------" + "\n");
 
             if (ClassesToIsolate.Count == 0)
-                RemoveUnneededComponents(swAssembly);
+                RemoveUnneededComponents(components, swAssembly);
 
             Component2[] userLocatedComponents = UnfixedComponentsArray(swAssembly.ComponentArray);
 
@@ -373,10 +373,9 @@ namespace FileTools
 
             // Search assembly for existing component instances
             List<Component2> componentList;
-            if (component.PartNo != null && !sW_Assembly.ProcessedPartNumbers.Contains(component.StaticPartNo))
+            if (component.PartNo != null)
             {
-                componentList = FindMatchingComponents(component.FilePath, sW_Assembly.ComponentArray);
-                
+                componentList = FindMatchingComponents(component.FilePath, sW_Assembly.ComponentArray); 
             }
             else
             {
@@ -888,13 +887,13 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
             }
 
         }
-        public static void RemoveUnneededComponents(SW_Assembly swAssembly)
+        public static void RemoveUnneededComponents(List<IComponentInfo2> components, SW_Assembly swAssembly)
         {
             if (swAssembly.ComponentArray != null)
             {
                 var subComponentStaticNumbers = AssignConfigToComponent(swAssembly.ComponentArray);
                 var subComponentTypes = DetermineComponentTypes(subComponentStaticNumbers);
-                var componentsToDelete = IdentifyComponentsToDelete(subComponentTypes, swAssembly.ComponentArray);
+                var componentsToDelete = IdentifyComponentsToDelete(subComponentTypes, swAssembly.ComponentArray, components);
 
                 RemoveComponents(componentsToDelete, swAssembly.AssemblyDoc);
             }
@@ -1179,9 +1178,14 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
 
             return dictionary;
         }
-        private static List<Component2> IdentifyComponentsToDelete(Dictionary<Component2, Type> componentTypes, Component2[] componentArray)
+        private static List<Component2> IdentifyComponentsToDelete(Dictionary<Component2, Type> componentTypes, Component2[] componentArray, List<IComponentInfo2> components)
         {
             var componentsToDelete = new List<Component2>();
+            var requiredFiles = new List<string>();
+            foreach (var component in components)
+            {
+                requiredFiles.Add(component.FilePath);
+            }
 
             foreach (var kvp in componentTypes)
             {
@@ -1198,7 +1202,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
                     var instance = ComponentRegistry.GetComponentByPartNoAndFileName(component.ReferencedConfiguration, fileName);
 
                     // Handles local part instances
-                    if (instance != null && !instance.Enabled)
+                    if (instance != null && !instance.Enabled && !requiredFiles.Contains(component.GetPathName()))
                     {
                         componentsToDelete.Add(component);
                     }

@@ -50,6 +50,8 @@ namespace HDR
         {
             Flange.ClearPositionData();
             Extension.ClearPositionData();
+            Partition.ClearPositionData();
+            Stiffener.ClearPositionData();
         }
 
 

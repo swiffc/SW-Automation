@@ -105,9 +105,13 @@ namespace FileTools.Base
 
         double PartitionBelowRow2 { get; set; }
         double PartitionDistanceBelow2 { get; set; }
-
         double StiffenerBelowRow2 { get; set; }
         double StiffenerDistanceBelow2 { get; set; }
+
+        double PartitionBelowRow3 { get; set; }
+        double PartitionDistanceBelow3 { get; set; }
+        double StiffenerBelowRow3 { get; set; }
+        double StiffenerDistanceBelow3 { get; set; }
     }
 
 

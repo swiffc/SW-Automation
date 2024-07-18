@@ -419,6 +419,26 @@ namespace FileTools.CommonData
                 get => Default.StiffenerDistanceBelow2_66;
                 set => Default.StiffenerDistanceBelow2_66 = value;
             }
+            public double PartitionBelowRow3
+            {
+                get => Default.PartitionBelowRow3_66;
+                set => Default.PartitionBelowRow3_66 = value;
+            }
+            public double PartitionDistanceBelow3
+            {
+                get => Default.PartitionDistanceBelow3_66;
+                set => Default.PartitionDistanceBelow3_66 = value;
+            }
+            public double StiffenerBelowRow3
+            {
+                get => Default.StiffenerBelowRow3_66;
+                set => Default.StiffenerBelowRow3_66 = value;
+            }
+            public double StiffenerDistanceBelow3
+            {
+                get => Default.StiffenerDistanceBelow3_66;
+                set => Default.StiffenerDistanceBelow3_66 = value;
+            }
         }
     }
 }

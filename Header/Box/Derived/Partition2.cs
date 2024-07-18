@@ -12,36 +12,21 @@ namespace HDR.Box.Derived
 {
     internal class Partition2 : Partition
     {
+        // Static properties
+        static public bool IsRequired =>
+            THK != 0 &&
+            Header.PartitionBelowRow2 != 0 &&
+            Header.PartitionDistanceBelow2 != 0;
+
+
         // Constructor
         public Partition2(SW_Assembly parentMainAssembly) : base(parentMainAssembly) { }
 
 
-        // Protected properties
-        protected PositionData Position2 => PositionData.Create(tY: -GetYTranslation(
+        // Public properties
+        public static PositionData Position2 => PositionData.Create(tY: -GetYTranslation(
             Header.PartitionDistanceBelow2, 
             LocationBelowRowNumber2));
-
-
-        // Property overrides
-        public override bool Enabled => 
-            THK != 0 && 
-            Header.PartitionBelowRow2 != 0 && 
-            Header.PartitionDistanceBelow2 != 0;
-        public override List<PositionData> Position
-        {
-            get
-            {
-                if (_pos == null)
-                {
-                    _pos = new List<PositionData>
-                    {
-                        Position1,
-                        Position2
-                    };
-                }
-                return _pos;
-            }
-        }
 
 
         // Private properties

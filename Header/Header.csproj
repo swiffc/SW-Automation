@@ -55,7 +55,9 @@
   <ItemGroup>
     <Compile Include="Box\Derived\EndPlate2.cs" />
     <Compile Include="Box\Derived\Partition2.cs" />
+    <Compile Include="Box\Derived\Partition3.cs" />
     <Compile Include="Box\Derived\Stiffener2.cs" />
+    <Compile Include="Box\Derived\Stiffener3.cs" />
     <Compile Include="Box\EndPlate.cs" />
     <Compile Include="Box\Partition.cs" />
     <Compile Include="Box\PlugSheet.cs" />
