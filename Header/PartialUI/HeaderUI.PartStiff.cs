@@ -181,29 +181,32 @@ namespace HDR
             bool sFlag = false;
 
             // Process first as partition
-            if (partStiff[0].Contains("P") && pTHK_Observed.Count == 0)
+            if (partStiff.Count > 0)
             {
-                ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
-                pFlag = true;
-            }
+                if (partStiff[0].Contains("P") && pTHK_Observed.Count == 0)
+                {
+                    ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                    pFlag = true;
+                }
 
-            // Process first as stiffener
-            if (partStiff[0].Contains("S") && sTHK_Observed.Count == 0)
-            {
-                ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
-                sFlag = true;
-            }
+                // Process first as stiffener
+                if (partStiff[0].Contains("S") && sTHK_Observed.Count == 0)
+                {
+                    ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                    sFlag = true;
+                }
 
-            // Process second as partition
-            if (partStiff.Contains("P") && pTHK_Observed.Count == 0 && !pFlag)
-            {
-                ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
-            }
+                // Process second as partition
+                if (partStiff.Contains("P") && pTHK_Observed.Count == 0 && !pFlag)
+                {
+                    ProcessPartStiffNumbers(pTHK_Process, pApp_Process, pUI_Process, pTHK_Observed, pApp_Observed, pUI_Observed, ref pClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                }
 
-            // Process second as stiffener
-            if (partStiff.Contains("S") && sTHK_Observed.Count == 0 && !sFlag)
-            {
-                ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                // Process second as stiffener
+                if (partStiff.Contains("S") && sTHK_Observed.Count == 0 && !sFlag)
+                {
+                    ProcessPartStiffNumbers(sTHK_Process, sApp_Process, sUI_Process, sTHK_Observed, sApp_Observed, sUI_Observed, ref sClear, partNumberCells_1, partNumberCells_3, partNumberCells_5);
+                }
             }
         }
         private void ProcessPartStiffNumbers(List<double> thkProcess, List<IPropertyWrapper> appProcess, List<TextBox> uiProcess, List<double> thkObserved, List<IPropertyWrapper> appObserved, List<TextBox> uiObserved, ref bool clearFlag, List<string> partNumberCells0, List<string> partNumberCells1, List<string> partNumberCells2)

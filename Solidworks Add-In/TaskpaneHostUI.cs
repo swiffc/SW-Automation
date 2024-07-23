@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static FileTools.Properties.Settings;
 using MachineryMount;
 using Bundle;
+using HDR;
 
 namespace SolidWorks_Add_In
 {
@@ -219,6 +220,19 @@ namespace SolidWorks_Add_In
             Default.Reload();
             bundleUI.Show();
             bundleUI.BringToFront();
+        }
+
+        private HeaderUI headerUI = null;
+        private void header_Click(object sender, EventArgs e)
+        {
+            if (headerUI == null || headerUI.IsDisposed)
+            {
+                headerUI = new HeaderUI();
+            }
+
+            Default.Reload();
+            headerUI.Show();
+            headerUI.BringToFront();
         }
     }
 }

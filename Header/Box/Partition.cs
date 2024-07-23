@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static FileTools.CommonData.CommonData;
 using static HDR.HeaderBase;
+using static FileTools.Base.SW_Assembly;
 
 namespace HDR.Box
 {
@@ -18,9 +19,13 @@ namespace HDR.Box
 
 
         // Constructor
-        public Partition(SW_Assembly parentMainAssembly) : base(parentMainAssembly) 
+        public Partition(SW_Assembly parentMainAssembly) : base(parentMainAssembly)
         {
             var loadPos = Position;
+
+            DontProcessLocation.Add(typeof(Partition2));
+            DontProcessLocation.Add(typeof(Partition3));
+
         }
 
 
@@ -57,7 +62,7 @@ namespace HDR.Box
 
         // Protected properties
         protected PositionData Position1 => PositionData.Create(tY: -GetYTranslation(
-            Header.PartitionDistanceBelow, 
+            Header.PartitionDistanceBelow,
             LocationBelowRowNumber));
 
 

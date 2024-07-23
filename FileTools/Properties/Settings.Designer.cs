@@ -9190,5 +9190,17 @@ namespace FileTools.Properties {
                 this["StiffenerDistanceBelow3_66"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Stainless {
+            get {
+                return ((bool)(this["Stainless"]));
+            }
+            set {
+                this["Stainless"] = value;
+            }
+        }
     }
 }

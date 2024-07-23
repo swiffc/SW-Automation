@@ -3,9 +3,12 @@ using FileTools.CommonData.Headers.Connections;
 using HDR.Box;
 using HDR.Connections.Derived;
 using ModelTools;
+using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 using static HDR.HeaderBase;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HDR.Connections
 {
@@ -45,10 +48,10 @@ namespace HDR.Connections
 
         // Property overrides
         public override bool Enabled =>
-            (BundleLocation == "TL" && Header == Header61) ||
-            (BundleLocation == "TR" && Header == Header62) ||
-            (BundleLocation == "BL" && Header == LowestLeftHeader) ||
-            (BundleLocation == "BR" && Header == LowestRightHeader);
+            (FLG.Location == "TL" && Header == Header61) ||
+            (FLG.Location == "TR" && Header == Header62) ||
+            (FLG.Location == "BL" && Header == LowestLeftHeader) ||
+            (FLG.Location == "BR" && Header == LowestRightHeader);
         public override string StaticPartNo => "Flange";
         public override Shape RawMaterialShape => Shape.None;
         public override string SizeOrThickness => "";
@@ -56,20 +59,16 @@ namespace HDR.Connections
         {
             get
             {
-                if (_staticPos == null) { _staticPos = new List<PositionData>(); }
-
                 if (_posInlet == null && FLG is InletNozzle && Enabled)
-                {
                     _posInlet = NewPositionData();
-                    _staticPos.AddRange(_posInlet);
-                }
                 else if (_posOutlet == null && FLG is OutletNozzle && Enabled)
-                {
                     _posOutlet = NewPositionData();
-                    _staticPos.AddRange(_posOutlet);
-                }
 
-                return _staticPos;
+                if (FLG is InletNozzle)
+                    return _posInlet;
+                else if (FLG is OutletNozzle)
+                    return _posOutlet;
+                else throw new Exception("Extension is neither Inlet nor Outlet.");
             }
         }
 
@@ -84,7 +83,7 @@ namespace HDR.Connections
 
 
         // Private methods
-        List<PositionData> NewPositionData()
+        protected List<PositionData> NewPositionData()
         {
             double xTranslation = OffsetX;
             double yTranslation = CalculateYTranslation(ProjectionY, BundleLocation);
@@ -113,13 +112,13 @@ namespace HDR.Connections
 
 
         // Wrapper properties
-        string BundleLocation => FLG.Location;
-        double OffsetX => FLG.OffsetX;
-        double ProjectionY => FLG.ProjectionY;
-        double Count => FLG.Count;
-        double Spacing => FLG.Spacing;
-        bool top => BundleLocation.StartsWith("T");
-        bool bottom => BundleLocation.StartsWith("B");
+        protected string BundleLocation => FLG.Location;
+        protected double OffsetX => FLG.OffsetX;
+        protected double ProjectionY => FLG.ProjectionY;
+        protected double Count => FLG.Count;
+        protected double Spacing => FLG.Spacing;
+        protected bool top => BundleLocation.StartsWith("T");
+        protected bool bottom => BundleLocation.StartsWith("B");
 
 
         // Backing fields

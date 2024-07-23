@@ -325,15 +325,18 @@ namespace FileTools
 
             Component2[] userLocatedComponents = UnfixedComponentsArray(swAssembly.ComponentArray);
 
+            Type type;
             foreach (var component in components)
             {
-                if (!swAssembly.ProcessedPartNumbers.Contains(component.StaticPartNo))
+                type = component.GetType();
+                if (!DontProcessLocation.Contains(type))
                 {
                     PlaceComponent(component, swAssembly);
-                    swAssembly.ProcessedPartNumbers.Add(component.StaticPartNo);
                 }
             }
-                
+            DontProcessLocation.Clear();
+
+
 
             swAssembly.ClearComponentArray();
             FixComponentLocations(userLocatedComponents, swAssembly.AssemblyDoc, swAssembly.ComponentArray);

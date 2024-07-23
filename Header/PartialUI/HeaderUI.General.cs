@@ -80,6 +80,19 @@ namespace HDR
             tFlangePartNo_Outlet.Text = tFlangePartNo_Outlet.Text == "0" ? "" : tFlangePartNo_Outlet.Text;
             tExtensionPartNo_Inlet.Text = tExtensionPartNo_Inlet.Text == "0" ? "" : tExtensionPartNo_Inlet.Text;
             tExtensionPartNo_Outlet.Text = tExtensionPartNo_Outlet.Text == "0" ? "" : tExtensionPartNo_Outlet.Text;
+
+            var material = CellString(InputsCalcsSheet, "C3");
+            if (material == "Carbon Steel")
+            {
+                Default.Stainless = false;
+                cSS.Checked = false;
+            }
+            else
+            {
+                Default.Stainless = true;
+                cSS.Checked = true;
+            }
+            SaveSettings();
         }
         private void ImportConnectionPartNumbers()
         {

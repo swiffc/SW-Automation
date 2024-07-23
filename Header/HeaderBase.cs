@@ -7,6 +7,8 @@ using static Excel.Prego;
 using HDR.Box;
 using HDR.Box.Derived;
 using HDR.Connections;
+using static FileTools.Properties.Settings;
+using HDR.Connections.Derived;
 
 namespace HDR
 {
@@ -14,7 +16,7 @@ namespace HDR
     {
         // Static properties
         public static IHeaderExtensions Header { get; set; }
-        static public double ModelLengthReduction => 6;
+        static public double ModelLengthReduction => Default.Stainless ? 4 : 6;
         static public IHeaderExtensions LowestLeftHeader
         {
             get

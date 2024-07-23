@@ -19,9 +19,9 @@ namespace SolidWorks_Add_In
     /// </summary>
     public class TaskpaneIntegration : SwAddin
     {
-        static public string VersionNumber => "6.0.2";
+        static public string VersionNumber => "7.0.0";
         static public string SpeechBubble =>
-            @"""" + "Minor bugfixes" + @"""";
+            @"""" + "Header core model automation is live" + @"""";
 
         #region Private Members
 

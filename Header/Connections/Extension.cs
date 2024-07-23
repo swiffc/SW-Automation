@@ -30,20 +30,16 @@ namespace HDR.Connections
         {
             get
             {
-                if (_staticPos == null) { _staticPos = new List<PositionData>(); }
-
                 if (_posInlet == null && Ext is InletNozzle && Enabled)
-                {
                     _posInlet = NewPositionData();
-                    _staticPos.AddRange(_posInlet);
-                }
                 else if (_posOutlet == null && Ext is OutletNozzle && Enabled)
-                {
                     _posOutlet = NewPositionData();
-                    _staticPos.AddRange(_posOutlet);
-                }
 
-                return _staticPos;
+                if (Ext is InletNozzle)
+                    return _posInlet;
+                else if (Ext is OutletNozzle)
+                    return _posOutlet;
+                else throw new Exception("Extension is neither Inlet nor Outlet.");
             }
         }
 
@@ -88,7 +84,7 @@ namespace HDR.Connections
         {
             get
             {
-                double length = TopBtmPlate.THK + Inlet.FlangeYY + Inlet.FlangeRD + WeldGap * 2;
+                double length = TopBtmPlate.THK + Ext.FlangeYY + Ext.FlangeRD + WeldGap * 2;
                 double flangeYLocation = Flange.CalculateYTranslation(Ext.ProjectionY, Ext.Location);
 
                 if (flangeYLocation < 0)

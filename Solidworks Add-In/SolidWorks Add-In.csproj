@@ -111,6 +111,10 @@
       <Project>{a43cdb26-00e6-4e2f-84a8-eb8a63ce7175}</Project>
       <Name>Fork</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Header\Header.csproj">
+      <Project>{f1ba39c3-4fcc-43d0-a018-d96bc63303c2}</Project>
+      <Name>Header</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hood\Hood.csproj">
       <Project>{7e6a3a9f-0348-4f9e-bc9a-dc929d613d31}</Project>
       <Name>Hood</Name>
