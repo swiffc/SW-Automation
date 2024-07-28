@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using static HDR.HeaderBase;
 using static FileTools.CommonData.CommonData;
 using HDR.Box.Derived;
+using static FileTools.Base.SW_Assembly;
 
 namespace HDR.Box
 {
@@ -21,6 +22,9 @@ namespace HDR.Box
         public Stiffener(SW_Assembly parentMainAssembly) : base(parentMainAssembly) 
         {
             var loadPos = Position;
+
+            DontProcessLocation.Add(typeof(Stiffener2));
+            DontProcessLocation.Add(typeof(Stiffener3));
         }
 
 
@@ -49,26 +53,25 @@ namespace HDR.Box
         }
 
 
-        // Protected methods
-        protected static double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
-        {
-            double value = distanceBelow;
-            for (int i = 0; i < locationBelowRowNumber; i++)
-            {
-                value += TubeSheet.HoleLocations[i];
-            }
-            return value;
-        }
-
-
         // Protected properties
-        protected PositionData Position1 => PositionData.Create(tY: -GetYTranslation(
+        protected PositionData Position1 => PositionData.Create(tY: -Partition.GetYTranslation(
             Header.StiffenerDistanceBelow,
             LocationBelowRowNumber));
 
 
         // Property overrides
-        public override string PartNo => Header.StiffenerPartNo;
+        public override string PartNo
+        {
+            get
+            {
+                if (Header.StiffenerPartNo != null)
+                {
+                    if (Header.StiffenerPartNo.Length != 0)
+                        return Header.StiffenerPartNo;
+                }
+                return "Stiffener";
+            }
+        }
         public override bool Enabled => THK != 0;
         public override Shape RawMaterialShape => Shape.Plate;
         public override string SizeOrThickness => THK.ToString();

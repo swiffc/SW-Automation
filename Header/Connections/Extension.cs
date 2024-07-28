@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 using static HDR.HeaderBase;
+using static FileTools.Base.SW_Assembly;
 
 namespace HDR.Connections
 {
@@ -21,7 +22,14 @@ namespace HDR.Connections
         protected Extension(SW_Assembly parentMainAssembly) : base(parentMainAssembly)
         {
             var loadPositionData = Position;
+
+            if (IdenticalExtensions)
+                DontProcessLocation.Add(typeof(OutletNozzle));
         }
+
+
+        // Private properties
+        bool IdenticalExtensions => Inlet.ExtensionPartNo == Outlet.ExtensionPartNo;
 
 
         // Property overrides
@@ -30,12 +38,22 @@ namespace HDR.Connections
         {
             get
             {
-                if (_posInlet == null && Ext is InletNozzle && Enabled)
-                    _posInlet = NewPositionData();
-                else if (_posOutlet == null && Ext is OutletNozzle && Enabled)
-                    _posOutlet = NewPositionData();
+                if (_staticPos == null) _staticPos = new List<PositionData>();
 
-                if (Ext is InletNozzle)
+                if (_posInlet == null && Ext is InletNozzle && Enabled)
+                {
+                    _posInlet = NewPositionData();
+                    _staticPos.AddRange(_posInlet);
+                }
+                else if (_posOutlet == null && Ext is OutletNozzle && Enabled)
+                {
+                    _posOutlet = NewPositionData();
+                    _staticPos.AddRange(_posOutlet);
+                }
+
+                if (IdenticalExtensions)
+                    return _staticPos;
+                else if (Ext is InletNozzle)
                     return _posInlet;
                 else if (Ext is OutletNozzle)
                     return _posOutlet;

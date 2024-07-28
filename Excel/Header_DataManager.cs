@@ -764,7 +764,7 @@ namespace Excel
                         StiffenerWidth = (new string[] { "Z492" }, InventorSheet),
                         StiffenerOffset = (new string[] { "Z490" }, InventorSheet),
                         StiffenerBelowRow = (new string[] { "Z488" }, InventorSheet),
-                        StiffenerDistanceBelow = (new string[] { "V489" }, InventorSheet),
+                        StiffenerDistanceBelow = (new string[] { "Z489" }, InventorSheet),
                         StiffenerWindowWidth = (new string[] { "Z493" }, InventorSheet),
                         StiffenerWindowLength = (new string[] { "Z494" }, InventorSheet),
                         StiffenerWindowQuantity = (new string[] { "Z495" }, InventorSheet),

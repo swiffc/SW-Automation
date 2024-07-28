@@ -64,7 +64,7 @@ namespace Excel
                     PleaseWait.Start("Connecting to AXC_VAULT");
                     if (Developer)
                     {
-
+                        ExcelApp.Visible = true;
                     }
                     else if (Vault.FileExists(expectedFilePath, out IEdmFile5 file))
                     {
@@ -309,7 +309,7 @@ namespace Excel
             }
             return 0;
         }
-        public static void CleanUp()
+        public static void CleanUp(bool fullCleanUp = false)
         {
             if (_inputSheet != null)
             {
@@ -348,15 +348,19 @@ namespace Excel
                 _pregoDoc = null;
             }
 
-            //if (_excel != null)
-            //{
-            //    _excel.Quit();
-            //    Marshal.ReleaseComObject(_excel);
-            //    _excel = null;
-            //}
+            if (fullCleanUp)
+            {
+                if (_excel != null)
+                {
+                    _excel.Quit();
+                    Marshal.ReleaseComObject(_excel);
+                    _excel = null;
+                }
 
-            //GC.Collect();
-            //GC.WaitForPendingFinalizers();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+
         }
 
 
@@ -383,6 +387,7 @@ namespace Excel
             string column = Regex.Match(cellNames[i], @"[A-Za-z]+").Value;
             int row = int.Parse(Regex.Match(cellNames[i], @"\d+").Value);
 
+            sheet.Activate();
             Range cell = (Range)sheet.Cells[row, column];
             return cell.Value2;
         }

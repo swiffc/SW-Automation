@@ -25,7 +25,7 @@ namespace HDR.Box.Derived
 
 
         // Protected properties
-        public static PositionData Position3 => PositionData.Create(tY: -GetYTranslation(
+        public static PositionData Position3 => PositionData.Create(tY: -Partition.GetYTranslation(
             Header.StiffenerDistanceBelow3,
             LocationBelowRowNumber3));
 

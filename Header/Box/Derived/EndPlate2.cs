@@ -17,7 +17,18 @@ namespace HDR.Box.Derived
 
         // Property overrides
         public override bool Enabled => Header.EndPlateBustedSpan2 != 0 && IsBusted;
-        public override string PartNo => Header.EndPlatePartNo2;
+        public override string PartNo
+        {
+            get
+            {
+                if (Header.EndPlatePartNo2 != null)
+                {
+                    if (Header.EndPlatePartNo2.Length != 0)
+                        return Header.EndPlatePartNo2;
+                }
+                return "Endplate2";
+            }
+        }
         protected override double LocalLength => Length2;
         public override string StaticPartNo => "EndPlate";
         public override List<PositionData> Position

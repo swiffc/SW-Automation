@@ -26,7 +26,18 @@ namespace HDR.Box
 
 
         // Property overrides
-        public override string PartNo => Header.PlugsheetPartNo;
+        public override string PartNo
+        {
+            get
+            {
+                if (Header.PlugsheetPartNo != null)
+                {
+                    if (Header.PlugsheetPartNo.Length != 0)
+                        return Header.PlugsheetPartNo;
+                }
+                return "PlugSheet";
+            }
+        }
         public override bool Enabled => true;
         public override string StaticPartNo => "PlugSheet";
         public override Shape RawMaterialShape => Shape.Plate;

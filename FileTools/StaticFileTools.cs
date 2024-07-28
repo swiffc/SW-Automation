@@ -21,6 +21,7 @@ using ModelTools;
 using System.Security.AccessControl;
 using System.Windows.Forms;
 using System.Runtime.InteropServices.ComTypes;
+using static FileTools.Base.ComponentRegistry;
 
 namespace FileTools
 {
@@ -334,7 +335,10 @@ namespace FileTools
                     PlaceComponent(component, swAssembly);
                 }
             }
+
+            // Cleanup
             DontProcessLocation.Clear();
+            ClearComponentRegistry();
 
 
 
@@ -608,11 +612,12 @@ namespace FileTools
                         {
                             // Instantiate the type using the provided MainAssembly instance
                             IComponentInfo2 component = (IComponentInfo2)Activator.CreateInstance(type, swAssembly);
-                            ComponentRegistry.RegisterComponent(component);
+                            
 
                             // Check if the component is enabled before adding it to the list
                             if (component != null && component.Enabled)
                             {
+                                ComponentRegistry.RegisterComponent(component);
                                 componentsToBeAdded.Add(component);
                             }
                         }
@@ -1475,6 +1480,6 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         public static List<string> AssignedComponentPaths = new List<string>();
         public static Type LastType { get; set; }
         public static bool Developer => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") && DevMode ? true : false;
-        public static bool DevMode { get; set; } = false;
+        public static bool DevMode { get; set; } = true;
     }
 }

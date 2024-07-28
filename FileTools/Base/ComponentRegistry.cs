@@ -16,6 +16,10 @@ namespace FileTools.Base
         // Modify the dictionary to store ComponentEntry
         private static readonly Dictionary<(string, string), ComponentEntry> _componentsByPartNo = new Dictionary<(string StaticPartNo, string FileName), ComponentEntry>();
 
+        public static void ClearComponentRegistry()
+        {
+            _componentsByPartNo.Clear();
+        }
         public static void RegisterComponent(IComponentInfo2 component)
         {
             if (component != null && !string.IsNullOrWhiteSpace(component.StaticPartNo))

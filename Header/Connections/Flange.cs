@@ -1,6 +1,7 @@
 ﻿using FileTools.Base;
 using FileTools.CommonData.Headers.Connections;
 using HDR.Box;
+using HDR.Box.Derived;
 using HDR.Connections.Derived;
 using ModelTools;
 using System;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using static FileTools.CommonData.CommonData;
 using static HDR.HeaderBase;
 using static System.Net.Mime.MediaTypeNames;
+using static FileTools.Base.SW_Assembly;
 
 namespace HDR.Connections
 {
@@ -18,7 +20,14 @@ namespace HDR.Connections
         protected Flange(SW_Assembly parentMainAssembly) : base(parentMainAssembly) 
         {
             var loadPositionData = Position;
+
+            if (IdenticalFlanges)
+                DontProcessLocation.Add(typeof(OutletFlange));
         }
+
+
+        // Private properties
+        bool IdenticalFlanges => Inlet.FlangePartNo == Outlet.FlangePartNo;
 
 
         // Static methods
@@ -59,16 +68,27 @@ namespace HDR.Connections
         {
             get
             {
-                if (_posInlet == null && FLG is InletNozzle && Enabled)
-                    _posInlet = NewPositionData();
-                else if (_posOutlet == null && FLG is OutletNozzle && Enabled)
-                    _posOutlet = NewPositionData();
+                if (_staticPos == null) _staticPos = new List<PositionData>();
 
-                if (FLG is InletNozzle)
+                if (_posInlet == null && FLG is InletNozzle && Enabled)
+                {
+                    _posInlet = NewPositionData();
+                    _staticPos.AddRange(_posInlet);
+                }
+                    
+                else if (_posOutlet == null && FLG is OutletNozzle && Enabled)
+                {
+                    _posOutlet = NewPositionData();
+                    _staticPos.AddRange(_posOutlet);
+                } 
+
+                if (IdenticalFlanges)
+                    return _staticPos;
+                else if (FLG is InletNozzle)
                     return _posInlet;
                 else if (FLG is OutletNozzle)
                     return _posOutlet;
-                else throw new Exception("Extension is neither Inlet nor Outlet.");
+                else throw new Exception("Flange is neither Inlet nor Outlet.");
             }
         }
 

@@ -1,4 +1,6 @@
 ﻿using Excel;
+using FileTools.Base;
+using FileTools.CommonData.Headers.Connections;
 using SplashScreen;
 using System;
 using System.Collections.Generic;
@@ -76,10 +78,7 @@ namespace HDR
             ImportPartStiffPartNumbers();
             ImportConnectionPartNumbers();
 
-            tFlangePartNo_Inlet.Text = tFlangePartNo_Inlet.Text == "0" ? "" : tFlangePartNo_Inlet.Text;
-            tFlangePartNo_Outlet.Text = tFlangePartNo_Outlet.Text == "0" ? "" : tFlangePartNo_Outlet.Text;
-            tExtensionPartNo_Inlet.Text = tExtensionPartNo_Inlet.Text == "0" ? "" : tExtensionPartNo_Inlet.Text;
-            tExtensionPartNo_Outlet.Text = tExtensionPartNo_Outlet.Text == "0" ? "" : tExtensionPartNo_Outlet.Text;
+            ConnectionPartNoSafety();
 
             var material = CellString(InputsCalcsSheet, "C3");
             if (material == "Carbon Steel")
@@ -93,6 +92,33 @@ namespace HDR
                 cSS.Checked = true;
             }
             SaveSettings();
+        }
+        void ConnectionPartNoSafety()
+        {
+            if (tFlangePartNo_Inlet.Text.Length <= 1)
+            {
+                string value = "InletFlange";
+                tFlangePartNo_Inlet.Text = value;
+                Inlet.FlangePartNo = value;
+            }
+            if (tFlangePartNo_Outlet.Text.Length <= 1)
+            {
+                string value = "OutletFlange";
+                tFlangePartNo_Outlet.Text = value;
+                Outlet.FlangePartNo = value;
+            }
+            if (tExtensionPartNo_Inlet.Text.Length <= 1)
+            {
+                string value = "InletExtension";
+                tExtensionPartNo_Inlet.Text = value;
+                Inlet.ExtensionPartNo = value;
+            }
+            if (tExtensionPartNo_Outlet.Text.Length <= 1)
+            {
+                string value = "OutletExtension";
+                tExtensionPartNo_Outlet.Text = value;
+                Outlet.ExtensionPartNo = value;
+            }
         }
         private void ImportConnectionPartNumbers()
         {
@@ -233,22 +259,22 @@ namespace HDR
 
         private void ImportBustedSpans()
         {
-            List<double> bustSpans_61 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAF5", "AAF43"));
+            List<double> bustSpans_61 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAI5", "AAI43"));
             AssignSpans(value => Default.EndPlateBustedSpan2_61 = value, tEndPlateBustedSpan2_61, 2, bustSpans_61);
 
-            List<double> bustSpans_62 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ACZ5", "ACZ43"));
+            List<double> bustSpans_62 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADC5", "ADC43"));
             AssignSpans(value => Default.EndPlateBustedSpan2_62 = value, tEndPlateBustedSpan2_62, 2, bustSpans_62);
 
             List<double> bustSpans_63 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAJ5", "AAJ43"));
             AssignSpans(value => Default.EndPlateBustedSpan2_63 = value, tEndPlateBustedSpan2_63, 2, bustSpans_63);
 
-            List<double> bustSpans_64 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADA5", "ADA43"));
+            List<double> bustSpans_64 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADD5", "ADD43"));
             AssignSpans(value => Default.EndPlateBustedSpan2_64 = value, tEndPlateBustedSpan2_64, 2, bustSpans_64);
 
             List<double> bustSpans_65 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("AAK5", "AAK43"));
             AssignSpans(value => Default.EndPlateBustedSpan2_65 = value, tEndPlateBustedSpan2_65, 2, bustSpans_65);
 
-            List<double> bustSpans_66 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADB5", "ADB43"));
+            List<double> bustSpans_66 = CellDoubleList(InputsCalcsSheet, CellNameColumnArray("ADE5", "ADE43"));
             AssignSpans(value => Default.EndPlateBustedSpan2_66 = value, tEndPlateBustedSpan2_66, 2, bustSpans_66);
 
         }
@@ -285,8 +311,26 @@ namespace HDR
             catch (Exception) { }
             Prego.CleanUp();
         }
+        private bool CheckIfFlangeAndExtensionPartNumbers(IConnection connection)
+        {
+            string connectionName = connection.GetType().Name;
+            if (connection.FlangePartNo == connection.ExtensionPartNo)
+            {
+                MessageBox.Show($"{connectionName} Flange and {connectionName} Extension part numbers may not be the same", "PartNo Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+        }
+        private bool CheckFlangeAndExtensionPartNumbers()
+        {
+            bool checkInlet = CheckIfFlangeAndExtensionPartNumbers(Inlet);
+            bool checkOutlet = CheckIfFlangeAndExtensionPartNumbers(Outlet);
+            return checkInlet || checkOutlet;
+        }
         private void bRun_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
+
             if (Header61.IsRequired)
             {
                 HeaderBase.Header = Header61;
@@ -320,6 +364,7 @@ namespace HDR
         }
         private void bCreateUpdate_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
             if (Header61.IsRequired)
             {
                 HeaderBase.Header = Header61;
@@ -328,6 +373,7 @@ namespace HDR
         }
         private void test62_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
             if (Header62.IsRequired)
             {
                 HeaderBase.Header = Header62;
@@ -336,6 +382,7 @@ namespace HDR
         }
         private void test63_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
             if (Header63.IsRequired)
             {
                 HeaderBase.Header = Header63;
@@ -344,6 +391,7 @@ namespace HDR
         }
         private void test64_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
             if (Header64.IsRequired)
             {
                 HeaderBase.Header = Header64;
@@ -352,6 +400,7 @@ namespace HDR
         }
         private void test65_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
             if (Header65.IsRequired)
             {
                 HeaderBase.Header = Header65;
@@ -360,6 +409,7 @@ namespace HDR
         }
         private void test66_Click(object sender, EventArgs e)
         {
+            if (CheckFlangeAndExtensionPartNumbers()) return;
             if (Header66.IsRequired)
             {
                 HeaderBase.Header = Header66;

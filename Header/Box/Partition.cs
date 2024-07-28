@@ -25,7 +25,6 @@ namespace HDR.Box
 
             DontProcessLocation.Add(typeof(Partition2));
             DontProcessLocation.Add(typeof(Partition3));
-
         }
 
 
@@ -38,13 +37,29 @@ namespace HDR.Box
         }
 
 
-        // Protected methods
-        protected static double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
+        // Internal methods
+        internal static double GetYTranslation(double distanceBelow, double locationBelowRowNumber)
         {
+            List<double> holeLocations = new List<double>
+            {
+                Header.TubeY,
+                Header.TubeVPitchOneTwo,
+                Header.TubeVPitchTwoThree,
+                Header.TubeVPitchThreeFour,
+                Header.TubeVPitchFourFive,
+                Header.TubeVPitchFiveSix,
+                Header.TubeVPitchSixSeven,
+                Header.TubeVPitchSevenEight,
+                Header.TubeVPitchEightNine,
+                Header.TubeVPitchNineTen,
+                Header.TubeVPitchTenEleven,
+                Header.TubeVPitchElevenTwelve
+            };
+
             double value = distanceBelow;
             for (int i = 0; i < locationBelowRowNumber; i++)
             {
-                value += TubeSheet.HoleLocations[i];
+                value += holeLocations[i];
             }
             return value;
         }
@@ -61,13 +76,22 @@ namespace HDR.Box
 
 
         // Protected properties
-        protected PositionData Position1 => PositionData.Create(tY: -GetYTranslation(
-            Header.PartitionDistanceBelow,
-            LocationBelowRowNumber));
+        protected PositionData Position1 => PositionData.Create(tY: -GetYTranslation(Header.PartitionDistanceBelow, LocationBelowRowNumber));
 
 
         // Property overrides
-        public override string PartNo => Header.PartitionPartNo;
+        public override string PartNo
+        {
+            get
+            {
+                if (Header.PartitionPartNo != null)
+                {
+                    if (Header.PartitionPartNo.Length != 0)
+                        return Header.PartitionPartNo;
+                }
+                return "Partition";
+            }
+        }
         public override bool Enabled => THK != 0;
         public override string StaticPartNo => "Partition";
         public override Shape RawMaterialShape => Shape.Plate;

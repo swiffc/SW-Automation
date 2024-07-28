@@ -224,6 +224,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.initials_Box = new System.Windows.Forms.TextBox();
+            this.bExcel = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -2338,6 +2339,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.bExcel);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.createDrawing_Toggle);
             this.tabPage2.Controls.Add(this.delete_Toggle);
@@ -2370,6 +2372,16 @@
             this.initials_Box.TabIndex = 82;
             this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
+            // 
+            // bExcel
+            // 
+            this.bExcel.Location = new System.Drawing.Point(6, 101);
+            this.bExcel.Name = "bExcel";
+            this.bExcel.Size = new System.Drawing.Size(111, 23);
+            this.bExcel.TabIndex = 99;
+            this.bExcel.Text = "Release Excel COM";
+            this.bExcel.UseVisualStyleBackColor = true;
+            this.bExcel.Click += new System.EventHandler(this.bExcel_Click);
             // 
             // BundleUI
             // 
@@ -2602,6 +2614,7 @@
         private System.Windows.Forms.TextBox tLugStagger;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Button bExcel;
     }
 }
 

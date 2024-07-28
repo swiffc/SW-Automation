@@ -928,10 +928,14 @@ namespace Bundle
 
 
 
-        #endregion
 
         #endregion
 
+        #endregion
 
+        private void bExcel_Click(object sender, EventArgs e)
+        {
+            Prego.CleanUp(true);
+        }
     }
 }
