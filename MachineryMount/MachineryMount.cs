@@ -43,13 +43,13 @@ namespace MachineryMount
         {
             if (!Developer)
             {
-                var thread = new Thread(() =>
-                {
-                    _messageBoxForm = new MessageBoxForm();
-                    Application.Run(_messageBoxForm);
-                });
-                thread.SetApartmentState(ApartmentState.STA);
-                thread.Start();
+                //var thread = new Thread(() =>
+                //{
+                //    _messageBoxForm = new MessageBoxForm();
+                //    Application.Run(_messageBoxForm);
+                //});
+                //thread.SetApartmentState(ApartmentState.STA);
+                //thread.Start();
 
                 if (!TemplatesDownloaded)
                 {
@@ -62,7 +62,14 @@ namespace MachineryMount
                     LibraryFilesDownloaded = true;
                 }
 
-                _messageBoxForm.Invoke(new Action(_messageBoxForm.Close));
+                //try
+                //{
+                //    _messageBoxForm.Invoke(new Action(_messageBoxForm.Close));
+                //}
+                //catch (Exception)
+                //{
+                //}
+
             }
         }
 

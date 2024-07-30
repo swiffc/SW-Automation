@@ -171,7 +171,7 @@ namespace FileTools
                 return "-1";
             }
         }
-        public static string CreateNew_SubComponentFile(string staticPartNo, SW_Assembly swAssembly, string over_ride = null)
+        public static string CreateNew_SubComponentFile(string staticPartNo, IComponentInfo2 componentInfo2, string over_ride = null)
         {
             string templateFile = $@"{TemplateFolderPath}\JOBNO-{staticPartNo}.SLDPRT";
 
@@ -199,7 +199,14 @@ namespace FileTools
 
                 if (!System.IO.File.Exists(desktopFile))
                 {
-                    CopyAsReadWrite(templateFile, desktopFile);
+                    if (System.IO.File.Exists(templateFile))
+                    {
+                        CopyAsReadWrite(templateFile, desktopFile);
+                    }
+                    else
+                    {
+                        CopyAsReadWrite(componentInfo2.FilePath, desktopFile);
+                    }
                     Debug.WriteLine($"            Created new [{staticPartNo}] as <{Path.GetFileNameWithoutExtension(desktopFile)}>");
                     Debug.WriteLine($"");
                     AssignedComponentPaths.Add(desktopFile);

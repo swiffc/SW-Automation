@@ -303,7 +303,7 @@ namespace FileTools.Base
             if (partNo != PartNo)
                 partNo = GetPartNoFromDirectory(StaticPartNo, _parentAssembly, true);
             if (partNo != PartNo)
-                partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, PartNo);
+                partNo = CreateNew_SubComponentFile(StaticPartNo, this, PartNo);
 
             int i = 1;
             string tryPartNo;
@@ -316,7 +316,7 @@ namespace FileTools.Base
                 i++;
                 tryPartNo = PartNo + $" ({i})";
 
-                partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, tryPartNo);
+                partNo = CreateNew_SubComponentFile(StaticPartNo, this, tryPartNo);
             }
         }
 
@@ -351,11 +351,11 @@ namespace FileTools.Base
                             {
                                 if (SizeOrThickness == "") // for purchased parts
                                 {
-                                    _partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly, GetType().Name);
+                                    _partNo = CreateNew_SubComponentFile(StaticPartNo, this, GetType().Name);
                                 }
                                 else // for fabricated parts
                                 {
-                                    _partNo = CreateNew_SubComponentFile(StaticPartNo, _parentAssembly);
+                                    _partNo = CreateNew_SubComponentFile(StaticPartNo, this);
                                 }
 
                             }
