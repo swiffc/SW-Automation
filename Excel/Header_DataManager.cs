@@ -110,6 +110,8 @@ namespace Excel
             public (string[] Cells, Worksheet Sheet) PartitionDistanceBelow3 { get; set; }
             public (string[] Cells, Worksheet Sheet) StiffenerBelowRow3 { get; set; }
             public (string[] Cells, Worksheet Sheet) StiffenerDistanceBelow3 { get; set; }
+            public (string[] Cells, Worksheet Sheet) WetLocationY { get; set; }
+            public (string[] Cells, Worksheet Sheet) VerticalSpan { get; set; }
         }
 
 
@@ -211,6 +213,8 @@ namespace Excel
             public TextBox PartitionDistanceBelow3TextBox { get; set; }
             public TextBox StiffenerBelowRow3TextBox { get; set; }
             public TextBox StiffenerDistanceBelow3TextBox { get; set; }
+            public TextBox WetLocationYTextBox { get; set; }
+            public TextBox VerticalSpanTextBox { get; set; }
         }
 
 
@@ -317,6 +321,8 @@ namespace Excel
                     PartitionDistanceBelow3TextBox = GetControl<TextBox>(formInstance, "tPartitionDistanceBelow3_", i),
                     StiffenerBelowRow3TextBox = GetControl<TextBox>(formInstance, "tStiffenerBelowRow3_", i),
                     StiffenerDistanceBelow3TextBox = GetControl<TextBox>(formInstance, "tStiffenerDistanceBelow3_", i),
+                    WetLocationYTextBox = GetControl<TextBox>(formInstance, "tWetLocationY_", i),
+                    VerticalSpanTextBox = GetControl<TextBox>(formInstance, "tVerticalSpan_", i),
                 };
 
                 HeaderAppData.Add(i.ToString(), uiDto);
@@ -427,7 +433,8 @@ namespace Excel
                         PartitionDistanceBelow3 = (new string[] { "V669" }, InventorSheet),
                         StiffenerBelowRow3 = (new string[]      { "V518" }, InventorSheet),
                         StiffenerDistanceBelow3 = (new string[] { "V519" }, InventorSheet),
-                       
+
+                        WetLocationY = (new string[] { "V993" }, InventorSheet),
                     },
                     ["63"] = new Prego_DTO
                     {
@@ -522,6 +529,8 @@ namespace Excel
                         PartitionDistanceBelow3 = (new string[]    { "W669" }, InventorSheet),
                         StiffenerBelowRow3 = (new string[]         { "W518" }, InventorSheet),
                         StiffenerDistanceBelow3 = (new string[]    { "W519" }, InventorSheet),
+
+                        WetLocationY = (new string[] { "W993" }, InventorSheet),
                     },
                     ["65"] = new Prego_DTO
                     {
@@ -616,6 +625,7 @@ namespace Excel
                         PartitionDistanceBelow3 = (new string[]    { "X669" }, InventorSheet),
                         StiffenerBelowRow3 = (new string[]         { "X518" }, InventorSheet),
                         StiffenerDistanceBelow3 = (new string[]    { "X519" }, InventorSheet),
+                        WetLocationY = (new string[] { "X993" }, InventorSheet),
                     },
                     ["62"] = new Prego_DTO
                     {
@@ -710,6 +720,7 @@ namespace Excel
                         PartitionDistanceBelow3 = (new string[]    { "Y669" }, InventorSheet),
                         StiffenerBelowRow3 = (new string[]         { "Y518" }, InventorSheet),
                         StiffenerDistanceBelow3 = (new string[]    { "Y519" }, InventorSheet),
+                        WetLocationY = (new string[] { "Y993" }, InventorSheet),
                     },
 
                     ["64"] = new Prego_DTO
@@ -805,6 +816,7 @@ namespace Excel
                         PartitionDistanceBelow3 = (new string[]    { "Z669" }, InventorSheet),
                         StiffenerBelowRow3 = (new string[]         { "Z518" }, InventorSheet),
                         StiffenerDistanceBelow3 = (new string[]    { "Z519" }, InventorSheet),
+                        WetLocationY = (new string[] { "Z993" }, InventorSheet),
                     },
                     ["66"] = new Prego_DTO
                     {
@@ -899,6 +911,7 @@ namespace Excel
                         PartitionDistanceBelow3 = (new string[]    { "AA669" }, InventorSheet),
                         StiffenerBelowRow3 = (new string[]         { "AA518" }, InventorSheet),
                         StiffenerDistanceBelow3 = (new string[]    { "AA519" }, InventorSheet),
+                        WetLocationY = (new string[] { "AA993" }, InventorSheet),
                     }
                 };
             }

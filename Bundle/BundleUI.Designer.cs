@@ -161,16 +161,16 @@
             this.cEnabled61 = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label47 = new System.Windows.Forms.Label();
-            this.Xtop_62 = new System.Windows.Forms.TextBox();
-            this.Xtop_61 = new System.Windows.Forms.TextBox();
+            this.tTubeOddX_62 = new System.Windows.Forms.TextBox();
+            this.tTubeOddX_61 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.tY_Location_66 = new System.Windows.Forms.TextBox();
-            this.tY_Location_62 = new System.Windows.Forms.TextBox();
-            this.tY_Location_61 = new System.Windows.Forms.TextBox();
-            this.tY_Location_63 = new System.Windows.Forms.TextBox();
+            this.tWetLocationY_66 = new System.Windows.Forms.TextBox();
+            this.tWetLocationY_62 = new System.Windows.Forms.TextBox();
+            this.tWetLocationY_61 = new System.Windows.Forms.TextBox();
+            this.tWetLocationY_63 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.tY_Location_64 = new System.Windows.Forms.TextBox();
-            this.tY_Location_65 = new System.Windows.Forms.TextBox();
+            this.tWetLocationY_64 = new System.Windows.Forms.TextBox();
+            this.tWetLocationY_65 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.tTopBottomTHK_66 = new System.Windows.Forms.TextBox();
@@ -187,13 +187,13 @@
             this.label30 = new System.Windows.Forms.Label();
             this.tBoxLength_64 = new System.Windows.Forms.TextBox();
             this.tBoxLength_65 = new System.Windows.Forms.TextBox();
-            this.tVerticalSpan_66 = new System.Windows.Forms.TextBox();
-            this.tVerticalSpan_62 = new System.Windows.Forms.TextBox();
-            this.tVerticalSpan_61 = new System.Windows.Forms.TextBox();
-            this.tVerticalSpan_63 = new System.Windows.Forms.TextBox();
+            this.tBoxHeight_66 = new System.Windows.Forms.TextBox();
+            this.tBoxHeight_62 = new System.Windows.Forms.TextBox();
+            this.tBoxHeight_61 = new System.Windows.Forms.TextBox();
+            this.tBoxHeight_63 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.tVerticalSpan_64 = new System.Windows.Forms.TextBox();
-            this.tVerticalSpan_65 = new System.Windows.Forms.TextBox();
+            this.tBoxHeight_64 = new System.Windows.Forms.TextBox();
+            this.tBoxHeight_65 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_66 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_62 = new System.Windows.Forms.TextBox();
             this.tPlugsheetTHK_61 = new System.Windows.Forms.TextBox();
@@ -208,13 +208,13 @@
             this.label23 = new System.Windows.Forms.Label();
             this.tTubesheetTHK_64 = new System.Windows.Forms.TextBox();
             this.tTubesheetTHK_65 = new System.Windows.Forms.TextBox();
-            this.tBoxWidth66 = new System.Windows.Forms.TextBox();
-            this.tBoxWidth62 = new System.Windows.Forms.TextBox();
-            this.tBoxWidth61 = new System.Windows.Forms.TextBox();
-            this.tBoxWidth63 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth_66 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth_62 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth_61 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth_63 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.tBoxWidth64 = new System.Windows.Forms.TextBox();
-            this.tBoxWidth65 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth_64 = new System.Windows.Forms.TextBox();
+            this.tBoxWidth_65 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -222,9 +222,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.bExcel = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.initials_Box = new System.Windows.Forms.TextBox();
-            this.bExcel = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -1697,16 +1697,16 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.label47);
-            this.panel3.Controls.Add(this.Xtop_62);
-            this.panel3.Controls.Add(this.Xtop_61);
+            this.panel3.Controls.Add(this.tTubeOddX_62);
+            this.panel3.Controls.Add(this.tTubeOddX_61);
             this.panel3.Controls.Add(this.label42);
-            this.panel3.Controls.Add(this.tY_Location_66);
-            this.panel3.Controls.Add(this.tY_Location_62);
-            this.panel3.Controls.Add(this.tY_Location_61);
-            this.panel3.Controls.Add(this.tY_Location_63);
+            this.panel3.Controls.Add(this.tWetLocationY_66);
+            this.panel3.Controls.Add(this.tWetLocationY_62);
+            this.panel3.Controls.Add(this.tWetLocationY_61);
+            this.panel3.Controls.Add(this.tWetLocationY_63);
             this.panel3.Controls.Add(this.label34);
-            this.panel3.Controls.Add(this.tY_Location_64);
-            this.panel3.Controls.Add(this.tY_Location_65);
+            this.panel3.Controls.Add(this.tWetLocationY_64);
+            this.panel3.Controls.Add(this.tWetLocationY_65);
             this.panel3.Controls.Add(this.label33);
             this.panel3.Controls.Add(this.label32);
             this.panel3.Controls.Add(this.tTopBottomTHK_66);
@@ -1723,13 +1723,13 @@
             this.panel3.Controls.Add(this.label30);
             this.panel3.Controls.Add(this.tBoxLength_64);
             this.panel3.Controls.Add(this.tBoxLength_65);
-            this.panel3.Controls.Add(this.tVerticalSpan_66);
-            this.panel3.Controls.Add(this.tVerticalSpan_62);
-            this.panel3.Controls.Add(this.tVerticalSpan_61);
-            this.panel3.Controls.Add(this.tVerticalSpan_63);
+            this.panel3.Controls.Add(this.tBoxHeight_66);
+            this.panel3.Controls.Add(this.tBoxHeight_62);
+            this.panel3.Controls.Add(this.tBoxHeight_61);
+            this.panel3.Controls.Add(this.tBoxHeight_63);
             this.panel3.Controls.Add(this.label29);
-            this.panel3.Controls.Add(this.tVerticalSpan_64);
-            this.panel3.Controls.Add(this.tVerticalSpan_65);
+            this.panel3.Controls.Add(this.tBoxHeight_64);
+            this.panel3.Controls.Add(this.tBoxHeight_65);
             this.panel3.Controls.Add(this.tPlugsheetTHK_66);
             this.panel3.Controls.Add(this.tPlugsheetTHK_62);
             this.panel3.Controls.Add(this.tPlugsheetTHK_61);
@@ -1744,13 +1744,13 @@
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.tTubesheetTHK_64);
             this.panel3.Controls.Add(this.tTubesheetTHK_65);
-            this.panel3.Controls.Add(this.tBoxWidth66);
-            this.panel3.Controls.Add(this.tBoxWidth62);
-            this.panel3.Controls.Add(this.tBoxWidth61);
-            this.panel3.Controls.Add(this.tBoxWidth63);
+            this.panel3.Controls.Add(this.tBoxWidth_66);
+            this.panel3.Controls.Add(this.tBoxWidth_62);
+            this.panel3.Controls.Add(this.tBoxWidth_61);
+            this.panel3.Controls.Add(this.tBoxWidth_63);
             this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.tBoxWidth64);
-            this.panel3.Controls.Add(this.tBoxWidth65);
+            this.panel3.Controls.Add(this.tBoxWidth_64);
+            this.panel3.Controls.Add(this.tBoxWidth_65);
             this.panel3.Location = new System.Drawing.Point(3, 46);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(596, 472);
@@ -1769,23 +1769,23 @@
             this.label47.Text = "Miscellaneous";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Xtop_62
+            // tTubeOddX_62
             // 
-            this.Xtop_62.Location = new System.Drawing.Point(289, 273);
-            this.Xtop_62.Name = "Xtop_62";
-            this.Xtop_62.Size = new System.Drawing.Size(67, 20);
-            this.Xtop_62.TabIndex = 150;
-            this.Xtop_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Xtop_62.TextChanged += new System.EventHandler(this.Xtop_62_TextChanged);
+            this.tTubeOddX_62.Location = new System.Drawing.Point(289, 273);
+            this.tTubeOddX_62.Name = "tTubeOddX_62";
+            this.tTubeOddX_62.Size = new System.Drawing.Size(67, 20);
+            this.tTubeOddX_62.TabIndex = 150;
+            this.tTubeOddX_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubeOddX_62.TextChanged += new System.EventHandler(this.Xtop_62_TextChanged);
             // 
-            // Xtop_61
+            // tTubeOddX_61
             // 
-            this.Xtop_61.Location = new System.Drawing.Point(362, 273);
-            this.Xtop_61.Name = "Xtop_61";
-            this.Xtop_61.Size = new System.Drawing.Size(64, 20);
-            this.Xtop_61.TabIndex = 149;
-            this.Xtop_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Xtop_61.TextChanged += new System.EventHandler(this.Xtop_61_TextChanged);
+            this.tTubeOddX_61.Location = new System.Drawing.Point(362, 273);
+            this.tTubeOddX_61.Name = "tTubeOddX_61";
+            this.tTubeOddX_61.Size = new System.Drawing.Size(64, 20);
+            this.tTubeOddX_61.TabIndex = 149;
+            this.tTubeOddX_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tTubeOddX_61.TextChanged += new System.EventHandler(this.Xtop_61_TextChanged);
             // 
             // label42
             // 
@@ -1797,41 +1797,41 @@
             this.label42.TabIndex = 151;
             this.label42.Text = "X Top";
             // 
-            // tY_Location_66
+            // tWetLocationY_66
             // 
-            this.tY_Location_66.Location = new System.Drawing.Point(3, 247);
-            this.tY_Location_66.Name = "tY_Location_66";
-            this.tY_Location_66.Size = new System.Drawing.Size(67, 20);
-            this.tY_Location_66.TabIndex = 148;
-            this.tY_Location_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tY_Location_66.TextChanged += new System.EventHandler(this.tY_Location_66_TextChanged);
+            this.tWetLocationY_66.Location = new System.Drawing.Point(3, 247);
+            this.tWetLocationY_66.Name = "tWetLocationY_66";
+            this.tWetLocationY_66.Size = new System.Drawing.Size(67, 20);
+            this.tWetLocationY_66.TabIndex = 148;
+            this.tWetLocationY_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tWetLocationY_66.TextChanged += new System.EventHandler(this.tY_Location_66_TextChanged);
             // 
-            // tY_Location_62
+            // tWetLocationY_62
             // 
-            this.tY_Location_62.Location = new System.Drawing.Point(289, 247);
-            this.tY_Location_62.Name = "tY_Location_62";
-            this.tY_Location_62.Size = new System.Drawing.Size(67, 20);
-            this.tY_Location_62.TabIndex = 143;
-            this.tY_Location_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tY_Location_62.TextChanged += new System.EventHandler(this.tY_Location_62_TextChanged);
+            this.tWetLocationY_62.Location = new System.Drawing.Point(289, 247);
+            this.tWetLocationY_62.Name = "tWetLocationY_62";
+            this.tWetLocationY_62.Size = new System.Drawing.Size(67, 20);
+            this.tWetLocationY_62.TabIndex = 143;
+            this.tWetLocationY_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tWetLocationY_62.TextChanged += new System.EventHandler(this.tY_Location_62_TextChanged);
             // 
-            // tY_Location_61
+            // tWetLocationY_61
             // 
-            this.tY_Location_61.Location = new System.Drawing.Point(362, 247);
-            this.tY_Location_61.Name = "tY_Location_61";
-            this.tY_Location_61.Size = new System.Drawing.Size(64, 20);
-            this.tY_Location_61.TabIndex = 142;
-            this.tY_Location_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tY_Location_61.TextChanged += new System.EventHandler(this.tY_Location_61_TextChanged);
+            this.tWetLocationY_61.Location = new System.Drawing.Point(362, 247);
+            this.tWetLocationY_61.Name = "tWetLocationY_61";
+            this.tWetLocationY_61.Size = new System.Drawing.Size(64, 20);
+            this.tWetLocationY_61.TabIndex = 142;
+            this.tWetLocationY_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tWetLocationY_61.TextChanged += new System.EventHandler(this.tY_Location_61_TextChanged);
             // 
-            // tY_Location_63
+            // tWetLocationY_63
             // 
-            this.tY_Location_63.Location = new System.Drawing.Point(219, 247);
-            this.tY_Location_63.Name = "tY_Location_63";
-            this.tY_Location_63.Size = new System.Drawing.Size(64, 20);
-            this.tY_Location_63.TabIndex = 145;
-            this.tY_Location_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tY_Location_63.TextChanged += new System.EventHandler(this.tY_Location_63_TextChanged);
+            this.tWetLocationY_63.Location = new System.Drawing.Point(219, 247);
+            this.tWetLocationY_63.Name = "tWetLocationY_63";
+            this.tWetLocationY_63.Size = new System.Drawing.Size(64, 20);
+            this.tWetLocationY_63.TabIndex = 145;
+            this.tWetLocationY_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tWetLocationY_63.TextChanged += new System.EventHandler(this.tY_Location_63_TextChanged);
             // 
             // label34
             // 
@@ -1843,23 +1843,23 @@
             this.label34.TabIndex = 144;
             this.label34.Text = "Box locs (top wet to TBF bot)";
             // 
-            // tY_Location_64
+            // tWetLocationY_64
             // 
-            this.tY_Location_64.Location = new System.Drawing.Point(146, 247);
-            this.tY_Location_64.Name = "tY_Location_64";
-            this.tY_Location_64.Size = new System.Drawing.Size(67, 20);
-            this.tY_Location_64.TabIndex = 146;
-            this.tY_Location_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tY_Location_64.TextChanged += new System.EventHandler(this.tY_Location_64_TextChanged);
+            this.tWetLocationY_64.Location = new System.Drawing.Point(146, 247);
+            this.tWetLocationY_64.Name = "tWetLocationY_64";
+            this.tWetLocationY_64.Size = new System.Drawing.Size(67, 20);
+            this.tWetLocationY_64.TabIndex = 146;
+            this.tWetLocationY_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tWetLocationY_64.TextChanged += new System.EventHandler(this.tY_Location_64_TextChanged);
             // 
-            // tY_Location_65
+            // tWetLocationY_65
             // 
-            this.tY_Location_65.Location = new System.Drawing.Point(76, 247);
-            this.tY_Location_65.Name = "tY_Location_65";
-            this.tY_Location_65.Size = new System.Drawing.Size(64, 20);
-            this.tY_Location_65.TabIndex = 147;
-            this.tY_Location_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tY_Location_65.TextChanged += new System.EventHandler(this.tY_Location_65_TextChanged);
+            this.tWetLocationY_65.Location = new System.Drawing.Point(76, 247);
+            this.tWetLocationY_65.Name = "tWetLocationY_65";
+            this.tWetLocationY_65.Size = new System.Drawing.Size(64, 20);
+            this.tWetLocationY_65.TabIndex = 147;
+            this.tWetLocationY_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tWetLocationY_65.TextChanged += new System.EventHandler(this.tY_Location_65_TextChanged);
             // 
             // label33
             // 
@@ -2015,41 +2015,41 @@
             this.tBoxLength_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tBoxLength_65.TextChanged += new System.EventHandler(this.tBoxLength_65_TextChanged);
             // 
-            // tVerticalSpan_66
+            // tBoxHeight_66
             // 
-            this.tVerticalSpan_66.Location = new System.Drawing.Point(3, 51);
-            this.tVerticalSpan_66.Name = "tVerticalSpan_66";
-            this.tVerticalSpan_66.Size = new System.Drawing.Size(67, 20);
-            this.tVerticalSpan_66.TabIndex = 125;
-            this.tVerticalSpan_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tVerticalSpan_66.TextChanged += new System.EventHandler(this.tVerticalSpan_66_TextChanged);
+            this.tBoxHeight_66.Location = new System.Drawing.Point(3, 51);
+            this.tBoxHeight_66.Name = "tBoxHeight_66";
+            this.tBoxHeight_66.Size = new System.Drawing.Size(67, 20);
+            this.tBoxHeight_66.TabIndex = 125;
+            this.tBoxHeight_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxHeight_66.TextChanged += new System.EventHandler(this.tVerticalSpan_66_TextChanged);
             // 
-            // tVerticalSpan_62
+            // tBoxHeight_62
             // 
-            this.tVerticalSpan_62.Location = new System.Drawing.Point(289, 51);
-            this.tVerticalSpan_62.Name = "tVerticalSpan_62";
-            this.tVerticalSpan_62.Size = new System.Drawing.Size(67, 20);
-            this.tVerticalSpan_62.TabIndex = 120;
-            this.tVerticalSpan_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tVerticalSpan_62.TextChanged += new System.EventHandler(this.tVerticalSpan_62_TextChanged);
+            this.tBoxHeight_62.Location = new System.Drawing.Point(289, 51);
+            this.tBoxHeight_62.Name = "tBoxHeight_62";
+            this.tBoxHeight_62.Size = new System.Drawing.Size(67, 20);
+            this.tBoxHeight_62.TabIndex = 120;
+            this.tBoxHeight_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxHeight_62.TextChanged += new System.EventHandler(this.tVerticalSpan_62_TextChanged);
             // 
-            // tVerticalSpan_61
+            // tBoxHeight_61
             // 
-            this.tVerticalSpan_61.Location = new System.Drawing.Point(362, 51);
-            this.tVerticalSpan_61.Name = "tVerticalSpan_61";
-            this.tVerticalSpan_61.Size = new System.Drawing.Size(64, 20);
-            this.tVerticalSpan_61.TabIndex = 119;
-            this.tVerticalSpan_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tVerticalSpan_61.TextChanged += new System.EventHandler(this.tVerticalSpan_61_TextChanged);
+            this.tBoxHeight_61.Location = new System.Drawing.Point(362, 51);
+            this.tBoxHeight_61.Name = "tBoxHeight_61";
+            this.tBoxHeight_61.Size = new System.Drawing.Size(64, 20);
+            this.tBoxHeight_61.TabIndex = 119;
+            this.tBoxHeight_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxHeight_61.TextChanged += new System.EventHandler(this.tVerticalSpan_61_TextChanged);
             // 
-            // tVerticalSpan_63
+            // tBoxHeight_63
             // 
-            this.tVerticalSpan_63.Location = new System.Drawing.Point(219, 51);
-            this.tVerticalSpan_63.Name = "tVerticalSpan_63";
-            this.tVerticalSpan_63.Size = new System.Drawing.Size(64, 20);
-            this.tVerticalSpan_63.TabIndex = 122;
-            this.tVerticalSpan_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tVerticalSpan_63.TextChanged += new System.EventHandler(this.tVerticalSpan_63_TextChanged);
+            this.tBoxHeight_63.Location = new System.Drawing.Point(219, 51);
+            this.tBoxHeight_63.Name = "tBoxHeight_63";
+            this.tBoxHeight_63.Size = new System.Drawing.Size(64, 20);
+            this.tBoxHeight_63.TabIndex = 122;
+            this.tBoxHeight_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxHeight_63.TextChanged += new System.EventHandler(this.tVerticalSpan_63_TextChanged);
             // 
             // label29
             // 
@@ -2061,23 +2061,23 @@
             this.label29.TabIndex = 121;
             this.label29.Text = "Vertical Span";
             // 
-            // tVerticalSpan_64
+            // tBoxHeight_64
             // 
-            this.tVerticalSpan_64.Location = new System.Drawing.Point(146, 51);
-            this.tVerticalSpan_64.Name = "tVerticalSpan_64";
-            this.tVerticalSpan_64.Size = new System.Drawing.Size(67, 20);
-            this.tVerticalSpan_64.TabIndex = 123;
-            this.tVerticalSpan_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tVerticalSpan_64.TextChanged += new System.EventHandler(this.tVerticalSpan_64_TextChanged);
+            this.tBoxHeight_64.Location = new System.Drawing.Point(146, 51);
+            this.tBoxHeight_64.Name = "tBoxHeight_64";
+            this.tBoxHeight_64.Size = new System.Drawing.Size(67, 20);
+            this.tBoxHeight_64.TabIndex = 123;
+            this.tBoxHeight_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxHeight_64.TextChanged += new System.EventHandler(this.tVerticalSpan_64_TextChanged);
             // 
-            // tVerticalSpan_65
+            // tBoxHeight_65
             // 
-            this.tVerticalSpan_65.Location = new System.Drawing.Point(76, 51);
-            this.tVerticalSpan_65.Name = "tVerticalSpan_65";
-            this.tVerticalSpan_65.Size = new System.Drawing.Size(64, 20);
-            this.tVerticalSpan_65.TabIndex = 124;
-            this.tVerticalSpan_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tVerticalSpan_65.TextChanged += new System.EventHandler(this.tVerticalSpan_65_TextChanged);
+            this.tBoxHeight_65.Location = new System.Drawing.Point(76, 51);
+            this.tBoxHeight_65.Name = "tBoxHeight_65";
+            this.tBoxHeight_65.Size = new System.Drawing.Size(64, 20);
+            this.tBoxHeight_65.TabIndex = 124;
+            this.tBoxHeight_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxHeight_65.TextChanged += new System.EventHandler(this.tVerticalSpan_65_TextChanged);
             // 
             // tPlugsheetTHK_66
             // 
@@ -2207,41 +2207,41 @@
             this.tTubesheetTHK_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tTubesheetTHK_65.TextChanged += new System.EventHandler(this.tTubesheetTHK_65_TextChanged);
             // 
-            // tBoxWidth66
+            // tBoxWidth_66
             // 
-            this.tBoxWidth66.Location = new System.Drawing.Point(3, 25);
-            this.tBoxWidth66.Name = "tBoxWidth66";
-            this.tBoxWidth66.Size = new System.Drawing.Size(67, 20);
-            this.tBoxWidth66.TabIndex = 104;
-            this.tBoxWidth66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tBoxWidth66.TextChanged += new System.EventHandler(this.tBoxWidth66_TextChanged);
+            this.tBoxWidth_66.Location = new System.Drawing.Point(3, 25);
+            this.tBoxWidth_66.Name = "tBoxWidth_66";
+            this.tBoxWidth_66.Size = new System.Drawing.Size(67, 20);
+            this.tBoxWidth_66.TabIndex = 104;
+            this.tBoxWidth_66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxWidth_66.TextChanged += new System.EventHandler(this.tBoxWidth66_TextChanged);
             // 
-            // tBoxWidth62
+            // tBoxWidth_62
             // 
-            this.tBoxWidth62.Location = new System.Drawing.Point(289, 25);
-            this.tBoxWidth62.Name = "tBoxWidth62";
-            this.tBoxWidth62.Size = new System.Drawing.Size(67, 20);
-            this.tBoxWidth62.TabIndex = 95;
-            this.tBoxWidth62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tBoxWidth62.TextChanged += new System.EventHandler(this.tBoxWidth62_TextChanged);
+            this.tBoxWidth_62.Location = new System.Drawing.Point(289, 25);
+            this.tBoxWidth_62.Name = "tBoxWidth_62";
+            this.tBoxWidth_62.Size = new System.Drawing.Size(67, 20);
+            this.tBoxWidth_62.TabIndex = 95;
+            this.tBoxWidth_62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxWidth_62.TextChanged += new System.EventHandler(this.tBoxWidth62_TextChanged);
             // 
-            // tBoxWidth61
+            // tBoxWidth_61
             // 
-            this.tBoxWidth61.Location = new System.Drawing.Point(362, 25);
-            this.tBoxWidth61.Name = "tBoxWidth61";
-            this.tBoxWidth61.Size = new System.Drawing.Size(64, 20);
-            this.tBoxWidth61.TabIndex = 94;
-            this.tBoxWidth61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tBoxWidth61.TextChanged += new System.EventHandler(this.tBoxWidth61_TextChanged);
+            this.tBoxWidth_61.Location = new System.Drawing.Point(362, 25);
+            this.tBoxWidth_61.Name = "tBoxWidth_61";
+            this.tBoxWidth_61.Size = new System.Drawing.Size(64, 20);
+            this.tBoxWidth_61.TabIndex = 94;
+            this.tBoxWidth_61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxWidth_61.TextChanged += new System.EventHandler(this.tBoxWidth61_TextChanged);
             // 
-            // tBoxWidth63
+            // tBoxWidth_63
             // 
-            this.tBoxWidth63.Location = new System.Drawing.Point(219, 25);
-            this.tBoxWidth63.Name = "tBoxWidth63";
-            this.tBoxWidth63.Size = new System.Drawing.Size(64, 20);
-            this.tBoxWidth63.TabIndex = 99;
-            this.tBoxWidth63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tBoxWidth63.TextChanged += new System.EventHandler(this.tBoxWidth63_TextChanged);
+            this.tBoxWidth_63.Location = new System.Drawing.Point(219, 25);
+            this.tBoxWidth_63.Name = "tBoxWidth_63";
+            this.tBoxWidth_63.Size = new System.Drawing.Size(64, 20);
+            this.tBoxWidth_63.TabIndex = 99;
+            this.tBoxWidth_63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxWidth_63.TextChanged += new System.EventHandler(this.tBoxWidth63_TextChanged);
             // 
             // label16
             // 
@@ -2253,23 +2253,23 @@
             this.label16.TabIndex = 96;
             this.label16.Text = "BoxWidth";
             // 
-            // tBoxWidth64
+            // tBoxWidth_64
             // 
-            this.tBoxWidth64.Location = new System.Drawing.Point(146, 25);
-            this.tBoxWidth64.Name = "tBoxWidth64";
-            this.tBoxWidth64.Size = new System.Drawing.Size(67, 20);
-            this.tBoxWidth64.TabIndex = 100;
-            this.tBoxWidth64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tBoxWidth64.TextChanged += new System.EventHandler(this.tBoxWidth64_TextChanged);
+            this.tBoxWidth_64.Location = new System.Drawing.Point(146, 25);
+            this.tBoxWidth_64.Name = "tBoxWidth_64";
+            this.tBoxWidth_64.Size = new System.Drawing.Size(67, 20);
+            this.tBoxWidth_64.TabIndex = 100;
+            this.tBoxWidth_64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxWidth_64.TextChanged += new System.EventHandler(this.tBoxWidth64_TextChanged);
             // 
-            // tBoxWidth65
+            // tBoxWidth_65
             // 
-            this.tBoxWidth65.Location = new System.Drawing.Point(76, 25);
-            this.tBoxWidth65.Name = "tBoxWidth65";
-            this.tBoxWidth65.Size = new System.Drawing.Size(64, 20);
-            this.tBoxWidth65.TabIndex = 103;
-            this.tBoxWidth65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tBoxWidth65.TextChanged += new System.EventHandler(this.tBoxWidth65_TextChanged);
+            this.tBoxWidth_65.Location = new System.Drawing.Point(76, 25);
+            this.tBoxWidth_65.Name = "tBoxWidth_65";
+            this.tBoxWidth_65.Size = new System.Drawing.Size(64, 20);
+            this.tBoxWidth_65.TabIndex = 103;
+            this.tBoxWidth_65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBoxWidth_65.TextChanged += new System.EventHandler(this.tBoxWidth65_TextChanged);
             // 
             // label20
             // 
@@ -2353,6 +2353,16 @@
             this.tabPage2.Text = "Advanced";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // bExcel
+            // 
+            this.bExcel.Location = new System.Drawing.Point(6, 101);
+            this.bExcel.Name = "bExcel";
+            this.bExcel.Size = new System.Drawing.Size(111, 23);
+            this.bExcel.TabIndex = 99;
+            this.bExcel.Text = "Release Excel COM";
+            this.bExcel.UseVisualStyleBackColor = true;
+            this.bExcel.Click += new System.EventHandler(this.bExcel_Click);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -2372,16 +2382,6 @@
             this.initials_Box.TabIndex = 82;
             this.initials_Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.initials_Box.TextChanged += new System.EventHandler(this.initials_Box_TextChanged);
-            // 
-            // bExcel
-            // 
-            this.bExcel.Location = new System.Drawing.Point(6, 101);
-            this.bExcel.Name = "bExcel";
-            this.bExcel.Size = new System.Drawing.Size(111, 23);
-            this.bExcel.TabIndex = 99;
-            this.bExcel.Text = "Release Excel COM";
-            this.bExcel.UseVisualStyleBackColor = true;
-            this.bExcel.Click += new System.EventHandler(this.bExcel_Click);
             // 
             // BundleUI
             // 
@@ -2489,13 +2489,13 @@
         private System.Windows.Forms.TextBox tTubeOD;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tY_Location_66;
-        private System.Windows.Forms.TextBox tY_Location_62;
-        private System.Windows.Forms.TextBox tY_Location_61;
-        private System.Windows.Forms.TextBox tY_Location_63;
+        private System.Windows.Forms.TextBox tWetLocationY_66;
+        private System.Windows.Forms.TextBox tWetLocationY_62;
+        private System.Windows.Forms.TextBox tWetLocationY_61;
+        private System.Windows.Forms.TextBox tWetLocationY_63;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox tY_Location_64;
-        private System.Windows.Forms.TextBox tY_Location_65;
+        private System.Windows.Forms.TextBox tWetLocationY_64;
+        private System.Windows.Forms.TextBox tWetLocationY_65;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox tTopBottomTHK_66;
@@ -2512,13 +2512,13 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox tBoxLength_64;
         private System.Windows.Forms.TextBox tBoxLength_65;
-        private System.Windows.Forms.TextBox tVerticalSpan_66;
-        private System.Windows.Forms.TextBox tVerticalSpan_62;
-        private System.Windows.Forms.TextBox tVerticalSpan_61;
-        private System.Windows.Forms.TextBox tVerticalSpan_63;
+        private System.Windows.Forms.TextBox tBoxHeight_66;
+        private System.Windows.Forms.TextBox tBoxHeight_62;
+        private System.Windows.Forms.TextBox tBoxHeight_61;
+        private System.Windows.Forms.TextBox tBoxHeight_63;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox tVerticalSpan_64;
-        private System.Windows.Forms.TextBox tVerticalSpan_65;
+        private System.Windows.Forms.TextBox tBoxHeight_64;
+        private System.Windows.Forms.TextBox tBoxHeight_65;
         private System.Windows.Forms.TextBox tPlugsheetTHK_66;
         private System.Windows.Forms.TextBox tPlugsheetTHK_62;
         private System.Windows.Forms.TextBox tPlugsheetTHK_61;
@@ -2533,13 +2533,13 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox tTubesheetTHK_64;
         private System.Windows.Forms.TextBox tTubesheetTHK_65;
-        private System.Windows.Forms.TextBox tBoxWidth66;
-        private System.Windows.Forms.TextBox tBoxWidth62;
-        private System.Windows.Forms.TextBox tBoxWidth61;
-        private System.Windows.Forms.TextBox tBoxWidth63;
+        private System.Windows.Forms.TextBox tBoxWidth_66;
+        private System.Windows.Forms.TextBox tBoxWidth_62;
+        private System.Windows.Forms.TextBox tBoxWidth_61;
+        private System.Windows.Forms.TextBox tBoxWidth_63;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox tBoxWidth64;
-        private System.Windows.Forms.TextBox tBoxWidth65;
+        private System.Windows.Forms.TextBox tBoxWidth_64;
+        private System.Windows.Forms.TextBox tBoxWidth_65;
         private System.Windows.Forms.TextBox tTubes_Row_2L;
         private System.Windows.Forms.Label Tubes_Row_2L;
         private System.Windows.Forms.TextBox tTubes_Row_1L;
@@ -2548,8 +2548,8 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox tTubeHorizPitch;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox Xtop_62;
-        private System.Windows.Forms.TextBox Xtop_61;
+        private System.Windows.Forms.TextBox tTubeOddX_62;
+        private System.Windows.Forms.TextBox tTubeOddX_61;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox tTubeQuantity;
         private System.Windows.Forms.Label label43;

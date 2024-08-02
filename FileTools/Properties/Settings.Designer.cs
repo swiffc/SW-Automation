@@ -9202,5 +9202,77 @@ namespace FileTools.Properties {
                 this["Stainless"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WetLocationY_61 {
+            get {
+                return ((double)(this["WetLocationY_61"]));
+            }
+            set {
+                this["WetLocationY_61"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WetLocationY_62 {
+            get {
+                return ((double)(this["WetLocationY_62"]));
+            }
+            set {
+                this["WetLocationY_62"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WetLocationY_63 {
+            get {
+                return ((double)(this["WetLocationY_63"]));
+            }
+            set {
+                this["WetLocationY_63"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WetLocationY_64 {
+            get {
+                return ((double)(this["WetLocationY_64"]));
+            }
+            set {
+                this["WetLocationY_64"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WetLocationY_65 {
+            get {
+                return ((double)(this["WetLocationY_65"]));
+            }
+            set {
+                this["WetLocationY_65"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WetLocationY_66 {
+            get {
+                return ((double)(this["WetLocationY_66"]));
+            }
+            set {
+                this["WetLocationY_66"] = value;
+            }
+        }
     }
 }

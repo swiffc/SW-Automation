@@ -109,7 +109,7 @@ namespace Bundle
             initials_Box.Text = Initials;
 
             // Headers
-            MapLocal_UI_To_DTO();
+            MapLocal_UI_To_DTO(this);
             LoadHeaderData_FromApp("61");
             LoadHeaderData_FromApp("62");
             LoadHeaderData_FromApp("63");
@@ -127,29 +127,29 @@ namespace Bundle
         }
 
         #endregion
-        private void MapLocal_UI_To_DTO()
-        {
-            HeaderAppData = new Dictionary<string, UI_DTO>();
+        //private void MapLocal_UI_To_DTO() 
+        //{
+        //    HeaderAppData = new Dictionary<string, UI_DTO>();
 
-            for (int i = 61; i <= 66; i++)
-            {
-                var uiDto = new UI_DTO
-                {
-                    Header = GetHeader(i),
-                    Enabled = GetControl<CheckBox>("cEnabled", i),
-                    BoxWidthTextBox = GetControl<TextBox>("tBoxWidth", i),
-                    TubesheetTHKTextBox = GetControl<TextBox>("tTubesheetTHK_", i),
-                    PlugsheetTHKTextBox = GetControl<TextBox>("tPlugsheetTHK_", i),
-                    TopAndBottomPlateTHKTextBox = GetControl<TextBox>("tTopBottomTHK_", i),
-                    BoxLengthTextBox = GetControl<TextBox>("tBoxLength_", i),
-                    BoxHeightTextBox = GetControl<TextBox>("tVerticalSpan_", i),
-                    TubeYTextBox = GetControl<TextBox>("tY_Location_", i),
-                    TubeOddXTextBox = GetControl<TextBox>("Xtop_", i)
-                };
+        //    for (int i = 61; i <= 66; i++)
+        //    {
+        //        var uiDto = new UI_DTO
+        //        {
+        //            Header = GetHeader(i),
+        //            Enabled = GetControl<CheckBox>("cEnabled", i),
+        //            BoxWidthTextBox = GetControl<TextBox>("tBoxWidth", i),
+        //            TubesheetTHKTextBox = GetControl<TextBox>("tTubesheetTHK_", i),
+        //            PlugsheetTHKTextBox = GetControl<TextBox>("tPlugsheetTHK_", i),
+        //            TopAndBottomPlateTHKTextBox = GetControl<TextBox>("tTopBottomTHK_", i),
+        //            BoxLengthTextBox = GetControl<TextBox>("tBoxLength_", i),
+        //            BoxHeightTextBox = GetControl<TextBox>("tVerticalSpan_", i),
+        //            WetLocationYTextBox = GetControl<TextBox>("tWetLocationY_", i),
+        //            TubeOddXTextBox = GetControl<TextBox>("Xtop_", i)
+        //        };
 
-                HeaderAppData.Add(i.ToString(), uiDto);
-            }
-        }
+        //        HeaderAppData.Add(i.ToString(), uiDto);
+        //    }
+        //}
         #region Buttons
 
         private void bImportPrego_Click(object sender, EventArgs e)
@@ -356,41 +356,41 @@ namespace Bundle
         #region UpdateUI_Headers
         private void Xtop_61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(Xtop_61.Text, x => Header61.TubeOddX = x);
+            UI_DoubleChanged(tTubeOddX_61.Text, x => Header61.TubeOddX = x);
         }
 
         private void Xtop_62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(Xtop_62.Text, x => Header62.TubeOddX = x);
+            UI_DoubleChanged(tTubeOddX_62.Text, x => Header62.TubeOddX = x);
         }
         private void tY_Location_61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_61.Text, x => Header61.TubeY = x);
+            UI_DoubleChanged(tWetLocationY_61.Text, x => Header61.TubeY = x);
         }
 
         private void tY_Location_62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_62.Text, x => Header62.TubeY = x);
+            UI_DoubleChanged(tWetLocationY_62.Text, x => Header62.TubeY = x);
         }
 
         private void tY_Location_63_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_63.Text, x => Header63.TubeY = x);
+            UI_DoubleChanged(tWetLocationY_63.Text, x => Header63.TubeY = x);
         }
 
         private void tY_Location_64_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_64.Text, x => Header64.TubeY = x);
+            UI_DoubleChanged(tWetLocationY_64.Text, x => Header64.TubeY = x);
         }
 
         private void tY_Location_65_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_65.Text, x => Header65.TubeY = x);
+            UI_DoubleChanged(tWetLocationY_65.Text, x => Header65.TubeY = x);
         }
 
         private void tY_Location_66_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tY_Location_66.Text, x => Header66.TubeY = x);
+            UI_DoubleChanged(tWetLocationY_66.Text, x => Header66.TubeY = x);
         }
         private void tTopBottomTHK_61_TextChanged(object sender, EventArgs e)
         {
@@ -452,32 +452,32 @@ namespace Bundle
         }
         private void tVerticalSpan_61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_61.Text, x => Header61.BoxHeight = x);
+            UI_DoubleChanged(tBoxHeight_61.Text, x => Header61.BoxHeight = x);
         }
 
         private void tVerticalSpan_62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_62.Text, x => Header62.BoxHeight = x);
+            UI_DoubleChanged(tBoxHeight_62.Text, x => Header62.BoxHeight = x);
         }
 
         private void tVerticalSpan_63_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_63.Text, x => Header63.BoxHeight = x);
+            UI_DoubleChanged(tBoxHeight_63.Text, x => Header63.BoxHeight = x);
         }
 
         private void tVerticalSpan_64_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_64.Text, x => Header64.BoxHeight = x);
+            UI_DoubleChanged(tBoxHeight_64.Text, x => Header64.BoxHeight = x);
         }
 
         private void tVerticalSpan_65_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_65.Text, x => Header65.BoxHeight = x);
+            UI_DoubleChanged(tBoxHeight_65.Text, x => Header65.BoxHeight = x);
         }
 
         private void tVerticalSpan_66_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tVerticalSpan_66.Text, x => Header66.BoxHeight = x);
+            UI_DoubleChanged(tBoxHeight_66.Text, x => Header66.BoxHeight = x);
         }
         private void cEnabled61_CheckedChanged(object sender, EventArgs e)
         {
@@ -516,32 +516,32 @@ namespace Bundle
         }
         private void tBoxWidth61_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tBoxWidth61.Text, x => Header61.BoxWidth = x);
+            UI_DoubleChanged(tBoxWidth_61.Text, x => Header61.BoxWidth = x);
         }
 
         private void tBoxWidth62_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tBoxWidth62.Text, x => Header62.BoxWidth = x);
+            UI_DoubleChanged(tBoxWidth_62.Text, x => Header62.BoxWidth = x);
         }
 
         private void tBoxWidth63_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tBoxWidth63.Text, x => Header63.BoxWidth = x);
+            UI_DoubleChanged(tBoxWidth_63.Text, x => Header63.BoxWidth = x);
         }
 
         private void tBoxWidth64_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tBoxWidth64.Text, x => Header64.BoxWidth = x);
+            UI_DoubleChanged(tBoxWidth_64.Text, x => Header64.BoxWidth = x);
         }
 
         private void tBoxWidth65_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tBoxWidth65.Text, x => Header65.BoxWidth = x);
+            UI_DoubleChanged(tBoxWidth_65.Text, x => Header65.BoxWidth = x);
         }
 
         private void tBoxWidth66_TextChanged(object sender, EventArgs e)
         {
-            UI_DoubleChanged(tBoxWidth66.Text, x => Header66.BoxWidth = x);
+            UI_DoubleChanged(tBoxWidth_66.Text, x => Header66.BoxWidth = x);
         }
         private void tTubesheetTHK_61_TextChanged(object sender, EventArgs e)
         {

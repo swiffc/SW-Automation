@@ -112,6 +112,8 @@ namespace FileTools.Base
         double PartitionDistanceBelow3 { get; set; }
         double StiffenerBelowRow3 { get; set; }
         double StiffenerDistanceBelow3 { get; set; }
+
+        double WetLocationY { get; set; }
     }
 
 

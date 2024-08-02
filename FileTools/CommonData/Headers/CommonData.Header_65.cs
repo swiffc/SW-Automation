@@ -436,7 +436,11 @@ namespace FileTools.CommonData
                 get => Default.StiffenerDistanceBelow3_65;
                 set => Default.StiffenerDistanceBelow3_65 = value;
             }
-
+            public double WetLocationY
+            {
+                get => Default.WetLocationY_65;
+                set => Default.WetLocationY_65 = value;
+            }
         }
     }
 }
