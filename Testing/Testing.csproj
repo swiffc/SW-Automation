@@ -79,6 +79,10 @@
       <Project>{8a0435e0-e9a0-4083-864d-7563d7f829b2}</Project>
       <Name>FileTools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Header\Header.csproj">
+      <Project>{f1ba39c3-4fcc-43d0-a018-d96bc63303c2}</Project>
+      <Name>Header</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solidworks Add-In\SolidWorks Add-In.csproj">
       <Project>{3893762a-3cf1-46d5-81b8-245c0659d2bb}</Project>
       <Name>SolidWorks Add-In</Name>

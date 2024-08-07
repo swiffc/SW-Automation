@@ -19,7 +19,7 @@ namespace AddInUpdater
         private static List<string> FoldersToSkip = new List<string>
         {
             @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\Hood\1976 Hood Program",
-            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\zRAGU - Design Table Automation",
+            //@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\zRAGU - Design Table Automation",
             @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In",
             @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Installer",
 

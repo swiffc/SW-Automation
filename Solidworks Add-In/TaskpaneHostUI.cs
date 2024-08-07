@@ -12,6 +12,8 @@ using static FileTools.Properties.Settings;
 using MachineryMount;
 using Bundle;
 using HDR;
+using static FileTools.CommonData.CommonData;
+using static HDR.Drawings.TitleBlock;
 
 namespace SolidWorks_Add_In
 {
@@ -233,6 +235,18 @@ namespace SolidWorks_Add_In
             Default.Reload();
             headerUI.Show();
             headerUI.BringToFront();
+        }
+
+        private void bImportPrego6_Click(object sender, EventArgs e)
+        {
+            // Unload property
+            string _project = Project;
+            Project = "";
+
+            ImportTitleBlockInfo();
+
+            // Reload property
+            Project = _project;
         }
     }
 }

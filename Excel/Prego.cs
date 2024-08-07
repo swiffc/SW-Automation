@@ -83,6 +83,7 @@ namespace Excel
                         if (result == DialogResult.Yes)
                         {
                             PleaseWait.Show($"Loading {expectedFileName}");
+                            FilePath = expectedFilePath;
                             _pregoDoc = ExcelApp.Workbooks.Open(expectedFilePath);
                         }
                     }
@@ -111,6 +112,7 @@ namespace Excel
                         if (openFileDialog.ShowDialog() == DialogResult.OK)
                         {
                             PleaseWait.Show($"Loading {openFileDialog.FileName}");
+                            FilePath = openFileDialog.FileName;
                             _pregoDoc = ExcelApp.Workbooks.Open(openFileDialog.FileName);
                         }
 
@@ -212,6 +214,7 @@ namespace Excel
                 throw new FormatException("The version string is not in the expected format.");
             }
         }
+        public static string FilePath { get; set; }
 
 
         // Public methods
@@ -343,7 +346,15 @@ namespace Excel
 
             if (_pregoDoc != null)
             {
-                //_pregoDoc.Close(false);
+                if (fullCleanUp)
+                {
+                    try
+                    {
+                        _pregoDoc.Close(false);
+                    }
+                    catch (Exception) { }
+                }
+                    
                 Marshal.ReleaseComObject(_pregoDoc);
                 _pregoDoc = null;
             }
@@ -352,13 +363,17 @@ namespace Excel
             {
                 if (_excel != null)
                 {
-                    _excel.Quit();
+                    try
+                    {
+                        _excel.Quit();
+                    }
+                    catch (Exception) { }
                     Marshal.ReleaseComObject(_excel);
                     _excel = null;
                 }
 
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
+                //GC.Collect();
+                //GC.WaitForPendingFinalizers();
             }
 
         }

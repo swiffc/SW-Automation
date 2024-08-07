@@ -157,7 +157,16 @@ namespace ModelTools
                 //Debug.WriteLine("COM resource released");
             }
         }
-
+        
+        public static void Release(ref CustomPropertyManager COM)
+        {
+            if (COM != null)
+            {
+                Marshal.ReleaseComObject(COM);
+                COM = null;
+                //Debug.WriteLine("COM resource released");
+            }
+        }
 
 
 

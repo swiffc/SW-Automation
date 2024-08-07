@@ -9,6 +9,7 @@ using HDR.Box.Derived;
 using HDR.Connections;
 using static FileTools.Properties.Settings;
 using HDR.Connections.Derived;
+using static HDR.Drawings.TitleBlock;
 
 namespace HDR
 {

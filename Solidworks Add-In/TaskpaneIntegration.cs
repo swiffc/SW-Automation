@@ -19,9 +19,9 @@ namespace SolidWorks_Add_In
     /// </summary>
     public class TaskpaneIntegration : SwAddin
     {
-        static public string VersionNumber => "7.0.2";
+        static public string VersionNumber => "7.1.0";
         static public string SpeechBubble =>
-            @"""" + "Minor bugfix to BDL" + @"""";
+            @"""" + "Button added to import Prego data to 6 DWG" + @"""";
 
         #region Private Members
 
