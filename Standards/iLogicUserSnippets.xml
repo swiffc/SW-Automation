@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1</Version>
+  <Snippets>
+    <CodeSnippet>
+      <Category>CSV Files</Category>
+      <Name>Read CSV File</Name>
+      <ToolTip>Read the contents of a comma delimited CSV file into an ArrayList</ToolTip>
+      <Index>1001</Index>
+      <Code><![CDATA[Dim ReadCSV As New System.IO.StreamReader(ThisDoc.Path & "\filename.csv")
+Dim WordSets As New ArrayList()
+
+Do While ReadCSV.Peek <> -1
+WordSets.Add(ReadCSV.ReadLine.Split(","))
+Loop
+
+getvalue = WordSets.item(0)(0)
+messagebox.show(getvalue)
+
+'csv file looks like this:
+'test0,00,000
+'test1,100,1000
+'test2,200,2000
+
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>CSV Files</Category>
+      <Name>Export Parameters to CSV</Name>
+      <ToolTip>Export Parameter Names and their Values to a
+comma delimited CSV file.</ToolTip>
+      <Index>1002</Index>
+      <Code><![CDATA['Output parameters names and values to a comma delimited CSV file
+
+fileheader = "Parameters Report for " & ThisDoc.PathAndFileName(True) 'first line header of csv file
+description = "Main Parameters and their values" 'use this variable in the body of the html
+TableMembers = New String () {"d0", "d1", "d2"} 'parameters (names) to include in table
+delimiter = "," 'character to separate the names and values on each line
+
+'CSV filename uses this documents path and filename with a .csv extention
+Dim oFile as System.IO.File
+Dim oWrite as System.IO.StreamWriter
+csv_filename = ThisDoc.PathAndFileName(False) & ".csv"
+
+oWrite = oFile.CreateText(csv_filename) 'name and path of csv file to create/overwrite
+oWrite.WriteLine(fileheader) 'include the fileheader on the first line
+oWrite.WriteLine(description) 'include the description on the second line
+oWrite.WriteLine(NOW()) 'include the current date and time on the third line
+oWrite.WriteLine() 'blank line
+
+'write the parameter name , value for each parameter in the TableMembers Arraylist
+for each pName as String in TableMembers
+oWrite.WriteLine(pName & delimiter & DynaParam(pName)) 
+next
+
+oWrite.Close()
+
+'option to view report
+go = MessageBox.Show("Would you like to view the csv file?", "iLogic CSV Output", MessageBoxButtons.YesNo)
+if go = 6 then ThisDoc.Launch(csv_filename)]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>CSV Files</Category>
+      <Name>Text File Create</Name>
+      <ToolTip>Create and Write to a text file
+(overwrites file each time it is run)</ToolTip>
+      <Index>1003</Index>
+      <Code><![CDATA['____Create and write to a text file_________________
+oWrite = System.IO.File.CreateText(ThisDoc.PathAndFileName(False) & ".txt")
+oWrite.WriteLine("text in first line")
+oWrite.WriteLine("next line")
+oWrite.WriteLine("next line")
+oWrite.Close()
+'open the file
+ThisDoc.Launch(ThisDoc.PathAndFileName(False) & ".txt")
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>CSV Files</Category>
+      <Name>Text File Read</Name>
+      <ToolTip>Read the entire contents of a text file to a string variable.</ToolTip>
+      <Index>1004</Index>
+      <Code><![CDATA['____Open and read a text file_______________________
+oRead = System.IO.File.OpenText(ThisDoc.PathAndFileName(False) & ".txt")
+EntireFile = oRead.ReadToEnd()
+oRead.Close()
+MsgBox(EntireFile, MsgBoxStyle.Information, "Text File Contents")
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>CSV Files</Category>
+      <Name>Text File Append</Name>
+      <ToolTip>Append to an existing text file.
+(the file must exist already)</ToolTip>
+      <Index>1005</Index>
+      <Code><![CDATA['____Open and append to an existing text file_______
+Dim oAppend As System.IO.StreamWriter
+oFile = ThisDoc.PathAndFileName(False) & ".txt"
+oAppend = IO.File.AppendText(oFile)
+oAppend.WriteLine("new line at the end")
+oAppend.Flush()
+oAppend.Close()
+ThisDoc.Launch(oFile)
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Publish Templates</Category>
+      <Name>Publish DWF 3D</Name>
+      <ToolTip>Publish a 3D DWF file of the document containing this rule.
+File name and path match the Rule document with .dwf extention</ToolTip>
+      <Index>2001</Index>
+      <Code><![CDATA[i = MessageBox.Show("Launch the viewer now?", "Title",MessageBoxButtons.YesNo)
+if i = vbYes then : launchviewer = 1 : else : launchviewer = 0 : end if
+
+path_and_name = ThisDoc.PathAndFileName(False) ' without extension
+DWFAddIn = ThisApplication.ApplicationAddIns.ItemById("{0AC6FD95-2F4D-42CE-8BE0-8AEA580399E4}")
+oDocument = ThisApplication.ActiveDocument
+oContext = ThisApplication.TransientObjects.CreateTranslationContext
+oContext.Type = IOMechanismEnum.kFileBrowseIOMechanism
+oOptions = ThisApplication.TransientObjects.CreateNameValueMap
+oDataMedium = ThisApplication.TransientObjects.CreateDataMedium
+
+If DWFAddIn.HasSaveCopyAsOptions(oDataMedium, oContext, oOptions) Then
+oOptions.Value("Launch_Viewer") = launchviewer
+oOptions.Value("Publish_All_Component_Props") = 1
+oOptions.Value("Publish_All_Physical_Props") = 1
+oOptions.Value("Password") = 0
+End If
+
+'Set the destination file name
+oDataMedium.FileName = path_and_name & ".dwf"
+
+'Publish document.
+Call DWFAddIn.SaveCopyAs(oDocument, oContext, oOptions, oDataMedium)
+if launchviewer = 1 then ThisDoc.Launch(path_and_name & ".dwf")]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Publish Templates</Category>
+      <Name>Publish DWF 2D</Name>
+      <ToolTip>Publish a DWF file of all sheets in the current drawing document.
+3D model is not included.</ToolTip>
+      <Index>2002</Index>
+      <Code><![CDATA['this rule outputs all drawing sheets to dwf, 3D models not included
+path_and_name = ThisDoc.PathAndFileName(False)
+DWFAddIn = ThisApplication.ApplicationAddIns.ItemById("{0AC6FD95-2F4D-42CE-8BE0-8AEA580399E4}")
+oDocument = ThisApplication.ActiveDocument
+oContext = ThisApplication.TransientObjects.CreateTranslationContext
+oContext.Type = IOMechanismEnum.kFileBrowseIOMechanism
+oOptions = ThisApplication.TransientObjects.CreateNameValueMap
+oDataMedium = ThisApplication.TransientObjects.CreateDataMedium
+
+i = MessageBox.Show("Launch the viewer now?", "Title",MessageBoxButtons.YesNo)
+if i = vbYes then : launchviewer = 1 : else : launchviewer = 0 : end if 
+
+If DWFAddIn.HasSaveCopyAsOptions(oDataMedium, oContext, oOptions) Then
+oOptions.Value("Launch_Viewer") = launchviewer
+oOptions.Value("Publish_All_Component_Props") = 1
+oOptions.Value("Publish_All_Physical_Props") = 1
+oOptions.Value("Password") = 0
+If TypeOf oDocument Is DrawingDocument Then
+oOptions.Value("Publish_Mode") = DWFPublishModeEnum.kCustomDWFPublish
+oOptions.Value("Publish_All_Sheets") = 1
+End If
+End If
+
+oDataMedium.FileName = path_and_name & "_2D.dwf"
+Call DWFAddIn.SaveCopyAs(oDocument, oContext, oOptions, oDataMedium)
+if launchviewer = 1 then ThisDoc.Launch(path_and_name & "_2D.dwf")]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Publish Templates</Category>
+      <Name>Publish DWF 2D and 3D</Name>
+      <ToolTip>Publish a DWF file of all sheets in the current drawing document.
+3D model is included for the Sheet:1
+Use this in a drawing rule.</ToolTip>
+      <Index>2003</Index>
+      <Code><![CDATA['this rule outputs all drawing sheets to dwf, 3D models of first sheet included
+path_and_name = ThisDoc.PathAndFileName(False)
+DWFAddIn = ThisApplication.ApplicationAddIns.ItemById("{0AC6FD95-2F4D-42CE-8BE0-8AEA580399E4}")
+oDocument = ThisApplication.ActiveDocument
+oContext = ThisApplication.TransientObjects.CreateTranslationContext
+oContext.Type = IOMechanismEnum.kFileBrowseIOMechanism
+oOptions = ThisApplication.TransientObjects.CreateNameValueMap
+oDataMedium = ThisApplication.TransientObjects.CreateDataMedium
+
+i = MessageBox.Show("Launch the viewer now?", "Title",MessageBoxButtons.YesNo)
+if i = vbYes then : launchviewer = 1 : else : launchviewer = 0 : end if 
+
+If DWFAddIn.HasSaveCopyAsOptions(oDataMedium, oContext, oOptions) Then
+oOptions.Value("Launch_Viewer") = launchviewer
+oOptions.Value("Publish_All_Component_Props") = 1
+oOptions.Value("Publish_All_Physical_Props") = 1
+oOptions.Value("Password") = 0
+If TypeOf oDocument Is DrawingDocument Then
+Dim oSheets As NameValueMap
+oSheets = ThisApplication.TransientObjects.CreateNameValueMap
+oOptions.Value("Publish_Mode") = DWFPublishModeEnum.kCustomDWFPublish
+oOptions.Value("Publish_All_Sheets") = 1
+' Publish the first sheet AND its 3D model
+Dim oSheet1Options As NameValueMap
+oSheet1Options = ThisApplication.TransientObjects.CreateNameValueMap
+oSheet1Options.Add("Name", "Sheet:1")
+oSheet1Options.Add("3DModel", True)
+oSheets.Value("Sheet1") = oSheet1Options
+end If
+End If
+
+oDataMedium.FileName = path_and_name & ".dwf"
+Call DWFAddIn.SaveCopyAs(oDocument, oContext, oOptions, oDataMedium)
+if launchviewer = 1 then ThisDoc.Launch(path_and_name & ".dwf")]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Publish Templates</Category>
+      <Name>Export DXF from IDW</Name>
+      <ToolTip>Export a DXF file from an Inventor Drawing Document (.idw)</ToolTip>
+      <Index>2004</Index>
+      <Code><![CDATA[' Get the DXF translator Add-In.
+Dim DXFAddIn As TranslatorAddIn
+DXFAddIn = ThisApplication.ApplicationAddIns.ItemById("{C24E3AC4-122E-11D5-8E91-0010B541CD80}")
+'Set a reference to the active document (the document to be published).
+Dim oDocument As Document
+oDocument = ThisApplication.ActiveDocument
+Dim oContext As TranslationContext
+oContext = ThisApplication.TransientObjects.CreateTranslationContext
+oContext.Type = IOMechanismEnum.kFileBrowseIOMechanism
+' Create a NameValueMap object
+Dim oOptions As NameValueMap
+oOptions = ThisApplication.TransientObjects.CreateNameValueMap
+' Create a DataMedium object
+Dim oDataMedium As DataMedium
+oDataMedium = ThisApplication.TransientObjects.CreateDataMedium
+' Check whether the translator has 'SaveCopyAs' options
+If DXFAddIn.HasSaveCopyAsOptions(oDocument, oContext, oOptions) Then
+Dim strIniFile As String
+strIniFile = "C:\temp\dxfout.ini"
+' Create the name-value that specifies the ini file to use.
+oOptions.Value("Export_Acad_IniFile") = strIniFile
+End If
+'Set the destination file name
+oDataMedium.FileName = ThisDoc.PathAndFileName(False) & ".dxf"
+'Publish document.
+DXFAddIn.SaveCopyAs(oDocument, oContext, oOptions, oDataMedium)
+'Launch the dxf file in whatever application Windows is set to open this document type with
+i = MessageBox.Show("Preview the DXF file?", "Title",MessageBoxButtons.YesNo,MessageBoxIcon.Question)
+if i = vbyes then ThisDoc.Launch(oDataMedium.FileName)
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Publish Templates</Category>
+      <Name>Print Document</Name>
+      <ToolTip>Print the current Inventor document.</ToolTip>
+      <Index>2005</Index>
+      <Code><![CDATA[oPrintMgr = ThisApplication.ActiveDocument.PrintManager
+oPrintMgr.ColorMode = kPrintGrayScale
+'oPrintMgr.ColorMode = kPrintColorPalette
+oPrintMgr.NumberOfCopies = 1
+oPrintMgr.Orientation = kPortraitOrientation
+'oPrintMgr.Orientation = kLandscapeOrientation
+oPrintMgr.PaperSize = kPaperSizeCustom
+oPrintMgr.PaperHeight = 11
+oPrintMgr.PaperWidth = 8.5
+oPrintMgr.SubmitPrint
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Miscellaneous</Category>
+      <Name>HTML Report Template</Name>
+      <ToolTip>Create an HTML report including a table of parameter names and their values
+together with an image captured from the current view of the model.</ToolTip>
+      <Index>3005</Index>
+      <Code><![CDATA['create an html report sample
+report_title = "Design Report for " & ThisDoc.PathAndFileName(true) 'variable used the body of the html
+description = "Main Parameters and their values" 'variable used in the body of the html
+
+Dim oFile as System.IO.File
+Dim oWrite as System.IO.StreamWriter
+TableMembers = New String () {"d0", "d1", "d2"} 'parameters to include in table
+
+html_filename = ThisDoc.PathAndFileName(False) & ".html"
+
+oWrite = oFile.CreateText(html_filename) 'name and path of html file to create/overwrite
+oWrite.WriteLine(“<HTML>")
+oWrite.WriteLine(“<HEAD>")
+oWrite.WriteLine(“<META CONTENT=""text/html; charset=iso-8859-1"" HTTP-EQUIV=""Content-Type"" >")
+oWrite.WriteLine(“<TITLE>")
+oWrite.WriteLine(report_title) 'set the html search title with local variable
+oWrite.WriteLine(“</TITLE>")
+oWrite.WriteLine(“</HEAD>")
+oWrite.WriteLine(“<BODY BGCOLOR=""#FFFFFF"">")
+oWrite.WriteLine(“<B><EM><H3>")
+oWrite.WriteLine(report_title) 'first line of the report
+oWrite.WriteLine(“</B></EM></H3>")
+oWrite.WriteLine("<B>Date & Time: </B>")
+oWrite.WriteLine(NOW()) 'today's date and time on the second line
+oWrite.WriteLine("<BR>")
+oWrite.WriteLine(“<B>Description: </B>") 
+oWrite.WriteLine(description) 'desciption string goes on the third line of the report
+oWrite.WriteLine(“<BR>") 
+oWrite.WriteLine(“<B>Customer:</B>  Inventor Designers and Engineers<BR><BR>")
+oWrite.WriteLine(“<TABLE BORDER=""1"" WIDTH=""500"">") 'table width in pixels.  Use % to adjust to browser size.
+
+'create html text lines nessesary to build the table for each parameter specified in the TableMembers array
+for each pName as String in TableMembers
+  oWrite.WriteLine(“<TR><TD WIDTH=""50%"">") 'column width is half of table size
+  oWrite.WriteLine(pName) ' parameter name
+  oWrite.WriteLine(“</TD><TD>")
+  oWrite.WriteLine(DynaParam(pName) ) ' parameter value
+  oWrite.WriteLine(“</TD> </TR>")
+next
+
+'save iso view to jpg
+imagedoc = ThisDoc.PathAndFileName(False) & ".jpg"
+oCamera = InventorVB.Application.ActiveView.Camera 'current iso view
+oCamera.fit
+oCamera.apply
+InventorVB.Application.ActiveView.SaveAsBitmap(imagedoc,1680,1050 ) 
+
+oWrite.WriteLine("</TABLE>") ' end the table
+oWrite.WriteLine("<BR><BR>This is a sample report whose iLogic Rule can be used as a template.<BR>") 'footer notes
+oWrite.WriteLine("iLogic created this report using a rule to generate an html file.")'footer notes
+oWrite.WriteLine("<IMG SRC= """ & imagedoc & """ ALT=""text"" WIDTH = 300 ALIGN = LEFT> ")
+oWrite.WriteLine("</BODY>")
+oWrite.Close()
+
+'option to view report
+go = MessageBox.Show("Would you like to view the Design Report?", "iLogic Reports", MessageBoxButtons.YesNo)
+if go = 6 then ThisDoc.Launch(html_filename)
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Miscellaneous</Category>
+      <Name>Windows Voice Command</Name>
+      <ToolTip>Use Windows Voice command to create audio feedback information</ToolTip>
+      <Index>3006</Index>
+      <Code><![CDATA['___Use windows voice command____________
+Dim objSPVoice,colVoices
+objSPVoice = CreateObject("SAPI.SpVoice")
+objSPVoice.Speak ("i Logic Rules")]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Miscellaneous</Category>
+      <Name>Sum of ArrayList Values</Name>
+      <ToolTip>Calculate the sum total of all the numerical values in an ArrayList (one dimensional)</ToolTip>
+      <Index>3007</Index>
+      <Code><![CDATA[values = MultiValue.List("test")
+sum = 0
+for each oval in values
+sum += oval
+next
+msgbox(sum)]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>File Save &amp; Open</Category>
+      <Name>File Selection Dialog</Name>
+      <ToolTip>File Selection Dialog
+Edit the code to Set Default Path and file extension filters</ToolTip>
+      <Index>3004</Index>
+      <Code><![CDATA[Dim oFileDlg As inventor.FileDialog = Nothing
+InventorVb.Application.CreateFileDialog(oFileDlg)
+'oFileDlg.Filter = "Inventor Files (*.iam;*.ipt)|*.iam;*.ipt|All Files (*.*)|*.*"
+'oFileDlg.Filter = "XML Files (*.xml)|*.xml"
+'oFileDlg.Filter = "Excel Files (*.xls;*.xlsx)|*.xls;*.xlsx"
+'oFileDlg.Filter = "Text Files (*.txt;*.csv)|*.txt;*.csv"
+'oFileDlg.Filter = "SAT Files (*.sat)|*.sat"
+'oFileDlg.Filter = "IGES Files (*.igs)|*.igs"
+oFileDlg.Filter = "Step Files (*.stp)|*.stp"
+'oFileDlg.DialogTitle = "Select a File"
+oFileDlg.InitialDirectory = ThisDoc.Path
+oFileDlg.CancelError = True
+On Error Resume Next
+oFileDlg.ShowOpen()
+If Err.Number <> 0 Then
+MessageBox.Show("File not chosen.", "Dialog Cancellation")
+ElseIf oFileDlg.FileName <> "" Then
+selectedfile = oFileDlg.FileName
+MessageBox.Show("File " & selectedfile & " was selected.", "Dialog Selection Made")
+End If]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>File Save &amp; Open</Category>
+      <Name>Save As STEP File</Name>
+      <ToolTip>Save As the current document to a STEP file.</ToolTip>
+      <Index>3003</Index>
+      <Code><![CDATA[' Get the STEP translator Add-In.
+Dim oSTEPTranslator As TranslatorAddIn
+oSTEPTranslator = ThisApplication.ApplicationAddIns.ItemById("{90AF7F40-0C01-11D5-8E83-0010B541CD80}")
+Dim oContext As TranslationContext
+oContext = ThisApplication.TransientObjects.CreateTranslationContext
+Dim oOptions As NameValueMap
+oOptions = ThisApplication.TransientObjects.CreateNameValueMap
+
+If oSTEPTranslator.HasSaveCopyAsOptions(ThisApplication.ActiveDocument, oContext, oOptions) Then
+    ' Set application protocol.
+    ' 2 = AP 203 - Configuration Controlled Design
+    ' 3 = AP 214 - Automotive Design
+    oOptions.Value("ApplicationProtocolType") = 3
+    ' Other options...
+    'oOptions.Value("Author") = ""
+    'oOptions.Value("Authorization") = ""
+    'oOptions.Value("Description") = ""
+    'oOptions.Value("Organization") = ""
+    oContext.Type = IOMechanismEnum.kFileBrowseIOMechanism
+    Dim oData As DataMedium
+    oData = ThisApplication.TransientObjects.CreateDataMedium
+    oData.FileName = ThisDoc.PathAndFileName(False) & ".stp"
+oSTEPTranslator.SaveCopyAs(ThisApplication.ActiveDocument, oContext, oOptions, oData)
+End If]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>File Save &amp; Open</Category>
+      <Name>Save As IGES File</Name>
+      <ToolTip>Save As the current document to an IGES file.</ToolTip>
+      <Index>3002</Index>
+      <Code><![CDATA[' Get the IGES translator Add-In.
+Dim oIGESTranslator As TranslatorAddIn
+oIGESTranslator = ThisApplication.ApplicationAddIns.ItemById("{90AF7F44-0C01-11D5-8E83-0010B541CD80}")
+Dim oContext As TranslationContext
+oContext = ThisApplication.TransientObjects.CreateTranslationContext
+Dim oOptions As NameValueMap
+oOptions = ThisApplication.TransientObjects.CreateNameValueMap
+If oIGESTranslator.HasSaveCopyAsOptions(ThisApplication.ActiveDocument, oContext, oOptions) Then
+   ' Set geometry type for wireframe.
+   ' 0 = Surfaces, 1 = Solids, 2 = Wireframe
+   oOptions.Value("GeometryType") = 1
+   ' To set other translator values:
+   ' oOptions.Value("SolidFaceType") = n
+   ' 0 = NURBS, 1 = Analytic
+   ' oOptions.Value("SurfaceType") = n
+   ' 0 = 143(Bounded), 1 = 144(Trimmed)
+oContext.Type = IOMechanismEnum.kFileBrowseIOMechanism
+Dim oData As DataMedium
+oData = ThisApplication.TransientObjects.CreateDataMedium
+oData.FileName = ThisDoc.PathAndFileName(False) & ".igs"
+oIGESTranslator.SaveCopyAs(ThisApplication.ActiveDocument, oContext, oOptions, oData)
+End If
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>File Save &amp; Open</Category>
+      <Name>Save As SAT File</Name>
+      <ToolTip>Save As the current document to a SAT file.
+(assemblies and parts only)</ToolTip>
+      <Index>3001</Index>
+      <Code><![CDATA[' Set reference to active document.
+oDoc = ThisApplication.ActiveDocument
+
+' Check the Document type is an assembly or part
+If (oDoc.DocumentType <> kAssemblyDocumentObject And _
+   oDoc.DocumentType <> kPartDocumentObject) Then
+   MsgBox("Error:Document type is not assembly/part")
+   Exit Sub
+End If
+
+' Get document's full file name
+sFname = ThisDoc.PathAndFileName(False) & ".sat"
+
+' Do a 'Save Copy As' to SAT format
+oDoc.SaveAs(sFname, True)
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Strings</Category>
+      <Name>Split Sentence into Words</Name>
+      <ToolTip>Split a Sentence string into individual words
+Words are captured to an Array.</ToolTip>
+      <Index>4001</Index>
+      <Code><![CDATA['specify word splitting characters "space" and "dash"
+Dim Separators() As Char = {" "c, "-"c} 
+Sentence = "This is a sentence string to split into words"
+Words = Sentence.Split(Separators)
+i = 0
+For each wrd in Words
+MessageBox.Show("Word Index #" & i & " = " & Words(i))
+i += 1
+Next
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Strings</Category>
+      <Name>Split Word into Characters</Name>
+      <ToolTip>Split a Word String into individual characters.
+Any character can be read from a string using an index number
+(e.g. letter = string(0) would return the first letter of the string)</ToolTip>
+      <Index>4002</Index>
+      <Code><![CDATA[for each letter in WordString
+msgbox(letter)
+next]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>DebugLine Setup</Name>
+      <ToolTip>Use DebugViewer</ToolTip>
+      <Index>5001</Index>
+      <Code><![CDATA['____Header Requirements for Debug Class_______
+AddVbFile "VB - clsDebugViewer.vb"
+Imports clsDebugViewer
+
+Sub Main()
+ Dim oDoc As Document = ThisDoc.Document
+
+ EchoTitle("Working DebugLine")
+
+End Sub
+
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>Assembly Iteration</Name>
+      <ToolTip>Analyze all levels of an Assembly</ToolTip>
+      <Index>5002</Index>
+      <Code><![CDATA['____Iteration Template for Assembly Structures_______
+Imports Inventor.DocumentTypeEnum
+
+Sub Main()
+
+    Dim oAsmDoc As AssemblyDocument 
+    oAsmDoc = ThisApplication.ActiveDocument  
+    Call Iterate(oAsmDoc.ComponentDefinition.Occurrences, 1)
+
+End Sub 
+
+
+Private Sub Iterate(Occurrences As ComponentOccurrences, Level As Integer) 
+''Iterate through Assembly Occurrences
+
+    Dim oOcc As ComponentOccurrence
+    Dim sName As String
+
+    For Each oOcc In Occurrences 
+    ''Find Parts in Assembly
+        sName = oOcc.Name
+
+        Try 
+        'Investigate Occurence and 'Do Something'
+            Select Case oOcc.DefinitionDocumentType 
+                Case kAssemblyDocumentObject
+                    ''Do something to an Assembly
+
+                Case kPartDocumentObject
+                    ''Do something to a Part
+
+                Case kForeignModelDocumentObject
+
+                Case kSATFileDocumentObject
+
+                Case kNoDocument
+
+                Case Else
+                    ''Do something if an object is misidentified
+
+            End Select
+
+        Catch ex As Exception
+        'MsgBox("There was an Error! --" & ex.Message)            
+
+
+        Finally
+        ''Run through the sub assemblies 
+            If oOcc.DefinitionDocumentType = kAssemblyDocumentObject Then
+                Call Iterate(oOcc.SubOccurrences, Level + 1) 
+            End If 
+
+        End Try
+
+    Next 
+End Sub
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>Full Class Definition</Name>
+      <ToolTip>General Definition of a Class with all Inventor Objects</ToolTip>
+      <Index>5003</Index>
+      <Code><![CDATA['____Simple iLogic Class Definition_______
+AddVbFile "VB - clsDebugViewer.vb"
+AddVbFile "VB - clsFileMgmt.vb"
+AddVbFile "VB - clsFileProperties.vb"
+
+Imports clsDebugViewer
+
+  ''The following are explicitly implied Imports (Auto)
+  'Imports System
+  'Imports System.Math
+  'Imports System.Collections
+  'Imports Microsoft.VisualBasic
+  'Imports Autodesk.iLogic.Interfaces
+  'Imports Autodesk.iLogic.Runtime
+  'If you use MessageBox in a rule, then iLogic automatically adds the following statement:
+  'Imports System.Windows.Forms'
+  'If you use ThisApplication or other Autodesk Inventor objects, then iLogic automatically adds the following:
+  'Imports Inventor'
+''
+
+Public Class AsDesigned
+''' Contains Following Methods
+'' Public Functions:: 
+''           DoSomething(Integer) {Shared}
+'''             Reduces Given Value by 1
+''           
+'' Public Subs::
+''           Main
+'''             Main Driving Command
+''           CauseSomething {Shared}
+'''             Renames a FileObject
+''           
+
+#Region "Declarations"
+  '' All Private Variables and Settings
+  '' Precede Names with a simple underscore
+  Public Shared Dim prp As New clsFileProperties
+  ''Use 'prp.' as a prefix for any method called from "VB - clsFileProperties.vb"
+  Public Shared Dim fil As New clsFileMgmt
+  ''Use 'fil.' as a prefix for any method called from "VB - clsFileMgmt.vb"
+
+  '''Inventor Objects
+  Public Shared Dim oApp As Object
+  Public Shared Dim oDoc As Document
+  Public Shared Dim oTG As TransientGeometry
+  Public Shared Dim oTO As TransientObjects
+  Public Shared Dim oCM As CommandManager
+  Public Shared Dim oGO As GeneralOptions
+#End Region
+
+
+  Public Sub Main()
+    Try
+      oApp = ThisApplication
+      oTG = oApp.TransientGeometry
+      oTO = oApp.TransientObjects
+      oCM = oApp.CommandManager
+      oGO = oApp.GeneralOptions
+     Catch ex As Exception 
+      Echo("Error with Application :: " & ex.Message) 
+      Exit Sub
+    End Try
+
+    Try
+      oDoc = ThisDoc.Document
+     Catch ex As Exception 
+      Echo("Error with Document Type :: " & ex.Message) 
+      Exit Sub
+    End Try
+
+  Dim i As Integer = 11
+  
+    While i > 0
+      i = DoSomething(i)
+      Echo(i)
+    End While
+
+  
+  End Sub
+
+
+#Region "Methods"
+  ''Actionable Functions or Sub Methods
+
+
+    ''' <summary>
+    ''' This method returns a vlue that is 1 less than 
+    ''' the value supplied. 
+    ''' <example>
+    ''' For example:
+    ''' <code>
+    '''     Dim Foo As Integer = 12
+    '''     Bar = DoSomething(Foo)
+    ''' </code>
+    ''' results in <c>Bar</c> having the value <c>11</c>.
+    ''' </example>
+    ''' </summary>
+    ''' <param name="Value">Integer Value to be modified</param>
+    ''' <returns>'Value - 1'</returns>
+    ''' <remarks>This is already a function that is shown for reference</remarks>
+    Public Function DoSomething(ByRef Value As Integer)
+    '' I do Something and Return a Value
+      Return Value - 1
+    End Function 
+#End Region
+End Class
+
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>Set Weights</Name>
+      <ToolTip>Line of Code to Call for Weights</ToolTip>
+      <Index>5010</Index>
+      <Code><![CDATA[
+InventorVb.DocumentUpdate(False)
+iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>Level of Detail Check</Name>
+      <ToolTip>Standard Use Snippet for Assembly LOD</ToolTip>
+      <Index>5005</Index>
+      <Code><![CDATA[
+AddVbFile "VB - clsDebugViewer.vb"
+Imports clsDebugViewer
+'Imports Inventor.DocumentTypeEnum
+
+Sub Main()
+ Dim oDoc As Document = ThisDoc.Document
+ 'EchoTitle("Working DebugLine")
+ oRM = oDoc.ComponentDefinition.RepresentationsManager
+ LODs = {"Standard", "H1", "Master"}
+ If oRM.ActiveLevelOfDetailRepresentation().Name IsNot LODs(0) Then 
+   Echo("LOD Currently Set to:" & oRM.ActiveLevelOfDetailRepresentation().Name )
+  For Each LOD As String In LODs 
+  Try
+    oRM.LevelOfDetailRepresentations.Item(LOD).Activate
+      Echo("Changed LOD to " & LOD & " :: " & oRM.ActiveLevelOfDetailRepresentation().Name )
+    Exit Sub
+  Catch ex As Exception
+    Echo("Difficulty setting LOD to " & LOD & " :: " & ex.Message)
+  End Try 'Set to Standard
+  Next 
+ End If
+
+ Call Iterate(oDoc.ComponentDefinition.Occurrences, 1)
+
+  InventorVb.DocumentUpdate(False)
+
+  Call ExistingRule()
+
+End Sub
+
+Sub ExistingRule()
+  Echo("Contents of Previous Rule Belong Here")
+End Sub
+
+Private Sub Iterate(Occurrences As ComponentOccurrences, Level As Integer) 
+''Iterate through Assembly Occurrences
+
+    Dim oOcc As ComponentOccurrence
+    Dim sName As String
+
+    For Each oOcc In Occurrences 
+    ''Find Parts in Assembly
+        sName = oOcc.Name
+
+        Try 
+        'Investigate Occurence and 'Do Something'
+         If oOcc.DefinitionDocumentType = kAssemblyDocumentObject Then
+                    ''Do something to an Assembly
+                   sLOD = oOcc.ActiveLevelOfDetailRepresentation
+                    Echo(sName & " set to LOD:" & sLOD, ( Level * 4 ) - 2 )
+                    'oOcc.SetLevelOfDetailRepresentation("Standard")
+                    If Left(sLOD,1) = "~" Then SetLOD(oOcc)
+          If sLOD = "Master" Then SetLOD(oOcc)
+     End If
+        Catch ex As Exception
+        'MsgBox("There was an Error! --" & ex.Message)            
+
+
+        Finally
+        ''Run through the sub assemblies 
+            If oOcc.DefinitionDocumentType = kAssemblyDocumentObject Then
+                Call Iterate(oOcc.SubOccurrences, Level + 1) 
+            End If 
+
+        End Try
+
+    Next 
+End Sub
+
+Public Shared Dim LODs As String()
+Public Sub SetLOD(oOcc As ComponentOccurrence)
+ For Each LOD As String In LODs 
+  Try
+    oOcc.SetLevelOfDetailRepresentation(LOD)
+        Echo("Changed LOD to " & LOD & " :: " & oOcc.Name )
+    Exit Sub
+  Catch ex As Exception
+    Echo("Difficulty in 'Sub SetLOD()' to " & LOD & " :: " & ex.Message)
+  End Try 'Set to Standard
+ Next 
+End Sub
+
+      ]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>Standard Part Sizing Code Definition</Name>
+      <ToolTip>Standard Use Snippet for Developing new Standard Part Definition</ToolTip>
+      <Index>5004</Index>
+      <Code><![CDATA[
+'____iLogic Definition for Library/Standard Part_______
+AddVbFile "VB - clsDebugViewer.vb"
+AddVbFile "VB - clsFileProperties.vb"
+
+Imports clsDebugViewer
+
+Public Class SizingSelection
+''' Contains the instructions to resize a full featured part.
+
+#Region "Shared Declarations"
+  '' All Public Shared Variables and Settings
+  Public Shared Dim listParts As New List(Of String)
+  Public Shared Dim prp As New clsFileProperties
+  ''Use 'prp.' as a prefix for any method called from "VB - clsFileProperties.vb"
+
+#End Region
+
+
+  Public Sub Main()
+    Dim oDoc As Document = ThisDoc.Document
+    Dim sSelection As String
+    Dim tValue As PartTable
+
+    ''Populate the variable lists
+    Call InitializePropertyTable()
+
+    ''Prompt for the selection size
+    sSelection = InputListBox("Select Part Number", listParts, "" , Title := "Standard Part Selection", ListName := "Available Parts")
+    If sSelection = "" Then
+      Echo("Nothing Selected Setting Values to ->" & listParts.Item(0))
+    Call ResetPart(listParts.Item(0))
+    oDoc.Update2
+    Exit Sub
+  End If
+    
+    
+    ''Populate the part with the appropriate values
+    Call PopulatePart(sSelection)
+
+   oDoc.Update2
+
+  End Sub
+
+
+#Region "Methods"
+ ''Actionable Functions or Sub Methods
+
+
+  Public Sub PopulatePart(Size As String)
+    ' TryGetValue() Gets TValue for TKey and assigns it to variable, also passes T/F Boolean
+    ' to register if the Key was found in the Table
+
+    'Set reference to custom class'
+    Dim tValue As PartTable
+
+    If tParts.TryGetValue(Size, tValue) Then
+      tValue.Apply(ThisDoc.Document)
+     Else
+      Console.WriteLine("Key = " & Size & " is not found.")
+      Exit Sub
+    End If
+
+  End Sub
+
+
+  Public Sub ResetPart(Size As String)
+    ' TryGetValue() Gets TValue for TKey and assigns it to variable, also passes T/F Boolean
+    ' to register if the Key was found in the Table
+
+    'Set reference to custom class'
+    Dim tValue As PartTable
+  Dim sListDesc As String = ""
+  
+  
+
+    If tParts.TryGetValue(Size, tValue) Then
+      tValue.ResetTo(ThisDoc.Document, sListDesc)
+     Else
+      Console.WriteLine("Key = " & Size & " is not found.")
+      Exit Sub
+    End If
+
+  End Sub
+
+
+'''
+'''
+''' *** Modification Begins Here ******************************
+'''
+'''
+
+
+  Public Sub InitializePropertyTable()
+    '''Assign values to dictionary(key) using the defined 'new' function
+    '''Populate the available parts (listParts) for selection
+
+    '''---Standard Parts--- **Template is only Set for Three(3) Variables**
+    tParts("W710") = New PartTable( "W710" , "6.25" ,  ,  ):listParts.Add("W710")
+    tParts("W7114") = New PartTable( "W7114" , "11" ,  ,  ):listParts.Add("W7114")
+    tParts("W7115") = New PartTable( "W7115" , "12 +  1.75" ,  ,  ):listParts.Add("W7115")
+    tParts("W7116") = New PartTable( "W7116" , "12 +  6.25" ,  ,  ):listParts.Add("W7116")
+
+    '''---Galvanized Parts--- **Template is only Set for Three(3) Variables**
+    tParts("0W710") = New PartTable( "0W710" , "6.25" ,  , ):listParts.Add("0W710")
+    tParts("0W7114") = New PartTable( "0W7114" , "11" ,  , ):listParts.Add("0W7114")
+    tParts("0W7115") = New PartTable( "0W7115" , "12 +  1.75" ,  , ):listParts.Add("0W7115")
+    tParts("0W7116") = New PartTable( "0W7116" , "12 +  6.25" ,  , ):listParts.Add("0W7116")
+
+    '''---Material Variation Parts--- **Template is only Set for Three(3) Variables**
+    tParts("W710-1") = New PartTable( "W710-1" , "6.25" ,  ,  ):listParts.Add("W710-1")
+    tParts("W7114-1") = New PartTable( "W7114-1" , "11" ,  ,  ):listParts.Add("W7114-1")
+    tParts("W7115-1") = New PartTable( "W7115-1" , "12 +  1.75" ,  ,  ):listParts.Add("W7115-1")
+    tParts("W7116-1") = New PartTable( "W7116-1" , "12 +  6.25" ,  ,  ):listParts.Add("W7116-1")
+
+  End Sub
+
+#End Region
+
+
+  Public tParts As New Dictionary(Of String, PartTable) 
+
+
+  Public Class PartTable
+  '''This is the definition of the standard part dimensions. 
+  '''All controlled need to be included here and in the InitializePropertyTable() method above.
+
+  'Setup Variables/FeatureNames to be Tracked in Table/Array
+   ''Define variables as type: 
+    ''   Double for 1.0, 2.0, ..., 00000.00; 
+    ''   String for 10A-AAZ
+   Private _listParam As New SortedList()
+   Private _listIProp As New SortedList()
+   Private _Title As String
+   Private _PartNumber As String
+   Private _DrawingNo As String 
+
+
+  Public Sub New(PartNumber As String,
+                Optional dA As String = "",
+                Optional dB As String = "",
+                Optional dC As String = "")
+  '''Identify the Parameters and Values to be Populated
+    If dA <> String.Empty Then _listParam.Add("d:A", dA)
+    If dB <> String.Empty Then _listParam.Add("d:B", dB)
+    If dC <> String.Empty Then _listParam.Add("d:C", dC)
+
+  '''Set to Drawing Number the Design is Being Made From;
+   _DrawingNo  = "W710"
+
+  '''Set Title of the Design;
+   _Title  = "FRAME LIFTING LUG"
+
+  '''Set the Description Format, it is possible to feed from another variable
+   _listIProp.Add("Description", "LUG, LIFTING, FRAME") ''dA & """" & " x " & dB & """" & " x " & dC & """")
+
+  '''Set the Part Number from variable 
+   _listIProp.Add("Part Number", PartNumber): _PartNumber = PartNumber 
+
+  End Sub
+
+
+'''
+'''
+''' *** Modification Ends Here ******************************
+'''
+'''
+
+
+   Public Sub Apply(oDoc As PartDocument)
+   '''Set Part 'Values'
+    'Set Custom iProperty to Code Revision State 
+     prp.SetiPropValue(oDoc,
+                       "Standard Library Part",
+                       _DrawingNo,
+                       "Hudson Properties")
+
+     'Add Note Property for -possible- Future Use
+     prp.SetiPropValue(oDoc,
+                       "Std Part Note",
+                       "NOTE: This part is detailed on Drawing No. " & _DrawingNo & " as PN:" & PartNumber & ".",
+                       "Hudson Notes")
+
+     For i = 0 To _listParam.Count - 1
+       Echo( "Key:  "& _listParam.GetKey(i) & "  -- Value:  " & _listParam.GetByIndex(i))
+       oDoc.ComponentDefinition.Parameters(_listParam.GetKey(i)).Expression = _listParam.GetByIndex(i)
+     Next i
+
+     For i = 0 To _listIProp.Count - 1
+       Echo( "Key:  "& _listIProp.GetKey(i) & "  -- Value:  " & _listIProp.GetByIndex(i))
+       prp.SetiPropValue(oDoc, _listIProp.GetKey(i) , _listIProp.GetByIndex(i))
+     Next i
+
+     oDoc.DisplayName = _listIProp("Part Number")
+
+   End Sub
+
+   Public Sub ResetTo(oDoc As PartDocument, Desc As String)
+   '''Reset Part to 'Library Status'
+    'Set Custom iProperty to Code Revision State
+     prp.SetiPropValue(oDoc,
+                       "Standard Library Part",
+                       _DrawingNo,
+                       "Hudson Properties")
+
+     'Add Note Property for -possible- Future Use
+     prp.SetiPropValue(oDoc,
+                       "Std Part Note",
+                       "NOTE: This part is detailed on Drawing No. " & _DrawingNo & " as PN:" & _PartNumber & ".",
+                       "Hudson Notes")
+
+
+     For i = 0 To _listParam.Count - 1
+       Echo( "Key:  "& _listParam.GetKey(i) & "  -- Value:  " & _listParam.GetByIndex(i))
+       oDoc.ComponentDefinition.Parameters(_listParam.GetKey(i)).Expression = _listParam.GetByIndex(i)
+     Next i
+
+     For i = 0 To _listIProp.Count - 1
+       Echo( "Key:  "& _listIProp.GetKey(i) & "  -- Value:  " & _listIProp.GetByIndex(i))
+       prp.SetiPropValue(oDoc, _listIProp.GetKey(i) , "")
+     Next i
+
+     oDoc.DisplayName = _DrawingNo
+     prp.SetiPropValue(oDoc,
+                       "Description",
+                       "Library Part for :: " & Desc)
+     prp.SetiPropValue(oDoc,
+                       "Part Number",
+                       _DrawingNo)
+
+
+   End Sub
+
+  End Class 
+
+End Class
+
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Hudson</Category>
+      <Name>Call External Weights Rule</Name>
+      <ToolTip>What the Title Says..</ToolTip>
+      <Index>5012</Index>
+      <Code><![CDATA[    iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+      ]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Descriptions</Category>
+      <Name>Angle Descriptions</Name>
+      <ToolTip>Basic Description Rule for Angles</ToolTip>
+      <Index>6001</Index>
+      <Code><![CDATA[
+''' Descriptions & Material Update
+  AddVbFile "VB - clsDebugViewer.vb"
+  AddVbFile "VB - clsStringMath.vb"
+  AddVbFile "VB - clsRawMaterials.vb"
+  Imports clsRawMaterials
+  Imports clsStringMath
+  Imports clsDebugViewer
+
+  Public Sub Main()
+    Try
+      oApp = ThisApplication
+     Catch exc As Exception 
+      Echo("Error with Application :: " & exc.Message) 
+      Exit Sub
+    End Try
+
+    Try
+      oDoc = ThisDoc.Document
+     Catch exc As Exception 
+      Echo("Error with Document Type :: " & exc.Message) 
+      Exit Sub
+    End Try
+
+    EchoTitle("Setting Description on " & oDoc.DisplayName)
+
+    Call SetAngleRM()
+    iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+
+  End Sub
+
+  #Region "Declarations"
+    '''Inventor Objects
+    Public Shared Dim oApp As Object
+    Public Shared Dim oDoc As Document
+  #End Region
+
+
+  Public Sub SetAngleRM()
+    Dim stock as String
+    Dim rm, Ga, mat As String
+
+  '****************************************\\\\\\\\\\
+  ' Update Parameters
+                                            Dim dblLegA As Double = CDbl(G_H)
+                                            Dim dblLegB As Double = CDbl(G_W)
+                                            Dim dblThk As Double = CDbl(G_T)
+                                            Dim dblLG As Double = CDbl(G_L)
+
+                                            'Change to True for Hudson 'Simple' Description [e.g. L,3'-11/16" LG ]
+                                            Dim HudsonSimple As Boolean = False
+
+  '****************************************//////////
+
+    Dim Descriptions As String()
+    Descriptions = getAngleRM( {dblLegA, dblLegB, dblThk} , iProperties.Material, dblLG )
+
+    stock = Descriptions(1)
+    mat = Descriptions(3)
+
+    If Not HudsonSimple Then iProperties.Value("Project", "Description") = Descriptions(0)
+    If HudsonSimple Then iProperties.Value("Project", "Description") = "L," & getShortFeet(dblLG) & " LG"
+
+
+    If Not stock = "" Then iProperties.Value("Project", "Stock Number") = stock
+    iProperties.Value("Custom", "RM QTY") = DecimalRounding(dblLG / 12 , 3)
+    iProperties.Value("Custom", "RM UOM") = "LF"
+    iProperties.Value("Custom", "RM Description") = Descriptions(2)
+
+    If iProperties.Material <> mat Then
+      MessageBox.Show("Error in Part " & oDoc.DisplayName & "!" & Chr(13)  & Chr(13) &
+                      "Bad Material and/or Size",
+                      "Bad Material-Size Combination",
+                      MessageBoxButtons.OK, MessageBoxIcon.Stop)
+      If Not mat = "" Then bFixMat = InputRadioBox("Correct Material?", "Update to " & mat, "Keep as " & iProperties.Material, True, Title := "Material Correction Available")
+      If bFixMat Then iProperties.Material = mat
+
+    End If
+
+  End Sub 
+'''
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Descriptions</Category>
+      <Name>Beam Descriptions</Name>
+      <ToolTip>Basic Description Rule for W Beams</ToolTip>
+      <Index>6002</Index>
+      <Code><![CDATA[
+''' Descriptions & Material Update
+  AddVbFile "VB - clsDebugViewer.vb"
+  AddVbFile "VB - clsStringMath.vb"
+  AddVbFile "VB - clsRawMaterials.vb"
+  Imports clsRawMaterials
+  Imports clsStringMath
+  Imports clsDebugViewer
+
+  Public Sub Main()
+    Try
+      oApp = ThisApplication
+     Catch exc As Exception 
+      Echo("Error with Application :: " & exc.Message) 
+      Exit Sub
+    End Try
+
+    Try
+      oDoc = ThisDoc.Document
+     Catch exc As Exception 
+      Echo("Error with Document Type :: " & exc.Message) 
+      Exit Sub
+    End Try
+
+    EchoTitle("Setting Description on " & oDoc.DisplayName)
+
+    Call SetVariables()
+    Call SetBeamRM()
+    'Call SetDimensions( getBeamRM_A992( column_width , column_weight ) )
+
+    InventorVb.DocumentUpdate(False)
+    iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+
+  End Sub
+
+  #Region "Declarations"
+    '''Inventor Objects
+    Public Shared Dim oApp As Object
+    Public Shared Dim oDoc As Document
+
+    '''Parameters
+    Public Shared Dim clmSize As String
+    Public Shared Dim clmWeight As String
+    Public Shared Dim clmLength As Double
+  #End Region
+
+  Public Sub SetVariables()
+
+  '****************************************\\\\\\\\\\  Change the Following Variables as Required ///
+                                            clmSize = G_H 'column_width
+                                            clmWeight = (Parameter.Param("MAS").Expression) 'column_weight
+                                            clmLength = G_L 'Length in Inches
+  '****************************************//////////
+
+  If clmWeight.IndexOf(" ") > 0 Then clmWeight = clmWeight.Substring(0, clmWeight.IndexOf(" ")) 
+  End Sub
+
+  Public Sub SetBeamRM()
+
+    Dim Descriptions As String()
+    Descriptions = getBeamRM_A992( clmSize , clmWeight, clmLength )
+    ' Returns: { PartDesc , stock, RMDesc , mat }
+    ' Alternate Functions: getSBeamRM_A992 getSBeamRM_A572 getSBeamRM_A36
+	  Echo("Returns: { PartDesc: " & Descriptions(0) & ", stock: " & Descriptions(1) & ", RMDesc: " & Descriptions(2) & " , mat: " & Descriptions(3) & " }")
+    iProperties.Value("Project", "Description") = Descriptions(0)
+
+    iProperties.Value("Project", "Stock Number") = Descriptions(1)
+    iProperties.Value("Custom", "RM Description") = Descriptions(2)
+
+    iProperties.Value("Custom", "RM QTY") = DecimalRounding(clmLength/12,3)
+    iProperties.Value("Custom", "RM UOM") = "LF"
+
+    Dim mat As String = Descriptions(3)
+
+    If iProperties.Material <> mat Then
+      MessageBox.Show("Error in Part " & oDoc.DisplayName & "!" & Chr(13)  & Chr(13) &
+                      "Bad Material and/or Size",
+                      "Bad Material-Size Combination",
+                      MessageBoxButtons.OK, MessageBoxIcon.Stop)
+      If Not mat = "" Then bFixMat = InputRadioBox("Correct Material?", "Update to " & mat, "Keep as " & iProperties.Material, True, Title := "Material Correction Available")
+      If bFixMat Then iProperties.Material = mat
+
+    End If
+
+  End Sub
+
+  Public Sub SetDimensions(Values As String() )
+
+    G_W = CDbl( Values(4) )   'width
+    G_H = CDbl( Values(5) )   'height
+    G_T = CDbl( Values(6) )   'web thickness
+    G_T1 = CDbl( Values(7) )  'flange thickness
+    G_IR = CDbl( Values(8) )  'inside radius
+
+  End Sub
+'''
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Descriptions</Category>
+      <Name>Sheet Metal or Flat Plate Descriptions</Name>
+      <ToolTip>Basic Description Rule for Plate</ToolTip>
+      <Index>6002</Index>
+      <Code><![CDATA[
+'Description & Styles Update
+
+'Column Connector Plates :: 
+'''  sPreString = UCase("Column Connector Plate")
+'''  sCriticalMeasure = getShortFeet(sheet_width/12) & ", 2H-" & getShortFeet(d15/12)
+
+
+''' ^^^ Short Description , Type / Critical Dims^^^
+  AddVbFile "VB - clsDebugViewer.vb"
+  AddVbFile "VB - clsStringMath.vb"
+  Imports clsStringMath
+  Imports clsDebugViewer
+
+  Sub Main()
+  oDoc = ThisDoc.Document
+
+  EchoTitle("Setting Description on " & oDoc.DisplayName)
+    ' Use getShortFeet for no Leading '0' or getFractionalFeet for Leading '0'
+    LongValue = getShortFeet( Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) / 12 )
+    ShortValue = getShortFeet( Min( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) / 12 )
+
+    dblLength = Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth )
+    dblWidth = Min( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth )
+
+    Dim sPreString, sCriticalMeasure As String
+    ''Significant Description Text
+    sPreString = "=<Title>"
+    sCriticalMeasure = LongValue & " x " & ShortValue
+    
+    iProperties.Value("Project", "Description") = GetSheetMetalDescription("PL",  sPreString, CDbl(Thickness), Round(dblWidth,3), sCriticalMeasure)
+                                                                    ' *** Valid options are: PL - PRC - PRL - PRZ
+    Length = Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) : Parameter.Param("Length").Comment = "Flat Pattern Length"
+
+
+    Try
+      iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+    Catch
+      Call UpdateWeight()
+    End Try
+    Call SetRM()
+    Call UpdateMark()
+  End Sub
+
+  Public Shared Dim oDoc As PartDocument
+  ''Standard RM Description
+  '' Change Thickness for Actual Thickness Variable
+
+  Public Sub SetRM()
+    Dim stock as String
+    Dim rm, Ga, mat As String
+    Select Case CDbl(Thickness)
+      Case 0.1344
+        stock = "11110"
+        Ga = "SHEET, 10 Ga"
+        mat = "A1011 SS33"
+      Case 0.1875
+        stock = "60015"
+        Ga = "PLATE, 3/16"
+        mat = "A572 50"
+      Case 0.2500
+        stock = "60038"
+        Ga = "PLATE, 1/4"
+        mat = "A572 50"
+      Case 0.3125
+        stock = "54877"
+        Ga = "PLATE, 5/16"
+        mat = "A572 50"
+      Case 0.3750
+        stock = "59500"
+        Ga = "PLATE, 3/8"
+        mat = "A572 50"
+      Case Else
+        stock = ""
+        Ga = "PLATE, " + getShortFeet(Thickness / 12)
+        mat = "A572 50"
+    End Select
+
+    If Not stock = "" Then iProperties.Value("Project", "Stock Number") = stock
+
+    rm = "=" & Ga & ", <Material>"
+    iProperties.Value("Custom", "RM Description") = rm
+
+    iProperties.Value("Custom", "RM QTY") = GetSheetMetalArea(oDoc.ComponentDefinition)
+    iProperties.Value("Custom", "RM UOM") = "SF"
+
+    iProperties.Material = mat
+
+  End Sub
+
+  Public Sub UpdateWeight()
+    wt = CStr(Round(iProperties.Mass,2))
+    iProperties.Value("Custom", "WEIGHT") = wt
+
+    Try
+      qty = iProperties.Value("Custom", "Quantity")
+      iProperties.Value("Custom", "COMBINED WEIGHT") = wt * qty
+    Catch ex As Exception
+    End Try
+  End Sub
+
+  '    Call UpdateMark()
+  Public Sub UpdateMark()
+    Try
+        u:PN = iProperties.Value("Project", "Part Number")
+        
+        If Len(iProperties.Value("Project", "Project")) > 3 Then 
+          u:Project = Right( iProperties.Value("Project", "Project") , 3 )
+         Else
+          u:Project = "000"
+        End If
+     Catch ex As Exception
+    End Try
+  End Sub
+
+'''
+]]></Code>
+    </CodeSnippet>
+        <CodeSnippet>
+      <Category>Descriptions</Category>
+      <Name>PRL Plate Descriptions</Name>
+      <ToolTip>Basic Description Rule for Plate</ToolTip>
+      <Index>6002</Index>
+      <Code><![CDATA[
+'Description & Styles Update
+
+'Column Connector Plates :: 
+'''  sPreString = UCase("Column Connector Plate")
+'''  sCriticalMeasure = getShortFeet(sheet_width/12) & ", 2H-" & getShortFeet(d15/12)
+
+
+''' ^^^ Short Description , Type / Critical Dims^^^
+  AddVbFile "VB - clsDebugViewer.vb"
+  AddVbFile "VB - clsStringMath.vb"
+  Imports clsStringMath
+  Imports clsDebugViewer
+
+  Sub Main()
+  oDoc = ThisDoc.Document
+
+  EchoTitle("Setting Description on " & oDoc.DisplayName)
+    ' Use getShortFeet for no Leading '0' or getFractionalFeet for Leading '0'
+    LongValue = getShortFeet( Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) / 12 )
+    ShortValue = getShortFeet( Min( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) / 12 )
+
+    dblLength = Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth )
+    dblWidth = Min( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth )
+
+    Dim sPreString, sCriticalMeasure As String
+    ''Significant Description Text
+    sPreString = "=<Title>"
+    sCriticalMeasure = LongValue & " x " & ShortValue
+    
+    iProperties.Value("Project", "Description") = GetSheetMetalDescription("PRL",  sPreString, CDbl(Thickness), Round(dblWidth,3), sCriticalMeasure)
+                                                                    ' *** Valid options are: PL - PRC - PRL - PRZ
+    Length = Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) : Parameter.Param("Length").Comment = "Flat Pattern Length"
+
+
+    Try
+      iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+    Catch
+      Call UpdateWeight()
+    End Try
+    Call SetRM()
+    Call UpdateMark()
+  End Sub
+
+  Public Shared Dim oDoc As PartDocument
+  ''Standard RM Description
+  '' Change Thickness for Actual Thickness Variable
+
+  Public Sub SetRM()
+    Dim stock as String
+    Dim rm, Ga, mat As String
+    Select Case CDbl(Thickness)
+      Case 0.1344
+        stock = "11110"
+        Ga = "SHEET, 10 Ga"
+        mat = "A1011 SS33"
+      Case 0.1875
+        stock = "60015"
+        Ga = "PLATE, 3/16"
+        mat = "A572 50"
+      Case 0.2500
+        stock = "60038"
+        Ga = "PLATE, 1/4"
+        mat = "A572 50"
+      Case 0.3125
+        stock = "54877"
+        Ga = "PLATE, 5/16"
+        mat = "A572 50"
+      Case 0.3750
+        stock = "59500"
+        Ga = "PLATE, 3/8"
+        mat = "A572 50"
+      Case Else
+        stock = ""
+        Ga = "PLATE, " + getShortFeet(Thickness / 12)
+        mat = "A572 50"
+    End Select
+
+    If Not stock = "" Then iProperties.Value("Project", "Stock Number") = stock
+
+    rm = "=" & Ga & ", <Material>"
+    iProperties.Value("Custom", "RM Description") = rm
+
+    iProperties.Value("Custom", "RM QTY") = GetSheetMetalArea(oDoc.ComponentDefinition)
+    iProperties.Value("Custom", "RM UOM") = "SF"
+
+    iProperties.Material = mat
+
+  End Sub
+
+  Public Sub UpdateWeight()
+    wt = CStr(Round(iProperties.Mass,2))
+    iProperties.Value("Custom", "WEIGHT") = wt
+
+    Try
+      qty = iProperties.Value("Custom", "Quantity")
+      iProperties.Value("Custom", "COMBINED WEIGHT") = wt * qty
+    Catch ex As Exception
+    End Try
+  End Sub
+
+  '    Call UpdateMark()
+  Public Sub UpdateMark()
+    Try
+        u:PN = iProperties.Value("Project", "Part Number")
+        
+        If Len(iProperties.Value("Project", "Project")) > 3 Then 
+          u:Project = Right( iProperties.Value("Project", "Project") , 3 )
+         Else
+          u:Project = "000"
+        End If
+     Catch ex As Exception
+    End Try
+  End Sub
+
+'''
+]]></Code>
+    </CodeSnippet>
+        <CodeSnippet>
+      <Category>Descriptions</Category>
+      <Name>PRC Plate Descriptions</Name>
+      <ToolTip>Basic Description Rule for Plate</ToolTip>
+      <Index>6002</Index>
+      <Code><![CDATA[
+'Description & Styles Update
+
+'Column Connector Plates :: 
+'''  sPreString = UCase("Column Connector Plate")
+'''  sCriticalMeasure = getShortFeet(sheet_width/12) & ", 2H-" & getShortFeet(d15/12)
+
+
+''' ^^^ Short Description , Type / Critical Dims^^^
+  AddVbFile "VB - clsDebugViewer.vb"
+  AddVbFile "VB - clsStringMath.vb"
+  Imports clsStringMath
+  Imports clsDebugViewer
+
+  Sub Main()
+  oDoc = ThisDoc.Document
+
+  EchoTitle("Setting Description on " & oDoc.DisplayName)
+    ' Use getShortFeet for no Leading '0' or getFractionalFeet for Leading '0'
+    LongValue = getShortFeet( Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) / 12 )
+    ShortValue = getShortFeet( Min( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) / 12 )
+
+    dblLength = Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth )
+    dblWidth = Min( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth )
+
+    Dim sPreString, sCriticalMeasure As String
+    ''Significant Description Text
+    sPreString = "=<Title>"
+    'sCriticalMeasure = LongValue & " x " & ShortValue
+    
+    iProperties.Value("Project", "Description") = GetSheetMetalDescription("PRC",  sPreString, CDbl(Thickness), Round(dblWidth,3), sCriticalMeasure)
+                                                                    ' *** Valid options are: PL - PRC - PRL - PRZ
+    Length = Max( SheetMetal.FlatExtentsLength , SheetMetal.FlatExtentsWidth ) : Parameter.Param("Length").Comment = "Flat Pattern Length"
+
+
+    Try
+      iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+    Catch
+      Call UpdateWeight()
+    End Try
+    Call SetRM()
+    Call UpdateMark()
+  End Sub
+
+  Public Shared Dim oDoc As PartDocument
+  ''Standard RM Description
+  '' Change Thickness for Actual Thickness Variable
+
+  Public Sub SetRM()
+    Dim stock as String
+    Dim rm, Ga, mat As String
+    Select Case CDbl(Thickness)
+      Case 0.1344
+        stock = "11110"
+        Ga = "SHEET, 10 Ga"
+        mat = "A1011 SS33"
+      Case 0.1875
+        stock = "60015"
+        Ga = "PLATE, 3/16"
+        mat = "A572 50"
+      Case 0.2500
+        stock = "60038"
+        Ga = "PLATE, 1/4"
+        mat = "A572 50"
+      Case 0.3125
+        stock = "54877"
+        Ga = "PLATE, 5/16"
+        mat = "A572 50"
+      Case 0.3750
+        stock = "59500"
+        Ga = "PLATE, 3/8"
+        mat = "A572 50"
+      Case Else
+        stock = ""
+        Ga = "PLATE, " + getShortFeet(Thickness / 12)
+        mat = "A572 50"
+    End Select
+
+    If Not stock = "" Then iProperties.Value("Project", "Stock Number") = stock
+
+    rm = "=" & Ga & ", <Material>"
+    iProperties.Value("Custom", "RM Description") = rm
+
+    iProperties.Value("Custom", "RM QTY") = GetSheetMetalArea(oDoc.ComponentDefinition)
+    iProperties.Value("Custom", "RM UOM") = "SF"
+
+    iProperties.Material = mat
+
+  End Sub
+
+  Public Sub UpdateWeight()
+    wt = CStr(Round(iProperties.Mass,2))
+    iProperties.Value("Custom", "WEIGHT") = wt
+
+    Try
+      qty = iProperties.Value("Custom", "Quantity")
+      iProperties.Value("Custom", "COMBINED WEIGHT") = wt * qty
+    Catch ex As Exception
+    End Try
+  End Sub
+
+  '    Call UpdateMark()
+  Public Sub UpdateMark()
+    Try
+        u:PN = iProperties.Value("Project", "Part Number")
+        
+        If Len(iProperties.Value("Project", "Project")) > 3 Then 
+          u:Project = Right( iProperties.Value("Project", "Project") , 3 )
+         Else
+          u:Project = "000"
+        End If
+     Catch ex As Exception
+    End Try
+  End Sub
+
+'''
+]]></Code>
+    </CodeSnippet>
+    <CodeSnippet>
+      <Category>Descriptions</Category>
+      <Name>Expanded Metal Descriptions</Name>
+      <ToolTip>Basic Description Rule for Exp.Mtl</ToolTip>
+      <Index>6002</Index>
+      <Code><![CDATA[
+''' Basic Template for Expanded Metal (Raised Type)
+''' Required Dimensions:
+'''   dX dY dZ as LxWxTHK
+'''   Length as exported parameter
+'''   Actual Mass       : MAS [lbmass]          = dY * dX * sqft_lbs
+'''   Actual Density    : DEN [lbmass/in^3]     = MAS / VOL  {VOL = dX * dY * dZ}
+'''   Material lb.ft^2  : sqft_lbs [lbmass/ft^2]= {DropDown :: Pounds per Square Foot : 0.57, 0.66, 0.76, 1.38, 1.71, 1.95}
+
+''' The following Rule Needs to be run first '''
+  '  Dim Existing As New List(Of String())
+  '  Existing.Add({"dX", "Length"})
+  '  Existing.Add({"dY", "Width"})
+  '  Existing.Add({"dZ", "Thickness"})
+
+  '  Dim FormulaList As New List(Of String())
+  '  FormulaList.Add({1, "sqft_lbs", "lbmass/ ( ft ft )", "0.57", "Pounds per Square Foot : 0.57, 0.66, 0.76, 1.38, 1.71, 1.95"})
+  '  FormulaList.Add({2, "MAS", "lbmass", "dY * dX * sqft_lbs"})
+  '  FormulaList.Add({3, "DEN", "lbmass / ( in in in )", "MAS / (dX * dY * dZ)"})
+
+  '  Dim map As Inventor.NameValueMap = ThisApplication.TransientObjects.CreateNameValueMap()
+  '  map.Add("Existing", Existing)  'Existing Parameters Required (Value does not Matter)
+  '  map.Add("Formula", FormulaList)
+  '  iLogicVb.RunExternalRule("Parameter Check.vb", map)
+
+
+AddVbFile "VB - clsDebugViewer.vb"
+AddVbFile "VB - clsStringMath.vb"
+Imports clsStringMath
+Imports clsDebugViewer
+
+Sub Main()
+  oDoc = ThisDoc.Document
+  Call SetExpMetals()
+  
+  Dim stock As Integer
+  If iProperties.Value("Project", "Stock Number")<> "" Then stock = CInt(iProperties.Value("Project", "Stock Number"))
+  
+  Dim mySheet As ExpMetal
+  Try 
+    mySheet = ExpMetals(stock)
+  Catch : End Try
+  If Not CheckWeight(mySheet, stock) Then 
+    Echo("Material set to " & mySheet.ShortDesc & " @ " & mySheet.sqftlbs & " sqftlbs" )
+  End If
+
+  If Not dZ = mySheet.Thickness Then 
+    dZ = mySheet.Thickness
+    InventorVb.DocumentUpdate(False)
+  End If
+
+  Call SetAppearance(mySheet.Appearance)
+
+  ' ensure model updates with any above changes, then check density
+  InventorVb.DocumentUpdate(False)
+  If iProperties.Mass <> MAS Then Call CorrectDensity()
+
+  LongValue = getShortFeet( Max( dX , dY ) / 12 )
+  ShortValue = getShortFeet( Min( dX , dY ) / 12 )
+
+  Dim sDesc, rm As String
+  sDesc = "=<Title>, " & LongValue & " x " & ShortValue & " " & "( " & mySheet.ShortDesc & " )"
+    rm = "EXP-METAL,FLT," & mySheet.ShortDesc
+  
+  iProperties.Value("Project", "Description") = sDesc
+  Length = Max( dX , dY )
+
+  iProperties.Value("Project", "Stock Number") = stock
+  iProperties.Value("Custom", "RM Description") = rm
+  iProperties.Value("Custom", "RM QTY") = Round( dY * dX / 144 , 2)
+
+  iProperties.Value("Custom", "RM UOM") = "SF"
+  
+  iLogicVb.RunExternalRule("IPT - Set Weights.vb")
+
+  Echo("ExpMetal set to: " & ExpMetals(CInt(stock)).ShortDesc & " @ " & ExpMetals(CInt(stock)).sqftlbs)
+  InventorVb.DocumentUpdate()
+End Sub
+
+Public Shared Dim oDoc As PartDocument 
+Public Shared Dim ExpMetals As New Dictionary(Of Integer, ExpMetal)
+Const Conv As Double = 27.6799047102031
+
+Sub CorrectDensity()
+  EchoTitle("Correct Density for Custom Weight in " & oDoc.DisplayName)
+
+  ' Get Current MaterialAsset
+  Dim Mat As MaterialAsset
+  Mat = oDoc.ActiveMaterial
+
+  Dim Density As Object
+  Density = Mat.PhysicalPropertiesAsset.Item("structural_Density")
+
+  Dim CurrentDensity, CurrentMass As Double
+  CurrentDensity = Density.Value
+  CurrentMass = iProperties.Mass
+
+  Echo("Current Material      -: " & Mat.DisplayName & " :-")
+  Echo(Space(13) & "Density .... " & Round(CurrentDensity,3) & " kg/cm^3" )
+  Echo(Space(13) & "Mass ....... " & Round(CurrentMass,3) & " lbm")
+  EchoLine()
+
+  ' Required Physical Properties
+  Dim ReqMass, ReqDensity, ReqVol As Double
+  ReqMass = MAS '[lbm/in^3]
+  ReqDensity = DEN * Conv * 1000
+  'Conversion lb/in^3 -> g/cm^3 = 27.6799047102031 
+  '           g/cm^3 -> kg/cm^3 = 1000
+
+  Dim DenShift As Double
+  DenShift = ReqDensity / Density.Value
+
+  If Round(DenShift,2) <> 1 Then Echo("*** Shift Density by a Factor of " & DenShift & " ***" )
+  Density.Value = DenShift * Density.Value
+
+  'Echo(Mat.Name & ": " & Mat.DisplayName)
+  'Echo(Space(Len(Mat.Name)) & "\- " & Mat.Type)
+  'Echo(Space(Len(Mat.Name)) & "\- " & Mat.CategoryName)
+  'Echo(Space(Len(Mat.Name)) & "\- " & Mat.AssetType)
+
+  Echo("-:Density Value:-")
+  Echo(Space(13) & "Is ......... " & Round(Density.Value,3) & " kg/cm^3" )
+  Echo(Space(13) & "Was ........ " & Round(CurrentDensity,3) & " kg/cm^3")
+  Echo(Space(13) & "Should Be .. " & Round(ReqDensity,3) & " kg/cm^3")
+
+  Echo("-:Density Value:-")
+  Echo(Space(13) & "Is ......... " & Round(iProperties.Mass,3) & " lbm" )
+  Echo(Space(13) & "Was ........ " & Round(CurrentMass,3) & " lbm")
+  Echo(Space(13) & "Should Be .. " & Round(ReqMass,3) & " lbm")
+
+  iProperties.Value("Custom", "Weight") = Round(CurrentMass,2)
+End Sub
+
+' 1-1/2 No.13
+' 1/2 No.13
+' 1/2 No.18
+' 3/4 No.13
+' 3/4 No.9
+' 3/4 No.9, SS
+
+Sub SetExpMetals()
+  ExpMetals(14120) = New ExpMetal("1-1/2 No.13", 0.57, 0.070, "Expanded Metal (1.5)")
+  ExpMetals(14127) = New ExpMetal("1/2 No.13", 1.38, 0.070, "Expanded Metal (0.5)")
+  ExpMetals(14128) = New ExpMetal("1/2 No.18", 0.66, 0.038, "Expanded Metal (0.5)")
+  ExpMetals(54161) = New ExpMetal("3/4 No.13", 0.76, 0.070, "Expanded Metal (0.75)")
+  ExpMetals(54018) = New ExpMetal("3/4 No.9", 1.71, 0.110, "Expanded Metal (0.75)")
+  ExpMetals(60915) = New ExpMetal("3/4 No.9, SS", 1.95, 0.110, "Expanded Metal (0.75)")
+End Sub
+
+Structure ExpMetal
+  Public ShortDesc As String
+  Public sqftlbs As Double
+  Public sqinlbs As Double
+  Public Thickness As Double
+  Public Appearance As String
+
+  Sub New(A As String, B As Double, T As Double, SN As String)
+    Me.ShortDesc = A
+    Me.sqftlbs = B
+    Me.sqinlbs = Round( B / 144, 8)
+    Me.Thickness = T
+    Me.Appearance = SN
+  End Sub
+End Structure
+
+Function CheckWeight(ByRef Current As ExpMetal, ByRef stock As Integer) As Boolean
+  Dim bCheck As Boolean = True
+  Dim Actual As Double = Round(sqft_lbs, 8)
+  ' Echo( Current.ShortDesc & " - " & Current.sqftlbs & " -->" & Current.sqinlbs & "::" & Actual)
+  ' Echo( Current.sqftlbs / 144 & " :: " & sqft_lbs * 144 )
+
+  'Check to SqInLbs is required for unit mismatch (Inventor Fun)
+  If Current.sqinlbs <> Actual Then
+   Echo("Mismatched materials ::" & Actual)
+   Echo(Current.ShortDesc & " should be:")
+    bCheck = False
+    For Each em As KeyValuePair(Of Integer, ExpMetal) In ExpMetals
+      Echo("Checking " & em.Key & "." & em.Value.ShortDesc & "." & em.Value.sqinlbs & "  (" & em.Value.sqftlbs & ")" )
+      If em.Value.sqinlbs = Actual Then
+       Current = em.Value
+       Echo(Space(10) & "\--: FOUND! " & em.Key & "." & em.Value.ShortDesc & "." & em.Value.sqinlbs)
+       iProperties.Value("Project", "Stock Number") = em.Key
+       stock = em.Key
+       Return bCheck
+      End If 
+    Next em
+    stock = 54161 ' If sheet metal weight not found, default to expected standard
+    Current = ExpMetals(stock)
+    sqft_lbs = Current.sqinlbs
+    Echo(sqft_lbs  & " <=> " & Current.sqftlbs )
+  End If
+
+  Return bCheck
+End Function
+
+Sub SetAppearance(sName As String)
+  Dim oActiveAppearance As Asset = oDoc.ActiveAppearance
+
+  Dim Libraries As New List(Of String)
+  Libraries.Add("Hudson")
+
+  For Each oLibrary As AssetLibrary In ThisApplication.AssetLibraries
+    If Not DisplayName = "Hudson" Then Libraries.Add(oLibrary.DisplayName)
+  Next
+
+  For Each sLibName As String In Libraries
+    For Each oAppearance As Asset In ThisApplication.AssetLibraries.Item(sLibName).AppearanceAssets'oDoc.AppearanceAssets
+      If oAppearance.DisplayName = sName
+          Echo("      Library    : " & sLibName)
+          Echo("      DisplayName: " & oAppearance.DisplayName)
+          
+          If oActiveAppearance IsNot oAppearance Then oDoc.ActiveAppearance = oAppearance
+          Exit Sub
+      End If
+    Next    
+  Next
+
+  Echo(sName & " was not found")
+
+End Sub
+]]></Code>
+    </CodeSnippet>
+  </Snippets>
+</CodeSnippets>

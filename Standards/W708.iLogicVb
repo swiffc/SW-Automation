@@ -1,0 +1,292 @@
+﻿
+'____iLogic Definition for Library/Standard Part_______
+AddVbFile "VB - clsDebugViewer.vb"
+AddVbFile "VB - clsFileProperties.vb"
+
+Imports clsDebugViewer
+
+Public Class SizingSelection
+''' Contains the instructions to resize a full featured part.
+
+#Region "Shared Declarations"
+  '' All Public Shared Variables and Settings
+  Public Shared Dim listParts As New List(Of String)
+  Public Shared Dim prp As New clsFileProperties
+  ''Use 'prp.' as a prefix for any method called from "VB - clsFileProperties.vb"
+
+  '''Inventor Objects
+  Public Shared Dim oApp As Inventor.Application
+  Public Shared Dim oDoc As PartDocument
+  Public Shared Dim oPS As PropertySets
+  Public Shared Dim oPS_Hudson As PropertySet
+  Public Shared Dim oPS_Notes As PropertySet
+#End Region
+
+
+  Public Sub Main()
+    oApp = ThisApplication
+    oDoc = ThisDoc.Document 'oApp.ActiveDocument
+    oPS = oDoc.PropertySets
+
+    If Not oPS.PropertySetExists("Hudson Properties") Then oPS.Add("Hudson Properties")
+    oPS_Hudson = oPS.Item("Hudson Properties")
+    If Not oPS.PropertySetExists("Hudson Notes") Then oPS.Add("Hudson Notes")
+    oPS_Notes = oPS.Item("Hudson Notes")
+
+    Dim sSelection As String
+    Dim tValue As PartTable
+
+    ''Populate the variable lists
+    Call InitializePropertyTable()
+
+    ''Prompt for the selection size
+    sSelection = InputListBox("Select Part Number", listParts, "" , Title := "Standard Part Selection", ListName := "Available Parts")
+    If sSelection = "" Then
+      Echo("Nothing Selected Setting Values to ->" & listParts.Item(0))
+    Call ResetPart(listParts.Item(0))
+    oDoc.Update2
+    Exit Sub
+  End If
+
+  Try
+    ''Populate the part with the appropriate values
+    Call PopulatePart(sSelection)
+  Catch ex As Exception
+  End Try
+
+   oDoc.Update2
+
+    '  Call EchoLine()
+    '  'prp.EchoParameters(oDoc)
+    '  Call EchoLine()
+    '  'prp.EchoIProperties(oDoc)
+  End Sub
+
+
+#Region "Methods"
+ ''Actionable Functions or Sub Methods
+
+
+
+  Public Sub PopulatePart(Size As String)
+    ' TryGetValue() Gets TValue for TKey and assigns it to variable, also passes T/F Boolean
+    ' to register if the Key was found in the Table
+
+    'Set reference to custom class'
+    Dim tValue As PartTable
+
+    If tParts.TryGetValue(Size, tValue) Then
+      tValue.Apply()
+     Else
+      Console.WriteLine("Key = " & Size & " is not found.")
+      Exit Sub
+    End If
+
+  End Sub
+
+
+  Public Sub ResetPart(Size As String)
+    ' TryGetValue() Gets TValue for TKey and assigns it to variable, also passes T/F Boolean
+    ' to register if the Key was found in the Table
+
+    'Set reference to custom class'
+    Dim tValue As PartTable
+    Dim sListDesc As String = ""
+    Dim itm As String
+    
+    'Populate the description for Library Setting
+    For Each itm In listParts
+     sListDesc = sListDesc & itm & " ; "
+    Next
+
+    sListDesc = Left(sListDesc, Max(Len(sListDesc) - 2 , 1))
+
+    If tParts.TryGetValue(Size, tValue) Then
+      tValue.ResetTo(sListDesc)
+     Else
+      Console.WriteLine("Key = " & Size & " is not found.")
+      Exit Sub
+    End If
+
+  End Sub
+
+
+'''
+'''
+''' *** Modification Begins Here ******************************
+'''
+'''
+
+
+  Public Sub InitializePropertyTable()
+    '''Assign values to dictionary(key) using the defined 'new' function
+    '''Populate the available parts (listParts) for selection
+
+    '''---Standard Parts--- **Template is only Set for Three(3) Variables**
+    tParts("W708") = New PartTable( "W708" , "6.25" , "0.75" , "5.5" ):listParts.Add("W708")
+    tParts("W7108") = New PartTable( "W7108" , "11" , "0.75" , "5.5" ):listParts.Add("W7108")
+    tParts("W7109") = New PartTable( "W7109" , "12 +  1.75" , "0.75" , "5.5" ):listParts.Add("W7109")
+    tParts("W7110") = New PartTable( "W7110" , "12 +  6.25" , "0.75" , "5.5" ):listParts.Add("W7110")
+
+
+      '''---Galvanized Parts--- **Template is only Set for Three(3) Variables**
+    tParts("0W708") = New PartTable( "0W708" , "6.25" , "0.75" , "5.5"):listParts.Add("0W708")
+    tParts("0W7108") = New PartTable( "0W7108" , "11" , "0.75" , "5.5"):listParts.Add("0W7108")
+    tParts("0W7109") = New PartTable( "0W7109" , "12 +  1.75" , "0.75" , "5.5"):listParts.Add("0W7109")
+    tParts("0W7110") = New PartTable( "0W7110" , "12 +  6.25" , "0.75" , "5.5"):listParts.Add("0W7110")
+
+
+      '''---Material Variation Parts--- **Template is only Set for Three(3) Variables**
+    tParts("W708-1") = New PartTable( "W708-1" , "6.25" , "0.75" , "5.5" ):listParts.Add("W708-1")
+    tParts("W7108-1") = New PartTable( "W7108-1" , "11" , "0.75" , "5.5" ):listParts.Add("W7108-1")
+    tParts("W7109-1") = New PartTable( "W7109-1" , "12 +  1.75" , "0.75" , "5.5" ):listParts.Add("W7109-1")
+    tParts("W7110-1") = New PartTable( "W7110-1" , "12 +  6.25" , "0.75" , "5.5" ):listParts.Add("W7110-1")
+
+  End Sub
+
+ #End Region
+
+
+  Public tParts As New Dictionary(Of String, PartTable) 
+
+
+ Public Class PartTable
+  '''This is the definition of the standard part dimensions. 
+  '''All controlled need to be included here and in the InitializePropertyTable() method above.
+
+  'Setup Variables/FeatureNames to be Tracked in Table/Array
+   ''Define variables as type: 
+    ''   Double for 1.0, 2.0, ..., 00000.00; 
+    ''   String for 10A-AAZ
+   Private _listParam As New SortedList()
+   Private _listIProp As New SortedList()
+   Private _Title As String
+   Private _PartNumber As String
+   Private _DrawingNo As String 
+
+
+  Public Sub New(PartNumber As String,
+                Optional dA As String = "",
+                Optional dB As String = "",
+                Optional dC As String = "")
+  '''Identify the Parameters and Values to be Populated
+    If dA <> String.Empty Then _listParam.Add("d:A", dA)
+    If dB <> String.Empty Then _listParam.Add("d:THK", dB)
+    If dC <> String.Empty Then _listParam.Add("d:Width", dC)
+
+  '''Set to Drawing Number the Design is Being Made From;
+   _DrawingNo  = "W708"
+
+  '''Set Title of the Design;
+   _Title  = "FRAME LIFTING LUG"
+   _listIProp.Add("Title", _Title)
+
+  '''Set the Description Format, it is possible to feed from another variable
+   _listIProp.Add("Description", "LUG, LIFTING, FRAME") ''dA & """" & " x " & dB & """" & " x " & dC & """")
+
+  '''Set the Part Number from variable 
+   _listIProp.Add("Part Number", PartNumber)
+   _PartNumber = PartNumber 
+
+  End Sub
+
+
+'''
+'''
+''' *** Modification Ends Here ******************************
+'''
+'''
+
+
+   Public Sub Apply()
+   '''Set Part 'Values'
+    'Set Custom iProperty to Code Revision State 
+     Call SetHudsonProperty("Standard Library Part",
+                            _DrawingNo)
+
+     'Add Note Property for -possible- Future Use
+     Call SetHudsonNote("Std Part Note",
+                        "NOTE: This part is detailed on Drawing No. " & _DrawingNo & " as PN:" & _PartNumber & ".")
+
+     For i = 0 To _listParam.Count - 1
+       Echo( "Key:  "& _listParam.GetKey(i) & "  -- Value:  " & _listParam.GetByIndex(i))
+       oDoc.ComponentDefinition.Parameters(_listParam.GetKey(i)).Expression = _listParam.GetByIndex(i)
+     Next i
+
+     For i = 0 To _listIProp.Count - 1
+       Echo( "Key:  "& _listIProp.GetKey(i) & "  -- Value:  " & _listIProp.GetByIndex(i))
+       prp.SetiPropValue(oDoc, _listIProp.GetKey(i) , _listIProp.GetByIndex(i))
+     Next i
+
+     oDoc.DisplayName = _listIProp("Part Number")
+
+   End Sub
+
+   Public Sub ResetTo(Desc As String)
+   '''Reset Part to 'Library Status'
+    'Set Custom iProperty to Code Revision State
+     Call SetHudsonProperty("Standard Library Part",
+                            _DrawingNo)
+
+     'Add Note Property for -possible- Future Use
+     Call SetHudsonNote("Std Part Note",
+                        "NOTE: This part is detailed on Drawing No. " & _DrawingNo & " as PN:" & _PartNumber & ".")
+
+
+     For i = 0 To _listParam.Count - 1
+       Echo( "Key:  "& _listParam.GetKey(i) & "  -- Value:  " & _listParam.GetByIndex(i))
+       oDoc.ComponentDefinition.Parameters(_listParam.GetKey(i)).Expression = _listParam.GetByIndex(i)
+     Next i
+
+    '  For i = 0 To _listIProp.Count - 1
+    '    Echo( "Key:  "& _listIProp.GetKey(i) & "  -- Value:  " & _listIProp.GetByIndex(i))
+    '    prp.SetiPropValue(oDoc, _listIProp.GetKey(i) , "")
+    '  Next i
+
+     oDoc.DisplayName = _DrawingNo
+
+     Dim oDTP As PropertySet _ 
+             = oDoc.PropertySets.Item("Design Tracking Properties")
+     oDTP.Item("Description").Value = "Library Part for :: " & Desc
+     oDTP.Item("Part Number").Value = _DrawingNo
+
+   End Sub
+
+   Public Sub SetHudsonNote(ByVal PropName As String,
+                            ByVal PropValue As String)
+    Try
+    ''Assign Value to Defined PropertyName, Creating Parameter if needed.
+      sTestValue = oPS_Notes.Item(PropName)
+
+    Catch ex As Exception
+      ''Assume error means not found
+      oPS_Notes.Add("", PropName)
+
+    Finally
+      oPS_Notes.Item(PropName).Value = PropValue
+      DebugLine(PropName,,4,PropValue,2)
+    End Try
+   End Sub
+
+   Public Sub SetHudsonProperty(ByVal PropName As String,
+                                ByVal PropValue As String)
+    Try
+    ''Assign Value to Defined PropertyName, Creating Parameter if needed.
+      sTestValue = oPS_Hudson.Item(PropName)
+
+    Catch ex As Exception
+      ''Assume error means not found
+      oPS_Hudson.Add("", PropName)
+
+    Finally
+      oPS_Hudson.Item(PropName).Value = PropValue
+      DebugLine(PropName,,4,PropValue,2)
+    End Try
+   End Sub
+
+  End Class 
+
+End Class
+
+
+

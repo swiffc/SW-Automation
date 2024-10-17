@@ -1,0 +1,386 @@
+﻿AddVbFile "VB - clsDebugViewer.vb"
+AddVbFile "VB - clsFileProperties.vb"
+
+Imports clsDebugViewer
+
+Public Class B713A
+''' Contains the instructions to resize a full featured part.
+
+#Region "Shared Declarations"
+  '' All Public Shared Variables and Settings
+  Public Shared Dim listParts As New List(Of String)
+  Public Shared Dim prp As New clsFileProperties
+  ''Use 'prp.' as a prefix for any method called from "VB - clsFileProperties.vb"
+
+#End Region
+
+  Public Sub Main()
+    Dim oDoc As Document = ThisDoc.Document
+    Dim sSelection As String
+    Dim tValue As PartTable
+
+    ''Populate the variable lists
+    Call InitializePropertyTable()
+
+    ''Prompt for the selection size
+    sSelection = InputListBox("Select Part Number", listParts, "" , Title := "Standard Part Selection", ListName := "Available Parts")
+    If sSelection = "" Then
+      Echo("Nothing Selected Setting Values to ->" & listParts.Item(0))
+	  Call ResetPart(listParts.Item(0))
+	  oDoc.Update2
+	  Exit Sub
+	End If
+	  
+	  
+    ''Populate the part with the appropriate values
+    Call PopulatePart(sSelection)
+
+   oDoc.Update2
+
+  End Sub
+
+
+#Region "Methods"
+ ''Actionable Functions or Sub Methods
+
+
+  Public Sub PopulatePart(Size As String)
+    ' TryGetValue() Gets TValue for TKey and assigns it to variable, also passes T/F Boolean
+    ' to register if the Key was found in the Table
+
+    'Set reference to custom class'
+    Dim tValue As PartTable
+
+    If tParts.TryGetValue(Size, tValue) Then
+      tValue.Apply(ThisDoc.Document)
+     Else
+      Console.WriteLine("Key = " & Size & " is not found.")
+      Exit Sub
+    End If
+
+  End Sub
+
+
+  Public Sub ResetPart(Size As String)
+    ' TryGetValue() Gets TValue for TKey and assigns it to variable, also passes T/F Boolean
+    ' to register if the Key was found in the Table
+
+    'Set reference to custom class'
+    Dim tValue As PartTable
+	Dim sListDesc As String = ""
+	Dim itm As String
+	
+	'Populate the description for Library Setting
+	For Each itm In listParts
+	 sListDesc = sListDesc & itm & " ; "
+	Next
+
+	sListDesc = Left(sListDesc, Max(Len(sListDesc) - 2 , 1))
+
+    If tParts.TryGetValue(Size, tValue) Then
+      tValue.ResetTo(ThisDoc.Document, sListDesc)
+     Else
+      Console.WriteLine("Key = " & Size & " is not found.")
+      Exit Sub
+    End If
+
+  End Sub
+
+
+'''
+'''
+''' *** Modification Begins Here ******************************
+'''
+'''
+
+
+  Public Sub InitializePropertyTable()
+    '''Assign values to dictionary(key) using the defined 'new' function
+    '''Populate the available parts (listParts) for selection
+
+    '''---Standard Parts--- **Template is only Set for Three(3) Variables**
+tParts("B743") = New PartTable( "B743" , "2'-6" , "2 1/2" , "2'-6" & """" ):listParts.Add("B743")
+tParts("B744") = New PartTable( "B744" , "2'-6" , "3 1/2" , "2'-6" & """" ):listParts.Add("B744")
+tParts("B745") = New PartTable( "B745" , "3'-6" , "2 1/2" , "3'-6" & """" ):listParts.Add("B745")
+tParts("B746") = New PartTable( "B746" , "3'-6" , "3 1/2" , "3'-6" & """" ):listParts.Add("B746")
+tParts("B747") = New PartTable( "B747" , "3'-8" , "2 1/2" , "3'-8" & """" ):listParts.Add("B747")
+tParts("B748") = New PartTable( "B748" , "3'-8" , "3 1/2" , "3'-8" & """" ):listParts.Add("B748")
+tParts("B749") = New PartTable( "B749" , "4'-0" , "2 1/2" , "4'-0" & """" ):listParts.Add("B749")
+tParts("B750") = New PartTable( "B750" , "4'-0" , "3 1/2" , "4'-0" & """" ):listParts.Add("B750")
+tParts("B751") = New PartTable( "B751" , "4'-3" , "2 1/2" , "4'-3" & """" ):listParts.Add("B751")
+tParts("B752") = New PartTable( "B752" , "4'-3" , "3 1/2" , "4'-3" & """" ):listParts.Add("B752")
+tParts("B753") = New PartTable( "B753" , "4'-8" , "2 1/2" , "4'-8" & """" ):listParts.Add("B753")
+tParts("B754") = New PartTable( "B754" , "4'-8" , "3 1/2" , "4'-8" & """" ):listParts.Add("B754")
+tParts("B755") = New PartTable( "B755" , "5'-0" , "2 1/2" , "5'-0" & """" ):listParts.Add("B755")
+tParts("B756") = New PartTable( "B756" , "5'-0" , "3 1/2" , "5'-0" & """" ):listParts.Add("B756")
+tParts("B757") = New PartTable( "B757" , "5'-4" , "2 1/2" , "5'-4" & """" ):listParts.Add("B757")
+tParts("B758") = New PartTable( "B758" , "5'-4" , "3 1/2" , "5'-4" & """" ):listParts.Add("B758")
+tParts("B759") = New PartTable( "B759" , "5'-6" , "2 1/2" , "5'-6" & """" ):listParts.Add("B759")
+tParts("B760") = New PartTable( "B760" , "5'-6" , "3 1/2" , "5'-6" & """" ):listParts.Add("B760")
+tParts("B761") = New PartTable( "B761" , "5'-7" , "2 1/2" , "5'-7" & """" ):listParts.Add("B761")
+tParts("B762") = New PartTable( "B762" , "5'-7" , "3 1/2" , "5'-7" & """" ):listParts.Add("B762")
+tParts("B763") = New PartTable( "B763" , "5'-9" , "2 1/2" , "5'-9" & """" ):listParts.Add("B763")
+tParts("B764") = New PartTable( "B764" , "5'-9" , "3 1/2" , "5'-9" & """" ):listParts.Add("B764")
+
+
+
+
+
+
+    '''---Galvanized Parts--- **Template is only Set for Three(3) Variables**
+	tParts("0B743") = New PartTable( "0B743" , "2'-6" , "2 1/2" ):listParts.Add("0B743")
+	tParts("0B744") = New PartTable( "0B744" , "2'-6" , "3 1/2" ):listParts.Add("0B744")
+	tParts("0B745") = New PartTable( "0B745" , "3'-6" , "2 1/2" ):listParts.Add("0B745")
+	tParts("0B746") = New PartTable( "0B746" , "3'-6" , "3 1/2" ):listParts.Add("0B746")
+	tParts("0B747") = New PartTable( "0B747" , "3'-8" , "2 1/2" ):listParts.Add("0B747")
+	tParts("0B748") = New PartTable( "0B748" , "3'-8" , "3 1/2" ):listParts.Add("0B748")
+	tParts("0B749") = New PartTable( "0B749" , "4'-0" , "2 1/2" ):listParts.Add("0B749")
+	tParts("0B750") = New PartTable( "0B750" , "4'-0" , "3 1/2" ):listParts.Add("0B750")
+	tParts("0B751") = New PartTable( "0B751" , "4'-3" , "2 1/2" ):listParts.Add("0B751")
+	tParts("0B752") = New PartTable( "0B752" , "4'-3" , "3 1/2" ):listParts.Add("0B752")
+	tParts("0B753") = New PartTable( "0B753" , "4'-8" , "2 1/2" ):listParts.Add("0B753")
+	tParts("0B754") = New PartTable( "0B754" , "4'-8" , "3 1/2" ):listParts.Add("0B754")
+	tParts("0B755") = New PartTable( "0B755" , "5'-0" , "2 1/2" ):listParts.Add("0B755")
+	tParts("0B756") = New PartTable( "0B756" , "5'-0" , "3 1/2" ):listParts.Add("0B756")
+	tParts("0B757") = New PartTable( "0B757" , "5'-4" , "2 1/2" ):listParts.Add("0B757")
+	tParts("0B758") = New PartTable( "0B758" , "5'-4" , "3 1/2" ):listParts.Add("0B758")
+	tParts("0B759") = New PartTable( "0B759" , "5'-6" , "2 1/2" ):listParts.Add("0B759")
+	tParts("0B760") = New PartTable( "0B760" , "5'-6" , "3 1/2" ):listParts.Add("0B760")
+	tParts("0B761") = New PartTable( "0B761" , "5'-7" , "2 1/2" ):listParts.Add("0B761")
+	tParts("0B762") = New PartTable( "0B762" , "5'-7" , "3 1/2" ):listParts.Add("0B762")
+	tParts("0B763") = New PartTable( "0B763" , "5'-9" , "2 1/2" ):listParts.Add("0B763")
+	tParts("0B764") = New PartTable( "0B764" , "5'-9" , "3 1/2" ):listParts.Add("0B764")
+
+
+    '''---Material Variation Parts--- **Template is only Set for Three(3) Variables**
+	tParts("B743-1") = New PartTable( "B743-1" , "2'-6" , "2 1/2" ):listParts.Add("B743-1")
+	tParts("B744-1") = New PartTable( "B744-1" , "2'-6" , "3 1/2" ):listParts.Add("B744-1")
+	tParts("B745-1") = New PartTable( "B745-1" , "3'-6" , "2 1/2" ):listParts.Add("B745-1")
+	tParts("B746-1") = New PartTable( "B746-1" , "3'-6" , "3 1/2" ):listParts.Add("B746-1")
+	tParts("B747-1") = New PartTable( "B747-1" , "3'-8" , "2 1/2" ):listParts.Add("B747-1")
+	tParts("B748-1") = New PartTable( "B748-1" , "3'-8" , "3 1/2" ):listParts.Add("B748-1")
+	tParts("B749-1") = New PartTable( "B749-1" , "4'-0" , "2 1/2" ):listParts.Add("B749-1")
+	tParts("B750-1") = New PartTable( "B750-1" , "4'-0" , "3 1/2" ):listParts.Add("B750-1")
+	tParts("B751-1") = New PartTable( "B751-1" , "4'-3" , "2 1/2" ):listParts.Add("B751-1")
+	tParts("B752-1") = New PartTable( "B752-1" , "4'-3" , "3 1/2" ):listParts.Add("B752-1")
+	tParts("B753-1") = New PartTable( "B753-1" , "4'-8" , "2 1/2" ):listParts.Add("B753-1")
+	tParts("B754-1") = New PartTable( "B754-1" , "4'-8" , "3 1/2" ):listParts.Add("B754-1")
+	tParts("B755-1") = New PartTable( "B755-1" , "5'-0" , "2 1/2" ):listParts.Add("B755-1")
+	tParts("B756-1") = New PartTable( "B756-1" , "5'-0" , "3 1/2" ):listParts.Add("B756-1")
+	tParts("B757-1") = New PartTable( "B757-1" , "5'-4" , "2 1/2" ):listParts.Add("B757-1")
+	tParts("B758-1") = New PartTable( "B758-1" , "5'-4" , "3 1/2" ):listParts.Add("B758-1")
+	tParts("B759-1") = New PartTable( "B759-1" , "5'-6" , "2 1/2" ):listParts.Add("B759-1")
+	tParts("B760-1") = New PartTable( "B760-1" , "5'-6" , "3 1/2" ):listParts.Add("B760-1")
+	tParts("B761-1") = New PartTable( "B761-1" , "5'-7" , "2 1/2" ):listParts.Add("B761-1")
+	tParts("B762-1") = New PartTable( "B762-1" , "5'-7" , "3 1/2" ):listParts.Add("B762-1")
+	tParts("B763-1") = New PartTable( "B763-1" , "5'-9" , "2 1/2" ):listParts.Add("B763-1")
+	tParts("B764-1") = New PartTable( "B764-1" , "5'-9" , "3 1/2" ):listParts.Add("B764-1")
+
+
+  End Sub
+
+#End Region
+
+
+  Public tParts As New Dictionary(Of String, PartTable) 
+
+
+  Public Class PartTable
+  '''This is the definition of the standard part dimensions. 
+  '''All controlled need to be included here and in the InitializePropertyTable() method above.
+
+  'Setup Variables/FeatureNames to be Tracked in Table/Array
+   ''Define variables as type: 
+    ''   Double for 1.0, 2.0, ..., 00000.00; 
+    ''   String for 10A-AAZ
+   Private _listParam As New SortedList()
+   Private _listIProp As New SortedList()
+   Private _Title As String
+   Private _PartNumber As String
+   Private _DrawingNo As String 
+   Private _Coating As String 
+   Private _Material As String 
+
+
+    Public Sub New(PartNumber As String,
+                  Optional dTSS As String = "",
+                  Optional dB As String = "",
+                  Optional dA As String = "")
+    '''Identify the Parameters and Values to be Populated
+      If dA <> String.Empty Then _listParam.Add("TSS", dA)
+      If dB <> String.Empty Then _listParam.Add("G_H", dB)
+
+    '''Set to Drawing Number the Design is Being Made From;
+    _DrawingNo  = "B713"
+
+    '''Set Title of the Design;
+    _Title  = "DIVERTER, " & dTSS
+    _listIProp.Add("Title", _Title)
+
+    '''Set the Description Format, it is possible to feed from another variable
+    _listIProp.Add("Description", "=DIVERTER, L<G_H> x <G_W> X <G_T>") ''dA & """" & " x " & dB & """" & " x " & dC & """")
+
+    '''Set the Part Number from variable 
+    _listIProp.Add("Part Number", PartNumber): _PartNumber = PartNumber 
+
+    '''Set the Part Number from variable 
+    _listIProp.Add("Coating", "ASTM A123"): _PartNumber = PartNumber 
+
+    End Sub
+
+
+  '''
+  '''
+  ''' *** Modification Ends Here ******************************
+  '''
+  '''
+
+
+   Public Sub Apply(oDoc As PartDocument)
+   '''Set Part 'Values'
+    'Set Custom iProperty to Code Revision State 
+     prp.SetiPropValue(oDoc,
+                       "Standard Library Part",
+                       _DrawingNo,
+                       "Hudson Properties")
+
+     'Add Note Property for -possible- Future Use
+     prp.SetiPropValue(oDoc,
+                       "Std Part Note",
+                       "NOTE: This part is detailed on Drawing No. " & _DrawingNo & " as PN:" & PartNumber & ".",
+                       "Hudson Notes")
+
+     For i = 0 To _listParam.Count - 1
+       Echo( "Key:  "& _listParam.GetKey(i) & "  -- Value:  " & _listParam.GetByIndex(i))
+       oDoc.ComponentDefinition.Parameters(_listParam.GetKey(i)).Expression = _listParam.GetByIndex(i)
+     Next i
+
+     For i = 0 To _listIProp.Count - 1
+       Echo( "Key:  "& _listIProp.GetKey(i) & "  -- Value:  " & _listIProp.GetByIndex(i))
+       prp.SetiPropValue(oDoc, _listIProp.GetKey(i) , _listIProp.GetByIndex(i))
+     Next i
+
+     oDoc.DisplayName = _listIProp("Part Number")
+
+   End Sub
+
+   Public Sub ResetTo(oDoc As PartDocument, Desc As String)
+   '''Reset Part to 'Library Status'
+    'Set Custom iProperty to Code Revision State
+     prp.SetiPropValue(oDoc,
+                       "Standard Library Part",
+                       _DrawingNo,
+                       "Hudson Properties")
+
+     'Add Note Property for -possible- Future Use
+     prp.SetiPropValue(oDoc,
+                       "Std Part Note",
+                       "NOTE: This part is detailed on Drawing No. " & _DrawingNo & " as PN:" & _PartNumber & ".",
+                       "Hudson Notes")
+
+
+     For i = 0 To _listParam.Count - 1
+       Echo( "Key:  "& _listParam.GetKey(i) & "  -- Value:  " & _listParam.GetByIndex(i))
+       oDoc.ComponentDefinition.Parameters(_listParam.GetKey(i)).Expression = _listParam.GetByIndex(i)
+     Next i
+
+     For i = 0 To _listIProp.Count - 1
+       Echo( "Key:  "& _listIProp.GetKey(i) & "  -- Value:  " & _listIProp.GetByIndex(i))
+       prp.SetiPropValue(oDoc, _listIProp.GetKey(i) , "")
+     Next i
+
+     oDoc.DisplayName = _DrawingNo
+     prp.SetiPropValue(oDoc,
+                       "Description",
+                       "Library Part for :: " & Desc)
+     prp.SetiPropValue(oDoc,
+                       "Part Number",
+                       _DrawingNo)
+	 prp.SetiPropValue(oDoc,
+                       "Title",
+                       "Diverter")
+
+
+   End Sub
+
+  End Class 
+
+'#Region "iProperty Manipulation"
+'
+'  Public Function SetiPropValue(ByVal fDoc As Document,
+'                                ByVal PropName As String,
+'                                ByVal PropValue As String,
+'                       Optional ByVal PropSetName As String _ 
+'                                 = "Inventor User Defined Properties") As String
+'  ''Set Value for Given PropertyName in Given Document
+'   DebugLine("Set iProperty",bVerboseDebug_clsFileProperties,2, PropName & " - " & PropValue)
+'   Dim sPropSet As String
+'   Dim bExists As Boolean
+'    Try
+'    ''Get Inventor Property Sets
+'    bExists = CheckiPropExists(fDoc, PropName, sPropSet)
+'
+'    If bExists
+'      Try
+'        oPropertySet = fDoc.PropertySets.Item(sPropSet)
+'        oPropertySet.Item(PropName).Value = PropValue
+'       Catch ex As Exception
+'        MessageBox.Show("Problem with " & fDoc.DisplayName & Chr(13) & _ 
+'                  "Trying to Set Property Sets." & Chr(13)  & Chr(13) & _ 
+'                  "Exception Thrown: " & ex.Message, fDoc.DisplayName)
+'      End Try
+'
+'     Else
+'      FillUserDefinediProp(fDoc, PropName, PropValue, PropSetName)
+'
+'    End If
+'
+'    Catch ex As Exception
+'      MessageBox.Show("Problem with " & fDoc.DisplayName & Chr(13) & _ 
+'                  "Trying to Get Property Sets." & Chr(13)  & Chr(13) & _ 
+'                  "Exception Thrown: " & ex.Message, fDoc.DisplayName)
+'    End Try
+'
+'  End Function
+'
+'
+'  Public Sub FillUserDefinediProp(ByVal fDoc As Document,
+'                                  ByVal PropName As String,
+'                                  ByVal PropValue As String,
+'                         Optional ByVal PropSetName As String = "Inventor User Defined Properties")
+'  ''Assign Given Value to Given PropertyName in Given Document
+'
+'  
+'    Try
+'    ''Get Inventor User Defined Property Set
+'    oPropSets = fDoc.PropertySets
+'    If Not oPropSets.PropertySetExists(PropSetName) Then oPropSets.Add(PropSetName)
+'
+'    sCustomPropertySet = oPropSets.Item(PropSetName)
+'
+'    Catch ex As Exception
+'      MessageBox.Show("Problem with " & fDoc.DisplayName & Chr(13) & _ 
+'                  "Trying to Set " & PropName & " to " & PropValue & Chr(13)  & Chr(13) & _ 
+'                  "Exception Thrown: " & ex.Message, fDoc.DisplayName)
+'    End Try
+'
+'    Try
+'    ''Assign Value to Defined PropertyName, Creating Parameter if needed.
+'      sTestValue = sCustomPropertySet.Item(PropName)
+'
+'    Catch ex As Exception
+'      ''Assume error means not found
+'      sCustomPropertySet.Add("", PropName)
+'
+'    Finally
+'      sCustomPropertySet.Item(PropName).Value = PropValue
+'      DebugLine(PropName,,4,PropValue,2)
+'    End Try
+'  End Sub
+'
+'#End Region
+
+End Class
+
+
+
