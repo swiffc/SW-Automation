@@ -25,7 +25,7 @@ namespace HDR.Drawings
 
             // Get Prego version if supported 
             string version = GetCurrentOrDefaultVersion();
-            PleaseWait.Show("Loading...");
+            PleaseWait.Show("NOW LOADING!");
 
             // Add/edit custom properties loop
             if (version != null)
