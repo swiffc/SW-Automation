@@ -1,0 +1,24 @@
+# SolidWorks files that should not be tracked
+*.SLDPRT.lock
+*.SLDASM.lock
+*.SLDDRW.lock
+*.sldprt~
+*.sldasm~
+*.slddrw~
+*.sldlk
+
+# Other unnecessary files
+~$*
+*.log
+*.bak
+*.tmp
+*.swp
+*.err
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore binaries for releases
+*.exe
+*.dll
