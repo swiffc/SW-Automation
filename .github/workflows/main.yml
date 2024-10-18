@@ -1,0 +1,15 @@
+name: SolidWorks Automation Workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Step to run a PowerShell script
+    - name: Run PowerShell Script
+      run: |
+        ./your_script.ps1
