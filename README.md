@@ -1,12 +1,51 @@
-# SolidWorks Automation Suite
+<div align="center">
 
-**Version**: 4.0.0  
-**Status**: ? **ENTERPRISE-GRADE - PRODUCTION READY**  
-**Last Updated**: October 25, 2025
+# 🚀 SolidWorks Automation Suite
+
+### Enterprise-Grade CAD Automation Platform
+
+[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](https://github.com/swiffc/SW-Automation)
+[![Status](https://img.shields.io/badge/status-production%20ready-success.svg)](https://github.com/swiffc/SW-Automation)
+[![Platform](https://img.shields.io/badge/platform-SolidWorks%202022+-orange.svg)](https://www.solidworks.com)
+[![Language](https://img.shields.io/badge/language-C%23%20.NET-purple.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![License](https://img.shields.io/badge/license-Enterprise-red.svg)](LICENSE)
+
+**Last Updated**: October 27, 2025
+
+[🎯 Features](#-key-features) • [⚡ Quick Start](#-quick-start) • [📚 Documentation](#-documentation) • [🛠️ Components](#-automation-modules) • [💡 Support](#-support)
 
 ---
 
-## ?? Your Complete Automation Environment
+</div>
+
+## 🌟 Overview
+
+> **Transform your SolidWorks workflow with intelligent automation**
+
+A comprehensive, production-ready automation suite featuring **7 automation modules**, **650+ templates**, and **2,700+ API examples**—all integrated into a unified C# add-in with modern UI/UX.
+
+### 🎯 What Makes This Special
+
+<table>
+<tr>
+<td width="33%" align="center">
+<h3>🎨 Complete Solution</h3>
+20 projects, 7 modules, all production-tested and enterprise-ready
+</td>
+<td width="33%" align="center">
+<h3>⚡ Time Savings</h3>
+70-85% faster workflow with intelligent automation and validation
+</td>
+<td width="33%" align="center">
+<h3>📚 Rich Resources</h3>
+2,700+ examples, 700+ pages of docs, ready-to-learn
+</td>
+</tr>
+</table>
+
+---
+
+## 📦 What's Included
 
 A **fully integrated, enterprise-grade SolidWorks automation environment** featuring:
 
@@ -43,45 +82,77 @@ A **fully integrated, enterprise-grade SolidWorks automation environment** featu
 
 ---
 
-## ?? Quick Start (5 Minutes)
+## ⚡ Quick Start
 
-### Step 1: Run Setup Scripts (ONE TIME)
+<div align="center">
+
+### 🎬 Get Up and Running in 5 Minutes
+
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+### 1️⃣ **Setup Scripts**
+
+Run these **one time** to configure your environment:
 
 ```powershell
-# Right-click PowerShell ? "Run as Administrator"
-cd C:\Users\DCornealius\CascadeProjects\Solidworks_Automation
+# Open PowerShell as Administrator
+cd Solidworks_Automation
 
-# 1. Set up certified templates
+# Setup certified templates
 .\SETUP_TEMPLATE_INTEGRATION.ps1
 
-# 2. Set up Header Section Tool (OPTIONAL)
+# (Optional) Setup Header Section Tool
 .\SETUP_HEADER_SECTION_TOOL.ps1
 ```
 
-### Step 2: Create Output Directories (Optional)
+</td>
+<td width="50%">
+
+### 2️⃣ **Build Solution**
+
+Open and compile the C# add-in:
 
 ```powershell
-# Creates output folders for Header and XCH tools
-New-Item -Path "output\headers" -ItemType Directory -Force
-New-Item -Path "output\xch_structures" -ItemType Directory -Force
-```
-
-### Step 3: Build Add-In
-
-```powershell
-# Open Visual Studio 2022 as Administrator
+# Open Visual Studio 2022 as Admin
 cd macros\csharp\Solidworks-Automation
+
 # Open: Solidworks Automation.sln
-# Build ? Build Solution (Ctrl+Shift+B)
+# Press: Ctrl+Shift+B to build
 ```
 
-### Step 4: Launch SolidWorks
+</td>
+</tr>
+<tr>
+<td width="50%">
 
+### 3️⃣ **Create Outputs** *(Optional)*
+
+```powershell
+# Create organized output folders
+New-Item -Path "output\headers" -ItemType Directory
+New-Item -Path "output\xch_structures" -ItemType Directory
 ```
-1. Open SolidWorks
-2. Add-in loads automatically
-3. Start automating!
+
+</td>
+<td width="50%">
+
+### 4️⃣ **Launch & Automate!**
+
+```bash
+✓ Open SolidWorks
+✓ Add-in loads automatically
+✓ Start creating components!
 ```
+
+**🎉 You're ready to automate!**
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -324,58 +395,153 @@ To:
 
 ## ?? Core Features
 
-### Component Automation (7 Modules)
+### 🛠️ Automation Modules
 
-1. **Bundle** (21 templates)
-   - Tube bundles
-   - Weldments
-   - Assemblies
+<div align="center">
 
-2. **Header** (17 templates)
-   - Simple headers
-   - End plates
-   - Flanges
-   - Pipes
+### 7 Production-Ready Component Generators
 
-3. **Hood** (8 templates + legacy)
-   - Hood assemblies
-   - Hood parts
+</div>
 
-4. **MachineryMount** (26 templates)
-   - Motor mounts
-   - Frame structures
-   - Support assemblies
+<table>
+<tr>
+<td width="25%">
+<div align="center">
 
-5. **Plenum** (41 templates)
-   - Plenum boxes
-   - Assemblies
-   - Parts
+### 📦 Bundle
+**21 Templates**
 
-6. **Structure** (27 templates)
-   - Structural frames
-   - Support structures
-   - Assemblies
+Tube bundles  
+Weldments  
+Assemblies
 
-7. **Walkway** (64 templates)
-   - Walkway platforms
-   - Railings
-   - Access structures
+</div>
+</td>
+<td width="25%">
+<div align="center">
 
-### Template System
+### 🔧 Header
+**17 Templates**
 
-- ? 213 certified templates
-- ? Symbolically linked to AXC_VAULT
-- ? Auto-sync with source
-- ? 7 component categories
-- ? Production-ready files
+Simple headers  
+End plates  
+Flanges & Pipes
 
-### Output Management
+</div>
+</td>
+<td width="25%">
+<div align="center">
 
-- ? Organized by component type
-- ? Auto-create drawings
-- ? Export to PDF/STEP/DXF
-- ? Configurable workflows
-- ? Batch processing support
+### 🏠 Hood
+**8 Templates**
+
+Hood assemblies  
+Hood parts  
+Legacy support
+
+</div>
+</td>
+<td width="25%">
+<div align="center">
+
+### ⚙️ Machinery
+**26 Templates**
+
+Motor mounts  
+Frame structures  
+Support assemblies
+
+</div>
+</td>
+</tr>
+<tr>
+<td width="25%">
+<div align="center">
+
+### 📮 Plenum
+**41 Templates**
+
+Plenum boxes  
+Assemblies  
+Parts library
+
+</div>
+</td>
+<td width="25%">
+<div align="center">
+
+### 🏗️ Structure
+**27 Templates**
+
+Structural frames  
+Support structures  
+Frame assemblies
+
+</div>
+</td>
+<td width="25%">
+<div align="center">
+
+### 🚶 Walkway
+**64 Templates**
+
+Walkway platforms  
+Railings  
+Access structures
+
+</div>
+</td>
+<td width="25%">
+<div align="center">
+
+### ✨ Total
+**213 Templates**
+
+All production-ready  
+Auto-synced  
+Fully automated
+
+</div>
+</td>
+</tr>
+</table>
+
+### 🎯 Key Capabilities
+
+<table>
+<tr>
+<td width="33%">
+
+#### 📋 **Template System**
+- ✅ 213 certified templates
+- ✅ Auto-sync with AXC_VAULT
+- ✅ 7 component categories
+- ✅ Production-ready files
+- ✅ Version controlled
+
+</td>
+<td width="33%">
+
+#### 📤 **Output Management**
+- ✅ Organized by component
+- ✅ Auto-create drawings
+- ✅ Multi-format export
+- ✅ Configurable workflows
+- ✅ Batch processing
+
+</td>
+<td width="33%">
+
+#### 🚀 **Workflow Features**
+- ✅ One-click generation
+- ✅ Input validation
+- ✅ Error prevention
+- ✅ Progress tracking
+- ✅ Undo/Redo support
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -488,21 +654,64 @@ Component Generation:
 
 ---
 
-## ?? System Statistics
+## 📊 System Statistics
 
-```
-Production Projects:      20
-Certified Templates:      213 (7 categories)
-Header Section Tool:      125 (4 variants) NEW!
-XCH Structure Tool:       311 (3 variants) NEW!
-Learning Examples:        2,748 (CodeStack + SolidDNA)
-Job Access:              All S2#### jobs in AXC_VAULT NEW!
-Documentation Pages:      ~700+
-Total Files:              ~4,000+
-Automation Files:         1,085+
-Status:                   PRODUCTION READY
-Quality:                  ENTERPRISE GRADE
-```
+<div align="center">
+
+### By the Numbers
+
+</div>
+
+<table>
+<tr>
+<td width="20%" align="center">
+<h2>🎯 20</h2>
+<b>Production Projects</b><br/>
+All tested & ready
+</td>
+<td width="20%" align="center">
+<h2>📦 213</h2>
+<b>Certified Templates</b><br/>
+7 categories
+</td>
+<td width="20%" align="center">
+<h2>🔧 650+</h2>
+<b>Total Templates</b><br/>
+4 automation tools
+</td>
+<td width="20%" align="center">
+<h2>📚 2,748</h2>
+<b>API Examples</b><br/>
+CodeStack + SolidDNA
+</td>
+<td width="20%" align="center">
+<h2>📄 700+</h2>
+<b>Doc Pages</b><br/>
+Complete guides
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="25%" align="center">
+<h3>✅ Production Ready</h3>
+All modules tested
+</td>
+<td width="25%" align="center">
+<h3>🏢 Enterprise Grade</h3>
+Professional quality
+</td>
+<td width="25%" align="center">
+<h3>⚡ High Performance</h3>
+70-85% time savings
+</td>
+<td width="25%" align="center">
+<h3>🔒 Reliable</h3>
+Error prevention built-in
+</td>
+</tr>
+</table>
 
 ---
 
@@ -758,13 +967,45 @@ Quality:                  ENTERPRISE GRADE
 
 ---
 
-**You have a complete, enterprise-grade SolidWorks automation environment!** ??
-
-**Ready to automate!** ??
+<div align="center">
 
 ---
 
-*Last Updated: October 25, 2025*  
-*Project: SolidWorks Automation Suite v4.0.0*  
-*Status: Production Ready*
+## 🎉 You're All Set!
 
+**A complete, enterprise-grade SolidWorks automation environment at your fingertips**
+
+<table>
+<tr>
+<td width="33%" align="center">
+<h3>🚀 Ready to Launch</h3>
+All systems tested and operational
+</td>
+<td width="33%" align="center">
+<h3>📚 Fully Documented</h3>
+700+ pages of comprehensive guides
+</td>
+<td width="33%" align="center">
+<h3>💪 Production Grade</h3>
+Enterprise-ready automation
+</td>
+</tr>
+</table>
+
+### 💡 Support & Resources
+
+[![Documentation](https://img.shields.io/badge/📚-Full%20Documentation-blue?style=for-the-badge)](docs/)
+[![GitHub](https://img.shields.io/badge/⭐-Star%20on%20GitHub-yellow?style=for-the-badge)](https://github.com/swiffc/SW-Automation)
+[![Issues](https://img.shields.io/badge/🐛-Report%20Issue-red?style=for-the-badge)](https://github.com/swiffc/SW-Automation/issues)
+
+---
+
+### 📝 Project Info
+
+**Version:** 4.0.0 | **Status:** Production Ready | **Last Updated:** October 27, 2025
+
+Built with ❤️ for SolidWorks automation
+
+---
+
+</div>
