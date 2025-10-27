@@ -10,6 +10,8 @@ using Bundle.SideFrame.Derived.Children;
 using Bundle.SideFrame;
 using Bundle.SideFrame.Derived;
 using Bundle.SideFrame.Derived.Children.Derived;
+using FileTools.Infrastructure;
+using static FileTools.StaticFileTools;
 
 namespace Bundle
 {
@@ -146,9 +148,49 @@ namespace Bundle
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BundleUI());
-        }
+            // STEP 1: Initialize global error handler FIRST - before anything else
+            GlobalErrorHandler.Initialize();
+
+            try
+            {
+                GlobalErrorHandler.LogInfo("=== BundleApp Starting ===");
+                GlobalErrorHandler.LogInfo($"OS: {Environment.OSVersion}");
+                GlobalErrorHandler.LogInfo($".NET Version: {Environment.Version}");
+
+                // STEP 2: Configure Windows Forms
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                // STEP 3: Start the application
+                GlobalErrorHandler.LogInfo("Launching BundleUI");
+                Application.Run(new BundleUI());
+
+                GlobalErrorHandler.LogInfo("=== Application closed normally ===");
+            }
+            catch (Exception ex)
+            {
+                GlobalErrorHandler.LogError(ex, "Main Entry Point - Fatal Error");
+                MessageBox.Show(
+        $"A fatal error occurred during startup:\n\n{ex.Message}\n\n" +
+      $"The application will now close.\n\n" +
+        $"Please check the log file for details:\n{GlobalErrorHandler.LogFilePath}",
+               "Fatal Startup Error",
+              MessageBoxButtons.OK,
+         MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // STEP 4: Cleanup
+                try
+            {
+                    DisconnectSolidWorks();
+                 GlobalErrorHandler.LogInfo("Cleanup completed");
+              }
+                catch (Exception ex)
+            {
+                    GlobalErrorHandler.LogWarning($"Error during cleanup: {ex.Message}");
+                 }
+            }
+         }
     }
 }

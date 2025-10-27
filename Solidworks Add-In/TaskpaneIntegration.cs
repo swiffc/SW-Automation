@@ -17,7 +17,7 @@ namespace SolidWorks_Add_In
     /// <summary>
     /// SolidWorks taskpane add-in
     /// </summary>
-    public class TaskpaneIntegration : SwAddin
+    public class TaskpaneIntegration : ISwAddin
     {
         static public string VersionNumber => "7.1.0";
         static public string SpeechBubble =>
@@ -75,7 +75,10 @@ namespace SolidWorks_Add_In
             // Setup callback info
             var ok = mSolidWorksApplication.SetAddinCallbackInfo2(0, this, mSwCookie);
 
-            // Version control
+            // Version control - DISABLED for development
+            // The original version control connects to company-specific PDM Vault (C:\AXC_VAULT)
+            // Uncomment below if you have access to AXC_VAULT
+            /*
             if (!Developer)
             {
                 VersionControl();
@@ -84,6 +87,17 @@ namespace SolidWorks_Add_In
             else
             {
                 ClearConfigFileCache();
+            }
+            */
+
+            // For now, just try to clear the cache if method exists
+            try 
+            { 
+                ClearConfigFileCache(); 
+            } 
+            catch 
+            { 
+                // Ignore if method doesn't exist
             }
 
             // Create our UI

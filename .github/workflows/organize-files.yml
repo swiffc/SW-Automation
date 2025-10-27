@@ -1,0 +1,60 @@
+# GitHub Action: Auto-Organize Files
+# Runs on every push to check if files are in correct locations
+
+name: Auto-Organize Files
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  organize:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Check file organization
+      shell: powershell
+      run: |
+        Write-Host "Checking file organization..." -ForegroundColor Cyan
+        
+        # Check for files in wrong locations
+        $rootFiles = Get-ChildItem -Path . -File | Where-Object {
+          $_.Name -notin @("README.md", ".gitignore", "requirements.txt", "config.json", "LICENSE")
+        }
+        
+        if ($rootFiles.Count -gt 0) {
+          Write-Host "ERROR: Files found in root that should be organized:" -ForegroundColor Red
+          $rootFiles | ForEach-Object { Write-Host "  - $($_.Name)" -ForegroundColor Yellow }
+          exit 1
+        }
+        
+        Write-Host "All files properly organized!" -ForegroundColor Green
+        
+    - name: Verify folder structure
+      shell: powershell
+      run: |
+        Write-Host "Verifying folder structure..." -ForegroundColor Cyan
+        
+        $requiredFolders = @(
+          "macros/csharp/Solidworks-Automation",
+          "templates",
+          "scripts",
+          "utilities/python"
+        )
+        
+        foreach ($folder in $requiredFolders) {
+          if (Test-Path $folder) {
+            Write-Host "  ? $folder exists" -ForegroundColor Green
+          } else {
+            Write-Host "  ? $folder missing" -ForegroundColor Red
+            exit 1
+          }
+        }
+        
+        Write-Host "Folder structure verified!" -ForegroundColor Green
+

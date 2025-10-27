@@ -1,4 +1,5 @@
-﻿using Bundle.Misc;
+﻿using FileTools.Infrastructure;
+using Bundle.Misc;
 using Bundle.SideFrame.Derived.Children;
 using Excel;
 using FileTools.Base;
@@ -22,108 +23,141 @@ namespace Bundle
 {
     public partial class BundleUI : Form
     {
+        private ComObjectManager _comManager;
+
         public BundleUI()
         {
             InitializeComponent();
+            _comManager = new ComObjectManager();
         }
         #region Events
 
         private void BundleUI_Load(object sender, EventArgs e)
-        {
-            // Prego imports
-            tBundleWidth.Text = Bundle_Width.ToString();
-            cSideFrameTHK.Text = SideFrame_THK.ToString();
-            tDepth.Text = SideFrame_Depth.ToString();
-            cHeadersOutsideFrame.Checked = HeadersOutsideFrames;
-            tTubeLength.Text = TubeLength.ToString();
-            tTubeProjection.Text = TubeProjection.ToString();
-            tFrontFinStripBack.Text = FinStripBack_Front.ToString();
-            tRearFinStripBack.Text = FinStripBack_Rear.ToString();
-            tTubeOD.Text = TubeOD.ToString();
-            tTubeWallTHK.Text = TubeWallTHK.ToString();
+      {
+          try
+            {
+   GlobalErrorHandler.LogInfo("BundleUI_Load started");
+
+  // Prego imports
+           tBundleWidth.Text = Bundle_Width.ToString();
+        cSideFrameTHK.Text = SideFrame_THK.ToString();
+          tDepth.Text = SideFrame_Depth.ToString();
+      cHeadersOutsideFrame.Checked = HeadersOutsideFrames;
+       tTubeLength.Text = TubeLength.ToString();
+      tTubeProjection.Text = TubeProjection.ToString();
+        tFrontFinStripBack.Text = FinStripBack_Front.ToString();
+     tRearFinStripBack.Text = FinStripBack_Rear.ToString();
+           tTubeOD.Text = TubeOD.ToString();
+tTubeWallTHK.Text = TubeWallTHK.ToString();
             tFinOD.Text = FinOD.ToString();
-            tTubes_Row_1L.Text = Tube_Row_1L.ToString();
-            tTubes_Row_2L.Text = Tube_Row_2L.ToString();
-            tTubeHorizPitch.Text = TubeHorizPitch.ToString();
-            tTubeQuantity.Text = TubeQuantity.ToString();
-            tFrontVerticalPitch_1_2.Text = FrontVerticalPitch._1_2.ToString();
-            tFrontVerticalPitch_2_3.Text = FrontVerticalPitch._2_3.ToString();
-            tFrontVerticalPitch_3_4.Text = FrontVerticalPitch._3_4.ToString();
-            tFrontVerticalPitch_4_5.Text = FrontVerticalPitch._4_5.ToString();
-            tFrontVerticalPitch_5_6.Text = FrontVerticalPitch._5_6.ToString();
-            tFrontVerticalPitch_6_7.Text = FrontVerticalPitch._6_7.ToString();
-            tFrontVerticalPitch_7_8.Text = FrontVerticalPitch._7_8.ToString();
-            tFrontVerticalPitch_8_9.Text = FrontVerticalPitch._8_9.ToString();
-            tFrontVerticalPitch_9_10.Text = FrontVerticalPitch._9_10.ToString();
-            tTubeSupportSpacing_Feet.Text = TubeSupportSpacing_Feet.ToString();
-            tRearVerticalPitch_1_2.Text = RearVerticalPitch._1_2.ToString();
-            tRearVerticalPitch_2_3.Text = RearVerticalPitch._2_3.ToString();
-            tRearVerticalPitch_3_4.Text = RearVerticalPitch._3_4.ToString();
-            tRearVerticalPitch_4_5.Text = RearVerticalPitch._4_5.ToString();
-            tRearVerticalPitch_5_6.Text = RearVerticalPitch._5_6.ToString();
-            tRearVerticalPitch_6_7.Text = RearVerticalPitch._6_7.ToString();
-            tRearVerticalPitch_7_8.Text = RearVerticalPitch._7_8.ToString();
-            tRearVerticalPitch_8_9.Text = RearVerticalPitch._8_9.ToString();
-            tRearVerticalPitch_9_10.Text = RearVerticalPitch._9_10.ToString();
-            tTubeSupportQuantity.Text = TubeSupportQuantity.ToString();
-            cTubeSupportSize.Text = TubeSupportSize;
-            bCamber.Checked = Cambered;
-            cTileblockManuf.Text = TitleblockManuf;
-            tPlenumLength.Text = Plenum_Length.ToString();
-            tOffsetFromPlenumCenter.Text = OffsetFromCenter.ToString();
-            cPlenumStyle.Text = Plenum_Design.ToString();
-            cColumnSize.Text = Beam_Size.ToString();
-            tFanCount.Text = Fan_Count.ToString();
-            tLugStagger.Text = Lug_HPC.Stagger.ToString();
-            if (Plenum_Design == Design.Johnson)
-            {
-                tExtraLength.Enabled = true;
-                tExtraLength.Text = Johnson_ExtraLength.ToString();
+     tTubes_Row_1L.Text = Tube_Row_1L.ToString();
+                tTubes_Row_2L.Text = Tube_Row_2L.ToString();
+    tTubeHorizPitch.Text = TubeHorizPitch.ToString();
+       tTubeQuantity.Text = TubeQuantity.ToString();
+              tFrontVerticalPitch_1_2.Text = FrontVerticalPitch._1_2.ToString();
+         tFrontVerticalPitch_2_3.Text = FrontVerticalPitch._2_3.ToString();
+     tFrontVerticalPitch_3_4.Text = FrontVerticalPitch._3_4.ToString();
+  tFrontVerticalPitch_4_5.Text = FrontVerticalPitch._4_5.ToString();
+     tFrontVerticalPitch_5_6.Text = FrontVerticalPitch._5_6.ToString();
+          tFrontVerticalPitch_6_7.Text = FrontVerticalPitch._6_7.ToString();
+     tFrontVerticalPitch_7_8.Text = FrontVerticalPitch._7_8.ToString();
+      tFrontVerticalPitch_8_9.Text = FrontVerticalPitch._8_9.ToString();
+     tFrontVerticalPitch_9_10.Text = FrontVerticalPitch._9_10.ToString();
+    tTubeSupportSpacing_Feet.Text = TubeSupportSpacing_Feet.ToString();
+       tRearVerticalPitch_1_2.Text = RearVerticalPitch._1_2.ToString();
+   tRearVerticalPitch_2_3.Text = RearVerticalPitch._2_3.ToString();
+        tRearVerticalPitch_3_4.Text = RearVerticalPitch._3_4.ToString();
+             tRearVerticalPitch_4_5.Text = RearVerticalPitch._4_5.ToString();
+          tRearVerticalPitch_5_6.Text = RearVerticalPitch._5_6.ToString();
+    tRearVerticalPitch_6_7.Text = RearVerticalPitch._6_7.ToString();
+        tRearVerticalPitch_7_8.Text = RearVerticalPitch._7_8.ToString();
+     tRearVerticalPitch_8_9.Text = RearVerticalPitch._8_9.ToString();
+         tRearVerticalPitch_9_10.Text = RearVerticalPitch._9_10.ToString();
+        tTubeSupportQuantity.Text = TubeSupportQuantity.ToString();
+           cTubeSupportSize.Text = TubeSupportSize;
+                bCamber.Checked = Cambered;
+           cTileblockManuf.Text = TitleblockManuf;
+        tPlenumLength.Text = Plenum_Length.ToString();
+      tOffsetFromPlenumCenter.Text = OffsetFromCenter.ToString();
+         cPlenumStyle.Text = Plenum_Design.ToString();
+ cColumnSize.Text = Beam_Size.ToString();
+                tFanCount.Text = Fan_Count.ToString();
+                tLugStagger.Text = Lug_HPC.Stagger.ToString();
+           if (Plenum_Design == Design.Johnson)
+    {
+     tExtraLength.Enabled = true;
+          tExtraLength.Text = Johnson_ExtraLength.ToString();
+   }
+     else
+  {
+         tExtraLength.Enabled = false;
+      tExtraLength.Text = "";
             }
-            else
-            {
-                tExtraLength.Enabled = false;
-                tExtraLength.Text = "";
-            }
-            tWeight.Text = TotalUnitWeight.ToString();
-            if (Developer)
-            {
-                Lug_HPC.Spacing = Tube.Length * 0.6;
-                tLiftingLugSpacing.Text = Lug_HPC.Spacing.ToString();
-            }
-                
+             tWeight.Text = TotalUnitWeight.ToString();
+ if (Developer)
+      {
+             Lug_HPC.Spacing = Tube.Length * 0.6;
+        tLiftingLugSpacing.Text = Lug_HPC.Spacing.ToString();
+                }
 
-            // Advanced
+              // Advanced
             createDrawing_Toggle.Checked = Default.Toggle_CreateDrawing;
-            save_Toggle.Checked = Default.Toggle_Save;
-            delete_Toggle.Checked = Default.Toggle_DeleteFiles;
+        save_Toggle.Checked = Default.Toggle_Save;
+    delete_Toggle.Checked = Default.Toggle_DeleteFiles;
 
-            // Job
+                // Job
             textBox_Bank.Text = Bank.ToString();
-            job_Box.Text = Project;
-            customer_Box.Text = Customer;
-            client_Box.Text = Client;
-            location_Box.Text = PlantLocation;
-            purchaseOrder_Box.Text = PurchaseOrder;
-            itemNumber_Box.Text = ItemNumber;
-            initials_Box.Text = Initials;
+           job_Box.Text = Project;
+   customer_Box.Text = Customer;
+   client_Box.Text = Client;
+                location_Box.Text = PlantLocation;
+   purchaseOrder_Box.Text = PurchaseOrder;
+     itemNumber_Box.Text = ItemNumber;
+         initials_Box.Text = Initials;
 
-            // Headers
-            MapLocal_UI_To_DTO(this);
-            LoadHeaderData_FromApp("61");
-            LoadHeaderData_FromApp("62");
-            LoadHeaderData_FromApp("63");
-            LoadHeaderData_FromApp("64");
-            LoadHeaderData_FromApp("65");
-            LoadHeaderData_FromApp("66");
+              // Headers
+         MapLocal_UI_To_DTO(this);
+         LoadHeaderData_FromApp("61");
+        LoadHeaderData_FromApp("62");
+        LoadHeaderData_FromApp("63");
+         LoadHeaderData_FromApp("64");
+   LoadHeaderData_FromApp("65");
+     LoadHeaderData_FromApp("66");
+
+        GlobalErrorHandler.LogInfo("BundleUI_Load completed successfully");
+            }
+            catch (Exception ex)
+        {
+       GlobalErrorHandler.LogError(ex, "BundleUI_Load");
+  MessageBox.Show(
+     $"Error loading the form:\n\n{ex.Message}\n\nSome features may not work correctly.",
+             "Load Error",
+   MessageBoxButtons.OK,
+             MessageBoxIcon.Warning);
         }
+   }
+
         private void BundleUI_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
+      try
+          {
+                GlobalErrorHandler.LogInfo("BundleUI closing...");
+
+         try
+   {
+  PleaseWait.Stop();
+      }
+      catch { }
+
+    _comManager?.Dispose();
+          DisconnectSolidWorks();
+
+      GlobalErrorHandler.LogInfo("BundleUI closed successfully");
+   }
+     catch (Exception ex)
             {
-                PleaseWait.Stop();
-            }
-            catch (Exception) { }
+    GlobalErrorHandler.LogError(ex, "BundleUI_FormClosing");
+  }
         }
 
         #endregion
@@ -154,170 +188,195 @@ namespace Bundle
 
         private void bImportPrego_Click(object sender, EventArgs e)
         {
-            if (PregoDoc != null)
+         try
             {
-                if (!Developer)
-                {
-                    ClearPregoOnJobChanged = false;
-                    Project = LoadPregoValue<string>(job_Box, InputSheet,
-                        "H2");
-                    Bank = (char)(CellDouble(InputSheet,
-                        "C7") + 64);
-                    textBox_Bank.Text = Bank.ToString();
-                    ClearPregoOnJobChanged = true;
-                }
-                TitleblockManuf = LoadPregoValue<string>(cTileblockManuf, InputSheet,
-                    "G27",
-                    "F27");
+     GlobalErrorHandler.LogInfo("Import Prego clicked");
 
-                if (!IsSmithco && Tube.SlopesPerFootList[Tube.RowCount] == 0)
-                {
-                    bCamber.Checked = Cambered = true;
-                }
-                else
-                {
-                    bCamber.Checked = Cambered = false;
-                }
+                if (PregoDoc != null)
+             {
+  if (!Developer)
+   {
+      ClearPregoOnJobChanged = false;
+ Project = LoadPregoValue<string>(job_Box, InputSheet, "H2");
+    Bank = (char)(CellDouble(InputSheet, "C7") + 64);
+          textBox_Bank.Text = Bank.ToString();
+    ClearPregoOnJobChanged = true;
+  }
 
-                // Job info
-                Customer = LoadPregoValue<string>(customer_Box, InputSheet,
-                    "B" + 2); // Customer:
-                Client = LoadPregoValue<string>(client_Box, InputSheet,
-                    "B" + 2); // Customer:
-                PlantLocation = LoadPregoValue<string>(location_Box, InputSheet,
-                    "B" + 4); // Plant:
-                PurchaseOrder = LoadPregoValue<string>(purchaseOrder_Box, InputSheet,
-                    "B" + 5); // PO No:
-                ItemNumber = LoadPregoValue<string>(itemNumber_Box, InputSheet,
-                    "H" + 3); // Item:
+         TitleblockManuf = LoadPregoValue<string>(cTileblockManuf, InputSheet, "G27", "F27");
 
-
-                // Bundle
-                Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet,
-                    "BQ" + 45,
-                    "F12"); // Bdl Wd/Toed:
-                if (Bundle_Width < 16)
-                {
-                    Bundle_Width *= 12;
-                    tBundleWidth.Text = Bundle_Width.ToString();
-                }
-                HeadersOutsideFrames = LoadPregoBool(cHeadersOutsideFrame, InputSheet,
-                    "G" + 15, // Override
-                    "F" + 15);// Hdrs outside Fr?
-                TubeLength = LoadPregoDouble_FeetToInches(tTubeLength, InputSheet,
-                    "L" + 15, // Override
-                    "N" + 15);// Tube Length (ft)
-                TubeProjection = LoadPregoDouble(tTubeProjection, InputSheet,
-                    0.25,  // SE
-                    0.125);// HPC
-                FinStripBack_Front = LoadPregoDouble(tFrontFinStripBack, PregoToMikeySheet,
-                    "X39");
-                FinStripBack_Rear = LoadPregoDouble(tRearFinStripBack, PregoToMikeySheet,
-                    "Y39");
-                TubeOD = LoadPregoDouble(tTubeOD, InputSheet,
-                    "L10");
-                TubeWallTHK = LoadPregoDouble(tTubeWallTHK, InputSheet,
-                    "N14",
-                    "L14");
-                FinOD = LoadPregoDouble(tFinOD, InputSheet,
-                    "N19",
-                    "L19");
-                Tube_Row_1L = LoadPregoInt(tTubes_Row_1L, InputSheet,
-                    "AW39",
-                    "AU39");
-                Tube_Row_2L = LoadPregoInt(tTubes_Row_2L, InputSheet,
-                    "AW42",
-                    "AU42");
-                TubeHorizPitch = LoadPregoDouble(tTubeHorizPitch, InputSheet,
-                    "BO47");
-                TubeQuantity = LoadPregoInt(tTubeQuantity, InputSheet,
-                    "N20",
-                    "L20");
-                FrontVerticalPitch._1_2 = LoadPregoDouble(tFrontVerticalPitch_1_2, SketchCalcsSheet,
-                    "DF58");
-                FrontVerticalPitch._2_3 = LoadPregoDouble(tFrontVerticalPitch_2_3, SketchCalcsSheet,
-                    "DF59");
-                FrontVerticalPitch._3_4 = LoadPregoDouble(tFrontVerticalPitch_3_4, SketchCalcsSheet,
-                    "DF60");
-                FrontVerticalPitch._4_5 = LoadPregoDouble(tFrontVerticalPitch_4_5, SketchCalcsSheet,
-                    "DF61");
-                FrontVerticalPitch._5_6 = LoadPregoDouble(tFrontVerticalPitch_5_6, SketchCalcsSheet,
-                    "DF62");
-                FrontVerticalPitch._6_7 = LoadPregoDouble(tFrontVerticalPitch_6_7, SketchCalcsSheet,
-                    "DF63");
-                FrontVerticalPitch._7_8 = LoadPregoDouble(tFrontVerticalPitch_7_8, SketchCalcsSheet,
-                    "DF64");
-                FrontVerticalPitch._8_9 = LoadPregoDouble(tFrontVerticalPitch_8_9, SketchCalcsSheet,
-                    "DF65");
-                FrontVerticalPitch._9_10 = LoadPregoDouble(tFrontVerticalPitch_9_10, SketchCalcsSheet,
-                    "DF66");
-
-                RearVerticalPitch._1_2 = LoadPregoDouble(tRearVerticalPitch_1_2, SketchCalcsSheet,
-                    "DF70");
-                RearVerticalPitch._2_3 = LoadPregoDouble(tRearVerticalPitch_2_3, SketchCalcsSheet,
-                    "DF71");
-                RearVerticalPitch._3_4 = LoadPregoDouble(tRearVerticalPitch_3_4, SketchCalcsSheet,
-                    "DF72");
-                RearVerticalPitch._4_5 = LoadPregoDouble(tRearVerticalPitch_4_5, SketchCalcsSheet,
-                    "DF73");
-                RearVerticalPitch._5_6 = LoadPregoDouble(tRearVerticalPitch_5_6, SketchCalcsSheet,
-                    "DF74");
-                RearVerticalPitch._6_7 = LoadPregoDouble(tRearVerticalPitch_6_7, SketchCalcsSheet,
-                    "DF75");
-                RearVerticalPitch._7_8 = LoadPregoDouble(tRearVerticalPitch_7_8, SketchCalcsSheet,
-                    "DF76");
-                RearVerticalPitch._8_9 = LoadPregoDouble(tRearVerticalPitch_8_9, SketchCalcsSheet,
-                    "DF77");
-                RearVerticalPitch._9_10 = LoadPregoDouble(tRearVerticalPitch_9_10, SketchCalcsSheet,
-                    "DF78");
-
-                TubeSupportSpacing_Feet = LoadPregoDouble(tTubeSupportSpacing_Feet, InputsCalcsSheet,
-                    "BGF12");
-                TubeSupportQuantity = LoadPregoInt(tTubeSupportQuantity, InputsCalcsSheet,
-                    "BGF20");
-                TubeSupportSize = LoadPregoValue<string>(cTubeSupportSize, InputSheet,
-                    "CG28",
-                    "CF28",
-                    "CG26",
-                    "CF26")
-                    .Split(' ')[0];
-
-
-
-
-                // SideFrame
-                SideFrame_Depth = LoadPregoDouble(tDepth, InputsCalcsSheet,
-                    "BGM26");
-                SideFrame_THK = LoadPregoValue<double>(cSideFrameTHK, InputSheet,
-                    "CG" + 32, // Override
-                    "CF" + 32,
-                    "CG30",
-                    "CF30");// Frame Thk (in)
-
-                ImportHeaderData_FromPrego();
-                MessageBox.Show($"Data imported from Prego successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Prego file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-        private void bBundle_Click(object sender, EventArgs e)
+  if (!IsSmithco && Tube.SlopesPerFootList[Tube.RowCount] == 0)
         {
-            if (!Developer)
-            {
-                SignInitials();
+                  bCamber.Checked = Cambered = true;
+      }
+    else
+  {
+      bCamber.Checked = Cambered = false;
+     }
+
+      // Job info
+           Customer = LoadPregoValue<string>(customer_Box, InputSheet, "B" + 2);
+           Client = LoadPregoValue<string>(client_Box, InputSheet, "B" + 2);
+    PlantLocation = LoadPregoValue<string>(location_Box, InputSheet, "B" + 4);
+      PurchaseOrder = LoadPregoValue<string>(purchaseOrder_Box, InputSheet, "B" + 5);
+       ItemNumber = LoadPregoValue<string>(itemNumber_Box, InputSheet, "H" + 3);
+
+        // Bundle
+                 Bundle_Width = LoadPregoDouble(tBundleWidth, InputSheet, "BQ" + 45, "F12");
+          if (Bundle_Width < 16)
+     {
+         Bundle_Width *= 12;
+      tBundleWidth.Text = Bundle_Width.ToString();
+          }
+      HeadersOutsideFrames = LoadPregoBool(cHeadersOutsideFrame, InputSheet, "G" + 15, "F" + 15);
+               TubeLength = LoadPregoDouble_FeetToInches(tTubeLength, InputSheet, "L" + 15, "N" + 15);
+          TubeProjection = LoadPregoDouble(tTubeProjection, InputSheet, 0.25, 0.125);
+  FinStripBack_Front = LoadPregoDouble(tFrontFinStripBack, PregoToMikeySheet, "X39");
+    FinStripBack_Rear = LoadPregoDouble(tRearFinStripBack, PregoToMikeySheet, "Y39");
+  TubeOD = LoadPregoDouble(tTubeOD, InputSheet, "L10");
+       TubeWallTHK = LoadPregoDouble(tTubeWallTHK, InputSheet, "N14", "L14");
+FinOD = LoadPregoDouble(tFinOD, InputSheet, "N19", "L19");
+    Tube_Row_1L = LoadPregoInt(tTubes_Row_1L, InputSheet, "AW39", "AU39");
+    Tube_Row_2L = LoadPregoInt(tTubes_Row_2L, InputSheet, "AW42", "AU42");
+      TubeHorizPitch = LoadPregoDouble(tTubeHorizPitch, InputSheet, "BO47");
+           TubeQuantity = LoadPregoInt(tTubeQuantity, InputSheet, "N20", "L20");
+           FrontVerticalPitch._1_2 = LoadPregoDouble(tFrontVerticalPitch_1_2, SketchCalcsSheet, "DF58");
+    FrontVerticalPitch._2_3 = LoadPregoDouble(tFrontVerticalPitch_2_3, SketchCalcsSheet, "DF59");
+      FrontVerticalPitch._3_4 = LoadPregoDouble(tFrontVerticalPitch_3_4, SketchCalcsSheet, "DF60");
+    FrontVerticalPitch._4_5 = LoadPregoDouble(tFrontVerticalPitch_4_5, SketchCalcsSheet, "DF61");
+        FrontVerticalPitch._5_6 = LoadPregoDouble(tFrontVerticalPitch_5_6, SketchCalcsSheet, "DF62");
+  FrontVerticalPitch._6_7 = LoadPregoDouble(tFrontVerticalPitch_6_7, SketchCalcsSheet, "DF63");
+         FrontVerticalPitch._7_8 = LoadPregoDouble(tFrontVerticalPitch_7_8, SketchCalcsSheet, "DF64");
+      FrontVerticalPitch._8_9 = LoadPregoDouble(tFrontVerticalPitch_8_9, SketchCalcsSheet, "DF65");
+        FrontVerticalPitch._9_10 = LoadPregoDouble(tFrontVerticalPitch_9_10, SketchCalcsSheet, "DF66");
+     RearVerticalPitch._1_2 = LoadPregoDouble(tRearVerticalPitch_1_2, SketchCalcsSheet, "DF70");
+             RearVerticalPitch._2_3 = LoadPregoDouble(tRearVerticalPitch_2_3, SketchCalcsSheet, "DF71");
+    RearVerticalPitch._3_4 = LoadPregoDouble(tRearVerticalPitch_3_4, SketchCalcsSheet, "DF72");
+     RearVerticalPitch._4_5 = LoadPregoDouble(tRearVerticalPitch_4_5, SketchCalcsSheet, "DF73");
+        RearVerticalPitch._5_6 = LoadPregoDouble(tRearVerticalPitch_5_6, SketchCalcsSheet, "DF74");
+     RearVerticalPitch._6_7 = LoadPregoDouble(tRearVerticalPitch_6_7, SketchCalcsSheet, "DF75");
+     RearVerticalPitch._7_8 = LoadPregoDouble(tRearVerticalPitch_7_8, SketchCalcsSheet, "DF76");
+   RearVerticalPitch._8_9 = LoadPregoDouble(tRearVerticalPitch_8_9, SketchCalcsSheet, "DF77");
+           RearVerticalPitch._9_10 = LoadPregoDouble(tRearVerticalPitch_9_10, SketchCalcsSheet, "DF78");
+          TubeSupportSpacing_Feet = LoadPregoDouble(tTubeSupportSpacing_Feet, InputsCalcsSheet, "BGF12");
+       TubeSupportQuantity = LoadPregoInt(tTubeSupportQuantity, InputsCalcsSheet, "BGF20");
+         TubeSupportSize = LoadPregoValue<string>(cTubeSupportSize, InputSheet, "CG28", "CF28", "CG26", "CF26").Split(' ')[0];
+
+     // SideFrame
+SideFrame_Depth = LoadPregoDouble(tDepth, InputsCalcsSheet, "BGM26");
+         SideFrame_THK = LoadPregoValue<double>(cSideFrameTHK, InputSheet, "CG" + 32, "CF" + 32, "CG30", "CF30");
+
+      ImportHeaderData_FromPrego();
+
+        GlobalErrorHandler.LogInfo("Prego data imported successfully");
+ MessageBox.Show(
+     "Data imported from Prego successfully",
+         "Success",
+       MessageBoxButtons.OK,
+              MessageBoxIcon.Information);
+       }
+         else
+                {
+          MessageBox.Show(
+             "Prego file not found",
+"Error",
+MessageBoxButtons.OK,
+              MessageBoxIcon.Error);
+        }
             }
-            if (Lug_HPC.Spacing.HasValue)
-            {
-                new Bundle(7, "Bundle");
+  catch (Exception ex)
+          {
+  GlobalErrorHandler.LogError(ex, "bImportPrego_Click");
+            MessageBox.Show(
+            $"Error importing Prego data:\n\n{ex.Message}",
+        "Import Error",
+           MessageBoxButtons.OK,
+         MessageBoxIcon.Error);
             }
-            else
+        }
+
+        private void bBundle_Click(object sender, EventArgs e)
+   {
+   try
             {
-                MessageBox.Show("You must enter a lifting lug spacing to run the bundle automation.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+     GlobalErrorHandler.LogInfo("Bundle button clicked");
+
+    if (!Developer)
+      {
+  SignInitials();
+                }
+
+   if (!Lug_HPC.Spacing.HasValue)
+    {
+     MessageBox.Show(
+         "You must enter a lifting lug spacing to run the bundle automation.",
+     "Input Required",
+            MessageBoxButtons.OK,
+          MessageBoxIcon.Warning);
+        return;
+           }
+
+             // Check if SolidWorks is available
+     if (!IsSolidWorksAvailable())
+                {
+   var result = MessageBox.Show(
+    "SolidWorks is not currently running.\n\n" +
+   "The bundle automation requires SolidWorks to be running.\n\n" +
+      "Would you like to:\n" +
+      "• Click 'Retry' after starting SolidWorks\n" +
+ "• Click 'Cancel' to abort",
+        "SolidWorks Required",
+          MessageBoxButtons.RetryCancel,
+       MessageBoxIcon.Warning);
+
+             if (result == DialogResult.Retry)
+                {
+  ResetConnection();
+   if (!IsSolidWorksAvailable())
+{
+     MessageBox.Show(
+       "Still unable to connect to SolidWorks.\n\n" +
+       "Please ensure SolidWorks is running and try again.",
+            "Connection Failed",
+   MessageBoxButtons.OK,
+      MessageBoxIcon.Error);
+            return;
+             }
+         }
+       else
+   {
+     return;
+    }
+     }
+
+           GlobalErrorHandler.LogInfo("Creating bundle...");
+         new Bundle(7, "Bundle");
+   GlobalErrorHandler.LogInfo("Bundle created successfully");
+
+      MessageBox.Show(
+          "Bundle created successfully!",
+       "Success",
+           MessageBoxButtons.OK,
+        MessageBoxIcon.Information);
             }
-            
+  catch (InvalidOperationException ex) when (ex.Message.Contains("SolidWorks"))
+      {
+     GlobalErrorHandler.LogError(ex, "bBundle_Click - SolidWorks error");
+           MessageBox.Show(
+    $"SolidWorks error:\n\n{ex.Message}",
+    "SolidWorks Error",
+         MessageBoxButtons.OK,
+        MessageBoxIcon.Error);
+            }
+          catch (Exception ex)
+            {
+       GlobalErrorHandler.LogError(ex, "bBundle_Click");
+             MessageBox.Show(
+$"Error creating bundle:\n\n{ex.Message}\n\nCheck the log file for details.",
+              "Bundle Creation Error",
+   MessageBoxButtons.OK,
+      MessageBoxIcon.Error);
+  }
         }
 
         #endregion
@@ -856,15 +915,6 @@ namespace Bundle
 
 
 
-
-
-
-
-
-
-
-
-
         #endregion
         #region UpdateUI_Manual
         private void tLugStagger_TextChanged(object sender, EventArgs e)
@@ -927,15 +977,33 @@ namespace Bundle
 
 
 
-
-
         #endregion
 
         #endregion
 
         private void bExcel_Click(object sender, EventArgs e)
-        {
-            Prego.CleanUp(true);
-        }
+{
+            try
+         {
+        GlobalErrorHandler.LogInfo("Excel cleanup requested");
+     Prego.CleanUp(true);
+      GlobalErrorHandler.LogInfo("Excel COM cleanup completed");
+
+                MessageBox.Show(
+      "Excel cleanup completed successfully.",
+   "Success",
+      MessageBoxButtons.OK,
+      MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+  {
+         GlobalErrorHandler.LogError(ex, "bExcel_Click");
+     MessageBox.Show(
+          $"Error cleaning up Excel:\n\n{ex.Message}",
+   "Cleanup Error",
+          MessageBoxButtons.OK,
+          MessageBoxIcon.Warning);
+            }
+ }
     }
 }

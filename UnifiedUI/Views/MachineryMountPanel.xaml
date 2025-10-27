@@ -1,0 +1,159 @@
+<UserControl x:Class="UnifiedUI.Views.MachineryMountPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="White">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="15">
+        <StackPanel MaxWidth="800">
+            
+            <Border Background="#FFF9C4" BorderBrush="#FBC02D" BorderThickness="2" 
+                    CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="⚙️ Machinery Mount Configuration" FontSize="20" FontWeight="Bold" 
+                               Foreground="#F57F17" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Configuration panel ready for implementation" 
+                               FontSize="14" Foreground="#666" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                    <TextBlock Text="Will include: Mount dimensions, equipment specifications, vibration isolation, and anchor bolt patterns" 
+                               FontSize="12" Foreground="#999" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Inputs -->
+            <GroupBox Header="📥 Inputs" Margin="0,0,0,15" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="MM. Width:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Motor Frame:" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Margin="0,5">
+                        <ComboBoxItem Content="286T"/>
+                        <ComboBoxItem Content="284T"/>
+                        <ComboBoxItem Content="326T"/>
+                    </ComboBox>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Fan Shaft Dia.:" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Margin="0,5">
+                        <ComboBoxItem Content="2.9375"/>
+                        <ComboBoxItem Content="2.5"/>
+                        <ComboBoxItem Content="3.0"/>
+                    </ComboBox>
+                    
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Center Dist.:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Vib. Sensor:" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="4" Grid.Column="1" Margin="0,5">
+                        <ComboBoxItem Content="Murphy VS-2 EX"/>
+                        <ComboBoxItem Content="None"/>
+                        <ComboBoxItem Content="Other"/>
+                    </ComboBox>
+                    
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Length (Plenum SP to SP):" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="ACHE Weight:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Material:" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="7" Grid.Column="1" Margin="0,5">
+                        <ComboBoxItem Content="A572_50"/>
+                        <ComboBoxItem Content="A36"/>
+                    </ComboBox>
+                    
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="Ring Depth:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Padding="5" Margin="0,5"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Design -->
+            <GroupBox Header="🎨 Design" Margin="0,0,0,15" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Column 1: Drive Type -->
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,10,0">
+                        <CheckBox Content="Forced" Margin="0,5"/>
+                        <CheckBox Content="Induced" Margin="0,5"/>
+                    </StackPanel>
+                    
+                    <!-- Column 2: Motor Position -->
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <CheckBox Content="Motor Shaft Down" IsChecked="True" Margin="0,5"/>
+                        <CheckBox Content="Motor Shaft Up" Margin="0,5"/>
+                    </StackPanel>
+                    
+                    <!-- Drive Configuration -->
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,0">
+                        <CheckBox Content="Belt Driven" IsChecked="True" Margin="0,5"/>
+                        <CheckBox Content="Gear Driven" Margin="0,5"/>
+                        <CheckBox Content="Direct Driven" Margin="0,5"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!-- Job Information -->
+            <GroupBox Header="📄 Job Information" Margin="0,0,0,15" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Bank:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="s24441  A" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Customer:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Client:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Location:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Purchase Order:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Item Number:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Your Initials:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Padding="5" Margin="0,5"/>
+                </Grid>
+            </GroupBox>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,4 +1,5 @@
 ﻿using FileTools.Base;
+using FileTools.Infrastructure;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using System;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+// using Bundle.Infrastructure; // Commented out - not needed for FileTools, causes circular dependency
 using static FileTools.Base.Part;
 using static FileTools.RawMaterial;
 using static ModelTools.ReleaseCOM;
@@ -27,6 +29,138 @@ namespace FileTools
 {
     public static class StaticFileTools
     {
+        #region SolidWorks COM Connection - REFACTORED FOR SAFETY
+
+        private static SldWorks _sw;
+      private static readonly object _swLock = new object();
+        private static bool _connectionAttempted = false;
+        private static Exception _lastConnectionError = null;
+
+    /// <summary>
+/// Gets the SolidWorks application instance (lazy-initialized)
+        /// Throws InvalidOperationException if SolidWorks is not available
+    /// </summary>
+public static SldWorks SW
+    {
+ get
+      {
+       if (_sw == null)
+          {
+         lock (_swLock)
+        {
+          if (_sw == null)
+            {
+            try
+                  {
+        GlobalErrorHandler.LogInfo("Attempting to connect to SolidWorks...");
+             _sw = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+      _connectionAttempted = true;
+         _lastConnectionError = null;
+                 GlobalErrorHandler.LogInfo($"Successfully connected to SolidWorks (Version: {_sw.RevisionNumber()})");
+       }
+   catch (COMException ex)
+    {
+            _connectionAttempted = true;
+   _lastConnectionError = ex;
+     GlobalErrorHandler.LogError(ex, "SolidWorks COM Connection");
+           
+   throw new InvalidOperationException(
+      "SolidWorks is not running or not responding.\n\n" +
+          "Please:\n" +
+     "1. Start SolidWorks\n" +
+     "2. Wait for it to fully load\n" +
+            "3. Try again\n\n" +
+             "If SolidWorks is already running, try closing and reopening it.",
+              ex);
+         }
+              catch (Exception ex)
+         {
+     _connectionAttempted = true;
+  _lastConnectionError = ex;
+     GlobalErrorHandler.LogError(ex, "SolidWorks Connection - Unexpected Error");
+           
+             throw new InvalidOperationException(
+   "Failed to connect to SolidWorks.\n\n" +
+    "Please ensure SolidWorks is properly installed and running.\n\n" +
+     $"Error: {ex.Message}",
+                 ex);
+    }
+          }
+  }
+       }
+      return _sw;
+    }
+        }
+
+        /// <summary>
+     /// Checks if SolidWorks is available without throwing exceptions
+        /// </summary>
+        /// <returns>True if SolidWorks is connected and responding</returns>
+     public static bool IsSolidWorksAvailable()
+     {
+            try
+            {
+  if (_sw == null && !_connectionAttempted)
+   {
+        // Try to connect
+         var sw = SW;
+            return sw != null;
+    }
+    
+      // Already connected or already failed
+       return _sw != null;
+   }
+    catch
+ {
+              return false;
+  }
+        }
+
+      /// <summary>
+        /// Gets the last connection error (if any)
+        /// </summary>
+        public static Exception LastConnectionError => _lastConnectionError;
+
+ /// <summary>
+        /// Safely disconnects from SolidWorks and releases COM resources
+      /// </summary>
+   public static void DisconnectSolidWorks()
+        {
+        lock (_swLock)
+       {
+         if (_sw != null)
+            {
+          try
+  {
+             GlobalErrorHandler.LogInfo("Disconnecting from SolidWorks...");
+  Marshal.ReleaseComObject(_sw);
+      GlobalErrorHandler.LogInfo("Successfully disconnected from SolidWorks");
+        }
+            catch (Exception ex)
+        {
+       GlobalErrorHandler.LogWarning($"Error disconnecting from SolidWorks: {ex.Message}");
+            }
+      finally
+          {
+    _sw = null;
+             _connectionAttempted = false;
+     _lastConnectionError = null;
+  }
+     }
+      }
+        }
+
+/// <summary>
+        /// Resets the connection state (useful for retry scenarios)
+        /// </summary>
+     public static void ResetConnection()
+   {
+            DisconnectSolidWorks();
+      GlobalErrorHandler.LogInfo("SolidWorks connection reset");
+  }
+
+        #endregion
+
         // Public methods
         public static string GetFilePath(string partNo, string fileType)
         {
@@ -858,8 +992,7 @@ DDD:::::DDDDD:::::D   O:::::::OOO:::::::O N:::::::::N     N::::::N EE::::::EEEEE
   D:::::D     D:::::D O:::::O     O:::::O N::::::N N::::N N::::::N   E:::::::::::::::E   
   D:::::D     D:::::D O:::::O     O:::::O N::::::N  N::::N:::::::N   E:::::::::::::::E   
   D:::::D     D:::::D O:::::O     O:::::O N::::::N   N:::::::::::N   E::::::EEEEEEEEEE   
-  D:::::D     D:::::D O:::::O     O:::::O N::::::N    N::::::::::N   E:::::E             
-  D:::::D    D:::::D  O::::::O   O::::::O N::::::N     N:::::::::N   E:::::E       EEEEEE
+  D:::::D     D:::::D O:::::O     O:::::O N::::::N    N::::::::::N   E:::::E       EEEEEE
 DDD:::::DDDDD:::::D   O:::::::OOO:::::::O N::::::N      N::::::::N EE::::::EEEEEEEE:::::E
 D:::::::::::::::DD     OO:::::::::::::OO  N::::::N       N:::::::N E::::::::::::::::::::E
 D::::::::::::DDD         OO:::::::::OO    N::::::N        N::::::N E::::::::::::::::::::E
@@ -1478,7 +1611,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         public static string DesktopFolderPath => $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)}\\{Default.Project}-{AssemblyNumber}{Default.Bank}";
         public static int AssemblyNumber { get; set; }
         public static string AssemblyDesc { get; set; }
-        public static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+        // Duplicate SW property removed - already defined at line 42 with lazy initialization
         public static Spec StaticMaterialSpec { get; set; } = Spec.A36;
         public static string TemplateFolderPath =>
                 $@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\{AssemblyDesc}";
@@ -1486,7 +1619,9 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         public static string AssemblyPath => $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
         public static List<string> AssignedComponentPaths = new List<string>();
         public static Type LastType { get; set; }
-        public static bool Developer => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") && DevMode ? true : false;
+        // MODIFIED: Force developer mode to true to avoid company-specific version control
+        // Original: System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop).ToLower().Contains("acmurr") && DevMode ? true : false
+        public static bool Developer => true; // Always developer mode for external users
         public static bool DevMode { get; set; } = true;
     }
 }

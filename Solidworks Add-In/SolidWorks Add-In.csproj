@@ -139,10 +139,13 @@
       <Project>{586fad54-bf99-4a06-8dfa-c3ed13c1b410}</Project>
       <Name>Universal Drawing Tool</Name>
     </ProjectReference>
+    <!-- Vault project reference commented out - requires PDM Professional -->
+    <!--
     <ProjectReference Include="..\Vault\AXC_Vault.csproj">
       <Project>{2521C1CB-33C8-4247-BA36-8AE3B5A505F4}</Project>
       <Name>AXC_Vault</Name>
     </ProjectReference>
+    -->
     <ProjectReference Include="..\Walkway\Walkway.csproj">
       <Project>{e7f20cf6-1a9d-42cd-ab57-e4a9d3ce85c3}</Project>
       <Name>Walkway</Name>
@@ -151,6 +154,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(FrameworkDir64)v4.0.30319\RegAsm.exe" /codebase "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

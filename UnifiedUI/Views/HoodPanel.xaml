@@ -1,0 +1,145 @@
+<UserControl x:Class="UnifiedUI.Views.HoodPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="White">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="15">
+        <StackPanel MaxWidth="800">
+            
+            <!-- Coming Soon Notice -->
+            <Border Background="#E3F2FD" BorderBrush="#2196F3" BorderThickness="2" 
+                    CornerRadius="8" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="🏗️ Hood Configuration" FontSize="20" FontWeight="Bold" 
+                               Foreground="#2196F3" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Configuration panel ready for implementation" 
+                               FontSize="14" Foreground="#666" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                    <TextBlock Text="Will include: Hood dimensions, louver configuration, access panels, and drain specifications" 
+                               FontSize="12" Foreground="#999" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Hood Dimensions -->
+            <GroupBox Header="📐 Hood Dimensions" Margin="0,0,0,15" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Bank:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Length:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Width:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Height:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Stacks:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="Depth:" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="2" Grid.Column="3" Margin="0,5">
+                        <ComboBoxItem Content="36"/>
+                        <ComboBoxItem Content="42"/>
+                        <ComboBoxItem Content="48"/>
+                    </ComboBox>
+                </Grid>
+            </GroupBox>
+
+            <!-- Hood Configuration -->
+            <GroupBox Header="🌬️ Hood Configuration" Margin="0,0,0,15" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Fan Diameter (ft):" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Wind Load:" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="0" Grid.Column="3" Margin="0,5">
+                        <ComboBoxItem Content="30"/>
+                        <ComboBoxItem Content="35"/>
+                        <ComboBoxItem Content="40"/>
+                        <ComboBoxItem Content="45"/>
+                        <ComboBoxItem Content="50"/>
+                        <ComboBoxItem Content="55"/>
+                        <ComboBoxItem Content="60"/>
+                        <ComboBoxItem Content="65"/>
+                        <ComboBoxItem Content="70"/>
+                        <ComboBoxItem Content="75"/>
+                        <ComboBoxItem Content="80"/>
+                        <ComboBoxItem Content="85"/>
+                        <ComboBoxItem Content="90"/>
+                        <ComboBoxItem Content="95"/>
+                        <ComboBoxItem Content="100"/>
+                    </ComboBox>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Shift Stiffeners:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Adjust:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Padding="5" Margin="0,5"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Job Information -->
+            <GroupBox Header="📄 Job Information" Margin="0,0,0,15" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Job Number:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Customer:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Client:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Location:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Purchase Order:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="Item Number:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" Padding="5" Margin="0,5"/>
+                    
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Initials:" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Padding="5" Margin="0,5,10,5"/>
+                </Grid>
+            </GroupBox>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
