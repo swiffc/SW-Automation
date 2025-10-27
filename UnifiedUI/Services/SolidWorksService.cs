@@ -186,28 +186,90 @@ namespace UnifiedUI.Services
 
         private void GenerateHeader(HeaderConfiguration config, Action<int> progressCallback)
         {
-            progressCallback?.Invoke(20);
-            GlobalErrorHandler.LogInfo($"Header generation: Type {config.HeaderType}");
+            try
+            {
+                GlobalErrorHandler.LogInfo("Starting Header generation from UnifiedUI");
+                progressCallback?.Invoke(10);
 
-            // TODO: Uncomment when ready to connect to Header.cs
-            /*
-            // Set static properties for Header
-            FileTools.CommonData.CommonData.JobNumber = config.JobNumber;
-            
-            // Determine which header type (61-66)
-            int headerNumber = int.Parse(config.HeaderType);
-            
-            // Create Header instance
-            var header = new Header.Header(headerNumber, $"Header {headerNumber}");
-            */
-     
-            progressCallback?.Invoke(90);
+                // Validate
+                if (config == null)
+                    throw new ArgumentNullException(nameof(config), "Header configuration cannot be null");
+                if (string.IsNullOrWhiteSpace(config.JobNumber))
+                    throw new InvalidOperationException("Job Number is required");
+                if (string.IsNullOrWhiteSpace(config.HeaderType))
+                    throw new InvalidOperationException("Header Type is required");
 
-            System.Windows.MessageBox.Show($"Header generation configured:\n" +
-                $"Type: {config.HeaderType}\n" +
-                $"Ready for integration!", 
-                "Header Ready", 
-                System.Windows.MessageBoxButton.OK);
+                progressCallback?.Invoke(20);
+
+                // Set CommonData properties
+                FileTools.CommonData.CommonData.Project = config.JobNumber;
+                FileTools.CommonData.CommonData.Bank = (char)(config.Bank + 'A' - 1);
+                FileTools.CommonData.CommonData.Initials = config.Initials ?? "DC";
+                FileTools.CommonData.CommonData.Customer = config.Customer ?? "";
+                FileTools.CommonData.CommonData.Client = config.Client ?? "";
+                FileTools.CommonData.CommonData.PlantLocation = config.Location ?? "";
+                FileTools.CommonData.CommonData.PurchaseOrder = config.PurchaseOrder ?? "";
+                FileTools.CommonData.CommonData.ItemNumber = config.ItemNumber ?? "";
+
+                // Determine which header type (61-66)
+                int headerNumber = int.Parse(config.HeaderType);
+
+                // Set the appropriate Header61-66 properties based on config
+                var headerInstance = GetHeaderInstance(headerNumber);
+                headerInstance.IsRequired = true;
+                headerInstance.BoxWidth = config.BoxWidth;
+                headerInstance.BoxHeight = config.BoxHeight;
+                headerInstance.BoxLength = config.BoxLength;
+                if (config.TubesheetThickness > 0)
+                    headerInstance.TubesheetTHK = config.TubesheetThickness;
+
+                // Set HeaderBase.Header to the active header
+                HDR.HeaderBase.Header = headerInstance;
+
+                progressCallback?.Invoke(50);
+
+                // Create Header instance
+                new HDR.HeaderBase(headerNumber, "Header");
+
+                progressCallback?.Invoke(100);
+
+                System.Windows.MessageBox.Show(
+                    $"? Header Generated Successfully!\n\n" +
+                    $"Job: {config.JobNumber}\n" +
+                    $"Assembly: {config.JobNumber}-{headerNumber}{(char)(config.Bank + 'A' - 1)}.SLDASM\n" +
+                    $"Type: Header {headerNumber}\n" +
+                    $"Box: {config.BoxWidth}\" x {config.BoxHeight}\" x {config.BoxLength}\"\n" +
+                    $"All files created in SolidWorks!",
+                    "Header Generation Complete",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Information);
+
+                GlobalErrorHandler.LogInfo("Header generation completed successfully");
+            }
+            catch (Exception ex)
+            {
+                GlobalErrorHandler.LogError(ex, "Header Generation Failed");
+                System.Windows.MessageBox.Show(
+                    $"? Error generating header:\n\n{ex.Message}",
+                    "Generation Error",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Error);
+                throw;
+            }
+        }
+
+        private FileTools.Base.IHeaderExtensions GetHeaderInstance(int headerNumber)
+        {
+            return headerNumber switch
+            {
+                61 => FileTools.CommonData.CommonData.Header61,
+                62 => FileTools.CommonData.CommonData.Header62,
+                63 => FileTools.CommonData.CommonData.Header63,
+                64 => FileTools.CommonData.CommonData.Header64,
+                65 => FileTools.CommonData.CommonData.Header65,
+                66 => FileTools.CommonData.CommonData.Header66,
+                _ => throw new ArgumentException($"Invalid header number: {headerNumber}. Must be 61-66.")
+            };
         }
 
         private void GenerateHood(HoodConfiguration config, Action<int> progressCallback)
