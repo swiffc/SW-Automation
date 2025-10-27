@@ -1,0 +1,448 @@
+{
+  "ProjectName": "SolidWorks Automation Suite",
+  "Version": "3.0.0",
+  "LastUpdated": "2025-10-25",
+  
+  "Paths": {
+    "ProjectRoot": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation",
+    "TemplateBase": "templates\\certified",
+    "HudsonCertified": "templates\\hudson_certified",
+    "OutputBase": "output",
+    "VaultPath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Hudson_\\Drafting\\Certified",
+    "ActiveJobsVault": "C:\\AXC_VAULT\\Active",
+    "CodeStackPath": "codestack",
+    "SolidDNAPath": "solidworks-api",
+    "AutomationPath": "macros\\csharp\\Solidworks-Automation"
+  },
+  
+  "HudsonCertifiedTemplates": {
+    "Enabled": true,
+    "Description": "Hudson certified templates with HUD_ prefix",
+    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Hudson_\\Drafting\\Certified",
+    "ProjectPath": "templates\\hudson_certified",
+    "OutputPath": "output\\hudson_certified",
+    "UseLocalCopy": true,
+    "LocalCopyDate": "2025-10-25",
+    "FilePrefix": "HUD_",
+    "TotalFiles": 213,
+    "Size": "58.94 MB",
+    "Categories": {
+      "Bundle": 21,
+      "Header": 17,
+      "Hood": 46,
+      "MachineryMount": 26,
+      "Plenum": 40,
+      "Structure": 27,
+      "Walkway": 31,
+      "Archive": 5
+    }
+  },
+  
+  "JobBrowser": {
+    "Enabled": true,
+    "ActiveJobsPath": "C:\\AXC_VAULT\\Active",
+    "JobPattern": "S2\\d{4}",
+    "DefaultFolder": "Drafting\\Certified",
+    "StandardFolders": [
+      "Drafting\\Certified",
+      "Drafting\\WIP",
+      "Drafting\\Archive",
+      "Models\\Assemblies",
+      "Models\\Parts"
+    ],
+    "FileTypes": {
+      "Drawings": [".slddrw"],
+      "Assemblies": [".sldasm"],
+      "Parts": [".sldprt"],
+      "Documents": [".pdf", ".docx"],
+      "Spreadsheets": [".xlsx", ".xls"],
+      "All": ["*"]
+    },
+    "MaxRecentJobs": 20,
+    "EnableCache": true,
+    "CacheDuration": 3600,
+    "ShowInTaskPane": true
+  },
+  
+  "HeaderSectionTool": {
+    "Enabled": true,
+    "Description": "Advanced design table-driven header automation system",
+    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Header Section Tool",
+    "ProjectPath": "templates\\header_section_tool",
+    "OutputPath": "output\\headers",
+    "UseLocalCopy": true,
+    "LocalCopyDate": "2025-10-25",
+    "Variants": {
+      "Combined": {
+        "Description": "Multi-circuit headers (S01c)",
+        "TemplatePath": "Combined_\\Drafting\\Headers",
+        "ConfigFile": "000000_S01c-HCS.xlsx",
+        "SectionConfigFile": "000000_S01c-SFCS.xlsx",
+        "MainAssembly": "000000_S01c-Header.SLDASM",
+        "Assemblies": [
+          "000000_S01c-Header.SLDASM",
+          "000000_S01c-SEC.SLDASM",
+          "000000_S01c-Nozzle.SLDASM",
+          "000000_S01c-FlangeCover.SLDASM"
+        ],
+        "Drawings": [
+          "000000_S01c-HDR-F.SLDDRW",
+          "000000_S01c-HDR-R.SLDDRW",
+          "000000_S01c-SEC.SLDDRW",
+          "000000_S01c-SFR.slddrw"
+        ]
+      },
+      "Single": {
+        "Description": "Single-circuit headers (S03)",
+        "TemplatePath": "Single_\\Drafting\\Headers",
+        "ConfigFile": "000000_S03-HCS.xlsx",
+        "SectionConfigFile": "000000_S03-SFCS.xlsx",
+        "MainAssembly": "000000_S03-Header.SLDASM",
+        "Assemblies": [
+          "000000_S03-Header.SLDASM",
+          "000000_S03-SEC.SLDASM",
+          "000000_S03-Nozzle.SLDASM",
+          "000000_S03-FlangeCover.SLDASM"
+        ],
+        "Drawings": [
+          "000000_S03-HDR-F.SLDDRW",
+          "000000_S03-HDR-R.SLDDRW",
+          "000000_S03-SEC.SLDDRW",
+          "000000_S03-SFR.slddrw"
+        ]
+      },
+      "Hailguard": {
+        "Description": "Hailguard headers (HAC)",
+        "TemplatePath": "(HAC) Hailguard",
+        "MainAssembly": "000000_S01-HGD (HAC).SLDASM",
+        "Drawings": ["000000_S01-HGD (HAC).SLDDRW"]
+      },
+      "SteamCoil": {
+        "Description": "Steam coil headers (HAC)",
+        "TemplatePath": "(HAC) Steam Coil",
+        "MainAssembly": "000000_S02-Header.SLDASM",
+        "Assemblies": [
+          "000000_S02-Header.SLDASM",
+          "000000_S02-STC.SLDASM"
+        ]
+      }
+    },
+    "Automation": {
+      "AutoRebuild": true,
+      "AutoUpdateDrawings": true,
+      "AutoSave": true,
+      "CreateBackup": true,
+      "ValidateBeforeGenerate": true,
+      "GenerateWeldMap": false
+    },
+    "UI": {
+      "ShowPreview": true,
+      "ShowAdvancedOptions": false,
+      "RememberLastConfig": true,
+      "EnableTemplates": true,
+      "Theme": "Modern"
+    },
+    "Integration": {
+      "LinkWithJobBrowser": true,
+      "LinkWithCertifiedTemplates": true,
+      "UnifiedHeaderSystem": true,
+      "AutoSelectBestMethod": true,
+      "ComplexityThreshold": 10
+    },
+    "Training": {
+      "VideosPath": "Training Videos",
+      "DocumentationPath": "docs"
+    }
+  },
+  
+  "ZStructureTool": {
+    "Enabled": true,
+    "Description": "Z cooler structure automation system",
+    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Z Structure Tool",
+    "ProjectPath": "templates\\z_structure_tool",
+    "OutputPath": "output\\z_structures",
+    "UseLocalCopy": true,
+    "LocalCopyDate": "2025-10-25",
+    "FilePrefix": "ZST_",
+    "TotalFiles": 1274,
+    "FilesRenamed": 556,
+    "Size": "1.25 GB",
+    "Directories": 135,
+    "Notes": "Complete Z cooler system with assemblies, parts, and extensive drawings"
+  },
+  
+  "XCHStructureTool": {
+    "Enabled": true,
+    "Description": "XCH (Cross-flow Heat Exchanger) cooler structure automation system",
+    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\XCH Structure Tool",
+    "ProjectPath": "templates\\xch_structure_tool",
+    "OutputPath": "output\\xch_structures",
+    "UseLocalCopy": true,
+    "LocalCopyDate": "2025-10-25",
+    "Variants": {
+      "Standard": {
+        "Description": "Standard XCH cooler structure",
+        "MainAssembly": "XCH Cooler\\XCH_Assembly.SLDASM",
+        "ConfigFile": "XCH Cooler\\XCH_SCS.xlsx",
+        "DesignWorksheet": "XCH Cooler Design Work Sheet.xls",
+        "SafetyCalcs": "XCH_Lift Lug safety factors.xls",
+        "Components": [
+          "XCH_FE.SLDASM",
+          "XCH_FDK.SLDASM",
+          "XCH_COL.SLDASM",
+          "XCH_MPL.SLDASM",
+          "XCH_EPL.SLDASM",
+          "XCH_SPL.SLDASM",
+          "XCH_WLK.SLDASM",
+          "XCH_DRM.SLDASM"
+        ],
+        "DrawingCount": 40
+      },
+      "MidColumn": {
+        "Description": "XCH with middle column support",
+        "FolderPath": "XCH Cooler\\Mid Col items",
+        "Components": [
+          "XCH_Mid Col_FDK.SLDASM",
+          "XCH_Mid Col_COL Mid Upper.SLDASM",
+          "XCH_Mid Col_COL Mid Lower.SLDASM",
+          "XCH_Mid Col_COL Mid Ship.SLDASM",
+          "XCH_Mid Col_EPL.SLDASM",
+          "XCH_Mid Col_MPL.SLDASM"
+        ],
+        "DrawingCount": 12
+      },
+      "Recirculation": {
+        "Description": "XCH with recirculation system",
+        "FolderPath": "XCH Cooler\\Recirc",
+        "MainAssembly": "XCH_Recirc_Assembly with Recirc.SLDASM",
+        "Components": [
+          "XCH_Recirc_FE.SLDASM",
+          "XCH_Recirc_FE2.SLDASM",
+          "XCH_Recirc_Duct Assembly.sldasm",
+          "XCH_Recirc_Sht Back.SLDASM",
+          "XCH_Recirc_Sht Side.SLDASM"
+        ],
+        "DrawingCount": 28
+      }
+    },
+    "PartsCatalog": {
+      "Path": "XCH Cooler Parts Catalog",
+      "FanRingGussets": "Fan Ring Support Gussets",
+      "ShippingBeam": "Shipping Beam",
+      "Shutters": "Shutters",
+      "NoMidColumn": "SPL Spl for no mid col"
+    },
+    "Statistics": {
+      "TotalAssemblies": 59,
+      "TotalParts": 153,
+      "TotalDrawings": 96,
+      "ExcelFiles": 3,
+      "TotalFiles": 311
+    },
+    "Automation": {
+      "AutoRebuild": true,
+      "AutoUpdateDrawings": true,
+      "AutoSave": true,
+      "CreateBackup": true,
+      "ValidateBeforeGenerate": true,
+      "PerformSafetyChecks": true
+    },
+    "UI": {
+      "ShowPreview": true,
+      "ShowAdvancedOptions": false,
+      "ShowSafetyCalculations": true,
+      "RememberLastConfig": true,
+      "EnableTemplates": true
+    },
+    "Integration": {
+      "LinkWithJobBrowser": true,
+      "UnifiedAutomationSystem": true
+    }
+  },
+  
+  "Components": {
+    "Bundle": {
+      "Enabled": true,
+      "TemplatePath": "Bundle",
+      "MainAssembly": "JOBNO-7.SLDASM",
+      "AutomationProject": "Bundle",
+      "OutputPath": "output\\generated_bundles",
+      "TemplateFiles": [
+        "JOBNO-1011.SLDPRT",
+        "JOBNO-1011W.SLDASM",
+        "JOBNO-1012.SLDPRT",
+        "JOBNO-1012W.SLDASM",
+        "JOBNO-1560.SLDASM",
+        "JOBNO-1504W.SLDASM"
+      ]
+    },
+    
+    "Header": {
+      "Enabled": true,
+      "TemplatePath": "Header",
+      "MainAssemblies": [
+        "JOBNO-61.SLDASM",
+        "JOBNO-62.SLDASM",
+        "JOBNO-63.SLDASM",
+        "JOBNO-64.SLDASM",
+        "JOBNO-65.SLDASM",
+        "JOBNO-66.SLDASM"
+      ],
+      "AutomationProject": "Header",
+      "OutputPath": "output\\generated_headers",
+      "Components": [
+        "JOBNO-TubeSheet.SLDPRT",
+        "JOBNO-EndPlate.sldprt",
+        "JOBNO-Partition.sldprt",
+        "JOBNO-Flange.sldprt",
+        "JOBNO-Pipe.sldprt"
+      ]
+    },
+    
+    "Hood": {
+      "Enabled": true,
+      "TemplatePath": "Hood",
+      "MainAssembly": "JOBNO-3.SLDASM",
+      "AutomationProject": "Hood",
+      "OutputPath": "output\\generated_hoods",
+      "LegacyProgram": "1976 Hood Program\\HoodDesign.exe",
+      "LegacyExcel": "1976 Hood Program\\Hood Design.xls",
+      "Parts": [
+        "JOBNO-157.SLDPRT",
+        "JOBNO-182.SLDPRT",
+        "JOBNO-187.SLDPRT",
+        "JOBNO-188.SLDPRT",
+        "JOBNO-189.SLDPRT",
+        "JOBNO-194.SLDPRT"
+      ]
+    },
+    
+    "MachineryMount": {
+      "Enabled": true,
+      "TemplatePath": "MachineryMount",
+      "MainAssembly": "JOBNO-4.SLDASM",
+      "AutomationProject": "MachineryMount",
+      "OutputPath": "output\\generated_machinery_mounts",
+      "Assemblies": [
+        "JOBNO-234.SLDASM",
+        "JOBNO-236.SLDASM",
+        "JOBNO-268.SLDASM"
+      ]
+    },
+    
+    "Plenum": {
+      "Enabled": true,
+      "TemplatePath": "Plenum",
+      "MainAssembly": "JOBNO-5.SLDASM",
+      "AutomationProject": "Plenum",
+      "OutputPath": "output\\generated_plenums",
+      "Assemblies": [
+        "JOBNO-113.SLDASM",
+        "JOBNO-116.SLDASM",
+        "JOBNO-117.SLDASM",
+        "JOBNO-266.SLDASM"
+      ]
+    },
+    
+    "Structure": {
+      "Enabled": true,
+      "TemplatePath": "Structure",
+      "MainAssembly": "JOBNO-25.SLDASM",
+      "AutomationProject": "Structure",
+      "OutputPath": "output\\generated_structures",
+      "SubFolders": ["55A"],
+      "Assemblies": [
+        "JOBNO-101.SLDASM",
+        "JOBNO-106.SLDASM",
+        "JOBNO-111.SLDASM"
+      ],
+      "55A_Assemblies": [
+        "55A\\JOBNO-55A-1.SLDASM",
+        "55A\\JOBNO-55A-2.SLDASM",
+        "55A\\JOBNO-55A-3.SLDASM"
+      ]
+    },
+    
+    "Walkway": {
+      "Enabled": true,
+      "TemplatePath": "Walkway",
+      "AutomationProject": "Walkway",
+      "OutputPath": "output\\generated_walkways",
+      "TitleBlock": "chart titleblock.slddrt",
+      "Assemblies": [
+        "JOBNO-1336.SLDASM",
+        "JOBNO-1341.SLDASM"
+      ],
+      "Drawings": [
+        "JOBNO-28A.SLDDRW",
+        "JOBNO-1326.SLDDRW",
+        "JOBNO-1336.SLDDRW",
+        "JOBNO-1341.SLDDRW"
+      ]
+    }
+  },
+  
+  "Automation": {
+    "AutoSave": true,
+    "CreateDrawings": true,
+    "ExportPDF": true,
+    "ExportSTEP": false,
+    "ExportDXF": false,
+    "PDFPath": "output\\exports\\pdf",
+    "STEPPath": "output\\exports\\step",
+    "DXFPath": "output\\exports\\dxf",
+    "ApplyMaterials": true,
+    "ValidateBeforeSave": true,
+    "BackupOriginal": true,
+    "LogOperations": true
+  },
+  
+  "SolidWorks": {
+    "Version": "2024",
+    "BackgroundMode": false,
+    "SilentMode": false,
+    "UseLatestVersion": true,
+    "LoadAddInsOnStartup": true
+  },
+  
+  "FileNaming": {
+    "JobPrefix": "JOBNO",
+    "DateFormat": "yyyyMMdd",
+    "IncludeRevision": true,
+    "RevisionFormat": "R{0:00}",
+    "IncludeTimestamp": false,
+    "TimestampFormat": "HHmmss"
+  },
+  
+  "Validation": {
+    "CheckForExistingFiles": true,
+    "ValidateTemplateIntegrity": true,
+    "VerifyDimensions": true,
+    "CheckMaterialsApplied": true,
+    "ValidateAssemblyReferences": true
+  },
+  
+  "Logging": {
+    "Enabled": true,
+    "LogLevel": "Information",
+    "LogPath": "logs",
+    "MaxLogFiles": 30,
+    "LogToFile": true,
+    "LogToConsole": true
+  },
+  
+  "UI": {
+    "ShowProgressBar": true,
+    "EnableNotifications": true,
+    "ConfirmBeforeGenerate": true,
+    "ShowPreview": true
+  },
+  
+  "Advanced": {
+    "ParallelProcessing": false,
+    "MaxConcurrentOperations": 1,
+    "CacheTemplates": true,
+    "PreloadAssemblies": false
+  }
+}
+

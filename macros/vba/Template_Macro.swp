@@ -1,0 +1,79 @@
+Attribute VB_Name = "Template_Macro"
+' =====================================================
+' SOLIDWORKS VBA MACRO TEMPLATE
+' =====================================================
+' Description: Template for creating SolidWorks macros
+' Author: Your Name
+' Date: 2025-10-25
+' =====================================================
+
+Option Explicit
+
+' Main entry point for the macro
+Sub main()
+    Dim swApp As SldWorks.SldWorks
+    Dim swModel As SldWorks.ModelDoc2
+    Dim bRet As Boolean
+    
+    ' Connect to SolidWorks
+    Set swApp = Application.SldWorks
+    
+    ' Check if SolidWorks is available
+    If swApp Is Nothing Then
+        MsgBox "Failed to connect to SolidWorks!", vbCritical
+        Exit Sub
+    End If
+    
+    ' Get the active document
+    Set swModel = swApp.ActiveDoc
+    
+    ' Check if a document is open
+    If swModel Is Nothing Then
+        MsgBox "Please open a document first!", vbExclamation
+        Exit Sub
+    End If
+    
+    ' Your code here
+    MsgBox "Macro is running on: " & swModel.GetTitle(), vbInformation
+    
+    ' Rebuild the model
+    swModel.ForceRebuild3 False
+    
+    ' Show success message
+    MsgBox "Macro completed successfully!", vbInformation
+    
+End Sub
+
+' =====================================================
+' UTILITY FUNCTIONS
+' =====================================================
+
+' Get the document type as a string
+Function GetDocumentTypeName(swModel As SldWorks.ModelDoc2) As String
+    Dim docType As Long
+    docType = swModel.GetType()
+    
+    Select Case docType
+        Case swDocPART
+            GetDocumentTypeName = "Part"
+        Case swDocASSEMBLY
+            GetDocumentTypeName = "Assembly"
+        Case swDocDRAWING
+            GetDocumentTypeName = "Drawing"
+        Case Else
+            GetDocumentTypeName = "Unknown"
+    End Select
+End Function
+
+' Check if a feature exists by name
+Function FeatureExists(swModel As SldWorks.ModelDoc2, featureName As String) As Boolean
+    Dim swFeat As SldWorks.Feature
+    Set swFeat = swModel.FeatureByName(featureName)
+    FeatureExists = Not (swFeat Is Nothing)
+End Function
+
+' Log message to immediate window (for debugging)
+Sub LogMessage(message As String)
+    Debug.Print "[" & Format(Now, "hh:mm:ss") & "] " & message
+End Sub
+

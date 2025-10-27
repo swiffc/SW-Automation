@@ -1,0 +1,720 @@
+{
+  "Inputs_Calcs_Tube OD": {
+    "parameter": "Tube OD",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "J2",
+    "label_text": "Is odd?",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "K2",
+        "value": "Is even?",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "J3",
+        "value": "=IF(AND(ISODD(I3),I3>0),1,0)",
+        "is_formula": true
+      }
+    ]
+  },
+  "Inputs_Calcs_Row Count": {
+    "parameter": "Row Count",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "Q2",
+    "label_text": "Rows per Header",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "Q3",
+        "value": "Front split 1 after pass",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_Material": {
+    "parameter": "Material",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "AP3",
+    "label_text": "Material (echo C3)",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AQ3",
+        "value": "=C9",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AP4",
+        "value": "Smls tube?",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_Tube Length": {
+    "parameter": "Tube Length",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "AA5",
+    "label_text": "Metric Length",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AB5",
+        "value": "=IF(AB3=\"\",\"\",INDEX(Pulldowns_Lookups!H45:H52,MATC",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AA6",
+        "value": "Conversion",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_MAWP": {
+    "parameter": "MAWP",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "AA31",
+    "label_text": "MAWP",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AB31",
+        "value": "=Calcs!AJ24",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AA32",
+        "value": "MAP",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_Design Pressure": {
+    "parameter": "Design Pressure",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "AA43",
+    "label_text": "DP1 w/o vac",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AB43",
+        "value": "=IF(AB12=\"FV\",14.7,IF(AB12=\"HV\",7.35,IF(OR(AB12<0,",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AA44",
+        "value": "DP2 w/o vac",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_Job Number": {
+    "parameter": "Job Number",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "Q44",
+    "label_text": "Job no",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "R44",
+        "value": "=Input!H2",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "Q45",
+        "value": "Matl",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_Tube Wall": {
+    "parameter": "Tube Wall",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "AP48",
+    "label_text": "Min thk 1",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AQ48",
+        "value": "=IF(AB43>0,AB43*AQ45/(AQ29+0.4*AB43),0)",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AP49",
+        "value": "Min thk 2",
+        "is_formula": false
+      }
+    ]
+  },
+  "Inputs_Calcs_Horizontal Pitch": {
+    "parameter": "Horizontal Pitch",
+    "sheet": "Inputs_Calcs",
+    "label_cell": "T64",
+    "label_text": "name on Calcs Heading, horizontal pitch",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "T65",
+        "value": "standards per tube OD, whether partition",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Tube OD": {
+    "parameter": "Tube OD",
+    "sheet": "RAGU",
+    "label_cell": "G3",
+    "label_text": "product line",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G4",
+        "value": "project number",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Job Number": {
+    "parameter": "Job Number",
+    "sheet": "RAGU",
+    "label_cell": "G4",
+    "label_text": "project number",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G5",
+        "value": "header letter designation",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Tube Length": {
+    "parameter": "Tube Length",
+    "sheet": "RAGU",
+    "label_cell": "G6",
+    "label_text": "LENGTH - header box length",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G7",
+        "value": "THK - tubesheet & plugsheet",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Header Length": {
+    "parameter": "Header Length",
+    "sheet": "RAGU",
+    "label_cell": "G6",
+    "label_text": "LENGTH - header box length",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G7",
+        "value": "THK - tubesheet & plugsheet",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Tube Wall": {
+    "parameter": "Tube Wall",
+    "sheet": "RAGU",
+    "label_cell": "G7",
+    "label_text": "THK - tubesheet & plugsheet",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "H7",
+        "value": "These are the cells which I updated per 3.3.2.  gj",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "G8",
+        "value": "THK - top & bottom plate",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Tubesheet Thickness": {
+    "parameter": "Tubesheet Thickness",
+    "sheet": "RAGU",
+    "label_cell": "G7",
+    "label_text": "THK - tubesheet & plugsheet",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "H7",
+        "value": "These are the cells which I updated per 3.3.2.  gj",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "G8",
+        "value": "THK - top & bottom plate",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Bundle Width": {
+    "parameter": "Bundle Width",
+    "sheet": "RAGU",
+    "label_cell": "G17",
+    "label_text": "WIDTH - tubesheet & plugsheet",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G18",
+        "value": "WIDTH - top & bottom plate",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Row Count": {
+    "parameter": "Row Count",
+    "sheet": "RAGU",
+    "label_cell": "J53",
+    "label_text": "Rows/box",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "K53",
+        "value": "=Inputs_Calcs!R8",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "J54",
+        "value": "Y",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Horizontal Pitch": {
+    "parameter": "Horizontal Pitch",
+    "sheet": "RAGU",
+    "label_cell": "G56",
+    "label_text": "X pitch",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G57",
+        "value": "X offset - odd tube rows",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Tube Count": {
+    "parameter": "Tube Count",
+    "sheet": "RAGU",
+    "label_cell": "G72",
+    "label_text": "number of tubes to right of shaft",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "G73",
+        "value": "number of tubes to left of shaft",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Bundle Depth": {
+    "parameter": "Bundle Depth",
+    "sheet": "RAGU",
+    "label_cell": "J84",
+    "label_text": "\"rd\" - (raised face depth)",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "K84",
+        "value": "=Inputs_Calcs!CQ73",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "J85",
+        "value": "\"nb\" - (number of bolts)",
+        "is_formula": false
+      }
+    ]
+  },
+  "RAGU_Material": {
+    "parameter": "Material",
+    "sheet": "RAGU",
+    "label_cell": "J99",
+    "label_text": "INLET - material",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "K99",
+        "value": "=Inputs_Calcs!$CP$31",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "J100",
+        "value": "OUTLET - nominal size",
+        "is_formula": false
+      }
+    ]
+  },
+  "Prego_to_Sw_Bundle Width": {
+    "parameter": "Bundle Width",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "C7",
+    "label_text": "Box-1 Wet Width",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "C8",
+        "value": "Box-3 Wet Width",
+        "is_formula": false
+      }
+    ]
+  },
+  "Prego_to_Sw_Design Pressure": {
+    "parameter": "Design Pressure",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "A13",
+    "label_text": "=Inputs_Calcs!ADP13",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "A14",
+        "value": "=Inputs_Calcs!ADQ13",
+        "is_formula": true
+      }
+    ]
+  },
+  "Prego_to_Sw_Tube Wall": {
+    "parameter": "Tube Wall",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "C13",
+    "label_text": "Top/Btm-1 Thk",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "C14",
+        "value": "Top/Btm-3 Thk",
+        "is_formula": false
+      }
+    ]
+  },
+  "Prego_to_Sw_Tube Length": {
+    "parameter": "Tube Length",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "C25",
+    "label_text": "Box Length",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "C26",
+        "value": "End-1 Thk",
+        "is_formula": false
+      }
+    ]
+  },
+  "Prego_to_Sw_Header Length": {
+    "parameter": "Header Length",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "C25",
+    "label_text": "Box Length",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "C26",
+        "value": "End-1 Thk",
+        "is_formula": false
+      }
+    ]
+  },
+  "Prego_to_Sw_Tubesheet Thickness": {
+    "parameter": "Tubesheet Thickness",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "C38",
+    "label_text": "Tubesheet-1 PartNo",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "C39",
+        "value": "Tubesheet-3 PartNo",
+        "is_formula": false
+      }
+    ]
+  },
+  "Prego_to_Sw_Tube OD": {
+    "parameter": "Tube OD",
+    "sheet": "Prego_to_Sw",
+    "label_cell": "C100",
+    "label_text": "Inlet Pipe OD",
+    "adjacent": [
+      {
+        "location": "below",
+        "cell": "C101",
+        "value": "Outlet Pipe OD",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Job Number": {
+    "parameter": "Job Number",
+    "sheet": "Input",
+    "label_cell": "G2",
+    "label_text": "Job:",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "H2",
+        "value": "S25140",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "G3",
+        "value": "Item:",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Horizontal Pitch": {
+    "parameter": "Horizontal Pitch",
+    "sheet": "Input",
+    "label_cell": "AJ4",
+    "label_text": "V Pitch",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AK4",
+        "value": "V Pitch",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Material": {
+    "parameter": "Material",
+    "sheet": "Input",
+    "label_cell": "K6",
+    "label_text": "Matl",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "L6",
+        "value": "=Inputs_Calcs!AQ9",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "K7",
+        "value": "=Inputs_Calcs!CA32",
+        "is_formula": true
+      }
+    ]
+  },
+  "Input_Design Pressure": {
+    "parameter": "Design Pressure",
+    "sheet": "Input",
+    "label_cell": "A9",
+    "label_text": "Design Pressure",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "B9",
+        "value": "200",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "A10",
+        "value": "Design Temp",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Row Count": {
+    "parameter": "Row Count",
+    "sheet": "Input",
+    "label_cell": "E9",
+    "label_text": "Rows",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "F9",
+        "value": "=Inputs_Calcs!J53",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "E10",
+        "value": "Boxes",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Tube OD": {
+    "parameter": "Tube OD",
+    "sheet": "Input",
+    "label_cell": "K10",
+    "label_text": "Tube OD",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "L10",
+        "value": "1",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "K11",
+        "value": "Fins",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Bundle Width": {
+    "parameter": "Bundle Width",
+    "sheet": "Input",
+    "label_cell": "E12",
+    "label_text": "Bundle Width",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "F12",
+        "value": "77.125",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "E13",
+        "value": "Toed-In/Out?",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Tube Count": {
+    "parameter": "Tube Count",
+    "sheet": "Input",
+    "label_cell": "H13",
+    "label_text": "Fan Qty",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "I13",
+        "value": "2",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "H14",
+        "value": "Shaft-Thru",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Tube Wall": {
+    "parameter": "Tube Wall",
+    "sheet": "Input",
+    "label_cell": "K14",
+    "label_text": "Tubewall Thk",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "L14",
+        "value": "=Inputs_Calcs!AY2",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "K15",
+        "value": "Tube Length (ft)",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Tube Length": {
+    "parameter": "Tube Length",
+    "sheet": "Input",
+    "label_cell": "K15",
+    "label_text": "Tube Length (ft)",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "L15",
+        "value": "18",
+        "is_formula": false
+      },
+      {
+        "location": "below",
+        "cell": "K16",
+        "value": "Pitch",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_MAWP": {
+    "parameter": "MAWP",
+    "sheet": "Input",
+    "label_cell": "H32",
+    "label_text": "MAWP/MAP in Calcs",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "I32",
+        "value": "=Inputs_Calcs!AB98",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "H33",
+        "value": "=Inputs_Calcs!AB59",
+        "is_formula": true
+      }
+    ]
+  },
+  "Input_Header Width": {
+    "parameter": "Header Width",
+    "sheet": "Input",
+    "label_cell": "AC42",
+    "label_text": "Box Width",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AD42",
+        "value": "=Inputs_Calcs!WD20",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AC43",
+        "value": "Noz CL to TS",
+        "is_formula": false
+      }
+    ]
+  },
+  "Input_Tubesheet Thickness": {
+    "parameter": "Tubesheet Thickness",
+    "sheet": "Input",
+    "label_cell": "AC49",
+    "label_text": "Tubesheet Thk",
+    "adjacent": [
+      {
+        "location": "right",
+        "cell": "AD49",
+        "value": "=Inputs_Calcs!ADP72",
+        "is_formula": true
+      },
+      {
+        "location": "below",
+        "cell": "AC50",
+        "value": "=IF(B15=\"Plug\",\"Plugsheet Thk\",\"CVRPLT thk\")",
+        "is_formula": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+# SolidWorks Automation Project .gitignore
+
+# ============================================
+# SolidWorks Files (Large - Consider Git LFS)
+# ============================================
+# Uncomment these if you don't want CAD files in Git:
+# *.SLDASM
+# *.SLDPRT
+# *.SLDDRW
+# *.sldasm
+# *.sldprt
+# *.slddrw
+
+# SolidWorks Temporary Files
+~$*.SLD*
+~$*.sld*
+*.tmp
+*.log
+
+# ============================================
+# Output and Generated Files
+# ============================================
+output/
+!output/.gitkeep
+
+# Build outputs
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# ============================================
+# Visual Studio / C#
+# ============================================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# ============================================
+# IDE and Editors
+# ============================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# Backup Files
+# ============================================
+*.bak
+*.backup
+*~
+
+# ============================================
+# Documentation Build
+# ============================================
+site/
+_site/
+
+# ============================================
+# Project Specific
+# ============================================
+# Uncomment if you want to exclude large template folders:
+# templates/header_section_tool/
+# templates/xch_structure_tool/
+
+# But keep the directory structure:
+!templates/header_section_tool/.gitkeep
+!templates/xch_structure_tool/.gitkeep

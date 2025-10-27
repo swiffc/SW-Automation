@@ -1,0 +1,331 @@
+================================================================================
+COMPLETE EXCEL FILE SCAN REPORT
+SolidWorks Automation Project
+================================================================================
+
+Total Files: 53
+Total Size: 9.44 MB
+Categories: 6
+
+================================================================================
+COMPLETE FILE LIST
+================================================================================
+
+1. CC Bolt Formulae.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\CC Bolt Formulae.xlsx
+   Extension: .xlsx
+   Size: 0.01 MB
+
+2. Part Number Template.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\Part Number Template.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+3. Sheet Metal Sizes.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\Sheet Metal Sizes.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+4. Smithco Motor Dimensions.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\Smithco Motor Dimensions.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+5. W708 - Part Number.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\W708 - Part Number.xlsx
+   Extension: .xlsx
+   Size: 0.01 MB
+
+6. W709 - Part Number.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\W709 - Part Number.xlsx
+   Extension: .xlsx
+   Size: 0.01 MB
+
+7. W710 - Part Number.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\W710 - Part Number.xlsx
+   Extension: .xlsx
+   Size: 0.01 MB
+
+8. W711 - Part Number.xlsx
+   Category: Standards & Reference
+   Path: macros\csharp\Solidworks-Automation\Standards\W711 - Part Number.xlsx
+   Extension: .xlsx
+   Size: 0.01 MB
+
+9. 000000_S01c-HCS.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\000000_S01c-HCS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+10. 000000_S01c-SFCS.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\000000_S01c-SFCS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+11. Worksheet in 000000_S01c-Filler Top.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Filler Top.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+12. Worksheet in 000000_S01c-Filler.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Filler.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+13. Worksheet in 000000_S01c-FlangeCover.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-FlangeCover.xlsx
+   Extension: .xlsx
+   Size: 0.36 MB
+
+14. Worksheet in 000000_S01c-Header.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Header.xlsx
+   Extension: .xlsx
+   Size: 0.56 MB
+
+15. Worksheet in 000000_S01c-HeaderBox.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-HeaderBox.xlsx
+   Extension: .xlsx
+   Size: 0.14 MB
+
+16. Worksheet in 000000_S01c-LWN Flange.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-LWN Flange.xlsx
+   Extension: .xlsx
+   Size: 0.29 MB
+
+17. Worksheet in 000000_S01c-Nozzle.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Nozzle.xlsx
+   Extension: .xlsx
+   Size: 0.81 MB
+
+18. Worksheet in 000000_S01c-Pipe.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Pipe.xlsx
+   Extension: .xlsx
+   Size: 1.01 MB
+
+19. Worksheet in 000000_S01c-SEC.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-SEC.xlsx
+   Extension: .xlsx
+   Size: 0.05 MB
+
+20. Worksheet in 000000_S01c-SFR.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-SFR.xlsx
+   Extension: .xlsx
+   Size: 0.21 MB
+
+21. Worksheet in 000000_S01c-Support Bar.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Support Bar.xlsx
+   Extension: .xlsx
+   Size: 0.03 MB
+
+22. Worksheet in 000000_S01c-TTS.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-TTS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+23. Worksheet in 000000_S01c-Tube Support.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Tube Support.xlsx
+   Extension: .xlsx
+   Size: 0.03 MB
+
+24. Worksheet in 000000_S01c-Tube.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-Tube.xlsx
+   Extension: .xlsx
+   Size: 0.03 MB
+
+25. Worksheet in 000000_S01c-TubeInsert.xlsx
+   Category: Header Section Tool - Combined
+   Path: templates\header_section_tool\Combined_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S01c-TubeInsert.xlsx
+   Extension: .xlsx
+   Size: 0.09 MB
+
+26. 000000_S03-HCS.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\000000_S03-HCS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+27. 000000_S03-SFCS.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\000000_S03-SFCS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+28. Worksheet in 000000_S03-Filler Top.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Filler Top.xlsx
+   Extension: .xlsx
+   Size: 0.01 MB
+
+29. Worksheet in 000000_S03-Filler.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Filler.xlsx
+   Extension: .xlsx
+   Size: 0.03 MB
+
+30. Worksheet in 000000_S03-FlangeCover.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-FlangeCover.xlsx
+   Extension: .xlsx
+   Size: 0.35 MB
+
+31. Worksheet in 000000_S03-Header.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Header.xlsx
+   Extension: .xlsx
+   Size: 0.5 MB
+
+32. Worksheet in 000000_S03-HeaderBox.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-HeaderBox.xlsx
+   Extension: .xlsx
+   Size: 0.14 MB
+
+33. Worksheet in 000000_S03-LWN Flange.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-LWN Flange.xlsx
+   Extension: .xlsx
+   Size: 0.29 MB
+
+34. Worksheet in 000000_S03-Nozzle.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Nozzle.xlsx
+   Extension: .xlsx
+   Size: 0.81 MB
+
+35. Worksheet in 000000_S03-Pipe.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Pipe.xlsx
+   Extension: .xlsx
+   Size: 1.01 MB
+
+36. Worksheet in 000000_S03-SEC.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-SEC.xlsx
+   Extension: .xlsx
+   Size: 0.05 MB
+
+37. Worksheet in 000000_S03-SFR.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-SFR.xlsx
+   Extension: .xlsx
+   Size: 0.31 MB
+
+38. Worksheet in 000000_S03-Support Bar.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Support Bar.xlsx
+   Extension: .xlsx
+   Size: 0.03 MB
+
+39. Worksheet in 000000_S03-TTS.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-TTS.xlsx
+   Extension: .xlsx
+   Size: 0.03 MB
+
+40. Worksheet in 000000_S03-Tube Spacer.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Tube Spacer.xlsx
+   Extension: .xlsx
+   Size: 0.07 MB
+
+41. Worksheet in 000000_S03-Tube Support.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Tube Support.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+42. Worksheet in 000000_S03-Tube.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-Tube.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+43. Worksheet in 000000_S03-TubeInsert.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\Worksheet in 000000_S03-TubeInsert.xlsx
+   Extension: .xlsx
+   Size: 0.09 MB
+
+44. 000000_S03-Nozzle (fix for version 25 - copy rows 12 & 13 into your DT).xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\~Archive\000000_S03-Nozzle (fix for version 25 - copy rows 12 & 13 into your DT).xlsx
+   Extension: .xlsx
+   Size: 0.73 MB
+
+45. JDE-SCALLOPS.xlsx
+   Category: Header Section Tool - Single
+   Path: templates\header_section_tool\Single_\Drafting\Headers\~Ref Design Tables\~Archive\JDE-SCALLOPS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+46. Hood Design.xls
+   Category: Hudson Certified
+   Path: templates\hudson_certified\Hood\1976 Hood Program\Hood Design.xls
+   Extension: .xls
+   Size: 0.04 MB
+
+47. Cofimco Fan Calculator.xlsx
+   Category: Hudson Certified
+   Path: templates\hudson_certified\archive\Cofimco Fan Calculator.xlsx
+   Extension: .xlsx
+   Size: 0.29 MB
+
+48. XCH Cooler Design Work Sheet.xls
+   Category: XCH Structure Tool
+   Path: templates\xch_structure_tool\XCH Cooler Design Work Sheet.xls
+   Extension: .xls
+   Size: 0.31 MB
+
+49. XCH_SCS.xlsx
+   Category: XCH Structure Tool
+   Path: templates\xch_structure_tool\XCH Cooler\XCH_SCS.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+50. XCH_Lift Lug safety factors.xls
+   Category: XCH Structure Tool
+   Path: templates\xch_structure_tool\XCH_Lift Lug safety factors.xls
+   Extension: .xls
+   Size: 0.04 MB
+
+51. Z Cooler Design Work Sheet.xls
+   Category: Z Structure Tool
+   Path: templates\z_structure_tool\Z Cooler Design Work Sheet.xls
+   Extension: .xls
+   Size: 0.31 MB
+
+52. Lifting System Work Sheet.xlsx
+   Category: Z Structure Tool
+   Path: templates\z_structure_tool\Z Cooler\3 Beam Lifting System\Lifting System Work Sheet.xlsx
+   Extension: .xlsx
+   Size: 0.02 MB
+
+53. ZST_Z_Lift Lug safety factors.xls
+   Category: Z Structure Tool
+   Path: templates\z_structure_tool\ZST_Z_Lift Lug safety factors.xls
+   Extension: .xls
+   Size: 0.04 MB
+

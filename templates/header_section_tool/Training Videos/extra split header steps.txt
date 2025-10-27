@@ -1,0 +1,3 @@
+when you have a split header
+Equal length 124 - suppress and set equal to the other header sketch
+Coincident 115 - suppress and set the same point to be along Z axis from the bottom of the header box reference sketch

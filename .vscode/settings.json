@@ -1,0 +1,22 @@
+{
+  "files.associations": {
+    "*.swp": "vba",
+    "*.swb": "vba"
+  },
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": false,
+  "editor.minimap.enabled": true,
+  "files.encoding": "windows1252",
+  "files.eol": "\r\n",
+  "[vba]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  }
+}
+

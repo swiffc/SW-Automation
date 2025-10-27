@@ -1,0 +1,5 @@
+# Python packages for SolidWorks automation
+pywin32>=305
+comtypes>=1.4.0
+pythonnet>=3.0.0
+

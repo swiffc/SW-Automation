@@ -1,0 +1,158 @@
+[
+  {
+    "filename": "000000_S01c-HCS.xlsx",
+    "sheets": [
+      {
+        "name": "Check Sheet",
+        "max_row": 36,
+        "max_column": 16,
+        "parameters": [],
+        "formulas": [
+          {
+            "cell": "G1",
+            "formula": "=CONCATENATE(JobNumber,\".\",M10,M6, \" / \", JobNumber, \".\",M10, M7)"
+          },
+          {
+            "cell": "M6",
+            "formula": "=MID(M5,LEN(JobNumber)+3,2)+0"
+          },
+          {
+            "cell": "M7",
+            "formula": "=M6+1"
+          },
+          {
+            "cell": "M8",
+            "formula": "=LEFT(M5,FIND(\"_\",M5,1)-1)"
+          },
+          {
+            "cell": "M9",
+            "formula": "=CONCATENATE(M6,-M7,\"-HCS\")"
+          },
+          {
+            "cell": "M10",
+            "formula": "=LEFT(M8,MIN(FIND({0,1,2,3,4,5,6,7,8,9},M8&\"0123456789\"))-1)"
+          },
+          {
+            "cell": "L14",
+            "formula": "=IF(COUNTA(DrawnByRange)=1,\"NOT STARTED\",IF(COUNTIF(DrawnByRange,\"\") < 1,\"DONE\",\"INCOMPLETE\"))"
+          },
+          {
+            "cell": "N14",
+            "formula": "=IF(COUNTA(CheckedByRange)=0,\"NOT STARTED\",IF(COUNTIF(CheckedByRange,\"\") < 1,\"DONE\",\"INCOMPLETE\"))"
+          },
+          {
+            "cell": "L16",
+            "formula": "=IF(HCSType1=\"NOT STARTED\",\"\",IF(HCSType1<>\"DONE\",\"IF FORM IS NOT COMPLETE, YOU WILL NOT BE ABLE TO CHANGE STATE\",\"\"))"
+          },
+          {
+            "cell": "N16",
+            "formula": "=IF(HCSType2=\"NOT STARTED\",\"\",IF(HCSType2<>\"DONE\",\"IF FORM IS NOT COMPLETE, YOU WILL NOT BE ABLE TO CHANGE STATE\",\"\"))"
+          }
+        ]
+      },
+      {
+        "name": "Revision Log",
+        "max_row": 6,
+        "max_column": 5,
+        "parameters": [],
+        "formulas": []
+      }
+    ]
+  },
+  {
+    "filename": "000000_S03-HCS.xlsx",
+    "sheets": [
+      {
+        "name": "Check Sheet",
+        "max_row": 39,
+        "max_column": 16,
+        "parameters": [],
+        "formulas": [
+          {
+            "cell": "G1",
+            "formula": "=CONCATENATE(JobNumber,\".\",M9,M6)"
+          },
+          {
+            "cell": "M6",
+            "formula": "=MID(M5,LEN(JobNumber)+3,2)+0"
+          },
+          {
+            "cell": "M7",
+            "formula": "=LEFT(M5,FIND(\"_\",M5,1)-1)"
+          },
+          {
+            "cell": "M8",
+            "formula": "=CONCATENATE(M6,\"-HCS\")"
+          },
+          {
+            "cell": "M9",
+            "formula": "=LEFT(M7,MIN(FIND({0,1,2,3,4,5,6,7,8,9},M7&\"0123456789\"))-1)"
+          },
+          {
+            "cell": "L14",
+            "formula": "=IF(COUNTA(DrawnByRange)=1,\"NOT STARTED\",IF(COUNTIF(DrawnByRange,\"\") < 1,\"DONE\",\"INCOMPLETE\"))"
+          },
+          {
+            "cell": "N14",
+            "formula": "=IF(COUNTA(CheckedByRange)=0,\"NOT STARTED\",IF(COUNTIF(CheckedByRange,\"\") < 1,\"DONE\",\"INCOMPLETE\"))"
+          },
+          {
+            "cell": "L16",
+            "formula": "=IF(HCSType1=\"NOT STARTED\",\"\",IF(HCSType1<>\"DONE\",\"IF FORM IS NOT COMPLETE, YOU WILL NOT BE ABLE TO CHANGE STATE\",\"\"))"
+          },
+          {
+            "cell": "N16",
+            "formula": "=IF(HCSType2=\"NOT STARTED\",\"\",IF(HCSType2<>\"DONE\",\"IF FORM IS NOT COMPLETE, YOU WILL NOT BE ABLE TO CHANGE STATE\",\"\"))"
+          }
+        ]
+      },
+      {
+        "name": "Revision Log",
+        "max_row": 6,
+        "max_column": 5,
+        "parameters": [],
+        "formulas": []
+      }
+    ]
+  },
+  {
+    "filename": "XCH_SCS.xlsx",
+    "sheets": [
+      {
+        "name": "Check Sheet",
+        "max_row": 39,
+        "max_column": 16,
+        "parameters": [],
+        "formulas": [
+          {
+            "cell": "M7",
+            "formula": "=LEFT(M5,FIND(\"_\",M5,1)-1)"
+          },
+          {
+            "cell": "L14",
+            "formula": "=IF(COUNTA(DrawnByRange)=1,\"NOT STARTED\",IF(COUNTIF(DrawnByRange,\"\") < 1,\"DONE\",\"INCOMPLETE\"))"
+          },
+          {
+            "cell": "N14",
+            "formula": "=IF(COUNTA(CheckedByRange)=0,\"NOT STARTED\",IF(COUNTIF(CheckedByRange,\"\") < 1,\"DONE\",\"INCOMPLETE\"))"
+          },
+          {
+            "cell": "L16",
+            "formula": "=IF(HCSType1=\"NOT STARTED\",\"\",IF(HCSType1<>\"DONE\",\"IF FORM IS NOT COMPLETE, YOU WILL NOT BE ABLE TO CHANGE STATE\",\"\"))"
+          },
+          {
+            "cell": "N16",
+            "formula": "=IF(HCSType2=\"NOT STARTED\",\"\",IF(HCSType2<>\"DONE\",\"IF FORM IS NOT COMPLETE, YOU WILL NOT BE ABLE TO CHANGE STATE\",\"\"))"
+          }
+        ]
+      },
+      {
+        "name": "Revision Log",
+        "max_row": 7,
+        "max_column": 5,
+        "parameters": [],
+        "formulas": []
+      }
+    ]
+  }
+]
