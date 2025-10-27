@@ -144,4 +144,158 @@ namespace UnifiedUI.Models
             ComponentType = "Header";
         }
     }
+
+    /// <summary>
+    /// Hood-specific configuration
+    /// </summary>
+    public class HoodConfiguration : ComponentConfiguration
+    {
+        public int Bank { get; set; }
+        public int Stacks { get; set; }
+        public int DepthOption { get; set; } = 36; // 36, 42, or 48
+        public double FanDiameter { get; set; }
+        public int WindLoad { get; set; } = 50;
+        public double ShiftStiffeners { get; set; }
+        public double Adjust { get; set; }
+        
+        // Job information
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
+        
+        public HoodConfiguration()
+        {
+            ComponentType = "Hood";
+        }
+    }
+
+    /// <summary>
+    /// Walkway-specific configuration
+    /// </summary>
+    public class WalkwayConfiguration : ComponentConfiguration
+    {
+        // Walkway dimensions
+        public int Bank { get; set; }
+        public double PlenumCenterWidth { get; set; }
+        public double FloorHeight { get; set; }
+        public double RailHeight { get; set; }
+        public double OffsetFromColumnCenter { get; set; }
+        public double SupportCenterToEnd { get; set; }
+        public string ColumnSize { get; set; } = "W8×31";
+        public string MinimumStringerSize { get; set; } = "C6";
+        public string RailPosition { get; set; } = "Left";
+        
+        // Platform
+        public double PlatformWidth { get; set; }
+        public double PlatformLength { get; set; }
+        public double PlatformFloorHeight { get; set; }
+        public string PlatformMinimumStringerSize { get; set; } = "C6";
+        
+        // Handrail
+        public double HandrailLength { get; set; }
+        public double HandrailHeight { get; set; }
+        public double HandrailFloorHeight { get; set; }
+        public string HandrailMinimumStringerSize { get; set; } = "C6";
+        
+        // Job information
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
+        
+        public WalkwayConfiguration()
+        {
+            ComponentType = "Walkway";
+        }
+    }
+
+    /// <summary>
+    /// MachineryMount-specific configuration
+    /// </summary>
+    public class MachineryMountConfiguration : ComponentConfiguration
+    {
+        public int Bank { get; set; }
+        public string MountType { get; set; }
+        public double MountWidth { get; set; }
+        public double MountLength { get; set; }
+        public double MountHeight { get; set; }
+        public double LoadCapacity { get; set; }
+        public string MaterialSpec { get; set; }
+        
+        // Job information
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
+        
+        public MachineryMountConfiguration()
+        {
+            ComponentType = "Machinery Mount";
+        }
+    }
+
+    /// <summary>
+    /// Plenum-specific configuration
+    /// </summary>
+    public class PlenumConfiguration : ComponentConfiguration
+    {
+        public int Bank { get; set; }
+        public double PlenumWidth { get; set; }
+        public double PlenumLength { get; set; }
+        public double PlenumHeight { get; set; }
+        public double PlenumDepth { get; set; }
+        public string AccessType { get; set; }
+        public bool IncludeDrainPan { get; set; }
+        public string Material { get; set; } = "Galvanized";
+        
+        // Job information
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
+        
+        public PlenumConfiguration()
+        {
+            ComponentType = "Plenum";
+        }
+    }
+
+    /// <summary>
+    /// Structure-specific configuration
+    /// </summary>
+    public class StructureConfiguration : ComponentConfiguration
+    {
+        public int Bank { get; set; }
+        public string StructureType { get; set; } // "XCH" or "Z"
+        public double StructureWidth { get; set; }
+        public double StructureHeight { get; set; }
+        public double StructureLength { get; set; }
+        public int BayCount { get; set; }
+        public double BaySpacing { get; set; }
+        public string ColumnType { get; set; }
+        public string BeamType { get; set; }
+        public bool IncludeBracing { get; set; }
+        
+        // Job information
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
+        
+        public StructureConfiguration()
+        {
+            ComponentType = "Structure";
+        }
+    }
 }

@@ -210,8 +210,13 @@
     <ProjectReference Include="..\ModelTools\ModelTools.csproj" />
     <ProjectReference Include="..\Bundle\Bundle.csproj" />
     <ProjectReference Include="..\Excel\Excel.csproj" />
-    <!-- Note: Can add other component projects as needed: Header, Hood, MachineryMount, Plenum, Structure, Walkway -->
-    <!-- UnifiedUI provides modern WPF interface that calls existing automation code -->
+    <ProjectReference Include="..\Header\Header.csproj" />
+    <ProjectReference Include="..\Hood\Hood.csproj" />
+    <ProjectReference Include="..\MachineryMount\MachineryMount.csproj" />
+    <ProjectReference Include="..\Plenum\Plenum.csproj" />
+    <ProjectReference Include="..\Structure\Structure.csproj" />
+    <ProjectReference Include="..\Walkway\Walkway.csproj" />
+    <!-- All component projects now referenced - UnifiedUI can call any automation code -->
   </ItemGroup>
 
   <ItemGroup>
