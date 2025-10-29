@@ -1,58 +1,171 @@
-# Quick Root Cleanup Script
+# ROOT-Organize.ps1
+# Comprehensive Root Folder Cleanup Script
+# Enforces .cursorrules file organization rules
 # Run from: Solidworks_Automation root folder
 
-Write-Host "`n=== ROOT FOLDER CLEANUP ===" -ForegroundColor Cyan
-Write-Host "Creating organized structure...`n" -ForegroundColor Yellow
+Write-Host "`n========================================" -ForegroundColor Cyan
+Write-Host "   ROOT FOLDER ORGANIZATION" -ForegroundColor Green
+Write-Host "========================================`n" -ForegroundColor Cyan
 
-# Create folder structure
+# Define allowed files in root
+$allowedInRoot = @(
+    "README.md",
+    ".gitignore",
+    ".cursorrules",
+    "requirements.txt",
+    "config.json",
+    "ROOT-Organize.ps1",
+    "LICENSE",
+    "AGENTS.md"  # Special exception for agent guide
+)
+
+Write-Host "Creating folder structure..." -ForegroundColor Yellow
+
+# Create comprehensive folder structure
 $folders = @(
     "scripts/setup",
     "scripts/utilities",
+    "scripts/testing",
+    "scripts/build",
     "utilities/python",
     "analysis/excel",
-    "examples"
+    "examples",
+    "docs/Getting-Started",
+    "docs/Integration",
+    "docs/Architecture",
+    "docs/Testing",
+    "docs/Reference",
+    "docs/Status",
+    "docs/Migration"
 )
 
 foreach ($folder in $folders) {
     if (-not (Test-Path $folder)) {
         New-Item -ItemType Directory -Path $folder -Force | Out-Null
-        Write-Host "Created: $folder" -ForegroundColor Green
+        Write-Host "  ? Created: $folder" -ForegroundColor Green
     }
 }
 
-Write-Host "`nMoving files..." -ForegroundColor Yellow
+Write-Host "`nMoving misplaced files..." -ForegroundColor Yellow
+$moveCount = 0
 
-# Move Python scripts
-Move-Item -Path "*.py" -Destination "utilities/python/" -ErrorAction SilentlyContinue
-Write-Host "Moved Python scripts to utilities/python/" -ForegroundColor Green
+# Move Python scripts (except setup.py which can stay in root)
+Get-ChildItem -Path . -Filter "*.py" -File | Where-Object { $_.Name -ne "setup.py" } | ForEach-Object {
+    Move-Item -Path $_.FullName -Destination "utilities/python/" -Force
+    Write-Host "  ? $($_.Name) ? utilities/python/" -ForegroundColor White
+    $moveCount++
+}
 
-# Move PowerShell setup scripts
-Move-Item -Path "SETUP_*.ps1" -Destination "scripts/setup/" -ErrorAction SilentlyContinue
-Move-Item -Path "setup_python.ps1" -Destination "scripts/setup/" -ErrorAction SilentlyContinue
-Write-Host "Moved setup scripts to scripts/setup/" -ForegroundColor Green
+# Move PowerShell scripts to appropriate locations
+Get-ChildItem -Path . -Filter "*.ps1" -File | Where-Object { $_.Name -ne "ROOT-Organize.ps1" } | ForEach-Object {
+    $destination = switch -Wildcard ($_.Name) {
+        "SETUP_*" { "scripts/setup/"; break }
+        "COPY_*" { "scripts/utilities/"; break }
+        "TEST-*" { "scripts/testing/"; break }
+        "Test-*" { "scripts/testing/"; break }
+        "Build-*" { "scripts/build/"; break }
+        default { "scripts/"; break }
+    }
+    Move-Item -Path $_.FullName -Destination $destination -Force
+    Write-Host "  ? $($_.Name) ? $destination" -ForegroundColor White
+    $moveCount++
+}
 
-# Move PowerShell utility scripts
-Move-Item -Path "COPY_*.ps1" -Destination "scripts/utilities/" -ErrorAction SilentlyContinue
-Write-Host "Moved copy scripts to scripts/utilities/" -ForegroundColor Green
+# Move JSON files (except config.json)
+Get-ChildItem -Path . -Filter "*.json" -File | Where-Object { $_.Name -ne "config.json" } | ForEach-Object {
+    Move-Item -Path $_.FullName -Destination "analysis/excel/" -Force
+    Write-Host "  ? $($_.Name) ? analysis/excel/" -ForegroundColor White
+    $moveCount++
+}
 
-# Move Excel analysis files
-Move-Item -Path "*CELL_MAPPING*" -Destination "analysis/excel/" -ErrorAction SilentlyContinue
-Move-Item -Path "*COMPLETE_EXCEL*" -Destination "analysis/excel/" -ErrorAction SilentlyContinue
-Move-Item -Path "excel_scan_results.txt" -Destination "analysis/excel/" -ErrorAction SilentlyContinue
-Move-Item -Path "complete_excel_analysis.json" -Destination "analysis/excel/" -ErrorAction SilentlyContinue
-Write-Host "Moved analysis files to analysis/excel/" -ForegroundColor Green
+# Move Excel files to examples
+Get-ChildItem -Path . -Filter "*.xlsm" -File | ForEach-Object {
+    Move-Item -Path $_.FullName -Destination "examples/" -Force
+    Write-Host "  ? $($_.Name) ? examples/" -ForegroundColor White
+    $moveCount++
+}
 
-# Move sample Excel file
-Move-Item -Path "S25140-Prego1.xlsm" -Destination "examples/" -ErrorAction SilentlyContinue
-Write-Host "Moved sample file to examples/" -ForegroundColor Green
+# Move markdown files to appropriate docs/ locations
+Get-ChildItem -Path . -Filter "*.md" -File | Where-Object { $allowedInRoot -notcontains $_.Name } | ForEach-Object {
+    $destination = switch -Wildcard ($_.Name) {
+        # Testing guides
+        "*TEST_GUIDE*" { "docs/Testing/"; break }
+        "*ERROR_FIX*" { "docs/Testing/"; break }
+        "TEST_*" { "docs/Testing/"; break }
+        
+        # Getting Started
+        "*QUICKSTART*" { "docs/Getting-Started/"; break }
+        "*LAUNCH_PLAN*" { "docs/Getting-Started/"; break }
+        "QUICK_START*" { "docs/Getting-Started/"; break }
+        "GETTING_STARTED*" { "docs/Getting-Started/"; break }
+        
+        # Status reports
+        "*SCAN_REPORT*" { "docs/Status/"; break }
+        "*COMPLETE.md" { "docs/Status/"; break }
+        "*STATUS*" { "docs/Status/"; break }
+        "PROJECT_SCAN*" { "docs/Status/"; break }
+        "*PUSH_SCAN*" { "docs/Status/"; break }
+        "*ISOLATION*" { "docs/Status/"; break }
+        
+        # Reference docs
+        "*CHECKLIST*" { "docs/Reference/"; break }
+        "*REFERENCE*" { "docs/Reference/"; break }
+        
+        # Architecture
+        "*ARCHITECTURE*" { "docs/Architecture/"; break }
+        "*DESIGN*" { "docs/Architecture/"; break }
+        "*ANALYSIS*" { "docs/Architecture/"; break }
+        
+        # Integration
+        "*INTEGRATION*" { "docs/Integration/"; break }
+        
+        # Migration
+        "*MIGRATION*" { "docs/Migration/"; break }
+        
+        # Default to Architecture for other docs
+        default { "docs/Architecture/"; break }
+    }
+    
+    Move-Item -Path $_.FullName -Destination $destination -Force
+    Write-Host "  ? $($_.Name) ? $destination" -ForegroundColor White
+    $moveCount++
+}
 
-# Move documentation to proper location
-Move-Item -Path "BUNDLE_DUAL_APPROACH_ANALYSIS.md" -Destination "macros/csharp/Solidworks-Automation/docs/Architecture/" -ErrorAction SilentlyContinue
-Move-Item -Path "PROJECT_SCAN_REPORT_*.md" -Destination "macros/csharp/Solidworks-Automation/docs/Architecture/" -ErrorAction SilentlyContinue
-Write-Host "Moved documentation to docs/Architecture/" -ForegroundColor Green
+# Move text files to analysis
+Get-ChildItem -Path . -Filter "*.txt" -File | Where-Object { $_.Name -ne "requirements.txt" } | ForEach-Object {
+    Move-Item -Path $_.FullName -Destination "analysis/excel/" -Force
+    Write-Host "  ? $($_.Name) ? analysis/excel/" -ForegroundColor White
+    $moveCount++
+}
 
-Write-Host "`n=== CLEANUP COMPLETE ===" -ForegroundColor Green
-Write-Host "`nYour root folder is now clean!`n" -ForegroundColor Cyan
-Write-Host "Check git status: git status`n" -ForegroundColor White
+Write-Host "`n========================================" -ForegroundColor Cyan
+if ($moveCount -eq 0) {
+    Write-Host "   ? ROOT ALREADY CLEAN!" -ForegroundColor Green
+} else {
+    Write-Host "   ? MOVED $moveCount FILES" -ForegroundColor Green
+}
+Write-Host "========================================`n" -ForegroundColor Cyan
 
+# Verify root is clean
+Write-Host "Checking root folder..." -ForegroundColor Yellow
+$rootFiles = Get-ChildItem -Path . -File | Where-Object { 
+    ($_.Name -notlike ".*") -and ($allowedInRoot -notcontains $_.Name)
+}
 
+if ($rootFiles.Count -gt 0) {
+    Write-Host "??  WARNING: Unexpected files still in root:" -ForegroundColor Yellow
+    $rootFiles | ForEach-Object { Write-Host "  - $($_.Name)" -ForegroundColor Red }
+    Write-Host "`nPlease review these files manually." -ForegroundColor Yellow
+} else {
+    Write-Host "? Root folder is clean!" -ForegroundColor Green
+    Write-Host "`nAllowed files in root:" -ForegroundColor Cyan
+    Get-ChildItem -Path . -File | Where-Object { 
+        ($_.Name -notlike ".*") -and ($allowedInRoot -contains $_.Name)
+    } | ForEach-Object { Write-Host "  ? $($_.Name)" -ForegroundColor White }
+}
+
+Write-Host "`nNext steps:" -ForegroundColor Yellow
+Write-Host "  1. Review changes: git status" -ForegroundColor White
+Write-Host "  2. Stage changes: git add ." -ForegroundColor White
+Write-Host "  3. Commit: git commit -m 'chore: organize root folder'" -ForegroundColor White
+Write-Host ""

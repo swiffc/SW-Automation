@@ -8,8 +8,8 @@
     "TemplateBase": "templates\\certified",
     "HudsonCertified": "templates\\hudson_certified",
     "OutputBase": "output",
-    "VaultPath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Hudson_\\Drafting\\Certified",
-    "ActiveJobsVault": "C:\\AXC_VAULT\\Active",
+    "VaultPath": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\templates\\hudson_certified",
+    "ActiveJobsVault": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\output",
     "CodeStackPath": "codestack",
     "SolidDNAPath": "solidworks-api",
     "AutomationPath": "macros\\csharp\\Solidworks-Automation"
@@ -18,7 +18,7 @@
   "HudsonCertifiedTemplates": {
     "Enabled": true,
     "Description": "Hudson certified templates with HUD_ prefix",
-    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Hudson_\\Drafting\\Certified",
+    "SourcePath": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\templates\\hudson_certified",
     "ProjectPath": "templates\\hudson_certified",
     "OutputPath": "output\\hudson_certified",
     "UseLocalCopy": true,
@@ -40,7 +40,7 @@
   
   "JobBrowser": {
     "Enabled": true,
-    "ActiveJobsPath": "C:\\AXC_VAULT\\Active",
+    "ActiveJobsPath": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\output",
     "JobPattern": "S2\\d{4}",
     "DefaultFolder": "Drafting\\Certified",
     "StandardFolders": [
@@ -67,7 +67,7 @@
   "HeaderSectionTool": {
     "Enabled": true,
     "Description": "Advanced design table-driven header automation system",
-    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Header Section Tool",
+    "SourcePath": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\templates\\header_section_tool",
     "ProjectPath": "templates\\header_section_tool",
     "OutputPath": "output\\headers",
     "UseLocalCopy": true,
@@ -158,7 +158,7 @@
   "ZStructureTool": {
     "Enabled": true,
     "Description": "Z cooler structure automation system",
-    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\Z Structure Tool",
+    "SourcePath": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\templates\\z_structure_tool",
     "ProjectPath": "templates\\z_structure_tool",
     "OutputPath": "output\\z_structures",
     "UseLocalCopy": true,
@@ -174,7 +174,7 @@
   "XCHStructureTool": {
     "Enabled": true,
     "Description": "XCH (Cross-flow Heat Exchanger) cooler structure automation system",
-    "SourcePath": "C:\\AXC_VAULT\\Active\\_Automation Tools\\XCH Structure Tool",
+    "SourcePath": "C:\\Users\\DCornealius\\CascadeProjects\\Solidworks_Automation\\templates\\xch_structure_tool",
     "ProjectPath": "templates\\xch_structure_tool",
     "OutputPath": "output\\xch_structures",
     "UseLocalCopy": true,

@@ -1,0 +1,2303 @@
+# ?? SOLIDWORKS AUTOMATION SUITE - AI AGENT RULES
+
+**Purpose**: Comprehensive rules for AI agents managing this enterprise SolidWorks automation project  
+**Last Updated**: October 28, 2025  
+**Version**: 5.0.0
+
+---
+
+## ?? **DUAL AI VALIDATION PROTOCOL** (CRITICAL)
+
+### **MANDATORY: All Major Decisions Require Dual AI Analysis**
+
+**Starting October 28, 2025, ALL significant project decisions, implementations, and changes MUST be validated by BOTH AIs:**
+
+#### 1?? **Perplexity API** (Web Research & Best Practices)
+- **Purpose**: Real-time web search for latest industry standards
+- **Use For**:
+  - Finding similar projects and patterns
+  - Discovering latest techniques (2024-2025)
+  - Researching best practices from enterprise CAD apps
+  - Identifying proven UI/UX patterns
+  - Getting citations and real-world examples
+- **When**: Before implementing any new architecture, UI pattern, or major feature
+
+#### 2?? **OpenAI GPT-4** (Project-Specific Analysis)
+- **Purpose**: Deep analysis of YOUR specific project structure
+- **Use For**:
+  - Analyzing existing codebase and architecture
+  - Providing project-specific recommendations
+  - Generating code that fits your MVVM patterns
+  - Reasoning about implementation details
+  - Creating roadmaps and action plans
+- **When**: After Perplexity research, to apply findings to THIS project
+
+### **Dual AI Workflow (REQUIRED)**
+
+```
+???????????????????????????????????????????????????????????????
+?  STEP 1: PERPLEXITY RESEARCH                                ?
+?  ?? Query: "How do enterprise CAD apps handle X?"           ?
+?  ?? Find: Real-world examples, GitHub projects, patterns    ?
+?  ?? Output: Best practices with citations                   ?
+?                                                              ?
+?  STEP 2: OPENAI PROJECT ANALYSIS                            ?
+?  ?? Context: Your 82K lines, MVVM architecture, 4 tools     ?
+?  ?? Analyze: How to apply Perplexity findings to YOUR code  ?
+?  ?? Output: Specific implementation plan with code examples ?
+?                                                              ?
+?  STEP 3: COMBINED RECOMMENDATION                            ?
+?  ?? Validate: Both AIs agree on approach                    ?
+?  ?? Document: Save to docs/Architecture/                    ?
+?  ?? Implement: Follow the validated plan                    ?
+???????????????????????????????????????????????????????????????
+```
+
+### **When to Use Dual AI Validation**
+
+? **ALWAYS use for**:
+- New features (tool selector, component generation, etc.)
+- Architecture changes (MVVM patterns, service layers, etc.)
+- UI/UX decisions (navigation, workflows, layouts)
+- Integration patterns (templates, Excel, COM interop)
+- Performance optimizations
+- Testing strategies
+- Migration plans (SolidDNA, modernization, etc.)
+
+? **NOT required for**:
+- Bug fixes (single error correction)
+- Documentation updates (minor text changes)
+- Variable renaming
+- Simple code cleanup
+
+### **Implementation Scripts**
+
+**For Perplexity Research**:
+```powershell
+python utilities\python\ai_project_scaler.py --<topic>
+# OR create custom research query
+```
+
+**For OpenAI Analysis**:
+```powershell
+python utilities\python\ai_repo_assistant.py "Analyze X for this project"
+# OR use dual AI script
+python utilities\python\dual_ai_recommendation.py
+```
+
+**For Combined Analysis**:
+```powershell
+# Automatically queries both AIs and combines recommendations
+python utilities\python\dual_ai_recommendation.py
+```
+
+### **Documentation Requirements**
+
+**After dual AI validation, ALWAYS create**:
+- `docs/Architecture/{FEATURE}_RESEARCH.md` (Perplexity findings)
+- `docs/Architecture/{FEATURE}_ANALYSIS.md` (OpenAI analysis)
+- `docs/Architecture/{FEATURE}_PLAN.md` (Combined implementation)
+
+**Example**: Tool Selector feature:
+- ? `TOOL_SELECTOR_RESEARCH.md` (Perplexity)
+- ? `TOOL_SELECTOR_IMPLEMENTATION_PLAN.md` (Combined)
+- ? `DUAL_AI_RECOMMENDATIONS.md` (Both AIs)
+
+### **Success Criteria**
+
+A decision is validated when:
+- ? Perplexity found 3+ real-world examples
+- ? OpenAI provided project-specific code
+- ? Both AIs agree on general approach
+- ? Any disagreements are documented with reasoning
+- ? Implementation plan includes both perspectives
+
+### **Example: Tool Selector Feature**
+
+**? CORRECT PROCESS**:
+1. Perplexity researched: Fusion 360, Visual Studio, Siemens NX patterns
+2. OpenAI analyzed: Your 4 tools, 82K lines, MVVM architecture
+3. Both agreed: Two-level navigation, single window, dynamic content
+4. Result: Complete plan with code examples
+
+**? WRONG PROCESS**:
+1. Just ask OpenAI to "make a tool selector"
+2. Implement without research
+3. Miss proven patterns from enterprise apps
+4. Reinvent the wheel poorly
+
+### **API Keys Location**
+
+```
+.env file (root directory):
+OPENAI_API_KEY=sk-...
+PERPLEXITY_API_KEY=pplx-...
+```
+
+### **Cost Management**
+
+- Perplexity: ~$0.50 per research query
+- OpenAI: ~$0.30 per analysis
+- **Total per validation**: ~$0.80
+- **ROI**: Saves 40-80 hours of manual research
+- **Recommendation**: Budget $50/month for continuous validation
+
+---
+
+## ?? PROJECT OVERVIEW
+
+### Enterprise SolidWorks Automation Suite
+- **22 C# Projects** - Production-ready component generators
+- **650+ CAD Templates** - 4 automation tools integrated
+- **2,700+ API Examples** - Complete learning library
+- **700+ Documentation Pages** - Comprehensive guides
+- **Modern WPF UI** - UnifiedUI for all components
+
+### Core Components
+1. **UnifiedUI** - Modern WPF interface (primary development focus)
+2. **Bundle** - Heat exchanger tube bundles (21 parts, code-driven)
+3. **Header** - Inlet/outlet headers (100+ templates, design-table driven)
+4. **XCH Structure** - Cross-flow structures (316 files)
+5. **Z Structure** - Vertical structures (1,274 files)
+6. **Hood, Plenum, Walkway** - Additional components (legacy WinForms)
+7. **FileTools** - Core utilities & CommonData
+8. **Excel** - Excel integration & Prego system
+
+---
+
+## ??? ARCHITECTURE & TECHNOLOGY STACK
+
+### Technology
+- **Language**: C# (.NET Framework 4.8)
+- **UI**: WPF (Windows Presentation Foundation)
+- **Pattern**: MVVM (Model-View-ViewModel)
+- **CAD**: SolidWorks API (COM Interop)
+- **Data**: Excel Interop, XML, JSON
+- **Build**: MSBuild / Visual Studio 2022
+
+### Key Design Patterns
+1. **MVVM** - UI/Logic separation in UnifiedUI
+2. **Strategy Pattern** - Multiple generation approaches
+   - AssemblyUIStrategy (Code-driven)
+   - DesignTableStrategy (Excel-driven)
+3. **Singleton** - GlobalErrorHandler, CommonData
+4. **Factory** - Component creation
+5. **COM Object Manager** - Safe SolidWorks interop
+
+---
+
+## ?? DEVELOPMENT ENVIRONMENT
+
+### Prerequisites
+- **OS**: Windows 10/11 (SolidWorks requirement)
+- **IDE**: Visual Studio 2022 Professional (Admin mode)
+- **Framework**: .NET Framework 4.8
+- **CAD**: SolidWorks 2020+ installed
+- **Python**: CPython 3.9+ (for utilities)
+- **Excel**: Microsoft Excel (for Excel-driven automation)
+
+### Required Tools
+```powershell
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Required Python packages
+- pywin32 (Windows COM)
+- comtypes (COM type libraries)
+- pythonnet (Python-.NET interop)
+- openpyxl (Excel manipulation)
+```
+
+### Setup Scripts (One-time)
+```powershell
+# Run as Administrator
+.\scripts\setup\SETUP_TEMPLATE_INTEGRATION.ps1
+.\scripts\setup\SETUP_HEADER_SECTION_TOOL.ps1
+```
+
+---
+
+## ?? FILE ORGANIZATION RULES
+
+### **CRITICAL**: Automated File Organization System (4 Layers)
+This project has automated organization. **DO NOT** bypass these rules!
+
+1. **File Watcher** - Real-time monitoring
+2. **Pre-Commit Hook** - Prevents commits of misplaced files
+3. **GitHub Action** - Validates on push
+4. **Manual Script** - `ROOT-Organize.ps1`
+
+### File Placement Rules
+
+#### Python Scripts (*.py)
+```
+? utilities/python/           # All Python scripts
+? ROOT (exception: setup.py)  # Only setup.py
+? tests/                      # test_*.py files
+```
+
+#### PowerShell Scripts (*.ps1)
+```
+? scripts/setup/              # SETUP_*.ps1
+? scripts/utilities/          # COPY_*.ps1
+? scripts/testing/            # Test-*.ps1
+? scripts/build/              # Build-*.ps1
+? scripts/                    # Other *.ps1
+```
+
+#### Analysis Files
+```
+? analysis/excel/             # Excel analysis JSON/txt/md
+? ROOT (exception: config.json)
+```
+
+#### Documentation
+```
+? docs/Getting-Started/       # Getting started guides
+? docs/Integration/           # Integration guides
+? docs/Architecture/          # Architecture docs
+? docs/Testing/               # Testing guides
+? docs/Reference/             # Reference docs
+? docs/Status/                # Status reports
+? docs/Migration/             # Migration guides
+```
+
+#### Root Level Files (ONLY these allowed)
+```
+? README.md
+? .gitignore
+? .cursorrules
+? requirements.txt
+? config.json
+? ROOT-Organize.ps1
+? LICENSE
+```
+
+---
+
+## ?? CODING STANDARDS & PATTERNS
+
+### C# Coding Style
+```csharp
+// Naming Conventions
+- Classes: PascalCase
+- Methods: PascalCase
+- Properties: PascalCase
+- Private fields: _camelCase (underscore prefix)
+- Local variables: camelCase
+- Constants: UPPER_SNAKE_CASE
+
+// Organize using statements
+using System;                    // System namespaces first
+using System.Collections.Generic;
+using System.Linq;
+                                 // Blank line
+using SolidWorks.Interop.sldworks;  // External libraries
+using SolidWorks.Interop.swconst;
+                                 // Blank line
+using FileTools.Infrastructure;  // Project references
+
+// File structure
+namespace ProjectName
+{
+    /// <summary>
+    /// Clear XML documentation for all public members
+    /// </summary>
+    public class ClassName
+    {
+        #region Fields
+        private readonly Type _field;
+        #endregion
+
+        #region Properties
+        public Type Property { get; set; }
+        #endregion
+
+        #region Constructors
+        public ClassName() { }
+        #endregion
+
+        #region Public Methods
+        public void Method() { }
+        #endregion
+
+        #region Private Methods
+        private void HelperMethod() { }
+        #endregion
+    }
+}
+```
+
+### Required Error Handling Pattern
+```csharp
+// ALL UI entry points and component generation methods MUST follow this pattern
+
+try
+{
+    GlobalErrorHandler.LogInfo($"Starting {operation}...");
+    
+    // Validate inputs
+    if (string.IsNullOrEmpty(input))
+    {
+        GlobalErrorHandler.LogWarning("Invalid input provided");
+        return;
+    }
+    
+    // Perform operation
+    var result = PerformOperation();
+    
+    GlobalErrorHandler.LogInfo($"? {operation} completed successfully");
+}
+catch (COMException comEx)
+{
+    GlobalErrorHandler.LogError(comEx, "SolidWorks COM operation");
+    MessageBox.Show($"SolidWorks error: {comEx.Message}", "COM Error", 
+        MessageBoxButtons.OK, MessageBoxIcon.Error);
+}
+catch (Exception ex)
+{
+    GlobalErrorHandler.LogError(ex, "Operation context");
+    MessageBox.Show($"Error: {ex.Message}\n\nSee log for details.", 
+        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+}
+```
+
+### COM Object Management Pattern
+```csharp
+// ALWAYS use ComObjectManager for SolidWorks COM objects
+
+public class YourForm : Form
+{
+    private ComObjectManager _comManager;
+
+    public YourForm()
+    {
+        InitializeComponent();
+        _comManager = new ComObjectManager(); // Create in constructor
+    }
+
+    private void GenerateButton_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            var swApp = _comManager.GetSolidWorksApplication();
+            var swModel = swApp.ActiveDoc as ModelDoc2;
+            
+            // Use COM objects...
+        }
+        catch (Exception ex)
+        {
+            GlobalErrorHandler.LogError(ex, "Generate operation");
+        }
+    }
+
+    protected override void OnFormClosing(FormClosingEventArgs e)
+    {
+        base.OnFormClosing(e);
+        _comManager?.Dispose(); // CRITICAL: Always dispose
+    }
+}
+```
+
+### MVVM Pattern (UnifiedUI)
+```csharp
+// ViewModel pattern - DO NOT directly manipulate UI from ViewModel
+
+public class MainViewModel : INotifyPropertyChanged
+{
+    private string _statusMessage;
+    public string StatusMessage
+    {
+        get => _statusMessage;
+        set
+        {
+            _statusMessage = value;
+            OnPropertyChanged(nameof(StatusMessage));
+        }
+    }
+
+    public ICommand GenerateCommand { get; }
+
+    public MainViewModel()
+    {
+        GenerateCommand = new RelayCommand(GenerateComponent, CanGenerate);
+    }
+
+    private void GenerateComponent()
+    {
+        try
+        {
+            GlobalErrorHandler.LogInfo("Generating component...");
+            StatusMessage = "Generating...";
+            
+            // Business logic here
+            
+            StatusMessage = "? Complete";
+        }
+        catch (Exception ex)
+        {
+            GlobalErrorHandler.LogError(ex, "GenerateComponent");
+            StatusMessage = $"? Error: {ex.Message}";
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+
+---
+
+## ?? SAFE EDIT GUIDELINES
+
+### **NEVER** Modify These (Without Human Review)
+```
+? templates/                    # 650+ CAD template files (binary)
+? output/                       # Generated CAD files (binary)
+? *.SLDPRT, *.SLDASM, *.SLDDRW # SolidWorks files (binary)
+? *.dll, *.exe (in version control)
+? SETUP_*.ps1                   # Setup scripts (system-modifying)
+? .git/hooks/                   # Git hooks
+? config.json (structure)       # Only modify values, not structure
+```
+
+### **Caution** Required (Request Review)
+```
+?? Excel files (*.xlsx, *.xlsm)  # Design tables, configurations
+?? CommonData.cs partials        # Shared state across components
+?? GlobalErrorHandler.cs         # Error handling infrastructure
+?? ComObjectManager.cs           # COM memory management
+?? *.csproj files                # Project configuration
+?? Solidworks Automation.sln     # Solution structure
+```
+
+### **Safe** to Edit (With Testing)
+```
+? *.cs files (except listed above)
+? *.xaml files (UI)
+? *.md files (documentation)
+? *.py files (Python utilities)
+? Test files
+? Documentation
+```
+
+### Excel Schema Changes (HIGH RISK)
+When changing Excel-driven formats:
+1. Search for ALL references to the Excel file or cell addresses
+2. Update code in `macros/csharp` AND `utilities/python`
+3. Update documentation (e.g., `HEADER_SECTION_TOOL_INTEGRATION.md`)
+4. Create regression test with sample Excel
+5. Request human reviewer with domain knowledge
+6. Include rollback plan in PR
+
+---
+
+## ??? BUILD & DEPLOYMENT
+
+### Building the Solution
+```powershell
+# Open Visual Studio 2022 as Administrator
+cd macros\csharp\Solidworks-Automation
+
+# Build entire solution
+& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" "Solidworks Automation.sln" /p:Configuration=Debug /v:minimal
+
+# Build specific project (e.g., UnifiedUI)
+& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" UnifiedUI\UnifiedUI.csproj /p:Configuration=Debug /v:minimal
+```
+
+### Build Requirements
+- **ALWAYS** build before committing
+- **ZERO** errors allowed
+- Warnings are acceptable (COM library warnings expected)
+- Build time: ~6-10 seconds for full solution
+
+### Common Build Issues & Solutions
+```
+Issue: "Access Denied" on DLL
+Solution: Close running instances (UnifiedUI.exe, Bundle.exe)
+
+Issue: "Type library not registered"
+Solution: Run Visual Studio as Administrator
+
+Issue: "Assembly reference missing"
+Solution: Restore NuGet packages, rebuild dependencies first
+```
+
+---
+
+## ?? TESTING STRATEGIES
+
+### Testing Pyramid
+```
+Unit Tests (Rare - integration-focused codebase)
+    ?
+Integration Tests (Manual - requires SolidWorks)
+    ?
+Smoke Tests (Quick verification)
+```
+
+### Manual Testing Checklist (Before Commit)
+```
+1. Build solution (zero errors)
+2. Launch UnifiedUI.exe
+3. Test component generation (smoke test)
+4. Verify SolidWorks connection
+5. Check error handling (invalid input)
+6. Review log file (no unexpected errors)
+7. Close cleanly (no memory leaks)
+```
+
+### Automated Testing
+```powershell
+# Run automated tests (if available)
+cd tests
+dotnet test
+
+# Python utility tests
+cd utilities\python
+python -m pytest
+```
+
+### Testing Guidelines
+- **Integration-style tests** - This codebase primarily tests via SolidWorks integration
+- **Manual validation required** - Many operations need SolidWorks open
+- **Smoke tests are fast** - Quick validation of basic functionality
+- **Document test steps** - Include in PR descriptions
+
+---
+
+## ?? ERROR HANDLING REQUIREMENTS
+
+### Global Error Handler (MANDATORY)
+```csharp
+// Initialize in application entry point
+GlobalErrorHandler.Initialize();
+
+// Log information
+GlobalErrorHandler.LogInfo("Operation starting...");
+GlobalErrorHandler.LogInfo($"? Operation completed");
+
+// Log warnings
+GlobalErrorHandler.LogWarning("Potential issue detected");
+
+// Log errors (ALWAYS include context)
+GlobalErrorHandler.LogError(ex, "Operation context");
+
+// Log file location
+// C:\Temp\{AppName}_YYYYMMDD_HHMMSS.log
+```
+
+### Error Message Guidelines
+```csharp
+// ? BAD: Generic, unhelpful
+catch (Exception ex)
+{
+    MessageBox.Show("Error occurred");
+}
+
+// ? GOOD: Specific, actionable, with log reference
+catch (Exception ex)
+{
+    GlobalErrorHandler.LogError(ex, "Bundle generation");
+    MessageBox.Show(
+        $"Failed to generate bundle.\n\n" +
+        $"Error: {ex.Message}\n\n" +
+        $"Details logged to:\n{GlobalErrorHandler.GetLogFilePath()}\n\n" +
+        $"If problem persists, contact support.",
+        "Bundle Generation Error",
+        MessageBoxButtons.OK,
+        MessageBoxIcon.Error
+    );
+}
+```
+
+### Common Error Scenarios
+```
+1. SolidWorks Not Running
+   - Check IsSolidWorksAvailable()
+   - Show retry dialog
+   - Provide clear instructions
+
+2. COM Exception
+   - Log full exception
+   - Check SolidWorks version compatibility
+   - Verify COM registration
+
+3. File Access Error
+   - Check file permissions
+   - Verify path exists
+   - Handle read-only files
+
+4. Excel Error
+   - Verify Excel installed
+   - Check file not open in Excel
+   - Validate cell addresses exist
+
+5. Invalid Input
+   - Validate BEFORE processing
+   - Show specific validation message
+   - Highlight problematic field
+```
+
+---
+
+## ?? EXCEL INTEGRATION PATTERNS
+
+### Prego System (Excel-Driven Configuration)
+```csharp
+// Reading from Prego Excel
+var value = Excel.Prego.CellString(Excel.Prego.InputSheet, "B2");
+var numValue = Excel.Prego.CellDouble(Excel.Prego.InputSheet, "C7");
+
+// Multiple fallback cells
+var value = Excel.Prego.CellDouble(
+    Excel.Prego.InputSheet, 
+    "CG32",  // Primary
+    "CF32",  // Fallback 1
+    "CG30",  // Fallback 2
+    "CF30"   // Fallback 3
+);
+
+// Import header data
+Excel.Header_DataManager.ImportHeaderData_FromPrego();
+
+// ALWAYS null-check
+if (Excel.Prego.PregoDoc != null && Excel.Header_DataManager.HeaderAppData != null)
+{
+    // Safe to import
+}
+```
+
+### Excel Path Conventions
+```
+// OLD (Production - AXC_VAULT)
+C:\AXC_VAULT\Active\{JobNo}\Drafting\Headers\~Archive\{Job}-prego{Bank}.xlsm
+
+// NEW (Development - Local Output)
+C:\Users\{User}\CascadeProjects\Solidworks_Automation\output\{JobNo}\Drafting\Headers\~Archive\{Job}-prego{Bank}.xlsm
+
+// Use config.json to control which path
+```
+
+### Excel COM Safety
+```csharp
+// ALWAYS dispose Excel COM objects
+Excel.Application excelApp = null;
+Workbook workbook = null;
+try
+{
+    excelApp = new Excel.Application();
+    workbook = excelApp.Workbooks.Open(filePath);
+    // Use workbook...
+}
+finally
+{
+    // Release in reverse order
+    if (workbook != null)
+    {
+        workbook.Close(false);
+        Marshal.ReleaseComObject(workbook);
+    }
+    if (excelApp != null)
+    {
+        excelApp.Quit();
+        Marshal.ReleaseComObject(excelApp);
+    }
+    GC.Collect();
+    GC.WaitForPendingFinalizers();
+}
+```
+
+---
+
+## ?? SOLIDWORKS COM MANAGEMENT
+
+### Connection Pattern
+```csharp
+public static class SolidWorksConnection
+{
+    private static SldWorks _swApp;
+    
+    public static bool IsSolidWorksAvailable()
+    {
+        try
+        {
+            _swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+            return _swApp != null;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public static SldWorks GetApplication()
+    {
+        if (_swApp == null)
+        {
+            _swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+        }
+        return _swApp;
+    }
+
+    public static void ResetConnection()
+    {
+        if (_swApp != null)
+        {
+            Marshal.ReleaseComObject(_swApp);
+            _swApp = null;
+        }
+    }
+
+    public static void Disconnect()
+    {
+        ResetConnection();
+    }
+}
+```
+
+### Memory Leak Prevention
+```csharp
+// ? BAD: Creates COM object leak
+var feature = component.GetFeature();
+var name = feature.Name;  // "feature" never released!
+
+// ? GOOD: Explicit COM management
+IFeature feature = null;
+try
+{
+    feature = component.GetFeature();
+    var name = feature.Name;
+}
+finally
+{
+    if (feature != null)
+        Marshal.ReleaseComObject(feature);
+}
+
+// ? BETTER: Use ComObjectManager
+using (var manager = new ComObjectManager())
+{
+    var swApp = manager.GetSolidWorksApplication();
+    // All COM objects tracked and released automatically
+}
+```
+
+---
+
+## ?? DOCUMENTATION STANDARDS
+
+### Documentation Hierarchy
+```
+docs/
+??? Getting-Started/       # New user guides
+??? Integration/           # Component integration
+??? Architecture/          # System design
+??? Testing/               # Test procedures
+??? Reference/             # Technical reference
+??? Status/                # Project status reports
+??? Migration/             # Migration guides
+```
+
+### Required Documentation for New Features
+```
+1. Integration Guide (if component)
+   - Purpose & overview
+   - Technical architecture
+   - Usage instructions
+   - Code examples
+   - Testing procedures
+
+2. Status Report (for significant changes)
+   - What changed
+   - Why it changed
+   - Impact assessment
+   - Testing results
+
+3. API Documentation (for public methods)
+   - XML comments on all public members
+   - Example usage
+   - Parameter descriptions
+   - Return value documentation
+
+4. README Updates (if affects getting started)
+```
+
+### Markdown Standards
+```markdown
+# Main Title (One # only)
+
+## Section (Two ##)
+
+### Subsection (Three ###)
+
+- Use **bold** for emphasis
+- Use `code` for inline code
+- Use ```language blocks for code
+- Use tables for structured data
+- Use emojis sparingly for clarity (? ? ??)
+```
+
+---
+
+## ?? GIT COMMIT & PR GUIDELINES
+
+### Branch Naming
+```
+feat/<short-description>     # New features
+fix/<short-description>      # Bug fixes
+chore/<short-description>    # Maintenance tasks
+docs/<short-description>     # Documentation only
+refactor/<short-description> # Code refactoring
+
+Examples:
+feat/bundle-prego-import
+fix/com-memory-leak
+chore/update-dependencies
+docs/testing-guide
+```
+
+### Commit Messages
+```
+Format:
+<type>: <short summary> (50 chars max)
+
+<detailed description>
+- Bullet points for changes
+- Why the change was made
+- Any breaking changes
+
+Examples:
+
+feat: add Prego Excel import to Bundle configuration
+
+Implements 40+ field import from Prego Excel file including:
+- Job information (bank, customer, location, PO)
+- Bundle dimensions (width, depth, thickness)
+- Tube specifications (length, OD, wall thickness)
+- Vertical pitches (front and rear)
+
+Impact: Enables Excel-driven Bundle generation
+```
+
+### Pre-Commit Checklist
+```
+? Build succeeds (zero errors)
+? No files in root that should be organized
+? No temporary files committed
+? Documentation updated (if applicable)
+? Tests pass (if applicable)
+? Log files excluded
+? No hardcoded paths or credentials
+? No binary files (except approved templates)
+```
+
+### PR Requirements
+```
+1. Title: Clear, descriptive (follows commit message format)
+2. Description:
+   - What: Summary of changes
+   - Why: Reason for changes
+   - How: Technical approach
+   - Testing: How it was tested
+3. Checklist:
+   - [ ] Builds successfully
+   - [ ] Tested manually
+   - [ ] Documentation updated
+   - [ ] No breaking changes (or documented)
+4. Screenshots (if UI changes)
+5. Reviewer: Tag appropriate reviewer
+```
+
+### Commit Anti-Patterns (AVOID)
+```
+? "WIP"
+? "Fix"
+? "Update"
+? "Changes"
+? "Test"
+? "Cleanup"
+
+? "feat: implement Bundle Prego import with 40+ fields"
+? "fix: resolve COM memory leak in SideFramePart instantiation"
+? "refactor: extract CommonData mapping to SolidWorksService"
+```
+
+---
+
+## ?? COMPONENT-SPECIFIC RULES
+
+### UnifiedUI (Primary Development Focus)
+```
+Location: macros/csharp/Solidworks-Automation/UnifiedUI/
+
+Rules:
+- ? MVVM pattern strictly enforced
+- ? No business logic in code-behind (.xaml.cs)
+- ? All data binding through ViewModels
+- ? Commands for user actions (not event handlers)
+- ? Services injected via constructor
+- ? Async operations for long-running tasks
+- ? Progress callbacks for user feedback
+
+File Structure:
+UnifiedUI/
+??? Models/              # Data models (ComponentConfiguration)
+??? ViewModels/          # View logic (MainViewModel)
+??? Views/               # XAML UI (MainWindow.xaml)
+??? Services/            # Business logic (SolidWorksService)
+??? Commands/            # ICommand implementations
+??? Converters/          # Value converters
+```
+
+### Bundle (Production-Ready)
+```
+Location: macros/csharp/Solidworks-Automation/Bundle/
+
+Rules:
+- ? Code-driven generation (not Excel)
+- ? Strategy pattern for flexibility
+- ? All 21 parts validated
+- ? Global error handling required
+- ? COM safety via ComObjectManager
+- ? Comprehensive logging
+
+Key Classes:
+- Bundle.cs          # Main assembly coordinator
+- SideFrame.cs       # Side frame generation
+- TubeSheet.cs       # Tube sheet generation
+- Various parts/     # Individual part generators
+```
+
+### FileTools (Core Infrastructure)
+```
+Location: macros/csharp/Solidworks-Automation/FileTools/
+
+?? CAUTION: Changes affect ALL components
+
+Rules:
+- ?? Request review for ANY changes
+- ?? Test with all 7 components
+- ?? Document breaking changes
+- ?? Maintain backward compatibility
+
+Key Files:
+- CommonData/         # Shared static properties
+- Infrastructure/     # GlobalErrorHandler, ComObjectManager
+- Base/               # Base classes
+```
+
+### Excel (Data Integration)
+```
+Location: macros/csharp/Solidworks-Automation/Excel/
+
+Rules:
+- ? Always dispose COM objects
+- ? Null-check before accessing
+- ? Provide fallback cells
+- ? Log all Excel operations
+- ? Handle file-not-found gracefully
+
+Key Classes:
+- Prego.cs                    # Prego Excel system
+- Header_DataManager.cs       # Header data import
+- StaticHelpers.cs            # Excel utilities
+```
+
+### Templates (CAD Files)
+```
+Location: templates/
+
+? NEVER modify directly via automation
+?? Require human review for changes
+? Document template dependencies
+? Version control template changes
+? Test template changes thoroughly
+
+Directories:
+- header_section_tool/  # 142 files (779 MB)
+- hudson_certified/     # 213 files (59 MB)
+- xch_structure_tool/   # 316 files (476 MB)
+- z_structure_tool/     # 1,274 files (1.25 GB)
+```
+
+---
+
+## ? COMMON PITFALLS & SOLUTIONS
+
+### 1. COM Memory Leaks
+```
+Problem: SolidWorks process won't close, memory grows
+Solution: Use ComObjectManager, release ALL COM objects
+Pattern: See "SOLIDWORKS COM MANAGEMENT" section
+```
+
+### 2. Excel File Locked
+```
+Problem: "File in use" error when opening Excel
+Solution: 
+- Check Task Manager for Excel processes
+- Ensure Excel.Application.Quit() called
+- Use Marshal.ReleaseComObject()
+- Call GC.Collect() after release
+```
+
+### 3. Build Errors After Pull
+```
+Problem: "Type library not registered" or reference errors
+Solution:
+- Run Visual Studio as Administrator
+- Clean solution (Build > Clean Solution)
+- Restore NuGet packages
+- Rebuild dependencies first (FileTools, ModelTools)
+- Rebuild full solution
+```
+
+### 4. Path Not Found (Template Files)
+```
+Problem: Template file not found at runtime
+Solution:
+- Check config.json paths
+- Run SETUP_TEMPLATE_INTEGRATION.ps1
+- Verify files exist at expected location
+- Use absolute paths, not relative
+```
+
+### 5. Encoding Issues (Emojis in Logs)
+```
+Problem: Invalid character encoding (MC3000 error)
+Solution:
+- Use UTF-8 encoding for all text files
+- Remove emojis from log messages if needed
+- Or use standard characters (? instead of emoji)
+```
+
+### 6. UnifiedUI Build Locked
+```
+Problem: "File locked by UnifiedUI process"
+Solution:
+- Stop UnifiedUI.exe
+- Check Task Manager for orphaned processes
+- Close Visual Studio debugger
+- Rebuild
+```
+
+---
+
+## ?? QUICK REFERENCE
+
+### Daily Workflow
+```
+1. Pull latest changes
+   git pull origin main
+
+2. Build solution (verify clean)
+   MSBuild "Solidworks Automation.sln" /p:Configuration=Debug
+
+3. Make changes
+   - Follow coding standards
+   - Add error handling
+   - Update documentation
+
+4. Test locally
+   - Build (zero errors)
+   - Run UnifiedUI
+   - Test feature
+   - Check logs
+
+5. Commit
+   - Organize files (git status)
+   - Stage changes (git add)
+   - Commit with good message
+   - Push to remote
+```
+
+### Emergency Commands
+```powershell
+# Kill all SolidWorks/Excel processes
+Stop-Process -Name "SLDWORKS" -Force
+Stop-Process -Name "EXCEL" -Force
+
+# Clean build artifacts
+Remove-Item -Recurse -Force */bin, */obj, .vs
+
+# Reset file organization
+.\ROOT-Organize.ps1
+
+# Reset Git (careful!)
+git reset --hard HEAD
+git clean -fd
+```
+
+---
+
+## ?? PROJECT STATISTICS
+
+```
+Source Code:
+- 22 C# Projects
+- ~50,000 lines of C# code
+- 175 files in UnifiedUI
+- 314 total .cs files
+
+Templates:
+- 650+ CAD template files
+- 2.5 GB total size
+- 4 automation tools integrated
+
+Documentation:
+- 700+ pages
+- 30+ markdown files
+- 90+ integration guides
+
+API Examples:
+- 2,433 CodeStack examples
+- 315 SolidDNA framework files
+- Complete SolidWorks API coverage
+```
+
+---
+
+## ?? LEARNING RESOURCES
+
+### For New AI Agents
+1. Start with `README.md` - Project overview
+2. Read `GETTING_STARTED.md` - Setup guide
+3. Study `UNIFIEDUI_BUNDLE_INTEGRATION_GUIDE.md` - Deep dive
+4. Review `TESTING_GUIDE.md` - Testing procedures
+5. Check `MIGRATION_GUIDE.md` - Patterns to apply
+
+### For Specific Tasks
+- **Excel Integration**: See `PREGO_IMPORT_USER_GUIDE.md`
+- **Error Handling**: See `GlobalErrorHandler.cs`
+- **COM Management**: See `ComObjectManager.cs`
+- **MVVM Pattern**: See `UnifiedUI/ViewModels/`
+- **Testing**: See `docs/Testing/`
+
+### External Resources
+- SolidWorks API Help (in SolidWorks application)
+- CodeStack: https://www.codestack.net
+- SolidDNA: https://github.com/CAD-Booster/solidworks-api
+
+---
+
+## ? VALIDATION CHECKLIST
+
+Before considering any task complete:
+
+### Code Quality
+- [ ] Builds with zero errors
+- [ ] Follows coding standards
+- [ ] Error handling implemented
+- [ ] COM objects properly managed
+- [ ] Logging added for key operations
+- [ ] No hardcoded paths or credentials
+
+### Testing
+- [ ] Manual smoke test passed
+- [ ] Integration test (if applicable)
+- [ ] Error cases tested
+- [ ] Memory leaks checked
+- [ ] Log file reviewed
+
+### Documentation
+- [ ] Code comments added
+- [ ] XML documentation on public methods
+- [ ] README updated (if needed)
+- [ ] Integration guide updated (if needed)
+- [ ] Status report created (if significant)
+
+### Git Hygiene
+- [ ] Files properly organized
+- [ ] Commit message follows standards
+- [ ] No temporary files
+- [ ] No binary files (except approved)
+- [ ] PR description complete
+
+---
+
+## ?? WHEN BLOCKED
+
+### Requires SolidWorks Validation
+If change needs SolidWorks to test:
+1. Note clearly in PR description
+2. Tag human reviewer with SolidWorks access
+3. Provide test instructions
+4. Include sample data if needed
+
+### Touches Production Templates
+If change affects CAD templates:
+1. DO NOT commit template changes automatically
+2. Create separate PR for template updates
+3. Include before/after screenshots
+4. Request review from domain expert
+5. Include rollback plan
+
+### Breaking Changes
+If change breaks backward compatibility:
+1. Document breaking change clearly
+2. Provide migration guide
+3. Update all affected components
+4. Request architecture review
+5. Consider deprecation period
+
+---
+
+## ?? FINAL NOTES
+
+### This is a PRODUCTION system
+- Real engineers use this daily
+- Errors have real-world consequences
+- Quality and reliability are paramount
+- When in doubt, ask for human review
+
+### Prioritize Safety
+- Global error handling: MANDATORY
+- COM object cleanup: MANDATORY
+- Build verification: MANDATORY
+- Testing: MANDATORY
+
+### Keep It Organized
+- Automated file organization: ACTIVE
+- Documentation: UP TO DATE
+- Code quality: PROFESSIONAL
+- Git hygiene: EXCELLENT
+
+---
+
+**Version**: 5.0.0  
+**Last Updated**: October 28, 2025  
+**Maintained By**: AI Agents & Human Developers  
+**Status**: ? PRODUCTION READY - COMPREHENSIVE EDITION
+
+---
+
+## ?? QUICK COMMANDS FOR AI AGENTS
+
+### PowerShell Quick Commands
+These commands speed up common operations. Source with: `. .\.cursor\quick_commands.ps1`
+
+```powershell
+# Build UnifiedUI only (fast)
+Build-UnifiedUI   # Builds UnifiedUI project in seconds
+
+# Build entire solution
+Build-All         # Full solution build
+
+# Kill all running instances
+Stop-All          # Stops UnifiedUI, Bundle, Header, Hood, Structure, Walkway
+
+# Quick test UnifiedUI
+Test-UnifiedUI    # Stops all, waits, launches UnifiedUI
+
+# Quick test Bundle
+Test-Bundle       # Stops all, waits, launches Bundle
+
+# Find all TODOs
+Find-TODOs        # Search for TODO/FIXME/HACK in .cs files
+
+# Find all AXC_VAULT references
+Find-VaultRefs    # Find hardcoded AXC_VAULT paths
+
+# Check for running SolidWorks
+Check-SolidWorks  # Verify SolidWorks is running
+
+# Check for running Excel
+Check-Excel       # Check if Excel processes exist
+
+# Clean all bin/obj folders
+Clean-All         # Delete when build is broken
+
+# Show recent log file
+Show-Log          # Display last 50 lines of most recent log
+
+# Quick status check
+Check-Status      # Show processes, last build time
+```
+
+---
+
+## ?? ERROR SOLUTIONS DATABASE
+
+**Instant solutions for common errors AI agents encounter**
+
+### ?? CRITICAL BUILD ERRORS
+
+#### ? "Type library not registered"
+```
+Error CS0009: Metadata file '...' could not be opened
+-- 'Type library not registered'
+```
+**Instant Fix:**
+1. Close ALL Visual Studio instances
+2. Run Visual Studio 2022 as **Administrator**
+3. Clean Solution (Build > Clean Solution)
+4. Rebuild Solution (Build > Rebuild Solution)
+
+**Root Cause:** SolidWorks Interop DLLs require admin privileges.
+
+---
+
+#### ? "File locked by process"
+```
+Error: Cannot access file '...\UnifiedUI.exe'
+because it is being used by another process
+```
+**Instant Fix:**
+```powershell
+Stop-Process -Name "UnifiedUI","Bundle","Header" -Force
+Start-Sleep -Seconds 2
+# Rebuild
+```
+**Root Cause:** Previous instance still running in background.
+
+---
+
+#### ? "CS0122: 'Bundle' is inaccessible"
+```
+Error CS0122: 'Bundle.Bundle' is inaccessible
+due to its protection level
+```
+**Instant Fix:**
+```csharp
+// Change in Bundle/Bundle.cs
+internal class Bundle  // ? WRONG
+public class Bundle    // ? CORRECT
+```
+**Root Cause:** Class is `internal` but needs `public` for cross-project access.
+
+---
+
+#### ? "CS0103: GlobalErrorHandler does not exist"
+```
+Error CS0103: The name 'GlobalErrorHandler' does not exist
+```
+**Instant Fix:**
+```csharp
+// Add to top of file
+using FileTools.Infrastructure;
+```
+**Root Cause:** Missing using directive.
+
+---
+
+### ?? RUNTIME ERRORS
+
+#### ? NullReferenceException in Excel.dll
+```
+System.NullReferenceException: Object reference not set
+at Excel.Header_DataManager.ImportHeaderData_FromPrego()
+```
+**Instant Fix:**
+```csharp
+// BEFORE (crashes if Prego not open)
+Excel.Header_DataManager.ImportHeaderData_FromPrego();
+
+// AFTER (safe check)
+if (Excel.Prego.PregoDoc != null && 
+    Excel.Header_DataManager.HeaderAppData != null)
+{
+    Excel.Header_DataManager.ImportHeaderData_FromPrego();
+}
+else
+{
+    GlobalErrorHandler.LogWarning("Prego not initialized - skipping header import");
+}
+```
+**Root Cause:** Prego Excel file not opened before import.
+
+---
+
+#### ? "SolidWorks application not running"
+```
+COMException: "Cannot get SolidWorks application"
+```
+**Instant Fix:**
+```csharp
+// BEFORE (crashes if SW not running)
+var swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+
+// AFTER (safe check)
+if (!IsSolidWorksAvailable())
+{
+    MessageBox.Show("Please start SolidWorks first", "Error");
+    return;
+}
+```
+**Root Cause:** SolidWorks not running when component connects.
+
+---
+
+#### ? "TargetInvocationException" in Bundle
+```
+System.Reflection.TargetInvocationException: 
+Exception has been thrown by the target of an invocation
+```
+**Instant Fix:**
+```csharp
+// Add try-catch around instantiation
+try
+{
+    var component = new SomeComponent(parent, config);
+}
+catch (Exception ex)
+{
+    GlobalErrorHandler.LogError(ex, "Component instantiation");
+    // Continue with other components
+}
+```
+**Root Cause:** Component constructor failed (null parameters).
+
+---
+
+### ?? XAML ERRORS
+
+#### ? MC3000: "Invalid character encoding"
+```
+Error MC3000: 'Invalid character in the given encoding.
+Line 54 Position 20.'
+```
+**Instant Fix:**
+```xml
+<!-- BEFORE (emojis cause issues) -->
+<TextBlock Text="? Success"/>
+
+<!-- AFTER (use text or HTML entities) -->
+<TextBlock Text="Success"/>
+<!-- OR -->
+<TextBlock Text="&#x2705; Success"/>
+```
+**Root Cause:** XAML file saved without UTF-8 encoding.
+
+**Alternative Fix:**
+1. Open XAML in VS Code
+2. Click encoding in bottom right
+3. Select "Save with Encoding"
+4. Choose "UTF-8 with BOM"
+
+---
+
+#### ? "Cannot locate resource"
+```
+IOException: Cannot locate resource 'mainwindow.xaml'
+```
+**Instant Fix:**
+1. Check Build Action in Properties
+2. Should be: **Page** (not Embedded Resource)
+3. Rebuild project
+
+---
+
+### ?? COM ERRORS
+
+#### ? "Excel.exe remains in Task Manager"
+```
+Problem: EXCEL.EXE still running after closing app
+```
+**Instant Fix:**
+```csharp
+// ENSURE THIS PATTERN:
+Excel.Application excelApp = null;
+Workbook workbook = null;
+try
+{
+    excelApp = new Excel.Application();
+    workbook = excelApp.Workbooks.Open(filePath);
+    // Use workbook...
+}
+finally
+{
+    // CRITICAL: Release in reverse order
+    if (workbook != null)
+    {
+        workbook.Close(false);
+        Marshal.ReleaseComObject(workbook);
+    }
+    if (excelApp != null)
+    {
+        excelApp.Quit();
+        Marshal.ReleaseComObject(excelApp);
+    }
+    GC.Collect();
+    GC.WaitForPendingFinalizers();
+}
+```
+**Root Cause:** COM objects not properly released.
+
+---
+
+#### ? "Memory leak detected"
+```
+Problem: Memory usage grows continuously
+```
+**Instant Fix:**
+```csharp
+// Use ComObjectManager pattern
+using (var comManager = new ComObjectManager())
+{
+    var swApp = comManager.GetSolidWorksApplication();
+    // All COM objects auto-released when disposed
+}
+```
+**Root Cause:** COM objects not tracked and released.
+
+---
+
+### ?? DATA/CONFIGURATION ERRORS
+
+#### ? "Cell address not found"
+```
+Exception: Cell 'DF32' not found in worksheet
+```
+**Instant Fix:**
+```csharp
+// Use fallback cells
+var value = Excel.Prego.CellDouble(
+    Excel.Prego.InputSheet,
+    "DF32",  // Primary
+    "DE32",  // Fallback 1
+    "DF30"   // Fallback 2
+);
+```
+**Root Cause:** Excel schema changed or cell doesn't exist.
+
+---
+
+#### ? "Path not found: C:\AXC_VAULT\..."
+```
+DirectoryNotFoundException: Could not find path 'C:\AXC_VAULT\...'
+```
+**Instant Fix:**
+```csharp
+// BEFORE (hardcoded production path)
+var path = @"C:\AXC_VAULT\Active\{Job}\...";
+
+// AFTER (use project output folder)
+var basePath = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\output";
+var path = Path.Combine(basePath, job, "Drafting", "Headers", ...);
+```
+**Root Cause:** Development environment lacks access to production vault.
+
+---
+
+### ?? GIT/BUILD ERRORS
+
+#### ? "Pre-commit hook failed"
+```
+Error: pre-commit hook failed
+File in root should be in subdirectory
+```
+**Instant Fix:**
+```powershell
+.\ROOT-Organize.ps1
+# Then commit again
+```
+**Root Cause:** File in root should be in subdirectory.
+
+---
+
+#### ? "Large file rejected by GitHub"
+```
+Error: File size exceeds GitHub's 100 MB limit
+```
+**Instant Fix:**
+```gitignore
+# Add to .gitignore:
+output/
+templates/**/*.SLDASM
+templates/**/*.SLDPRT
+```
+```bash
+git rm --cached path/to/large/file
+```
+**Root Cause:** Trying to commit large CAD template files.
+
+---
+
+### ?? QUICK DIAGNOSTIC COMMANDS
+
+**Check Build Status:**
+```powershell
+cd macros\csharp\Solidworks-Automation
+& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" `
+  UnifiedUI\UnifiedUI.csproj /p:Configuration=Debug /v:q /nologo 2>&1 | 
+  Select-String "error|Build succeeded"
+```
+
+**Check Running Processes:**
+```powershell
+Get-Process | Where-Object { 
+    $_.ProcessName -in @("UnifiedUI","Bundle","Header","SLDWORKS","EXCEL") 
+} | Format-Table ProcessName, Id, StartTime
+```
+
+**Find Recent Log:**
+```powershell
+Get-ChildItem "$env:APPDATA\UnifiedUIApp\Logs" -Filter "*.log" | 
+    Sort-Object LastWriteTime -Descending | 
+    Select-Object -First 1 | 
+    Get-Content -Tail 50
+```
+
+**Search Error Patterns:**
+```powershell
+Select-String -Path *.cs -Pattern "TODO|FIXME|HACK|XXX" -Recurse
+```
+
+---
+
+### ?? ERROR PREVENTION CHECKLIST
+
+**Before committing code:**
+- [ ] Build succeeds (0 errors)
+- [ ] All using statements present
+- [ ] GlobalErrorHandler.LogError() for all exceptions
+- [ ] Null checks before accessing objects
+- [ ] COM objects properly disposed
+- [ ] No hardcoded AXC_VAULT paths
+- [ ] No emojis in XAML without UTF-8 encoding
+- [ ] Files organized (not in root)
+
+---
+
+## ?? BUG FIX WORKFLOW (6-PHASE SYSTEMATIC APPROACH)
+
+### PHASE 1: REPRODUCE
+
+**Gather Information:**
+- [ ] Error Message: _______________
+- [ ] Component: [UnifiedUI / Bundle / Header / Other]
+- [ ] When: [Startup / Button Click / During Generation]
+- [ ] Frequency: [Always / Sometimes / Once]
+
+**Find Log File:**
+```powershell
+Get-ChildItem "$env:APPDATA\*App\Logs" -Recurse -Filter "*.log" | 
+    Sort-Object LastWriteTime -Descending | 
+    Select-Object -First 1
+```
+
+**Steps to Reproduce:**
+1. _______________
+2. _______________
+3. _______________
+
+**Expected:** _______________  
+**Actual:** _______________
+
+---
+
+### PHASE 2: DIAGNOSE
+
+**Search Codebase:**
+```powershell
+Select-String -Path *.cs -Pattern "<error-text>" -Recurse -Context 3
+```
+
+- [ ] File: _______________
+- [ ] Line: _______________
+- [ ] Method: _______________
+
+**Check Recent Changes:**
+```bash
+git log --oneline --follow -n 10 -- <file-path>
+```
+
+**Identify Root Cause:**
+- [ ] Null reference (missing null check)
+- [ ] COM error (SolidWorks/Excel not available)
+- [ ] File not found (path incorrect)
+- [ ] Invalid cast (type mismatch)
+- [ ] Logic error (wrong calculation)
+- [ ] Other: _______________
+
+---
+
+### PHASE 3: FIX
+
+**Create Branch:**
+```bash
+git checkout -b fix/<short-description>
+```
+
+**Apply Minimal Fix - Choose Pattern:**
+
+**Pattern 1: Add Null Check**
+```csharp
+// BEFORE
+var result = someObject.Property;
+
+// AFTER
+if (someObject == null)
+{
+    GlobalErrorHandler.LogWarning("Object is null");
+    return; // or default value
+}
+var result = someObject.Property;
+```
+
+**Pattern 2: Add Error Handling**
+```csharp
+// BEFORE
+var result = RiskyOperation();
+
+// AFTER
+try
+{
+    var result = RiskyOperation();
+}
+catch (Exception ex)
+{
+    GlobalErrorHandler.LogError(ex, "RiskyOperation context");
+    MessageBox.Show($"Error: {ex.Message}\n\nSee log for details.", 
+        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+}
+```
+
+**Pattern 3: Fix Logic Error**
+```csharp
+// BEFORE (wrong)
+var total = quantity * price / discount;
+
+// AFTER (correct)
+var total = (quantity * price) * (1 - discount);
+```
+
+**Pattern 4: Add COM Safety**
+```csharp
+// BEFORE
+var swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+
+// AFTER
+if (!IsSolidWorksAvailable())
+{
+    MessageBox.Show("Please start SolidWorks", "Error");
+    return;
+}
+var swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+```
+
+**Update Documentation:**
+- [ ] Add XML comments if method is public
+- [ ] Update relevant .md file if behavior changed
+- [ ] Add to this error solutions section if new pattern
+
+**Add Logging:**
+```csharp
+GlobalErrorHandler.LogInfo($"Starting {operation}...");
+// ... operation ...
+GlobalErrorHandler.LogInfo($"? {operation} completed");
+```
+
+---
+
+### PHASE 4: VERIFY
+
+**Build Verification:**
+```powershell
+cd macros\csharp\Solidworks-Automation
+& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" `
+  UnifiedUI\UnifiedUI.csproj /p:Configuration=Debug /v:minimal /nologo
+```
+
+- [ ] Build Status: [? Success / ? Failed]
+- [ ] Errors: [0 / _____ errors]
+- [ ] Warnings: [_____ warnings - acceptable]
+
+**Manual Testing:**
+1. [ ] Stop all running instances: `Stop-Process -Name "UnifiedUI","Bundle","Header" -Force`
+2. [ ] Launch application
+3. [ ] Reproduce original bug scenario
+4. [ ] Verify fix works
+
+- [ ] Bug Fixed: [Yes / No]
+- [ ] No New Issues: [Yes / No]
+
+**Log File Verification:**
+```powershell
+Get-ChildItem "$env:APPDATA\UnifiedUIApp\Logs" -Filter "*.log" | 
+    Sort-Object LastWriteTime -Descending | 
+    Select-Object -First 1 | 
+    Get-Content -Tail 20
+```
+
+- [ ] No unexpected errors in log
+- [ ] Operation logged correctly
+- [ ] Error messages clear and helpful
+
+---
+
+### PHASE 5: COMMIT
+
+**Pre-Commit Checklist:**
+- [ ] Build succeeds (0 errors)
+- [ ] Manual test passed
+- [ ] Log file reviewed
+- [ ] No debug code left (Console.WriteLine, etc.)
+- [ ] No commented-out code (unless explanation)
+- [ ] Files organized (none in root)
+
+**Commit Message Format:**
+```
+fix: <what-was-broken> (<component>)
+
+<detailed-explanation>
+
+Root Cause: <why-it-broke>
+Solution: <how-you-fixed-it>
+Impact: <what-components-affected>
+
+Fixes #<issue-number>
+```
+
+**Example:**
+```
+fix: NullReferenceException in Prego import (UnifiedUI)
+
+Added null check for HeaderAppData before calling 
+ImportHeaderData_FromPrego(). Now gracefully skips 
+header import if Prego isn't initialized.
+
+Root Cause: Prego Excel file not opened before import
+Solution: Check PregoDoc != null before import
+Impact: UnifiedUI bundle generation
+
+Fixes #123
+```
+
+---
+
+### PHASE 6: PULL REQUEST
+
+**PR Template:**
+```markdown
+## ?? Bug Fix: <Short Description>
+
+### Problem
+Describe the bug that was fixed.
+
+### Root Cause
+Explain why the bug occurred.
+
+### Solution
+Describe how you fixed it.
+
+### Testing
+- [x] Build succeeds (0 errors)
+- [x] Manual test passed
+- [x] Log file verified
+- [ ] Tested by: _______________
+
+### Impact
+- **Components Affected:** UnifiedUI, Bundle, etc.
+- **Breaking Changes:** None
+- **Risk Level:** Low / Medium / High
+
+### Screenshots
+(if applicable)
+
+### Checklist
+- [x] Code follows .cursorrules guidelines
+- [x] Error handling added
+- [x] Logging updated
+- [x] Documentation updated
+- [x] No hardcoded paths
+- [x] COM objects properly disposed
+```
+
+**Push and Create PR:**
+```bash
+git push origin fix/<short-description>
+# Then create PR on GitHub
+```
+
+---
+
+### ?? BUG FIX SUCCESS CRITERIA
+
+**Bug is considered FIXED when:**
+1. ? Original error no longer occurs
+2. ? Build succeeds with 0 errors
+3. ? Manual test confirms fix
+4. ? Log file shows no new errors
+5. ? No regressions introduced
+6. ? Code follows project standards
+
+---
+
+## ?? VERIFICATION MATRIX
+
+| Check | Status | Notes |
+|-------|--------|-------|
+| Build succeeds | [ ] | 0 errors required |
+| Manual test passed | [ ] | Original scenario works |
+| Log file clean | [ ] | No unexpected errors |
+| No new warnings | [ ] | (or acceptable) |
+| Documentation updated | [ ] | If behavior changed |
+| PR created | [ ] | With test instructions |
+
+---
+
+## ?? AUTOMATED PROJECT HEALTH CHECKS
+
+**CRITICAL: AI Agents MUST run these checks before making changes**
+
+### **PHASE 1: PRE-CHANGE HEALTH SCAN (Always Run First)**
+
+Before touching ANY code, agents must verify project health:
+
+#### 1?? **Build Health Check**
+```powershell
+# Verify solution builds cleanly
+cd macros\csharp\Solidworks-Automation
+& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" `
+  "Solidworks Automation.sln" /p:Configuration=Debug /v:q /nologo 2>&1 | 
+  Select-String "error|succeeded"
+```
+
+**Expected:** "Build succeeded" with 0 errors
+**If Failed:** DO NOT proceed - fix build first!
+
+---
+
+#### 2?? **Dependency Verification**
+```powershell
+# Check for missing references
+cd macros\csharp\Solidworks-Automation
+Get-ChildItem -Recurse -Filter "*.csproj" | ForEach-Object {
+    Select-String -Path $_.FullName -Pattern "Reference Include" | 
+    Select-String -Pattern "SolidWorks|FileTools|ModelTools|Excel"
+}
+```
+
+**Verify:**
+- [ ] FileTools referenced by all projects
+- [ ] SolidWorks Interop referenced where needed
+- [ ] Excel referenced by UnifiedUI, Header
+- [ ] No broken project references
+
+---
+
+#### 3?? **File Organization Check**
+```powershell
+# Verify root is clean
+Get-ChildItem -Path . -File | Where-Object { 
+    $_.Name -notlike ".*" -and 
+    $_.Name -notin @("README.md","requirements.txt","config.json","ROOT-Organize.ps1","LICENSE","AGENTS.md")
+}
+```
+
+**Expected:** No output (root is clean)
+**If Failed:** Run `.\ROOT-Organize.ps1`
+
+---
+
+#### 4?? **Critical File Integrity Check**
+
+**Verify these files exist and are valid:**
+
+```powershell
+# Check critical infrastructure files
+$criticalFiles = @(
+    "macros\csharp\Solidworks-Automation\FileTools\Infrastructure\GlobalErrorHandler.cs",
+    "macros\csharp\Solidworks-Automation\FileTools\Infrastructure\ComObjectManager.cs",
+    "macros\csharp\Solidworks-Automation\FileTools\CommonData\CommonData.cs",
+    "macros\csharp\Solidworks-Automation\Excel\Prego.cs",
+    "macros\csharp\Solidworks-Automation\Excel\Header_DataManager.cs",
+    "config.json",
+    ".cursorrules"
+)
+
+foreach ($file in $criticalFiles) {
+    if (Test-Path $file) {
+        Write-Host "? $file" -ForegroundColor Green
+    } else {
+        Write-Host "? MISSING: $file" -ForegroundColor Red
+    }
+}
+```
+
+**All must exist** - if any missing, STOP and alert user!
+
+---
+
+#### 5?? **Cross-Reference Validation**
+
+**Before changing any shared code, verify usage:**
+
+```powershell
+# Example: If changing GlobalErrorHandler
+Select-String -Pattern "GlobalErrorHandler" -Path *.cs -Recurse | 
+    Select-Object Filename, LineNumber | 
+    Group-Object Filename | 
+    Select-Object Count, Name
+```
+
+**AI Must:**
+- [ ] Count references across entire codebase
+- [ ] Identify all dependent projects
+- [ ] Verify changes won't break dependents
+- [ ] Update ALL call sites if signature changes
+
+---
+
+### **PHASE 2: DURING CHANGES (Continuous Verification)**
+
+#### Safe Change Checklist
+
+**For EVERY code change, verify:**
+
+1. **Namespace Imports**
+   - [ ] All `using` statements present
+   - [ ] No unused imports (optional cleanup)
+   - [ ] Proper ordering (System ? External ? Project)
+
+2. **Error Handling**
+   - [ ] Every UI entry point has try-catch
+   - [ ] `GlobalErrorHandler.LogError(ex, context)` called
+   - [ ] User-friendly error messages shown
+
+3. **COM Object Safety**
+   - [ ] SolidWorks/Excel COM objects properly disposed
+   - [ ] Use `ComObjectManager` where applicable
+   - [ ] No COM object leaks
+
+4. **Null Checks**
+   - [ ] Check for null before accessing properties
+   - [ ] Validate Excel data before use
+   - [ ] Guard against empty collections
+
+5. **Path Handling**
+   - [ ] No hardcoded `C:\AXC_VAULT\` paths
+   - [ ] Use project output folder for development
+   - [ ] Use `Path.Combine()` for path construction
+
+---
+
+### **PHASE 3: POST-CHANGE VERIFICATION (Before Committing)**
+
+#### 1?? **Build Verification (MANDATORY)**
+```powershell
+# Rebuild affected projects
+cd macros\csharp\Solidworks-Automation
+& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" `
+  <ProjectName>\<ProjectName>.csproj /p:Configuration=Debug /v:minimal /nologo
+```
+
+**Must Succeed:** 0 errors (warnings acceptable)
+
+---
+
+#### 2?? **Linter Check**
+```powershell
+# Check for common issues
+Select-String -Path *.cs -Pattern "TODO|FIXME|HACK|XXX" -Recurse
+```
+
+**Review:** Document any new TODOs
+
+---
+
+#### 3?? **Integration Point Verification**
+
+**If changed FileTools, verify all 7 components still work:**
+
+```powershell
+# Quick smoke test each project
+$projects = @("UnifiedUI", "Bundle", "Header", "Hood", "Structure", "Walkway", "Plenum")
+foreach ($proj in $projects) {
+    Write-Host "Building $proj..." -ForegroundColor Yellow
+    & "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" `
+      "$proj\$proj.csproj" /p:Configuration=Debug /v:q /nologo
+}
+```
+
+**All must build** - if any fail, fix before committing!
+
+---
+
+#### 4?? **Documentation Sync Check**
+
+**When changing interfaces/public APIs:**
+
+```powershell
+# Check if documentation needs update
+$changedFiles = git diff --name-only HEAD
+if ($changedFiles -match "UnifiedUI|Bundle|Header") {
+    Write-Host "?? Check if these docs need updates:" -ForegroundColor Yellow
+    Get-ChildItem docs\ -Recurse -Filter "*INTEGRATION*.md"
+}
+```
+
+---
+
+### **AUTOMATED HEALTH SCAN SCRIPT**
+
+**AI agents can run this comprehensive check:**
+
+```powershell
+# PROJECT_HEALTH_CHECK.ps1
+Write-Host "`n=== COMPREHENSIVE PROJECT HEALTH CHECK ===" -ForegroundColor Cyan
+
+$issues = @()
+
+# 1. Build Check
+Write-Host "`n[1/6] Checking build status..." -ForegroundColor Yellow
+cd macros\csharp\Solidworks-Automation
+$buildResult = & "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" `
+  "Solidworks Automation.sln" /p:Configuration=Debug /v:q /nologo 2>&1
+if ($buildResult -match "Build FAILED") {
+    $issues += "? Solution does not build"
+} else {
+    Write-Host "? Build succeeds" -ForegroundColor Green
+}
+
+# 2. File Organization
+Write-Host "`n[2/6] Checking file organization..." -ForegroundColor Yellow
+$misplaced = Get-ChildItem -Path ..\..\.. -File | Where-Object { 
+    $_.Name -notlike ".*" -and 
+    $_.Name -notin @("README.md","requirements.txt","config.json","ROOT-Organize.ps1","LICENSE","AGENTS.md")
+}
+if ($misplaced) {
+    $issues += "? Files misplaced in root: $($misplaced.Name -join ', ')"
+} else {
+    Write-Host "? Root folder organized" -ForegroundColor Green
+}
+
+# 3. Critical Files
+Write-Host "`n[3/6] Checking critical files..." -ForegroundColor Yellow
+$criticalFiles = @(
+    "FileTools\Infrastructure\GlobalErrorHandler.cs",
+    "FileTools\Infrastructure\ComObjectManager.cs",
+    "FileTools\CommonData\CommonData.cs"
+)
+$missing = $criticalFiles | Where-Object { -not (Test-Path $_) }
+if ($missing) {
+    $issues += "? Critical files missing: $($missing -join ', ')"
+} else {
+    Write-Host "? All critical files present" -ForegroundColor Green
+}
+
+# 4. Error Handling Pattern
+Write-Host "`n[4/6] Checking error handling..." -ForegroundColor Yellow
+$filesWithoutErrorHandling = Get-ChildItem -Recurse -Filter "*Form.cs" | Where-Object {
+    $content = Get-Content $_.FullName -Raw
+    $content -notmatch "GlobalErrorHandler" -and $content -match "Click"
+}
+if ($filesWithoutErrorHandling) {
+    $issues += "?? Some forms missing error handling"
+    Write-Host "?? Warning: Some forms may lack error handling" -ForegroundColor Yellow
+} else {
+    Write-Host "? Error handling present" -ForegroundColor Green
+}
+
+# 5. COM Safety
+Write-Host "`n[5/6] Checking COM object safety..." -ForegroundColor Yellow
+$comLeaks = Select-String -Path "*.cs" -Pattern "GetActiveObject.*SldWorks" -Recurse | 
+    Where-Object { 
+        $file = Get-Content $_.Path -Raw
+        $file -notmatch "ReleaseComObject|ComObjectManager"
+    }
+if ($comLeaks) {
+    $issues += "?? Potential COM leaks detected"
+    Write-Host "?? Warning: Potential COM memory leaks" -ForegroundColor Yellow
+} else {
+    Write-Host "? COM safety checks pass" -ForegroundColor Green
+}
+
+# 6. Hardcoded Paths
+Write-Host "`n[6/6] Checking for hardcoded paths..." -ForegroundColor Yellow
+$hardcodedPaths = Select-String -Path "*.cs" -Pattern 'C:\\AXC_VAULT' -Recurse
+if ($hardcodedPaths) {
+    $issues += "?? Found hardcoded AXC_VAULT paths"
+    Write-Host "?? Warning: Hardcoded production paths found" -ForegroundColor Yellow
+} else {
+    Write-Host "? No hardcoded paths" -ForegroundColor Green
+}
+
+# Summary
+Write-Host "`n=== HEALTH CHECK SUMMARY ===" -ForegroundColor Cyan
+if ($issues.Count -eq 0) {
+    Write-Host "? PROJECT IS HEALTHY!" -ForegroundColor Green
+} else {
+    Write-Host "?? Issues Found:" -ForegroundColor Yellow
+    $issues | ForEach-Object { Write-Host "  $_" -ForegroundColor Red }
+}
+Write-Host ""
+cd ..\..\..
+```
+
+---
+
+### **AGENT WORKFLOW RULES**
+
+**AI Agents MUST follow this workflow:**
+
+1. **Before ANY Code Changes:**
+   - [ ] Run health check (or manual verification)
+   - [ ] Verify project builds
+   - [ ] Check file organization
+   - [ ] Review critical dependencies
+
+2. **During Changes:**
+   - [ ] Follow coding standards (see earlier sections)
+   - [ ] Add proper error handling
+   - [ ] Ensure COM safety
+   - [ ] Add null checks
+   - [ ] Update documentation
+
+3. **After Changes:**
+   - [ ] Build verification (0 errors)
+   - [ ] Test affected components
+   - [ ] Run linter
+   - [ ] Check integration points
+   - [ ] Verify file organization
+
+4. **Before Committing:**
+   - [ ] Final build check
+   - [ ] Run `ROOT-Organize.ps1` if needed
+   - [ ] Review changes (git diff)
+   - [ ] Write clear commit message
+   - [ ] No hardcoded paths remain
+
+---
+
+### **QUICK HEALTH CHECK COMMAND**
+
+**AI agents can use this one-liner:**
+
+```powershell
+# Quick project health check
+Write-Host "Build:" -NoNewline; cd macros\csharp\Solidworks-Automation; 
+if ((& "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" "Solidworks Automation.sln" /p:Configuration=Debug /v:q /nologo 2>&1) -match "succeeded") { 
+    Write-Host " ?" -ForegroundColor Green 
+} else { 
+    Write-Host " ?" -ForegroundColor Red 
+}; cd ..\..\..
+```
+
+---
+
+## ?? **WHY THIS MATTERS**
+
+**Without automated health checks:**
+- ? Silent build failures
+- ? Broken dependencies
+- ? Integration issues
+- ? Memory leaks
+- ? Production path errors
+
+**With automated health checks:**
+- ? Catch issues early
+- ? Maintain code quality
+- ? Prevent integration breaks
+- ? Ensure project functions
+- ? Safe, reliable changes
+
+---
+
+**AI Agents: Run health checks BEFORE and AFTER every change session!**
