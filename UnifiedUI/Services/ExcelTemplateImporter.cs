@@ -236,8 +236,8 @@ namespace UnifiedUI.Services
             // Look in common locations
             var searchPaths = new[]
             {
-                @"c:\Users\DCornealius\CascadeProjects\Solidworks_Automation",
-                @"c:\Jobs",
+                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "CascadeProjects", "Solidworks_Automation"),
+                @"C:\Jobs",
                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
 

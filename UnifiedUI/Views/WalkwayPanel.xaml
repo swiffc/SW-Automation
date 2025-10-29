@@ -1,7 +1,26 @@
-<UserControl x:Class="UnifiedUI.Views.WalkwayPanel"
+﻿<UserControl x:Class="UnifiedUI.Views.WalkwayPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Background="White">
+             Background="{StaticResource PrimaryBackground}">
+    
+    <UserControl.Resources>
+        <!-- Apply dark theme to ALL controls -->
+        <Style TargetType="TextBox" BasedOn="{StaticResource ModernTextBox}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource ModernComboBox}"/>
+        <Style TargetType="Label" BasedOn="{StaticResource ModernLabel}"/>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource PrimaryText}"/>
+        </Style>
+        <Style TargetType="Border" x:Key="SectionBorder">
+            <Setter Property="Background" Value="{StaticResource SecondaryBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusMedium}"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Effect" Value="{StaticResource SubtleShadow}"/>
+        </Style>
+    </UserControl.Resources>
+    
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="15">
         <StackPanel MaxWidth="800">
             
@@ -11,7 +30,7 @@
                     <TextBlock Text="🚶 Walkway Configuration" FontSize="20" FontWeight="Bold" 
                                Foreground="#009688" Margin="0,0,0,15" HorizontalAlignment="Center"/>
                     <TextBlock Text="Configuration panel ready for implementation" 
-                               FontSize="14" Foreground="#666" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                               FontSize="14" Foreground="{StaticResource SecondaryText}" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                     <TextBlock Text="Will include: Walkway width, length, grating type, handrail configuration, and access ladder specs" 
                                FontSize="12" Foreground="#999" TextWrapping="Wrap" HorizontalAlignment="Center"/>
                 </StackPanel>

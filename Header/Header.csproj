@@ -97,6 +97,18 @@
     <Compile Include="HeaderUI.Designer.cs">
       <DependentUpon>HeaderUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModernHeaderUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModernHeaderUI.Designer.cs">
+      <DependentUpon>ModernHeaderUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModernHeaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModernHeaderForm.Designer.cs">
+      <DependentUpon>ModernHeaderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PartialUI\HeaderUI.PartStiff.cs">
       <SubType>Form</SubType>
     </Compile>

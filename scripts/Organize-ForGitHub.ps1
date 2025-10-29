@@ -232,3 +232,8 @@ Write-Host "  Template files: $templateFiles" -ForegroundColor White
 
 Write-Host "`nReady for GitHub commit!`n" -ForegroundColor Green
 
+
+
+
+
+

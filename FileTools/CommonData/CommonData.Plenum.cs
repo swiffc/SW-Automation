@@ -29,7 +29,12 @@ namespace FileTools.CommonData
         public static event PropertyChangeHandler OnFanCountChanged;
 
         #endregion
-        static public double Plenum_Depth => Default.Plenum_Depth;
+        static public double Plenum_Depth
+        {
+            get => Default.Plenum_Depth;
+            set => Default.Plenum_Depth = value;
+        }
+        static public double Plenum_Height { get; set; }
         static public double BottomOfPlenumToClipHole { get; set; } = 2.5;
         static public double EndPanel_THK => Default.EndPanel_THK;
         static public double SidePanel_THK => Default.SidePanel_THK;

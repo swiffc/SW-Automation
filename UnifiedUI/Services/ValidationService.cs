@@ -8,6 +8,11 @@ namespace UnifiedUI.Services
     /// </summary>
     public class ValidationService
     {
+        /// <summary>
+        /// Validates a component configuration and returns validation results
+        /// </summary>
+        /// <param name="config">Configuration to validate</param>
+        /// <returns>ValidationResult containing errors, warnings, and valid field count</returns>
         public ValidationResult Validate(ComponentConfiguration config)
         {
             var result = new ValidationResult();
@@ -31,10 +36,22 @@ namespace UnifiedUI.Services
             if (string.IsNullOrWhiteSpace(config.JobNumber))
             {
                 result.AddError("Job Number is required");
+                return;
             }
-            else if (!config.JobNumber.StartsWith("S2"))
+
+            // Sanitize: trim whitespace
+            var jobNumber = config.JobNumber.Trim();
+            
+            // Validate format
+            if (!jobNumber.StartsWith("S2", StringComparison.OrdinalIgnoreCase))
             {
                 result.AddWarning("Job Number should start with 'S2'");
+            }
+            
+            // Validate length
+            if (jobNumber.Length < 5)
+            {
+                result.AddError("Job Number is too short (minimum 5 characters: S2XXXX)");
             }
             else
             {
@@ -80,39 +97,23 @@ namespace UnifiedUI.Services
 
             // For other components, use base properties
             // Width validation
-            if (config.Width <= 0)
+            if (config.Width > 0)
             {
-                // Don't error - might not be set yet
-                result.ValidCount++;
-            }
-            else if (config.Width < 24 || config.Width > 96)
-            {
-                result.AddWarning($"Width {config.Width}\" is outside typical range (24-96 inches)");
-                result.ValidCount++;
-            }
-            else
-            {
+                if (config.Width < 24 || config.Width > 96)
+                {
+                    result.AddWarning($"Width {config.Width}\" is outside typical range (24-96 inches)");
+                }
                 result.ValidCount++;
             }
 
             // Height validation
-            if (config.Height <= 0)
-            {
-                // Don't error - might not be set yet
-                result.ValidCount++;
-            }
-            else
+            if (config.Height > 0)
             {
                 result.ValidCount++;
             }
 
             // Depth validation
-            if (config.Depth <= 0)
-            {
-                // Don't error - might not be set yet
-                result.ValidCount++;
-            }
-            else
+            if (config.Depth > 0)
             {
                 result.ValidCount++;
             }

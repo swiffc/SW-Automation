@@ -17,31 +17,73 @@ namespace Walkway
     {
 
         // Static Read-Write Properties (User Inputs)
-        internal static string Project { get; set; } = "N001";
-        internal static string Customer { get; set; } = "Customer";
-        internal static string Client { get; set; } = "Client";
-        internal static string Location { get; set; } = "Town, State";
-        internal static string PurchaseOrder { get; set; } = "PO000001";
-        internal static string ItemNumber { get; set; } = "AC-1";
+        public static string Project { get; set; } = "N001";
+        public static string Customer { get; set; } = "Customer";
+        public static string Client { get; set; } = "Client";
+        public static string Location { get; set; } = "Town, State";
+        public static string PurchaseOrder { get; set; } = "PO000001";
+        public static string ItemNumber { get; set; } = "AC-1";
 
         // Model Inputs
-        internal static char Bank { get; set; } = 'A';
-        internal static string AcheColumnSize { get; set; } = "W6x15";
-        internal static double RailHeight { get; set; } = 42;
-        internal static double FloorHeight { get; set; } = 1.25;
-        internal static double OffsetFromColumnCenter { get; set; } = 24;
-        internal static double AcheColumnCenterToCenterWidth { get; set; } = 188.125;
-        internal static double Width { get; set; } = 30;
-        internal static double Length { get; set; } = 200;
-        internal static int MinStringerSize { get; set; } = 0;
-        internal static double EndToSupportCenter { get; set; } = 5.9375;
-        internal static bool UpdateLocation { get; set; } = true;
+        public static char Bank { get; set; } = 'A';
+        public static string AcheColumnSize { get; set; } = "W6x15";
+        public static double RailHeight { get; set; } = 42;
+        public static double FloorHeight { get; set; } = 1.25;
+        public static double OffsetFromColumnCenter { get; set; } = 24;
+        public static double AcheColumnCenterToCenterWidth { get; set; } = 188.125;
+        public static double Width { get; set; } = 30;
+        public static double Length { get; set; } = 200;
+        public static int MinStringerSize { get; set; } = 0;
+        public static double EndToSupportCenter { get; set; } = 5.9375;
+        public static bool UpdateLocation { get; set; } = true;
 
         // Drawing Inputs
-        internal static string Initials { get; set; } = "XX";
+        public static string Initials { get; set; } = "XX";
 
+        // SolidWorks COM connection
+        private static SldWorks _sw;
+        private static readonly object _swLock = new object();
 
-        internal static SldWorks SW = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+        /// <summary>
+        /// Gets the SolidWorks application instance (lazy-initialized)
+        /// </summary>
+        internal static SldWorks SW
+        {
+            get
+            {
+                if (_sw == null)
+                {
+                    lock (_swLock)
+                    {
+                        if (_sw == null)
+                        {
+                            try
+                            {
+                                _sw = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+                            }
+                            catch (COMException ex)
+                            {
+                                throw new InvalidOperationException(
+                                    "SolidWorks is not running. Please start SolidWorks and try again.", ex);
+                            }
+                        }
+                    }
+                }
+                return _sw;
+            }
+        }
+
+        /// <summary>
+        /// Disconnect from SolidWorks and release COM object
+        /// </summary>
+        public static void DisconnectSolidWorks()
+        {
+            if (_sw != null)
+            {
+                Marshal.ReleaseComObject(_sw);
+                _sw = null;
+            }
+        }
 
         public static void Create_Standard_EndWalkway(char bank, double width, double height, double floorHeight, int minimumStringerSize, double offsetFromColumnCenter, string columnSize, double plenumCenterWidth, double supportCenterToWalkwayEnd)
         {
@@ -1301,7 +1343,7 @@ namespace Walkway
 
 
         // Static Read-Only Properties
-        internal static string TemplateFolderPath => @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\Walkway";
+        internal static string TemplateFolderPath => @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\Walkway";
         internal static string DesktopFolderPath
         {
             get

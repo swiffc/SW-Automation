@@ -43,23 +43,35 @@ namespace Bundle.SideFrame.Derived.Children
         {
             get
             {
-                // Find the smallest key in UnitWeight that is greater than or equal to TotalUnitWeight.
-                var nextHighestWeight = UnitWeight.Keys
-                                                   .Where(key => key >= TotalUnitWeight)
-                                                   .DefaultIfEmpty(-1)
-                                                   .Min();
-
-                // If weight exceeds the max defined (95000 lbs), show a warning message once.
-                if (nextHighestWeight == -1)
+                try
                 {
-                    if (ShowMessage)
+                    // If TotalUnitWeight is not set or invalid, enable by default
+                    if (TotalUnitWeight <= 0)
+                        return true;
+
+                    // Find the smallest key in UnitWeight that is greater than or equal to TotalUnitWeight.
+                    var nextHighestWeight = UnitWeight.Keys
+                                                       .Where(key => key >= TotalUnitWeight)
+                                                       .DefaultIfEmpty(-1)
+                                                       .Min();
+
+                    // If weight exceeds the max defined (95000 lbs), show a warning message once.
+                    if (nextHighestWeight == -1)
                     {
-                        MessageBox.Show("Unit is over 95,000 lbs. and requires a lifting capacity evaluation.", "Weight Overload!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        ShowMessage = false;
+                        if (ShowMessage)
+                        {
+                            MessageBox.Show("Unit is over 95,000 lbs. and requires a lifting capacity evaluation.", "Weight Overload!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            ShowMessage = false;
+                        }
+                        return false; // Disable part.
                     }
-                    return false; // Disable part.
+                    return true; // Part is enabled.
                 }
-                return true; // Part is enabled.
+                catch (Exception ex)
+                {
+                    FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"Lug_HPC IsEnabled check failed: {ex.Message}");
+                    return true; // Enable by default on error
+                }
             }
         }
 
@@ -72,12 +84,23 @@ namespace Bundle.SideFrame.Derived.Children
         // Constructor for Lug_HPC
         public Lug_HPC(SubAssembly parentSubAssembly) : base(parentSubAssembly)
         {
-            // If the parent subassembly is a SideFrameWeldmentLeft, prevent showing message multiple times.
-            if (ParentSubAssembly is SideFrameWeldmentLeft)
-                ShowMessage = false;
+            try
+            {
+                // If the parent subassembly is a SideFrameWeldmentLeft, prevent showing message multiple times.
+                if (ParentSubAssembly is SideFrameWeldmentLeft)
+                    ShowMessage = false;
 
-            // Remove the assigned component path to allow this part to be used in multiple assemblies.
-            AssignedComponentPaths.Remove(FilePath);
+                // Remove the assigned component path to allow this part to be used in multiple assemblies.
+                if (!string.IsNullOrEmpty(FilePath) && AssignedComponentPaths != null)
+                {
+                    AssignedComponentPaths.Remove(FilePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"Lug_HPC constructor: {ex.Message}");
+                // Continue - this is not critical
+            }
         }
 
         // Overrides Part's Enabled property. Returns if the part is enabled or not based on IsEnabled.

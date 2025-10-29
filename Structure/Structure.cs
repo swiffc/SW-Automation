@@ -11,7 +11,7 @@ using Structure.Braces.Derived;
 
 namespace Structure
 {
-    internal class Structure : MainAssembly
+    public class Structure : MainAssembly
     {
         public Structure(int assemblyNumber, string assemblyDescription) : base(assemblyNumber, assemblyDescription 
             //,typeof(BraceL)

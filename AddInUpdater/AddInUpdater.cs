@@ -18,18 +18,18 @@ namespace AddInUpdater
 
         private static List<string> FoldersToSkip = new List<string>
         {
-            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\Hood\1976 Hood Program",
-            //@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\zRAGU - Design Table Automation",
-            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In",
-            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Installer",
+            @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\Hood\1976 Hood Program",
+            //@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\zRAGU - Design Table Automation",
+            @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\macros\csharp\Solidworks-Automation",
+            @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\macros\csharp\Solidworks-Automation\Solidworks Add-In",
 
-            @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\MachineryMount"
+            @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\MachineryMount"
         };
 
         public static void UpdateAddIn(bool restartSolidworks = false)
         {
             // Retrieve a reference to the specified folder within the vault
-            IEdmFolder5 folder = Vault5.GetFolderFromPath(@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting");
+            IEdmFolder5 folder = Vault5.GetFolderFromPath(@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified");
 
             // Recursively retrieve and list all files from the specified folder and its subfolders
             GetAllFilesInFolderAndSubFolders(folder);

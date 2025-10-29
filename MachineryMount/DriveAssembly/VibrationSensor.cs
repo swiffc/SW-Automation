@@ -51,7 +51,7 @@ namespace MachineryMount.DriveAssembly
         }
 
         public override string PartNo => StaticPartNo;
-        public override string FilePath => $@"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Vibration Sensors\{StaticPartNo}.SLDPRT";
+        public override string FilePath => $@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Vibration Sensors\{StaticPartNo}.SLDPRT";
 
 
         // Dictionaries

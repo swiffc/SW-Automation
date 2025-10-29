@@ -16,7 +16,7 @@ namespace MachineryMount.DriveAssembly.Derived
         public override bool Enabled => RollerBearingRequired;
         public override string StaticPartNo => SelectRollerBearing();
         public override string PartNo => StaticPartNo;
-        public override string FilePath => $@"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Bearings\{StaticPartNo}.SLDPRT";
+        public override string FilePath => $@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Bearings\{StaticPartNo}.SLDPRT";
         public override List<PositionData> Position
         {
             get

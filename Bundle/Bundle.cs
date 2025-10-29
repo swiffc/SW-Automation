@@ -15,7 +15,7 @@ using static FileTools.StaticFileTools;
 
 namespace Bundle
 {
-    internal class Bundle : MainAssembly
+    public class Bundle : MainAssembly
     {
         // Static properties
         static public double Width

@@ -108,9 +108,9 @@ namespace SolidWorks_Add_In
         }
         public static void VersionControl()
         {
-            string dLL = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Solidworks Add-In\Automation Guy.dll";
-            string updater = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInUpdater.exe";
-            string versionControl = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Automation\Add-In Updater\AddInDllVersionControl.exe";
+            string dLL = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\macros\csharp\Solidworks-Automation\Solidworks Add-In\bin\Debug\Automation Guy.dll";
+            string updater = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\macros\csharp\Solidworks-Automation\AddInUpdater\bin\Debug\AddInUpdater.exe";
+            string versionControl = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\macros\csharp\Solidworks-Automation\AddInDllVersionControl\bin\Debug\AddInDllVersionControl.exe";
 
             // Login
             EdmVault5 vault = new EdmVault5();
@@ -155,10 +155,10 @@ namespace SolidWorks_Add_In
                 {
                     if (process.ProcessName == "SLDWORKS")
                     {
+                        SldWorks swApp = null;
                         try
                         {
-                            object swInstance = Marshal.GetActiveObject("SldWorks.Application");
-                            SldWorks swApp = (SldWorks)swInstance;
+                            swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
 
                             // Close all documents without saving
                             swApp.CloseAllDocuments(false);
@@ -169,6 +169,15 @@ namespace SolidWorks_Add_In
                         catch (COMException)
                         {
                             // Handle the case where SolidWorks cannot be closed or is not responding
+                        }
+                        finally
+                        {
+                            // Release COM object
+                            if (swApp != null)
+                            {
+                                Marshal.ReleaseComObject(swApp);
+                                swApp = null;
+                            }
                         }
                     }
                 }
@@ -209,7 +218,7 @@ namespace SolidWorks_Add_In
             var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", string.Empty), "logo-small.bmp");
 
             // Create our Taskpane
-            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, $"Automation Guy {VersionNumber}");
+            mTaskpaneView = mSolidWorksApplication.CreateTaskpaneView2(imagePath, $"CHART {VersionNumber}");
 
             // Load our UI into the taskpane
             mTaskpaneHost = (TaskpaneHostUI)mTaskpaneView.AddControl(TaskpaneIntegration.SWTASKPANE_PROGID, string.Empty);
@@ -251,7 +260,7 @@ namespace SolidWorks_Add_In
                 rk.SetValue(null, 1);
 
                 // Set SolidWorks add-in title and description
-                rk.SetValue($"Title", "Automation Guy");
+                rk.SetValue($"Title", "CHART");
                 rk.SetValue("Description", "Your new best friend");
             }
         }

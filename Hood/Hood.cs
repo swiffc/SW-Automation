@@ -19,7 +19,7 @@ using System.Reflection;
 
 namespace Hood
 {
-    internal class Hood : HoodData
+    public class Hood : HoodData
     {
         public Hood()
         {
@@ -1972,7 +1972,7 @@ namespace Hood
             }
             else if (ringComponents.Count < Stacks)
             {
-                string ringFolderPath = @"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Fan Rings";
+                string ringFolderPath = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Fan Rings";
                 string ringFileName = ringString + ".SLDPRT";
                 string ringFilePath = Path.Combine(ringFolderPath, ringFileName);
 
@@ -2027,7 +2027,7 @@ namespace Hood
             {
                 if (guardComponent == null)
                 {
-                    string guardFolderPath = @"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Fan Guards";
+                    string guardFolderPath = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Fan Guards";
                     string guardFileName = guardString + ".SLDPRT";
                     string guardFilePath = Path.Combine(guardFolderPath, guardFileName);
 

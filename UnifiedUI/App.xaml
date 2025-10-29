@@ -3,60 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!-- Global application resources -->
+        <!-- 
+        =================================================================
+        MODERN DARK THEME - RESOURCE REGISTRATION
+        =================================================================
+        All theme files are loaded here for global access
+        Date: October 28, 2025
+        =================================================================
+        -->
         <ResourceDictionary>
-            <!-- Colors -->
-            <SolidColorBrush x:Key="PrimaryColor" Color="#2196F3"/>
-            <SolidColorBrush x:Key="AccentColor" Color="#4CAF50"/>
-            <SolidColorBrush x:Key="ErrorColor" Color="#F44336"/>
-            <SolidColorBrush x:Key="WarningColor" Color="#FF9800"/>
-            <SolidColorBrush x:Key="SuccessColor" Color="#4CAF50"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Base Colors & Resources -->
+                <ResourceDictionary Source="Themes/ModernDark.xaml"/>
+                
+                <!-- Button Styles -->
+                <ResourceDictionary Source="Themes/ButtonStyles.xaml"/>
+                
+                <!-- Input Styles (TextBox, ComboBox, CheckBox) -->
+                <ResourceDictionary Source="Themes/InputStyles.xaml"/>
+                
+                <!-- Panel Styles (Borders, Cards, Tabs) -->
+                <ResourceDictionary Source="Themes/PanelStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
             
-            <!-- Fonts -->
+            <!-- 
+            =================================================================
+            LEGACY COMPATIBILITY
+            =================================================================
+            Keep old color keys for any legacy code that still uses them
+            =================================================================
+            -->
+            <SolidColorBrush x:Key="PrimaryColor" Color="#0078D4"/>
+            <SolidColorBrush x:Key="AccentColor" Color="#10B981"/>
+            <SolidColorBrush x:Key="ErrorColor" Color="#EF4444"/>
+            <SolidColorBrush x:Key="WarningColor" Color="#F59E0B"/>
+            <SolidColorBrush x:Key="SuccessColor" Color="#10B981"/>
             <FontFamily x:Key="MainFont">Segoe UI</FontFamily>
-            
-            <!-- Button Styles -->
-            <Style x:Key="PrimaryButton" TargetType="Button">
-                <Setter Property="Background" Value="{StaticResource AccentColor}"/>
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Padding" Value="15,8"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="FontWeight" Value="SemiBold"/>
-                <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                                    CornerRadius="4"
-                                    Padding="{TemplateBinding Padding}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#45A049"/>
-                    </Trigger>
-                    <Trigger Property="IsEnabled" Value="False">
-                        <Setter Property="Background" Value="#CCCCCC"/>
-                        <Setter Property="Foreground" Value="#666666"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-
-            <!-- TextBox Styles -->
-            <Style x:Key="ValidatedTextBox" TargetType="TextBox">
-                <Setter Property="Padding" Value="5"/>
-                <Setter Property="BorderThickness" Value="2"/>
-                <Setter Property="BorderBrush" Value="#CCCCCC"/>
-                <Style.Triggers>
-                    <Trigger Property="Validation.HasError" Value="True">
-                        <Setter Property="BorderBrush" Value="{StaticResource ErrorColor}"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

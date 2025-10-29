@@ -95,42 +95,105 @@ namespace Bundle.SideFrame.Derived.Children
         // Method overrides
         protected override void Dimensions()
         {
-            EditDimension("THK", "SheetMetal", THK);
-            EditDimension("R", "SheetMetal", GetBendRadius(THK));
+            try
+            {
+                EditDimension("THK", "SheetMetal", THK);
+                EditDimension("R", "SheetMetal", GetBendRadius(THK));
 
-            EditDimension("Depth", "sk:Plate", Depth);
-            EditDimension("Flange", "sk:Plate", Depth + (IsToedOut ? -Flange : +Flange));
+                EditDimension("Depth", "sk:Plate", Depth);
+                EditDimension("Flange", "sk:Plate", Depth + (IsToedOut ? -Flange : +Flange));
 
-            EditDimension("FrontLength", "Plate", FrontLength);
-            EditDimension("RearLength", "Plate", RearLength);
+                EditDimension("FrontLength", "Plate", FrontLength);
+                EditDimension("RearLength", "Plate", RearLength);
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogError(ex, "SideFramePart basic dimensions failed");
+                throw;
+            }
 
-            AirSealHoles();
-            KeeperHolesAndFeatureControl();
-            SupportHolesAndFeatureControl();
-            PlenumHolesAndFeatureControl();
+            try
+            {
+                AirSealHoles();
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"AirSealHoles failed: {ex.Message}");
+                // Continue - not critical for basic frame creation
+            }
+
+            try
+            {
+                KeeperHolesAndFeatureControl();
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"KeeperHoles failed: {ex.Message}");
+                // Continue - not critical for basic frame creation
+            }
+
+            try
+            {
+                SupportHolesAndFeatureControl();
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"SupportHoles failed: {ex.Message}");
+                // Continue - not critical for basic frame creation
+            }
+
+            try
+            {
+                PlenumHolesAndFeatureControl();
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"PlenumHoles failed: {ex.Message}");
+                // Continue - not critical for basic frame creation
+            }
         }
 
 
         // Private methods
         void AirSealHoles()
         {
-            double y = THK + GetBendRadius(THK) + 1.15625;
+            try
+            {
+                double y = THK + GetBendRadius(THK) + 1.15625;
 
-            var _1013 = new Bottom_Front_AirSeal(0);
-            EditDimension("y1013", "sk:WebHole", y);
-            EditDimension("z1013", "sk:WebHole", _1013.Position[0].TranslationZ);
+                var _1013 = new Bottom_Front_AirSeal(0);
+                if (_1013 != null && _1013.Position != null && _1013.Position.Count > 0)
+                {
+                    EditDimension("y1013", "sk:WebHole", y);
+                    EditDimension("z1013", "sk:WebHole", _1013.Position[0].TranslationZ);
+                }
 
-            var _1014 = new Bottom_Rear_AirSeal(0);
-            EditDimension("y1014", "sk:WebHole", y);
-            EditDimension("z1014", "sk:WebHole", _1014.Position[0].TranslationZ);
+                var _1014 = new Bottom_Rear_AirSeal(0);
+                if (_1014 != null && _1014.Position != null && _1014.Position.Count > 0)
+                {
+                    EditDimension("y1014", "sk:WebHole", y);
+                    EditDimension("z1014", "sk:WebHole", _1014.Position[0].TranslationZ);
+                }
 
-            var _1015 = new Top_Front_AirSeal(0);
-            EditDimension("y1015", "sk:WebHole", y);
-            EditDimension("z1015", "sk:WebHole", _1015.Position[0].TranslationZ);
+                var _1015 = new Top_Front_AirSeal(0);
+                if (_1015 != null && _1015.Position != null && _1015.Position.Count > 0)
+                {
+                    EditDimension("y1015", "sk:WebHole", y);
+                    EditDimension("z1015", "sk:WebHole", _1015.Position[0].TranslationZ);
+                }
 
-            var _1016 = new Top_Rear_AirSeal(0);
-            EditDimension("y1016", "sk:WebHole", y);
-            EditDimension("z1016", "sk:WebHole", _1016.Position[0].TranslationZ);
+                var _1016 = new Top_Rear_AirSeal(0);
+                if (_1016 != null && _1016.Position != null && _1016.Position.Count > 0)
+                {
+                    EditDimension("y1016", "sk:WebHole", y);
+                    EditDimension("z1016", "sk:WebHole", _1016.Position[0].TranslationZ);
+                }
+            }
+            catch (Exception ex)
+            {
+                FileTools.Infrastructure.GlobalErrorHandler.LogWarning($"AirSealHoles detail failed: {ex.Message}");
+                throw; // Re-throw so outer handler can deal with it
+            }
         }
         void KeeperHolesAndFeatureControl()
         {

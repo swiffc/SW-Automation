@@ -18,7 +18,11 @@ namespace FileTools.CommonData
             get => Default.Plenum_Length; 
             set => Default.Plenum_Length = value; 
         }
-        static public double TotalColumnHeight => Default.TotalColumnHeight;
+        static public double TotalColumnHeight
+        {
+            get => Default.TotalColumnHeight;
+            set => Default.TotalColumnHeight = value;
+        }
         static public double FieldColumn_Height
         {
             get

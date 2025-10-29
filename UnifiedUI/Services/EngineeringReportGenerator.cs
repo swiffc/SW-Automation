@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text;
 using UnifiedUI.Models;
 
@@ -88,7 +89,8 @@ namespace UnifiedUI.Services
             report.AppendLine($"Row 2 Tube Count:   {config.TubeRow2Count} tubes");
             report.AppendLine($"Total Tubes:        {config.TubeRow1Count + config.TubeRow2Count} tubes");
             report.AppendLine($"Horizontal Pitch:   {config.HorizontalPitch:F3} inches");
-            report.AppendLine($"Vertical Pitch:     {config.VerticalPitch:F3} inches");
+            var avgVerticalPitch = config.FrontVerticalPitches.Count > 0 ? config.FrontVerticalPitches.Average() : 0;
+            report.AppendLine($"Avg Vertical Pitch: {avgVerticalPitch:F3} inches ({config.FrontVerticalPitches.Count} rows)");
             report.AppendLine();
             
             // Calculated Values
@@ -165,8 +167,9 @@ namespace UnifiedUI.Services
         private double CalculateBundleHeight(BundleConfiguration config)
         {
             // Simplified calculation - actual would come from Excel
-            // Assumes 2 rows with vertical pitch
-            return config.VerticalPitch + (2 * config.TubeOD) + (2 * config.SideFrameThickness);
+            // Assumes 2 rows with average vertical pitch
+            var avgVerticalPitch = config.FrontVerticalPitches.Count > 0 ? config.FrontVerticalPitches.Average() : 2.0;
+            return avgVerticalPitch + (2 * config.TubeOD) + (2 * config.SideFrameThickness);
         }
     }
 }

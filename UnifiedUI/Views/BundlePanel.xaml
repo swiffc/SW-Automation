@@ -1,66 +1,107 @@
 <UserControl x:Class="UnifiedUI.Views.BundlePanel"
-  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Background="White">
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource PrimaryBackground}">
     
-<ScrollViewer VerticalScrollBarVisibility="Auto" Padding="20">
+    <UserControl.Resources>
+        <!-- Apply dark theme to ALL controls in this panel -->
+        <Style TargetType="TextBox" BasedOn="{StaticResource ModernTextBox}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource ModernComboBox}"/>
+        <Style TargetType="Label" BasedOn="{StaticResource ModernLabel}"/>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource PrimaryText}"/>
+        </Style>
+        <Style TargetType="Border" x:Key="SectionBorder">
+            <Setter Property="Background" Value="{StaticResource SecondaryBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusMedium}"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Effect" Value="{StaticResource SubtleShadow}"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="20">
         <StackPanel MaxWidth="1000">
      
-   <!-- Header Banner -->
-    <Border CornerRadius="8" Padding="20" Margin="0,0,0,20">
-<Border.Background>
-  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-       <GradientStop Color="#1976D2" Offset="0.0"/>
-       <GradientStop Color="#2196F3" Offset="1.0"/>
-          </LinearGradientBrush>
-    </Border.Background>
+        <!-- Header Banner (MODERN DARK) -->
+        <Border Background="{StaticResource ElevatedSurface}"
+                BorderBrush="{StaticResource SuccessColor}"
+                BorderThickness="0,0,0,3"
+                CornerRadius="{StaticResource CornerRadiusMedium}" 
+                Padding="20" 
+                Margin="0,0,0,20"
+                Effect="{StaticResource SubtleShadow}">
             <StackPanel>
-    <TextBlock Text="🔧 Bundle Assembly Automation" 
-        FontSize="20" FontWeight="Bold" Foreground="White"/>
-      <TextBlock Text="Complete heat exchanger bundle configuration and generation" 
-        FontSize="12" Foreground="#E3F2FD" Margin="0,5,0,0"/>
- </StackPanel>
-   </Border>
+                <TextBlock Text="Bundle Assembly Automation" 
+                           FontSize="20" 
+                           FontWeight="SemiBold" 
+                           Foreground="{StaticResource PrimaryText}"/>
+                <TextBlock Text="Complete heat exchanger bundle configuration and generation" 
+                           FontSize="12" 
+                           Foreground="{StaticResource SecondaryText}" 
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
 
-       <!-- Quick Actions Bar -->
-            <Border Background="#F5F5F5" BorderBrush="#E0E0E0" BorderThickness="1" 
-           CornerRadius="6" Padding="15" Margin="0,0,0,20">
-       <Grid>
-        <Grid.ColumnDefinitions>
-     <ColumnDefinition Width="Auto"/>
-       <ColumnDefinition Width="*"/>
-     <ColumnDefinition Width="Auto"/>
-   </Grid.ColumnDefinitions>
-   
-     <StackPanel Grid.Column="0" Orientation="Horizontal">
-      <Button x:Name="btnImportPrego" Content="📥 Import Prego" Width="120" Height="32" Margin="0,0,10,0"
-            Background="#4CAF50" Foreground="White" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
-   <Button x:Name="btnSaveConfig" Content="💾 Save Config" Width="120" Height="32" Margin="0,0,10,0"
-    Background="#2196F3" Foreground="White" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
-      <Button x:Name="btnExport" Content="📤 Export" Width="100" Height="32"
-   Background="#FF9800" Foreground="White" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
-         </StackPanel>
-      
-        <StackPanel Grid.Column="2" Orientation="Horizontal">
-    <TextBlock Text="Template:" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="SemiBold"/>
-       <ComboBox x:Name="cmbTemplate" Width="200" Height="32">
-       <ComboBoxItem Content="Standard 2-Row Bundle" IsSelected="True"/>
-  <ComboBoxItem Content="High Capacity 3-Row"/>
- <ComboBoxItem Content="Custom Configuration"/>
-  </ComboBox>
-       </StackPanel>
-  </Grid>
-         </Border>
+        <!-- Quick Actions Bar (MODERN DARK) -->
+        <Border Background="{StaticResource SecondaryBackground}" 
+                BorderBrush="{StaticResource BorderColor}" 
+                BorderThickness="1" 
+                CornerRadius="{StaticResource CornerRadiusMedium}" 
+                Padding="15" 
+                Margin="0,0,0,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button x:Name="btnImportPrego" 
+                            Content="Import Prego" 
+                            Click="BtnImportPrego_Click"
+                            Style="{StaticResource SuccessButton}"
+                            MinWidth="120"/>
+                    <Button x:Name="btnSaveConfig" 
+                            Content="Save Config" 
+                            Click="BtnSaveConfig_Click"
+                            Style="{StaticResource PrimaryButton}"
+                            MinWidth="120"/>
+                    <Button x:Name="btnExport" 
+                            Content="Export" 
+                            Click="BtnExport_Click"
+                            Style="{StaticResource WarningButton}"
+                            MinWidth="100"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="Template:" 
+                               VerticalAlignment="Center" 
+                               Margin="0,0,10,0" 
+                               FontWeight="SemiBold"
+                               Foreground="{StaticResource PrimaryText}"/>
+                    <ComboBox x:Name="cmbTemplate" 
+                              Width="300" 
+                              Style="{StaticResource ModernComboBox}"
+                              ItemsSource="{Binding DataContext.AvailableTemplates, RelativeSource={RelativeSource AncestorType=Window}}"
+                              SelectedItem="{Binding DataContext.SelectedTemplate, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay}"
+                              DisplayMemberPath="DisplayName">
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+        </Border>
 
-    <!-- Job Information Section -->
-            <Expander x:Name="expJobInfo" Header="📋 JOB INFORMATION" IsExpanded="True" 
-    Margin="0,0,0,15" BorderBrush="#2196F3" BorderThickness="2">
-      <Expander.HeaderTemplate>
-      <DataTemplate>
-     <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#1976D2" Margin="5"/>
-  </DataTemplate>
-     </Expander.HeaderTemplate>
-      <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="White" Padding="15">
+        <!-- Job Information Section (MODERN DARK) -->
+        <Expander x:Name="expJobInfo" Header="JOB INFORMATION" IsExpanded="True" 
+                  Margin="0,0,0,15">
+            <Expander.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource PrimaryAccent}" Margin="5"/>
+                </DataTemplate>
+            </Expander.HeaderTemplate>
+            <Border Style="{StaticResource SectionBorder}">
           <Grid>
  <Grid.RowDefinitions>
      <RowDefinition Height="Auto"/>
@@ -78,7 +119,7 @@
 
  <!-- Row 1 -->
      <TextBlock Grid.Row="0" Grid.Column="0" Text="Job Number: *" VerticalAlignment="Center" Foreground="#D32F2F" FontWeight="SemiBold"/>
- <TextBox x:Name="txtJobNumber" Grid.Row="0" Grid.Column="1" Height="32" Padding="8" Margin="0,5" FontSize="13" BorderBrush="#2196F3" BorderThickness="2"
+ <TextBox x:Name="txtJobNumber" Grid.Row="0" Grid.Column="1" Height="32" Padding="8" Margin="0,5" FontSize="13" BorderBrush="{StaticResource PrimaryAccent}" BorderThickness="2"
      Text="{Binding DataContext.GlobalJobNumber, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <TextBlock Grid.Row="0" Grid.Column="3" Text="Bank:" VerticalAlignment="Center" FontWeight="SemiBold"/>
   <TextBox x:Name="txtBank" Grid.Row="0" Grid.Column="4" Height="32" Padding="8" Margin="0,5" FontSize="13" MaxLength="1"
@@ -103,23 +144,24 @@
            Text="{Binding DataContext.Initials, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
  <TextBlock Grid.Row="3" Grid.Column="3" Text="Titleblock:" VerticalAlignment="Center" FontWeight="SemiBold"/>
      <ComboBox x:Name="cmbTitleblock" Grid.Row="3" Grid.Column="4" Height="32" Margin="0,5"
-   SelectedItem="{Binding DataContext.Titleblock, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay}">
-  <ComboBoxItem Content="Hudson"/>
-  <ComboBoxItem Content="Smithco"/>
-      </ComboBox>
+               SelectedValue="{Binding DataContext.Titleblock, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay}"
+               SelectedValuePath="Content">
+         <ComboBoxItem Content="Hudson"/>
+         <ComboBoxItem Content="Smithco"/>
+     </ComboBox>
         </Grid>
       </Border>
        </Expander>
 
-  <!-- Bundle Dimensions Section -->
-    <Expander x:Name="expBundleDims" Header="📐 BUNDLE DIMENSIONS" IsExpanded="True" 
-         Margin="0,0,0,15" BorderBrush="#4CAF50" BorderThickness="2">
-             <Expander.HeaderTemplate>
-  <DataTemplate>
- <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#388E3C" Margin="5"/>
-      </DataTemplate>
-      </Expander.HeaderTemplate>
-     <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="#F1F8E9" Padding="15">
+        <!-- Bundle Dimensions Section (MODERN DARK) -->
+        <Expander x:Name="expBundleDims" Header="BUNDLE DIMENSIONS" IsExpanded="True" 
+                  Margin="0,0,0,15">
+            <Expander.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource SuccessColor}" Margin="5"/>
+                </DataTemplate>
+            </Expander.HeaderTemplate>
+            <Border Style="{StaticResource SectionBorder}">
 <Grid>
       <Grid.RowDefinitions>
    <RowDefinition Height="Auto"/>
@@ -134,23 +176,24 @@
       </Grid.ColumnDefinitions>
    
       <TextBlock Grid.Row="0" Grid.Column="0" Text="Bundle Width: *" VerticalAlignment="Center" FontWeight="Bold"/>
-           <TextBox x:Name="txtBundleWidth" Grid.Row="0" Grid.Column="1" Height="34" Padding="8" Margin="0,5" FontSize="14" BorderBrush="#4CAF50" BorderThickness="2"
+           <TextBox x:Name="txtBundleWidth" Grid.Row="0" Grid.Column="1" Height="34" Padding="8" Margin="0,5" FontSize="14" BorderBrush="{StaticResource SuccessColor}" BorderThickness="2"
 Text="{Binding DataContext.BundleWidth, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-     <TextBlock Grid.Row="0" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+     <TextBlock Grid.Row="0" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
     
 <TextBlock Grid.Row="1" Grid.Column="0" Text="Side Frame THK:" VerticalAlignment="Center" FontWeight="SemiBold"/>
              <ComboBox x:Name="cmbSideFrameTHK" Grid.Row="1" Grid.Column="1" Height="34" Margin="0,5"
-      Text="{Binding DataContext.SideFrameThickness, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-<ComboBoxItem Content="0.250"/>
-     <ComboBoxItem Content="0.375"/>
-  <ComboBoxItem Content="0.500"/>
-         </ComboBox>
-          <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+                       SelectedValue="{Binding DataContext.SideFrameThickness, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       SelectedValuePath="Content">
+                 <ComboBoxItem Content="0.250"/>
+                 <ComboBoxItem Content="0.375"/>
+                 <ComboBoxItem Content="0.500"/>
+             </ComboBox>
+          <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
 
       <TextBlock Grid.Row="2" Grid.Column="0" Text="Side Frame Depth:" VerticalAlignment="Center" FontWeight="SemiBold"/>
   <TextBox x:Name="txtSideFrameDepth" Grid.Row="2" Grid.Column="1" Height="34" Padding="8" Margin="0,5"
         Text="{Binding DataContext.SideFrameDepth, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-     <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+     <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
         
          <CheckBox x:Name="chkHeadersOutside" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
          Content="Headers Outside Frame" Margin="0,10,0,0" FontWeight="SemiBold"
@@ -160,14 +203,14 @@ Text="{Binding DataContext.BundleWidth, RelativeSource={RelativeSource AncestorT
           </Expander>
 
        <!-- Tube Configuration Section -->
-        <Expander x:Name="expTubeConfig" Header="🔩 TUBE CONFIGURATION" IsExpanded="True" 
-Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
+        <Expander x:Name="expTubeConfig" Header="TUBE CONFIGURATION" IsExpanded="True" 
+Margin="0,0,0,15" BorderBrush="{StaticResource WarningColor}" BorderThickness="2">
      <Expander.HeaderTemplate>
         <DataTemplate>
-    <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#F57C00" Margin="5"/>
+            <TextBlock Text="TUBE CONFIGURATION" FontSize="14" FontWeight="Bold" Foreground="#F57C00" Margin="5"/>
       </DataTemplate>
      </Expander.HeaderTemplate>
-       <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="#FFF8E1" Padding="15">
+            <Border Style="{StaticResource SectionBorder}">
           <StackPanel>
   <!-- Basic Tube Properties -->
   <TextBlock Text="Tube Specifications" FontWeight="Bold" FontSize="13" Margin="0,0,0,10" Foreground="#E65100"/>
@@ -188,17 +231,17 @@ Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
      <TextBlock Grid.Row="0" Grid.Column="0" Text="Tube Length:" VerticalAlignment="Center" FontWeight="SemiBold"/>
   <TextBox x:Name="txtTubeLength" Grid.Row="0" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
            Text="{Binding DataContext.TubeLength, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-    <TextBlock Grid.Row="0" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+    <TextBlock Grid.Row="0" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
        
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Tube Projection:" VerticalAlignment="Center" FontWeight="SemiBold"/>
       <TextBox x:Name="txtTubeProjection" Grid.Row="1" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
         Text="{Binding DataContext.TubeProjection, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-       <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+       <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
     
      <TextBlock Grid.Row="2" Grid.Column="0" Text="Tube OD:" VerticalAlignment="Center" FontWeight="SemiBold"/>
    <TextBox x:Name="txtTubeOD" Grid.Row="2" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
         Text="{Binding DataContext.TubeOD, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-   <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+   <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
      
 <TextBlock Grid.Row="3" Grid.Column="0" Text="Tube Wall THK:" VerticalAlignment="Center" FontWeight="SemiBold"/>
   <ComboBox x:Name="cmbTubeWallTHK" Grid.Row="3" Grid.Column="1" Height="32" Margin="0,5"
@@ -207,12 +250,12 @@ Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
   <ComboBoxItem Content="0.049"/>
       <ComboBoxItem Content="0.065"/>
         </ComboBox>
-      <TextBlock Grid.Row="3" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+      <TextBlock Grid.Row="3" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
         
    <TextBlock Grid.Row="4" Grid.Column="0" Text="Fin OD:" VerticalAlignment="Center" FontWeight="SemiBold"/>
      <TextBox x:Name="txtFinOD" Grid.Row="4" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
         Text="{Binding DataContext.FinOD, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-          <TextBlock Grid.Row="4" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+          <TextBlock Grid.Row="4" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
             </Grid>
  
      <Separator Margin="0,15"/>
@@ -236,21 +279,21 @@ Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
  <TextBlock Grid.Row="0" Grid.Column="0" Text="Row 1 Left Count:" VerticalAlignment="Center" FontWeight="SemiBold"/>
      <TextBox x:Name="txtRow1Left" Grid.Row="0" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
                 Text="{Binding DataContext.TubeRow1Left, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-    <TextBlock Grid.Row="0" Grid.Column="2" Text="tubes" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+    <TextBlock Grid.Row="0" Grid.Column="2" Text="tubes" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
           
          <TextBlock Grid.Row="1" Grid.Column="0" Text="Row 2 Left Count:" VerticalAlignment="Center" FontWeight="SemiBold"/>
    <TextBox x:Name="txtRow2Left" Grid.Row="1" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
   Text="{Binding DataContext.TubeRow2Left, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-         <TextBlock Grid.Row="1" Grid.Column="2" Text="tubes" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+         <TextBlock Grid.Row="1" Grid.Column="2" Text="tubes" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
   
  <TextBlock Grid.Row="2" Grid.Column="0" Text="Horizontal Pitch:" VerticalAlignment="Center" FontWeight="SemiBold"/>
   <TextBox x:Name="txtHorizPitch" Grid.Row="2" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
         Text="{Binding DataContext.HorizontalPitch, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-     <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+     <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
        
   <TextBlock Grid.Row="3" Grid.Column="0" Text="Total Quantity:" VerticalAlignment="Center" FontWeight="Bold" Foreground="#1976D2"/>
      <TextBlock x:Name="txtTubeQuantity" Grid.Row="3" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
-      Background="#E3F2FD" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" TextAlignment="Center"
+      Background="{StaticResource ElevatedSurface}" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" TextAlignment="Center"
      Text="{Binding DataContext.TubeQuantity, RelativeSource={RelativeSource AncestorType=Window}, Mode=OneWay}"/>
      </Grid>
       
@@ -272,26 +315,26 @@ Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Front Fin Strip Back:" VerticalAlignment="Center" FontWeight="SemiBold"/>
         <TextBox x:Name="txtFrontFinStrip" Grid.Row="0" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
         Text="{Binding DataContext.FrontFinStripBack, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-       <TextBlock Grid.Row="0" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+       <TextBlock Grid.Row="0" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
         
    <TextBlock Grid.Row="1" Grid.Column="0" Text="Rear Fin Strip Back:" VerticalAlignment="Center" FontWeight="SemiBold"/>
          <TextBox x:Name="txtRearFinStrip" Grid.Row="1" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
            Text="{Binding DataContext.RearFinStripBack, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-    <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+    <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
    </Grid>
  </StackPanel>
    </Border>
             </Expander>
 
             <!-- Tube Supports Section -->
-   <Expander x:Name="expTubeSupports" Header="🔧 TUBE SUPPORTS" IsExpanded="False" 
+   <Expander x:Name="expTubeSupports" Header="TUBE SUPPORTS" IsExpanded="False" 
       Margin="0,0,0,15" BorderBrush="#9C27B0" BorderThickness="2">
    <Expander.HeaderTemplate>
        <DataTemplate>
        <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#7B1FA2" Margin="5"/>
 </DataTemplate>
        </Expander.HeaderTemplate>
-    <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="#F3E5F5" Padding="15">
+            <Border Style="{StaticResource SectionBorder}">
       <Grid>
   <Grid.RowDefinitions>
      <RowDefinition Height="Auto"/>
@@ -307,12 +350,12 @@ Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
        <TextBlock Grid.Row="0" Grid.Column="0" Text="Support Spacing:" VerticalAlignment="Center" FontWeight="SemiBold"/>
      <TextBox x:Name="txtSupportSpacing" Grid.Row="0" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
            Text="{Binding DataContext.TubeSupportSpacing, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-  <TextBlock Grid.Row="0" Grid.Column="2" Text="feet" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+  <TextBlock Grid.Row="0" Grid.Column="2" Text="feet" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
   
   <TextBlock Grid.Row="1" Grid.Column="0" Text="Support Quantity:" VerticalAlignment="Center" FontWeight="SemiBold"/>
        <TextBox x:Name="txtSupportQuantity" Grid.Row="1" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
      Text="{Binding DataContext.TubeSupportQuantity, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-         <TextBlock Grid.Row="1" Grid.Column="2" Text="supports" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+         <TextBlock Grid.Row="1" Grid.Column="2" Text="supports" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
       
    <TextBlock Grid.Row="2" Grid.Column="0" Text="Support Size:" VerticalAlignment="Center" FontWeight="SemiBold"/>
       <ComboBox x:Name="cmbSupportSize" Grid.Row="2" Grid.Column="1" Height="32" Margin="0,5"
@@ -327,14 +370,14 @@ Margin="0,0,0,15" BorderBrush="#FF9800" BorderThickness="2">
   </Expander>
 
             <!-- Vertical Pitches Section -->
-         <Expander x:Name="expVerticalPitches" Header="📏 VERTICAL PITCHES (ADVANCED)" IsExpanded="False" 
+         <Expander x:Name="expVerticalPitches" Header="VERTICAL PITCHES (ADVANCED)" IsExpanded="False" 
       Margin="0,0,0,15" BorderBrush="#607D8B" BorderThickness="2">
          <Expander.HeaderTemplate>
    <DataTemplate>
     <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#455A64" Margin="5"/>
        </DataTemplate>
    </Expander.HeaderTemplate>
-    <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="#ECEFF1" Padding="15">
+            <Border Style="{StaticResource SectionBorder}">
        <Grid>
   <Grid.ColumnDefinitions>
    <ColumnDefinition Width="*"/>
@@ -455,7 +498,7 @@ Text="{Binding DataContext.RearPitch56, RelativeSource={RelativeSource AncestorT
     <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#5D4037" Margin="5"/>
           </DataTemplate>
           </Expander.HeaderTemplate>
-       <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="#EFEBE9" Padding="15">
+            <Border Style="{StaticResource SectionBorder}">
              <Grid>
      <Grid.RowDefinitions>
            <RowDefinition Height="Auto"/>
@@ -480,12 +523,12 @@ Text="{Binding DataContext.FanCount, RelativeSource={RelativeSource AncestorType
      <TextBlock Grid.Row="1" Grid.Column="0" Text="Plenum Length:" VerticalAlignment="Center" FontWeight="SemiBold"/>
   <TextBox x:Name="txtPlenumLength" Grid.Row="1" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
    Text="{Binding DataContext.PlenumLength, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-           <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+           <TextBlock Grid.Row="1" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
          
   <TextBlock Grid.Row="2" Grid.Column="0" Text="Offset from Center:" VerticalAlignment="Center" FontWeight="SemiBold"/>
  <TextBox x:Name="txtOffsetCenter" Grid.Row="2" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
        Text="{Binding DataContext.OffsetFromCenter, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-  <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+  <TextBlock Grid.Row="2" Grid.Column="2" Text="inches" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
   
  <TextBlock Grid.Row="3" Grid.Column="0" Text="Plenum Style:" VerticalAlignment="Center" FontWeight="SemiBold"/>
        <ComboBox x:Name="cmbPlenumStyle" Grid.Row="3" Grid.Column="1" Height="32" Margin="0,5"
@@ -506,7 +549,7 @@ SelectedItem="{Binding DataContext.ColumnSize, RelativeSource={RelativeSource An
     <TextBlock Grid.Row="5" Grid.Column="0" Text="Unit Weight:" VerticalAlignment="Center" FontWeight="SemiBold"/>
  <TextBox x:Name="txtWeight" Grid.Row="5" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
          Text="{Binding DataContext.Weight, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-    <TextBlock Grid.Row="5" Grid.Column="2" Text="lbs" VerticalAlignment="Center" Margin="10,0" Foreground="#666"/>
+    <TextBlock Grid.Row="5" Grid.Column="2" Text="lbs" VerticalAlignment="Center" Margin="10,0" Foreground="{StaticResource SecondaryText}"/>
 
    <TextBlock Grid.Row="6" Grid.Column="0" Text="Lug Stagger:" VerticalAlignment="Center" FontWeight="SemiBold"/>
       <TextBox x:Name="txtLugStagger" Grid.Row="6" Grid.Column="1" Height="32" Padding="8" Margin="0,5"
@@ -527,7 +570,7 @@ SelectedItem="{Binding DataContext.ColumnSize, RelativeSource={RelativeSource An
   <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" Foreground="#616161" Margin="5"/>
       </DataTemplate>
         </Expander.HeaderTemplate>
-      <Border BorderBrush="#E0E0E0" BorderThickness="1" Background="#FAFAFA" Padding="15">
+            <Border Style="{StaticResource SectionBorder}">
    <StackPanel>
   <CheckBox x:Name="chkCamber" Content="Enable Camber" Margin="0,5" FontSize="13" FontWeight="SemiBold"
        IsChecked="{Binding DataContext.EnableCamber, RelativeSource={RelativeSource AncestorType=Window}, Mode=TwoWay}"/>
@@ -564,7 +607,7 @@ Text="{Binding DataContext.PurchaseOrder, RelativeSource={RelativeSource Ancesto
       </Expander>
 
      <!-- Summary/Calculated Values -->
-        <Border BorderBrush="#4CAF50" BorderThickness="2" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+        <Border BorderBrush="{StaticResource SuccessColor}" BorderThickness="2" CornerRadius="8" Padding="20" Margin="0,0,0,20">
   <Border.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
       <GradientStop Color="#E8F5E9" Offset="0.0"/>
@@ -582,19 +625,19 @@ Text="{Binding DataContext.PurchaseOrder, RelativeSource={RelativeSource Ancesto
      </Grid.ColumnDefinitions>
         
          <StackPanel Grid.Column="0">
-     <TextBlock Text="Total Tubes" FontSize="11" Foreground="#666"/>
+     <TextBlock Text="Total Tubes" FontSize="11" Foreground="{StaticResource SecondaryText}"/>
       <TextBlock x:Name="txtCalcTubes" FontSize="24" FontWeight="Bold" Foreground="#4CAF50"
              Text="{Binding DataContext.CalculatedTubes, RelativeSource={RelativeSource AncestorType=Window}, Mode=OneWay}"/>
     </StackPanel>
     
    <StackPanel Grid.Column="1">
-       <TextBlock Text="Bundle Height" FontSize="11" Foreground="#666"/>
+       <TextBlock Text="Bundle Height" FontSize="11" Foreground="{StaticResource SecondaryText}"/>
              <TextBlock x:Name="txtCalcHeight" FontSize="24" FontWeight="Bold" Foreground="#4CAF50"
 Text="{Binding DataContext.CalculatedHeight, RelativeSource={RelativeSource AncestorType=Window}, Mode=OneWay, StringFormat={}{0:F2} in}"/>
          </StackPanel>
 
       <StackPanel Grid.Column="2">
-  <TextBlock Text="Weight" FontSize="11" Foreground="#666"/>
+  <TextBlock Text="Weight" FontSize="11" Foreground="{StaticResource SecondaryText}"/>
       <TextBlock x:Name="txtCalcWeight" FontSize="24" FontWeight="Bold" Foreground="#4CAF50"
    Text="{Binding DataContext.CalculatedWeight, RelativeSource={RelativeSource AncestorType=Window}, Mode=OneWay, StringFormat={}{0:N0} lbs}"/>
           </StackPanel>

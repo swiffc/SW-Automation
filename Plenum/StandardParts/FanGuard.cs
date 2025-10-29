@@ -28,7 +28,7 @@ namespace Plenum.StandardParts
         {
             get
             {
-                string guardFolderPath = @"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Fan Guards";
+                string guardFolderPath = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Fan Guards";
                 StaticFanGuardDictionary.TryGetValue(FanDiameter_Inches, out string partNo);
                 string guardFileName = partNo + ".SLDPRT";
                 string guardFilePath = Path.Combine(guardFolderPath, guardFileName);
@@ -82,7 +82,7 @@ namespace Plenum.StandardParts
         {
             get
             {
-                string guardFolderPath = @"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Fan Guards";
+                string guardFolderPath = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Fan Guards";
                 string guardFileName = PartNo + ".SLDPRT";
                 string guardFilePath = Path.Combine(guardFolderPath, guardFileName);
 
@@ -159,7 +159,7 @@ namespace Plenum.StandardParts
         {
             CallerType = callerType;
 
-            string guardFolderPath = @"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Fan Guards";
+            string guardFolderPath = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Fan Guards";
             string guardFileName = PartNo + ".SLDPRT";
             string guardFilePath = Path.Combine(guardFolderPath, guardFileName);
 

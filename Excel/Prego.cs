@@ -82,72 +82,53 @@ _excel = _comManager.Track(new Application());
           {
            GlobalErrorHandler.LogInfo("Opening Prego document");
        
-        string expectedFolder = $@"C:\AXC_VAULT\Active\{Project}\Drafting\Headers\~Archive\";
-         string expectedFileName = $"{Project}-prego{Bank - 'A' + 1}.xlsm";
-  string expectedFilePath = Path.Combine(expectedFolder, expectedFileName);
+                string expectedFolder = $@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\output\headers\~Archive\";
+                string expectedFileName = $"{Project}-prego{Bank - 'A' + 1}.xlsm";
+                string expectedFilePath = Path.Combine(expectedFolder, expectedFileName);
 
-        bool localFileExists = File.Exists(expectedFilePath);
+                bool localFileExists = File.Exists(expectedFilePath);
 
-        PleaseWait.Start("Connecting to AXC_VAULT");
-     
-            if (Developer)
-            {
-    ExcelApp.Visible = true;
-    }
-         else if (Vault.FileExists(expectedFilePath, out IEdmFile5 file))
-       {
-        if (!localFileExists)
-                  {
-       GlobalErrorHandler.LogInfo($"Downloading from vault: {expectedFilePath}");
-       Vault.DownloadFile(file);
-      }
-        }
+                // Check if file exists locally first
+                if (localFileExists)
+                {
+                    DialogResult result = MessageBox.Show(
+                        "Would you like to import data from Prego found at:" + "\n" + expectedFilePath,
+                        "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-           if (localFileExists)
-{
-  PleaseWait.Hide();
-                DialogResult result = MessageBox.Show(
-        "Would you like to import data from Prego found at:" + "\n" + expectedFilePath,
-     "Import Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        PleaseWait.Show($"Loading {expectedFileName}");
+                        FilePath = expectedFilePath;
+                        _pregoDoc = _comManager.Track(ExcelApp.Workbooks.Open(expectedFilePath));
+                        GlobalErrorHandler.LogInfo($"Prego opened: {expectedFilePath}");
+                    }
+                }
 
-if (result == DialogResult.Yes)
-    {
-           PleaseWait.Show($"Loading {expectedFileName}");
-  FilePath = expectedFilePath;
-             _pregoDoc = _comManager.Track(ExcelApp.Workbooks.Open(expectedFilePath));
-GlobalErrorHandler.LogInfo($"Prego opened: {expectedFilePath}");
-        }
-   }
+                // If not found locally or user declined, allow manual selection
+                if (_pregoDoc == null)
+                {
+                    if (Developer)
+                    {
+                        ExcelApp.Visible = true;
+                        expectedFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    }
 
-    if (_pregoDoc == null)
-{
-      if (!Developer)
-   PleaseWait.Show($"Loading...");
+                    OpenFileDialog openFileDialog = new OpenFileDialog
+                    {
+                        Title = "Select Prego file",
+                        Filter = "Excel files (*.xlsm)|*.xlsm",
+                        FilterIndex = 1,
+                        InitialDirectory = expectedFolder,
+                    };
 
- if (Developer)
-    {
-   expectedFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                 PleaseWait.Hide();
-           }
-
-          OpenFileDialog openFileDialog = new OpenFileDialog
-     {
-        Title = "Select Prego file",
-            Filter = "Excel files (*.xlsm)|*.xlsm",
-    FilterIndex = 1,
-       InitialDirectory = expectedFolder,
-};
-
-      if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-   PleaseWait.Show($"Loading {openFileDialog.FileName}");
-        FilePath = openFileDialog.FileName;
-     _pregoDoc = _comManager.Track(ExcelApp.Workbooks.Open(openFileDialog.FileName));
-             GlobalErrorHandler.LogInfo($"Prego opened (manual selection): {FilePath}");
-       }
-             }
-
-        PleaseWait.Hide();
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        PleaseWait.Show($"Loading {openFileDialog.FileName}");
+                        FilePath = openFileDialog.FileName;
+                        _pregoDoc = _comManager.Track(ExcelApp.Workbooks.Open(openFileDialog.FileName));
+                        GlobalErrorHandler.LogInfo($"Prego opened (manual selection): {FilePath}");
+                    }
+                }        PleaseWait.Hide();
         }
  catch (Exception ex)
             {

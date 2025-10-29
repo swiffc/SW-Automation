@@ -1003,7 +1003,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
             {
                 modelDoc2.ShowNamedView2("*Isometric", -1);
                 modelDoc2.ViewZoomtofit2();
-                System.Windows.Forms.MessageBox.Show("Automation tool has finished executing", "Automation Guy", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                System.Windows.Forms.MessageBox.Show("Automation tool has finished executing", "CHART", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             }
         }
         public static ModelDoc2 OpenDocument(string filePath, string configurationName)
@@ -1614,7 +1614,7 @@ DDDDDDDDDDDDD              OOOOOOOOO      NNNNNNNN         NNNNNNN EEEEEEEEEEEEE
         // Duplicate SW property removed - already defined at line 42 with lazy initialization
         public static Spec StaticMaterialSpec { get; set; } = Spec.A36;
         public static string TemplateFolderPath =>
-                $@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\{AssemblyDesc}";
+                $@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\{AssemblyDesc}";
         public static AssemblyDoc MainAssemblyDoc { get; set; }
         public static string AssemblyPath => $@"{DesktopFolderPath}\{Default.Project}-{AssemblyNumber}{Default.Bank}.SLDASM";
         public static List<string> AssignedComponentPaths = new List<string>();

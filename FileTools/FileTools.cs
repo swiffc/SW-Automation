@@ -58,7 +58,7 @@ namespace FileTools
                 System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) +
                 $@"\{Project}-{AssemblyNumber}{Bank}";
             TemplateFolderPath =
-                $@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\{AssemblyName}".ToLower();
+                $@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\{AssemblyName}".ToLower();
             Initials = initials;
         }
 
@@ -393,7 +393,7 @@ namespace FileTools
             string drawingFileName = $"{Project}-{AssemblyNumber}{Bank}.SLDDRW";
 
             string TemplateFolderPath =
-                $@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\{AssemblyName}";
+                $@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\{AssemblyName}";
 
             string assemblyTemplateFile = $@"{TemplateFolderPath}\JOBNO-{AssemblyNumber}.SLDASM";
             string drawingTemplateFile = $@"{TemplateFolderPath}\JOBNO-{AssemblyNumber}.SLDDRW";

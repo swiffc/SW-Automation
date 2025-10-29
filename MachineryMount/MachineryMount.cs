@@ -18,7 +18,7 @@ using static MachineryMount.MachineryMount;
 
 namespace MachineryMount
 {
-    internal class MachineryMount : MainAssembly
+    public class MachineryMount : MainAssembly
     {
         // Static properties
         public static double CenterToCenter
@@ -53,12 +53,12 @@ namespace MachineryMount
 
                 if (!TemplatesDownloaded)
                 {
-                    Vault.GetAllFilesInFolder(@"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\MachineryMount\");
+                    Vault.GetAllFilesInFolder(@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\MachineryMount\");
                     TemplatesDownloaded = true;
                 }
                 if (!LibraryFilesDownloaded)
                 {
-                    Vault.GetAllFilesInFolder(@"C:\AXC_VAULT\SolidWorks Common Data\Design Library\Hudson Library\Bearings\");
+                    Vault.GetAllFilesInFolder(@"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\common_library\Bearings\");
                     LibraryFilesDownloaded = true;
                 }
 

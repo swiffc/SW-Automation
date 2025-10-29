@@ -147,7 +147,7 @@ namespace Hood
 
 
 
-        public static string TemplateFolderPath { get; set; } = @"C:\AXC_VAULT\Active\_Automation Tools\Hudson_\Drafting\Certified\Hood";
+        public static string TemplateFolderPath { get; set; } = @"C:\Users\DCornealius\CascadeProjects\Solidworks_Automation\templates\hudson_certified\Hood";
         public interface IPanel
         {
             double BottomHole { get; }

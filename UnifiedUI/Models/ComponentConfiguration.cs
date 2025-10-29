@@ -29,6 +29,15 @@ namespace UnifiedUI.Models
         public double Depth { get; set; }
         public double Length { get; set; }
 
+        // Job Information
+        public int Bank { get; set; }
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
+
         // Parameters dictionary for flexible storage
         public Dictionary<string, object> Parameters { get; set; }
 
@@ -105,9 +114,12 @@ namespace UnifiedUI.Models
             }
         }
 
+        // Side Frame
         public double SideFrameThickness { get; set; }
         public double SideFrameDepth { get; set; }
         public bool HeadersOutsideFrame { get; set; }
+        
+        // Tube Configuration
         public double TubeLength { get; set; }
         public double TubeProjection { get; set; }
         public double TubeOD { get; set; }
@@ -115,14 +127,44 @@ namespace UnifiedUI.Models
         public double FinOD { get; set; }
         public int TubeRow1Count { get; set; }
         public int TubeRow2Count { get; set; }
+        public int TubeQuantity { get; set; }
         public double HorizontalPitch { get; set; }
-        public double VerticalPitch { get; set; }
-        public List<double> VerticalPitches { get; set; }
+        
+        // Fin Strip Back
+        public double FinStripBackFront { get; set; }
+        public double FinStripBackRear { get; set; }
+        
+        // Vertical Pitches (Front: 9 values, Rear: 9 values)
+        public List<double> FrontVerticalPitches { get; set; }
+        public List<double> RearVerticalPitches { get; set; }
+        
+        // Tube Supports
+        public double TubeSupportSpacingFeet { get; set; }
+        public int TubeSupportQuantity { get; set; }
+        public string TubeSupportSize { get; set; }
+        
+        // Manufacturing
+        public string TitleblockManufacturer { get; set; }
+        public bool Cambered { get; set; }
+        
+        // Plenum (for Bundle context)
+        public double PlenumLength { get; set; }
+        public double OffsetFromPlenumCenter { get; set; }
+        public string PlenumStyle { get; set; }
+        public string ColumnSize { get; set; }
+        
+        // Other
+        public int FanCount { get; set; }
+        public double LugStagger { get; set; }
+        public double LiftingLugSpacing { get; set; }
+        public int TotalUnitWeight { get; set; }
+        public double JohnsonExtraLength { get; set; }
 
         public BundleConfiguration()
         {
             ComponentType = "Bundle";
-            VerticalPitches = new List<double>();
+            FrontVerticalPitches = new List<double>();
+            RearVerticalPitches = new List<double>();
         }
     }
 
@@ -138,6 +180,15 @@ namespace UnifiedUI.Models
         public double TubesheetThickness { get; set; }
         public double DesignPressure { get; set; }
         public double MAWP { get; set; }
+        
+        // Job information
+        public int Bank { get; set; }
+        public string Customer { get; set; }
+        public string Client { get; set; }
+        public string Location { get; set; }
+        public string PurchaseOrder { get; set; }
+        public string ItemNumber { get; set; }
+        public string Initials { get; set; }
         
         public HeaderConfiguration()
         {

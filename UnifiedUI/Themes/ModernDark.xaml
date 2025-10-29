@@ -1,0 +1,147 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- 
+    =================================================================
+    MODERN DARK THEME - COLOR PALETTE
+    =================================================================
+    Inspired by: Visual Studio 2022, Fusion 360, Modern CAD Tools
+    Date: October 28, 2025
+    =================================================================
+    -->
+    
+    <!-- ============================================================
+         BASE COLORS - BACKGROUNDS
+         ============================================================ -->
+    
+    <!-- Primary Background: Very dark gray - main canvas -->
+    <SolidColorBrush x:Key="PrimaryBackground" Color="#1E1E1E"/>
+    
+    <!-- Secondary Background: Slightly lighter - panels -->
+    <SolidColorBrush x:Key="SecondaryBackground" Color="#252526"/>
+    
+    <!-- Elevated Surface: Cards, dropdowns -->
+    <SolidColorBrush x:Key="ElevatedSurface" Color="#2D2D30"/>
+    
+    <!-- Hover State: Interactive elements -->
+    <SolidColorBrush x:Key="HoverBackground" Color="#3E3E42"/>
+    
+    <!-- Border: Subtle separators -->
+    <SolidColorBrush x:Key="BorderColor" Color="#3F3F46"/>
+    
+    <!-- ============================================================
+         ACCENT COLORS - ACTIONS & STATUS
+         ============================================================ -->
+    
+    <!-- Primary Accent: Microsoft Blue - primary actions -->
+    <SolidColorBrush x:Key="PrimaryAccent" Color="#0078D4"/>
+    <SolidColorBrush x:Key="PrimaryAccentHover" Color="#1084D8"/>
+    <SolidColorBrush x:Key="PrimaryAccentActive" Color="#006CBE"/>
+    
+    <!-- Success: Green - validation, success states -->
+    <SolidColorBrush x:Key="SuccessColor" Color="#10B981"/>
+    <SolidColorBrush x:Key="SuccessColorHover" Color="#059669"/>
+    
+    <!-- Warning: Amber - warnings, attention needed -->
+    <SolidColorBrush x:Key="WarningColor" Color="#F59E0B"/>
+    <SolidColorBrush x:Key="WarningColorHover" Color="#D97706"/>
+    
+    <!-- Error: Red - errors, critical states -->
+    <SolidColorBrush x:Key="ErrorColor" Color="#EF4444"/>
+    <SolidColorBrush x:Key="ErrorColorHover" Color="#DC2626"/>
+    
+    <!-- Info: Blue - information states -->
+    <SolidColorBrush x:Key="InfoColor" Color="#3B82F6"/>
+    <SolidColorBrush x:Key="InfoColorHover" Color="#2563EB"/>
+    
+    <!-- ============================================================
+         TEXT COLORS
+         ============================================================ -->
+    
+    <!-- Primary Text: Almost white - main text -->
+    <SolidColorBrush x:Key="PrimaryText" Color="#E5E7EB"/>
+    
+    <!-- Secondary Text: Gray - labels, hints -->
+    <SolidColorBrush x:Key="SecondaryText" Color="#9CA3AF"/>
+    
+    <!-- Muted Text: Darker gray - disabled, timestamps -->
+    <SolidColorBrush x:Key="MutedText" Color="#6B7280"/>
+    
+    <!-- Inverted Text: For light backgrounds -->
+    <SolidColorBrush x:Key="InvertedText" Color="#1E1E1E"/>
+    
+    <!-- ============================================================
+         COMPONENT SPECIFIC COLORS
+         ============================================================ -->
+    
+    <!-- Tool Selector Accent -->
+    <SolidColorBrush x:Key="ToolSelectorAccent" Color="#0078D4"/>
+    
+    <!-- Component Tab Accents -->
+    <SolidColorBrush x:Key="HeaderTabAccent" Color="#10B981"/>
+    <SolidColorBrush x:Key="XCHTabAccent" Color="#10B981"/>
+    <SolidColorBrush x:Key="ZStructureTabAccent" Color="#9333EA"/>
+    <SolidColorBrush x:Key="HudsonTabAccent" Color="#F97316"/>
+    
+    <!-- ============================================================
+         SPACING VALUES (8px Grid System)
+         ============================================================ -->
+    
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="SpacingXS">4</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="SpacingS">8</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="SpacingM">16</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="SpacingL">24</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="SpacingXL">32</System:Double>
+    
+    <!-- ============================================================
+         CORNER RADIUS VALUES
+         ============================================================ -->
+    
+    <CornerRadius x:Key="CornerRadiusSmall">4</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusMedium">6</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusLarge">8</CornerRadius>
+    
+    <!-- ============================================================
+         TYPOGRAPHY (Segoe UI - Windows Standard)
+         ============================================================ -->
+    
+    <!-- Font Families -->
+    <FontFamily x:Key="PrimaryFont">Segoe UI</FontFamily>
+    
+    <!-- Font Sizes -->
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="FontSizeXS">11</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="FontSizeS">13</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="FontSizeM">14</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="FontSizeL">16</System:Double>
+    <System:Double xmlns:System="clr-namespace:System;assembly=mscorlib" x:Key="FontSizeXL">18</System:Double>
+    
+    <!-- ============================================================
+         DROP SHADOWS
+         ============================================================ -->
+    
+    <!-- Subtle Shadow for Elevation -->
+    <DropShadowEffect x:Key="SubtleShadow" 
+                      Color="#000000" 
+                      Opacity="0.1" 
+                      BlurRadius="8" 
+                      ShadowDepth="2" 
+                      Direction="270"/>
+    
+    <!-- Button Shadow -->
+    <DropShadowEffect x:Key="ButtonShadow" 
+                      Color="#000000" 
+                      Opacity="0.2" 
+                      BlurRadius="4" 
+                      ShadowDepth="2" 
+                      Direction="270"/>
+    
+    <!-- Card Shadow -->
+    <DropShadowEffect x:Key="CardShadow" 
+                      Color="#000000" 
+                      Opacity="0.15" 
+                      BlurRadius="12" 
+                      ShadowDepth="4" 
+                      Direction="270"/>
+    
+</ResourceDictionary>
+
