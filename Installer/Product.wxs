@@ -1,0 +1,180 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" 
+           Name="SolidWorks Automation Suite" 
+           Language="1033" 
+           Version="1.0.0.0" 
+           Manufacturer="HPC Engineering" 
+           UpgradeCode="12345678-1234-1234-1234-123456789012">
+    
+    <Package InstallerVersion="200" 
+             Compressed="yes" 
+             InstallScope="perMachine" 
+             Description="SolidWorks Automation Suite Installer"
+             Comments="Advanced SolidWorks automation and workflow management"/>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Feature: Main Application -->
+    <Feature Id="MainApplication" 
+             Title="SolidWorks Automation Suite" 
+             Level="1" 
+             Description="Core application files and components">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="TemplateFiles" />
+    </Feature>
+
+    <!-- Feature: Documentation -->
+    <Feature Id="Documentation" 
+             Title="Documentation" 
+             Level="1" 
+             Description="User guides and API documentation">
+      <ComponentGroupRef Id="DocumentationComponents" />
+    </Feature>
+
+    <!-- Feature: Sample Workflows -->
+    <Feature Id="SampleWorkflows" 
+             Title="Sample Workflows" 
+             Level="1000" 
+             Description="Example workflow definitions">
+      <ComponentGroupRef Id="WorkflowSamples" />
+    </Feature>
+
+    <!-- Installation Directory -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="SolidWorksAutomation">
+          <Directory Id="TemplatesFolder" Name="Templates" />
+          <Directory Id="WorkflowsFolder" Name="Workflows" />
+          <Directory Id="DocsFolder" Name="Documentation" />
+        </Directory>
+      </Directory>
+      
+      <!-- Start Menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="SolidWorks Automation Suite"/>
+      </Directory>
+
+      <!-- Desktop -->
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+    </Directory>
+
+    <!-- Component Groups -->
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="11111111-1111-1111-1111-111111111111">
+        <File Id="UnifiedUIExe" Source="..\UnifiedUI\bin\Release\net481\UnifiedUI.exe" KeyPath="yes">
+          <Shortcut Id="ApplicationStartMenuShortcut"
+                    Directory="ApplicationProgramsFolder"
+                    Name="SolidWorks Automation"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Icon="AppIcon.exe"
+                    IconIndex="0"
+                    Advertise="yes" />
+          <Shortcut Id="ApplicationDesktopShortcut"
+                    Directory="DesktopFolder"
+                    Name="SolidWorks Automation"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Icon="AppIcon.exe"
+                    IconIndex="0"
+                    Advertise="yes" />
+        </File>
+        
+        <!-- Application Config -->
+        <File Id="UnifiedUIConfig" Source="..\UnifiedUI\bin\Release\net481\UnifiedUI.exe.config" />
+        
+        <!-- Dependencies -->
+        <File Id="NewtonsoftJson" Source="..\UnifiedUI\bin\Release\net481\Newtonsoft.Json.dll" />
+      </Component>
+
+      <!-- Remove Start Menu folder on uninstall -->
+      <Component Id="CleanupStartMenu" Guid="22222222-2222-2222-2222-222222222222">
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" 
+                       Key="Software\SolidWorksAutomation" 
+                       Name="installed" 
+                       Type="integer" 
+                       Value="1" 
+                       KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="TemplateFiles" Directory="TemplatesFolder">
+      <Component Id="TemplateComponent" Guid="33333333-3333-3333-3333-333333333333">
+        <CreateFolder/>
+        <RegistryValue Root="HKCU" 
+                       Key="Software\SolidWorksAutomation\Templates" 
+                       Name="Path" 
+                       Type="string" 
+                       Value="[TemplatesFolder]" 
+                       KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="WorkflowSamples" Directory="WorkflowsFolder">
+      <Component Id="WorkflowComponent" Guid="44444444-4444-4444-4444-444444444444">
+        <CreateFolder/>
+        <RegistryValue Root="HKCU" 
+                       Key="Software\SolidWorksAutomation\Workflows" 
+                       Name="Path" 
+                       Type="string" 
+                       Value="[WorkflowsFolder]" 
+                       KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="DocumentationComponents" Directory="DocsFolder">
+      <Component Id="DocsComponent" Guid="55555555-5555-5555-5555-555555555555">
+        <CreateFolder/>
+        <RegistryValue Root="HKCU" 
+                       Key="Software\SolidWorksAutomation\Documentation" 
+                       Name="Path" 
+                       Type="string" 
+                       Value="[DocsFolder]" 
+                       KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- Icon -->
+    <Icon Id="AppIcon.exe" SourceFile="..\UnifiedUI\bin\Release\net481\UnifiedUI.exe"/>
+
+    <!-- UI -->
+    <UIRef Id="WixUI_FeatureTree"/>
+    <UIRef Id="WixUI_ErrorProgressText"/>
+
+    <!-- License -->
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf"/>
+    
+    <!-- Properties -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.exe" />
+    
+    <!-- Launch Conditions -->
+    <Condition Message="This application requires .NET Framework 4.8 or higher.">
+      <![CDATA[Installed OR NETFRAMEWORK48]]>
+    </Condition>
+    
+    <Condition Message="This application requires SolidWorks 2020 or higher.">
+      <![CDATA[Installed OR SOLIDWORKS_INSTALLED]]>
+    </Condition>
+
+    <!-- Custom Properties -->
+    <Property Id="NETFRAMEWORK48">
+      <RegistrySearch Id="NetFramework48"
+                      Root="HKLM"
+                      Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"
+                      Name="Release"
+                      Type="raw" />
+    </Property>
+
+    <Property Id="SOLIDWORKS_INSTALLED">
+      <RegistrySearch Id="SolidWorks"
+                      Root="HKLM"
+                      Key="SOFTWARE\SolidWorks\SOLIDWORKS"
+                      Type="directory" />
+    </Property>
+
+  </Product>
+</Wix>
