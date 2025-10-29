@@ -61,6 +61,15 @@ venv/
 env/
 ENV/
 
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.env
+**/.env
+config.local.json
+secrets.json
+
 # ============================================
 # IDE and Editors
 # ============================================
